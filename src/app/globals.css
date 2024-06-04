@@ -74,3 +74,8 @@ ol {
 
   list-style: none;
 }
+
+.body-scroll-lock {
+  overflow: hidden;
+}
+

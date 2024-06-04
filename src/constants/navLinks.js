@@ -24,6 +24,11 @@ export const navLinks = [
     link: "/kontakty",
     aria: "",
   },
+  {
+    name: "Пошук",
+    link: "/poshuk-po-saytu",
+    aria: "",
+  },
 ];
 
 export const aboutLinks = [

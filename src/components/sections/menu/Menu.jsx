@@ -7,15 +7,16 @@ import MenuMobile from "./MenuMobile";
 import Wrapper from "@/components/Wrapper";
 
 const Menu = () => {
+  const navItems = navLinks.slice(0, navLinks.length - 1);
   return (
-    <Wrapper styles="flex items-center xl:gap-x-3">
+    <Wrapper styles="flex items-center justify-between xl:gap-x-3">
       <MenuMobile />
       <Link href="/" className="w-[190px] h-20 flex items-center justify-between">
         <Image src={Logo} height={80} className="w-[186px] h-16" />
       </Link>
 
       <nav className="w-fit hidden md:flex items-center h-20 mx-auto gap-x-3">
-        {navLinks.map(el => (
+        {navItems.map(el => (
           <Link
             href={el.link}
             aria-label={el.aria}
