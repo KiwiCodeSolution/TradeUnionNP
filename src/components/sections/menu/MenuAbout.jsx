@@ -1,10 +1,10 @@
 import { aboutLinks } from "@/constants/navLinks";
 import Link from "next/link";
-import Wrapper from "./Wrapper";
+import Wrapper from "../../Wrapper";
 
 const MenuAbout = () => {
   return (
-    <div className="w-full bg-bgBlack">
+    <div className="hidden md:block w-full bg-bgBlack">
       <Wrapper>
         <nav className="w-full flex items-center justify-between h-10">
           {aboutLinks.map(el => (

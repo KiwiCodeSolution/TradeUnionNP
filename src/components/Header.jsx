@@ -1,5 +1,5 @@
-import Menu from "./Menu";
-import MenuAbout from "./MenuAbout";
+import Menu from "./sections/menu/Menu";
+import MenuAbout from "./sections/menu/MenuAbout";
 
 const Header = () => {
   return (
