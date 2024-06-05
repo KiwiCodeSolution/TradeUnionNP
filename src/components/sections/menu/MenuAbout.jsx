@@ -12,7 +12,7 @@ const MenuAbout = () => {
               href={el.link}
               aria-label={el.aria}
               key={el.link}
-              className="text-white text-opacity-60 hover:text-opacity-100"
+              className="text-[15px] text-white text-opacity-60 hover:text-opacity-100"
             >
               {el.name}
             </Link>

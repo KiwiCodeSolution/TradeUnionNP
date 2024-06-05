@@ -3,11 +3,11 @@
 import { motion, useCycle } from "framer-motion";
 import { aboutLinks, navLinks } from "@/constants/navLinks";
 import Link from "next/link";
-import useScrollBlock from "@/utils/useScrollBlock";
 import Image from "next/image";
 import MenuLogo from "@/images/menu-logo.svg";
 import Cross from "@/images/close.svg";
 import Burger from "@/images/burger.svg";
+import useScrollBlock from "@/hooks/useScrollBlock";
 
 const menuAnimation = {
   visible: {

@@ -12,7 +12,7 @@ const Menu = () => {
     <Wrapper styles="flex items-center justify-between xl:gap-x-3">
       <MenuMobile />
       <Link href="/" className="w-[190px] h-20 flex items-center justify-between">
-        <Image src={Logo} height={80} className="w-[186px] h-16" />
+        <Image src={Logo} height={80} className="w-[186px] h-16" alt="Зображення логотипу Профспілки 'Нова Пошта'"/>
       </Link>
 
       <nav className="w-fit hidden md:flex items-center h-20 mx-auto gap-x-3">
