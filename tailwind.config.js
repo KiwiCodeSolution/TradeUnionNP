@@ -27,12 +27,24 @@ module.exports = {
       },
       keyframes: {
         "hero-slide-in": {
-          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "0%": { transform: "translateX(10%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        hand: {
+          "0%": { transform: "translateY(-120%) translateX(0%)", opacity: "0" },
+          "25%": { transform: "translateY(-40%) translateX(-10%)", opacity: "0.2" },
+          "75%": { transform: "translateY(0%) translateX(-25%)", opacity: "1" },
+          "100%": { transform: "translateY(0) translateX(5%)", opacity: "1" },
+        },
+        text: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       animation: {
-        "hero-slide-in": "hero-slide-in 2s ease-out forwards", // змінили тривалість на 2 секунди
+        "hero-slide-in": "hero-slide-in 10s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
+        hand: "hand 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
+        text: "text 3s cubic-bezier(0.25, 0.1, 0.25, 1)",
       },
       boxShadow: {
         btnMain: "0px 0px 16px 0px rgba(39,76,91,1)",

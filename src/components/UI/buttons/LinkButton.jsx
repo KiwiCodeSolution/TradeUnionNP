@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 const buttonsStyle = {
   transparent:
     "w-[163px] h-[60px] rounded-[100px] border-0.5 border-red text-red hover:bg-red hover:text-white",
@@ -7,24 +6,15 @@ const buttonsStyle = {
   round: "w-[54px] h-[54px] rounded-full bg-white hover:bg-red",
 };
 
-const Button = ({ children, view, btnType, icon, clickFn, style, disabled, ...restProps }) => {
-  const handleClick = () => (clickFn ? clickFn() : null);
+const LinkButton = ({ children, goTo, view, style, goToPage }) => {
   const additionalStyle = style || "";
-
   const currentStyle = `${buttonsStyle[view]} ${additionalStyle} flex items-center justify-between`;
 
   return (
-    <button
-      type={btnType || "button"}
-      className={currentStyle}
-      onClick={handleClick}
-      {...restProps}
-      disabled={disabled}
-    >
+    <Link href={goTo} className={currentStyle} target={!goToPage ? "_blank" : ""}>
       {children}
-      {icon}
-    </button>
+    </Link>
   );
 };
 
-export default Button;
+export default LinkButton;

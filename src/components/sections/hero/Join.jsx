@@ -10,7 +10,7 @@ const Join = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   return (
     <>
-      <Button view="red" clickFn={() => setIsOpenModal(true)}>
+      <Button view="red" clickFn={() => setIsOpenModal(true)} style={"mt-9 mb-16"}>
         долучитися{" "}
         <Image
           src={Arrow}

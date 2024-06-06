@@ -6,10 +6,11 @@ import HeroImageFirst from "@/images/frame_1.svg";
 import HeroImageSecond from "@/images/frame_2.svg";
 import HeroImageThird from "@/images/frame_3.svg";
 import Join from "./Join";
+import BaseSection from "@/components/BaseSection";
 
 const HeroHomePage = () => {
   return (
-    <section className="w-full overflow-hidden bg-bgGrey h-fit xl:h-[628px]">
+    <BaseSection style="bg-bgGrey h-fit xl:h-[628px]">
       <Wrapper styles={"flex flex-col md:flex-row"}>
         <div className="order-2 md:order-1 w-full md:w-1/2 flex flex-col">
           <TitleHomePage />
@@ -39,7 +40,7 @@ const HeroHomePage = () => {
           />
         </div>
       </Wrapper>
-    </section>
+    </BaseSection>
   );
 };
 

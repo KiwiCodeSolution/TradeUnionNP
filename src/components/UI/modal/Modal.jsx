@@ -1,8 +1,6 @@
-"use client";
-
-import useScrollBlock from "@/hooks/useScrollBlock";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import useScrollBlock from "@/hooks/useScrollBlock";
 
 const Modal = ({ children, isOpen, onClose }) => {
   const [blockScroll, allowScroll] = useScrollBlock();
@@ -17,7 +15,13 @@ const Modal = ({ children, isOpen, onClose }) => {
   useEffect(() => {
     setMounted(true);
     setModalRoot(document.getElementById("modal-root"));
-    blockScroll();
+
+    if (isOpen) {
+      blockScroll();
+    } else {
+      allowScroll();
+    }
+
     function keyDown(e) {
       if (e.code !== "Escape") {
         return;
@@ -27,10 +31,11 @@ const Modal = ({ children, isOpen, onClose }) => {
     window.addEventListener("keydown", keyDown);
     return () => {
       window.removeEventListener("keydown", keyDown);
+      allowScroll();
     };
-  }, [blockScroll, onClose, closeModal]);
+  }, [isOpen, blockScroll, allowScroll, onClose]);
 
-  if (!mounted || !modalRoot) return null;
+  if (!mounted || !isOpen || !modalRoot) return null;
 
   function handleOverlayClick(e) {
     if (e.target === e.currentTarget) {
@@ -42,7 +47,7 @@ const Modal = ({ children, isOpen, onClose }) => {
   return createPortal(
     isOpen ? (
       <div
-        className="fixed top-0 left-0 bg-slate-400 bg-opacity-50 flex items-center justify-center"
+        className="fixed w-full h-screen top-0 left-0 bg-slate-400 bg-opacity-50 flex items-center justify-center"
         onClick={handleOverlayClick}
       >
         <div className="flex flex-col min-w-[200px] max-w-[600px] bg-white rounded-xl mx-auto">
