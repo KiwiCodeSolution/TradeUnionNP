@@ -1,5 +1,6 @@
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import Image from "next/image";
+import Arrow from "@/images/arrow_red.svg";
 
 const Text = ({ text, isBold, quantityWords }) => {
   function formatTextWithBoldMarker(text, numberOfWords) {
@@ -28,7 +29,7 @@ const Text = ({ text, isBold, quantityWords }) => {
   const { boldText, regularText } = formatTextWithBoldMarker(text, quantityWords);
 
   return (
-    <p>
+    <p className="text-lg text-grey">
       <strong>{boldText}</strong>
       {` ${regularText}`}
     </p>
@@ -41,9 +42,9 @@ const DirectionsWorkItem = ({ item, index }) => {
       <div className="w-1/2">
         <Image src={item.image} width={640} height={600} alt={item.title} />
       </div>
-      <div className="w-1/2 flex flex-col">
-        <h3>НАПРЯМКИ РОБОТИ</h3>
-        <h2>{item.title}</h2>
+      <div className={`w-1/2 flex flex-col ${index === 0 ? "mt-[127px]" : ""}`}>
+        <h3 className="text-sm uppercase">НАПРЯМКИ РОБОТИ</h3>
+        <h2 className="mt-3 mb-5 text-[46px] inter">{item.title}</h2>
 
         <div className="flex flex-col gap-y-2">
           {item.text?.map((el, idx) => (
@@ -55,16 +56,31 @@ const DirectionsWorkItem = ({ item, index }) => {
             />
           ))}
           {item.list && (
-            <ul className="list-disc pl-5">
+            <ul className="pl-5 flex flex-col mt-5 gap-y-5">
               {item.list.map((listItem, idx) => (
-                <li key={idx}>{listItem}</li>
+                <li key={idx} className="w-full text-lg text-grey flex gap-x-2 items-center">
+                  <div className="w-[9px] h-[9px] rounded-full bg-red" />
+                  <p className="w-[calc(100%-18px)]"> {listItem}</p>
+                </li>
               ))}
             </ul>
           )}
         </div>
 
-        <LinkButton view="transparent" style="uppercase" goTo={item.link} goToPage>
+        <LinkButton
+          view="transparent"
+          style="uppercase mt-6 w-fit gap-x-2 hover:underline hover:underline-offset-4"
+          goTo={item.link}
+          goToPage
+        >
           ДІЗНАТИСЯ БІЛЬШЕ
+          <Image
+            src={Arrow}
+            width={30}
+            height={30}
+            alt="зображення білої іконки-стрілочки вправо на червоному фоні"
+            className="arrow-icon"
+          />
         </LinkButton>
       </div>
     </article>

@@ -6,7 +6,8 @@ import DirectionsWorkItem from "./DirectionsWorkItem";
 const DirectionsWork = () => {
   return (
     <BaseSection style="">
-      <Wrapper styles={"flex flex-col"}>
+      <div className="w-full absolute top-0 h-40 left-0 right-0 z-0 bg-gradient-to-t from-white to-bgGrey" />
+      <Wrapper styles={"flex flex-col relative"}>
         {directions.map((el, index) => (
           <DirectionsWorkItem key={el.image} index={index} item={el} />
         ))}
