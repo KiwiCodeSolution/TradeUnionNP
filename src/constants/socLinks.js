@@ -1,50 +1,50 @@
-export const socLinks = {
-  facebook: {
-    title: "",
+export const socLinks = [
+  {
+    title: "facebook",
     link: "https://www.facebook.com/profspilka.novaposhta",
-    iconRed: "",
-    iconWhite: "",
-    iconColor: "",
+    iconRed: "/images/soc-icons/facebook-red.svg",
+    iconWhite: "/images/soc-icons/facebook-white.svg",
+    iconColor: "/images/soc-icons/facebook-color.svg",
     style: "",
   },
-  instagram: {
-    title: "",
+  {
+    title: "instagram",
     link: "https://www.instagram.com/profspilka.np/",
-    iconRed: "",
-    iconWhite: "",
-    iconColor: "",
+    iconRed: "/images/soc-icons/instagram-red.svg",
+    iconWhite: "/images/soc-icons/instagram-white.svg",
+    iconColor: "/images/soc-icons/instagram-color.svg",
     style: "",
   },
-  telegram: {
-    title: "",
+  {
+    title: "telegram",
     link: "https://t.me/profspilka_np",
-    iconRed: "",
-    iconWhite: "",
-    iconColor: "",
+    iconRed: "/images/soc-icons/telegram-red.svg",
+    iconWhite: "/images/soc-icons/telegram-white.svg",
+    iconColor: "/images/soc-icons/telegram-color.svg",
     style: "",
   },
-  youTube: {
-    title: "",
+  {
+    title: "youTube",
     link: "https://www.youtube.com/c/%D0%9F%D0%A0%D0%9E%D0%A4%D0%A1%D0%9F%D0%86%D0%9B%D0%9A%D0%90%D0%9D%D0%9F",
-    iconRed: "",
-    iconWhite: "",
-    iconColor: "",
+    iconRed: "/images/soc-icons/youtube-red.svg",
+    iconWhite: "/images/soc-icons/youtube-white.svg",
+    iconColor: "/images/soc-icons/youtube-color.svg",
     style: "",
   },
-  messenger: {
-    title: "",
+  {
+    title: "messenger",
     link: "https://www.messenger.com/",
     iconRed: "",
     iconWhite: "",
-    iconColor: "",
+    iconColor: "/images/soc-icons/messanger-color.svg",
     style: "",
   },
-  viber: {
-    title: "",
+  {
+    title: "viber",
     link: "https://invite.viber.com/?g2=AQB5jyDD9hRH2E4T1sgP3mF5DLFT3M6rGUUWfv2%2FHB1AddnNt8Vy6o2DXH793wQk/",
-    iconRed: "",
-    iconWhite: "",
-    iconColor: "",
+    iconRed: "/images/soc-icons/viber-red.svg",
+    iconWhite: "/images/soc-icons/viber-white.svg",
+    iconColor: "/images/soc-icons/viber-color.svg",
     style: "",
   },
-};
+];
