@@ -1,7 +1,13 @@
+import AllAboutCompany from "@/components/sections/about/AllAboutCompany";
+import StatutoryDocuments from "@/components/sections/about/StatutoryDocuments";
+import HeroAboutPage from "@/components/sections/hero/HeroAboutPage";
+
 export default function AboutUsPage() {
   return (
     <main className="w-full">
-      <h1>About Us Page</h1>
+      <HeroAboutPage />
+      <AllAboutCompany />
+      <StatutoryDocuments />
     </main>
   );
 }

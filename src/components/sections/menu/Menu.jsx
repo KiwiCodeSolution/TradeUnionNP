@@ -5,6 +5,8 @@ import Link from "next/link";
 import LangButtons from "../../UI/buttons/LangButtons";
 import MenuMobile from "./MenuMobile";
 import Wrapper from "@/components/Wrapper";
+import SearchInput from "@/components/UI/form/SearchInput";
+import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
 
 const Menu = () => {
   const navItems = navLinks.slice(0, navLinks.length - 1);
@@ -12,7 +14,12 @@ const Menu = () => {
     <Wrapper styles="flex items-center justify-between xl:gap-x-3">
       <MenuMobile />
       <Link href="/" className="w-[190px] h-20 flex items-center justify-between">
-        <Image src={Logo} height={80} className="w-[186px] h-16" alt="Зображення логотипу Профспілки 'Нова Пошта'"/>
+        <Image
+          src={Logo}
+          height={80}
+          className="w-[186px] h-16"
+          alt="Зображення логотипу Профспілки 'Нова Пошта'"
+        />
       </Link>
 
       <nav className="w-fit hidden md:flex items-center h-20 mx-auto gap-x-3">
@@ -27,6 +34,8 @@ const Menu = () => {
           </Link>
         ))}
       </nav>
+      <SearchInput />
+      <EmailAndSocLinks />
       <LangButtons />
     </Wrapper>
   );

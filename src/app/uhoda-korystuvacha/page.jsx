@@ -1,4 +1,4 @@
-import UserAgreement from "@/components/sections/agreement/UserAgreement";
+import UserAgreement from "@/components/sections/userAgreement/UserAgreement";
 
 export default function UserAgreementPage() {
   return (

@@ -1,12 +1,22 @@
 import { socLinks } from "@/constants/socLinks";
 import Image from "next/image";
 
-const FooterContacts = () => {
+const EmailAndSocLinks = ({ section }) => {
   const socLinksList = socLinks.filter(el => el.iconRed !== "");
   return (
-    <article className="flex flex-col gapy-4">
-      <a href="mailto:help@profspilka.org">help@profspilka.org</a>
-      <div className="flex gap-x-4">
+    <article
+      className={`flex ${
+        section === "footer" ? "flex-col gap-y-4" : "gap-x-5 items-center justify-between"
+      } `}
+    >
+      {section === "footer" && <h3 className="text-base text-liteGrey mb-1 uppercase">КОНТАКТИ</h3>}
+      <a
+        href="mailto:help@profspilka.org"
+        className="text-red text-base underline underline-offset-1 hover:underline-offset-4"
+      >
+        help@profspilka.org
+      </a>
+      <div className="flex gap-x-2">
         {socLinksList.map(el => (
           <a
             key={el.link}
@@ -27,4 +37,4 @@ const FooterContacts = () => {
   );
 };
 
-export default FooterContacts;
+export default EmailAndSocLinks;

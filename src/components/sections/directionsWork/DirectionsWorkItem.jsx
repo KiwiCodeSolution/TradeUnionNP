@@ -1,6 +1,7 @@
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import Image from "next/image";
 import Arrow from "@/images/arrow_red.svg";
+import RedDot from "@/components/UI/RedDot";
 
 const Text = ({ text, isBold, quantityWords }) => {
   function formatTextWithBoldMarker(text, numberOfWords) {
@@ -59,7 +60,7 @@ const DirectionsWorkItem = ({ item, index }) => {
             <ul className="pl-5 flex flex-col mt-5 gap-y-5">
               {item.list.map((listItem, idx) => (
                 <li key={idx} className="w-full text-lg text-grey flex gap-x-2 items-center">
-                  <div className="w-[9px] h-[9px] rounded-full bg-red" />
+                  <RedDot />
                   <p className="w-[calc(100%-18px)]"> {listItem}</p>
                 </li>
               ))}

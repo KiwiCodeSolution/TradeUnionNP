@@ -14,6 +14,7 @@ module.exports = {
         red: "#ED1C24",
         bgBlack: "#333333",
         bgGrey: "#EEEEEE",
+        liteGrey: "#999999",
       },
       screens: {
         tablet: "768px",
@@ -49,6 +50,7 @@ module.exports = {
       boxShadow: {
         btnMain: "0px 0px 16px 0px rgba(39,76,91,1)",
         redButton: "0px 10px 40px 0px rgba(237,28,36,0.3)",
+        upButton: "0px 0px 10px 3px rgba(237,28,36,0.3)",
         redButtonHover: "0px 10px 40px 0px rgba(237,28,36,0.6)",
       },
       dropShadow: {
