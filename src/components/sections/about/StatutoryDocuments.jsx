@@ -6,9 +6,10 @@ import Arrow from "@/images/arrow_white.svg";
 
 const StatutoryDocuments = () => {
   return (
-    <BaseSection style={"h-fit"}>
-      <div className="w-full h-24 absolute top-0 left-0 bg-gradient-to-t from-white to-bgGrey z-[-1]" />
-      <Wrapper styles={"flex flex-col md:flex-row items-start"}>
+    <BaseSection style={"h-[530px] pt-[96px]"}>
+      <div className="w-full h-24 absolute top-0 left-0 bg-gradient-to-t from-white to-bgGrey z-[1]" />
+      {/* <div className="w-full h-96 absolute bottom-0 left-0 bg-gradient-to-t from-bgGrey to-white z-[1]" /> */}
+      <Wrapper styles={"flex flex-col md:flex-row items-start z-[1]"}>
         <div className="w-full md:w-1/2">
           <Image
             src={Statute}
@@ -18,7 +19,7 @@ const StatutoryDocuments = () => {
           />
         </div>
         <div className="w-full md:w-1/2 flex flex-col gap-y-8">
-          <h3 className="text-[30px]">
+          <h3 className="text-[30px] font-bold">
             <span className="text-red">Статут </span>ВПСП ТОВ “Нова пошта”
           </h3>
           <a
@@ -29,7 +30,7 @@ const StatutoryDocuments = () => {
             переглянути
             <Image src={Arrow} width={30} height={30} alt="іконка червоної стрілочки вправо" />
           </a>
-          <h3 className="text-[30px]">
+          <h3 className="text-[30px] font-bold">
             <span className="text-red">Колективний договір </span>ВПСП ТОВ "НОВА ПОШТА" та ТОВ "НОВА
             ПОШТА"
           </h3>
@@ -43,7 +44,6 @@ const StatutoryDocuments = () => {
           </a>
         </div>
       </Wrapper>
-      <div className="w-full h-96 absolute bottom-0 left-0 bg-gradient-to-t from-bgGrey to-white z-[-1]" />
     </BaseSection>
   );
 };

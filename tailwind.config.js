@@ -52,6 +52,7 @@ module.exports = {
         redButton: "0px 10px 40px 0px rgba(237,28,36,0.3)",
         upButton: "0px 0px 10px 3px rgba(237,28,36,0.3)",
         redButtonHover: "0px 10px 40px 0px rgba(237,28,36,0.6)",
+        historyItem: "0px 10px 50px 0px rgba(174,174,174,0.15)",
       },
       dropShadow: {
         news: "0 20px 35px rgba(167,167,167,0.25)",

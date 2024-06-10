@@ -2,8 +2,7 @@ import BaseSection from "@/components/BaseSection";
 import PathPage from "@/components/PathPage";
 import Wrapper from "@/components/Wrapper";
 import { inter } from "@/app/fonts";
-import Image from "next/image";
-import HeroImage from "@/images/about/about_hero.svg";
+import HeroAboutPageImage from "./HeroAboutPageImage";
 
 const HeroAboutPage = () => {
   return (
@@ -24,12 +23,8 @@ const HeroAboutPage = () => {
             </p>
           </div>
           <div className="w-full sm:w-2/5 lg:w-3/5">
-            <Image
-              src={HeroImage}
-              width={710}
-              height={439}
-              alt="малюнок дівчини та хлопця, що рухають руками вгору"
-            />
+
+            <HeroAboutPageImage />
           </div>
         </div>
       </Wrapper>
