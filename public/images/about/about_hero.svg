@@ -1,4 +1,4 @@
-<svg class="h-48 xs:h-102 sm:h-auto w-full" width="758" height="468" viewBox="0 0 758 468" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg className="h-48 xs:h-102 sm:h-auto w-full" width="758" height="468" viewBox="0 0 758 468" fill="none" xmlns="http://www.w3.org/2000/svg">
 
             <defs>
             <linearGradient id="paint0" x1="491.194" y1="103.763" x2="446.166" y2="164.46" gradientUnits="userSpaceOnUse">

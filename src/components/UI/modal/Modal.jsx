@@ -1,6 +1,6 @@
+import useScrollBlock from "@/hooks/useScrollBlock";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import useScrollBlock from "@/hooks/useScrollBlock";
 
 const Modal = ({ children, isOpen, onClose }) => {
   const [blockScroll, allowScroll] = useScrollBlock();

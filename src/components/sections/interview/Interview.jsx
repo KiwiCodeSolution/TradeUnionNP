@@ -30,7 +30,7 @@ const Interview = () => {
                 />
               </div>
               <div className="w-fit flex flex-col gap-y-2">
-                <h3 class="text-[22px] font-bold">Оганесьян Сергій Геннадійович</h3>
+                <h3 className="text-[22px] font-bold">Оганесьян Сергій Геннадійович</h3>
                 <p className="text-[15px]">
                   Голова Всеукраїнської Профспілки Працівників Нової Пошти
                 </p>

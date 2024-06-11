@@ -1,4 +1,4 @@
-import data from "@/constants/history.json";
+import data from "@/data/history.json";
 import HistoryItem from "./HistoryItem";
 
 const HistoryList = () => {

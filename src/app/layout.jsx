@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header.jsx";
 import { roboto } from "./fonts";
 import "./globals.css";
 import Footer from "@/components/sections/footer/Footer";

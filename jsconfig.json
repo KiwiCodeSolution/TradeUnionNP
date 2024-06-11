@@ -8,23 +8,23 @@
       "@/images/*": [
         "public/images/*"
       ],
-      "@components/*": [
-        "components/*"
+      "@/components/*": [
+        "src/components/*"
       ],
-      "@hooks/*": [
-        "hooks/*"
+      "@/hooks/*": [
+        "src/hooks/*"
       ],
-      "@styles/*": [
-        "styles/*"
+      "@/styles/*": [
+        "src/styles/*"
       ],
-      "@lib/*": [
-        "lib/*"
+      "@/data/*": [
+        "src/data/*"
       ],
-      "@pages/*": [
-        "pages/*"
+      "@/pages/*": [
+        "src/pages/*"
       ],
-      "@constants/*": [
-        "constants/*"
+      "@/constants/*": [
+        "src/constants/*"
       ]
     }
   }

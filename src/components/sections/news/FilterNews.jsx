@@ -16,6 +16,7 @@ const FilterNews = () => {
                 : "text-bgBlack border-main border-opacity-20"
             }`}
             onClick={() => setNameButton(el)}
+            key={el}
           >
             {el}
           </button>
