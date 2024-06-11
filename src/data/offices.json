@@ -1,0 +1,146 @@
+[
+  {
+    "region": "Вінницька Профспілка",
+    "director": "Олександр Козак",
+    "email": "help@profspilka.org",
+    "phone": "+380681105335"
+  },
+  {
+    "region": "Волинська Профспілка",
+    "director": "Денис Краснобай",
+    "email": "help@profspilka.org",
+    "phone": "+380675455023"
+  },
+  {
+    "region": "Дніпропетровська Профспілка",
+    "director": "Григорій Борисов",
+    "email": "help@profspilka.org",
+    "phone": "+380675468904"
+  },
+  {
+    "region": "Донецька Профспілка",
+    "director": "",
+    "email": "help@profspilka.org",
+    "phone": "+380677008125"
+  },
+  {
+    "region": "Житомирська Профспілка",
+    "director": "Наталія Бортник",
+    "email": "help@profspilka.org",
+    "phone": "+380675457339"
+  },
+  {
+    "region": "Закарпатська Профспілка",
+    "director": "Крістіна Звєрєва",
+    "email": "help@profspilka.org",
+    "phone": "+380978004140"
+  },
+  {
+    "region": "Запорізька Профспілка",
+    "director": "Надія Міщенко",
+    "email": "help@profspilka.org",
+    "phone": "+380671389902"
+  },
+  {
+    "region": "Івано-Франківська Профспілка",
+    "director": "Володимир Дробко",
+    "email": "help@profspilka.org",
+    "phone": "+380979981583"
+  },
+  {
+    "region": "Сумська Профспілка",
+    "director": "",
+    "email": "help@profspilka.org",
+    "phone": "+380677008125"
+  },
+  {
+    "region": "Київська Профспілка",
+    "director": "Антон Горб",
+    "email": "help@profspilka.org",
+    "phone": "+380675455411"
+  },
+  {
+    "region": "Кіровоградська Профспілка",
+    "director": "Дарʼя Лавренюк",
+    "email": "help@profspilka.org",
+    "phone": "380950131467"
+  },
+  {
+    "region": "Луганська Профспілка",
+    "director": "",
+    "email": "help@profspilka.org",
+    "phone": "+380677008125"
+  },
+  {
+    "region": "Львівська Профспілка",
+    "director": " Ігор Полешко",
+    "email": "help@profspilka.org",
+    "phone": "+380676767673"
+  },
+  {
+    "region": "Миколаївська Профспілка",
+    "director": "Ольга Буга",
+    "email": "help@profspilka.org",
+    "phone": "+380934884063"
+  },
+  {
+    "region": "Одеська Профспілка",
+    "director": "Ірина Свідрак",
+    "email": "help@profspilka.org",
+    "phone": "+380972222446"
+  },
+  {
+    "region": "Полтавська Профспілка",
+    "director": "Олексій Кузнецов",
+    "email": "help@profspilka.org",
+    "phone": "+380675119252"
+  },
+  {
+    "region": "Рівненська Профспілка",
+    "director": "Тетяна Момоток",
+    "email": "help@profspilka.org",
+    "phone": "+380671033834"
+  },
+  {
+    "region": "Тернопільська Профспілка",
+    "director": "Лілія Гачок",
+    "email": "help@profspilka.org",
+    "phone": "+380964394853"
+  },
+  {
+    "region": "Харківська Профспілка",
+    "director": "",
+    "email": "help@profspilka.org",
+    "phone": "+380677008125"
+  },
+  {
+    "region": "Херсонська Профспілка",
+    "director": "Тетяна Найдьонова",
+    "email": "help@profspilka.org",
+    "phone": "+380951269129"
+  },
+  {
+    "region": "Хмельницька Профспілка",
+    "director": "Ольга Дацюк",
+    "email": "help@profspilka.org",
+    "phone": "+380972588524"
+  },
+  {
+    "region": "Черкаська Профспілка",
+    "director": "Бабій Оксана",
+    "email": "help@profspilka.org",
+    "phone": "+380675720988"
+  },
+  {
+    "region": "Чернівецька Профспілка",
+    "director": "Оксана Данчук",
+    "email": "help@profspilka.org",
+    "phone": "+380674001876"
+  },
+  {
+    "region": "Чернігівська Профспілка",
+    "director": "Тетяна Дусь",
+    "email": "help@profspilka.org",
+    "phone": "+380675035412"
+  }
+]
