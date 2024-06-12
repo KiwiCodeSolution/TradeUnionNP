@@ -34,10 +34,9 @@ const Map = () => {
     const infoWindowX = boundingRect.left;
     const infoWindowY = boundingRect.top;
 
-    console.log(infoWindowX, infoWindowY);
     setInformation(id);
-    setX(infoWindowX);
-    setY(infoWindowY);
+    setX(infoWindowX - 250);
+    setY(infoWindowY - 200);
     setShowInformation(true);
   };
 

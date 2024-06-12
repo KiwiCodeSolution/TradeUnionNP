@@ -8,7 +8,7 @@ import Button from "@/components/UI/buttons/Buttons";
 const RegionalOfficesList = () => {
   const [filterText, setFilterText] = useState("");
   const [showAll, setShowAll] = useState(false);
-  const initialDisplayCount = 3;
+  const initialDisplayCount = 6;
 
   const handleShowMore = () => {
     setShowAll(true);
