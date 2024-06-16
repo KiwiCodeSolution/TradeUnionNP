@@ -107,3 +107,10 @@ a:hover .arrow-icon {
   transform: matrix(0.96213, -0.2726, 0.2726, 0.96213, -38.51373, 144.35608);
   transition: transform 0.3s ease;
 }
+
+.honors {
+  background-image: url("/images/agreement/cup.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
