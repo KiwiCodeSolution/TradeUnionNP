@@ -1,7 +1,9 @@
+import ProtectionHero from "@/components/sections/protection/ProtectionHero";
+
 export default function ProtectionPage() {
   return (
-    <main className="w-full">
-      <h1>Protection Page</h1>
+    <main className="w-full bg-bgGrey">
+      <ProtectionHero />
     </main>
   );
 }

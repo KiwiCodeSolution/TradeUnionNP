@@ -4,7 +4,7 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import LawImage from "@/images/agreement/icon_law.svg";
 import law from "@/data/law.json";
-import AboutAgreement from "./AboutAgreement";
+import LawItem from "@/components/LawItem";
 
 const Law = () => {
   return (
@@ -18,21 +18,7 @@ const Law = () => {
         </h2>
         <div className="grid rid-grid-cols-1 xl:grid-cols-2 gap-4 z-[1]">
           {law.map(el => (
-            <article
-              className="w-full px-7 py-6 md:p-10 rounded-2xl bg-white flex flex-col gap-y-4"
-              key={el.title}
-            >
-              <div className="w-full flex gap-x-4 items-center">
-                <Image
-                  src={LawImage}
-                  width={42}
-                  height={42}
-                  alt="зображення сувою із написаним текстом"
-                />
-                <p className="text-xl font-bold">{el.title}</p>
-              </div>
-              <p className="w-full text-lg leading-[1.5] text-grey">{el.text}</p>
-            </article>
+            <LawItem key={el.title} item={el} />
           ))}
         </div>
         <div className="absolute h-56 left-0 right-0 bg-gradient-to-b from-bgGrey to-white bottom-0 z-[0]" />
