@@ -74,6 +74,7 @@ const RegionalOffice = ({ item }) => {
             <p className="w-4/5 text-[15px] font-bold">Адреса відправлення Заяв на вступ:</p>
             <ShowButton
               style={isShowAdmissionAddress ? "-rotate-90" : "rotate-90"}
+              btnStyle={"border-[1px] border-red"}
               func={() => setIsShowAdmissionAddress(!isShowAdmissionAddress)}
             />
           </div>
@@ -87,6 +88,7 @@ const RegionalOffice = ({ item }) => {
             </p>
             <ShowButton
               style={isShowApplicationAddress ? "-rotate-90" : "rotate-90"}
+              btnStyle={"border-[1px] border-red"}
               func={() => setIsShowApplicationAddress(!isShowApplicationAddress)}
             />
           </div>
@@ -104,6 +106,7 @@ const RegionalOffice = ({ item }) => {
             </p>
             <ShowButton
               style={isShowCommittee ? "-rotate-90" : "rotate-90"}
+              btnStyle={"border-[1px] border-red"}
               func={() => setIsShowCommittee(!isShowCommittee)}
             />
           </div>

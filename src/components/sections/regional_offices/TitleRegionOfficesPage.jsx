@@ -1,6 +1,6 @@
-import { inter } from "@/app/fonts";
 import BaseSection from "@/components/BaseSection";
 import PathPage from "@/components/PathPage";
+import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 
 const TitleRegionOfficesPage = () => {
@@ -8,11 +8,9 @@ const TitleRegionOfficesPage = () => {
     <BaseSection>
       <Wrapper>
         <PathPage endPath={"Обласні осередки Профспілки"} />
-        <h1
-          className={`${inter.className} text-5xl font-extrabold leading-[1.25] mt-16 text-center`}
-        >
+        <Title tag="h1" styles="text-center mt-16">
           <span className="text-red">Обласні</span> осередки Профспілки
-        </h1>
+        </Title>
       </Wrapper>
     </BaseSection>
   );

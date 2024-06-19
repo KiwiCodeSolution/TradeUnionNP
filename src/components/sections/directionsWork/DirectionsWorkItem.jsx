@@ -2,6 +2,7 @@ import LinkButton from "@/components/UI/buttons/LinkButton";
 import Image from "next/image";
 import Arrow from "@/images/arrow_red.svg";
 import RedDot from "@/components/UI/RedDot";
+import Title from "@/components/Title";
 
 const Text = ({ text, isBold, quantityWords }) => {
   function formatTextWithBoldMarker(text, numberOfWords) {
@@ -45,7 +46,10 @@ const DirectionsWorkItem = ({ item, index }) => {
       </div>
       <div className={`w-1/2 flex flex-col ${index === 0 ? "mt-[127px]" : ""}`}>
         <h3 className="text-sm uppercase">НАПРЯМКИ РОБОТИ</h3>
-        <h2 className="mt-3 mb-5 text-[46px] inter">{item.title}</h2>
+
+        <Title tag="h2" styles="mt-3 mb-5">
+          {item.title}
+        </Title>
 
         <div className="flex flex-col gap-y-2">
           {item.text?.map((el, idx) => (

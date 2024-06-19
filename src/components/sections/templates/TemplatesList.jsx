@@ -1,20 +1,19 @@
-import { inter } from "@/app/fonts";
 import templates from "@/data/templates.json";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import Blank from "./Blank";
 import PathPage from "@/components/PathPage";
+import Title from "@/components/Title";
 
 const TemplatesList = () => {
   return (
     <BaseSection style={"bg-bgGrey"}>
       <Wrapper styles={"flex flex-col"}>
         <PathPage endPath={"Бланки"} />
-        <h2
-          className={`text-[46px] font-semibold mb-8 ${inter.className} text-center leading-[55px]`}
-        >
+
+        <Title tag="h2" styles="text-center mb-8">
           <span className="text-red">Бланки</span> на вступ до <br /> Профспілки
-        </h2>
+        </Title>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {templates.map(el => (
             <Blank key={el.title} item={el} />

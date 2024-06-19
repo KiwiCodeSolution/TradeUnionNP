@@ -7,6 +7,7 @@ import Done from "@/images/agreement/done.svg";
 import HeroImage from "@/images/agreement/hand.svg";
 import BookMark from "@/images/agreement/bookmark-logo.svg";
 import Arrow from "@/images/arrow_white.svg";
+import Title from "@/components/Title";
 
 const HeroAgreementsPage = () => {
   return (
@@ -20,9 +21,10 @@ const HeroAgreementsPage = () => {
             alt="червона закладка із білим логотипом Профспілки Нової пошти"
             className="absolute top-0 right-8 -translate-y-8"
           />
-          <h1 className={`${inter.className} text-5xl font-extrabold leading-[1.25]`}>
+          <Title tag="h1">
             Колективний <span className="text-red">договір</span>
-          </h1>
+          </Title>
+     
           <ul className="w-full grid grid-cols-4 gap-8">
             {agreements.slice(0, 7).map(el => (
               <li key={el} className="text-[15px] flex flex-col gap-y-4 pr-2">

@@ -114,3 +114,16 @@ a:hover .arrow-icon {
   background-repeat: no-repeat;
   background-size: auto;
 }
+
+.arrow {
+  fill: theme("colors.red");
+}
+
+.rounded-button:hover .arrow {
+  fill: white;
+}
+
+.algorithm.swiper-slide {
+  width: 200px;
+  height: 100px;
+}

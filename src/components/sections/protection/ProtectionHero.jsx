@@ -5,6 +5,7 @@ import Image from "next/image";
 import HeroImage from "@/images/protection/protection_hero.svg";
 import Hand from "@/images/protection/protection_hand.svg";
 import { inter } from "@/app/fonts";
+import Title from "@/components/Title";
 
 const ProtectionHero = () => {
   return (
@@ -13,9 +14,10 @@ const ProtectionHero = () => {
         <PathPage endPath={"Захист трудових прав"} />
         <div className="w-full flex">
           <div className="w-2/5 flex flex-col gap-y-4 pt-16">
-            <h1 className={`${inter.className} text-5xl font-extrabold leading-[1.25]`}>
+         
+            <Title tag="h1">
               <span className="text-red">Захист</span> трудових прав
-            </h1>
+            </Title>
             <p className="text-lg">
               <strong>Головне і пріоритетне право Профспілки </strong>— представляти і захищати
               трудові та соціально-економічні права та інтереси профспілчан.

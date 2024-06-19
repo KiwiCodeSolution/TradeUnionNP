@@ -9,6 +9,7 @@ import agr_1 from "@/images/home/agr_1.svg";
 import agr_2 from "@/images/home/agr_2.svg";
 import agr_3 from "@/images/home/agr_3.svg";
 import ParallaxSection from "@/components/UI/parallax/ParallaxSection";
+import Title from "@/components/Title";
 
 const ITEMS = [
   {
@@ -34,9 +35,9 @@ const CollectiveAgreement = () => {
       <Wrapper styles={"pt-12 md:pt-32"}>
         <article className="w-full relative mx-auto flex justify-center z-10 rounded-xl shadow-md bg-white">
           <div className="w-1/2 flex flex-col gap-y-4 py-14 ml-16">
-            <h2 className="text-[46px] font-extrabold leading-[1.2] inter">
+            <Title tag="h2" >
               Колективний <span className="text-red">договір</span>
-            </h2>
+            </Title>
             <p className="text-lg text-grey">
               Положення цього договору поширюються на всіх працівників і є обов’язковими як для
               адміністрації, так і для кожного члена трудового колективу. На період воєнного стану

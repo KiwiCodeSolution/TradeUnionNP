@@ -1,15 +1,16 @@
-import { inter } from "@/app/fonts";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import RegionalOfficesList from "./RegionalOfficesList";
+import Title from "@/components/Title";
 
 const RegionalOffices = () => {
   return (
     <BaseSection>
       <Wrapper styles={"pt-16"}>
-        <h2 className={`text-5xl leading-[1.25] font-extrabold ${inter.className} text-center`}>
+        <Title tag="h1" styles="text-center">
           <span className="text-red">Список голів</span> обласних <br /> осередків
-        </h2>
+        </Title>
+
         <RegionalOfficesList />
       </Wrapper>
     </BaseSection>

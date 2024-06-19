@@ -4,8 +4,8 @@ import Wrapper from "@/components/Wrapper";
 import { useState } from "react";
 import principles from "@/data/principles.json";
 import Image from "next/image";
-import { inter } from "@/app/fonts";
 import RedDot from "@/components/UI/RedDot";
+import Title from "@/components/Title";
 
 const SecondPont = () => {
   return (
@@ -82,9 +82,9 @@ const AgreementsPoints = () => {
   return (
     <BaseSection style={"py-16"}>
       <Wrapper>
-        <h2 className={`${inter.className} text-[46px] font-extrabold leading-[1.2] text-center`}>
+        <Title tag="h2" styles="text-center">
           Колективний <span className="text-red">договір</span>
-        </h2>
+        </Title>
 
         <div className=" h-full flex items-start mt-8">
           <div className="w-1/2 flex flex-col min-h-[960px]">

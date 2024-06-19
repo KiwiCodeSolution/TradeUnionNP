@@ -1,18 +1,20 @@
-import { inter } from "@/app/fonts";
+
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import agreement from "@/data/our_agreement.json";
 import Image from "next/image";
 import Bookmark from "@/images/agreement/bookmark-logo.svg";
 import Danger from "@/images/home/icon_danger.svg";
+import Title from "@/components/Title";
 
 const OurAgreement = () => {
   return (
     <BaseSection style={"pt-32"}>
       <Wrapper>
-        <h2 className={`${inter.className} text-[46px] leading-[1.2] font-extrabold`}>
+    
+        <Title tag="h2" styles="text-center">
           <span className="text-red">Наш</span> колективний договір
-        </h2>
+        </Title>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
           {agreement.map(el => (
             <article

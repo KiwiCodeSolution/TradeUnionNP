@@ -1,21 +1,22 @@
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import ContactForm from "./ContactForm";
-import { inter } from "../../../app/fonts";
 import Image from "next/image";
 import Men from "@/images/feedback.svg";
 import agr_1 from "@/images/home/agr_1.svg";
 import agr_2 from "@/images/home/agr_2.svg";
 import agr_3 from "@/images/home/agr_3.svg";
+import Title from "@/components/Title";
 
 const ContactSection = () => {
   return (
     <BaseSection style={"bg-bgGrey"}>
       <Wrapper styles={"flex items-center justify-between relative"}>
         <div className="w-1/2 flex flex-col">
-          <h2 className={`text-[46px] ${inter.className} leading-[55px] font-extrabold`}>
+          <Title tag="h2">
             <span className="text-red">Бажаєте долучитись</span> до Профспілки?
-          </h2>
+          </Title>
+
           <p className="text-lg text-grey mt-5 mb-8">
             Заповніть{" "}
             <a href="" className="text-red underline underline-offset-1">

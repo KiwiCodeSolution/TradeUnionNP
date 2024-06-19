@@ -1,16 +1,12 @@
-import Image from "next/image";
-import Arrow from "@/images/arrow_red.svg";
+import { Arrow } from "@/components/icons/IconsComponents";
 
-const ShowButton = ({ func, style }) => {
+const ShowButton = ({ func, style, btnStyle }) => {
   return (
-    <button onClick={func}>
-      <Image
-        src={Arrow}
-        width={32}
-        height={32}
-        alt="біла стрілочка на червоному полі"
-        className={style}
-      />
+    <button
+      onClick={func}
+      className={`w-[44px] h-[44px] rounded-full bg-white hover:bg-red rounded-button flex items-center justify-center ${btnStyle}`}
+    >
+      <Arrow className={style} />
     </button>
   );
 };
