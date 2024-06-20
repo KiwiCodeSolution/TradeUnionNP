@@ -127,3 +127,7 @@ a:hover .arrow-icon {
   width: 200px;
   height: 100px;
 }
+
+.box-clock-shadow {
+  box-shadow: 0px 10px 50px 0px #afaeae26;
+}

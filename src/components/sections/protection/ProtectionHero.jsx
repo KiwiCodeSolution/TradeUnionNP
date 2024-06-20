@@ -3,7 +3,7 @@ import PathPage from "@/components/PathPage";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import HeroImage from "@/images/protection/protection_hero.svg";
-import Hand from "@/images/protection/protection_hand.svg";
+import Hand from "@/images/hand.svg";
 import { inter } from "@/app/fonts";
 import Title from "@/components/Title";
 
@@ -14,7 +14,6 @@ const ProtectionHero = () => {
         <PathPage endPath={"Захист трудових прав"} />
         <div className="w-full flex">
           <div className="w-2/5 flex flex-col gap-y-4 pt-16">
-         
             <Title tag="h1">
               <span className="text-red">Захист</span> трудових прав
             </Title>

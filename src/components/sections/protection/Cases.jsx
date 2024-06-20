@@ -8,6 +8,7 @@ const Cases = () => {
       <Wrapper>
         <h3 className="text-sm text-liteGrey uppercase">КЕЙСИ</h3>
         <SlidesSwiper />
+        <div className="absolute h-52 left-0 right-0 bg-gradient-to-t from-white to-bgGrey z-0 bottom-0" />
       </Wrapper>
     </BaseSection>
   );

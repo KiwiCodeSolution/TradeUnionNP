@@ -4,31 +4,31 @@ import BaseSection from "@/components/BaseSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import Wrapper from "@/components/Wrapper";
+import Title from "@/components/Title";
 
 const STEPS = [
   {
-    title: "1 крок",
+    title: "1 день",
     text: "Приймаємо ваше звернення (Facebook, телефонна розмова, Viber, запит до Голови ППО, електронна пошта тощо",
   },
   {
-    title: "2 крок",
+    title: "1 день",
     text: "Звіряємо ваше членство у ВПСП ТОВ “Нова Пошта”",
   },
   {
-    title: "3 крок",
+    title: "2-3 день",
     text: "Створюємо алгоритм для вирішення, консультуємося з Головою ППО",
   },
   {
-    title: "4 крок",
+    title: "5-7 день",
     text: "Створення відповідного листа (звернення/ запиту/подання) на керівництво",
   },
   {
-    title: "5 крок",
+    title: "до 7 день",
     text: "Відповідь вам на пошту, що запит в опрацюванні та термін на відповідь",
   },
   {
-    title: "6 крок",
+    title: "7 день",
     text: "Закриття звернення, яке не потребує додаткових запитів",
   },
 ];
@@ -37,20 +37,39 @@ const INVISIBLE = [1, 2, 3, 4, 5, 6, 7];
 
 const Algorithm = () => {
   return (
-    <BaseSection>
-      <div className="border-dashed border-4 border-bgBlack w-screen border-opacity-20 absolute top-3 left-0" />
+    <BaseSection style={"pt-10 bg-white"}>
+      <div className="border-dashed border-4 border-bgBlack w-screen border-opacity-20 absolute top-[290px] left-0" />
+      <Title tag={"h2"} styles={"text-center"}>
+        Алгоритм та{" "}
+        <span className="text-red">
+          хронологія <br />
+          опрацювання
+        </span>{" "}
+        звернень
+      </Title>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        slidesPerView={5}
+        slidesPerView={6}
+        spaceBetween={100}
         touchMoveStopPropagation={false}
         resistanceRatio={0}
         touchStartPreventDefault={false}
-        style={{ touchAction: "pan-y", paddingLeft: "300px" }}
+        style={{ touchAction: "pan-y", paddingLeft: "430px", paddingTop: "80px" }}
         className
       >
-        {STEPS.map(el => (
-          <SwiperSlide key={el.title} className="border border-red">
-            <div className="cursor-grab bg-lime-400">{el.text}</div>
+        {STEPS.map((el, index) => (
+          <SwiperSlide key={el.title} className="pt-10 mx-auto">
+            <div className="cursor-grab w-64 h-fit relative overflow-visible mx-auto">
+              <div className="w-full flex flex-col items-center relative">
+                <div className="rotate-45 w-16 h-16 bg-red rounded-md absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 transform z-[2]" />
+
+                <p className="text-white text-[15px] font-bold z-[5]">{index + 1}</p>
+                <p className="text-white text-[15px] font-bold z-[5]">крок</p>
+              </div>
+              <div className="bg-red w-0.5 h-16 mx-auto" />
+              <p className="text-xl font-bold text-center">{el.title}</p>
+              <p className="text-lg text-grey text-center">{el.text}</p>
+            </div>
           </SwiperSlide>
         ))}
         {INVISIBLE.map(el => (
