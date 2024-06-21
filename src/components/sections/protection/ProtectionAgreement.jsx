@@ -1,7 +1,7 @@
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
-import Agreement from "@/images/protection/protection_agreement.svg";
+import Agreement from "@/images/agreement.svg";
 import Arrow from "@/images/arrow_white.svg";
 import Title from "@/components/Title";
 

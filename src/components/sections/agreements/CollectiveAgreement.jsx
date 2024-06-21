@@ -35,7 +35,7 @@ const CollectiveAgreement = () => {
       <Wrapper styles={"pt-12 md:pt-32"}>
         <article className="w-full relative mx-auto flex justify-center z-10 rounded-xl shadow-md bg-white">
           <div className="w-1/2 flex flex-col gap-y-4 py-14 ml-16">
-            <Title tag="h2" >
+            <Title tag="h2">
               Колективний <span className="text-red">договір</span>
             </Title>
             <p className="text-lg text-grey">
@@ -43,15 +43,8 @@ const CollectiveAgreement = () => {
               адміністрації, так і для кожного члена трудового колективу. На період воєнного стану
               деякі положення призупинені роботодавцем.
             </p>
-            <LinkButton view="red" style={"mt-5"} goTo={"/files/koldogovor.pdf"}>
+            <LinkButton view="red" style={"mt-5"} goTo={"/files/koldogovor.pdf"} icon>
               Переглянути
-              <Image
-                src={Arrow}
-                width={30}
-                height={30}
-                alt="зображення червоної іконки-стрілочки вправо на білому фоні"
-                className="arrow-icon"
-              />
             </LinkButton>
           </div>
           <ImagesAgreement />

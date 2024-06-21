@@ -40,15 +40,8 @@ const HeroFinancialAidPage = () => {
               </strong>{" "}
               та щомісячно сплачують членські внески.
             </p>
-            <LinkButton view="red" style={"mt-9 mb-16"} goTo={"#documents"} goToPage>
+            <LinkButton view="red" style={"mt-9 mb-16"} goTo={"#documents"} goToPage icon>
               долучитися{" "}
-              <Image
-                src={Arrow}
-                width={30}
-                height={30}
-                alt="зображення червоної іконки-стрілочки вправо на білому фоні"
-                className="arrow-icon"
-              />
             </LinkButton>
           </div>
           <div className="w-3/5 flex flex-col">

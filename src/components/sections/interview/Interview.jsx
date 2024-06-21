@@ -3,7 +3,6 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import Avatar from "@/images/home/avatar.svg";
 import Quote from "@/images/lapky.svg";
-import RedBtn from "@/images/arrow_red.svg";
 import { inter } from "../../../app/fonts";
 import LinkButton from "@/components/UI/buttons/LinkButton";
 
@@ -41,15 +40,9 @@ const Interview = () => {
               style="uppercase mt-6 w-fit gap-x-2 hover:underline hover:underline-offset-4"
               goTo={"#"}
               goToPage
+              icon
             >
               ІНТЕРВ'Ю ЦІЛКОМ
-              <Image
-                src={RedBtn}
-                width={30}
-                height={30}
-                alt="зображення білої іконки-стрілочки вправо на червоному фоні"
-                className="arrow-icon"
-              />
             </LinkButton>
           </article>
         </div>

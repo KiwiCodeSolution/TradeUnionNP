@@ -39,7 +39,11 @@ const DocumentsList = () => {
               >
                 Переглянути документи <span> &gt;</span>
               </button>
-              <a href="" className="text-lg text-red hover:underline hover:underline-offset-2">
+              <a
+                href={el.file}
+                target="_blank"
+                className="text-lg text-red hover:underline hover:underline-offset-2"
+              >
                 Завантажити заяву <span> &gt;</span>
               </a>
             </div>
