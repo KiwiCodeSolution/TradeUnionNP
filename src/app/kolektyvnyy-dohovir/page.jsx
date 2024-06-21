@@ -5,11 +5,12 @@ import Law from "@/components/sections/agreements/Law";
 import OurAgreement from "@/components/sections/agreements/OurAgreement";
 import TitleAgreementsPage from "@/components/sections/agreements/TitleAgreementsPage";
 import AgreementsBlogSection from "@/components/sections/blog/AgreementsBlogSection";
-import HeroAgreementsPage from "@/components/sections/hero/HeroAgreementsPage";import law from "@/data/law.json";
+import HeroAgreementsPage from "@/components/sections/hero/HeroAgreementsPage";
+import law from "@/data/law.json";
 
 export default function CollectiveAgreementPage() {
   return (
-    <main className="w-full bg-bgGrey">
+    <main className="w-full min-h-screen bg-bgGrey">
       <TitleAgreementsPage />
       <HeroAgreementsPage />
       <AgreementsPoints />

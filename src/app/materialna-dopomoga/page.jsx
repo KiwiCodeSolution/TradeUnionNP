@@ -8,7 +8,7 @@ import Template from "@/components/sections/financialAid/Template";
 
 export default function FinancialAidPage() {
   return (
-    <main className="w-full">
+    <main className="w-full min-h-screen">
       <HeroFinancialAidPage />
       <Graph />
       <Conditions />

@@ -131,3 +131,7 @@ a:hover .arrow-icon {
 .box-clock-shadow {
   box-shadow: 0px 10px 50px 0px #afaeae26;
 }
+
+.project-swiper .swiper-wrapper {
+  padding: 16px 0;
+}

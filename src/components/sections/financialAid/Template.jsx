@@ -1,6 +1,6 @@
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
-import RedDot from "@/components/UI/RedDot";
+import ListItem from "@/components/UI/items/ListItem";
 import Wrapper from "@/components/Wrapper";
 
 const POINTS = [
@@ -34,10 +34,7 @@ const Template = () => {
         "
         >
           {POINTS.map(el => (
-            <li className="w-full text-lg text-grey flex gap-x-5 items-center" key={el}>
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px)]">{el}</p>
-            </li>
+            <ListItem item={el} gap={5} key={el} />
           ))}
         </ul>
       </Wrapper>

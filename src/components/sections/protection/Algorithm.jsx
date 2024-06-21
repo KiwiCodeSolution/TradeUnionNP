@@ -59,7 +59,7 @@ const Algorithm = () => {
       >
         {STEPS.map((el, index) => (
           <SwiperSlide key={el.title} className="pt-10 mx-auto">
-            <div className="cursor-grab w-64 h-fit relative overflow-visible mx-auto">
+            <article className="cursor-grab w-64 h-fit relative overflow-visible mx-auto">
               <div className="w-full flex flex-col items-center relative">
                 <div className="rotate-45 w-16 h-16 bg-red rounded-md absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 transform z-[2]" />
 
@@ -69,7 +69,7 @@ const Algorithm = () => {
               <div className="bg-red w-0.5 h-16 mx-auto" />
               <p className="text-xl font-bold text-center">{el.title}</p>
               <p className="text-lg text-grey text-center">{el.text}</p>
-            </div>
+            </article>
           </SwiperSlide>
         ))}
         {INVISIBLE.map(el => (

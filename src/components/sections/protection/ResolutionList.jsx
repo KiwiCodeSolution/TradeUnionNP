@@ -1,7 +1,8 @@
-import RedDot from "@/components/UI/RedDot";
+
 import Image from "next/image";
 import Clock from "@/images/clock.svg";
 import Clock_1 from "@/images/clock1.svg";
+import ListItem from "@/components/UI/items/ListItem";
 
 const FIRST_LIST = [
   "Розшифрування заробітної плати",
@@ -36,10 +37,7 @@ const ResolutionList = () => {
         </h3>
         <ul className="w-full flex flex-col gap-y-5">
           {FIRST_LIST.map(el => (
-            <li key={el} className="w-full flex gap-x-4 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-16px)] text-lg text-grey">{el}</p>
-            </li>
+            <ListItem item={el} gap={4} key={el} />
           ))}
         </ul>
         <Image
@@ -55,10 +53,7 @@ const ResolutionList = () => {
         </h3>
         <ul className="w-full flex flex-col gap-y-5">
           {SECOND_LIST.map(el => (
-            <li key={el} className="w-full flex gap-x-4 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-16px)] text-lg text-grey">{el}</p>
-            </li>
+            <ListItem item={el} gap={4} key={el} />
           ))}
         </ul>
         <Image

@@ -1,9 +1,9 @@
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
-import RedDot from "@/components/UI/RedDot";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import ImageSection from "@/images/protection/protection_appeal.svg";
+import ListItem from "@/components/UI/items/ListItem";
 
 const APPEALS = [
   "Матеріальна відповідальність",
@@ -25,10 +25,7 @@ const Appeals = () => {
         </Title>
         <ul className="w-1/2 flex flex-col gap-y-5 mt-5 ml-16">
           {APPEALS.map((el, index) => (
-            <li key={index + 47} className="w-full flex items-center gap-5">
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px]) text-lg text-grey">{el}</p>
-            </li>
+            <ListItem item={el} gap={5} key={index + 47} />
           ))}
         </ul>
         <Image

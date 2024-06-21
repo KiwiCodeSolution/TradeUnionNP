@@ -1,5 +1,5 @@
 import BaseSection from "@/components/BaseSection";
-import RedDot from "@/components/UI/RedDot";
+import ListItem from "@/components/UI/items/ListItem";
 import Wrapper from "@/components/Wrapper";
 
 const Container = ({ children }) => {
@@ -33,24 +33,18 @@ const AllAboutCompany = () => {
             Основні <span className="text-red">засади</span>
           </h3>
           <ul className="flex flex-col gap-y-5">
-            <li className="w-full text-lg text-grey flex gap-x-5 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px)]">
-                Здійснення представництва та захист прав і інтересів членів Профспілки.
-              </p>
-            </li>
-            <li className="w-full text-lg text-grey flex gap-x-5 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px)]">
-                Досягнення високих стандартів умов праці у групі компаній «NOVA».
-              </p>
-            </li>
-            <li className="w-full text-lg text-grey flex gap-x-5 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px)]">
-                Підвищення рівня культури та різноманіття дозвілля працівників.
-              </p>
-            </li>
+            <ListItem
+              item={"Здійснення представництва та захист прав і інтересів членів Профспілки."}
+              gap={5}
+            />
+            <ListItem
+              item={"Досягнення високих стандартів умов праці у групі компаній «NOVA»."}
+              gap={5}
+            />
+            <ListItem
+              item={"Підвищення рівня культури та різноманіття дозвілля працівників."}
+              gap={5}
+            />
           </ul>
         </Container>
 
@@ -59,24 +53,14 @@ const AllAboutCompany = () => {
             <span className="text-red">Принципи </span>Профспілки
           </h3>
           <ul className="flex flex-col gap-y-5">
-            <li className="w-full text-lg text-grey flex gap-x-5 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px)]">
-                Член Профспілки — головна цінність Профспілки.
-              </p>
-            </li>
-            <li className="w-full text-lg text-grey flex gap-x-5 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px)]">Прозорість діяльності.</p>
-            </li>
-            <li className="w-full text-lg text-grey flex gap-x-5 items-center">
-              <RedDot />
-              <p className="w-[calc(100%-9px-20px)]">
-                Активна життєва позиція – розвиток членів Профспілки в напрямку культурного
-                дозвілля, спорту, можливості позитивно змінювати компанію та своє оточення,
-                досягнення високих професійних та особистих результатів.
-              </p>
-            </li>
+            <ListItem item={"Член Профспілки — головна цінність Профспілки."} gap={5} />
+            <ListItem item={"Прозорість діяльності."} gap={5} />
+            <ListItem
+              item={
+                "Активна життєва позиція – розвиток членів Профспілки в напрямку культурного дозвілля, спорту, можливості позитивно змінювати компанію та своє оточення, досягнення високих професійних та особистих результатів."
+              }
+              gap={5}
+            />
           </ul>
         </Container>
       </Wrapper>

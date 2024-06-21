@@ -3,11 +3,10 @@ import PathPage from "@/components/PathPage";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
-import Arrow from "@/images/arrow_white.svg";
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import HeroImages from "@/images/aid/dop-top.svg";
 import CountAid from "./CountAid";
-import RedDot from "@/components/UI/RedDot";
+import ListItem from "@/components/UI/items/ListItem";
 
 const ITEMS = [
   "На одруження",
@@ -56,10 +55,7 @@ const HeroFinancialAidPage = () => {
               <div className="border-dotted border-b-8 border-bgBlack w-3/4 border-opacity-20 mx-auto" />
               <ul className="w-4/5 flex flex-col gap-y-4 mx-auto mt-8">
                 {ITEMS.map(el => (
-                  <li className="w-full text-lg text-grey flex gap-x-5 items-center" key={el}>
-                    <RedDot />
-                    <p className="w-[calc(100%-9px-20px)]">{el}</p>
-                  </li>
+                  <ListItem item={el} gap={5} key={el} />
                 ))}
               </ul>
             </div>

@@ -6,7 +6,7 @@ import HeroAboutPage from "@/components/sections/hero/HeroAboutPage";
 
 export default function AboutUsPage() {
   return (
-    <main className="w-full">
+    <main className="w-full min-h-screen">
       <HeroAboutPage />
       <AllAboutCompany />
       <StatutoryDocuments />

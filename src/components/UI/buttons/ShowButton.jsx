@@ -4,7 +4,7 @@ const ShowButton = ({ func, style, btnStyle }) => {
   return (
     <button
       onClick={func}
-      className={`w-[44px] h-[44px] rounded-full bg-white hover:bg-red rounded-button flex items-center justify-center ${btnStyle}`}
+      className={`w-[44px] h-[44px] rounded-full bg-white hover:bg-red rounded-button flex items-center justify-center cursor-pointer ${btnStyle}`}
     >
       <Arrow className={style} />
     </button>

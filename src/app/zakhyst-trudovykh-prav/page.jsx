@@ -13,7 +13,7 @@ import data from "@/data/law_protect.json";
 
 export default function ProtectionPage() {
   return (
-    <main className="w-full bg-bgGrey">
+    <main className="w-full min-h-screen bg-bgGrey">
       <ProtectionHero />
       <Law data={data}>«Про професійні спілки, їх права та гарантії діяльності»</Law>
       <ProtectionAgreement />

@@ -5,7 +5,7 @@ import TitleContactsPage from "@/components/sections/contacts/TitleContactsPage"
 
 export default function ContactsPage() {
   return (
-    <main className="w-full bg-bgGrey">
+    <main className="w-full min-h-screen bg-bgGrey">
       <TitleContactsPage />
       <Map />
       <Management />

@@ -4,7 +4,7 @@ import TemplatesList from "@/components/sections/templates/TemplatesList";
 
 export default function BlanksPage() {
   return (
-    <main className="w-full">
+    <main className="w-full min-h-screen">
       <TemplatesList />
       <StatementsList />
       <ContactSection />

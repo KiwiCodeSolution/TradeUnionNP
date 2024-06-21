@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ArrowNext from "@/images/about/arrow_history.svg";
-import RedDot from "@/components/UI/RedDot";
 import Appeal from "@/images/about/appeal.svg";
+import ListItem from "@/components/UI/items/ListItem";
 
 const HistoryItem = ({ item, last }) => {
   return (
@@ -18,10 +18,7 @@ const HistoryItem = ({ item, last }) => {
           </li>
         )}
         {item.events.map((el, index) => (
-          <li className="flex gap-x-3 w-full items-center" key={index + 10}>
-            <RedDot />
-            <p className="w-[calc(100%-9px-12px)] text-lg">{el}</p>
-          </li>
+          <ListItem item={el} gap={3} key={index + 10} />
         ))}
       </ul>
       {!last && (

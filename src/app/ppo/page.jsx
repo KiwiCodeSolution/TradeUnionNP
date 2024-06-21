@@ -3,7 +3,7 @@ import TitleRegionOfficesPage from "@/components/sections/regional_offices/Title
 
 export default function RegionalCellsPage() {
   return (
-    <main className="w-full bg-bgGrey">
+    <main className="w-full min-h-screen bg-bgGrey">
       <TitleRegionOfficesPage />
       <RegionalOffices />
     </main>

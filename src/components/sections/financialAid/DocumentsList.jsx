@@ -4,7 +4,7 @@ import Bookmark from "@/images/bookmark.svg";
 import { useState } from "react";
 import Modal from "@/components/UI/modal/Modal";
 import docs from "@/data/aid_documents.json";
-import RedDot from "@/components/UI/RedDot";
+import ListItem from "@/components/UI/items/ListItem";
 
 const DocumentsList = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -54,10 +54,7 @@ const DocumentsList = () => {
         <Modal onClose={() => setIsOpenModal(false)} isOpen={isOpenModal}>
           <ul className="flex flex-col gap-y-3 p-8">
             {currentDocument.points.map(el => (
-              <li className="w-full text-lg text-grey flex gap-x-5 items-center" key={el}>
-                <RedDot />
-                <p className="w-[calc(100%-9px-20px)]">{el}</p>
-              </li>
+              <ListItem item={el} gap={5} key={el} />
             ))}
           </ul>
         </Modal>

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "подарунків на всеукраїнські свята",
+    "quantity": ">175 000",
+    "image": "/images/recreations/activity_1.svg"
+  },
+  {
+    "title": "національні чемпіонатів з міні-футболу",
+    "quantity": "5",
+    "image": "/images/recreations/activity_2.svg"
+  },
+  {
+    "title": "регіональних чемпіонатів з міні-футболу",
+    "quantity": "10",
+    "image": "/images/recreations/activity_3.svg"
+  },
+  {
+    "title": "національні турніри з кіберспорту",
+    "quantity": "5",
+    "image": "/images/recreations/activity_4.svg"
+  },
+  {
+    "title": "національні чемпіонати з настільного тенісу",
+    "quantity": "2",
+    "image": "/images/recreations/activity_5.svg"
+  },
+  {
+    "title": "національні чемпіонати з боулінгу",
+    "quantity": "2",
+    "image": "/images/recreations/activity_6.svg"
+  }
+]
