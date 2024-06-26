@@ -1,10 +1,12 @@
 import BaseSection from "@/components/BaseSection";
 import ListItem from "@/components/UI/items/ListItem";
 import Wrapper from "@/components/Wrapper";
+import Image from "next/image";
+import Logo from "@/images/logo-sm.svg";
 
 const Container = ({ children }) => {
   return (
-    <div className="xs:w-1/2 flex flex-col gap-4 bg-white rounded-2xl px-7 py-6 md:p-10 box-shadow">
+    <div className="xs:w-1/2 flex flex-col gap-4 bg-white rounded-2xl px-7 py-6 md:p-10 box-shadow relative">
       {children}
     </div>
   );
@@ -62,6 +64,13 @@ const AllAboutCompany = () => {
               gap={5}
             />
           </ul>
+          <Image
+            src={Logo}
+            width={164}
+            height={165}
+            alt="Логотип компанії"
+            className="absolute -top-[64px] -left-[91px] z-[2]"
+          />
         </Container>
       </Wrapper>
     </BaseSection>

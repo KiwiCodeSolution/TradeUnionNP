@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Clock from "@/images/clock.svg";
 import Clock_1 from "@/images/clock1.svg";
@@ -32,7 +31,7 @@ const ResolutionList = () => {
   return (
     <div className="w-full flex gap-x-12 z-[5]">
       <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full md:w-1/2 flex flex-col gap-4 relative">
-        <h3 className="text-2xl font-bold mb-5">
+        <h3 className="text-2xl font-bold mb-5 leading-[1.4]">
           Звернення, які вирішуються <br /> <span className="text-red">до 7 днів</span>
         </h3>
         <ul className="w-full flex flex-col gap-y-5">
@@ -45,6 +44,8 @@ const ResolutionList = () => {
           width={213}
           height={204}
           className="h-1/2 sm:h-1/3 opacity-10 absolute right-5 bottom-7"
+          style={{ width: "auto", height: "auto" }}
+          alt="зображення годинника"
         />
       </div>
       <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full md:w-1/2 flex flex-col gap-4 relative">
@@ -61,6 +62,8 @@ const ResolutionList = () => {
           width={144}
           height={204}
           className="h-1/2 sm:h-1/3 opacity-10 absolute right-5 bottom-7"
+          style={{ width: "auto", height: "auto" }}
+          alt="зображення годинника"
         />
       </div>
     </div>

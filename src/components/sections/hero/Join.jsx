@@ -5,6 +5,7 @@ import Modal from "@/components/UI/modal/Modal";
 import Arrow from "@/images/arrow_white.svg";
 import Image from "next/image";
 import { useState } from "react";
+import ContactForm from "../contactForm/ContactForm";
 
 const Join = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -21,7 +22,10 @@ const Join = () => {
         />
       </Button>
       <Modal onClose={() => setIsOpenModal(false)} isOpen={isOpenModal}>
-        <>Залиште Ваш номер телефону ми з Вами з'яжемося! </>
+        <div className="w-2/5 h-2/5 rounded-2xl bg-bgGrey p-6 flex flex-col gap-y-4">
+          <h3>Залиште свої дані і ми зв'яжемося з вами!</h3>
+          <ContactForm />
+        </div>
       </Modal>
     </>
   );

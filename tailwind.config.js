@@ -52,7 +52,7 @@ module.exports = {
         redButton: "0px 10px 40px 0px rgba(237,28,36,0.3)",
         upButton: "0px 0px 10px 3px rgba(237,28,36,0.3)",
         redButtonHover: "0px 10px 40px 0px rgba(237,28,36,0.6)",
-        historyItem: "0px 10px 50px 0px rgba(174,174,174,0.15)",
+        standardShadow: "0px 10px 50px 0px rgba(174,174,174,0.15)",
         itemShadow: "0px 1px 12px 0px rgba(34,34,34,0.15);",
       },
       dropShadow: {

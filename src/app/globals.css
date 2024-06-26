@@ -135,3 +135,7 @@ a:hover .arrow-icon {
 .project-swiper .swiper-wrapper {
   padding: 16px 0;
 }
+
+.faq li {
+  list-style: decimal;
+}
