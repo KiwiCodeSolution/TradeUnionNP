@@ -1,4 +1,8 @@
 "use client";
+import ArrowRed from "@/images/arrow_red.svg";
+import ArrowWhite from "@/images/arrow_white.svg";
+
+import Image from "next/image";
 
 const buttonsStyle = {
   transparent:
@@ -22,7 +26,15 @@ const Button = ({ children, view, btnType, icon, clickFn, style, disabled, ...re
       disabled={disabled}
     >
       {children}
-      {icon}
+      {icon && (
+        <Image
+          src={view === "transparent" ? ArrowRed : ArrowWhite}
+          width={30}
+          height={30}
+          alt="зображення червоної іконки-стрілочки вправо на білому фоні"
+          className="arrow-icon"
+        />
+      )}
     </button>
   );
 };

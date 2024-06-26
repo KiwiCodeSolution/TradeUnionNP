@@ -3,9 +3,9 @@ import ArrowNext from "@/images/about/arrow_history.svg";
 import Appeal from "@/images/about/appeal.svg";
 import ListItem from "@/components/UI/items/ListItem";
 
-const HistoryItem = ({ item, last }) => {
+const standardShadow = ({ item, last }) => {
   return (
-    <li className="w-9/12 h-fit p-8 md:p-12 flex items-center gap-4 md:gap-24 rounded-3xl bg-white shadow-historyItem relative mx-auto">
+    <li className="w-9/12 h-fit p-8 md:p-12 flex items-center gap-4 md:gap-24 rounded-3xl bg-white shadow-standardShadow relative mx-auto">
       <p className="w-3/12 text-2xl text-red font-bold text-center">{item.year} рік</p>
       <ul className="w-9/12 flex flex-col gap-y-4">
         {item.appeal && (
@@ -34,4 +34,4 @@ const HistoryItem = ({ item, last }) => {
   );
 };
 
-export default HistoryItem;
+export default standardShadow;

@@ -21,7 +21,7 @@ export default function ProtectionPage() {
       <Appeals />
       <Cases />
       <Algorithm />
-      <ResolutionPeriod />
+      <ResolutionPeriod gradient />
       <ContactSection />
       <AgreementsBlogSection />
     </main>

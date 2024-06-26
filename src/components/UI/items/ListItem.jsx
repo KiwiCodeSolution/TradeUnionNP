@@ -1,10 +1,19 @@
 import RedDot from "../RedDot";
 
-const ListItem = ({ item, gap }) => {
+const ListItem = ({ item, gap, elements }) => {
   return (
-    <li className={`w-full text-lg text-grey flex gap-x-${gap} items-center`}>
-      <RedDot />
-      <p className={`w-[calc(100%-9px-${gap * 4}px)]`}>{item}</p>
+    <li className={`w-full text-lg text-grey flex flex-col`}>
+      <div className={`w-full flex gap-x-${gap} items-center`}>
+        <RedDot />
+        <p className={`w-[90%]`}>{item}</p>
+      </div>
+      {elements && (
+        <ul className="list-decimal pl-12 mt-5">
+          {elements.map(el => (
+            <li key={el}>{el}</li>
+          ))}
+        </ul>
+      )}
     </li>
   );
 };
