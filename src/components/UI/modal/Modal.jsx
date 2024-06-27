@@ -1,3 +1,4 @@
+import { Cross } from "@/components/icons/IconsComponents";
 import useScrollBlock from "@/hooks/useScrollBlock";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -51,8 +52,11 @@ const Modal = ({ children, isOpen, onClose }) => {
         onClick={handleOverlayClick}
       >
         <div className="flex flex-col min-w-[200px] max-w-[600px] bg-white rounded-2xl mx-auto relative">
-          <button onClick={closeModal} className="absolute top-4 right-4">
-            X
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red"
+          >
+            <Cross />
           </button>
           {children}
         </div>

@@ -1,10 +1,7 @@
 import Wrapper from "@/components/Wrapper";
 import BaseSection from "@/components/BaseSection";
-import Image from "next/image";
-import Arrow from "@/images/arrow_white.svg";
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import ImagesAgreement from "./ImagesAgreement";
-
 import agr_1 from "@/images/home/agr_1.svg";
 import agr_2 from "@/images/home/agr_2.svg";
 import agr_3 from "@/images/home/agr_3.svg";

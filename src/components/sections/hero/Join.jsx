@@ -9,9 +9,16 @@ import ContactForm from "../contactForm/ContactForm";
 
 const Join = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenConfirmModal, setIsOpenConfirmModal] = useState(false);
+
+  const handleFormSubmit = () => {
+    setIsOpenModal(false);
+    setIsOpenConfirmModal(true);
+  };
+
   return (
     <>
-      <Button view="red" clickFn={() => setIsOpenModal(true)} style={"mt-9 mb-16"}>
+      <Button view="red" clickFn={() => setIsOpenModal(true)} style={"mt-9 mb-16 "}>
         долучитися{" "}
         <Image
           src={Arrow}
@@ -22,9 +29,22 @@ const Join = () => {
         />
       </Button>
       <Modal onClose={() => setIsOpenModal(false)} isOpen={isOpenModal}>
-        <div className="w-2/5 h-2/5 rounded-2xl bg-bgGrey p-6 flex flex-col gap-y-4">
-          <h3>Залиште свої дані і ми зв'яжемося з вами!</h3>
-          <ContactForm />
+        <div className="rounded-2xl bg-bgGrey p-8 flex flex-col gap-y-6">
+          <h3 className="text-2xl font-bold text-center">
+            Залиште <span className="text-red">свої дані</span> <br />і ми зв'яжемося з вами!
+          </h3>
+          <ContactForm onFormSubmit={handleFormSubmit} section="modal" />
+        </div>
+      </Modal>
+      <Modal onClose={() => setIsOpenConfirmModal(false)} isOpen={isOpenConfirmModal}>
+        <div className="rounded-2xl w-full h-full p-10 flex flex-col items-center gap-y-10 bg-bgGrey">
+          <h3 className="text-2xl font-bold text-center">
+            Ваш запит <span className="text-red">надіслано</span>!
+          </h3>
+          <h3 className="text-[22px] font-bold text-center">
+            <span className="text-red">Наш представник</span> зв'яжеться
+            <br /> з Вами найближчим часом!
+          </h3>
         </div>
       </Modal>
     </>

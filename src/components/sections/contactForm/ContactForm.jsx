@@ -6,10 +6,9 @@ import Flag from "@/images/flag.svg";
 import { regions } from "@/constants/regions";
 import Button from "@/components/UI/buttons/Buttons";
 
-const ContactForm = () => {
+const ContactForm = ({ onFormSubmit, section }) => {
   const [phone, setPhone] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
 
   const handlePhoneChange = e => {
@@ -20,11 +19,11 @@ const ContactForm = () => {
     setSelectedOption(e.target.value);
   };
 
-  function resetForm() {
+  const resetForm = () => {
     setFormError("");
     setSelectedOption("");
     setPhone("");
-  }
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -35,10 +34,16 @@ const ContactForm = () => {
 
     if (isPhoneValid && selectedOption) {
       console.log("Selected Option:", selectedOption, "Phone:", phone);
-      setIsFormSubmitted(true);
+      setFormError("");
+
+      // Скидання форми
       resetForm();
+
+      // Відправка даних та виклик колбека
+      if (onFormSubmit) {
+        onFormSubmit();
+      }
     } else {
-      setIsFormSubmitted(false);
       if (!isPhoneValid && !selectedOption) {
         setFormError("Будь ласка, заповніть всі поля");
       } else if (!isPhoneValid) {
@@ -84,7 +89,9 @@ const ContactForm = () => {
         onChange={handleSelectChange}
         placeholder="Введіть регіон або оберіть зі списку"
         list="regions-list"
-        className="text-[15px] w-4/5 rounded-full h-14 py-4 px-5 focus:outline-none focus:shadow-none relative"
+        className={`text-[15px] ${
+          section === "modal" ? "w-full" : "w-4/5"
+        } rounded-full h-14 py-4 px-5 focus:outline-none focus:shadow-none relative`}
       />
       <datalist id="regions-list">
         {regions.map((region, index) => (
@@ -92,7 +99,7 @@ const ContactForm = () => {
         ))}
       </datalist>
 
-      <Button view={"red"} btnType="submit" style="" icon>
+      <Button view={"red"} btnType="submit" style={section === "modal" ? "mx-auto mt-5" : ""} icon>
         Надіслати
       </Button>
       {formError && <p className="text-red absolute -bottom-1 left-1 italic">{formError}</p>}

@@ -139,3 +139,13 @@ a:hover .arrow-icon {
 .faq li {
   list-style: decimal;
 }
+
+.cross {
+  fill: theme("colors.red");
+  transition: transform 0.3s ease;
+}
+
+.cross-button:hover .cross {
+  fill: white;
+  transform: rotate(90deg);
+}

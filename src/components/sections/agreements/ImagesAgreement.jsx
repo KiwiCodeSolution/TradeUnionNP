@@ -7,8 +7,8 @@ import Hand from "@/images/home/icon_hand.svg";
 import Text from "@/images/home/icon_text.svg";
 
 const textAnimation = {
-  hidden: { opacity: 0, x: -70 },
-  visible: { opacity: 1, x: 0, transition: { delay: 1, duration: 1 } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { delay: 1.2, duration: 2 } },
 };
 
 const handAnimation = {
