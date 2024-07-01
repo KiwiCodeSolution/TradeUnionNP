@@ -149,3 +149,18 @@ a:hover .arrow-icon {
   fill: white;
   transform: rotate(90deg);
 }
+
+.blanc,
+.heart {
+  fill: theme("colors.red");
+}
+
+article:hover .blanc,
+article:hover .heart {
+  fill: white;
+}
+
+article:hover .i-trade-link,
+article:hover .i-trade-text {
+  color: white;
+}
