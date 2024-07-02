@@ -7,7 +7,7 @@ export default function BlanksPage() {
     <main className="w-full min-h-screen">
       <TemplatesList />
       <StatementsList />
-      <ContactSection />
+      <ContactSection bgStyle={"bg-bgGrey"} />
     </main>
   );
 }

@@ -6,7 +6,7 @@ import Flag from "@/images/flag.svg";
 import { regions } from "@/constants/regions";
 import Button from "@/components/UI/buttons/Buttons";
 
-const ContactForm = ({ onFormSubmit, section }) => {
+const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
   const [phone, setPhone] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [formError, setFormError] = useState("");
@@ -69,7 +69,9 @@ const ContactForm = ({ onFormSubmit, section }) => {
                 {...inputProps}
                 type="text"
                 placeholder="+38 (___) ___-__-__"
-                className="py-5 pl-[70px] pr-5 text-lg w-full sm:w-96 border-0 focus:outline-none focus:shadow-none rounded-full h-14 bg-[#f9f0da]"
+                className={`py-5 pl-[70px] pr-5 text-lg w-4/5 border-0 focus:outline-none focus:shadow-none rounded-full h-14  ${
+                  inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
+                }`}
               />
               <Image
                 src={Flag}
@@ -89,8 +91,8 @@ const ContactForm = ({ onFormSubmit, section }) => {
         onChange={handleSelectChange}
         placeholder="Введіть регіон або оберіть зі списку"
         list="regions-list"
-        className={`text-[15px] ${
-          section === "modal" ? "w-full" : "w-4/5"
+        className={`text-[15px] ${section === "modal" ? "w-full" : "w-4/5"} ${
+          inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
         } rounded-full h-14 py-4 px-5 focus:outline-none focus:shadow-none relative`}
       />
       <datalist id="regions-list">

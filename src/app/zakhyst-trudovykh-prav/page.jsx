@@ -22,7 +22,7 @@ export default function ProtectionPage() {
       <Cases />
       <Algorithm />
       <ResolutionPeriod gradient />
-      <ContactSection />
+      <ContactSection bgStyle={"bg-bgGrey"} />
       <AgreementsBlogSection />
     </main>
   );

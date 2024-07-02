@@ -9,7 +9,7 @@ export default function AppealPage({ canonicalURL }) {
       <HeroAppealSections />
       <FAQ />
       <Reviews />
-      <ContactSection />
+      <ContactSection bgStyle={"bg-bgGrey"} />
     </main>
   );
 }

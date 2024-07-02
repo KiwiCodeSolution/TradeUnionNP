@@ -3,6 +3,9 @@ import Men from "@/images/feedback.svg";
 import agr_1 from "@/images/home/agr_1.svg";
 import agr_2 from "@/images/home/agr_2.svg";
 import agr_3 from "@/images/home/agr_3.svg";
+import MenGrey from "@/images/i-trade/man.svg";
+import BgPaper from "@/images/i-trade/bg-form.svg";
+
 import ParallaxSection from "@/components/UI/parallax/ParallaxSection";
 
 const ITEMS = [
@@ -21,17 +24,39 @@ const ITEMS = [
   },
 ];
 
-const ContactFormImages = () => {
+const ContactFormImages = ({ imageStyle }) => {
   return (
-    <div className="w-1/2 relative">
-      <ParallaxSection items={ITEMS} />
-      <Image
-        src={Men}
-        width={600}
-        height={549}
-        alt="малюнок чоловіка, що сидить а столом з ноутбуком, чашкою гарячого напою та квіткою у вазоні"
-        className="relative z-[15]"
-      />
+    <div className="w-1/2 h-full relative">
+      {imageStyle === "bg-white" ? (
+        <>
+          <Image
+            src={BgPaper}
+            width={600}
+            height={549}
+            alt="малюнок чоловіка, що сидить а столом з ноутбуком, чашкою гарячого напою та квіткою у вазоні"
+            className="top-0 z-[10] absolute"
+          />
+          <Image
+            src={MenGrey}
+            width={600}
+            height={549}
+            alt="малюнок чоловіка, що сидить а столом з ноутбуком, чашкою гарячого напою та квіткою у вазоні"
+            className="relative z-[15] "
+          />
+        </>
+      ) : (
+        <>
+          {" "}
+          <ParallaxSection items={ITEMS} />
+          <Image
+            src={Men}
+            width={600}
+            height={549}
+            alt="малюнок чоловіка, що сидить а столом з ноутбуком, чашкою гарячого напою та квіткою у вазоні"
+            className="relative z-[15]"
+          />
+        </>
+      )}
     </div>
   );
 };

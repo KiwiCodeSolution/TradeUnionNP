@@ -164,3 +164,27 @@ article:hover .i-trade-link,
 article:hover .i-trade-text {
   color: white;
 }
+
+.shinstagram:hover {
+  filter: drop-shadow(0px 41px 62px rgba(194, 25, 117, 0.51));
+}
+
+.shtelegram:hover {
+  filter: drop-shadow(0px 41px 62px rgba(0, 136, 204, 0.51));
+}
+
+.shfacebook:hover {
+  filter: drop-shadow(0px 41px 62px rgba(24, 119, 242, 0.51));
+}
+
+.shviber:hover {
+  filter: drop-shadow(0px 41px 62px rgba(111, 63, 170, 0.51));
+}
+
+.shmessanger:hover {
+  filter: drop-shadow(0px 41px 62px rgba(160, 51, 255, 0.51));
+}
+
+.shyoutobe:hover {
+  filter: drop-shadow(0px 41px 62px rgba(255, 0, 0, 0.51));
+}

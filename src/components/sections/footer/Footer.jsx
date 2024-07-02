@@ -4,7 +4,6 @@ import LogoFooter from "@/images/logo_bottom.svg";
 import { aboutLinks, navLinks } from "@/constants/navLinks";
 import Link from "next/link";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
-import UpButton from "@/components/UI/buttons/UpButton";
 
 const Footer = () => {
   const navItems = navLinks.slice(0, navLinks.length - 1);
@@ -60,7 +59,6 @@ const Footer = () => {
           </Link>
         </div>
       </Wrapper>
-      <UpButton />
     </footer>
   );
 };

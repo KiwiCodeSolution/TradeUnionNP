@@ -14,7 +14,7 @@ export default function RecreationPage() {
       <RecreationActivity />
       <PrincipleRecreation />
       <RecreationProjects />
-      <ContactSection />
+      <ContactSection bgStyle={"bg-bgGrey"} />
       <PhotoReports />
     </main>
   );

@@ -17,7 +17,7 @@ export default function Home() {
       <DirectionsWork />
       <Interview />
       <NewsSectionHomePage />
-      <ContactSection />
+      <ContactSection bgStyle={"bg-bgGrey"} />
     </main>
   );
 }

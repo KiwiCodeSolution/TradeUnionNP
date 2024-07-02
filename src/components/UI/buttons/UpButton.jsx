@@ -16,7 +16,7 @@ const UpButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="w-[50px] h-[50px] rounded-full border-4 border-red absolute top-1/3 right-28 flex items-center justify-center hover:shadow-upButton"
+      className="w-[50px] h-[50px] rounded-full border-4 border-red fixed bottom-[50px] right-[50px] flex items-center justify-center hover:shadow-upButton z-[20]"
     >
       <Image src={ArrowRed} height={27} width={23} className="" alt="червона стрілочка вгору" />
     </button>

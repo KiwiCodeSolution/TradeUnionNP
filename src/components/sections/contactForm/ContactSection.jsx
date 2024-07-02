@@ -5,9 +5,9 @@ import ContactForm from "./ContactForm";
 import Title from "@/components/Title";
 import ContactFormImages from "./ContactFormImages";
 
-const ContactSection = () => {
+const ContactSection = ({ bgStyle }) => {
   return (
-    <BaseSection style={"bg-bgGrey"}>
+    <BaseSection style={bgStyle}>
       <Wrapper styles={"flex items-center justify-between relative"}>
         <div className="w-1/2 flex flex-col">
           <Title tag="h2">
@@ -21,9 +21,9 @@ const ContactSection = () => {
             </a>{" "}
             Або залиште свої дані і ми зв'яжемося з вами!
           </p>
-          <ContactForm />
+          <ContactForm inputStyle={bgStyle} />
         </div>
-        <ContactFormImages />
+        <ContactFormImages imageStyle={bgStyle} />
       </Wrapper>
     </BaseSection>
   );

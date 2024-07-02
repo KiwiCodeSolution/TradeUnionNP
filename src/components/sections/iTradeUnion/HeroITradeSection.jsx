@@ -30,7 +30,7 @@ const ITEMS = [
 
 const HeroITradeSection = () => {
   return (
-    <section className={"bg-bgGrey w-full"}>
+    <section className={"bg-bgGrey w-full pt-6"}>
       <Wrapper styles={"relative pb-[100px]"}>
         <PathPage endPath={"Я - Профспілка"} />
         <div className="flex ">

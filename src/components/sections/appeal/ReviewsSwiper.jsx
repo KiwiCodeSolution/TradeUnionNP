@@ -47,7 +47,7 @@ const ReviewsSwiper = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center z-[20]">
         <ShowButton btnStyle="review-button-prev" style="" />
       </div>
     </div>
