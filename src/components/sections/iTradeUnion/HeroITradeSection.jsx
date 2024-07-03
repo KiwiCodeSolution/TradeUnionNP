@@ -61,7 +61,7 @@ const HeroITradeSection = () => {
         <div className="grid grid-cols-3 absolute -bottom-[100px] left-0 w-full px-5 gap-x-4">
           {ITEMS.map(el => (
             <article
-              key={el.text}
+              key={el.text + el.link}
               className="flex flex-col bg-white rounded-2xl py-8 justify-center items-center hover:bg-red text-red hover:text-white hover:scale-x-[1.2]  hover:scale-y-[1.2] transform ease-linear transition-all gap-4 fill-current shadow-sm box-shadow hover:z-[20]"
             >
               {el.image}

@@ -1012,7 +1012,7 @@ const HeroImage = () => {
         >
           <stop offset="0.15" stopColor="#DF8B47" />
           <stop offset="0.38" stopColor="#F1A160" />
-          <stop offset="1" stopColor="#FDB77E" stop-opacity="0.16" />
+          <stop offset="1" stopColor="#FDB77E" stopOpacity="0.16" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_375_7177"
@@ -1024,7 +1024,7 @@ const HeroImage = () => {
         >
           <stop offset="0.15" stopColor="#DF8B47" />
           <stop offset="0.38" stopColor="#F1A160" />
-          <stop offset="1" stopColor="#FDB77E" stop-opacity="0.16" />
+          <stop offset="1" stopColor="#FDB77E" stopOpacity="0.16" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_375_7177"
@@ -1100,7 +1100,7 @@ const HeroImage = () => {
           y2="153.129"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FDB77E" stop-opacity="0.15" />
+          <stop stopColor="#FDB77E" stopOpacity="0.15" />
           <stop offset="1" stopColor="#FC9D50" />
         </linearGradient>
         <linearGradient
@@ -1156,7 +1156,7 @@ const HeroImage = () => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#F1A96F" />
-          <stop offset="1" stopColor="#FDB77E" stop-opacity="0" />
+          <stop offset="1" stopColor="#FDB77E" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint26_linear_375_7177"
@@ -1167,7 +1167,7 @@ const HeroImage = () => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#F1A96F" />
-          <stop offset="1" stopColor="#FDB77E" stop-opacity="0" />
+          <stop offset="1" stopColor="#FDB77E" stopOpacity="0" />
         </linearGradient>
         <radialGradient
           id="paint27_radial_375_7177"
@@ -1257,7 +1257,7 @@ const HeroImage = () => {
           <stop stopColor="#DF8B47" />
           <stop offset="0.4" stopColor="#F1A160" />
           <stop offset="0.77" stopColor="#FDB77E" />
-          <stop offset="0.99" stopColor="#FDB77E" stop-opacity="0.25" />
+          <stop offset="0.99" stopColor="#FDB77E" stopOpacity="0.25" />
         </linearGradient>
         <linearGradient
           id="paint35_linear_375_7177"
@@ -1269,7 +1269,7 @@ const HeroImage = () => {
         >
           <stop offset="0.15" stopColor="#DF8B47" />
           <stop offset="0.38" stopColor="#F1A160" />
-          <stop offset="1" stopColor="#FDB77E" stop-opacity="0.16" />
+          <stop offset="1" stopColor="#FDB77E" stopOpacity="0.16" />
         </linearGradient>
         <linearGradient
           id="paint36_linear_375_7177"
@@ -1323,7 +1323,7 @@ const HeroImage = () => {
           y2="151.414"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FDB77E" stop-opacity="0.15" />
+          <stop stopColor="#FDB77E" stopOpacity="0.15" />
           <stop offset="1" stopColor="#FC9D50" />
         </linearGradient>
         <linearGradient
@@ -1334,7 +1334,7 @@ const HeroImage = () => {
           y2="2065.74"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.645833" stopColor="#FCA761" stop-opacity="0.65" />
+          <stop offset="0.645833" stopColor="#FCA761" stopOpacity="0.65" />
           <stop offset="1" stopColor="#FDB77E" />
         </linearGradient>
         <linearGradient

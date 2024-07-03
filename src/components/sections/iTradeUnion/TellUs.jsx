@@ -13,10 +13,10 @@ const TellUs = () => {
             що ви в <br /> Профспілці
           </span>
         </Title>
-        <p class="text-lg mt-5 text-grey text-left  md:text-center">
+        <p className="text-lg mt-5 text-grey text-left  md:text-center">
           Надсилайте посилання другові чи колезі, нехай також долучається!
         </p>
-        <ul class="flex flex-wrap pt-16 justify-center gap-4 sm:gap-16">
+        <ul className="flex flex-wrap pt-16 justify-center gap-4 sm:gap-16">
           <li>
             <a href="https://www.instagram.com/profspilka.np/">
               <Image
