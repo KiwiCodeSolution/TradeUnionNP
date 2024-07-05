@@ -14,7 +14,7 @@ const Values = () => {
           width={1336}
           height={950}
           alt="малюнок із написом 'про нас в цифрах' та сірим логотипом на білому тлі"
-          className="hidden md:absolute top-5 left-1/2 -translate-x-1/2 -z-[1] pl-8"
+          className="hidden md:block absolute top-5 left-1/2 -translate-x-1/2 -z-[1] pl-8"
         />
         <Image
           src={BgImagesMobile}

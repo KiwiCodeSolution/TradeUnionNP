@@ -5,14 +5,14 @@ import ListItem from "@/components/UI/items/ListItem";
 
 const standardShadow = ({ item, last }) => {
   return (
-    <li className="w-9/12 h-fit p-8 md:p-12 flex items-center gap-4 md:gap-24 rounded-3xl bg-white shadow-standardShadow relative mx-auto">
-      <p className="w-3/12 text-2xl text-red font-bold text-center">{item.year} рік</p>
-      <ul className="w-9/12 flex flex-col gap-y-4">
+    <li className="w-full md:w-9/12 h-fit p-8 md:p-12 flex flex-col md:flex-row items-center gap-4 md:gap-24 rounded-3xl bg-white shadow-standardShadow relative mx-auto">
+      <p className="w-full md:w-3/12 text-2xl text-red font-bold text-center">{item.year} рік</p>
+      <ul className="w-full md:w-9/12 flex flex-col gap-y-4">
         {item.appeal && (
           <li className="flex gap-x-5">
             <Image src={Appeal} width={49} height={49} alt="" />
             <div className="w-fit flex flex-col gap-y-1">
-              <p className="text-3xl font-bold text-red">{item.appeal}</p>
+              <p className="text-xl md:text-3xl font-bold text-red">{item.appeal}</p>
               <p className="text-lg">звернення профспілчан вирішено</p>
             </div>
           </li>

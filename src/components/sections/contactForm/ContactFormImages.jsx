@@ -5,6 +5,7 @@ import agr_2 from "@/images/home/agr_2.svg";
 import agr_3 from "@/images/home/agr_3.svg";
 import MenGrey from "@/images/i-trade/man.svg";
 import BgPaper from "@/images/i-trade/bg-form.svg";
+import BgImage from "@/images/home/bg-image_5.svg";
 
 import ParallaxSection from "@/components/UI/parallax/ParallaxSection";
 
@@ -26,7 +27,7 @@ const ITEMS = [
 
 const ContactFormImages = ({ imageStyle }) => {
   return (
-    <div className="w-1/2 h-full relative">
+    <div className="w-full md:w-1/2 h-full relative order-1 md:order-2">
       {imageStyle === "bg-white" ? (
         <>
           <Image
@@ -46,8 +47,14 @@ const ContactFormImages = ({ imageStyle }) => {
         </>
       ) : (
         <>
-          {" "}
-          <ParallaxSection items={ITEMS} />
+          <ParallaxSection items={ITEMS} style={"hidden md:block md:absolute"} />
+          <Image
+            src={BgImage}
+            width={600}
+            height={549}
+            alt="малюнок документів, паперів та скріпки"
+            className="absolute top-0 md:hidden z-[15]"
+          />
           <Image
             src={Men}
             width={600}

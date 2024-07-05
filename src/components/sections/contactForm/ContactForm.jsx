@@ -69,7 +69,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
                 {...inputProps}
                 type="text"
                 placeholder="+38 (___) ___-__-__"
-                className={`py-5 pl-[70px] pr-5 text-lg w-4/5 border-0 focus:outline-none focus:shadow-none rounded-full h-14  ${
+                className={`w-full md:w-4/5 py-5 pl-[70px] pr-5 text-lg border-0 focus:outline-none focus:shadow-none rounded-full h-14  ${
                   inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
                 }`}
               />
@@ -89,9 +89,9 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
         type="text"
         value={selectedOption}
         onChange={handleSelectChange}
-        placeholder="Введіть регіон або оберіть зі списку"
+        placeholder="Введіть або оберіть регіон зі списку"
         list="regions-list"
-        className={`text-[15px] ${section === "modal" ? "w-full" : "w-4/5"} ${
+        className={`text-[15px] ${section === "modal" ? "w-full" : "w-full md:w-4/5"} ${
           inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
         } rounded-full h-14 py-4 px-5 focus:outline-none focus:shadow-none relative`}
       />

@@ -10,7 +10,11 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="w-full flex flex-col relative">
-      <Wrapper styles={"flex flex-col xl:flex-row gap-y-10 md:gap-y-8 justify-between py-16"}>
+      <Wrapper
+        styles={
+          "flex flex-col xl:flex-row gap-y-10 md:gap-y-8 items-center md:items-start justify-between py-16"
+        }
+      >
         <Image
           src={LogoFooter}
           width={128}
@@ -18,7 +22,7 @@ const Footer = () => {
           alt="логотип компанії 'Профспілка Новой пошти': червоний ромб із білою стрілкою та маленьким колом. напис червоними та чорними літерами"
           className="w-fit mb-auto"
         />
-        <nav className="w-fit flex flex-col justify-start gap-y-2">
+        <nav className="w-fit flex flex-col items-center md:items-start justify-start gap-y-2">
           <h3 className="text-base text-liteGrey mb-3 uppercase">ПРО НАС</h3>
           {navItems.map(el => (
             <Link
@@ -31,7 +35,7 @@ const Footer = () => {
             </Link>
           ))}
         </nav>
-        <nav className="w-fit flex flex-col justify-start gap-y-2">
+        <nav className="w-fit flex flex-col items-center md:items-start justify-start gap-y-2">
           <h3 className="text-base text-liteGrey mb-3 uppercase">НАПРЯМКИ РОБОТИ</h3>
           {aboutLinks.map(el => (
             <Link
@@ -47,8 +51,8 @@ const Footer = () => {
         <EmailAndSocLinks section={"footer"} />
       </Wrapper>
       <Wrapper>
-        <div className="w-full py-4 flex items-center justify-between border-main border-t border-opacity-20">
-          <p className="text-lg text-grey">
+        <div className="w-full py-4 flex flex-col md:flex-row items-center md:items-start justify-between border-main border-t border-opacity-20">
+          <p className="text-[15px] md:text-lg text-grey">
             ©<span>{year}</span>, Всі права захищено
           </p>
           <Link

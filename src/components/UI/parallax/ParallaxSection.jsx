@@ -4,9 +4,9 @@ import { MouseParallax } from "react-just-parallax";
 
 import Image from "next/image";
 
-const ParallaxSection = ({ items }) => {
+const ParallaxSection = ({ items, style }) => {
   return (
-    <div className="absolute top-0 left-0 w-full h-full z-[10]">
+    <div className={` top-0 left-0 w-full h-full z-[10] ${style || "absolute"}`}>
       {items.map(el => (
         <MouseParallax
           enableOnTouchDevice

@@ -9,10 +9,14 @@ const EmailAndSocLinks = ({ section }) => {
         section === "footer" ? "flex-col gap-y-4" : "gap-x-5 items-center justify-between"
       } `}
     >
-      {section === "footer" && <h3 className="text-base text-liteGrey mb-1 uppercase">КОНТАКТИ</h3>}
+      {section === "footer" && (
+        <h3 className="text-base text-liteGrey text-center md:text-left mb-1 uppercase">
+          КОНТАКТИ
+        </h3>
+      )}
       <a
         href="mailto:help@profspilka.org"
-        className="text-red text-base underline underline-offset-1 hover:underline-offset-4"
+        className="text-red text-base text-center md:text-left underline underline-offset-1 hover:underline-offset-4"
       >
         help@profspilka.org
       </a>

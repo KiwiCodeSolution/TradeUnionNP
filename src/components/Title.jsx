@@ -6,7 +6,7 @@ const Title = ({ children, styles, tag }) => {
     <>
       {tag === "h1" ? (
         <h1
-          className={`${currentStyle} ${inter.className} text-[34px] md:text-5xl leading-[1.2] md:leading-[1.25] font-extrabold`}
+          className={`${currentStyle} ${inter.className} text-[36px] md:text-5xl leading-[1.2] md:leading-[1.25] font-extrabold`}
         >
           {children}{" "}
         </h1>

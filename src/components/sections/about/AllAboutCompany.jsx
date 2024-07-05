@@ -17,21 +17,21 @@ const AllAboutCompany = () => {
     <BaseSection style={"bg-bgGrey"}>
       <Wrapper styles={"grid grid-cols-1 md:grid-cols-2 gap-4"}>
         <Container>
-          <h3 className="text-[30px]">Мета</h3>
+          <h3 className="text-[30px] font-bold">Мета</h3>
           <p className="text-lg text-grey">
             <strong>Здійснення представництва та захист трудових</strong>, соціально-економічних
             прав і інтересів членів Профспілки.
           </p>
         </Container>
         <Container>
-          <h3 className="text-[30px]">Місія</h3>
+          <h3 className="text-[30px] font-bold">Місія</h3>
           <p className="text-lg text-grey">
             Досягнення <strong>високих стандартів умов праці та безпеки праці</strong> в групі
             компаній «NOVA» та активної життєвої позиції працівників.
           </p>
         </Container>
         <Container>
-          <h3 className="text-[30px]">
+          <h3 className="text-[30px] font-bold">
             Основні <span className="text-red">засади</span>
           </h3>
           <ul className="flex flex-col gap-y-5">
@@ -51,7 +51,7 @@ const AllAboutCompany = () => {
         </Container>
 
         <Container>
-          <h3 className="text-[30px]">
+          <h3 className="text-[30px] font-bold">
             <span className="text-red">Принципи </span>Профспілки
           </h3>
           <ul className="flex flex-col gap-y-5">
@@ -69,7 +69,7 @@ const AllAboutCompany = () => {
             width={164}
             height={165}
             alt="Логотип компанії"
-            className="absolute -top-[64px] -left-[91px] z-[2]"
+            className="hidden md:block absolute -top-[64px] -left-[91px] z-[2]"
           />
         </Container>
       </Wrapper>
