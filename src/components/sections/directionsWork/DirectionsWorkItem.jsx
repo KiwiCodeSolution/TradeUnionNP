@@ -24,13 +24,13 @@ const Text = ({ text, isBold, quantityWords }) => {
   }
 
   if (!isBold) {
-    return <p>{text}</p>;
+    return <p className="text-base md:text-lg text-grey">{text}</p>;
   }
 
   const { boldText, regularText } = formatTextWithBoldMarker(text, quantityWords);
 
   return (
-    <p className="text-lg text-grey">
+    <p className="text-base md:text-lg text-grey">
       <strong>{boldText}</strong>
       {` ${regularText}`}
     </p>
@@ -39,18 +39,20 @@ const Text = ({ text, isBold, quantityWords }) => {
 
 const DirectionsWorkItem = ({ item, index }) => {
   return (
-    <article className={`flex w-full ${index % 2 !== 0 ? "flex-row-reverse" : "flex-row"}`}>
-      <div className="w-1/2">
+    <article
+      className={`flex flex-col w-full ${index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"}`}
+    >
+      <div className="w-full md:w-1/2">
         <Image src={item.image} width={640} height={600} alt={item.title} />
       </div>
-      <div className={`w-1/2 flex flex-col ${index === 0 ? "mt-[127px]" : ""}`}>
+      <div className={`w-full md:w-1/2 flex flex-col ${index === 0 ? "md:mt-[127px]" : ""}`}>
         <h3 className="text-sm uppercase">НАПРЯМКИ РОБОТИ</h3>
 
         <Title tag="h2" styles="mt-3 mb-5">
           {item.title}
         </Title>
 
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-5">
           {item.text?.map((el, idx) => (
             <Text
               key={idx}
@@ -60,9 +62,9 @@ const DirectionsWorkItem = ({ item, index }) => {
             />
           ))}
           {item.list && (
-            <ul className="pl-5 flex flex-col mt-5 gap-y-5">
+            <ul className="md:pl-5 flex flex-col gap-y-5">
               {item.list.map((listItem, idx) => (
-                <ListItem item={listItem} gap={2} key={idx} />
+                <ListItem item={listItem} gap={5} key={idx} />
               ))}
             </ul>
           )}
@@ -70,7 +72,7 @@ const DirectionsWorkItem = ({ item, index }) => {
 
         <LinkButton
           view="transparent"
-          style="uppercase mt-6 w-fit gap-x-2 hover:underline hover:underline-offset-4"
+          style="uppercase mt-6 w-fit gap-x-2 hover:underline hover:underline-offset-4 text-sm font-bold"
           goTo={item.link}
           goToPage
           icon

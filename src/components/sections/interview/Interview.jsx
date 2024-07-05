@@ -8,10 +8,10 @@ import LinkButton from "@/components/UI/buttons/LinkButton";
 
 const Interview = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper styles={"relative"}>
-        <div className="flex flex-col mt-14 md:mt-24 mx-28">
-          <p className={`${inter.className} text-[40px] leading-[56px] font-light`}>
+        <div className="flex flex-col mt-14 md:mt-24 md:mx-28">
+          <p className={`${inter.className} text-2xl md:text-[40px] leading-[1.4] font-light`}>
             Щодень працюємо задля спільної мети — досягнення високих стандартів умов праці та
             безпеки праці в групі компаній 'NOVA'. Згуртовуємось, є надійною опорою один одному,
             дбаємо про єдину мету та цінності.
@@ -37,7 +37,7 @@ const Interview = () => {
             </div>
             <LinkButton
               view="transparent"
-              style="uppercase mt-6 w-fit gap-x-2 hover:underline hover:underline-offset-4"
+              style="uppercase mt-6 w-fit gap-x-2 hover:underline hover:underline-offset-4 text-sm font-bold"
               goTo={"#"}
               goToPage
               icon
@@ -51,7 +51,7 @@ const Interview = () => {
           width={77}
           height={71}
           alt="сірі лапки"
-          className="absolute bottom-0 right-0"
+          className="absolute top-0 md:bottom-0 right-7 md:right-0"
         />
       </Wrapper>
     </BaseSection>

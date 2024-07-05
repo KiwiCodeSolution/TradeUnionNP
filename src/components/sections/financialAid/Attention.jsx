@@ -3,7 +3,7 @@ import Danger from "@/images/home/icon_danger.svg";
 
 const Attention = () => {
   return (
-    <div className="w-full h-fit flex flex-col gap-x-8 md:flex-row items-center justify-between my-9 p-4 rounded-2xl bg-red">
+    <div className="w-full h-fit flex flex-col gap-8 md:flex-row items-center justify-between my-9 p-4 rounded-2xl bg-red">
       <Image
         src={Danger}
         width={64}

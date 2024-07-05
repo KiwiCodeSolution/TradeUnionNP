@@ -49,7 +49,7 @@ const updatedITEMS = ITEMS.map(item => {
 
 const HeroHomePageItems = () => {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 w-full gap-y-2 mt-10 gap-x-6">
+    <ul className="grid grid-cols-1 md:grid-cols-2 w-full gap-y-6 md:gap-y-2 mt-10 gap-x-6">
       {updatedITEMS.map((el, index) => (
         <li key={index + 1} className="flex gap-x-4 items-center">
           <Image

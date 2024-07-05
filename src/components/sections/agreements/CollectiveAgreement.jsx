@@ -26,16 +26,16 @@ const ITEMS = [
 
 const CollectiveAgreement = () => {
   return (
-    <BaseSection style="bg-bgGrey min-h-[515px]">
+    <BaseSection style="bg-bgGrey h-fit md:min-h-[515px]">
       <div className="w-full absolute top-0 h-64 left-0 z-[10] bg-gradient-to-t from-bgGrey to-white" />
       <ParallaxSection items={ITEMS} />
       <Wrapper styles={"pt-12 md:pt-32"}>
-        <article className="w-full relative mx-auto flex justify-center z-10 rounded-xl shadow-md bg-white">
-          <div className="w-1/2 flex flex-col gap-y-4 py-14 ml-16">
+        <article className="w-full relative px-7 md:p-0 mx-auto flex flex-col md:flex-row justify-center z-10 rounded-xl shadow-md bg-white">
+          <div className="w-full md:w-1/2 flex flex-col gap-y-4 py-7 md:py-14 md:ml-16">
             <Title tag="h2">
               Колективний <span className="text-red">договір</span>
             </Title>
-            <p className="text-lg text-grey">
+            <p className="text-base md:text-lg text-grey">
               Положення цього договору поширюються на всіх працівників і є обов’язковими як для
               адміністрації, так і для кожного члена трудового колективу. На період воєнного стану
               деякі положення призупинені роботодавцем.

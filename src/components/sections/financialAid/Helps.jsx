@@ -4,7 +4,7 @@ import Shield from "@/images/home/icon_shield-red.svg";
 
 const Helps = () => {
   return (
-    <ul className="w-full flex gap-4 mt-4">
+    <ul className="w-full flex flex-col md:flex-row gap-4 mt-4">
       <li className="w-full flex flex-col gap-y-4">
         <div className="w-full h-[41px] flex items-center justify-start gap-x-4">
           <Image
@@ -15,7 +15,9 @@ const Helps = () => {
           />
           <h3 className="text-[22px] font-bold inter">Інформаційна</h3>
         </div>
-        <p>дізнатися контакти, місця, як дістатися, як скористатися, куди бігти, як працює;</p>
+        <p className="text-grey leading-[1.5]">
+          дізнатися контакти, місця, як дістатися, як скористатися, куди бігти, як працює;
+        </p>
       </li>
       <li className="w-full flex flex-col gap-y-4">
         <div className="w-full h-[41px] flex items-center justify-start gap-x-4">
@@ -27,7 +29,7 @@ const Helps = () => {
           />
           <h3 className="text-[22px] font-bold inter">Інші можливі послуги</h3>
         </div>
-        <p>
+        <p className="text-grey leading-[1.5]">
           для забезпечення базових потреб члена Профспілки та допомоги йому в скрутній ситуації.
         </p>
       </li>

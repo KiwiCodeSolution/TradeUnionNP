@@ -7,10 +7,10 @@ const FilterNews = () => {
   const [nameButton, setNameButton] = useState("Всі новини");
   return (
     <>
-      <div className="w-fit flex mx-auto">
+      <div className="w-fit flex flex-col md:flex-row mx-auto">
         {BUTTONS.map(el => (
           <button
-            className={`w-fit px-10 pb-4 text-lg transition border-solid border-b-2  ${
+            className={`w-full md:w-fit px-10 py-3 md:pt-0 md:pb-4 text-lg transition border-solid border-b-2  ${
               el === nameButton
                 ? "text-red border-red"
                 : "text-bgBlack border-main border-opacity-20"

@@ -2,7 +2,7 @@ import RedDot from "../RedDot";
 
 const ListItem = ({ item, gap, elements }) => {
   return (
-    <li className={`w-full text-lg text-grey flex flex-col`}>
+    <li className={`w-full text-base md:text-lg text-grey flex flex-col`}>
       <div className={`w-full flex gap-x-${gap} items-center`}>
         <RedDot />
         <p className={`w-[90%]`}>{item}</p>

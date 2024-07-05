@@ -3,7 +3,7 @@ import Search from "@/images/search.svg";
 
 const SearchInput = () => {
   return (
-    <form className="flex gap-x-2">
+    <form className="hidden md:flex gap-x-2">
       <input
         type="text"
         className="w-[148px] h-[38px] py-2 px-3 border border-1 border-liteGrey rounded-lg"

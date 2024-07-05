@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Blank from "@/images/home/icon_blank.svg";
 import Hand from "@/images/home/icon_hand.svg";
+import HandMobile from "@/images/image_1.svg";
 import Text from "@/images/home/icon_text.svg";
 
 const textAnimation = {
@@ -23,16 +24,23 @@ const handAnimation = {
 
 const ImagesAgreement = () => {
   return (
-    <div className="w-1/2 relative">
+    <div className="w-full md:w-1/2 relative">
+      <Image
+        src={HandMobile}
+        width={263}
+        height={220}
+        alt="бланк колективного договору на планшетці"
+        className="md:hidden mx-auto"
+      />
       <Image
         src={Blank}
         width={498}
         height={429}
         alt="бланк колективного договору на планшетці"
-        className="absolute bottom-0"
+        className="hidden md:absolute bottom-0"
       />
       <motion.div
-        className="absolute bottom-[182px] left-[198px]"
+        className="hidden md:absolute bottom-[182px] left-[198px]"
         initial="hidden"
         whileInView="visible"
         variants={textAnimation}
@@ -40,7 +48,7 @@ const ImagesAgreement = () => {
         <Image src={Text} width={40} height={25} alt="написаний прописом текст" />
       </motion.div>
       <motion.div
-        className="absolute bottom-[1px] left-[233px]"
+        className="hidden md:absolute bottom-[1px] left-[233px]"
         initial="hidden"
         whileInView="visible"
         variants={handAnimation}

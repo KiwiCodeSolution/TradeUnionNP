@@ -41,7 +41,9 @@ const NumberItem = ({ item, index }) => {
   return (
     <article
       ref={ref}
-      className={` ${index === 3 ? "w-fit" : "w-[30%]"} flex flex-col gap-y-7 mx-auto`}
+      className={` ${
+        index === 3 ? "w-[320px] md:w-fit" : "w-[320px] md:w-[30%]"
+      } flex md:flex-col items-start gap-7 md:mx-auto`}
     >
       <Image
         src={item.img}
@@ -50,15 +52,19 @@ const NumberItem = ({ item, index }) => {
         alt="тематична іконка, що за змістом відповідає одному з напрямків роботи профспілки"
         className="mx-auto"
       />
-      <p
-        className={` ${
-          index === 3 ? "text-5xl leading-[1.25]" : "text-[100px] leading-[1.4]"
-        } inter text-center font-bold`}
-      >
-        <span>&gt;</span>
-        <CountUp start={item.start} end={item.end} formattingFn={formatNumber} />
-      </p>
-      <p className="text-grey text-lg text-center">{item.text}</p>
+      <div className="flex flex-col gap-y-2 md:gap-y-7">
+        <p
+          className={` ${
+            index === 3
+              ? "text-[40px] md:text-5xl leading-[1.25]"
+              : "text-[50px] md:text-[100px] leading-[1.4]"
+          } inter md:text-center font-bold`}
+        >
+          <span>&gt;</span>
+          <CountUp start={item.start} end={item.end} formattingFn={formatNumber} />
+        </p>
+        <p className="text-grey text-base md:text-lg md:text-center">{item.text}</p>
+      </div>
     </article>
   );
 };
@@ -66,7 +72,7 @@ const NumberItem = ({ item, index }) => {
 const NumbersList = () => {
   return (
     <ul className="flex flex-col gap-y-6 md:gap-y-16">
-      <li className="w-[320px] flex flex-col gap-y-7 mt-16 mx-auto">
+      <li className="w-[320px] flex md:flex-col items-start gap-7 mt-16 md:mx-auto">
         <Image
           src={Blanc}
           width={64}
@@ -74,12 +80,14 @@ const NumbersList = () => {
           alt="тематична іконка, що за зображує бланк із відзнакою"
           className="mx-auto"
         />
-        <p className="text-[22px] leading-[1.3] font-bold inter text-center">
-          "Кращий Колективний договір серед профспілок країни"
-        </p>
-        <p className="text-grey text-lg text-center">
-          * за версією громадської організації «Трудові ініціативи»
-        </p>
+        <div className="flex flex-col gap-y-4 md:gap-y-7">
+          <p className="text-xl md:text-[22px] leading-[1.3] font-bold inter md:text-center">
+            "Кращий Колективний договір серед профспілок країни"
+          </p>
+          <p className="text-grey text-base md:text-lg md:text-center">
+            * за версією громадської організації «Трудові ініціативи»
+          </p>
+        </div>
       </li>
       <li className="w-full flex flex-wrap gap-x-7 items-center justify-between gap-y-6 md:gap-y-16">
         {numbersValue.map((el, index) => (
