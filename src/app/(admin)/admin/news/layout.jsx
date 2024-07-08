@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "AdminNews",
-  description: "AdminNews",
+  title: "АдмінПанель | Новини та публікації",
+  description: "АдмінПанель | Новини та публікації",
 };
 
 export default function AdminNewsLayout({ children }) {

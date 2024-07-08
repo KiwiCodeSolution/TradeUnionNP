@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "AdminPhoto",
-  description: "AdminPhoto",
+  title: "АдмінПанель | Фотозвіти",
+  description: "АдмінПанель | Фотозвіти",
 };
 
 export default function AdminPhotoLayout({ children }) {

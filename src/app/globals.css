@@ -201,3 +201,11 @@ article:hover .i-trade-text {
 .shyoutobe:hover {
   filter: drop-shadow(0px 41px 62px rgba(255, 0, 0, 0.51));
 }
+
+.back {
+  fill: theme("colors.red");
+}
+
+a:hover .back {
+  fill: white;
+}

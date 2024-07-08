@@ -9,17 +9,17 @@ const NavAdmin = () => {
   const pathname = usePathname();
 
   return (
-    <div className="w-1/5 h-full flex flex-col items-center gap-y-20 bg-red py-10 px-8">
+    <div className="w-1/5 h-full flex flex-col items-center gap-y-20 bg-red py-10 px-8 rounded-r-2xl">
       <div className="flex flex-col gap-y-5">
         <Image src={Logo} width={200} height={165} alt="Логотип компанії" />
-        <p className="text-lg text-white text-center italic">Hello, User!</p>
+        <p className="text-lg text-white text-center italic">Вітаю, User!</p>
       </div>
 
       <nav className="h-full flex flex-col gap-y-10 justify-center items-center">
         <NavLink href="/admin/news" currentPath={pathname}>
           Новини
         </NavLink>
-        <NavLink href="/admin/photo" currentPath={pathname}>
+        <NavLink href="/admin/photo-report" currentPath={pathname}>
           Фотозвіти
         </NavLink>
         <NavLink href="/admin/contacts" currentPath={pathname}>

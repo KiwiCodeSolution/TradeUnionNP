@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "AdminContacts",
-  description: "AdminContacts",
+  title: "АдмінПанель | Контакти та соціальні мережі",
+  description: "АдмінПанель | Контакти та соціальні мережі",
 };
 
 export default function AdminContactsLayout({ children }) {
