@@ -1,5 +1,7 @@
-import { roboto } from "./fonts";
-import "./globals.css";
+import Header from "@/components/Header.jsx";
+
+import Footer from "@/components/sections/footer/Footer";
+import UpButton from "@/components/UI/buttons/UpButton";
 
 export const metadata = {
   title: "Профспілка ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»",
@@ -10,13 +12,13 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function ClientLayout({ children }) {
   return (
-    <html lang="uk">
-      <body className={roboto.className}>
-        {children}
-        <div id="modal-root"></div>
-      </body>
-    </html>
+    <div className="min-h-full">
+      <Header />
+      {children}
+      <Footer />
+      <UpButton />
+    </div>
   );
 }
