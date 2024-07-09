@@ -11,10 +11,11 @@ const Values = () => {
       <Wrapper styles={"flex flex-col md:flex-row"}>
         <Image
           src={BgImages}
-          width={1336}
-          height={950}
+          width={1250}
+          height={860}
           alt="малюнок із написом 'про нас в цифрах' та сірим логотипом на білому тлі"
-          className="hidden md:block absolute top-5 left-1/2 -translate-x-1/2 -z-[1] pl-8"
+          className="hidden md:block absolute top-5 left-1/2 -translate-x-1/2 -z-[1] pl-11"
+          // style={{ height: "auto" }}
         />
         <Image
           src={BgImagesMobile}

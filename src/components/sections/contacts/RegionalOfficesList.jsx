@@ -24,7 +24,7 @@ const RegionalOfficesList = () => {
         type="text"
         placeholder="Почніть вводити потрібну область..."
         onChange={e => setFilterText(e.target.value)}
-        className="w-7/12 h-14 py-3 pr-5 pl-10 rounded-2xl bg-white outline-none focus:outline-1 focus:outline-grey mt-8 mx-auto"
+        className="w-full md:w-7/12 h-14 py-3 pr-5 pl-10 rounded-full bg-[#f9f0da] outline-none focus:outline-1 focus:outline-grey mt-8 mx-auto"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">

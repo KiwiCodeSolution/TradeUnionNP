@@ -35,7 +35,7 @@ const FinancialAid = () => {
           </div>
         </div>
 
-        <div className="order-2 w-full h-[1184px] md:w-2/5 flex flex-col rounded-2xl bg-bgGrey py-9 pl-12 relative">
+        <div className="order-2 w-full h-[1135px] md:h-[905px] md:w-2/5 flex flex-col rounded-2xl bg-bgGrey py-9 pl-12 relative">
           <h2 className="w-full text-[34px] font-bold leading-10 text-red pb-9 pr-12">
             Нові види матеріальної допомоги під час війни
           </h2>

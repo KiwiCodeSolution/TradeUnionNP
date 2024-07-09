@@ -4,5 +4,5 @@ export const metadata = {
 };
 
 export default function PhotoLayout({ children }) {
-  return <div className="min-h-full">{children}</div>;
+  return <div className="min-h-screen">{children}</div>;
 }

@@ -7,6 +7,7 @@ import { useState } from "react";
 import RedDot from "@/components/UI/RedDot";
 import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import Link from "next/link";
+import NoPhoto from "@/images/no-photo.svg";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 
 const RegionalOffice = ({ item }) => {
@@ -22,7 +23,14 @@ const RegionalOffice = ({ item }) => {
           width={560}
           height={320}
           alt={`це зображення членів ${item.region}`}
-          className="w-full object-cover opacity-50"
+          className="md:hidden h-full object-cover opacity-50"
+        />
+        <Image
+          src={item.image}
+          width={560}
+          height={320}
+          alt={`це зображення членів ${item.region}`}
+          className="hidden md:block w-full object-cover opacity-50"
         />
         <div className="w-full h-full absolute top-0 left-0 p-12 flex flex-col gap-y-1 justify-end">
           <h2 className="text-2xl font-bold leading-[1.3] text-white">{item.region}</h2>
@@ -40,10 +48,10 @@ const RegionalOffice = ({ item }) => {
       </div>
 
       <ul className="w-full p-8 flex flex-col bg-white gap-y-8 border-b-[2px] border-bgGrey">
-        <li className="flex gap-x-8 items-center">
+        <li className="flex flex-col md:flex-row gap-8 items-center">
           <div className="w-24 h-24 rounded-full overflow-hidden">
             <Image
-              src={item.avatar}
+              src={item.avatar || NoPhoto}
               width={96}
               height={96}
               alt={`фото регіонального голови ${item.region}`}
@@ -51,18 +59,20 @@ const RegionalOffice = ({ item }) => {
           </div>
 
           <div className="flex flex-col gap-y-2">
-            <p className="text-[22px] font-bold leading-[1.3]">{item.director || "Вакансія"}</p>
-            <p className="text-[15px]">{item.position} </p>
+            <p className="text-[22px] font-bold leading-[1.3] text-center md:text-left">
+              {item.director || "Вакансія"}
+            </p>
+            <p className="text-[15px] text-center md:text-left">{item.position} </p>
           </div>
         </li>
         <li className="flex flex-col gap-y-4">
-          <div className="flex gap-x-2 items-center">
+          <div className="flex gap-x-2 items-center mx-auto md:ml-0">
             <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
             <a href={`tel:${item.phone}`} className="text-[15px] hover:text-red">
               {formatPhoneNumber(item.phone)}
             </a>
           </div>
-          <div className="flex gap-x-2 items-center">
+          <div className="flex gap-x-2 items-center mx-auto md:ml-0">
             <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
             <a href={`mailto:${item.email}`} className="text-[15px] hover:text-red">
               {item.email}

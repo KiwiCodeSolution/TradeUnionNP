@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="uk">
+    <html lang="uk" className="min-h-screen">
       <body className={roboto.className}>
         {children}
         <div id="modal-root"></div>

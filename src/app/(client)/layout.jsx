@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function ClientLayout({ children }) {
   return (
-    <div className="min-h-full">
+    <div className="min-h-screen">
       <Header />
       {children}
       <Footer />

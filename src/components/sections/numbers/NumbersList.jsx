@@ -4,6 +4,7 @@ import CountUp from "react-countup";
 import Image from "next/image";
 import { numbersValue } from "@/constants/numbers";
 import Blanc from "@/images/home/icon_benef_dog.svg";
+import { inter } from "@/app/fonts";
 
 const NumberItem = ({ item, index }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,6 +15,10 @@ const NumberItem = ({ item, index }) => {
       return new Intl.NumberFormat("uk-UA").format(number);
     }
     return number;
+  }
+
+  function formatNumberToString(number) {
+    return number.toString();
   }
 
   useEffect(() => {
@@ -42,8 +47,8 @@ const NumberItem = ({ item, index }) => {
     <article
       ref={ref}
       className={` ${
-        index === 3 ? "w-[320px] md:w-fit" : "w-[320px] md:w-[30%]"
-      } flex md:flex-col items-start gap-7 md:mx-auto`}
+        index === 3 ? "w-[320px] md:w-fit mx-auto" : "w-[304px]"
+      } flex md:flex-col items-start gap-7`}
     >
       <Image
         src={item.img}
@@ -58,12 +63,16 @@ const NumberItem = ({ item, index }) => {
             index === 3
               ? "text-[40px] md:text-5xl leading-[1.25]"
               : "text-[50px] md:text-[100px] leading-[1.4]"
-          } inter md:text-center font-bold`}
+          } ${inter.className} md:text-center font-bold flex items-center`}
         >
-          <span>&gt;</span>
-          <CountUp start={item.start} end={item.end} formattingFn={formatNumber} />
+          <span className="text-[50px]">&gt;</span>
+          {index === 3 ? (
+            <CountUp start={item.start} end={item.end} formattingFn={formatNumber} />
+          ) : (
+            <CountUp start={item.start} end={item.end} formattingFn={formatNumberToString} />
+          )}
         </p>
-        <p className="text-grey text-base md:text-lg md:text-center">{item.text}</p>
+        <p className="text-grey text-base md:text-lg md:text-center h-14 md:pl-7">{item.text}</p>
       </div>
     </article>
   );
@@ -72,7 +81,7 @@ const NumberItem = ({ item, index }) => {
 const NumbersList = () => {
   return (
     <ul className="flex flex-col gap-y-6 md:gap-y-16">
-      <li className="w-[320px] flex md:flex-col items-start gap-7 mt-16 md:mx-auto">
+      <li className="w-[360px] flex md:flex-col items-start gap-8 mt-16 md:mx-auto">
         <Image
           src={Blanc}
           width={64}
@@ -81,7 +90,9 @@ const NumbersList = () => {
           className="mx-auto"
         />
         <div className="flex flex-col gap-y-4 md:gap-y-7">
-          <p className="text-xl md:text-[22px] leading-[1.3] font-bold inter md:text-center">
+          <p
+            className={`text-xl md:text-[22px] leading-[1.3] font-bold md:text-center ${inter.className}`}
+          >
             "Кращий Колективний договір серед профспілок країни"
           </p>
           <p className="text-grey text-base md:text-lg md:text-center">
@@ -89,7 +100,7 @@ const NumbersList = () => {
           </p>
         </div>
       </li>
-      <li className="w-full flex flex-wrap gap-x-7 items-center justify-between gap-y-6 md:gap-y-16">
+      <li className="w-full flex flex-wrap gap-x-14 items-center justify-between gap-y-6 md:gap-y-16">
         {numbersValue.map((el, index) => (
           <NumberItem key={el.end} item={el} index={index} />
         ))}

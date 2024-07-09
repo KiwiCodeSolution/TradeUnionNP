@@ -8,7 +8,7 @@ import Manager from "./Manager";
 const Management = () => {
   return (
     <BaseSection style={""}>
-      <Wrapper styles={"grid grid-cols-4 pt-16"}>
+      <Wrapper styles={"grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 pt-16 gap-y-8"}>
         <Image
           src={ManagersImage}
           width={265}

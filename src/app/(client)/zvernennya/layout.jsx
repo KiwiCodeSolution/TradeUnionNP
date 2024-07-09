@@ -17,5 +17,5 @@ export const metadata = {
 };
 
 export default function AppealLayout({ children }) {
-  return <div className="min-h-full">{children}</div>;
+  return <div className="min-h-screen">{children}</div>;
 }
