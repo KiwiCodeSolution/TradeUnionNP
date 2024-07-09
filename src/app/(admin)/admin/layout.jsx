@@ -1,4 +1,5 @@
 import NavAdmin from "@/components/sections/admin/NavAdmin";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata = {
   title: "Admin",
@@ -7,9 +8,11 @@ export const metadata = {
 
 export default function AdminLayout({ children }) {
   return (
-    <div className="w-screen h-full flex ">
-      <NavAdmin />
-      {children}
-    </div>
+    <AuthProvider>
+      <div className="w-screen h-full flex ">
+        <NavAdmin />
+        {children}
+      </div>
+    </AuthProvider>
   );
 }

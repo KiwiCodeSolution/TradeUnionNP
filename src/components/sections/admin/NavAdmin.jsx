@@ -4,9 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "@/images/menu-logo.svg";
+import { useAuth } from "@/context/AuthContext";
 
 const NavAdmin = () => {
   const pathname = usePathname();
+  const { logout } = useAuth();
 
   return (
     <div className="w-1/5 h-full flex flex-col items-center gap-y-20 bg-red py-10 px-8 rounded-r-2xl">
@@ -26,7 +28,10 @@ const NavAdmin = () => {
           Контакти
         </NavLink>
       </nav>
-      <button className="w-full h-20 mx-auto flex items-center justify-center border border-white text-red font-semibold text-xl bg-white rounded-md hover:bg-red hover:text-white">
+      <button
+        className="w-full h-20 mx-auto flex items-center justify-center border border-white text-red font-semibold text-xl bg-white rounded-md hover:bg-red hover:text-white"
+        onClick={logout}
+      >
         Вийти
       </button>
     </div>

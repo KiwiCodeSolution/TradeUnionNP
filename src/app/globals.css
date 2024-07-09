@@ -34,7 +34,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label {
   margin: 0px;
   padding: 0px;
 }
@@ -208,4 +209,38 @@ article:hover .i-trade-text {
 
 a:hover .back {
   fill: white;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 60% 100%;
+  }
+  to {
+    background-position: 0% 0%;
+  }
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.login::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("/images/recreations/np-arrow.svg");
+  background-repeat: repeat;
+  background-size: 150px 150px;
+  transform: rotate(45deg);
+  transform-origin: center;
+  animation: moveBackground 250s linear infinite;
+  z-index: 0;
 }
