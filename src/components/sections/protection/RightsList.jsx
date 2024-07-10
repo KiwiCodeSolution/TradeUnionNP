@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const RightsList = () => {
   return (
-    <ul className="w-full grid grid-cols-3 gap-4 mt-8">
+    <ul className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
       <li className="flex gap-x-4">
         <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center">
           <Image

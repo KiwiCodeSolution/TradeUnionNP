@@ -4,7 +4,7 @@ import SlidesSwiper from "./SlidesSwiper";
 
 const Cases = () => {
   return (
-    <BaseSection>
+    <BaseSection style={"pt-16 md:pt-0"}>
       <Wrapper>
         <h3 className="text-sm text-liteGrey uppercase">КЕЙСИ</h3>
         <SlidesSwiper />

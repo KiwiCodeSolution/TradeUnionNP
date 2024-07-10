@@ -8,19 +8,19 @@ const TellUs = () => {
     <BaseSection>
       <Wrapper styles={"pt-32 pb-20"}>
         <Title tag={"h2"} styles={"text-center"}>
-          Розкажіть,{" "}
-          <span className="text-red">
+          Розкажіть, <span className="text-red md:hidden">що ви в Профспілці</span>
+          <span className="hidden md:block text-red">
             що ви в <br /> Профспілці
           </span>
         </Title>
-        <p className="text-lg mt-5 text-grey text-left  md:text-center">
+        <p className="text-lg mt-5 text-grey text-center">
           Надсилайте посилання другові чи колезі, нехай також долучається!
         </p>
-        <ul className="flex flex-wrap pt-16 justify-center gap-4 sm:gap-16">
+        <ul className="w-full flex flex-wrap pt-16 justify-center gap-4">
           <li>
             <a href="https://www.instagram.com/profspilka.np/">
               <Image
-                className="shinstagram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-28 shinstagram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/instagram-color.svg"
@@ -30,7 +30,7 @@ const TellUs = () => {
           <li>
             <a href="https://www.youtube.com/channel/UC7Q1wWqpmQzpCcHcvIy-13A">
               <Image
-                className="shyoutobe relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-28 shyoutobe relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/youtube-color_1.svg"
@@ -40,7 +40,7 @@ const TellUs = () => {
           <li>
             <a href="https://t.me/profspilka_np">
               <Image
-                className="shtelegram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-28 shtelegram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/telegram-color.svg"
@@ -50,7 +50,7 @@ const TellUs = () => {
           <li>
             <a href="https://www.facebook.com/profspilka.novaposhta">
               <Image
-                className="shfacebook relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-28 shfacebook relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/facebook-color.svg"
@@ -60,7 +60,7 @@ const TellUs = () => {
           <li>
             <a href="https://invite.viber.com/?g2=AQB5jyDD9hRH2E4T1sgP3mF5DLFT3M6rGUUWfv2%2FHB1AddnNt8Vy6o2DXH793wQk">
               <Image
-                className="shviber relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-28 shviber relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/viber-color.svg"
@@ -70,7 +70,7 @@ const TellUs = () => {
           <li>
             <a href="https://www.messenger.com/">
               <Image
-                className="shmessanger relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-28 shmessanger relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/messanger-color.svg"

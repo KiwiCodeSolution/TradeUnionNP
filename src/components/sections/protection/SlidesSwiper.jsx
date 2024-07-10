@@ -63,7 +63,7 @@ const SlidesSwiper = () => {
           <Slide slide={SECOND_SLIDE} title={"Лікарняний"} />
         </SwiperSlide>
       </Swiper>
-      <div className="w-fit absolute top-5 right-0 flex justify-center items-center gap-x-8 z-[5]">
+      <div className="w-fit absolute -top-8 md:top-5 right-0 flex justify-center items-center gap-x-8 z-[5]">
         <ShowButton btnStyle="slide-button-prev" style="-rotate-180" />
         <ShowButton btnStyle="slide-button-next" />
       </div>

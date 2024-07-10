@@ -30,16 +30,16 @@ const ITEMS = [
 
 const HeroITradeSection = () => {
   return (
-    <section className={"bg-bgGrey w-full pt-6"}>
-      <Wrapper styles={"relative pb-[100px]"}>
+    <section className={"bg-bgGrey w-full pt-2 md:pt-6 pb-[410px] md:pb-[100px] relative"}>
+      <Wrapper styles={""}>
         <PathPage endPath={"Я - Профспілка"} />
-        <div className="flex ">
+        <div className="flex flex-col md:flex-row mt-5 md:mt-0 gap-y-2">
           <div className="w-full sm:w-2/6 flex justify-center items-center gap-4 flex-col relative">
             <Image
               src={BgImage}
               width={262}
               height={355}
-              className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-[1]"
+              className="absolute -top-5 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2 z-[1]"
               alt="білий логотип Профспілки Нова пошта на прозорому тлі"
             />
             <Title tag={"h1"} styles={"z-[2]"}>
@@ -54,23 +54,25 @@ const HeroITradeSection = () => {
               Пошта”
             </p>
           </div>
-          <div className="w-full sm:w-4/6 flex justify-end">
+          <div className="w-full sm:w-4/6 h-[256px] md:h-[355px] flex justify-end relative z-[3]">
             <HeroImage />
           </div>
         </div>
-        <div className="grid grid-cols-3 absolute -bottom-[100px] left-0 w-full px-5 gap-x-4">
+        <div className="w-4/5 grid grid-cols-1 md:grid-cols-3 absolute -bottom-[100px] md:-bottom-[100px] md:left-0 md:w-full md:px-5 gap-4">
           {ITEMS.map(el => (
             <article
               key={el.text + el.link}
-              className="flex flex-col bg-white rounded-2xl py-8 justify-center items-center hover:bg-red text-red hover:text-white hover:scale-x-[1.2]  hover:scale-y-[1.2] transform ease-linear transition-all gap-4 fill-current shadow-sm box-shadow hover:z-[20]"
+              className="flex md:flex-col bg-white rounded-2xl px-6 md:px-0 py-8 md:justify-center items-center hover:bg-red text-red hover:text-white hover:scale-x-[1.2] hover:scale-y-[1.2] transform ease-linear transition-all gap-x-5 md:gap-4 fill-current shadow-2xl md:shadow-sm box-shadow hover:z-[20]"
             >
               {el.image}
-              <h3 className="text-main i-trade-text text-center">
-                {el.text} <br /> <strong>{el.text_accent}</strong>
-              </h3>
-              <Link href={el.link} className="i-trade-link text-red underline underline-offset-1">
-                Детальніше
-              </Link>
+              <div className="flex flex-col gap-4">
+                <h3 className="text-main i-trade-text md:text-center">
+                  {el.text} <br /> <strong>{el.text_accent}</strong>
+                </h3>
+                <Link href={el.link} className="i-trade-link text-red underline underline-offset-1">
+                  Детальніше
+                </Link>
+              </div>
             </article>
           ))}
         </div>

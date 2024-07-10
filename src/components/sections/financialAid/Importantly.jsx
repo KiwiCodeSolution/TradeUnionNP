@@ -10,8 +10,8 @@ const Importantly = () => {
   return (
     <BaseSection style={"bg-bgGrey pt-12 sm:pt-32 pb-12"}>
       <Wrapper>
-        <div className="w-full bg-white rounded-2xl py-7 md:py-14 pl-16 relative">
-          <div className="w-1/2 flex flex-col gap-y-4">
+        <div className="w-full bg-white rounded-2xl px-6 pt-7 md:py-14 md:pl-16 md:pr-0 relative">
+          <div className="w-full md:w-1/2 flex flex-col gap-y-4">
             <Title tag={"h2"}>Увага!</Title>
             <p className="text-lg text-grey">
               Профспілка надає допомогу <strong> лише членам Профспілки!</strong>
@@ -26,7 +26,13 @@ const Importantly = () => {
                 Голові ППО (первинної профспілкової організації).
               </Link>
             </p>
-            <LinkButton view={"red"} goToPage goTo={"/blanky"} style={"uppercase mt-4"} icon>
+            <LinkButton
+              view={"red"}
+              goToPage
+              goTo={"/blanky"}
+              style={"uppercase mt-4 text-sm md:text-base"}
+              icon
+            >
               ЗАВАНТАЖИТИ ЗАЯВУ
             </LinkButton>
           </div>
@@ -35,7 +41,7 @@ const Importantly = () => {
             width={512}
             height={429}
             alt="зображення договору та рук, що тримають кулькову ручку"
-            className="absolute bottom-0 right-12"
+            className="static mt-10 md:mt-0 md:absolute bottom-0 right-12"
           />
         </div>
       </Wrapper>

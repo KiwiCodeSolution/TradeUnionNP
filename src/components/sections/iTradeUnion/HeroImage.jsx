@@ -2,10 +2,11 @@ const HeroImage = () => {
   return (
     <svg
       width="719"
-      height="474"
+      // height="474"
       viewBox="0 0 719 474"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="h-[256px] md:h-[355px]"
     >
       <g clipPath="url(#clip0_375_7177)">
         <path

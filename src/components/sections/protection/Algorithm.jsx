@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import Title from "@/components/Title";
+import { useEffect, useState } from "react";
 
 const STEPS = [
   {
@@ -36,6 +37,42 @@ const STEPS = [
 const INVISIBLE = [1, 2, 3, 4, 5, 6, 7];
 
 const Algorithm = () => {
+  const [swiperStyle, setSwiperStyle] = useState({
+    touchAction: "pan-y",
+    paddingLeft: "16px",
+    paddingTop: "100px",
+  });
+
+  useEffect(() => {
+    const updateSwiperStyle = () => {
+      if (window.innerWidth < 768) {
+        setSwiperStyle({
+          touchAction: "pan-y",
+          paddingLeft: "100px",
+          paddingTop: "20px",
+        });
+      } else if (window.innerWidth < 1200) {
+        setSwiperStyle({
+          touchAction: "pan-y",
+          paddingLeft: "230px",
+          paddingTop: "32px",
+        });
+      } else {
+        setSwiperStyle({
+          touchAction: "pan-y",
+          paddingLeft: "430px",
+          paddingTop: "80px",
+        });
+      }
+    };
+
+    updateSwiperStyle();
+    window.addEventListener("resize", updateSwiperStyle);
+
+    return () => {
+      window.removeEventListener("resize", updateSwiperStyle);
+    };
+  }, []);
   return (
     <BaseSection style={"pt-10 bg-white"}>
       <div className="border-dashed border-4 border-bgBlack w-screen border-opacity-20 absolute top-[290px] left-0" />
@@ -49,16 +86,28 @@ const Algorithm = () => {
       </Title>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        slidesPerView={6}
-        spaceBetween={100}
         touchMoveStopPropagation={false}
         resistanceRatio={0}
         touchStartPreventDefault={false}
-        style={{ touchAction: "pan-y", paddingLeft: "430px", paddingTop: "80px" }}
+        style={swiperStyle}
         className
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 80,
+          },
+          1200: {
+            slidesPerView: 6,
+            spaceBetween: 60,
+          },
+        }}
       >
         {STEPS.map((el, index) => (
-          <SwiperSlide key={el.title} className="pt-10 mx-auto">
+          <SwiperSlide key={el.title + index} className="pt-10 mx-auto">
             <article className="cursor-grab w-64 h-fit relative overflow-visible mx-auto">
               <div className="w-full flex flex-col items-center relative">
                 <div className="rotate-45 w-16 h-16 bg-red rounded-md absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 transform z-[2]" />

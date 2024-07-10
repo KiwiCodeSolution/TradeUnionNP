@@ -10,15 +10,15 @@ const Conditions = () => {
   return (
     <BaseSection style={""}>
       <Wrapper>
-        <div className="w-full flex items-center">
+        <div className="w-full flex flex-col md:flex-row items-center">
           <Image
             src={Cash}
             width={480}
             height={480}
             alt="малюнок руки що тримає гроші"
-            className="w-2/5"
+            className="w-full md:w-2/5"
           />
-          <div className="w-3/5 flex flex-col gap-y-8">
+          <div className="w-full md:w-3/5 flex flex-col gap-y-8">
             <Title tag={"h2"}>
               <span className="text-red">Умови</span> надання матеріальної допомоги
             </Title>
@@ -30,12 +30,12 @@ const Conditions = () => {
             </p>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full pt-16 md:pt-0">
           <Title tag={"h2"} styles={"text-center"}>
             <span className="text-red"> Скільки потрібно бути членом Профспілки</span> <br /> та
             сплачувати внески для отримання допомоги
           </Title>
-          <div className="flex gap-x-8 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <div className="px-8 md:px-16 py-10 bg-white rounded-2xl w-full sm:w-1/2 flex flex-col gap-4 relative box-clock-shadow">
               <h3 className="text-2xl font-bold text-red">6 місяців</h3>
               <p className="text-lg">

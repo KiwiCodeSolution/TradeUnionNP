@@ -9,13 +9,13 @@ const Limitation = () => {
   return (
     <BaseSection style={"bg-bgGrey"}>
       <div className="absolute h-52 left-0 right-0 bg-gradient-to-t from-bgGrey to-white z-0 top-0" />
-      <Wrapper styles={"flex pt-16"}>
-        <div className="w-1/2 flex flex-col gap-y-8 pt-16 relative">
-          <Title tag={"h2"}>
+      <Wrapper styles={"flex flex-col md:flex-row pt-16"}>
+        <div className="w-full md:w-1/2 flex flex-col gap-y-8 pt-16 relative order-2 md:order-1">
+          <Title tag={"h2"} styles={"text-center md:text-left"}>
             Які <span className="text-red">часові обмеження</span> для отримання допомоги
           </Title>
           <ul className="flex flex-col gap-y-8">
-            <li className="flex flex-col gap-y-16">
+            <li className="flex flex-col gap-y-4 md:gap-y-16">
               <div className="flex items-center gap-x-4">
                 <Image src={Alarm} width={32} height={39} alt="червоний годинник" />
                 <p className="text-[30px] font-bold">2 рази на рік</p>
@@ -28,7 +28,7 @@ const Limitation = () => {
                 профспілкової організації) та погодженням ЦК.
               </p>
             </li>
-            <li className="flex flex-col gap-y-16">
+            <li className="flex flex-col gap-y-4 md:gap-y-16">
               <div className="flex items-center gap-x-4">
                 <Image src={Alarm} width={32} height={39} alt="червоний годинник" />
                 <p className="text-[30px] font-bold">2 місяці</p>
@@ -40,7 +40,12 @@ const Limitation = () => {
             </li>
           </ul>
         </div>
-        <Image src={Calendar} width={592} height={518} className="w-1/2 relative" />
+        <Image
+          src={Calendar}
+          width={592}
+          height={518}
+          className="w-full md:w-1/2 relative order-1 md:order-2"
+        />
       </Wrapper>
     </BaseSection>
   );

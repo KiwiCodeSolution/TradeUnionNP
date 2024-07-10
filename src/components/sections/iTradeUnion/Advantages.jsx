@@ -4,7 +4,7 @@ import AdvantagesList from "./AdvantagesList";
 
 const Advantages = () => {
   return (
-    <section className={"bg-white pt-48 w-full"}>
+    <section className={"bg-white pt-48 pb-10 md:pb-0 w-full"}>
       <Wrapper>
         <Title tag={"h2"} styles={"text-center mb-16"}>
           <span className="text-red">Переваги</span> <br /> профспілкового життя

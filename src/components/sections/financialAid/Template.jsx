@@ -18,19 +18,19 @@ const POINTS = [
 const Template = () => {
   return (
     <BaseSection style={"pt-16 bg-bgGrey"}>
-      <Wrapper styles={"flex gap-x-4"}>
-        <div className="w-1/2 flex flex-col gap-y-8">
-          <Title tag={"h2"}>
+      <Wrapper styles={"flex flex-col md:flex-row gap-x-4"}>
+        <div className="w-full md:w-1/2 flex flex-col gap-y-8">
+          <Title tag={"h2"} styles={"text-center md:text-left"}>
             Шаблон <span className="text-red">внутрішніх</span> відправок
           </Title>
-          <p className="text-lg text-grey">
+          <p className="text-lg text-grey mb-4 md:mb-0">
             Відправте пакет документів на отримання матеріальної допомоги, скориставшись шаблоном
             внутрішніх відправок "Матеріальна допомога від Профспілки", м. Полтава, відділення
             “Нової пошти” №23
           </p>
         </div>
         <ul
-          className="w-1/2 flex flex-col gap-y-4 bg-white rounded-2xl px-9 py-6
+          className="w-full md:w-1/2 flex flex-col gap-y-4 bg-white rounded-2xl px-9 py-6
         "
         >
           {POINTS.map(el => (

@@ -27,8 +27,8 @@ const HeroFinancialAidPage = () => {
     <BaseSection style={"pb-20"}>
       <Wrapper>
         <PathPage endPath={"Матеріальна допомога"} />
-        <div className="flex gap-x-4 pt-16">
-          <div className="w-2/5 flex flex-col gap-y-8">
+        <div className="flex flex-col md:flex-row gap-x-4 pt-10">
+          <div className="w-full md:w-2/5 flex flex-col gap-y-8">
             <Title tag={"h2"}>
               Матеріальна <span className="text-red">допомога</span>
             </Title>
@@ -39,18 +39,24 @@ const HeroFinancialAidPage = () => {
               </strong>{" "}
               та щомісячно сплачують членські внески.
             </p>
-            <LinkButton view="red" style={"mt-9 mb-16"} goTo={"#documents"} goToPage icon>
-              долучитися{" "}
+            <LinkButton
+              view="red"
+              style={"mx-auto md:ml-0 mt-4 md:mt-9 mb-16"}
+              goTo={"#documents"}
+              goToPage
+              icon
+            >
+              Отримати допомогу{" "}
             </LinkButton>
           </div>
-          <div className="w-3/5 flex flex-col">
+          <div className="w-full md:w-3/5 flex flex-col">
             <Image
               src={HeroImages}
               width={710}
               height={124}
               alt="зображення листа що виходить з принтера"
             />
-            <div className="w-4/5 mx-auto -mt-14">
+            <div className="w-4/5 mx-auto -mt-10 md:-mt-14">
               <CountAid />
               <div className="border-dotted border-b-8 border-bgBlack w-3/4 border-opacity-20 mx-auto" />
               <ul className="w-4/5 flex flex-col gap-y-4 mx-auto mt-8">

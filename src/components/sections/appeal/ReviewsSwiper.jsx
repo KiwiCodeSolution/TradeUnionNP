@@ -19,7 +19,7 @@ const ReviewsSwiper = () => {
 
       <Swiper
         modules={[Navigation, A11y]}
-        slidesPerView={2}
+        // slidesPerView={2}
         spaceBetween={10}
         speed={500}
         autoplay
@@ -29,6 +29,14 @@ const ReviewsSwiper = () => {
           prevEl: ".review-button-prev",
         }}
         className="w-[calc(100%-44px-44px)]"
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+        }}
       >
         {reviews.map(el => (
           <SwiperSlide key={el.text} className="py-10">

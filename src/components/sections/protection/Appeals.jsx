@@ -18,12 +18,16 @@ const APPEALS = [
 
 const Appeals = () => {
   return (
-    <BaseSection style={"md:pb-32"}>
-      <Wrapper styles={"bg-white rounded-2xl py-16 md:pt-20 flex flex-col gap-y-4 relative"}>
-        <Title tag="h2" styles={"ml-16"}>
+    <BaseSection style={"pb-32"}>
+      <Wrapper
+        styles={
+          "bg-white rounded-2xl py-16 md:pt-20 flex flex-col gap-y-4 h-[968px] md:h-fit relative"
+        }
+      >
+        <Title tag="h2" styles={"md:ml-16"}>
           Звернення, які <span className="text-red">надходять найчастіше:</span>
         </Title>
-        <ul className="w-1/2 flex flex-col gap-y-5 mt-5 ml-16">
+        <ul className="w-full md:w-1/2 flex flex-col gap-y-5 mt-5 md:ml-16">
           {APPEALS.map((el, index) => (
             <ListItem item={el} gap={5} key={index + 47} />
           ))}
@@ -33,7 +37,7 @@ const Appeals = () => {
           width={536}
           height={526}
           alt="Малюнок людини, що тримає договір"
-          className="absolute -bottom-[106px] right-0"
+          className="absolute -bottom-[106px] right-0 z-10"
         />
       </Wrapper>
     </BaseSection>
