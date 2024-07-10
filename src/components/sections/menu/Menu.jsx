@@ -13,7 +13,7 @@ const Menu = () => {
   return (
     <Wrapper styles="flex items-center justify-between xl:gap-x-3">
       <MenuMobile />
-      <Link href="/" className="w-[190px] h-20 flex items-center justify-between">
+      <Link href="/" className="w-[190px] md:h-20 flex items-center justify-between">
         <Image
           src={Logo}
           height={80}

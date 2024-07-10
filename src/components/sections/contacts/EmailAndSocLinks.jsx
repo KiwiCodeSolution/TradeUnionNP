@@ -5,7 +5,7 @@ const EmailAndSocLinks = ({ section }) => {
   const socLinksList = socLinks.filter(el => el.iconRed !== "");
   return (
     <article
-      className={`flex ${
+      className={`hidden md:flex ${
         section === "footer" ? "flex-col gap-y-4" : "gap-x-5 items-center justify-between"
       } `}
     >

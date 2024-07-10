@@ -124,9 +124,15 @@ a:hover .arrow-icon {
 
 .honors {
   background-image: url("/images/agreement/cup.svg");
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: auto;
+
+  @media screen and (min-width: 768px) {
+    background-position: center;
+
+    /* background-size: auto; */
+  }
 }
 
 .arrow {

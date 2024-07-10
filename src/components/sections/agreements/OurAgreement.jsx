@@ -1,4 +1,3 @@
-
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import agreement from "@/data/our_agreement.json";
@@ -11,7 +10,6 @@ const OurAgreement = () => {
   return (
     <BaseSection style={"pt-32"}>
       <Wrapper>
-    
         <Title tag="h2" styles="text-center">
           <span className="text-red">Наш</span> колективний договір
         </Title>
@@ -37,7 +35,7 @@ const OurAgreement = () => {
           ))}
         </div>
 
-        <div className="w-full rounded-2xl my-12 p-16 flex gap-x-8 bg-red">
+        <div className="w-full rounded-2xl my-12 p-16 flex flex-col md:flex-row gap-8 bg-red">
           <Image
             src={Danger}
             width={64}
@@ -45,12 +43,17 @@ const OurAgreement = () => {
             alt="малюнок знаку уваги: червоний знак оклику у білому трикутнику"
           />
           <p className="text-white text-lg">
-            <strong>Жодний трудовий договір (контракт)</strong>, що підписується з працівниками ТОВ
-            “Нова Пошта”, <strong>не може суперечити цьому Колективному договору</strong> таким
-            чином, щоб порівняно з останнім права та інтереси працівника в трудовому договорі
-            (контракті) були якимось чином обмежені. На період воєнного стану деякі положення
-            призупинені роботодавцем. Водночас Профспілка домоглася відновлення майже всіх положень
-            Колективного договору, хоч роботодавець і мав можливість не поновлювати їх дію.
+            <strong>Жодний трудовий договір (контракт)</strong>,{" "}
+            <span className="opacity-75">що підписується з працівниками ТОВ “Нова Пошта”,</span>{" "}
+            <strong>не може суперечити цьому Колективному договору</strong>
+            <span className="opacity-75">
+              {" "}
+              таким чином, щоб порівняно з останнім права та інтереси працівника в трудовому
+              договорі (контракті) були якимось чином обмежені. На період воєнного стану деякі
+              положення призупинені роботодавцем. Водночас Профспілка домоглася відновлення майже
+              всіх положень Колективного договору, хоч роботодавець і мав можливість не поновлювати
+              їх дію.
+            </span>
           </p>
         </div>
       </Wrapper>

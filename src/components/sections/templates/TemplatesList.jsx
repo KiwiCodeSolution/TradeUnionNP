@@ -11,8 +11,11 @@ const TemplatesList = () => {
       <Wrapper styles={"flex flex-col"}>
         <PathPage endPath={"Бланки"} />
 
-        <Title tag="h2" styles="text-center mb-8">
+        <Title tag="h2" styles="hidden md:inline-block text-center mb-8">
           <span className="text-red">Бланки</span> на вступ до <br /> Профспілки
+        </Title>
+        <Title tag="h2" styles="md:hidden inline-block text-center mb-8">
+          <span className="text-red">Бланки</span> на вступ до Профспілки
         </Title>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {templates.map(el => (

@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
     //тимчасове рішення
     generateRandomToken();
     const token = localStorage.getItem("token");
-    console.log(token);
+
     if (token) {
       localStorage.setItem("user", "Admin");
       router.push("/admin/news");
