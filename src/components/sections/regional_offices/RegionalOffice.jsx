@@ -48,7 +48,7 @@ const RegionalOffice = ({ item }) => {
       </div>
 
       <ul className="w-full p-8 flex flex-col bg-white gap-y-8 border-b-[2px] border-bgGrey">
-        <li className="flex flex-col md:flex-row gap-8 items-center">
+        <li className="flex md:min-h-[132px] xl:h-full flex-col md:flex-row gap-8 items-center">
           <div className="w-24 h-24 rounded-full overflow-hidden">
             <Image
               src={item.avatar || NoPhoto}

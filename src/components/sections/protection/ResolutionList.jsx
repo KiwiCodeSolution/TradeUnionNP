@@ -30,7 +30,7 @@ const SECOND_LIST = [
 const ResolutionList = () => {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 z-[5]">
-      <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full md:w-1/2 flex flex-col gap-4 relative">
+      <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full xl:w-1/2 flex flex-col gap-4 relative">
         <h3 className="text-2xl font-bold mb-5 leading-[1.4]">
           Звернення, які вирішуються <br /> <span className="text-red">до 7 днів</span>
         </h3>
@@ -48,7 +48,7 @@ const ResolutionList = () => {
           alt="зображення годинника"
         />
       </div>
-      <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full md:w-1/2 flex flex-col gap-4 relative">
+      <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full xl:w-1/2 flex flex-col gap-4 relative">
         <h3 className="text-2xl font-bold mb-5">
           Звернення, які вирішуються <br /> <span className="text-red">7-31 день</span>
         </h3>

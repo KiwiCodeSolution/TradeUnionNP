@@ -12,7 +12,7 @@ import Title from "@/components/Title";
 const FinancialAid = () => {
   return (
     <BaseSection>
-      <Wrapper styles={"flex flex-col md:flex-row gap-8 py-16 h-fit md:h-[1031px]"}>
+      <Wrapper styles={"flex flex-col md:flex-row gap-8 py-16 h-fit xl:h-[1031px]"}>
         <div className="order-1 w-full md:w-3/5 flex flex-col">
           <Title tag="h2">
             <span className="text-red">Матеріальна допомога</span> від Профспілки під час війни
@@ -35,7 +35,7 @@ const FinancialAid = () => {
           </div>
         </div>
 
-        <div className="order-2 w-full h-[1135px] md:h-[905px] md:w-2/5 flex flex-col rounded-2xl bg-bgGrey py-9 pl-12 relative">
+        <div className="order-2 w-full h-[1135px] md:h-[1265px] xl:h-[905px] md:w-2/5 flex flex-col rounded-2xl bg-bgGrey py-9 pl-12 relative">
           <h2 className="w-full text-[34px] font-bold leading-10 text-red pb-9 pr-12">
             Нові види матеріальної допомоги під час війни
           </h2>
@@ -45,7 +45,7 @@ const FinancialAid = () => {
             width={349}
             height={37}
             alt="білі літери, що утворюють слово 'профспілка'"
-            className="mt-auto mx-auto w-[199px] md:w-[349px] mr-12"
+            className="mt-auto mx-auto w-[199px] md:w-[185px] xl:w-[349px] mr-12"
           />
         </div>
       </Wrapper>

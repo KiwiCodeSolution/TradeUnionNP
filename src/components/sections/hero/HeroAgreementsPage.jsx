@@ -19,9 +19,9 @@ const HeroAgreementsPage = () => {
             width={140}
             height={163}
             alt="червона закладка із білим логотипом Профспілки Нової пошти"
-            className="w-20 md:w-[140px] absolute top-0 right-8 -translate-y-8"
+            className="w-20 md:w-[110px] xl:w-[140px] absolute top-0 right-8 -translate-y-8"
           />
-          <Title tag="h1">
+          <Title tag="h2">
             Колективний <span className="text-red">договір</span>
           </Title>
 
@@ -56,7 +56,7 @@ const HeroAgreementsPage = () => {
             width={468}
             height={395}
             alt="зображення анкети чи бланку договору та руки із ручкою"
-            className="hidden xl:block absolute bottom-0 right-16"
+            className="hidden md:block w-[320px] xl:w-[468px] right-9 absolute bottom-0 xl:right-16"
           />
           <a
             href="/files/koldogovor.pdf"

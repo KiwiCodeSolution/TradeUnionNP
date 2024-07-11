@@ -21,12 +21,12 @@ const AgreementsPointsList = () => {
             onClick={() => setCurrentPoint(index)}
           >
             <Image src={el.image} width={32} height={32} alt={`зображення на тему ${el.title}`} />
-            <p>{el.title}</p>
+            <p className="text-left">{el.title}</p>
           </button>
         ))}
       </div>
       <div
-        className={`w-1/2 min-h-[960px] p-8 ${
+        className={`w-1/2 min-h-[960px] md:min-h-[1160px] xl:min-h-[960px] p-8 ${
           currentPoint === 0
             ? "rounded-b-2xl rounded-r-2xl"
             : currentPoint === principles.length - 1

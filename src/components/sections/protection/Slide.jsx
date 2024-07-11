@@ -6,9 +6,9 @@ const Slide = ({ slide, title }) => {
       <Title tag="h2" styles="mt-4 mb-12">
         {title}
       </Title>
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-4">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-6 xl:gap-x-12 gap-y-4">
         {slide.map((el, index) => (
-          <li key={el.title} className="flex gap-x-2 items-start">
+          <li key={el.title} className="w-full flex gap-x-2 items-start">
             <div className="flex items-center gap-x-2">
               <p className="text-red text-[22px] leading-[1.3]">0{index + 1}</p>
               <div className="h-0.5 w-8 bg-red" />

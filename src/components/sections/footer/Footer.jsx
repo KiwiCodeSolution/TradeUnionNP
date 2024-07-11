@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="w-full flex flex-col relative">
       <Wrapper
         styles={
-          "flex flex-col xl:flex-row gap-y-10 md:gap-y-8 items-center md:items-start justify-between py-16"
+          "flex flex-col md:flex-row gap-y-10 md:gap-y-8 items-center md:items-start justify-between py-16"
         }
       >
         <Image

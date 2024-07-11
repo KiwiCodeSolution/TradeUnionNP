@@ -39,8 +39,8 @@ const INVISIBLE = [1, 2, 3, 4, 5, 6, 7];
 const Algorithm = () => {
   const [swiperStyle, setSwiperStyle] = useState({
     touchAction: "pan-y",
-    paddingLeft: "16px",
-    paddingTop: "100px",
+    paddingLeft: "100px",
+    paddingTop: "20px",
   });
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const Algorithm = () => {
       } else if (window.innerWidth < 1200) {
         setSwiperStyle({
           touchAction: "pan-y",
-          paddingLeft: "230px",
+          paddingLeft: "60px",
           paddingTop: "32px",
         });
       } else {
@@ -98,7 +98,7 @@ const Algorithm = () => {
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 80,
+            spaceBetween: 30,
           },
           1200: {
             slidesPerView: 6,

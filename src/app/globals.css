@@ -128,10 +128,8 @@ a:hover .arrow-icon {
   background-repeat: no-repeat;
   background-size: auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     background-position: center;
-
-    /* background-size: auto; */
   }
 }
 

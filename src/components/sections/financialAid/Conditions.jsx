@@ -36,7 +36,7 @@ const Conditions = () => {
             сплачувати внески для отримання допомоги
           </Title>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div className="px-8 md:px-16 py-10 bg-white rounded-2xl w-full sm:w-1/2 flex flex-col gap-4 relative box-clock-shadow">
+            <div className="px-8 md:px-16 py-10 bg-white rounded-2xl w-full flex flex-col gap-4 relative box-clock-shadow">
               <h3 className="text-2xl font-bold text-red">6 місяців</h3>
               <p className="text-lg">
                 Матеріальна допомога надається працівникам,{" "}
@@ -51,7 +51,7 @@ const Conditions = () => {
                 className="h-1/3 md:h-2/3 opacity-10 absolute right-2 top-7 md:bottom-5"
               />
             </div>
-            <div className="px-8 md:px-16 py-10 bg-white rounded-2xl w-full sm:w-1/2 flex flex-col gap-4 relative box-clock-shadow">
+            <div className="px-8 md:px-16 py-10 bg-white rounded-2xl w-full flex flex-col gap-4 relative box-clock-shadow">
               <h3 className="text-2xl font-bold text-red">12 місяців</h3>
               <p className="text-lg">
                 <strong>Компенсація витрат на лікування у випадку хвороби близьких родичів</strong>{" "}

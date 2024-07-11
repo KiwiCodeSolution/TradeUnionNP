@@ -87,7 +87,7 @@ const RegionalOffices = () => {
   return (
     <BaseSection>
       <Wrapper styles={"py-16"}>
-        <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-16">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-8 xl:gap-16">
           {OFFICES_TEST.map(el => (
             <RegionalOffice key={el.region} item={el} />
           ))}

@@ -17,7 +17,7 @@ const DocumentsList = () => {
 
   return (
     <>
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+      <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-10">
         {docs.map(el => (
           <li
             className="w-full flex flex-col items-start justify-between bg-white rounded-2xl gap-y-4 px-8 py-6 relative"

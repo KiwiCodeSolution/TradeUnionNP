@@ -51,7 +51,7 @@ const Interview = () => {
           width={77}
           height={71}
           alt="сірі лапки"
-          className="absolute top-0 md:bottom-0 right-7 md:right-0"
+          className="absolute top-0 md:bottom-0 md:top-auto right-7 md:right-16 xl:right-0"
         />
       </Wrapper>
     </BaseSection>

@@ -10,7 +10,7 @@ const Importantly = () => {
   return (
     <BaseSection style={"bg-bgGrey pt-12 sm:pt-32 pb-12"}>
       <Wrapper>
-        <div className="w-full bg-white rounded-2xl px-6 pt-7 md:py-14 md:pl-16 md:pr-0 relative">
+        <div className="w-full bg-white rounded-2xl px-6 pt-7 md:py-14 md:pl-16 md:pr-0 relative flex">
           <div className="w-full md:w-1/2 flex flex-col gap-y-4">
             <Title tag={"h2"}>Увага!</Title>
             <p className="text-lg text-grey">
@@ -41,7 +41,7 @@ const Importantly = () => {
             width={512}
             height={429}
             alt="зображення договору та рук, що тримають кулькову ручку"
-            className="static mt-10 md:mt-0 md:absolute bottom-0 right-12"
+            className="static mt-10 md:mt-0 md:absolute bottom-0 md:right-0 xl:right-12 md:w-1/2 xl:w-[512px]"
           />
         </div>
       </Wrapper>

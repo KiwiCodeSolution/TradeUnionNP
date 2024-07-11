@@ -14,7 +14,7 @@ const Law = ({ children, data }) => {
         <Title tag="h2" styles="text-center">
           {children}
         </Title>
-        <div className="grid rid-grid-cols-1 xl:grid-cols-2 gap-4 z-[1]">
+        <div className="grid rid-grid-cols-1 md:grid-cols-2 gap-4 z-[1]">
           {data.map(el => (
             <LawItem key={el.title} item={el} />
           ))}

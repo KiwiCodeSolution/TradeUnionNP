@@ -21,7 +21,7 @@ const HeroAboutPage = () => {
               компаній «NOVA».
             </p>
           </div>
-          <div className="w-full sm:w-2/5 lg:w-3/5">
+          <div className="w-full sm:w-2/5 md:w-3/5 md:my-auto">
             <HeroAboutPageImage />
           </div>
         </div>
