@@ -20,7 +20,7 @@ const TellUs = () => {
           <li>
             <a href="https://www.instagram.com/profspilka.np/">
               <Image
-                className="w-16 md:w-28 shinstagram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-32 xl:w-28 shinstagram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/instagram-color.svg"
@@ -30,7 +30,7 @@ const TellUs = () => {
           <li>
             <a href="https://www.youtube.com/channel/UC7Q1wWqpmQzpCcHcvIy-13A">
               <Image
-                className="w-16 md:w-28 shyoutobe relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-32 xl:w-28 shyoutobe relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/youtube-color_1.svg"
@@ -40,7 +40,7 @@ const TellUs = () => {
           <li>
             <a href="https://t.me/profspilka_np">
               <Image
-                className="w-16 md:w-28 shtelegram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-32 xl:w-28 shtelegram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/telegram-color.svg"
@@ -50,7 +50,7 @@ const TellUs = () => {
           <li>
             <a href="https://www.facebook.com/profspilka.novaposhta">
               <Image
-                className="w-16 md:w-28 shfacebook relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-32 xl:w-28 shfacebook relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/facebook-color.svg"
@@ -60,7 +60,7 @@ const TellUs = () => {
           <li>
             <a href="https://invite.viber.com/?g2=AQB5jyDD9hRH2E4T1sgP3mF5DLFT3M6rGUUWfv2%2FHB1AddnNt8Vy6o2DXH793wQk">
               <Image
-                className="w-16 md:w-28 shviber relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-32 xl:w-28 shviber relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/viber-color.svg"
@@ -70,7 +70,7 @@ const TellUs = () => {
           <li>
             <a href="https://www.messenger.com/">
               <Image
-                className="w-16 md:w-28 shmessanger relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                className="w-16 md:w-32 xl:w-28 shmessanger relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
                 width={112}
                 height={112}
                 src="/images/soc-icons/messanger-color.svg"

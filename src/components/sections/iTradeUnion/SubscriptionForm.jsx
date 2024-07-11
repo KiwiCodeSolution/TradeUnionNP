@@ -24,10 +24,10 @@ const SubscriptionForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex flex-col gap-y-5 md:flex-row relative">
+    <form onSubmit={handleSubmit} className="w-full flex flex-col gap-y-5 xl:flex-row relative">
       <input
         type="email"
-        className="p-5 pr-12 w-full md:w-[440px] border-0 focus:outline-none focus:shadow-none rounded-full h-[60px] bg-bgGrey"
+        className="p-5 pr-12 w-full xl:w-[440px] border-0 focus:outline-none focus:shadow-none rounded-full h-[60px] bg-bgGrey"
         value={email}
         onChange={e => setEmail(e.target.value)}
         onFocus={handleFocus}
@@ -40,7 +40,7 @@ const SubscriptionForm = () => {
       )}
       <Button
         btnType="submit"
-        style={"static mx-auto md:absolute top-0 right-[calc(100%-440px-84px)]"}
+        style={"static mx-auto w-full xl:absolute top-0 right-[calc(100%-440px-84px)]"}
         view="red"
       >
         Підписатись

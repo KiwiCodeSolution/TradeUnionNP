@@ -40,7 +40,7 @@ const ReviewsSwiper = () => {
       >
         {reviews.map(el => (
           <SwiperSlide key={el.text} className="py-10">
-            <article className="w-[95%] min-h-[136px] bg-white rounded-xl p-8 relative mx-auto">
+            <article className="w-[95%] min-h-[136px] md:h-full bg-white rounded-xl p-8 relative mx-auto">
               <p className="text-base">
                 "{el.text}" - {el.name} ({el.address})
               </p>

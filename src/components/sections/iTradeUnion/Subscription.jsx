@@ -13,7 +13,7 @@ const Subscription = () => {
     <BaseSection style={"bg-bgGrey"}>
       <Wrapper styles={"pt-8 md:pt-32 pb-10"}>
         <div className="bg-white rounded-xl my-4 xs:my-8 flex justify-between items-center">
-          <div className="w-full sm:w-2/3 p-4 md:p-12 flex flex-col gap-8">
+          <div className="w-full md:w-2/3 p-4 md:p-12 flex flex-col gap-8">
             <Title tag={"h2"} styles={"text-center md:text-left"}>
               Бажаєте <span className="text-red">отримувати новини?</span>
             </Title>
