@@ -8,7 +8,7 @@ import ContactFormImages from "./ContactFormImages";
 const ContactSection = ({ bgStyle }) => {
   return (
     <BaseSection style={bgStyle}>
-      <Wrapper styles={"flex flex-col md:flex-row items-center justify-between relative"}>
+      <Wrapper styles={"flex flex-col md:flex-row items-center justify-between relative pb-4"}>
         <div className="w-full md:w-1/2 flex flex-col order-2 md:order-1">
           <Title tag="h2" styles={"mt-5 md:mt-0"}>
             <span className="text-red">Бажаєте долучитись</span> до Профспілки?

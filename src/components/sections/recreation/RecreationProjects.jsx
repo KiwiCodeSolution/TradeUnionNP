@@ -7,8 +7,8 @@ const RecreationProjects = () => {
   return (
     <BaseSection style={"bg-bgGrey"}>
       <div className="absolute h-52 left-0 right-0 bg-gradient-to-b from-white to-bgGrey z-0 top-0" />
-      <Wrapper styles={"pt-16 md:pt-32 md:pb-10 flex"}>
-        <div className="w-1/5 relative pt-4">
+      <Wrapper styles={"pt-16 md:pt-32 pb-14 md:pb-10 flex flex-col md:flex-row"}>
+        <div className="w-full md:w-1/5 relative pt-4">
           <Title tag={"h2"}>Проєкти</Title>
         </div>
 

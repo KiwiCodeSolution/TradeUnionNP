@@ -11,15 +11,15 @@ import Viber from "@/images/soc-icons/viber-color.svg";
 const Subscription = () => {
   return (
     <BaseSection style={"bg-bgGrey"}>
-      <Wrapper styles={"pt-8 md:pt-32"}>
+      <Wrapper styles={"pt-8 md:pt-32 pb-10"}>
         <div className="bg-white rounded-xl my-4 xs:my-8 flex justify-between items-center">
           <div className="w-full sm:w-2/3 p-4 md:p-12 flex flex-col gap-8">
-            <Title tag={"h2"}>
+            <Title tag={"h2"} styles={"text-center md:text-left"}>
               Бажаєте <span className="text-red">отримувати новини?</span>
             </Title>
             <SubscriptionForm />
-            <div className="flex gap-6">
-              <p>Слідкуйте за новинами в мессенджерах:</p>
+            <div className="flex flex-col items-center md:flex-row gap-6">
+              <p className="text-center md:text-left">Слідкуйте за новинами в мессенджерах:</p>
               <ul className="flex gap-5 items-center">
                 <li>
                   <a href="https://t.me/profspilka_np">

@@ -9,7 +9,7 @@ const FAQ = () => {
   return (
     <BaseSection>
       <Wrapper styles={"py-16"}>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {points.map((el, index) => (
             <article
               key={el.title[0] + el.title[1]}
@@ -21,7 +21,7 @@ const FAQ = () => {
                   width={164}
                   height={165}
                   alt="Логотип компанії"
-                  className="absolute -top-[64px] -left-[91px] z-[2]"
+                  className="hidden md:block absolute -top-[64px] -left-[91px] z-[2]"
                 />
               )}
 

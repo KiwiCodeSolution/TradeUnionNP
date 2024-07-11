@@ -24,7 +24,7 @@ const SubscriptionForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex relative">
+    <form onSubmit={handleSubmit} className="w-full flex flex-col gap-y-5 md:flex-row relative">
       <input
         type="email"
         className="p-5 pr-12 w-full md:w-[440px] border-0 focus:outline-none focus:shadow-none rounded-full h-[60px] bg-bgGrey"
@@ -38,7 +38,11 @@ const SubscriptionForm = () => {
           Будь ласка, введіть ваш email.
         </p>
       )}
-      <Button btnType="submit" style={"absolute top-0 right-[calc(100%-440px-84px)]"} view="red">
+      <Button
+        btnType="submit"
+        style={"static mx-auto md:absolute top-0 right-[calc(100%-440px-84px)]"}
+        view="red"
+      >
         Підписатись
       </Button>
     </form>

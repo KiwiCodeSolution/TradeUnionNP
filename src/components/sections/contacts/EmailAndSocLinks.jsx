@@ -3,10 +3,13 @@ import Image from "next/image";
 
 const EmailAndSocLinks = ({ section }) => {
   const socLinksList = socLinks.filter(el => el.iconRed !== "");
+
   return (
     <article
-      className={`hidden md:flex ${
-        section === "footer" ? "flex-col gap-y-4" : "gap-x-5 items-center justify-between"
+      className={`flex ${
+        section === "footer"
+          ? "flex-col gap-y-4"
+          : "hidden md:flex gap-x-5 items-center justify-between"
       } `}
     >
       {section === "footer" && (

@@ -7,6 +7,7 @@ import Third from "@/images/i-trade/third.svg";
 import Fourth from "@/images/i-trade/fourth.svg";
 import Fifth from "@/images/i-trade/fifth.svg";
 import Path from "@/images/i-trade/path.svg";
+import PathXS from "@/images/i-trade/path-xs.svg";
 import BgImage from "@/images/i-trade/np-arrow-white.svg";
 import Title from "@/components/Title";
 
@@ -18,26 +19,39 @@ const Invite = () => {
           <span className="text-red">Запрошуйте друзів</span>
           <br /> та отримуйте заохочення!
         </Title>
-        <div className="hidden sm:flex flex-wrap flex-row justify-center gap-16 relative">
+        <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-11 md:gap-16 relative">
           <Image
-            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"
+            className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"
             src={BgImage}
           />
-
           <Image
-            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+            className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
             src={Path}
+            alt="схематичний малюнок звивистого шляху пунктирною лінією"
           />
-
-          <div className="w-1/4 flex flex-col justify-center items-center gap-4 relative z-30">
-            <Image className="w-28" src={First} />
-            <p className="text-center">
+          <Image
+            className="md:hidden absolute left-0 top-[104px] z-10"
+            src={PathXS}
+            alt="схематичний малюнок звивистого шляху пунктирною лінією"
+          />
+          <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-1 md:order-1">
+            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={First} />
+            <p className="md:text-center">
               <strong>Запроси друга</strong> в&nbsp;Профспілку
             </p>
           </div>
-          <div className="w-1/4 flex flex-col justify-center items-center gap-4 relative z-30">
-            <Image className="w-28" src={Third} />
-            <p className="text-center">
+          <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-2 md:order-4">
+            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Second} />
+            <p className="md:text-center">
+              Допоможи йому <strong>заповнити</strong>{" "}
+              <a className="text-red underline" href="">
+                Заяву&nbsp;на&nbsp;вступ
+              </a>
+            </p>
+          </div>
+          <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-3 md:order-2">
+            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Third} />
+            <p className="md:text-center">
               <strong>Відправте Заяву</strong> до Профспілки
               <br />(
               <a className="text-red underline" href="">
@@ -46,29 +60,20 @@ const Invite = () => {
               )
             </p>
           </div>
-          <div className="w-1/4 flex flex-col justify-center items-center gap-4 relative z-30">
-            <Image className="w-28" src={Fifth} />
-            <p className="text-center">
-              <strong>Отримайте</strong> брендований подарунок або сертифікат на активне дозвілля
-            </p>
-          </div>
-          <div className="w-1/4 flex flex-col justify-center items-center gap-4 relative z-30">
-            <Image className="w-28" src={Second} />
-            <p className="text-center">
-              Допоможи йому <strong>заповнити</strong>{" "}
-              <a className="text-red underline" href="">
-                Заяву&nbsp;на&nbsp;вступ
-              </a>
-            </p>
-          </div>
-          <div className="w-1/4 flex flex-col justify-center items-center gap-4 relative z-30">
-            <Image className="w-28" src={Fourth} />
-            <p className="text-center">
+          <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-4 md:order-5">
+            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Fourth} />
+            <p className="md:text-center">
               <strong>Напишіть нам </strong> на{" "}
               <a className="text-red underline" href="mailto:help@profspilka.org">
                 help@profspilka.org
               </a>{" "}
               і вкажіть, що ви запросили друга та бажаєте отримати заохочення
+            </p>
+          </div>
+          <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-5 md:order-3">
+            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Fifth} />
+            <p className="md:text-center">
+              <strong>Отримайте</strong> брендований подарунок або сертифікат на активне дозвілля
             </p>
           </div>
         </div>
