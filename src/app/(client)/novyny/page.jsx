@@ -1,7 +1,9 @@
+import NewsList from "@/components/sections/news/NewsList";
+
 export default function NewsPage() {
   return (
-    <main className="w-full">
-      <h1>News Page</h1>
+    <main className="w-full bg-bgGrey">
+      <NewsList />
     </main>
   );
 }
