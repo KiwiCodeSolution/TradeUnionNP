@@ -1,14 +1,12 @@
 "use client";
 import Image from "next/image";
-import Post from "@/images/contacts/mail.svg";
-import Tell from "@/images/contacts/phone.svg";
 import Users from "@/images/icon-users.svg";
 import { useState } from "react";
 import RedDot from "@/components/UI/RedDot";
-import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import Link from "next/link";
 import NoPhoto from "@/images/no-photo.svg";
 import ShowButton from "@/components/UI/buttons/ShowButton";
+import TelMailBlock from "./TelMailBlock";
 
 const RegionalOffice = ({ item }) => {
   const [isShowAdmissionAddress, setIsShowAdmissionAddress] = useState(false);
@@ -65,19 +63,8 @@ const RegionalOffice = ({ item }) => {
             <p className="text-[15px] text-center md:text-left">{item.position} </p>
           </div>
         </li>
-        <li className="flex flex-col gap-y-4">
-          <div className="flex gap-x-2 items-center mx-auto md:ml-0">
-            <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
-            <a href={`tel:${item.phone}`} className="text-[15px] hover:text-red">
-              {formatPhoneNumber(item.phone)}
-            </a>
-          </div>
-          <div className="flex gap-x-2 items-center mx-auto md:ml-0">
-            <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
-            <a href={`mailto:${item.email}`} className="text-[15px] hover:text-red">
-              {item.email}
-            </a>
-          </div>
+        <li className="">
+          <TelMailBlock email={item.email} phone={item.phone} />
         </li>
         <li className="flex flex-col pb-4 border-b-[2px] border-bgGrey">
           <div className="flex items-center justify-between">

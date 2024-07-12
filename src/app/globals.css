@@ -137,7 +137,8 @@ a:hover .arrow-icon {
   fill: theme("colors.red");
 }
 
-.rounded-button:hover .arrow {
+.rounded-button:hover .arrow,
+.pagination-page:hover .arrow {
   fill: white;
 }
 
@@ -247,4 +248,39 @@ a:hover .back {
   transform-origin: center;
   animation: moveBackground 250s linear infinite;
   z-index: 0;
+}
+
+.pagination-container {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-page {
+  width: 44px; /* Розмір сторінки */
+  height: 44px; /* Розмір сторінки */
+  background-color: white; /* Червоний колір */
+  border-radius: 50%; /* Округлість */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px; /* Відступи між сторінками */
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  color: theme("colors.red");
+}
+
+.pagination-page:hover {
+  background-color: theme("colors.red");
+}
+
+.pagination-active {
+  border: 1px theme("colors.red") solid; /* Жирний шрифт для активної сторінки */
+  /* Колір тексту */
 }

@@ -54,7 +54,7 @@ const Modal = ({ children, isOpen, onClose }) => {
         <div className="flex flex-col min-w-[200px] max-w-[600px] bg-white rounded-2xl mx-auto relative">
           <button
             onClick={closeModal}
-            className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red"
+            className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red z-20"
           >
             <Cross />
           </button>
