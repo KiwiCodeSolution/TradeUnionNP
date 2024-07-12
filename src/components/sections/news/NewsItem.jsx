@@ -42,6 +42,7 @@ const NewsItem = ({ item }) => {
       <Link
         href={item.slug}
         className="w-[calc(100%-48px-12px)] md:w-[calc(100%-48px-24px)] h-full hover:shadow-xl rounded-lg overflow-hidden"
+        target="_blank"
       >
         <div className="rounded-lg h-64 overflow-hidden mb-4">
           <Image

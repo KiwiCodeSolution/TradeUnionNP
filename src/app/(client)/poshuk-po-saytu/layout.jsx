@@ -1,6 +1,9 @@
 export const metadata = {
-  title: "Пошук по сайту",
-  description: "Пошук по сайту",
+  title: "Результат пошуку по сайту | ВПСП ТОВ «Нова Пошта»",
+  description: "Результат пошуку по сайту | ВПСП ТОВ «Нова Пошта»",
+  content:
+    "Офіційний сайт Профспілки групи компаній «Нова Пошта» | Всеукраїнська професійна спілка працівників ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»",
+  metadataBase: new URL("https://profspilka.org"),
 };
 
 export default function SearchLayout({ children }) {

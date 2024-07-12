@@ -12,7 +12,10 @@ export const metadata = {
     },
   },
   openGraph: {
+    title: "Звернення | Всеукраїнська професійна спілка працівників ТОВ «НОВА ПОШТА»",
+    description: "Звернення",
     images: "/og-image.png",
+    url: "https://profspilka.org",
   },
 };
 
