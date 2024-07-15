@@ -25,6 +25,7 @@ const NewsItem = ({ item }) => {
     ];
     return months[parseInt(monthNumber, 10) - 1];
   };
+
   return (
     <article className="w-full h-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative">
       <div className="w-12 h-full flex flex-col">

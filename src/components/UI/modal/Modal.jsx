@@ -51,7 +51,7 @@ const Modal = ({ children, isOpen, onClose }) => {
         className="fixed w-full h-screen top-0 left-0 bg-slate-400 bg-opacity-50 flex items-center justify-center"
         onClick={handleOverlayClick}
       >
-        <div className="flex flex-col min-w-[200px] max-w-[600px] bg-white rounded-2xl mx-auto relative">
+        <div className="flex flex-col min-w-[200px] max-w-[600px] bg-white rounded-2xl mx-auto relative py-8">
           <button
             onClick={closeModal}
             className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red z-20"

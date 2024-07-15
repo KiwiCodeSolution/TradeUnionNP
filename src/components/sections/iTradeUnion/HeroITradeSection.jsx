@@ -31,10 +31,10 @@ const ITEMS = [
 const HeroITradeSection = () => {
   return (
     <section className={"bg-bgGrey w-full pt-2 md:pt-6 pb-[410px] md:pb-[100px] relative"}>
-      <Wrapper styles={""}>
+      <Wrapper styles={"relative"}>
         <PathPage endPath={"Я - Профспілка"} />
         <div className="flex flex-col md:flex-row mt-5 md:mt-0 gap-y-2">
-          <div className="w-full md:w-1/2 flex justify-center items-center gap-4 flex-col relative">
+          <div className="w-full md:w-1/2 flex justify-center items-center xl:items-start gap-4 flex-col relative">
             <Image
               src={BgImage}
               width={262}
@@ -58,7 +58,7 @@ const HeroITradeSection = () => {
             <HeroImage />
           </div>
         </div>
-        <div className="w-4/5 grid grid-cols-1 md:grid-cols-3 absolute -bottom-[100px] md:-bottom-[120px] xl:-bottom-[100px] md:left-0 md:w-full md:px-5 gap-4">
+        <div className="w-4/5 grid grid-cols-1 md:grid-cols-3 absolute -bottom-[510px] md:-bottom-[215px] xl:-bottom-[230px] md:left-0 md:w-full md:px-5 gap-4">
           {ITEMS.map(el => (
             <article
               key={el.text + el.link}

@@ -15,6 +15,7 @@ module.exports = {
         bgBlack: "#333333",
         bgGrey: "#EEEEEE",
         liteGrey: "#999999",
+        newsData: "#888888",
       },
       screens: {
         tablet: "768px",

@@ -30,17 +30,17 @@ const ImagesAgreement = () => {
         width={263}
         height={220}
         alt="бланк колективного договору на планшетці"
-        className="md:hidden mx-auto"
+        className="md:absolute bottom-0 xl:hidden mx-auto"
       />
       <Image
         src={Blank}
         width={498}
         height={429}
         alt="бланк колективного договору на планшетці"
-        className="hidden md:block absolute bottom-0"
+        className="hidden xl:block absolute bottom-0"
       />
       <motion.div
-        className="hidden md:block absolute bottom-[182px] left-[198px]"
+        className="hidden xl:block absolute bottom-[182px] left-[198px]"
         initial="hidden"
         whileInView="visible"
         variants={textAnimation}
@@ -48,7 +48,7 @@ const ImagesAgreement = () => {
         <Image src={Text} width={40} height={25} alt="написаний прописом текст" />
       </motion.div>
       <motion.div
-        className="hidden md:block absolute bottom-[1px] left-[233px]"
+        className="hidden xl:block absolute bottom-[1px] left-[233px]"
         initial="hidden"
         whileInView="visible"
         variants={handAnimation}

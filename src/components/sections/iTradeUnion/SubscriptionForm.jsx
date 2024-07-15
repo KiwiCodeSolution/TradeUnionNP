@@ -40,7 +40,7 @@ const SubscriptionForm = () => {
       )}
       <Button
         btnType="submit"
-        style={"static mx-auto w-full xl:absolute top-0 right-[calc(100%-440px-84px)]"}
+        style={"static mx-auto w-full xl:absolute top-0 right-[calc(100%-440px-84px)] xl:w-fit"}
         view="red"
       >
         Підписатись

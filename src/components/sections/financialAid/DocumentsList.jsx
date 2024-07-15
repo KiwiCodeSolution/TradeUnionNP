@@ -52,7 +52,7 @@ const DocumentsList = () => {
       </ul>
       {currentDocument && (
         <Modal onClose={() => setIsOpenModal(false)} isOpen={isOpenModal}>
-          <ul className="flex flex-col gap-y-3 p-8">
+          <ul className="flex flex-col gap-y-3 max-h-[500px] px-8 overflow-scroll">
             {currentDocument.points.map(el => (
               <ListItem item={el} gap={5} key={el} />
             ))}

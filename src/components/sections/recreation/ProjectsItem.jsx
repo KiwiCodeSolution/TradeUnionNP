@@ -15,7 +15,7 @@ const ProjectsItem = ({ item }) => {
       </div>
 
       <h3 className="text-[15px] font-bold">{item.text}</h3>
-      <LinkButton view={"transparent"} goToPage icon goTo={item.link} style={"font-bold"}>
+      <LinkButton view={"transparent"} goToPage icon goTo={item.link} style={"font-bold w-[163px]"}>
         ПЕРЕГЛЯНУТИ
       </LinkButton>
     </article>
