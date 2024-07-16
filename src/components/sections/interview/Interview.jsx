@@ -3,7 +3,7 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import Avatar from "@/images/home/avatar.svg";
 import Quote from "@/images/lapky.svg";
-import { inter } from "../../../app/fonts";
+import { inter } from "@/app/[locale]/fonts";
 import LinkButton from "@/components/UI/buttons/LinkButton";
 
 const Interview = () => {

@@ -1,4 +1,4 @@
-import { inter } from "@/app/fonts";
+import { inter } from "@/app/[locale]/fonts";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import agreements from "@/data/agreements.json";

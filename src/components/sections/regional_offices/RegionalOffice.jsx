@@ -81,18 +81,18 @@ const RegionalOffice = ({ item }) => {
         </li>
         <li className="flex flex-col h-[100px] justify-between">
           <div className="flex gap-x-4 mx-auto xl:hidden ">
-            <button
+            <a
               className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-              onClick={() => handleShowContacts("tell")}
+              href={`tel:${item.phone}`}
             >
               <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
-            </button>
-            <button
+            </a>
+            <a
               className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-              onClick={() => handleShowContacts("email")}
+              href={`mailto:${item.email}&body=питання щодо ${item.region} профспілки`}
             >
               <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
-            </button>
+            </a>
           </div>
 
           <div className="hidden xl:flex gap-x-4 mx-auto">

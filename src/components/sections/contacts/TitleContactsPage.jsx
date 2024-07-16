@@ -1,6 +1,6 @@
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
-import { inter } from "@/app/fonts";
+import { inter } from "@/app/[locale]/fonts";
 import PathPage from "@/components/PathPage";
 import Title from "@/components/Title";
 

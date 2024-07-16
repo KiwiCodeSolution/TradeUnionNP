@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 import Image from "next/image";
 import { numbersValue } from "@/constants/numbers";
 import Blanc from "@/images/home/icon_benef_dog.svg";
-import { inter } from "@/app/fonts";
+import { inter } from "@/app/[locale]/fonts";
 
 const NumberItem = ({ item, index }) => {
   const [isVisible, setIsVisible] = useState(false);

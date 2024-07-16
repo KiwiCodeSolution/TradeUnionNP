@@ -1,4 +1,4 @@
-import { inter } from "@/app/fonts";
+import { inter } from "@/app/[locale]/fonts";
 
 const Title = ({ children, styles, tag }) => {
   const currentStyle = styles || "";

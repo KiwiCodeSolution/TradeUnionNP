@@ -6,7 +6,7 @@ import Image from "next/image";
 import Heart from "@/images/recreations/heart.svg";
 import Party from "@/images/recreations/party.svg";
 import Hero from "@/images/recreations/hero_image.svg";
-import { inter } from "@/app/fonts";
+import { inter } from "@/app/[locale]/fonts";
 
 const HeroRecreationPage = () => {
   return (
