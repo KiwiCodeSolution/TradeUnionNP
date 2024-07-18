@@ -1,20 +1,23 @@
+import { useTranslations } from "next-intl";
 import { aboutLinks } from "@/constants/navLinks";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import Wrapper from "../../Wrapper";
 
-const MenuAbout = () => {
+const MenuAbout = ({ locale }) => {
+  const t = useTranslations("Root");
+
   return (
     <div className="hidden md:block w-full bg-bgBlack">
       <Wrapper>
         <nav className="w-full flex items-center justify-between h-10">
-          {aboutLinks.map(el => (
+          {aboutLinks.map((el, index) => (
             <Link
               href={el.link}
-              aria-label={el.aria}
               key={el.link}
               className="text-[15px] text-white text-opacity-60 hover:text-opacity-100"
+              locale={locale}
             >
-              {el.name}
+              {t(`aboutPageLinks.${index}.title`)}
             </Link>
           ))}
         </nav>

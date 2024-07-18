@@ -1,7 +1,7 @@
 import { roboto } from "./fonts";
 import "./globals.css";
-import i18nConfig from "../../../i18nConfig";
-import { dir } from "i18next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 export const metadata = {
   title: "Профспілка ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»",
@@ -12,17 +12,15 @@ export const metadata = {
   },
 };
 
-export function generateStaticParams() {
-  return i18nConfig.locales.map(locale => ({ locale }));
-}
-
-export default function RootLayout({ children, params: { locale } }) {
-  console.log("locale", locale);
+export default async function RootLayout({ children, params: { locale } }) {
+  const messages = await getMessages();
   return (
-    <html lang={locale} dir={dir(locale)} className="min-h-screen">
+    <html lang={locale} className="min-h-screen">
       <body className={roboto.className}>
-        {children}
-        <div id="modal-root"></div>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+          <div id="modal-root"></div>{" "}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

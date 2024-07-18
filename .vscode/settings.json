@@ -19,5 +19,6 @@
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "peacock.color": "#241052",
-  "cSpell.words": []
+  "cSpell.words": [],
+  "i18n-ally.localesPaths": []
 }

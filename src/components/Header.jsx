@@ -1,11 +1,11 @@
 import Menu from "./sections/menu/Menu";
 import MenuAbout from "./sections/menu/MenuAbout";
 
-const Header = () => {
+const Header = ({ locale }) => {
   return (
     <header className="w-full flex flex-col relative">
-      <MenuAbout />
-      <Menu />
+      <MenuAbout locale={locale} />
+      <Menu locale={locale} />
     </header>
   );
 };

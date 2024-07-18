@@ -12,12 +12,12 @@ export const metadata = {
   },
 };
 
-export default function ClientLayout({ children }) {
+export default function ClientLayout({ children, params: { locale } }) {
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header locale={locale} />
       {children}
-      <Footer />
+      <Footer locale={locale} />
       <UpButton />
     </div>
   );

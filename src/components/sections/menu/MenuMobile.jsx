@@ -1,8 +1,8 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import { motion, useCycle } from "framer-motion";
 import { aboutLinks, navLinks } from "@/constants/navLinks";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import Image from "next/image";
 import MenuLogo from "@/images/menu-logo.svg";
 import Cross from "@/images/close.svg";
@@ -49,7 +49,8 @@ const imageAnimation = {
   },
 };
 
-const MenuMobile = () => {
+const MenuMobile = ({ locale }) => {
+  const t = useTranslations("Root");
   const [blockScroll, allowScroll] = useScrollBlock();
   const [isOpen, toggleOpen] = useCycle(false, true);
   const navItems = navLinks.slice(1, navLinks.length);
@@ -111,8 +112,9 @@ const MenuMobile = () => {
                 aria-label={navLinks[0].aria}
                 className="uppercase leading-10 font-medium"
                 onClick={() => toggleOpen()}
+                locale={locale}
               >
-                {navLinks[0].name}
+                {t(`navBarLinks.0.title`)}
               </Link>
             </motion.div>
             <div className="pl-[30px] flex flex-col text-white">
@@ -130,8 +132,9 @@ const MenuMobile = () => {
                     key={el.link}
                     className="text-white text-opacity-80 leading-10"
                     onClick={() => toggleOpen()}
+                    locale={locale}
                   >
-                    {el.name}
+                    {t(`aboutPageLinks.${index}.title`)}
                   </Link>
                 </motion.div>
               ))}
@@ -150,8 +153,9 @@ const MenuMobile = () => {
                     aria-label={el.aria}
                     className="uppercase leading-10 font-medium"
                     onClick={() => toggleOpen()}
+                    locale={locale}
                   >
-                    {el.name}
+                    {t(`navBarLinks.${index}.title`)}
                   </Link>
                 </motion.div>
               ))}

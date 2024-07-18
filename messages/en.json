@@ -1,0 +1,21 @@
+{
+  "Root": {
+    "navBarLinks": [
+      { "title": "About us", "link": "/pro-nas" },
+      { "title": "Forms", "link": "/blanky" },
+      { "title": "News", "link": "/novyny" },
+      { "title": "Photo", "link": "/foto" },
+      { "title": "Contacts", "link": "/kontakty" },
+      { "title": "Search", "link": "/poshuk-po-saytu" }
+    ],
+    "aboutPageLinks": [
+      { "title": "Collective labor agreement", "link": "/kolektyvnyy-dohovir" },
+      { "title": "Regional cells", "link": "/ppo" },
+      { "title": "Protection of labor rights", "link": "/zakhyst-trudovykh-prav" },
+      { "title": "Financial aid", "link": "/materialna-dopomoga" },
+      { "title": "I am the Trade Union", "link": "/dozvillya-ta-sport" },
+      { "title": "Sports and leisure", "link": "/ya-profspilka" },
+      { "title": "Appeal", "link": "/zvernennya" }
+    ]
+  }
+}

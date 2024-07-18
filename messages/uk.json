@@ -1,0 +1,21 @@
+{
+  "Root": {
+    "navBarLinks": [
+      { "title": "Про нас", "link": "/pro-nas" },
+      { "title": "Бланки", "link": "/blanky" },
+      { "title": "Новини", "link": "/novyny" },
+      { "title": "Фото", "link": "/foto" },
+      { "title": "Контакти", "link": "/kontakty" },
+      { "title": "Пошук", "link": "/poshuk-po-saytu" }
+    ],
+    "aboutPageLinks": [
+      { "title": "Колективний договір", "link": "/kolektyvnyy-dohovir" },
+      { "title": "Обласні осередки", "link": "/ppo" },
+      { "title": "Захист трудових прав", "link": "/zakhyst-trudovykh-prav" },
+      { "title": "Матеріальна допомога", "link": "/materialna-dopomoga" },
+      { "title": "Я-профспілка", "link": "/dozvillya-ta-sport" },
+      { "title": "Дозвілля та спорт", "link": "/ya-profspilka" },
+      { "title": "Звернення", "link": "/zvernennya" }
+    ]
+  }
+}
