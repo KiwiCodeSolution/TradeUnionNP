@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { useState, useRef, useEffect } from "react";
 import CountUp from "react-countup";
 import Image from "next/image";
@@ -7,6 +8,7 @@ import Blanc from "@/images/home/icon_benef_dog.svg";
 import { inter } from "@/app/[locale]/fonts";
 
 const NumberItem = ({ item, index }) => {
+  const t = useTranslations("HomePage.indexes");
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -80,13 +82,16 @@ const NumberItem = ({ item, index }) => {
             <CountUp start={item.start} end={item.end} formattingFn={formatNumberToString} />
           )}
         </p>
-        <p className="text-grey text-base md:text-lg md:text-center h-14 md:pl-7">{item.text}</p>
+        <p className="text-grey text-base md:text-lg md:text-center h-14 md:pl-7">
+          {t(`texts.${index}`)}
+        </p>
       </div>
     </article>
   );
 };
 
 const NumbersList = () => {
+  const t = useTranslations("HomePage.indexes");
   return (
     <ul className="flex flex-col gap-y-6 md:gap-y-16">
       <li className="w-[360px] flex md:flex-col items-start gap-8 mt-16 md:mx-auto">
@@ -101,11 +106,9 @@ const NumbersList = () => {
           <p
             className={`text-xl md:text-[22px] leading-[1.3] font-bold md:text-center ${inter.className}`}
           >
-            "Кращий Колективний договір серед профспілок країни"
+            "{t(`title.0`)}"
           </p>
-          <p className="text-grey text-base md:text-lg md:text-center">
-            * за версією громадської організації «Трудові ініціативи»
-          </p>
+          <p className="text-grey text-base md:text-lg md:text-center">* {t(`title.1`)}</p>
         </div>
       </li>
       <li className="w-full flex flex-wrap gap-x-14 md:gap-x-8 xl:gap-x-14 items-center justify-between gap-y-6 md:gap-y-16">

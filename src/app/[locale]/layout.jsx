@@ -1,16 +1,23 @@
 import { roboto } from "./fonts";
-import "./globals.css";
+import "@/globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-export const metadata = {
-  title: "Профспілка ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»",
-  description:
-    "Офіційний сайт Профспілки групи компаній «Нова Пошта» | Всеукраїнська професійна спілка працівників ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»",
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+export async function generateMetadata({ params: { locale } }) {
+  return {
+    title:
+      locale === "uk"
+        ? "Профспілка ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»"
+        : "Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
+    description:
+      locale === "uk"
+        ? "Офіційний сайт Профспілки групи компаній «Нова Пошта» | Всеукраїнська професійна спілка працівників ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»"
+        : "Official site of the Trade Union of the Nova Poshta group of companies | All-Ukrainian Professional Union of Employees of Nova Poshta LLC | VPSP 'Nova Poshta' LLC",
+    icons: {
+      icon: "/favicon.ico",
+    },
+  };
+}
 
 export default async function RootLayout({ children, params: { locale } }) {
   const messages = await getMessages();

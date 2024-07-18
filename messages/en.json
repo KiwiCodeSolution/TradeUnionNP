@@ -17,5 +17,126 @@
       { "title": "Sports and leisure", "link": "/ya-profspilka" },
       { "title": "Appeal", "link": "/zvernennya" }
     ]
+  },
+  "HomePage": {
+    "title": ["Trade Union", "«NOVA» Group of Companies"],
+    "heroText": {
+      "protect": ["Protection", " of rights and interests of Trade Union members"],
+      "achievement": ["Achieving high standards of", " working conditions"],
+      "sport": ["Diverse", " leisure", " of employees"],
+      "football": ["Development of sports", " and promotion of healthy lifestyle"]
+    },
+    "join": {
+      "title": "join",
+      "modalTitle": ["Leave", " your information ", "and we will contact you!"],
+      "confirmModalTitle": ["Your request ", "has been sent"],
+      "confirmModalText": ["Our representative", "will contact ", "you soon!"]
+    },
+    "financialAid": {
+      "title": [
+        "Financial assistance",
+        "from the Trade Union during the war",
+        "THE TRADE UNION IS WITH YOU!"
+      ],
+      "text": [
+        "The following persons",
+        "can receive",
+        " financial assistance under a simplified procedure:"
+      ],
+      "whoCanGet": [
+        "Only the members of the Trade Union",
+        "With the provided supporting documents",
+        "Being the member of the Trade Union for more than 6 months"
+      ],
+      "attention": "The final decision is made by the Central Committee of the Union based on the evidence provided, the ability to verify it and the availability of financial resources.",
+      "helps": ["However,", " any possible assistance will be provided:"],
+      "helpsItems": [
+        {
+          "title": "Informational",
+          "text": "To find out contacts, places, how to get there, how to use it, where to go, how it works;"
+        },
+        {
+          "title": "Other possible services",
+          "text": "To meet the basic needs of the Trade Union member and help them in a difficult situation."
+        }
+      ],
+      "newKindsTitle": "New types of financial assistance during the war",
+      "firstKind": [
+        "Trade Union members, who are displaced persons from war zones",
+        "(with a certificate of temporary registration of their place of residence)"
+      ],
+      "secondKind": [
+        "mobilized members of the Union,",
+        "who were injured (trauma/contusion, etc.) during participation in hostilities and other war-related actions"
+      ],
+      "thirdKind": ["trade union members", "in the temporarily occupied cities", "since 24.02.2022"]
+    },
+    "indexes": {
+      "title": [
+        "Best Collective Labor Agreement among the Trade Unions of the Country",
+        "according to Labor Initiatives Non-Governmental Organization"
+      ],
+      "texts": [
+        "Appeals for legal protection processed",
+        "Mass cultural events per year",
+        "Vacation vouchers issued",
+        "Financial aid provided"
+      ]
+    },
+    "collectiveAgreement": {
+      "title": [" Collective", "labor agreement"],
+      "text": "The provisions of this agreement apply to all employees and are binding on both the administration and each member of the labor collective. For the period of martial law, some provisions are suspended by the employer.",
+      "button": "REVIEW"
+    },
+
+    "directions": {
+      "title": "AREAS OF WORK",
+      "button": "LEARN MORE",
+      "items": [
+        {
+          "title": "Protection of labor rights",
+          "text": [
+            "The main and priority right of the Trade Union",
+            " is to represent and protect the labor and socio-economic rights and interests of the trade union members.",
+            "The feature of the trade union's human rights activism function is that employees unite independently and on a voluntary basis in order to protect their rights, freedoms, and interests. Human rights activism shall be carried out within the limits of the granted rights and obligations."
+          ]
+        },
+        {
+          "title": "Sports and leisure",
+          "text": [
+            "The trade union is constantly working to create conditions for the organized leisure and meaningful recreation of trade union members. We promote a healthy lifestyle, development of physical culture and sports. We organize mass cultural events (concerts, sightseeing tours, children's events), as well as sports competitions and games (offline/online)",
+            ""
+          ]
+        },
+        {
+          "title": "Financial aid",
+          "text": [
+            "Financial aid is provided to employees who are members of the All-Ukrainian Trade Union of Nova Poshta LLC Employees (are registered) and pay monthly membership fees. Financial aid:",
+            ""
+          ],
+          "list": [
+            "On marriage",
+            "On birth of a child",
+            "On summer vacation of children in summer camps",
+            "On 50-55-60-year anniversary",
+            "On close relative funeral",
+            "On treatment of him-/herself or 1-st degree family members (parents, spouse, children)",
+            "For the rehabilitation of a participant in hostilities (payment is made annually in October)",
+            "For an internally displaced person (since 2022) from the places of active hostilities.",
+            "For the trade union members from the temporarily occupied territories (since 24/02/22)",
+            "Mobilized members of the Trade Union who were injured (trauma/contusion, etc.) during participation in hostilities and other war-related actions."
+          ]
+        }
+      ]
+    },
+    "interview": {
+      "text": [
+        "Every day we work for a common goal - to achieve high standards of working conditions and labour safety in the NOVA Group of Companies. We are united, we are a reliable support for each other, we care about a common goal and values.",
+        "We take care of you!"
+      ],
+      "name": "Serhii Hennadiiovych Ohanesian",
+      "position": "Head of the All-Ukrainian Trade Union of Employees of Nova Poshta",
+      "button": "FULL INTERVIEW"
+    }
   }
 }

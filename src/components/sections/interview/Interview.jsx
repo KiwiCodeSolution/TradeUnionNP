@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
@@ -6,16 +7,20 @@ import Quote from "@/images/lapky.svg";
 import { inter } from "@/app/[locale]/fonts";
 import LinkButton from "@/components/UI/buttons/LinkButton";
 
-const Interview = () => {
+const Interview = ({ locale }) => {
+  const t = useTranslations("HomePage.interview");
+
   return (
-    <BaseSection style={""}>
-      <Wrapper styles={"relative"}>
+    <BaseSection style={"z-0 py-20"}>
+      {/* {locale === "en" && (
+        <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-gray to-white" />
+      )} */}
+      <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-gray to-white" />
+      <Wrapper styles={"relative z-0"}>
         <div className="flex flex-col mt-14 md:mt-24 md:mx-28">
           <p className={`${inter.className} text-2xl md:text-[40px] leading-[1.4] font-light`}>
-            Щодень працюємо задля спільної мети — досягнення високих стандартів умов праці та
-            безпеки праці в групі компаній 'NOVA'. Згуртовуємось, є надійною опорою один одному,
-            дбаємо про єдину мету та цінності.
-            <br /> Дбаємо про вас!
+            {t(`text.0`)}
+            <br /> {t(`text.1`)}
           </p>
 
           <article className="mt-9 flex w-full flex-col xl:w-1/2 ">
@@ -29,10 +34,8 @@ const Interview = () => {
                 />
               </div>
               <div className="w-fit flex flex-col gap-y-2">
-                <h3 className="text-[22px] font-bold">Оганесьян Сергій Геннадійович</h3>
-                <p className="text-[15px]">
-                  Голова Всеукраїнської Профспілки Працівників Нової Пошти
-                </p>
+                <h3 className="text-[22px] font-bold"> {t(`name`)}</h3>
+                <p className="text-[15px]">{t(`position`)}</p>
               </div>
             </div>
             <LinkButton
@@ -42,7 +45,7 @@ const Interview = () => {
               goToPage
               icon
             >
-              ІНТЕРВ'Ю ЦІЛКОМ
+              {t(`button`)}
             </LinkButton>
           </article>
         </div>

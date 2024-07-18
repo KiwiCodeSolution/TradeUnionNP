@@ -25,6 +25,9 @@
       ],
       "@/constants/*": [
         "src/constants/*"
+      ],
+      "@/globals.css": [
+        "src/app/globals.css"
       ]
     }
   }

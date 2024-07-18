@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import Arrow from "@/images/arrow_red.svg";
 
 const buttonsStyle = {
@@ -8,7 +8,7 @@ const buttonsStyle = {
   round: "w-[54px] h-[54px] rounded-full bg-white hover:bg-red",
 };
 
-const LinkButton = ({ children, goTo, view, style, goToPage, icon }) => {
+const LinkButton = ({ children, goTo, view, style, goToPage, icon, locale }) => {
   const additionalStyle = style || "";
   const currentStyle = `${buttonsStyle[view]} ${additionalStyle} flex items-center justify-between`;
 
@@ -22,6 +22,7 @@ const LinkButton = ({ children, goTo, view, style, goToPage, icon }) => {
           height={30}
           alt="зображення червоної іконки-стрілочки вправо на білому фоні"
           className="arrow-icon"
+          locale={locale}
         />
       )}
     </Link>

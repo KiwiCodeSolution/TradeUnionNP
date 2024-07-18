@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Wrapper from "@/components/Wrapper";
 import BaseSection from "@/components/BaseSection";
 import WhoCanGet from "./WhoCanGet";
@@ -10,34 +11,34 @@ import NewKinds from "./NewKinds";
 import Title from "@/components/Title";
 
 const FinancialAid = () => {
+  const t = useTranslations("HomePage.financialAid");
   return (
     <BaseSection>
       <Wrapper styles={"flex flex-col md:flex-row gap-8 py-16 h-fit xl:h-[1031px]"}>
         <div className="order-1 w-full md:w-3/5 flex flex-col">
           <Title tag="h2">
-            <span className="text-red">Матеріальна допомога</span> від Профспілки під час війни
+            <span className="text-red">{t(`title.0`)}</span> {t(`title.1`)}
           </Title>
 
           <p className="text-base md:text-lg text-grey my-4">
-            Матеріальну допомогу за спрощеною процедурою <strong> можуть отримати:</strong>
+            {t(`text.0`)}
+            <strong> {t(`text.1`)}</strong> {t(`text.2`)}
           </p>
           <WhoCanGet />
-          <Attention />
+          <Attention text={t(`attention`)} />
           <p className="text-base md:text-lg text-grey">
-            Поза тим, буде надаватися <strong>будь-яка можлива допомога:</strong>
+            {t(`helps.0`)} <strong>{t(`helps.1`)}</strong>
           </p>
           <Helps />
           <div className="w-full flex items-center gap-x-4 mt-4">
-            <h2 className={`text-4xl font-extrabold uppercase leading-[48px]`}>
-              ПРОФСПІЛКА З ВАМИ!
-            </h2>
+            <h2 className={`text-4xl font-extrabold uppercase leading-[48px]`}>{t(`title.2`)}</h2>
             <Image src={Heart} width={59} height={48} alt="зображення червоного серця" />
           </div>
         </div>
 
         <div className="order-2 w-full h-[1135px] md:h-[1265px] xl:h-[905px] md:w-2/5 flex flex-col rounded-2xl bg-bgGrey py-9 pl-12 relative">
           <h2 className="w-full text-[34px] font-bold leading-10 text-red pb-9 pr-12">
-            Нові види матеріальної допомоги під час війни
+            {t(`newKindsTitle`)}
           </h2>
           <NewKinds />
           <Image
