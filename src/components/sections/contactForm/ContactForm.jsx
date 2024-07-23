@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import Image from "next/image";
@@ -7,6 +8,7 @@ import { regions } from "@/constants/regions";
 import Button from "@/components/UI/buttons/Buttons";
 
 const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
+  const t = useTranslations("HomePage.contact_form");
   const [phone, setPhone] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [formError, setFormError] = useState("");
@@ -45,11 +47,11 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
       }
     } else {
       if (!isPhoneValid && !selectedOption) {
-        setFormError("Будь ласка, заповніть всі поля");
+        setFormError(t(`error_all_inputs`));
       } else if (!isPhoneValid) {
-        setFormError("Будь ласка, заповніть номер телефону");
+        setFormError(t(`error_phone`));
       } else if (!selectedOption) {
-        setFormError("Будь ласка, оберіть регіон");
+        setFormError(t(`error_region`));
       }
     }
   };
@@ -89,7 +91,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
         type="text"
         value={selectedOption}
         onChange={handleSelectChange}
-        placeholder="Введіть або оберіть регіон зі списку"
+        placeholder={t(`placeholder_region`)}
         list="regions-list"
         className={`text-[15px] ${section === "modal" ? "w-full" : "w-full md:w-4/5"} ${
           inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
@@ -102,7 +104,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
       </datalist>
 
       <Button view={"red"} btnType="submit" style={section === "modal" ? "mx-auto mt-5" : ""} icon>
-        Надіслати
+        {t(`button`)}
       </Button>
       {formError && <p className="text-red absolute -bottom-1 left-1 italic">{formError}</p>}
     </form>

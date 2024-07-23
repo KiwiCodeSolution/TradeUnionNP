@@ -12,11 +12,11 @@ const Interview = ({ locale }) => {
 
   return (
     <BaseSection style={"z-0 py-20"}>
-      {/* {locale === "en" && (
-        <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-gray to-white" />
-      )} */}
-      <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-gray to-white" />
-      <Wrapper styles={"relative z-0"}>
+      {locale === "en" && (
+        <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-bgGrey to-white" />
+      )}
+
+      <Wrapper styles={"relative z-[10]"}>
         <div className="flex flex-col mt-14 md:mt-24 md:mx-28">
           <p className={`${inter.className} text-2xl md:text-[40px] leading-[1.4] font-light`}>
             {t(`text.0`)}

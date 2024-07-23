@@ -1,7 +1,7 @@
 import { socLinks } from "@/constants/socLinks";
 import Image from "next/image";
 
-const EmailAndSocLinks = ({ section }) => {
+const EmailAndSocLinks = ({ section, title }) => {
   const socLinksList = socLinks.filter(el => el.iconRed !== "");
 
   return (
@@ -13,9 +13,7 @@ const EmailAndSocLinks = ({ section }) => {
       } `}
     >
       {section === "footer" && (
-        <h3 className="text-base text-liteGrey text-center md:text-left mb-1 uppercase">
-          КОНТАКТИ
-        </h3>
+        <h3 className="text-base text-liteGrey text-center md:text-left mb-1 uppercase">{title}</h3>
       )}
       <a
         href="mailto:help@profspilka.org"

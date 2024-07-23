@@ -137,6 +137,26 @@
       "name": "Serhii Hennadiiovych Ohanesian",
       "position": "Head of the All-Ukrainian Trade Union of Employees of Nova Poshta",
       "button": "FULL INTERVIEW"
+    },
+    "contact_section": {
+      "title": ["Want to join", "the Trade Union?"],
+      "subtitle": [
+        "Fill in ",
+        "the form!",
+        " Or leave your contact details and we will get in touch!"
+      ]
+    },
+    "contact_form": {
+      "placeholder_region": "Enter or select a region from the list (in Ukrainian)",
+      "button": "send",
+      "error_all_inputs": "Please fill in all fields",
+      "error_phone": "Please enter a phone number",
+      "error_region": "Please select a region"
+    },
+    "footer": {
+      "titles": ["ABOUT US", "AREAS OF WORK", "CONTACTS"],
+      "rights": "All rights reserved",
+      "user_agreement": "User Agreement"
     }
   }
 }

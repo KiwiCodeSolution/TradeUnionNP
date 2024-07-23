@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import LogoFooterUA from "@/images/logo_bottom.svg";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
 
 const Footer = ({ locale }) => {
+  const t = useTranslations();
   const navItems = navLinks.slice(0, navLinks.length - 1);
   const year = new Date().getFullYear();
   return (
@@ -24,43 +26,47 @@ const Footer = ({ locale }) => {
           className="mb-auto"
         />
         <nav className="w-fit flex flex-col items-center md:items-start justify-start gap-y-2">
-          <h3 className="text-base text-liteGrey mb-3 uppercase">ПРО НАС</h3>
-          {navItems.map(el => (
+          <h3 className="text-base text-liteGrey mb-3 uppercase">
+            {t(`HomePage.footer.titles.0`)}
+          </h3>
+          {navItems.map((el, index) => (
             <Link
               href={el.link}
               aria-label={el.aria}
               key={el.link}
               className="text-base text-grey leading-[22px]"
             >
-              {el.name}
+              {t(`Root.navBarLinks.${index}.title`)}
             </Link>
           ))}
         </nav>
         <nav className="w-fit flex flex-col items-center md:items-start justify-start gap-y-2">
-          <h3 className="text-base text-liteGrey mb-3 uppercase">НАПРЯМКИ РОБОТИ</h3>
-          {aboutLinks.map(el => (
+          <h3 className="text-base text-liteGrey mb-3 uppercase">
+            {t(`HomePage.footer.titles.1`)}
+          </h3>
+          {aboutLinks.map((el, index) => (
             <Link
               href={el.link}
               aria-label={el.aria}
               key={el.link}
               className="text-base text-grey leading-[22px]"
             >
-              {el.name}
+              {t(`Root.aboutPageLinks.${index}.title`)}
             </Link>
           ))}
         </nav>
-        <EmailAndSocLinks section={"footer"} />
+        <EmailAndSocLinks section={"footer"} title={t(`HomePage.footer.titles.2`)} />
       </Wrapper>
       <Wrapper>
         <div className="w-full py-4 flex flex-col md:flex-row items-center md:items-start justify-between border-main border-t border-opacity-20">
           <p className="text-[15px] md:text-lg text-grey">
-            ©<span>{year}</span>, Всі права захищено
+            ©<span>{year}</span>, {t(`HomePage.footer.rights`)}
           </p>
           <Link
             href="/uhoda-korystuvacha"
             className="text-[15px] text-red underline underline-offset-1 hover:underline-offset-4"
           >
-            Угода користувача
+            {t(`HomePage.footer.user_agreement`)}
           </Link>
         </div>
       </Wrapper>
