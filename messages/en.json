@@ -19,6 +19,7 @@
     ]
   },
   "HomePage": {
+    "path": "Main Page",
     "title": ["Trade Union", "«NOVA» Group of Companies"],
     "heroText": {
       "protect": ["Protection", " of rights and interests of Trade Union members"],
@@ -157,6 +158,270 @@
       "titles": ["ABOUT US", "AREAS OF WORK", "CONTACTS"],
       "rights": "All rights reserved",
       "user_agreement": "User Agreement"
+    }
+  },
+  "About": {
+    "title": "About the Trade Union",
+    "path": "About the Trade Union",
+    "subtitle": [
+      "The Nova Poshta trade union is a voluntary non-profit public association that",
+      " protects the rights and interests of its members ",
+      "- employees of the NOVA group of companies."
+    ],
+    "all_about": [
+      {
+        "title": "Goal",
+        "text": [
+          "Representation and protection of labor",
+          "socio-economic rights and interests of the trade union members."
+        ]
+      },
+      {
+        "title": "Mission",
+        "text": [
+          "Achievement of ",
+          "high standards of working conditions and labour safety",
+          "in the NOVA Group of companies and active life position of employees."
+        ]
+      },
+      {
+        "title": ["Basic ", "principles"],
+        "text": [
+          "Representation and protection of the rights and interests of the trade union members.",
+          "Achieving high standards of working conditions in the NOVA Group.",
+          "Improving the level of culture and diversity of leisure of employees."
+        ]
+      },
+      {
+        "title": ["Principles ", "of the Trade Union"],
+        "text": [
+          "A Trade Union member is the main value of the Trade Union",
+          "Transparency of activity",
+          "A pro-active life attitude is the development of Trade Union members in terms of cultural leisure, sports, opportunities to positively change the company and its environment, achieving high professional and personal results."
+        ]
+      }
+    ],
+    "documents": {
+      "charter": ["Charter", "of Nova Poshta LLC VPSP"],
+      "agreement": ["Collective labour agreement", "of NOVA POSHTA LLC VPSP and NOVA POSHTA LLC"],
+      "button": "REVIEW"
+    },
+    "history": {
+      "title": ["Development history of the Trade Union", "of Nova Poshta LLC"],
+      "history_points": [
+        {
+          "year": "2015",
+          "events": [
+            "We decided to establish the Trade Union. The constituent assembly was held. The decision to establish the Union was made. We created 24 trade unions.",
+            "Received the Certificate of Legalisation. Adopted the Statute of the Union.",
+            "2512 trade union members."
+          ]
+        },
+        {
+          "year": "2016",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "Signed the first Collective Bargaining Agreement between the trade union and the management.",
+
+            "We defined holidays and non-working days at the enterprise and ensured that work on these days was paid at double the rate (at the employee's request, an additional day off can be taken in lieu of money).",
+
+            "An additional payment for night work was introduced.",
+
+            "Employees started receiving payslips with each salary payment.",
+
+            "We ensured that salaries for annual leave were paid no later than 3 days before the start of the leave.",
+
+            "We created a plan of comprehensive occupational safety measures and a budget for improving working conditions at the enterprise.",
+
+            "We started to cooperate with partners and actively learned from colleagues.",
+
+            "We organised the provision of financial assistance.",
+
+            "We agreed that the employer should transfer funds to the trade union for cultural and sports events and healthcare in the amount of 0.3% of the payroll of the trade union members on a monthly basis.",
+
+            "The administration was obliged to develop with the participation of the trade union and approve all changes related to the social and economic rights of the company's employees, working conditions, remuneration systems, etc.",
+
+            "We secured the provision of workplaces, premises, equipment and other resources for the trade union bodies (including paid working time at the expense of the company).",
+
+            "6084 trade union members."
+          ]
+        },
+        {
+          "year": "2017",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "Expanded the list of positions that are entitled to free special clothing, footwear and other personal protective equipment, and set shorter time limits for wearing overalls.",
+
+            "Improved the quality of personal protective equipment and accelerated the timeframe for its issuance.",
+
+            "We ensured that employees working with computers receive an additional 2 calendar days of annual leave.",
+
+            "We ensured that the administration could not dismiss persons elected to trade union bodies within a year after the end of the term for which they were elected.",
+
+            "Increased to 0.5 per cent of the payroll fund of the trade union members, which the administration transfers to the trade union for cultural, physical and recreational activities.",
+
+            "We introduced compensation for children's recreation in summer camps.",
+
+            "Launched the Trade Union Voucher project, under which the first 92 families went on vouchers organised and paid for by the Union.",
+
+            "We held 10 regional, 2 regional and 1 national football tournaments.",
+
+            "8700 trade union members."
+          ]
+        },
+        {
+          "year": "2018",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "The list of occupations of employees who must undergo periodic medical examinations was expanded.",
+
+            "The collective agreement prohibited the employment of minors and any discrimination in the field of labour.",
+
+            "Ensured free access to drinking water, tea, coffee and sugar for all employees of the Company.",
+
+            "Ensured that employee training and development is paid for as working time.",
+
+            "We added to the list of professions and positions of employees that are provided with special clothing, special footwear and other personal protective equipment free of charge. We ensured that T-shirts, hats (caps, baseball caps), and shoes provided by the company cannot be returned and reused by another employee.",
+
+            "The requirement that the administration will take measures to prepare production facilities for work in the autumn and winter period by 15 October (including heating) and in the spring and summer period by 15 April (including air conditioning) of the current year was enshrined.",
+
+            "Created a club of mountain lovers - 'MY TOP'. We held 2 regional and 2 national mini-football championships. Created the Union's Facebook and YouTube groups.",
+
+            "11943 trade union members."
+          ]
+        },
+        {
+          "year": "2019",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "Created a unified system for processing appeals at all trade union branches and centralised control over all trade union appeals.",
+
+            "Set a three-month timeframe for the trade union to agree on the dismissal of employees at the initiative of the company's administration (i.e. redundancies), and obliged them to provide information on the reasons for the following dismissals, the number and categories of employees to whom this may apply.",
+
+            "The law stipulates that simultaneously with the notice of dismissal due to changes in the organisation of production and labour, the administration must offer the employee another job at the enterprise, but at least three times.",
+
+            "We started to provide annual financial assistance to combatants for rehabilitation.",
+
+            "We managed to establish a +10% surcharge for office cleaners for working with chemicals.",
+
+            "Established schedules for the start and end of work, rest and meal breaks, which are communicated to each employee no later than one month before they are introduced.",
+
+            "Agreed to provide additional time off for employees of elected trade union bodies, paid for by the employer.",
+
+            "We secured the right to post our own information in the premises and on the territory of the enterprise in places accessible to employees.",
+
+            "We held the first all-Ukrainian table tennis championship (20 teams).",
+
+            "For the first time, we organised a winter holiday in the mountains and a holiday abroad (Bulgaria).",
+
+            "11558 trade union members."
+          ]
+        },
+        {
+          "year": "2020",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "The Union's Collective Agreement was recognised as the 'Best Collective Agreement 2020' by the NGO 'Labour Initiatives'.",
+
+            "We included clauses in the Collective Agreement that regulate remote work, in particular, we agreed to provide work equipment (laptop/system unit, monitor, manipulator, keyboard, Internet access), furniture, if necessary, and its delivery to employees working remotely.",
+
+            "We provided delivery of drinking water, tea, coffee and sugar to employees working remotely.",
+
+            "The administration undertook to provide the elected body of the trade union with a room equipped with the necessary equipment and furniture (at least 30 sq m), provide communication facilities, etc.",
+
+            "During the period of redundancy, the administration granted employees additional leave to look for a job while maintaining their average salary.",
+
+            "The administration is obliged to ensure prevention and guarantee the prevention of gender-based violence in the workplace. This clause of the Collective Bargaining Agreement stipulates that all employees in the company are equal, regardless of gender, and cannot be subjected to any form of violence (physical, psychological, sexual, or economic).",
+
+            "We ensured that employees receive from 20% to 100% of the absent employee's salary for performing the duties of a temporarily absent employee.",
+
+            "We managed to provide free hot lunches to all employees of innovative terminals.",
+
+            "Registered a trademark (the Union's logo). We held re-elections for all the PTOs during the year.",
+
+            "We agreed that the administration should provide employees with paid leave of up to 3 days in case of organisation and/or participation of employees in the Union's events of regional and national status.",
+
+            "Implemented the Union Online projects, held the first all-Ukrainian esports tournament and online quests for children.",
+
+            "Launched the Union Works During the Pandemic project.",
+
+            "We held the All-Ukrainian table tennis championship, regional and all-Ukrainian mini-football tournaments, and an all-Ukrainian bowling tournament.",
+
+            "10900 trade union members."
+          ]
+        },
+        {
+          "year": "2021",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "We have ensured that employees who have been vaccinated against COVID-19 are granted a paid leave of 1 calendar day the day after the vaccination.",
+
+            "We also agreed on additional leave for parents with first-graders (1 calendar day on 1 September) and parents with high school graduates (1 calendar day on the day of graduation).",
+
+            "It was established that the schedule of annual paid leave is approved by the administration by 15 December for the following year in agreement with the Trade Union. When determining the order of holidays, family and other personal circumstances of each employee and the Company's production needs are taken into account.",
+
+            "It was agreed that employees subject to redundancy shall be offered available vacancies in accordance with their speciality/qualifications in the first instance.",
+
+            "11562 trade union members."
+          ]
+        },
+        {
+          "year": "2022",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "Expanded financial assistance for trade unionists, providing three times more financial assistance compared to last year due to the introduction of new types of wartime assistance (for internally displaced persons, people in the occupied territories, trade unionists from the territorial defence).",
+
+            "We introduced information support for trade unionists affected by the war. We organised assistance to mobilised trade unionists.",
+
+            "We implemented the Tent Cloaks project. We optimised costs. We started implementing grant projects.",
+
+            "Introduced a special membership status for mobilised trade unionists (retained membership without paying fees) and started comprehensive support for mobilised trade unionists.",
+
+            "9859 trade union members."
+          ]
+        },
+        {
+          "year": "2023",
+          "appeal": "trade union appeals resolved",
+          "events": [
+            "The most important clauses of the Collective Agreement, which had been suspended by the administration since the beginning of martial law, were reinstated.",
+
+            "New types of financial aid were added, including for mobilised trade unionists who were injured.",
+
+            "The amount of financial aid was increased in almost all cases.",
+
+            "Returned chairs to branch employees (i.e. the ability to work sitting down).",
+
+            "Introduced handcarts for targeted service employees to make deliveries much easier.",
+
+            "Implemented the Dry Shower project for mobilised trade unionists.",
+
+            "9702 trade union members."
+          ]
+        },
+        {
+          "year": "2024",
+          "events": [
+            "Agreed that employees dismissed due to liquidation or reorganisation of the Company, reduction in the number or staff, in addition to severance pay provided for by the current legislation, shall be paid at the expense of the Company, depending on the total length of service at the company.",
+
+            "We ensured that all terminal employees were provided with free hot lunches.",
+
+            "We ensured that vacation schedules are drawn up by the employee and the head of the unit on a monthly basis so that the employee is granted at least 24 calendar days of annual leave per year, of which 14 calendar days are necessarily continuous.",
+
+            "We have ensured that, at the request of employees who start work in connection with their dismissal from military service, to which they were called up during mobilisation for a special period, the employer provides a one-time paid leave of up to 30 calendar days.",
+
+            "The parties agreed that the administration should provide psychological and legal counselling services at its own expense for employees who are combatants and their family members.",
+
+            "It was stipulated that it is not allowed to dismiss employees who have started work in connection with their dismissal from military service to which they were called up during mobilisation for a special period (signed a contract).",
+
+            "It was stipulated that employees are prohibited from threatening other employees with violence, the use of physical force, using violence against other employees, using profanity in communication with other employees, intentionally disseminating false information about other employees, or engaging in mobbing.",
+
+            "The list of positions that are entitled to additional paid leave of 2 days for working with a computer was expanded.",
+
+            "9667 trade union members."
+          ]
+        }
+      ]
     }
   }
 }
