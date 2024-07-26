@@ -5,7 +5,7 @@ import Title from "@/components/Title";
 
 const ProtectionRights = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper styles={"pt-24 md:pt-32 pb-8"}>
         <Title tag="h2" styles="text-center">
           Кожен працівник <span className="text-red">має право на:</span>

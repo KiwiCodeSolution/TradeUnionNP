@@ -1,4 +1,4 @@
-import { inter } from "@/app/[locale]/fonts";
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import agreements from "@/data/agreements.json";
@@ -10,8 +10,9 @@ import Arrow from "@/images/arrow_white.svg";
 import Title from "@/components/Title";
 
 const HeroAgreementsPage = () => {
+  const t = useTranslations("Collective_labour_agreement");
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper>
         <div className="w-full flex flex-col gap-y-8 my-16 bg-white rounded-2xl px-4 md:px-14 py-10 relative">
           <Image

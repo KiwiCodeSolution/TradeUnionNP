@@ -19,7 +19,7 @@
     ]
   },
   "HomePage": {
-    "path": "Main Page",
+    "path": "Home",
     "title": ["Trade Union", "«NOVA» Group of Companies"],
     "heroText": {
       "protect": ["Protection", " of rights and interests of Trade Union members"],
@@ -441,5 +441,29 @@
       "за шаблоном 'Матеріальна допомога від Профспілки'"
     ],
     "link": "Завантажити заяву"
+  },
+  "Contacts": {
+    "path": "Contacts",
+    "title": ["Contacts", "details of the", " Trade Union regional centersи"],
+    "managers": [
+      {
+        "name": "Serhii Ohanesian",
+        "position": "Head of the Trade Union",
+        "details": "Legal work, management accounting, personnel issues, accounting, procurement, document management, contractual work"
+      },
+      {
+        "name": "Anton Horb",
+        "position": "Deputy Head of the Trade Union",
+        "details": "Legal work, development (including IT) and training, communication, strategy and project activities"
+      },
+      {
+        "name": "Ihor Poleshko",
+        "position": "Deputy Head of the Trade Union",
+        "details": "Sports and mass events, mass cultural events, health improvement projects, vouchers, audit work division"
+      }
+    ],
+    "regional_offices_title": ["List of heads", "of regional ", "centers"],
+    "form_placeholder": "Start entering the desired area...",
+    "form_button": "show more"
   }
 }

@@ -6,7 +6,7 @@ import { inter } from "@/app/[locale]/fonts";
 
 const LawProtection = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper></Wrapper>
     </BaseSection>
   );

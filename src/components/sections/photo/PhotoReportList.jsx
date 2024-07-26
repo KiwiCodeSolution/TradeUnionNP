@@ -4,7 +4,7 @@ import Wrapper from "@/components/Wrapper";
 
 const PhotoReportList = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper styles={"py-24"}>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {/* <NewsItem />

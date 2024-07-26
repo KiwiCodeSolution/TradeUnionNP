@@ -3,7 +3,7 @@ import Wrapper from "@/components/Wrapper";
 
 const NewsTheme = ({ filter }) => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper></Wrapper>
     </BaseSection>
   );

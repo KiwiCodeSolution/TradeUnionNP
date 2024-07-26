@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const TellUs = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper styles={"pt-32 pb-20"}>
         <Title tag={"h2"} styles={"text-center"}>
           Розкажіть, <span className="text-red md:hidden">що ви в Профспілці</span>

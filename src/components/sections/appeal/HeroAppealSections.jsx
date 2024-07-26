@@ -6,7 +6,7 @@ import ResolutionList from "../protection/ResolutionList";
 
 const HeroAppealSections = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper>
         <PathPage endPath={"Звернення"} />
         <Title tag={"h2"} styles={"text-center mb-16"}>

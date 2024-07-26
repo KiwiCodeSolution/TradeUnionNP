@@ -15,7 +15,7 @@ const item =
 
 const StatuteRecreationPage = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper styles={""}>
         <div className="bg-white flex flex-col items-center gap-4 rounded-t-2xl px-8 md:px-24 py-8 md:py-16 border-b-4 border-red">
           <Title tag={"h2"} styles={"text-center"}>

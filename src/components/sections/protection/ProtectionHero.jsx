@@ -9,7 +9,7 @@ import Title from "@/components/Title";
 
 const ProtectionHero = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper>
         <PathPage endPath={"Захист трудових прав"} />
         <div className="w-full flex flex-col md:flex-row gap-y-4 md:gap-y-0">

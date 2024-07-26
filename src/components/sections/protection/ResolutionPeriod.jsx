@@ -5,7 +5,7 @@ import ResolutionList from "./ResolutionList";
 
 const ResolutionPeriod = ({ gradient }) => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       {gradient && (
         <div className="absolute h-96 left-0 right-0 bg-gradient-to-t from-bgGrey to-white top-0 z-0" />
       )}

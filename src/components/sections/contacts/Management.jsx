@@ -15,8 +15,8 @@ const Management = () => {
           height={329}
           alt="малюнок трьох людей, дівчини та двох хлопців"
         />
-        {data.map(el => (
-          <Manager key={el.name} item={el} />
+        {data.map((el, index) => (
+          <Manager key={el.name} item={el} index={index} />
         ))}
       </Wrapper>
     </BaseSection>

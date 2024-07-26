@@ -10,7 +10,7 @@ import { inter } from "@/app/[locale]/fonts";
 
 const HeroRecreationPage = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper>
         <PathPage endPath={"Дозвілля та спорт"} />
         <div className="w-full flex flex-col md:flex-row mt-16 items-center">

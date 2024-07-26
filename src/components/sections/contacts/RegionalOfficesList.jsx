@@ -1,11 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import offices from "@/data/offices.json";
 import Office from "./Office";
 import Button from "@/components/UI/buttons/Buttons";
 
 const RegionalOfficesList = () => {
+  const t = useTranslations("Contacts");
   const [filterText, setFilterText] = useState("");
   const [showAll, setShowAll] = useState(false);
   const initialDisplayCount = 6;
@@ -22,7 +24,7 @@ const RegionalOfficesList = () => {
     <div className="w-full flex flex-col gap-y-8 pb-10">
       <input
         type="text"
-        placeholder="Почніть вводити потрібну область..."
+        placeholder={t(`form_placeholder`)}
         onChange={e => setFilterText(e.target.value)}
         className="w-full xl:w-7/12 h-14 py-3 pr-5 pl-10 rounded-full bg-[#f9f0da] outline-none focus:outline-1 focus:outline-grey mt-8 mx-auto"
       />
@@ -37,7 +39,7 @@ const RegionalOfficesList = () => {
 
       {!showAll && filterText === "" && filteredOffices.length > initialDisplayCount && (
         <Button clickFn={handleShowMore} view="red" style="mx-auto">
-          Показати більше
+          {t(`form_button`)}
         </Button>
       )}
     </div>

@@ -3,7 +3,7 @@ import Wrapper from "@/components/Wrapper";
 
 const UserAgreement = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper>
         <div className="agreement">
           <h1>Угода користувача</h1>

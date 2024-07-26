@@ -33,7 +33,7 @@ const PaginatedItems = () => {
   );
 
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper styles={"pt-8 pb-[110px] relative"}>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {currentItems.map(item => (

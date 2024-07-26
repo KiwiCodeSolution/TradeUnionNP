@@ -13,7 +13,7 @@ import Title from "@/components/Title";
 const FinancialAid = () => {
   const t = useTranslations("HomePage.financialAid");
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper styles={"flex flex-col md:flex-row gap-8 py-16 h-fit xl:h-[1031px]"}>
         <div className="order-1 w-full md:w-3/5 flex flex-col">
           <Title tag="h2">

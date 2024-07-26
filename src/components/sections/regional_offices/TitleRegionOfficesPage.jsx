@@ -5,7 +5,7 @@ import Wrapper from "@/components/Wrapper";
 
 const TitleRegionOfficesPage = () => {
   return (
-    <BaseSection>
+    <BaseSection style={""}>
       <Wrapper>
         <PathPage endPath={"Обласні осередки Профспілки"} />
         <Title tag="h1" styles="text-center mt-16">
