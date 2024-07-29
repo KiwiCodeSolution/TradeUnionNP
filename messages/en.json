@@ -864,5 +864,249 @@
       "Redundancy",
       "Working conditions"
     ]
+  },
+  "Financial_Aid": {
+    "path": "Financial aid",
+    "title": ["Financial", "aid"],
+    "subtitle": [
+      "Financial aid is provided to employees",
+      "who are members of the All-Ukrainian Trade Union of Nova Poshta LLC Employees",
+      "(are registered) and pay monthly membership fees."
+    ],
+    "button": "get help",
+    "currency": "UAH",
+    "list": [
+      "On marriage",
+      "On birth of a child",
+      "On summer vacation of children in summer camps",
+      "On 50-55-60-year anniversary",
+      "On close relative funeral",
+      "On treatment of him-/herself or 1-st degree family members (parents, spouse, children)",
+      "For the rehabilitation of a combatant (the application is reviewed annually in October)",
+      "Mobilized trade unionists who were injured",
+      "Trade union members on the temporarily occupied territories",
+      "Internally displaced persons",
+      "У зв'язку із смертю члена Профспілки"
+    ],
+    "conditions_title": ["Conditions", "for providing financial aid"],
+    "conditions_text": [
+      "The grounds for providing financial aid is an application of a trade union member, his/her relative* or head of the primary trade union with the indication of the actual circumstances in connection with which financial aid",
+      "and a full set of relevant supporting documents are provided."
+    ],
+    "conditions_term_title": [
+      "How long do I need to be a member of the Trade Union",
+      "and pay membership fees to receive the aid?"
+    ],
+    "conditions_term_first_term": "6 months",
+    "conditions_term_first_text": [
+      "Financial aid is provided to employees who",
+      "are members of the Trade Union",
+      "(are registered) and pay monthly membership fees for more than 6 (six) calendar months."
+    ],
+    "conditions_term_second_term": "12 months",
+    "conditions_term_second_text": [
+      "Medical expenses in case of illness of close relatives",
+      "of a trade union member are compensated to employees who are members of the All-Ukrainian Trade Union of Nova Poshta LLC (are registered) for more than 12 (twelve) calendar months."
+    ],
+    "note": [
+      "* — Close relatives of a trade union member include: parents, spouse, children.",
+      "Official and documented",
+      "proof of kinship is required!"
+    ],
+    "limitation_title": ["What are", "the time limits", "for getting the aid"],
+    "first_limit": "2 times a year",
+    "first_limit_test": [
+      "Financial assistance is provided to a member of the Trade Union",
+      "no more than twice a year.",
+      "In exceptional cases (emergency, serious illness, simultaneous coincidence of several events), financial assistance may be provided additionally upon submission of the trade union committee of the PTUO (primary trade union organization) and approval of the Central Committee."
+    ],
+    "second_limit": "2 months",
+    "second_limit_test": "The full set of documents for financial aid is accepted no later than 2 months after the date of the event (case).",
+    "documents_title": ["Documents", "for receiving", "financial aid"],
+    "doc_button": "Regulations on the procedure and conditions for providing financial aid ",
+    "docs_modal_button": "Review document",
+    "docs_modal_link": "Download the application",
+    "docs": [
+      {
+        "title": "Treatment of illness of a Trade Union member",
+        "text": "50% of confirmed expenses, but not more than UAH 6,000",
+        "points": [
+          "Заява члена Профспілки;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копія листка непрацездатності члена Профспілки (за умови його оформлення);",
+          "оригінали медичних документів (виписка з медичної карти амбулаторного/стаціонарного хворого (епікриз) форма № 027/о/довідка з ПІБ хворого з лікарні);",
+          "оригінали фіскальних чеків (квитанції про оплату ФОП, банківські платіжні доручення з печаткою) на лікування та/або медикаменти;",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/likuvannya-chlena-profspilki.pdf"
+      },
+      {
+        "title": "Лікування близьких родичів члена Профспілки",
+        "text": "50 % підтверджених витрат, але не більше 6000 гривень",
+        "points": [
+          "Заява члена Профспілки;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб;",
+          "оригінали медичних документів (листок непрацездатності, виписка з історії хвороби/епікриз/довідка з ПІБ хворого з лікарні);",
+          "оригінали фіскальних чеків (квитанції про оплату ФОП, банківські платіжні доручення з печаткою) на лікування та/або медикаменти.",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/likuvannya-rodicha.pdf"
+      },
+      {
+        "title": "Death of the Trade Union member",
+        "text": "UAH 5,000",
+        "points": [
+          "Заява родича загиблого;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копія паспорта та ідентифікаційного коду померлого члена Профспілки;",
+          "копія свідоцтва про смерть;",
+          "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб/паспорт родича;",
+          "довідка з банку про відкриття карткового рахунку заявника у форматі IBAN."
+        ],
+        "file": "/files/zagibel-pracivnika.pdf"
+      },
+      {
+        "title": "Death of a close relative of the Trade Union member",
+        "text": "from UAH 1750 to UAH 3500",
+        "points": [
+          "Заява члена Профспілки;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб/паспорт родича;",
+          "копія свідоцтва про смерть;",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/pokhovannya-rodicha.pdf"
+      },
+      {
+        "title": "Marriage registration",
+        "text": "from UAH 1750 to UAH 3500",
+        "points": [
+          "Заява члена Профспілки;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копія свідоцтва про шлюб;",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/odruzhennya.pdf"
+      },
+      {
+        "title": "Birth of a child",
+        "text": "from UAH 1750 to UAH 3500",
+        "points": [
+          "Заява члена Профспілки;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копія свідоцтва про народження дитини",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/narodzhennya.pdf"
+      },
+      {
+        "title": "50-60-65-year anniversary",
+        "text": "from 1250 to 2500 UAH",
+        "points": [
+          "Заява голови первинної профспілкової організації або ювіляра;",
+          "копія паспорта та ідентифікаційного коду члена Профспілки, що отримує матеріальну допомогу;",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/yuviley.pdf"
+      },
+      {
+        "title": "Health improvement of a child and recreation",
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "Заява члена Профспілки;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копія свідоцтва про народження дитини;",
+          "копія бланку-путівки або копія направлення на оздоровлення;",
+          "копія медичної довідки форми № 079/о;",
+          "оригінали фіскальних чеків про оплату путівки, або банківських платіжних доручень;",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/ozdorovlenna-dytyny.pdf"
+      },
+      {
+        "title": "War veterans",
+        "text": "from 1250 to 2500 UAH (payment is made annually in October)",
+        "points": [
+          "Заява члена Профспілки;",
+          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
+          "копії документів, що підтверджують участь члена Профспілки в АТО або ООС (посвідчення учасника бойових дій встановленого зразка);",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/ubd.pdf"
+      },
+      {
+        "title": "Trip",
+        "text": "For health improvement",
+        "points": [
+          "копія паспорта та ідентифікаційного коду/копія паспорту у формі ID-карти;",
+          "витяг з наказу про відпустку/копія заяви на відпустку з візою керівника;",
+          "копія квитанції про сплату частини вартості путівки"
+        ],
+        "file": "/files/putivka.pdf"
+      },
+      {
+        "title": "Мобілізованим пораненим профспілчанам",
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
+          "копію довідки про обставини поранення/травми;",
+          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/poranenna.pdf"
+      },
+      {
+        "title": "Профспілчанам на ТОТ України",
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
+          "Копію документів, що підтверджують знаходження в окупованому місті/селищі після 24.02.2022 року. В разі відсутності офіційних документів, можна надати фото чеку з магазину/АЗС на фоні першої сторінки паспорту та скрін геолокації;",
+          "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/occupation.pdf"
+      },
+      {
+        "title": "Internally displaced persons",
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
+          "Копію довідки про тимчасову реєстрацію місця проживання або перебування особи-члена Профспілки;",
+          "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/vpo.pdf"
+      },
+      {
+        "title": "Other",
+        "text": "from UAH 1000 to UAH 5000",
+        "points": [
+          "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
+          "Копію документів, що підтверджують складні життєві обставини, що потребують компенсації**;",
+          "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+        ],
+        "file": "/files/other.pdf"
+      }
+    ],
+    "template_title": ["Internal", "submission", "template"],
+    "template_text": "Send a package of documents for financial assistance using the template for internal shipments ‘Financial assistance from the Union’, Poltava, Nova Poshta branch No. 23",
+    "points": [
+      "payment is received on the salary card;",
+
+      "payment of aid is made every Friday (or the day before, if it is a public holiday);",
+
+      "if we have any questions about the documents, we will be sure to contact you;",
+
+      "in case of refusal to pay the aid, you will definitely receive feedback on the reason for refusal;",
+
+      " if you have any further questions — feel free to contact the Head of the Trade Union center."
+    ],
+    "important_title": "Please note!",
+    "important_subtitle": ["The Trade Union provides aid", "only to the Trade Union members!"],
+    "important_text": [
+      "To join please fill in the relevantй",
+      "ащкь",
+      "and send it",
+      "Heads of PTUO (primary trade union organization)."
+    ],
+    "link": "DOWNLOAD THE APPLICATION"
   }
 }

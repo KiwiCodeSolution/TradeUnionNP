@@ -32,7 +32,7 @@ const Conditions = () => {
         </div>
         <div className="w-full pt-16 md:pt-0">
           <Title tag={"h2"} styles={"text-center"}>
-            <span className="text-red"> Скільки потрібно бути членом Профспілки</span> <br /> та
+            <span className="text-red">Скільки потрібно бути членом Профспілки</span> <br /> та
             сплачувати внески для отримання допомоги
           </Title>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">

@@ -57,7 +57,7 @@ const HeroFinancialAidPage = () => {
               alt="зображення листа що виходить з принтера"
             />
             <div className="w-4/5 mx-auto -mt-10 md:-mt-14">
-              <CountAid />
+              <CountAid currency={"грн."} />
               <div className="border-dotted border-b-8 border-bgBlack w-3/4 border-opacity-20 mx-auto" />
               <ul className="w-4/5 flex flex-col gap-y-4 mx-auto mt-8">
                 {ITEMS.map(el => (
