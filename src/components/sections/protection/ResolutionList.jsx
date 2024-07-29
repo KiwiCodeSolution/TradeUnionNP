@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Clock from "@/images/clock.svg";
 import Clock_1 from "@/images/clock1.svg";
@@ -28,15 +29,17 @@ const SECOND_LIST = [
 ];
 
 const ResolutionList = () => {
+  const t = useTranslations("Protection");
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 z-[5]">
       <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full flex flex-col gap-4 relative">
         <h3 className="text-2xl font-bold mb-5 leading-[1.4]">
-          Звернення, які вирішуються <br /> <span className="text-red">до 7 днів</span>
+          {t(`first_list_title.0`)}
+          <br /> <span className="text-red"> {t(`first_list_title.1`)}</span>
         </h3>
         <ul className="w-full flex flex-col gap-y-5">
-          {FIRST_LIST.map(el => (
-            <ListItem item={el} gap={4} key={el} />
+          {FIRST_LIST.map((el, index) => (
+            <ListItem item={t(`first_list.${index}`)} gap={4} key={t(`first_list.${index}`)} />
           ))}
         </ul>
         <Image
@@ -50,11 +53,12 @@ const ResolutionList = () => {
       </div>
       <div className="px-8 sm:px-16 py-10 bg-white rounded-2xl w-full flex flex-col gap-4 relative">
         <h3 className="text-2xl font-bold mb-5">
-          Звернення, які вирішуються <br /> <span className="text-red">7-31 день</span>
+          {t(`second_list_title.0`)} <br />{" "}
+          <span className="text-red"> {t(`second_list_title.1`)}</span>
         </h3>
         <ul className="w-full flex flex-col gap-y-5">
-          {SECOND_LIST.map(el => (
-            <ListItem item={el} gap={4} key={el} />
+          {SECOND_LIST.map((el, index) => (
+            <ListItem item={t(`second_list.${index}`)} gap={4} key={t(`second_list.${index}`)} />
           ))}
         </ul>
         <Image

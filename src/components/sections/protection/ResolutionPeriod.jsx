@@ -1,9 +1,11 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import ResolutionList from "./ResolutionList";
 
 const ResolutionPeriod = ({ gradient }) => {
+  const t = useTranslations("Protection");
   return (
     <BaseSection style={""}>
       {gradient && (
@@ -12,8 +14,7 @@ const ResolutionPeriod = ({ gradient }) => {
 
       <Wrapper styles={"pt-24 md:pt-32 md:pb-10"}>
         <Title tag={"h2"} styles={"text-center mb-8 z-[10] relative"}>
-          Зазвичай прості звернення <br />{" "}
-          <span className="text-red">вирішуються у два листи!</span>
+          {t(`period_title.0`)} <br /> <span className="text-red"> {t(`period_title.1`)}</span>
         </Title>
         <ResolutionList />
       </Wrapper>

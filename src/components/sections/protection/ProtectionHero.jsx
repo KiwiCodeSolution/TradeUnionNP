@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import PathPage from "@/components/PathPage";
 import Wrapper from "@/components/Wrapper";
@@ -8,18 +9,19 @@ import { inter } from "@/app/[locale]/fonts";
 import Title from "@/components/Title";
 
 const ProtectionHero = () => {
+  const t = useTranslations("Protection");
   return (
     <BaseSection style={""}>
       <Wrapper>
-        <PathPage endPath={"Захист трудових прав"} />
+        <PathPage endPath={t(`path`)} />
         <div className="w-full flex flex-col md:flex-row gap-y-4 md:gap-y-0">
           <div className="w-full md:w-3/5 xl:w-2/5 flex flex-col gap-y-4 pt-6 md:pt-16 ">
             <Title tag="h1" styles={"text-center md:text-left"}>
-              <span className="text-red">Захист</span> трудових прав
+              <span className="text-red">{t(`title.0`)}</span> {t(`title.1`)}
             </Title>
             <p className="text-lg text-center md:text-left">
-              <strong>Головне і пріоритетне право Профспілки </strong>— представляти і захищати
-              трудові та соціально-економічні права та інтереси профспілчан.
+              <strong>{t(`subtitle.0`)} </strong>
+              {t(`subtitle.1`)}
             </p>
           </div>
           <Image
@@ -43,21 +45,15 @@ const ProtectionHero = () => {
 
           <div className="flex flex-col justify-center w-full md:w-fit xl:w-1/4">
             <div className="flex items-center gap-x-6 mx-auto md:ml-0">
-              <p className={`${inter.className} text-red text-2xl font-bold`}>понад</p>
+              <p className={`${inter.className} text-red text-2xl font-bold`}>{t(`hero_text.0`)}</p>
               <p className={`${inter.className} text-red text-[50px] font-bold`}>5000</p>
             </div>
 
-            <p className="text-lg text-grey text-center md:text-left">
-              Звернень на правовий захист опрацьовано
-            </p>
+            <p className="text-lg text-grey text-center md:text-left">{t(`hero_text.1`)}</p>
           </div>
           <p className="w-full md:w-fit xl:w-2/4 text-lg text-grey text-center md:text-left">
-            Особливість правозахисної профспілкової функції в тому, що{" "}
-            <strong>
-              працівники самостійно та на добровільних засадах об’єдналися для захисту своїх прав
-            </strong>{" "}
-            , свобод та інтересів. Правозахисна діяльність здійснюється в межах наданих прав та
-            обов’язків.
+            {t(`hero_text.2`)}
+            <strong>{t(`hero_text.3`)}</strong> {t(`hero_text.4`)}
           </p>
         </div>
       </Wrapper>

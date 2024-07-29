@@ -22,7 +22,11 @@ const Law = ({ page }) => {
               {t(`Collective_labour_agreement.law_subtitle.2`)}
             </>
           ) : (
-            <></>
+            <>
+              {t(`Protection.law_subtitle.0`)}
+              <span className="text-red">{t(`Protection.law_subtitle.1`)}</span>
+              {t(`Protection.law_subtitle.2`)}
+            </>
           )}
         </Title>
         <div className="grid rid-grid-cols-1 md:grid-cols-2 gap-4 z-[1]">

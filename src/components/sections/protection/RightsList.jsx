@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Icon_1 from "@/images/protection/icon_01.svg";
 import Icon_2 from "@/images/protection/icon_02.svg";
 import Icon_3 from "@/images/protection/icon_03.svg";
@@ -7,6 +8,7 @@ import Icon_6 from "@/images/protection/icon_06.svg";
 import Image from "next/image";
 
 const RightsList = () => {
+  const t = useTranslations("Protection");
   return (
     <ul className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
       <li className="flex gap-x-4">
@@ -19,8 +21,13 @@ const RightsList = () => {
           />
         </div>
         <p className="w-4/5 text-[15px] pt-4">
-          <strong>Захист своїх трудових прав</strong> у встановленому чинним законодавством України
-          порядку;
+          <strong>
+            {" "}
+            {t(`rights_list.1.0`)}
+            {/* Захист своїх трудових прав */}
+          </strong>
+          {t(`rights_list.1.1`)}
+          {/* у встановленому чинним законодавством України порядку; */}
         </p>
       </li>
       <li className="flex gap-x-4">
@@ -33,8 +40,8 @@ const RightsList = () => {
           />
         </div>
         <p className="w-4/5 text-[15px] pt-4">
-          Умови праці, що <strong>відповідають санітарним вимогам</strong>, вимогам безпеки і
-          гігієни;
+          {t(`rights_list.2.0`)}
+          <strong> {t(`rights_list.2.1`)}</strong> {t(`rights_list.2.2`)}
         </p>
       </li>
       <li className="flex gap-x-4">
@@ -47,7 +54,7 @@ const RightsList = () => {
           />
         </div>
         <p className="w-4/5 text-[15px] pt-4">
-          Допомогу з соціального <strong>страхування</strong>;
+          {t(`rights_list.3.0`)} <strong>{t(`rights_list.3.1`)}</strong>;
         </p>
       </li>
       <li className="flex gap-x-4">
@@ -60,9 +67,8 @@ const RightsList = () => {
           />
         </div>
         <p className="w-4/5 text-[15px] pt-4">
-          <strong>Відпочинок</strong>, який гарантується встановленою чинним законодавством України
-          тривалістю робочого часу і забезпечується наданням вихідних днів, святкових і неробочих
-          днів, оплачуваних щорічних відпусток;
+          <strong>{t(`rights_list.4.0`)}</strong>
+          {t(`rights_list.4.1`)}
         </p>
       </li>
       <li className="flex gap-x-4">
@@ -75,8 +81,8 @@ const RightsList = () => {
           />
         </div>
         <p className="w-4/5 text-[15px] pt-4">
-          <strong>Оплату праці без будь-якої дискримінації</strong> і не нижче встановленого чинним
-          законодавством України мінімального розміру;
+          <strong>{t(`rights_list.5.0`)}</strong>
+          {t(`rights_list.5.1`)}
         </p>
       </li>
       <li className="flex gap-x-4">
@@ -89,9 +95,8 @@ const RightsList = () => {
           />
         </div>
         <p className="w-4/5 text-[15px] pt-4">
-          <strong>Соціальне забезпечення при втраті працездатності</strong>, додаткові трудові та
-          соціально-побутові пільги, передбачені чинним законодавством України та Колективним
-          договором.
+          <strong>{t(`rights_list.6.0`)}</strong>
+          {t(`rights_list.6.1`)}
         </p>
       </li>
     </ul>

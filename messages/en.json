@@ -697,5 +697,172 @@
       "According to Labor Initiatives NGO, the Collective Labour Agreement of NOVA POSHTA LLC VPSP has been recognized as the",
       "“Best Collective Labour Agreement among the Trade Unions of the Country”."
     ]
+  },
+  "Protection": {
+    "path": "Protection of labor rights",
+    "title": ["Protection", "of labor rights"],
+    "subtitle": [
+      "The main and priority right of the Trade Union",
+      "is to represent and protect the labor and socio-economic rights and interests of the trade union members."
+    ],
+    "hero_text": [
+      "over",
+      "Appeals for legal protection processed",
+      "The feature of the trade union's human rights activism function is that",
+      "employees unite independently and on a voluntary basis in order to protect their rights",
+      ", freedoms, and interests. Human rights activism shall be carried out within the limits of the granted rights and obligations."
+    ],
+    "law_subtitle": ["On Trade Unions,", "Their Rights ", "and Guarantees of Activity"],
+    "law": [
+      {
+        "title": "Article 2",
+        "text": "Trade unions shall be set up for the purpose of representing and protecting the labor, socio-economic rights and interests of trade union members."
+      },
+      {
+        "title": "Article 13",
+        "text": "The state shall facilitate to the training of trade union staff, together with trade unions ensure the increase in their knowledge in terms of legal, economic and social protection of employees."
+      },
+      {
+        "title": "Article 21, part 6",
+        "text": "Trade unions shall exercise public control over the payment of salary, compliance with the legislation on labor and occupational health and safety, creation of safe and harmless working conditions, proper production and sanitary conditions, providing the employees with protective clothing, footwear and other means of individual and collective protection."
+      },
+      {
+        "title": "Article 26",
+        "text": "Trade unions and their associations shall have the right to represent the interests of employees in bodies that consider individual labor disputes. Trade unions and their associations shall have the right to represent the interests of employees in resolving collective labor disputes (conflicts) in accordance with the procedure established by legislation. Representatives of trade unions shall participate in the activities of mediation commissions, labor arbitrations and other bodies that consider collective labor disputes (conflicts)."
+      }
+    ],
+    "agreement_title": ["Collective", "labor agreement"],
+    "agreement_text": "The collective labor agreement shall be an agreement between the Administration of Nova Poshta LLC and the Trade Union of Nova Poshta LLC (Nova Poshta LLC VPSP ), which represents the staff. The collective bargaining agreement shall define the mutual production, labor and socio-economic relations between two parties. The provisions of theCollective Bargaining Agreement shall apply to all employees and shall be binding upon them.",
+    "agreement_button": "review",
+    "rights_title": ["Each employee", "shall have the right to:"],
+    "rights_list": {
+      "1": [
+        "Protection of his/her labor rights",
+        "in accordance with the procedure established by the current legislation of Ukraine;"
+      ],
+      "2": ["Working conditions", "meeting sanitary", ", safety and hygiene requirements;"],
+      "3": ["Social", "insurance assistance;"],
+      "4": [
+        "Rest",
+        "which is guaranteed by the duration of working hours set by the current legislation of Ukraine and is ensured by the provision of days off, holidays and non-business days, paid annual leave;"
+      ],
+      "5": [
+        "Remuneration of labor without any discrimination",
+        "and no lower than the minimum amount set by the current legislation of Ukraine;"
+      ],
+      "6": [
+        "Social security in case of disability",
+        "additional labor and social benefits stipulated by the current legislation of Ukraine and Collective Bargaining Agreement."
+      ]
+    },
+    "appeals_title": ["Most", "common appeals:"],
+    "appeals": [
+      "Pecuniary liability",
+      "Reprimands",
+      "Bonus reduction",
+      "Violation of the employee's rights",
+      "Conflict situations with a manager or colleague",
+      "Information assistance/consultation",
+      "Accrual/payment of salary",
+      "Other types of appeals"
+    ],
+    "cases_title": "Cases",
+    "first_slide_title": "Bonus reduction",
+    "first_slide": [
+      {
+        "title": "Bonus reduced",
+        "text": "The employee's bonus was reduced by UAH 1,200, he applied for protection to the Trade Union"
+      },
+      { "title": "Applied", "text": "We received the appeal and entered it into the log" },
+      {
+        "title": "Submitting the request",
+        "text": "We wrote to the Director of the Labor Department and Director of HR Management"
+      },
+      {
+        "title": "Providing arguments",
+        "text": "Based on the laws, regulations and Collective Bargaining Agreement, we demand to accrue the deducted funds"
+      },
+      {
+        "title": "Cancelling",
+        "text": "We receive the response on cancellation of the bonus reduction"
+      },
+      {
+        "title": "Resolved",
+        "text": "The employee receives the deducted funds along with the salary"
+      }
+    ],
+    "second_slide_title": "Sick pay",
+    "second_slide": [
+      {
+        "title": "Sick pay",
+        "text": "It was explained to the employee in the salary explanation that the sick pay was accrued, yet it was not credited"
+      },
+      { "title": "Applied", "text": "The employee applied for help to the Trade Union" },
+      {
+        "title": "Submitting the request",
+        "text": "We submitting a request to the accounting department for an explanation of sick pay accrual"
+      },
+      {
+        "title": "Received a response",
+        "text": "The sick and vacation pay accrual department paid part of the salary, and the part for which the social insurance fund is responsible will be paid after consideration of the application"
+      },
+      {
+        "title": "Resolved",
+        "text": "The appeal was resolved, the employee received the explanation"
+      }
+    ],
+    "algorithm_title": ["Algorithm and", "chronology", "of processing", "the appeals"],
+    "step": "step",
+    "algorithm_steps": [
+      {
+        "title": "1st day",
+        "text": "We accept your appeal (Facebook, telephone, Viber, request to the Head of PTU, e-mail, etc.)"
+      },
+      {
+        "title": "1st day",
+        "text": "We verify your membership in Nova Poshta LLC VPSP"
+      },
+      {
+        "title": "2nd-3rd day",
+        "text": "We create an algorithm for resolution, consult with the Head of PTU"
+      },
+      {
+        "title": "5th-7th day",
+        "text": "Drawing up a relevant list (appeal/request/submission) for the management"
+      },
+      {
+        "title": "up to the 7th day",
+        "text": "Response to your e-mail that the request is under processing and term of response"
+      },
+      {
+        "title": "7th day",
+        "text": "Closing the appeal requiring no further requests"
+      }
+    ],
+    "period_title": ["Usually, simple appeals", "are resolved in two letters!"],
+    "first_list": [
+      "A detailed explanation of salary",
+      "Leave-related issues",
+      "Consultations on explanatory notes",
+      "Consultations on job description",
+      "Request for contact details with a specific department",
+      "Consultations on financial aid",
+      "Consultations on caring for a sick relative",
+      "Consultation on restoration after parental leave",
+      "Consultation on employment record"
+    ],
+    "first_list_title": ["Appeals resolved", "up to the 7 days"],
+    "second_list_title": ["Appeals resolved", "7th-31st day"],
+    "second_list": [
+      "Reprimands",
+      "Sick pay",
+      "Reduction of employee's working hours",
+      "Transfer of employee to a rate system",
+      "Bonus reduction",
+      "Conflict with a manager",
+      "Ensuring security of employees",
+      "Redundancy",
+      "Working conditions"
+    ]
   }
 }

@@ -11,11 +11,11 @@ import ResolutionPeriod from "@/components/sections/protection/ResolutionPeriod"
 
 import data from "@/data/law_protect.json";
 
-export default function ProtectionPage() {
+export default function ProtectionPage({ params }) {
   return (
     <main className="w-full bg-bgGrey">
       <ProtectionHero />
-      <Law data={data}>«Про професійні спілки, їх права та гарантії діяльності»</Law>
+      <Law data={data} page={"protection"} />
       <ProtectionAgreement />
       <ProtectionRights />
       <Appeals />
@@ -23,7 +23,7 @@ export default function ProtectionPage() {
       <Algorithm />
       <ResolutionPeriod gradient />
       <ContactSection bgStyle={"bg-bgGrey"} />
-      <AgreementsBlogSection />
+      {params.locale === "uk" && <AgreementsBlogSection />}
     </main>
   );
 }
