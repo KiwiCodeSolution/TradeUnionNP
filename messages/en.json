@@ -465,5 +465,237 @@
     "regional_offices_title": ["List of heads", "of regional ", "centers"],
     "form_placeholder": "Start entering the desired area...",
     "form_button": "show more"
+  },
+  "Collective_labour_agreement": {
+    "path": "Collective labour agreement",
+    "first_items": [
+      "additional guarantees for mobilised employees",
+      "additional holidays for certain categories of employees",
+      "additional guarantees for trade union activities",
+      "counteracting discrimination, mobbing and spreading disinformation",
+      "counteraction to redundancies and additional guarantees in case of redundancy",
+      "regulated remote work",
+      "free water, tea, coffee; free hot lunches for terminal employees"
+    ],
+    "second_items": [
+      "additional payments for working on holidays and at night",
+      "additional holidays for social categories of employees",
+      "additional payments to certain categories of employees"
+    ],
+    "hero_button": "review",
+    "title": ["Collective", "labour agreement"],
+    "collective_agreement": [
+      {
+        "title": "Additional guarantees for mobilised trade unionists",
+        "texts": [
+          "With the beginning of Russia's full-scale invasion of Ukraine, the Union pays special attention to mobilised trade unionists and enshrines additional guarantees in the Collective Agreement. In particular, the document stipulates that, at the request of employees who resume work in connection with their dismissal from military service, to which they were called up during mobilisation for a special period, the employer shall provide a one-time paid leave of up to 30 calendar days.",
+
+          "In addition, the administration must provide psychological and legal counselling services at its own expense for employees who are combatants and their family members.",
+
+          "At the same time, it is not allowed to dismiss employees who start work in connection with their dismissal from military service to which they were called up during mobilisation for a special period (signed a contract)."
+        ]
+      },
+      {
+        "title": "Additional guarantees in case of redundancy",
+        "texts": [
+          "This Collective Agreement is also unique in that employees have fixed guarantees in case of redundancy. In accordance with the law and court practice, the employer must offer all other relevant vacant positions at the company when making employees redundant.",
+          "The collective agreement of Nova Poshta LLC is the only one in Ukraine that protects employees from possible violations and lengthy litigation. It was based on the court practice that the provision was formulated that in the event of redundancy, 'employees shall be offered vacancies at the company at least three times within two months after the employee is notified of the redundancy' (clause 3.9).",
+          "The collective agreement set the timeframe for the trade union to agree on the dismissal of employees at the initiative of the company's administration (i.e. redundancy) at three months, and also obliged to provide information on the reasons for the following dismissals, the number and categories of employees to whom it may apply, i.e. employees will be notified three months before the redundancy (instead of two months as stated in the Labour Code).",
+          "At the same time, the Law stipulates that employees subject to redundancy shall be offered available vacancies in accordance with their speciality/qualifications in",
+          "the first instance and at least three times.",
+          "Another innovation is paid leave in the last month of employment to search for a new job in the event of redundancy for at least one day on Sunday. This means that an employee can take time off for a job interview without fear of being fired for absenteeism.",
+          "Another important provision is that employees dismissed in connection with the liquidation or reorganisation of the Company, reduction in the number or staff, in addition to severance pay provided for by applicable law, are paid an allowance, the amount of which depends on the total length of service at the company:",
+          "These provisions are primarily positive for the employee and also for the company, as they build employee loyalty by guaranteeing security in the event of structural changes in the company and significantly encourage the employer to do everything possible to preserve the employee's job, and if not, to provide him or her with another suitable job."
+        ],
+        "list": [
+          "3 to 5 years + 1 average monthly salary",
+          "5 to 8 years + 2 average monthly salaries",
+          "8 to 10 years + 3 average monthly wages",
+          "10 years + 4 average monthly wages"
+        ]
+      },
+      {
+        "title": "Additional payments for work on holidays and non-working days",
+        "texts": [
+          "The Collective Bargaining Agreement also contains clauses regulating the working conditions of employees during holidays, non-working days and weekends. In particular, the collective agreement defines holidays and non-working days at the enterprise, and work on these days is paid at double time (at the employee's request, an additional day off may be taken in lieu of payment).",
+
+          "It is stipulated that training and development of employees is paid as working time."
+        ]
+      },
+      {
+        "title": "Additional payments to employees",
+        "texts": [
+          "The Collective Bargaining Agreement also provides for an additional payment for night work. If an employee performs the duties of another temporarily absent employee, he or she receives 20% to 100% of the absent employee's salary.",
+
+          "The Collective Agreement also provides for a +10% surcharge for office cleaners for working with chemicals."
+        ]
+      },
+      {
+        "title": "Additional types of leave",
+        "texts": [
+          "The collective agreement also regulates the possibility for employees to take additional leave. In particular, the document stipulates that the schedule of annual paid leave is approved by the management by 15 December for the following year in agreement with the Trade Union. When determining the order of holidays, family and other personal circumstances of each employee and the Company's production needs are taken into account. Vacation schedules shall be drawn up by the employee and the head of the unit on a monthly basis so that the employee is granted at least 24 calendar days of annual leave per year, of which 14 calendar days shall be taken as a continuous part. Salary for the period of annual leave must be paid no later than 3 days before the start of the leave.",
+
+          "At the request of employees who start work due to dismissal from military service to which they were called up during mobilisation for a special period, the employer granted a one-time paid leave of up to 30 calendar days.",
+
+          "For the period of trade union training, employees elected to elected trade union bodies are granted additional leave of up to 8 calendar days with pay at the expense of the company. Employees are also granted paid leave of up to 3 days if they organised or participated in events of the Trade Union of regional and national status.",
+
+          "Additional leave is granted to parents with first-graders (1 calendar day on 1 September) and parents with high school graduates (1 calendar day on the day of graduation).",
+
+          "The Collective Agreement sets out a list of positions that are entitled to an additional 2 days' paid leave for working with computers.",
+          "Employees who were vaccinated against COVID-19 were granted a paid leave of 1 calendar day the day after the vaccination.",
+
+          "In addition, the Collective Agreement provides for 3 days of additional leave for members of volunteer fire brigades.",
+
+          "Another innovation is paid leave in the last month of employment to search for a new job in the event of redundancy for at least one day on Sunday. This means that an employee can take time off for a job interview without fear of being fired for absenteeism."
+        ]
+      },
+      {
+        "title": "Working conditions",
+        "texts": [
+          "Certain clauses of the Collective Agreement also regulate the provision of comfortable working conditions for all employees. For example, the agreement requires the management to take measures to prepare the production facilities for work in the autumn and winter period by 15 October (including heating) and in the spring and summer period by 15 April (including air conditioning) of the current year.",
+
+          "Similar provisions are widely used in collective bargaining agreements of leading Western companies and NGOs. In particular, the Collective Bargaining Agreement between the Trade Union and the administration ensures free access to drinking water, tea, coffee and sugar for all employees of the Company.",
+
+          "The document also regulates the provision of free hot lunches to all terminal employees."
+        ]
+      },
+      {
+        "title": "Free clothing and personal protective equipment",
+        "texts": [
+          "Since special clothing and personal protective equipment are important for Nova Poshta employees, the Collective Agreement also controls their provision. For example, the document sets out the list of positions that should be provided with special clothing, footwear and other personal protective equipment free of charge, and also sets out the shortened periods of wearing the overalls.",
+
+          "It also states that T-shirts, hats (caps, baseball caps), and shoes provided by the company cannot be returned or reused by another employee."
+        ]
+      },
+      {
+        "title": "Guarantees for remote work",
+        "texts": [
+          "Only at the end of February 2021 did the amendments to the Labour Code on remote and home work come into force in Ukraine. The changes appeared earlier in the Nova Poshta Collective Agreement. In addition, certain developments of the collective agreement were cited as a positive practice during the preparation of Draft Law No. 4051 on the regulation of remote work in Ukraine.",
+
+          "The collective agreement, in particular, provides for the provision of work equipment (laptop/system unit, monitor, manipulator, keyboard, Internet access) and furniture, if necessary, and its delivery to employees working remotely.",
+
+          "The agreement also regulates the delivery of drinking water, tea, coffee and sugar to employees working remotely."
+        ]
+      },
+      {
+        "title": "Combating discrimination",
+        "texts": [
+          "Our Collective Agreement is the first in Ukraine to include a clause on the employer's obligation to prevent gender-based violence in the workplace. This clause states that all employees in the company are equal, regardless of gender, and cannot be subjected to any form of violence (physical, psychological, sexual, economic). This provision is not declarative, as the employer has additionally assumed the obligation to implement specific prevention measures: informing, emphasising, surveying, and checking. The very wording 'gender-based violence' shows that both the Union and the employer follow current trends in the field of labour. The administration undertakes not only to prevent but also to guarantee the prevention of gender-based violence in the workplace.",
+
+          "It is specifically stipulated that employees are prohibited from threatening other employees with violence, the use of physical force, using violence against other employees, using profanity in communication with other employees, intentionally spreading false information about other employees, or engaging in mobbing."
+        ]
+      },
+      {
+        "title": "Additional guarantees for trade union activities",
+        "texts": [
+          "Additional benefits for employees who are actively involved in trade union activities are also enshrined in the Collective Agreement. For example, the employer has to transfer funds to the trade union on a monthly basis for cultural and sports events, as well as for the health improvement of trade unionists in the amount of 0.5% of the payroll of the members of the trade union organisation of the enterprise.",
+
+          "At the same time, the administration must provide the elected body of the trade union with premises equipped with the necessary equipment and furniture (at least 30 sq m), provide communication facilities, etc.",
+
+          "For the period of trade union training, employees elected to elected trade union bodies are granted additional leave of up to 8 calendar days with pay at the expense of the enterprise.",
+
+          "At the same time, the Trade Union has the right to post its own information in the premises and on the territory of the enterprise in places accessible to employees.",
+
+          "The management also pays for additional working time for employees of elected trade union bodies. Employees are also granted paid holidays of up to 3 days if they organise or participate in events of the Trade Union of regional and national status.",
+
+          "The Collective Agreement also stipulates that the administration cannot dismiss persons elected to trade union bodies within a year after the end of the term for which the person is elected."
+        ]
+      }
+    ],
+    "law_title": "Law of Ukraine",
+    "law_subtitle": ["On", "Collective Labour Agreement", "and Contracts"],
+    "law": [
+      {
+        "title": "Article 1",
+        "text": "A collective labour agreement, contract shall be entered into based on the current legislation, obligations assumed by the parties to regulate industrial, labour and socio-economic relations and alignment of interests of employees and employers."
+      },
+      {
+        "title": "Article 3",
+        "text": "A collective labour agreement shall be entered into by and between an employer and one or more trade union bodies, and in the absence of such bodies — by employees' representatives elected and authorized by the staff."
+      },
+      {
+        "title": "Article 5",
+        "text": "The terms and conditions of collective labour agreements and contracts entered into pursuant to the current legislation shall be binding upon the enterprises to which they apply and parties who have entered into them."
+      },
+      {
+        "title": "Article 9",
+        "text": "The provisions of a collective labour agreement shall apply to all employees of enterprises, regardless of whether or not they are members of a trade union, and shall be binding upon both the employer and employees of the enterprise. The provisions of general, sectoral (intersectoral), territorial agreements shall apply directly and shall be binding upon all entities within the area of activity of the parties who have signed the agreement."
+      }
+    ],
+    "about": [
+      {
+        "title": "Parties to the Collective Labour Agreement:",
+        "text": "the employer and the trade union operating in accordance with the charter."
+      },
+      {
+        "title": "Term of the Collective Labour Agreement:",
+        "text": "it shall enter into force upon its signing and shall survive the expiration date until the parties enter into a new or revise the existing agreement. It shall also remain in full and effect in case of change of composition, structure, name of the body authorized by the owner, on whose behalf this agreement has been entered into."
+      },
+      {
+        "title": "Correlation between the legislation and collective labour agreement:",
+        "text": "employment agreements shall only include terms and conditions that improve the position of employees."
+      }
+    ],
+    "our_agreement_title": ["Our ", "collective labour agreement"],
+    "our_agreement": [
+      {
+        "title": "LEGAL VALIDITY",
+        "text": [
+          "This ",
+          "Collective Labour Agreement has been made pursuant to the Law of Ukraine",
+          "'On Collective Labour Agreements and Contracts', determines the mutual industrial, labour and socio-economic relations between the Administration and the Trade Union Party."
+        ]
+      },
+      {
+        "title": "BINDING NATURE",
+        "text": [
+          "The terms and conditions of the Collective Labour Agreement",
+          "shall be binding",
+          "on the Parties who have signed it. In case of any disputes and disagreements, these conditions may not deteriorate the position of employees in comparison with the current legislation of Ukraine."
+        ]
+      },
+      {
+        "title": "UNIVERSAL NATURE",
+        "text": [
+          "The provisions of this Collective Labour Agreement shall apply to all employees and shall be binding upon both ",
+          "the Administration and each member",
+          "of the staff."
+        ]
+      },
+      {
+        "title": "UNILATERAL CONTINUITY",
+        "text": [
+          "Neither Party who has signed the Collective Labour Agreement",
+          "may unilaterally stop the compliance ",
+          "with the provisions thereof."
+        ]
+      },
+      {
+        "title": "VALIDITY",
+        "text": [
+          "This Collective Labour Agreement shall be valid in case of change in the composition, structure, and name of the Company, and in case of its reorganization, it may be revised subject to agreement of the Parties.",
+          "The provisions of this Collective Labour Agreement shall be valid until a new agreement is signed.",
+          ""
+        ]
+      },
+      {
+        "title": "COLLECTIVE NATURE",
+        "text": [
+          "The highest body of the staff shall be",
+          "the Staff Conference.",
+          "Delegates to the staff conference shall be elected according to the rules of representation: 60 (sixty) delegates from the Operations Directorate in proportion to the number of employees in the regional network, and 1 (one) delegate from each other Directorate."
+        ]
+      }
+    ],
+    "warning": [
+      "No employment agreement (contract), ",
+      "signed with the employees of Nova Poshta LLC,",
+      " may contradict this Collective Agreement",
+      " in such a way that the employee's rights and interests in the employment agreement (contract) are in any way limited compared to the latter. Some provisions were suspended by the employer for the period of martial law. At the same time, the Trade Union helped to restore almost all provisions of the Collective Agreement, although the employer had the option not to renew them."
+    ],
+    "honors": [
+      "According to Labor Initiatives NGO, the Collective Labour Agreement of NOVA POSHTA LLC VPSP has been recognized as the",
+      "“Best Collective Labour Agreement among the Trade Unions of the Country”."
+    ]
   }
 }

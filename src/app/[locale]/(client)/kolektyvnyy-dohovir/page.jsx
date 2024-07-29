@@ -8,19 +8,17 @@ import AgreementsBlogSection from "@/components/sections/blog/AgreementsBlogSect
 import HeroAgreementsPage from "@/components/sections/hero/HeroAgreementsPage";
 import law from "@/data/law.json";
 
-export default function CollectiveAgreementPage() {
+export default function CollectiveAgreementPage({ params }) {
   return (
     <main className="w-full bg-bgGrey">
       <TitleAgreementsPage />
       <HeroAgreementsPage />
       <AgreementsPoints />
-      <Law data={law}>
-        Про <span className="text-red">колективні договори</span> і угоди
-      </Law>
+      <Law data={law} page={"collective_agreement"} />
       <AboutAgreement />
       <OurAgreement />
       <Honors />
-      <AgreementsBlogSection />
+      {params.locale === "uk" && <AgreementsBlogSection />}
     </main>
   );
 }
