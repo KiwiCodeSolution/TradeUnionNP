@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
@@ -6,11 +7,13 @@ import Image from "next/image";
 import Arrow from "@/images/arrow_red.svg";
 
 const Documents = () => {
+  const t = useTranslations("Financial_Aid");
   return (
     <BaseSection id={"documents"} style={"bg-bgGrey pt-16"}>
       <Wrapper>
         <Title tag={"h2"} styles={"text-center"}>
-          <span className="text-red">Документи</span> на одержання <br /> матеріальної допомоги
+          <span className="text-red">{t(`documents_title.0`)} </span> {t(`documents_title.1`)}{" "}
+          <br /> {t(`documents_title.2`)}
         </Title>
         <DocumentsList />
         <div className="mx-auto mt-12">
@@ -19,7 +22,7 @@ const Documents = () => {
             target="_blank"
             className="w-fit flex flex-row items-center gap-3 text-red text-sm uppercase font-bold mx-auto"
           >
-            Положення про порядок та умови надання матеріальної допомоги
+            {t(`doc_button`)}
             <Image
               src={Arrow}
               width={30}

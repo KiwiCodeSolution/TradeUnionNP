@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import PathPage from "@/components/PathPage";
 import Title from "@/components/Title";
@@ -23,21 +24,19 @@ const ITEMS = [
 ];
 
 const HeroFinancialAidPage = () => {
+  const t = useTranslations("Financial_Aid");
   return (
     <BaseSection style={"pb-20"}>
       <Wrapper>
-        <PathPage endPath={"Матеріальна допомога"} />
+        <PathPage endPath={t(`path`)} />
         <div className="flex flex-col md:flex-row gap-x-4 pt-10">
           <div className="w-full md:w-2/5 flex flex-col gap-y-8">
             <Title tag={"h2"}>
-              Матеріальна <span className="text-red">допомога</span>
+              {t(`title.0`)}
+              <span className="text-red"> {t(`title.1`)}</span>
             </Title>
             <p className="text-lg text-grey">
-              Матеріальна допомога надається працівникам, які{" "}
-              <strong>
-                є членами Всеукраїнської професійної спілки працівників ТОВ «Нова Пошта»
-              </strong>{" "}
-              та щомісячно сплачують членські внески.
+              {t(`subtitle.0`)} <strong>{t(`subtitle.1`)}</strong> {t(`subtitle.2`)}
             </p>
             <LinkButton
               view="red"
@@ -46,7 +45,7 @@ const HeroFinancialAidPage = () => {
               goToPage
               icon
             >
-              Отримати допомогу{" "}
+              {t(`button`)}
             </LinkButton>
           </div>
           <div className="w-full md:w-3/5 flex flex-col">
@@ -57,11 +56,11 @@ const HeroFinancialAidPage = () => {
               alt="зображення листа що виходить з принтера"
             />
             <div className="w-4/5 mx-auto -mt-10 md:-mt-14">
-              <CountAid currency={"грн."} />
+              <CountAid currency={t(`currency`)} />
               <div className="border-dotted border-b-8 border-bgBlack w-3/4 border-opacity-20 mx-auto" />
               <ul className="w-4/5 flex flex-col gap-y-4 mx-auto mt-8">
-                {ITEMS.map(el => (
-                  <ListItem item={el} gap={5} key={el} />
+                {ITEMS.map((el, index) => (
+                  <ListItem item={t(`list.${index}`)} gap={5} key={t(`list.${index}`)} />
                 ))}
               </ul>
             </div>

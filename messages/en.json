@@ -13,8 +13,8 @@
       { "title": "Regional cells", "link": "/ppo" },
       { "title": "Protection of labor rights", "link": "/zakhyst-trudovykh-prav" },
       { "title": "Financial aid", "link": "/materialna-dopomoga" },
-      { "title": "I am the Trade Union", "link": "/dozvillya-ta-sport" },
-      { "title": "Sports and leisure", "link": "/ya-profspilka" },
+      { "title": "Sports and leisure", "link": "/dozvillya-ta-sport" },
+      { "title": "I am the Trade Union", "link": "/ya-profspilka" },
       { "title": "Appeal", "link": "/zvernennya" }
     ]
   },
@@ -915,13 +915,13 @@
     ],
     "limitation_title": ["What are", "the time limits", "for getting the aid"],
     "first_limit": "2 times a year",
-    "first_limit_test": [
+    "first_limit_text": [
       "Financial assistance is provided to a member of the Trade Union",
       "no more than twice a year.",
       "In exceptional cases (emergency, serious illness, simultaneous coincidence of several events), financial assistance may be provided additionally upon submission of the trade union committee of the PTUO (primary trade union organization) and approval of the Central Committee."
     ],
     "second_limit": "2 months",
-    "second_limit_test": "The full set of documents for financial aid is accepted no later than 2 months after the date of the event (case).",
+    "second_limit_text": "The full set of documents for financial aid is accepted no later than 2 months after the date of the event (case).",
     "documents_title": ["Documents", "for receiving", "financial aid"],
     "doc_button": "Regulations on the procedure and conditions for providing financial aid ",
     "docs_modal_button": "Review document",
@@ -1102,8 +1102,8 @@
     "important_title": "Please note!",
     "important_subtitle": ["The Trade Union provides aid", "only to the Trade Union members!"],
     "important_text": [
-      "To join please fill in the relevantй",
-      "ащкь",
+      "To join please fill in the relevant ",
+      "form",
       "and send it",
       "Heads of PTUO (primary trade union organization)."
     ],

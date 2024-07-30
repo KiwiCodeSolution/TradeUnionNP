@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
@@ -7,6 +8,7 @@ import Cash from "@/images/aid/dopomoga-1.svg";
 import Title from "@/components/Title";
 
 const Conditions = () => {
+  const t = useTranslations("Financial_Aid");
   return (
     <BaseSection style={""}>
       <Wrapper>
@@ -20,28 +22,26 @@ const Conditions = () => {
           />
           <div className="w-full md:w-3/5 flex flex-col gap-y-8">
             <Title tag={"h2"}>
-              <span className="text-red">Умови</span> надання матеріальної допомоги
+              <span className="text-red">{t(`conditions_title.0`)}</span> {t(`conditions_title.1`)}
             </Title>
             <p className="text-lg">
-              Підставою для надання матеріальної допомоги є заява члена Профспілки, його родича* або
-              голови первинної профспілкової організації із зазначенням фактичних обставин, у
-              зв’язку з якими надається матеріальна допомога{" "}
-              <strong>та повний пакет відповідних підтверджуючих документів.</strong>
+              {t(`conditions_text.0`)}
+              <strong> {t(`conditions_text.1`)}</strong>
             </p>
           </div>
         </div>
         <div className="w-full pt-16 md:pt-0">
           <Title tag={"h2"} styles={"text-center"}>
-            <span className="text-red">Скільки потрібно бути членом Профспілки</span> <br /> та
-            сплачувати внески для отримання допомоги
+            <span className="text-red">{t(`conditions_term_title.0`)}</span> <br />
+            {t(`conditions_term_title.1`)}
           </Title>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <div className="px-8 md:px-16 py-10 bg-white rounded-2xl w-full flex flex-col gap-4 relative box-clock-shadow">
-              <h3 className="text-2xl font-bold text-red">6 місяців</h3>
+              <h3 className="text-2xl font-bold text-red">{t(`conditions_term_first_term`)}</h3>
               <p className="text-lg">
-                Матеріальна допомога надається працівникам,{" "}
-                <strong>які є членами Профспілки</strong> (перебувають на обліку) та щомісячно
-                сплачують членські внески більше 6 (шести) календарних місяців.
+                {t(`conditions_term_first_text.0`)}
+                <strong>{t(`conditions_term_first_text.1`)}</strong>
+                {t(`conditions_term_first_text.2`)}
               </p>
               <Image
                 src={Clock}
@@ -52,12 +52,10 @@ const Conditions = () => {
               />
             </div>
             <div className="px-8 md:px-16 py-10 bg-white rounded-2xl w-full flex flex-col gap-4 relative box-clock-shadow">
-              <h3 className="text-2xl font-bold text-red">12 місяців</h3>
+              <h3 className="text-2xl font-bold text-red">{t(`conditions_term_second_term`)}</h3>
               <p className="text-lg">
-                <strong>Компенсація витрат на лікування у випадку хвороби близьких родичів</strong>{" "}
-                члена Профспілки надається працівникам, які є членами Всеукраїнської професійної
-                спілки працівників ТОВ «НОВА ПОШТА» (перебувають на обліку) більше 12 (дванадцяти)
-                календарних місяців.
+                <strong>{t(`conditions_term_second_text.0`)}</strong>{" "}
+                {t(`conditions_term_second_text.1`)}
               </p>
               <Image
                 src={Clock_1}
@@ -69,8 +67,8 @@ const Conditions = () => {
             </div>
           </div>
           <p className="text-lg text-center mt-8">
-            * — Близькими родичами члена Профспілки є: батьки, дружина, чоловік, діти. <br />
-            Офіційне та документальне <strong>підтвердження спорідненості обов'язково!</strong>
+            {t(`note.0`)} <br />
+            {t(`note.1`)} <strong> {t(`note.2`)} </strong>
           </p>
         </div>
       </Wrapper>

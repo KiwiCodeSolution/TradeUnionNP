@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import LinkButton from "@/components/UI/buttons/LinkButton";
@@ -7,23 +8,24 @@ import Link from "next/link";
 import Hand from "@/images/aid/statement.svg";
 
 const Importantly = () => {
+  const t = useTranslations("Financial_Aid");
   return (
     <BaseSection style={"bg-bgGrey pt-12 sm:pt-32 pb-12"}>
       <Wrapper>
         <div className="w-full bg-white rounded-2xl px-6 pt-7 md:py-14 md:pl-16 md:pr-0 relative flex">
           <div className="w-full md:w-1/2 flex flex-col gap-y-4">
-            <Title tag={"h2"}>Увага!</Title>
+            <Title tag={"h2"}>{t(`important_title`)}</Title>
             <p className="text-lg text-grey">
-              Профспілка надає допомогу <strong> лише членам Профспілки!</strong>
+              {t(`important_subtitle.0`)} <strong> {t(`important_subtitle.1`)}</strong>
             </p>
             <p className="text-lg text-grey">
-              Щоб долучитися — заповнюйте відповідний{" "}
+              {t(`important_text.0`)}
               <Link href="/blanky" className="text-red underline hover:underline-offset-2">
-                бланк
+                {t(`important_text.1`)}
               </Link>{" "}
-              та відправляйте{" "}
+              {t(`important_text.2`)}
               <Link href="/kontakty" className="text-red underline hover:underline-offset-2">
-                Голові ППО (первинної профспілкової організації).
+                {t(`important_text.3`)}
               </Link>
             </p>
             <LinkButton
@@ -33,7 +35,7 @@ const Importantly = () => {
               style={"uppercase mt-4 text-sm md:text-base"}
               icon
             >
-              ЗАВАНТАЖИТИ ЗАЯВУ
+              {t(`link`)}
             </LinkButton>
           </div>
           <Image

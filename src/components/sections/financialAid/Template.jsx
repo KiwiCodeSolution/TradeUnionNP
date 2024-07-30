@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import ListItem from "@/components/UI/items/ListItem";
@@ -16,25 +17,23 @@ const POINTS = [
 ];
 
 const Template = () => {
+  const t = useTranslations("Financial_Aid");
   return (
     <BaseSection style={"pt-16 bg-bgGrey"}>
       <Wrapper styles={"flex flex-col md:flex-row gap-x-4"}>
         <div className="w-full md:w-1/2 flex flex-col gap-y-8">
           <Title tag={"h2"} styles={"text-center md:text-left"}>
-            Шаблон <span className="text-red">внутрішніх</span> відправок
+            {t(`template_title.0`)}
+            <span className="text-red"> {t(`template_title.1`)}</span> {t(`template_title.2`)}
           </Title>
-          <p className="text-lg text-grey mb-4 md:mb-0">
-            Відправте пакет документів на отримання матеріальної допомоги, скориставшись шаблоном
-            внутрішніх відправок "Матеріальна допомога від Профспілки", м. Полтава, відділення
-            “Нової пошти” №23
-          </p>
+          <p className="text-lg text-grey mb-4 md:mb-0">{t(`template_text`)}</p>
         </div>
         <ul
           className="w-full md:w-1/2 flex flex-col gap-y-4 bg-white rounded-2xl px-9 py-6
         "
         >
-          {POINTS.map(el => (
-            <ListItem item={el} gap={5} key={el} />
+          {POINTS.map((el, index) => (
+            <ListItem item={t(`points.${index}`)} gap={5} key={t(`points.${index}`)} />
           ))}
         </ul>
       </Wrapper>
