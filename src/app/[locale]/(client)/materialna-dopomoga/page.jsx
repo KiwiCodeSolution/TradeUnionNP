@@ -6,14 +6,14 @@ import Importantly from "@/components/sections/financialAid/Importantly";
 import Limitation from "@/components/sections/financialAid/Limitation";
 import Template from "@/components/sections/financialAid/Template";
 
-export default function FinancialAidPage() {
+export default function FinancialAidPage({ params }) {
   return (
     <main className="w-full">
       <HeroFinancialAidPage />
       <Graph />
       <Conditions />
       <Limitation />
-      <Documents />
+      <Documents locale={params.locale} />
       <Template />
       <Importantly />
     </main>

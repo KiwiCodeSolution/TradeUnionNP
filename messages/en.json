@@ -929,161 +929,59 @@
     "docs": [
       {
         "title": "Treatment of illness of a Trade Union member",
-        "text": "50% of confirmed expenses, but not more than UAH 6,000",
-        "points": [
-          "Заява члена Профспілки;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копія листка непрацездатності члена Профспілки (за умови його оформлення);",
-          "оригінали медичних документів (виписка з медичної карти амбулаторного/стаціонарного хворого (епікриз) форма № 027/о/довідка з ПІБ хворого з лікарні);",
-          "оригінали фіскальних чеків (квитанції про оплату ФОП, банківські платіжні доручення з печаткою) на лікування та/або медикаменти;",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/likuvannya-chlena-profspilki.pdf"
+        "text": "50% of confirmed expenses, but not more than UAH 6,000"
       },
       {
-        "title": "Лікування близьких родичів члена Профспілки",
-        "text": "50 % підтверджених витрат, але не більше 6000 гривень",
-        "points": [
-          "Заява члена Профспілки;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб;",
-          "оригінали медичних документів (листок непрацездатності, виписка з історії хвороби/епікриз/довідка з ПІБ хворого з лікарні);",
-          "оригінали фіскальних чеків (квитанції про оплату ФОП, банківські платіжні доручення з печаткою) на лікування та/або медикаменти.",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/likuvannya-rodicha.pdf"
+        "title": "Treatment of close relatives of a Trade Union member",
+        "text": "50% of confirmed expenses, but not more than 6,000 hryvnias"
       },
       {
         "title": "Death of the Trade Union member",
-        "text": "UAH 5,000",
-        "points": [
-          "Заява родича загиблого;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копія паспорта та ідентифікаційного коду померлого члена Профспілки;",
-          "копія свідоцтва про смерть;",
-          "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб/паспорт родича;",
-          "довідка з банку про відкриття карткового рахунку заявника у форматі IBAN."
-        ],
-        "file": "/files/zagibel-pracivnika.pdf"
+        "text": "UAH 5,000"
       },
       {
         "title": "Death of a close relative of the Trade Union member",
-        "text": "from UAH 1750 to UAH 3500",
-        "points": [
-          "Заява члена Профспілки;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб/паспорт родича;",
-          "копія свідоцтва про смерть;",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/pokhovannya-rodicha.pdf"
+        "text": "from UAH 1750 to UAH 3500"
       },
       {
         "title": "Marriage registration",
-        "text": "from UAH 1750 to UAH 3500",
-        "points": [
-          "Заява члена Профспілки;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копія свідоцтва про шлюб;",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/odruzhennya.pdf"
+        "text": "from UAH 1750 to UAH 3500"
       },
       {
         "title": "Birth of a child",
-        "text": "from UAH 1750 to UAH 3500",
-        "points": [
-          "Заява члена Профспілки;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копія свідоцтва про народження дитини",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/narodzhennya.pdf"
+        "text": "from UAH 1750 to UAH 3500"
       },
       {
         "title": "50-60-65-year anniversary",
-        "text": "from 1250 to 2500 UAH",
-        "points": [
-          "Заява голови первинної профспілкової організації або ювіляра;",
-          "копія паспорта та ідентифікаційного коду члена Профспілки, що отримує матеріальну допомогу;",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/yuviley.pdf"
+        "text": "from 1250 to 2500 UAH"
       },
       {
         "title": "Health improvement of a child and recreation",
-        "text": "from UAH 1500 to UAH 3000",
-        "points": [
-          "Заява члена Профспілки;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копія свідоцтва про народження дитини;",
-          "копія бланку-путівки або копія направлення на оздоровлення;",
-          "копія медичної довідки форми № 079/о;",
-          "оригінали фіскальних чеків про оплату путівки, або банківських платіжних доручень;",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/ozdorovlenna-dytyny.pdf"
+        "text": "from UAH 1500 to UAH 3000"
       },
       {
         "title": "War veterans",
-        "text": "from 1250 to 2500 UAH (payment is made annually in October)",
-        "points": [
-          "Заява члена Профспілки;",
-          "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
-          "копії документів, що підтверджують участь члена Профспілки в АТО або ООС (посвідчення учасника бойових дій встановленого зразка);",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/ubd.pdf"
+        "text": "from 1250 to 2500 UAH (payment is made annually in October)"
       },
       {
         "title": "Trip",
-        "text": "For health improvement",
-        "points": [
-          "копія паспорта та ідентифікаційного коду/копія паспорту у формі ID-карти;",
-          "витяг з наказу про відпустку/копія заяви на відпустку з візою керівника;",
-          "копія квитанції про сплату частини вартості путівки"
-        ],
-        "file": "/files/putivka.pdf"
+        "text": "For health improvement"
       },
       {
-        "title": "Мобілізованим пораненим профспілчанам",
-        "text": "from UAH 1500 to UAH 3000",
-        "points": [
-          "копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
-          "копію довідки про обставини поранення/травми;",
-          "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/poranenna.pdf"
+        "title": "To the mobilized wounded trade unionists",
+        "text": "from UAH 1500 to UAH 3000"
       },
       {
-        "title": "Профспілчанам на ТОТ України",
-        "text": "from UAH 1500 to UAH 3000",
-        "points": [
-          "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
-          "Копію документів, що підтверджують знаходження в окупованому місті/селищі після 24.02.2022 року. В разі відсутності офіційних документів, можна надати фото чеку з магазину/АЗС на фоні першої сторінки паспорту та скрін геолокації;",
-          "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/occupation.pdf"
+        "title": "To trade union members in the TOT of Ukraine",
+        "text": "from UAH 1500 to UAH 3000"
       },
       {
         "title": "Internally displaced persons",
-        "text": "from UAH 1500 to UAH 3000",
-        "points": [
-          "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
-          "Копію довідки про тимчасову реєстрацію місця проживання або перебування особи-члена Профспілки;",
-          "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/vpo.pdf"
+        "text": "from UAH 1500 to UAH 3000"
       },
       {
         "title": "Other",
-        "text": "from UAH 1000 to UAH 5000",
-        "points": [
-          "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
-          "Копію документів, що підтверджують складні життєві обставини, що потребують компенсації**;",
-          "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
-        ],
-        "file": "/files/other.pdf"
+        "text": "from UAH 1000 to UAH 5000"
       }
     ],
     "template_title": ["Internal", "submission", "template"],
@@ -1268,5 +1166,175 @@
     "subscription_title": ["Want", "to receive news?"],
     "subscription_text": "Follow the news in messengers:",
     "subscription_button": "subscribe"
+  },
+  "Appeal": {
+    "path": "Appeal",
+    "title": ["Appeal", "to the Trade Union"],
+    "faq": [
+      {
+        "title": ["A detailed explanation", "of salary"],
+        "points": [
+          {
+            "name": "The payment letter is sent to everyone by corporate mail. If none is received please contact the Service Desk.",
+            "information": []
+          },
+
+          {
+            "name": "If you have no corporate mail, go to portal.np.ua, enter your login and password, and view all your Payment Letters.",
+            "information": []
+          },
+
+          {
+            "name": "If you have no corporate login and password, make a request through the head of the branch (if you work in the branch) to the Salary Accrual Department, a Payment Letter will be printed or sent to you.",
+            "information": []
+          }
+        ]
+      },
+      {
+        "title": ["Why no ", "sick pay is accrued?"],
+        "points": [
+          {
+            "name": "The decision to pay aid or deny assigning the aid is made by the commission or employer's representative within 10 calendar days.",
+            "information": []
+          },
+
+          {
+            "name": "The first 5 days are paid by the employer and this amount is paid together with the salary. Payment for other days of sick leave will be made after compensation by the social insurance fund following the application.",
+            "information": []
+          },
+
+          {
+            "name": "From September 1, 2021, all sick leaves are issued in a digital way. It is necessary to notify the employer of sick leave opening.",
+            "information": []
+          }
+        ]
+      },
+      {
+        "title": ["Should I write an", "explanatory note?"],
+        "points": [
+          {
+            "name": "Yes, one should write an explanatory note, as it is a crucial factor in the further protection by the Trade Union. It should be noted:",
+            "information": [
+              "Is there a violation and to what extent is it significant/insignificant (what does it affect and has it caused damage)?",
+              "All the reasons, facts and arguments about the impossibility of avoiding the violation (and why you are not guilty of such an offense) and provide confirmation (photos, screenshots, etc.);",
+              "Other excusable circumstances.",
+              "",
+              "",
+              ""
+            ]
+          },
+
+          {
+            "name": "In addition, the law fails to specify the time limit for providing an explanation, yet it is necessary to respond to each letter that you will provide an explanation.",
+            "information": []
+          }
+        ]
+      },
+      {
+        "title": ["How to receive", "financial aid?"],
+        "points": [
+          {
+            "name": "In order to receive financial aid you need to:",
+            "information": [
+              "Be a member of the Trade Union for more than six calendar months (in some cases for one calendar year);",
+              "Submit a set of documents for financial aid no later than 2 months after the date of the event.",
+              "Send the set of documents for financial aid using the internal submission template 'Financial aid from the Trade Union'.",
+              "",
+              "",
+              ""
+            ]
+          },
+
+          {
+            "name": "More information about financial aid from the Trade Union and the internal submission template is available on the Financial aid.",
+            "information": []
+          },
+
+          {
+            "name": "If you have any further questions — feel free to contact the Head of your Trade Union center.",
+            "information": []
+          }
+        ]
+      },
+      {
+        "title": ["Leave-related", " issues"],
+        "points": [
+          {
+            "name": "The basic annual leave can be divided into parts. One vacation must be at least 14 calendar days. This indivisible part does not have to be used first. That is, if the leave is 24 calendar days, the legal option is to first use 10 calendar days of leave, for example, by one-two days, and then — the indivisible 14 days.",
+            "information": []
+          },
+
+          {
+            "name": "Annual leave is granted based on the leave schedule. Yet this schedule can at any time be amended if the employee so desires and unless the employer objects thereto.",
+            "information": []
+          },
+
+          {
+            "name": "Term of leave pay — 3 calendar days prior to the commencement of leave. Leave pay is paid to the employee before the leave, unless otherwise stipulated by the agreement between the employee and the employer. The employee may specify the desired period of leave in the application.",
+            "information": []
+          },
+
+          {
+            "name": "The employer may not forcibly send an employee on leave at his/her own expense.",
+            "information": []
+          }
+        ]
+      },
+      {
+        "title": ["Issues on ", "a job description"],
+        "points": [
+          {
+            "name": "Job descriptions are mandatory HR documents. To be developed for all positions stipulated by the staffing schedule. To be drawn up in two copies: the first one is to be kept with the HR department, the second one is to be kept with the head of the subdivision.",
+            "information": []
+          },
+          {
+            "name": "As a rule, the job description consists of the following sections:",
+            "information": [
+              "Tasks and responsibilities.",
+              "Rights.",
+              "Liability.",
+              "Must-know.",
+              "Qualification requirements.",
+              "If necessary, it can be supplemented with other sections."
+            ]
+          },
+
+          {
+            "name": "Making any amendments is possible only under the order of the head subject to the consent of the employee. The description and amendments thereto are approved by the trade union or another authorized body of the staff.",
+            "information": []
+          }
+        ]
+      }
+    ]
+  },
+  "User_agreement": {
+    "title": "User Agreement",
+    "description": [
+      "This Agreement defines the terms of use of materials and services of the site by Users",
+      "(hereinafter - 'Site')."
+    ],
+    "first_title": "General Terms",
+    "first_text": [
+      "The use of materials and services of the Site is regulated by the norms of the current legislation of Ukraine.",
+      "This Agreement is a public offer. By accessing the materials of the Site, the User is considered to have joined this Agreement.",
+      "The Administration of the Site has the right to unilaterally change the terms of this Agreement at any time. Such changes become effective after 3 (Three) days from the moment of posting the new version of the Agreement on the site. If the User disagrees with the changes made, he must refuse access to the Site, stop using the materials and services of the Site."
+    ],
+    "second_title": "User Obligations",
+    "second_text": [
+      "The user agrees not to take actions that may be considered as violating Ukrainian legislation or norms of international law, including in the field of intellectual property, copyright and/or related rights, as well as any actions that lead or may lead to a violation normal operation of the Site and the services of the Site.",
+      "Using the materials of the Site without the consent of the rights holders is not allowed. For the lawful use of the materials of the Site, it is necessary to conclude license agreements (obtain licenses) from the Rights Holders.",
+      "When citing materials from the Site, including copyrighted works, a reference to the Site is mandatory.",
+      "Comments and other entries of the User on the Site must not conflict with the requirements of the legislation of Ukraine and generally accepted norms of morality and morality.",
+      "The user is warned that the Site Administration is not responsible for visiting and using external resources, links to which may be contained on the site.",
+      "The User agrees that the Site Administration is not responsible and has no direct or indirect obligations to the User in connection with any possible or incurred losses or damages related to any content of the Site, registration of copyright rights and information about such registration, goods or services available on or obtained through external sites or resources or other contacts of the User, which he entered using the information posted on the Site or links to external resources."
+    ],
+    "third_title": "Other Terms",
+    "third_text": [
+      "All possible disputes arising from this Agreement or related to it shall be resolved in accordance with the current legislation of Ukraine.",
+      "Nothing in the Agreement can be understood as the establishment between the User and the Site Administration of agency relations, partnership relations, joint activity relations, personal employment relations, or any other relations not expressly provided for in the Agreement.",
+      "Recognition by the court of any provision of the Agreement as invalid or unenforceable does not imply the invalidation of other provisions of the Agreement.",
+      "Inaction on the part of the Site Administration in the event of a violation by any of the Users of the provisions of the Agreement does not deprive the Site Administration of the right to later take appropriate actions to protect its interests and protect copyrights on the Site's materials, which are protected in accordance with the law."
+    ],
+    "last_point": "The user confirms that he is familiar with all clauses of this Agreement and unconditionally accepts them."
   }
 }

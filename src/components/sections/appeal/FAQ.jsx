@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import ListItem from "@/components/UI/items/ListItem";
 import Wrapper from "@/components/Wrapper";
@@ -6,13 +7,14 @@ import Image from "next/image";
 import Logo from "@/images/logo-sm.svg";
 
 const FAQ = () => {
+  const t = useTranslations("Appeal");
   return (
     <BaseSection style={""}>
       <Wrapper styles={"py-16"}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {points.map((el, index) => (
             <article
-              key={el.title[0] + el.title[1]}
+              key={t(`faq.${index}.title.0`) + t(`faq.${index}.title.1`)}
               className="w-full flex flex-col gap-y-2 rounded-2xl bg-white px-7 py-6 md:p-10 shadow-standardShadow relative"
             >
               {index !== 1 && index % 2 === 1 && (
@@ -26,11 +28,26 @@ const FAQ = () => {
               )}
 
               <h3 className="text-[30px] font-bold mb-4">
-                {el.title[0]} <span className="text-red">{el.title[1]}</span>
+                {t(`faq.${index}.title.0`)}{" "}
+                <span className="text-red">{t(`faq.${index}.title.1`)}</span>
               </h3>
               <ul className="flex flex-col gap-y-5 pl-2 faq">
-                {el.points.map(item => (
-                  <ListItem key={item.name} item={item.name} elements={item.information} gap={5} />
+                {el.points.map((item, idx) => (
+                  <ListItem
+                    key={t(`faq.${index}.points.${idx}.name`)}
+                    item={t(`faq.${index}.points.${idx}.name`)}
+                    elements={
+                      item.information.length > 0 && [
+                        t(`faq.${index}.points.${idx}.information.0`),
+                        t(`faq.${index}.points.${idx}.information.1`),
+                        t(`faq.${index}.points.${idx}.information.2`),
+                        t(`faq.${index}.points.${idx}.information.3`),
+                        t(`faq.${index}.points.${idx}.information.4`),
+                        t(`faq.${index}.points.${idx}.information.5`),
+                      ]
+                    }
+                    gap={5}
+                  />
                 ))}
               </ul>
             </article>

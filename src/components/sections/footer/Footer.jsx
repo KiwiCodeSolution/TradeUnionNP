@@ -4,7 +4,7 @@ import Image from "next/image";
 import LogoFooterUA from "@/images/logo_bottom.svg";
 import LogoFooterEn from "@/images/logo_bottom_eng.svg";
 import { aboutLinks, navLinks } from "@/constants/navLinks";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
 
 const Footer = ({ locale }) => {

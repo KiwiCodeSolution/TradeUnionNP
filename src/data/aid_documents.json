@@ -2,7 +2,7 @@
   {
     "title": "Лікування хвороби члена Профспілки",
     "text": "50 % підтверджених витрат, але не більше 6000 гривень",
-    "points": [
+    "points_ua": [
       "Заява члена Профспілки;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копія листка непрацездатності члена Профспілки (за умови його оформлення);",
@@ -10,12 +10,20 @@
       "оригінали фіскальних чеків (квитанції про оплату ФОП, банківські платіжні доручення з печаткою) на лікування та/або медикаменти;",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
     ],
+    "points_en": [
+      "Statement of a member of the Trade Union;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "a copy of the Trade Union member's disability certificate (provided it is issued);",
+      "originals of medical documents (extract from the medical card of an outpatient/inpatient (epicrisis) form No. 027/o/certificate with the name of the patient from the hospital);",
+      "originals of fiscal checks (receipts for payment of FOP, bank payment orders with a seal) for treatment and/or medicines;",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+    ],
     "file": "/files/likuvannya-chlena-profspilki.pdf"
   },
   {
     "title": "Лікування близьких родичів члена Профспілки",
     "text": "50 % підтверджених витрат, але не більше 6000 гривень",
-    "points": [
+    "points_ua": [
       "Заява члена Профспілки;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб;",
@@ -23,12 +31,20 @@
       "оригінали фіскальних чеків (квитанції про оплату ФОП, банківські платіжні доручення з печаткою) на лікування та/або медикаменти.",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
     ],
+    "points_en": [
+      "Statement of a member of the Trade Union;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "a copy of a document confirming family ties, namely: a copy of a birth certificate/marriage certificate;",
+      "originals of medical documents (certificate of incapacity for work, extract from the medical history/epicrisis/certificate with the name of the patient from the hospital);",
+      "originals of fiscal checks (receipts for payment of FOP, bank payment orders with a seal) for treatment and/or medicines.",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+    ],
     "file": "/files/likuvannya-rodicha.pdf"
   },
   {
     "title": "Смерть члена Профспілки",
     "text": "5000 гривень",
-    "points": [
+    "points_ua": [
       "Заява родича загиблого;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копія паспорта та ідентифікаційного коду померлого члена Профспілки;",
@@ -36,56 +52,88 @@
       "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб/паспорт родича;",
       "довідка з банку про відкриття карткового рахунку заявника у форматі IBAN."
     ],
+    "points_en": [
+      "Statement of a relative of the deceased;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "a copy of the passport and identification code of the deceased member of the Trade Union;",
+      "copy of death certificate;",
+      "a copy of a document confirming family ties, namely: a copy of a birth certificate/marriage certificate/relative's passport;",
+      "certificate from the bank on the opening of the applicant's card account in IBAN format."
+    ],
     "file": "/files/zagibel-pracivnika.pdf"
   },
   {
     "title": "Смерть близького родича члена Профспілки",
     "text": "від 1750 до 3500 грн",
-    "points": [
+    "points_ua": [
       "Заява члена Профспілки;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копія документа, що підтверджує родинні зв’язки, а саме: копія свідоцтва про народження/свідоцтво про шлюб/паспорт родича;",
       "копія свідоцтва про смерть;",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
     ],
+    "points_en": [
+      "Statement of a member of the Trade Union;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "a copy of a document confirming family ties, namely: a copy of a birth certificate/marriage certificate/relative's passport;",
+      "copy of death certificate;",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+    ],
     "file": "/files/pokhovannya-rodicha.pdf"
   },
   {
     "title": "Реєстрація шлюбу",
     "text": "від 1750 до 3500 грн",
-    "points": [
+    "points_ua": [
       "Заява члена Профспілки;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копія свідоцтва про шлюб;",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "Statement of a member of the Trade Union;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "copy of marriage certificate;",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/odruzhennya.pdf"
   },
   {
     "title": "Народження дитини",
     "text": "від 1750 до 3500 грн",
-    "points": [
+    "points_ua": [
       "Заява члена Профспілки;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копія свідоцтва про народження дитини",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "Statement of a member of the Trade Union;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "copy of the child's birth certificate",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/narodzhennya.pdf"
   },
   {
     "title": "Ювілей 50-60-65 років",
     "text": "від 1250 до 2500 грн",
-    "points": [
+    "points_ua": [
       "Заява голови первинної профспілкової організації або ювіляра;",
       "копія паспорта та ідентифікаційного коду члена Профспілки, що отримує матеріальну допомогу;",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "Statement of the head of the primary trade union organization or jubilee;",
+      "a copy of the passport and identification code of a member of the Trade Union receiving material assistance;",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/yuviley.pdf"
   },
   {
     "title": "Оздоровлення дитини та відпочинок",
     "text": "від 1500 до 3000 грн",
-    "points": [
+    "points_ua": [
       "Заява члена Профспілки;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копія свідоцтва про народження дитини;",
@@ -94,66 +142,106 @@
       "оригінали фіскальних чеків про оплату путівки, або банківських платіжних доручень;",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
     ],
+    "points_en": [
+      "Statement of a member of the Trade Union;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "copy of the child's birth certificate;",
+      "a copy of the voucher form or a copy of the referral for rehabilitation;",
+      "copy of medical certificate form No. 079/o;",
+      "originals of fiscal checks for the payment of the trip, or bank payment orders;",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+    ],
     "file": "/files/ozdorovlenna-dytyny.pdf"
   },
   {
     "title": "Учасники бойових дій",
     "text": "від 1250 до 2500 грн (виплата проводиться щорічно у жовтні)",
-    "points": [
+    "points_ua": [
       "Заява члена Профспілки;",
       "копія паспорта та ідентифікаційного коду заявника/копія паспорта у формі ID-картки;",
       "копії документів, що підтверджують участь члена Профспілки в АТО або ООС (посвідчення учасника бойових дій встановленого зразка);",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "Statement of a member of the Trade Union;",
+      "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+      "copies of documents confirming the participation of a member of the Trade Union in ATO or OOS (certificate of a participant in hostilities of the established model);",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/ubd.pdf"
   },
   {
     "title": "Путівка",
     "text": "На оздоровлення",
-    "points": [
+    "points_ua": [
       "копія паспорта та ідентифікаційного коду/копія паспорту у формі ID-карти;",
       "витяг з наказу про відпустку/копія заяви на відпустку з візою керівника;",
       "копія квитанції про сплату частини вартості путівки"
+    ],
+    "points_en": [
+      "copy of passport and identification code/copy of passport in the form of an ID card;",
+      "excerpt from the leave order/copy of the application for leave with a manager's visa;",
+      "a copy of the receipt for the payment of part of the ticket price"
     ],
     "file": "/files/putivka.pdf"
   },
   {
     "title": "Мобілізованим пораненим профспілчанам",
     "text": "від 1500 до 3000 грн",
-    "points": [
+    "points_ua": [
       "копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
       "копію довідки про обставини поранення/травми;",
       "скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "a copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+      "a copy of the certificate on the circumstances of the injury/injury;",
+      "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/poranenna.pdf"
   },
   {
     "title": "Профспілчанам на ТОТ України",
     "text": "від 1500 до 3000 грн",
-    "points": [
+    "points_ua": [
       "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
       "Копію документів, що підтверджують знаходження в окупованому місті/селищі після 24.02.2022 року. В разі відсутності офіційних документів, можна надати фото чеку з магазину/АЗС на фоні першої сторінки паспорту та скрін геолокації;",
       "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+      "A copy of the documents confirming the stay in the occupied city/village after 02/24/2022. In the absence of official documents, you can provide a photo of a receipt from a store/gas station against the background of the first page of the passport and geolocation screens;",
+      "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/occupation.pdf"
   },
   {
     "title": "Внутрішньо переміщеним особам",
     "text": "від 1500 до 3000 грн",
-    "points": [
+    "points_ua": [
       "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
       "Копію довідки про тимчасову реєстрацію місця проживання або перебування особи-члена Профспілки;",
       "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+      "A copy of the certificate on the temporary registration of the place of residence or stay of a member of the Trade Union;",
+      "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/vpo.pdf"
   },
   {
     "title": "Інше",
     "text": "від 1000 до 5000 грн",
-    "points": [
+    "points_ua": [
       "Копію паспорту та ідентифікаційного коду заявника або копія паспорта у форматі ID-картки;",
       "Копію документів, що підтверджують складні життєві обставини, що потребують компенсації**;",
       "Скрін банківських реквізитів з додатку (або копія довідки з банку) із зазначенням рахунку IBAN"
+    ],
+    "points_en": [
+      "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+      "A copy of documents confirming difficult life circumstances that require compensation**;",
+      "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
     ],
     "file": "/files/other.pdf"
   }

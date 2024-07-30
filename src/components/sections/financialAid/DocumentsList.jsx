@@ -7,14 +7,14 @@ import Modal from "@/components/UI/modal/Modal";
 import docs from "@/data/aid_documents.json";
 import ListItem from "@/components/UI/items/ListItem";
 
-const DocumentsList = () => {
+const DocumentsList = ({ locale }) => {
   const t = useTranslations("Financial_Aid");
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [currentDocument, setCurrentDocument] = useState("");
 
   function handleCurrentDoc(filter) {
     setIsOpenModal(true);
-    setCurrentDocument(docs.find((doc, index) => doc.title === filter));
+    setCurrentDocument(docs.find((doc, index) => index === filter));
   }
 
   return (
@@ -54,10 +54,14 @@ const DocumentsList = () => {
       </ul>
       {currentDocument && (
         <Modal onClose={() => setIsOpenModal(false)} isOpen={isOpenModal}>
-          <ul className="flex flex-col gap-y-3 max-h-[500px] px-8 overflow-scroll">
-            {currentDocument.points.map((el, index) => (
-              <ListItem item={el} gap={5} key={el} />
-            ))}
+          <ul className="flex flex-col gap-y-3 max-h-[500px] px-8 overflow-auto py-10">
+            {locale === "uk"
+              ? currentDocument.points_ua.map((el, index) => (
+                  <ListItem item={el} gap={5} key={el} />
+                ))
+              : currentDocument.points_en.map((el, index) => (
+                  <ListItem item={el} gap={5} key={el} />
+                ))}
           </ul>
         </Modal>
       )}

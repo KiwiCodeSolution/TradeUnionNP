@@ -9,9 +9,7 @@ const ListItem = ({ item, gap, elements }) => {
       </div>
       {elements && (
         <ul className="list-decimal pl-12 mt-5">
-          {elements.map(el => (
-            <li key={el}>{el}</li>
-          ))}
+          {elements.map(el => el && <li key={el}>{el}</li>)}
         </ul>
       )}
     </li>

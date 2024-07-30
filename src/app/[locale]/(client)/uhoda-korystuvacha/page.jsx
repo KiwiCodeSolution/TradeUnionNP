@@ -1,9 +1,9 @@
 import UserAgreement from "@/components/sections/userAgreement/UserAgreement";
 
-export default function UserAgreementPage() {
+export default function UserAgreementPage({ params }) {
   return (
     <main className="w-full">
-      <UserAgreement />
+      <UserAgreement locale={params.locale} />
     </main>
   );
 }
