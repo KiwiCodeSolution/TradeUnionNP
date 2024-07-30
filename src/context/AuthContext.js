@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
     if (token) {
       localStorage.setItem("user", "Admin");
-      router.push("/admin/news");
+      router.push("/uk/admin/news");
     }
     // const response = await fetch("/api/login", {
     //   method: "POST",
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
 
-    router.push("/login");
+    router.push("/uk/login");
   };
 
   return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>;

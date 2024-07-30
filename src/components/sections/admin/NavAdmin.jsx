@@ -18,13 +18,13 @@ const NavAdmin = () => {
       </div>
 
       <nav className="h-full flex flex-col gap-y-10 justify-center items-center">
-        <NavLink href="/admin/news" currentPath={pathname}>
+        <NavLink href="/uk/admin/news" currentPath={pathname}>
           Новини
         </NavLink>
-        <NavLink href="/admin/photo-report" currentPath={pathname}>
+        <NavLink href="/uk/admin/photo-report" currentPath={pathname}>
           Фотозвіти
         </NavLink>
-        <NavLink href="/admin/contacts" currentPath={pathname}>
+        <NavLink href="/uk/admin/contacts" currentPath={pathname}>
           Контакти
         </NavLink>
       </nav>
