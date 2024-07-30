@@ -36,8 +36,8 @@ const StatuteRecreationPage = () => {
           </div>
           <div className="flex flex-col sm:flex-row w-full gap-4 md:gap-8 items-start justify-between">
             <h3 className="w-full md:w-2/5 text-xl font-bold text-bgBlack">
-              До статутної діяльності <br />
-              Профспілки належить:
+              {t(`statute_recreation_text.0`)} <br />
+              {t(`statute_recreation_text.1`)}
             </h3>
             <ul className="w-full md:w-3/5 flex flex-col gap-y-5">
               <ListItem item={t(`statutory_activity.0`)} gap={5} />

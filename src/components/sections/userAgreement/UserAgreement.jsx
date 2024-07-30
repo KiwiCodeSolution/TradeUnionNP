@@ -15,7 +15,7 @@ const UserAgreement = ({ locale }) => {
           </Title>
           <p className="text-[15px] text-liteGrey my-8">2021-06-01</p>
           <p className="text-base text-[#2c2e33] mb-2">
-            {t(`description.0`)}
+            {t(`description.0`)}{" "}
             <Link
               href="https://profspilka.org/"
               className="text-[#1155CC] underline underline-offset-1"
