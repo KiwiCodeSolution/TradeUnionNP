@@ -1150,5 +1150,123 @@
       "Our principle:",
       "pro-active attitude is the development of Trade Union members in terms of cultural leisure, sports, opportunities to positively change the company and its environment, achieving high professional and personal results."
     ]
+  },
+  "I": {
+    "path": "I am the Trade Union",
+    "title": ["I am ", "the Trade Union"],
+    "subtitle": [
+      "You are the Trade Union.",
+      "We are uniting to change working conditions for the better",
+      "Here the",
+      "rights and interests of trade union members of Nova Poshta Group of Companies are protected",
+      ""
+    ],
+    "list": [
+      {
+        "text": "Trade Union is",
+        "text_accent": "legal protection"
+      },
+      {
+        "text": "Trade Union is",
+        "text_accent": "financial aid"
+      },
+      {
+        "text": "Trade Union is",
+        "text_accent": "sports, recreation, leisure"
+      }
+    ],
+    "link": "Learn more",
+    "advantages_title": ["Benefits", "of being a trade union member"],
+    "advantages": [
+      {
+        "first_text": "",
+        "accent_text": "receiving free legal advice",
+        "second_text": "on labor law, active protection of rights;"
+      },
+      {
+        "first_text": "",
+        "accent_text": "being protected",
+        "second_text": "from violations of labor rights (from dismissals, redundancies, etc.);"
+      },
+      {
+        "first_text": "receiving ",
+        "accent_text": "assistance in restoring rights,",
+        "second_text": " exercising rights and enforcing laws;"
+      },
+      {
+        "first_text": "",
+        "accent_text": "influencing the positive changes",
+        "second_text": " in the company in which you work;"
+      },
+      {
+        "first_text": "influencing",
+        "accent_text": "the formation of corporate culture;",
+        "second_text": ""
+      },
+      {
+        "first_text": "",
+        "accent_text": "being a part of a great team",
+        "second_text": "with common ideas and beliefs;"
+      },
+      { "first_text": "receiving  ", "accent_text": "financial aid;", "second_text": "" },
+      {
+        "first_text": "being able to",
+        "accent_text": "win a vacation voucher ",
+        "second_text": "(summer/winter);"
+      },
+      {
+        "first_text": "",
+        "accent_text": "participating in cultural,",
+        "second_text": "sports, online events of the Trade Union;"
+      },
+      {
+        "first_text": "receiving ",
+        "accent_text": "gifts for yourself and your children;",
+        "second_text": ""
+      }
+    ],
+    "tell_title": ["Tell us ", "what you are", " in the Trade Union"],
+    "tell_text": "Send a link to a friend or colleague, let him/her join too!",
+    "review_title": ["Feedback and thanks", " from our trade union members"],
+    "reviews": [
+      {
+        "text": "All good, the trade union helped me solve all of my appeals, no remarks",
+        "name": "Mykola K",
+        "address": "Lviv dep."
+      },
+      {
+        "text": "Returned my cash award, which I am so thankful for!",
+        "name": "Yurii S.",
+        "address": "Kyiv dep."
+      },
+      {
+        "text": "Thank you! Everything was great, replied fast for my request and solved it fast too, you’re doing a great job!",
+        "name": "Tatiana K.",
+        "address": "Zhytomyr dep"
+      },
+      {
+        "text": "So grateful for helping me with the correct composition of an explanation letter! Also later helped me out with some problems with the managers",
+        "name": "Anna T.",
+        "address": "Poltava dep."
+      },
+      {
+        "text": "Satisfied with the work of the trade union. I frequently address them and they reply every single time",
+        "name": "Serhii N.",
+        "address": "Kyiv dep"
+      }
+    ],
+    "invite_title": ["Invite friends", "and get incentives!"],
+    "first": ["Invite a friend to join the", "Trade Union"],
+    "second": ["Help him/her", "fill in", "the Application Form"],
+    "third": ["Send the Application to the", "Trade Union", "head of your regional center"],
+    "fourth": [
+      "E-mail us",
+      "at",
+      " and indicate that you have invited a friend and would like to receive an incentive"
+    ],
+    "fifth": ["Get", "a branded gift or certificate for active leisure"],
+    "subscription_title": ["Want", "to receive news?"],
+    "subscription_text": "Follow the news in messengers:",
+    "subscription_button": "subscribe"
   }
 }

@@ -18,7 +18,7 @@ const RecreationActivity = () => {
           className="w-full md:w-1/5 order-2 md:order-1"
           alt="малюнок чоловіка у червоному плащі"
         />
-        <div className="w-full md:w-4/5 grid-cols-2 grid md:grid-cols-3 gap-x-10 gap-y-5">
+        <div className="w-full md:w-4/5 grid-cols-2 grid md:grid-cols-3 gap-x-10 gap-y-5 order-1 md:order-2">
           {activity.map((el, index) => (
             <article
               className="relative w-full mx-auto flex flex-col items-center pb-16"

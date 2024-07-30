@@ -1,9 +1,10 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import Button from "@/components/UI/buttons/Buttons";
 import { useState } from "react";
 
 const SubscriptionForm = () => {
+  const t = useTranslations("I");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
@@ -43,7 +44,7 @@ const SubscriptionForm = () => {
         style={"static mx-auto w-full xl:absolute top-0 right-[calc(100%-440px-84px)] xl:w-fit"}
         view="red"
       >
-        Підписатись
+        {t(`subscription_button`)}
       </Button>
     </form>
   );

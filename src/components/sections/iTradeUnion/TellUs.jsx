@@ -1,21 +1,22 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 
 const TellUs = () => {
+  const t = useTranslations("I");
   return (
     <BaseSection style={""}>
       <Wrapper styles={"pt-32 pb-20"}>
         <Title tag={"h2"} styles={"text-center"}>
-          Розкажіть, <span className="text-red md:hidden">що ви в Профспілці</span>
-          <span className="hidden md:block text-red">
-            що ви в <br /> Профспілці
-          </span>
+          {t(`tell_title.0`)} {t(`tell_title.1`)} <br />
+          <span className="text-red ">{t(`tell_title.2`)}</span>
+          {/* <span className="hidden md:block text-red">
+            {t(`tell_title.1`)} <br /> {t(`tell_title.2`)}
+          </span> */}
         </Title>
-        <p className="text-lg mt-5 text-grey text-center">
-          Надсилайте посилання другові чи колезі, нехай також долучається!
-        </p>
+        <p className="text-lg mt-5 text-grey text-center">{t(`tell_text`)}</p>
         <ul className="w-full flex flex-wrap pt-16 justify-center gap-4">
           <li>
             <a href="https://www.instagram.com/profspilka.np/">
