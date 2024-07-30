@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import PathPage from "@/components/PathPage";
 import Title from "@/components/Title";
@@ -9,19 +10,19 @@ import Hero from "@/images/recreations/hero_image.svg";
 import { inter } from "@/app/[locale]/fonts";
 
 const HeroRecreationPage = () => {
+  const t = useTranslations("Sport");
   return (
     <BaseSection style={""}>
       <Wrapper>
-        <PathPage endPath={"Дозвілля та спорт"} />
+        <PathPage endPath={t(`path`)} />
         <div className="w-full flex flex-col md:flex-row mt-16 items-center">
           <div className="w-full md:w-1/2 flex flex-col">
             <Title tag={"h1"} styles={"text-center md:text-left"}>
-              <span className="text-red">Дозвілля</span> та спорт
+              <span className="text-red">{t(`title.0`)}</span> {t(`title.1`)}
             </Title>
             <p className="text-lg text-grey my-8 text-center md:text-left">
-              Профспілка{" "}
-              <strong className="text-bgBlack">створює умови для організованого дозвілля</strong> та
-              змістовного відпочинку профспілчан.
+              {t(`subtitle.0`)}
+              <strong className="text-bgBlack">{t(`subtitle.1`)}</strong> {t(`subtitle.2`)}
             </p>
             <div className="w-full md:w-3/4 flex items-start md:items-center gap-x-4 mb-4">
               <Image
@@ -31,16 +32,13 @@ const HeroRecreationPage = () => {
                 alt="зображення серця, червоний контур на білому фоні"
               />
               <p className="text-lg text-grey">
-                <strong className="text-bgBlack">Просуваємо ідеї здорового способу життя</strong>,
-                розвиток фізичної культури та спорту.
+                <strong className="text-bgBlack">{t(`first_text.0`)}</strong>, {t(`first_text.1`)}
               </p>
             </div>
             <div className="w-full md:w-3/4 flex items-start md:items-center gap-x-4">
               <Image src={Party} width={50} height={43} alt="зображення паперового феєрверку" />
               <p className="text-lg text-grey">
-                <strong className="text-bgBlack">Організовуємо масові культурні заходи</strong>{" "}
-                (концерти, екскурсії, дитячі заходи), а також спортивні змагання та ігри
-                (офлайн/онлайн).
+                <strong className="text-bgBlack">{t(`second_text.0`)}</strong> {t(`second_text.1`)}
               </p>
             </div>
           </div>
@@ -49,9 +47,9 @@ const HeroRecreationPage = () => {
               <p
                 className={`${inter.className} text-red text-lg font-bold flex flex-col md:flex-row gap-x-2 text-center`}
               >
-                понад <span className="text-[34px]">2550</span>
+                {t(`value.0`)} <span className="text-[34px]">2550</span>
               </p>
-              <p className="text-base text-grey">Культурно-масових заходів</p>
+              <p className="text-base text-grey"> {t(`value.1`)}</p>
             </div>
             <Image
               src={Hero}

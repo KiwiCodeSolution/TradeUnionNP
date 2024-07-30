@@ -6,16 +6,16 @@ import RecreationActivity from "@/components/sections/recreation/RecreationActiv
 import RecreationProjects from "@/components/sections/recreation/RecreationProjects";
 import StatuteRecreationPage from "@/components/sections/recreation/StatuteRecreationPage";
 
-export default function RecreationPage() {
+export default function RecreationPage({ params }) {
   return (
     <main className="w-full bg-bgGrey">
       <HeroRecreationPage />
       <StatuteRecreationPage />
       <RecreationActivity />
       <PrincipleRecreation />
-      <RecreationProjects />
+      {params.locale === "uk" && <RecreationProjects />}
       <ContactSection bgStyle={"bg-bgGrey"} />
-      <PhotoReports />
+      {params.locale === "uk" && <PhotoReports />}
     </main>
   );
 }

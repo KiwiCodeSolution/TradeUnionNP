@@ -1108,5 +1108,47 @@
       "Heads of PTUO (primary trade union organization)."
     ],
     "link": "DOWNLOAD THE APPLICATION"
+  },
+  "Sport": {
+    "path": "Sports and leisure",
+    "title": ["Sports and ", "leisure"],
+    "subtitle": [
+      "The Trade Union",
+      "creates conditions for organized leisure",
+      "and meaningful recreation of trade union members."
+    ],
+    "first_text": [
+      "We promote the ideas of a healthy lifestyle",
+      "development of physical culture and sports."
+    ],
+    "second_text": [
+      "We organize mass cultural events",
+      "(concerts, excursions, children's events), as well as sports competitions and games (offline/online)."
+    ],
+    "value": ["over", "Mass cultural events"],
+    "statute_recreation_title": "Charter",
+    "statute_recreation_subtitle": ["Main tasks of the", "Trade Union:"],
+    "statute_recreation_text": ["The statutory activity of the", "Trade Union includes:"],
+    "tasks": [
+      "promotion of a healthy and active lifestyle;",
+      "promotion and organization of sports events and competitions;",
+      "promotion and organization of mass cultural events;",
+      "organization of events in the areas of education and personal development of Trade Union members."
+    ],
+    "statutory_activity": [
+      "organization, carrying out and providing cultural and educational, health improvement, physical culture, sports, other work aimed at the satisfaction of social rights and interests of the Trade Union members."
+    ],
+    "activity": [
+      "gifts for nation-wide holidays",
+      "national futsal championships",
+      "regional futsal championships",
+      "national cyber sports tournaments",
+      "national table tennis championships",
+      "national bowling championships"
+    ],
+    "principle_recreation": [
+      "Our principle:",
+      "pro-active attitude is the development of Trade Union members in terms of cultural leisure, sports, opportunities to positively change the company and its environment, achieving high professional and personal results."
+    ]
   }
 }
