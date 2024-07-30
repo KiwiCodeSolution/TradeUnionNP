@@ -425,22 +425,95 @@
     }
   },
   "Forms": {
-    "path": "Бланки",
-    "title_templates": ["Бланки", "на вступ до", "Профспілки"],
+    "path": "Forms",
+    "title_templates": ["Forms", "for joining", "the Trade Union"],
     "templates": [
-      "Заява на вступ 'Нова Пошта'/'НоваПей'",
-      "Заява на вступ 'НП Глобал'",
-      "Заява на вступ 'НОВОБОКС'",
-      "Заява на вступ 'НП Центр'",
-      "Заява на вступ 'НП Діджитал'"
+      "Application for joining 'Nova Poshta'/'NovaPay'",
+      "Application for joining 'NP Global'",
+      "Application for admission to 'NOVOBOX'",
+      "Application for admission to 'NP Center'",
+      "Application for admission to 'NP Digital'"
     ],
     "text_templates": [
-      "Завантажте",
-      "Заяву на вступ, ",
-      "роздрукуйте та надішліть",
-      "за шаблоном 'Матеріальна допомога від Профспілки'"
+      "Download",
+      "Application for admission",
+      " print and send",
+      "according to the template 'Material assistance from the Trade Union'"
     ],
-    "link": "Завантажити заяву"
+    "link": "Download statement",
+    "statement_title": ["Application ", "for financial", "aid"],
+    "statements": [
+      {
+        "title": "Birth of a child",
+        "text": "UAH 1,750 to UAH 3,500",
+        "file": ""
+      },
+      {
+        "title": "Marriage registration",
+        "text": "UAH 1,750 to UAH 3,500",
+        "file": ""
+      },
+      {
+        "title": "Health improvement of a child and recreation",
+        "text": "UAH 1,500 to UAH 3,000",
+        "file": ""
+      },
+      {
+        "title": "50-55-60-65-year anniversary",
+        "text": "UAH 1,000 to UAH 2,000",
+        "file": ""
+      },
+      {
+        "title": "Treatment in case of illness of the Trade Union member",
+        "text": "50% of confirmed medical expenses, but no more than UAH 5,000",
+        "file": ""
+      },
+      {
+        "title": "Treatment of close relatives of the Trade Union member",
+        "text": "50% of confirmed medical expenses, but no more than UAH 5,000",
+        "file": ""
+      },
+      {
+        "title": "Voucher",
+        "text": "For health improvement",
+        "file": ""
+      },
+      {
+        "title": "War veterans",
+        "text": "UAH 1,250 to UAH 2,500 (payment is made every year in October)",
+        "file": ""
+      },
+      {
+        "title": "Death of the Trade Union member",
+        "text": "UAH 5,000",
+        "file": ""
+      },
+      {
+        "title": "Death of a close relative of the Trade Union member",
+        "text": "UAH 1,750 to UAH 3,500",
+        "file": ""
+      },
+      {
+        "title": "Mobilized trade unionists who were injured",
+        "text": "UAH 1,500 to UAH 3,000",
+        "file": ""
+      },
+      {
+        "title": "To the trade unionists in the temporarily occupied territories",
+        "text": "UAH 1,500 to UAH 3,000",
+        "file": ""
+      },
+      {
+        "title": "Internally displaced person",
+        "text": "UAH 1,500 to UAH 3,000",
+        "file": ""
+      },
+      {
+        "title": "Other",
+        "text": "from UAH 1000 to UAH 5000",
+        "file": ""
+      }
+    ]
   },
   "Contacts": {
     "path": "Contacts",

@@ -1,7 +1,7 @@
-import { roboto } from "./fonts";
 import "@/globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { roboto } from "./[locale]/fonts";
 
 export async function generateMetadata({ params: { locale } }) {
   return {
@@ -26,7 +26,7 @@ export default async function RootLayout({ children, params: { locale } }) {
       <body className={roboto.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
-          <div id="modal-root"></div>{" "}
+          <div id="modal-root"></div>
         </NextIntlClientProvider>
       </body>
     </html>

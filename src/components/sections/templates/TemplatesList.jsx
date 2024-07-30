@@ -23,7 +23,12 @@ const TemplatesList = () => {
         </Title>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {templates.map((el, index) => (
-            <Blank key={el.file} item={el} index={index} />
+            <Blank
+              key={t(`templates.${index}`)}
+              file={el.file}
+              index={index}
+              title={t(`templates.${index}`)}
+            />
           ))}
         </div>
         <p className="text-lg text-grey mt-8 text-center">

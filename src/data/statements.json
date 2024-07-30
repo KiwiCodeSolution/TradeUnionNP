@@ -2,71 +2,71 @@
   {
     "title": "Народження дитини'",
     "text": "від 1750 до 3500 грн",
-    "file": ""
+    "file": "/files/narodzhennya.pdf"
   },
   {
     "title": "Реєстрація шлюбу",
     "text": "від 1750 до 3500 грн",
-    "file": ""
+    "file": "/files/odruzhennya.pdf"
   },
   {
     "title": "Оздоровлення дитини та відпочинок",
     "text": "від 1500 до 3000 грн",
-    "file": ""
+    "file": "/files/ozdorovlenna-dytyny.pdf"
   },
   {
     "title": "Ювілей 50-55-60-65 років",
     "text": "від 1250 до 2500 грн",
-    "file": ""
+    "file": "/files/yuviley.pdf"
   },
   {
     "title": "Лікування у випадку хвороби члена Профспілки",
     "text": "50 % підтверджених витрат на лікування, але не більше 6000 гривень",
-    "file": ""
+    "file": "/files/likuvannya-chlena-profspilki.pdf"
   },
   {
     "title": "Лікування хвороби близьких родичів члена Профспілки",
     "text": "50 % підтверджених витрат на лікування, але не більше 6000 гривень",
-    "file": ""
+    "file": "/files/likuvannya-rodicha.pdf"
   },
   {
     "title": "Путівка",
     "text": "На оздоровлення",
-    "file": ""
+    "file": "/files/putivka.pdf"
   },
   {
     "title": "Учасники бойових дій",
     "text": "від 1250 до 2500 грн (виплата проводиться щорічно у жовтні)",
-    "file": ""
+    "file": "/files/ubd.pdf"
   },
   {
     "title": "Смерть члена Профспілки",
     "text": "5000 гривень",
-    "file": ""
+    "file": "/files/zagibel-pracivnika.pdf"
   },
   {
     "title": "Смерть близького родича члена Профспілки",
     "text": "від 1750 до 3500 грн",
-    "file": ""
+    "file": "/files/pokhovannya-rodicha.pdf"
   },
   {
     "title": "Мобілізованим профспілчанам, що отримали поранення",
     "text": "від 1500 до 3000 грн",
-    "file": ""
+    "file": "/files/poranenna.pdf"
   },
   {
     "title": "Профспілчанам на тимчасово окупованих територіях",
     "text": "від 1500 до 3000 грн",
-    "file": ""
+    "file": "/files/occupation.pdf"
   },
   {
     "title": "Внутрішньо переміщеним особам",
     "text": "від 1500 до 3000 грн",
-    "file": ""
+    "file": "/files/vpo.pdf"
   },
   {
     "title": "Інше",
     "text": "від 1000 до 5000 грн",
-    "file": ""
+    "file": "/files/other.pdf"
   }
 ]
