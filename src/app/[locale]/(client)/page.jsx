@@ -8,7 +8,6 @@ import NewsSectionHomePage from "@/components/sections/news/NewsSectionHomePage"
 import Values from "@/components/sections/numbers/ValuesHomepage";
 
 export default function ClientHome({ params }) {
-  console.log(params);
   return (
     <main className="flex flex-col relative">
       <HeroHomePage />

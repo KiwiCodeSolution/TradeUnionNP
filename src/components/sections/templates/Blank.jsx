@@ -3,7 +3,6 @@ import Image from "next/image";
 import Bookmark from "@/images/bookmark.svg";
 
 const Blank = ({ index, title, text, file }) => {
-  console.log(file);
   const t = useTranslations("Forms");
   return (
     <article className="w-full bg-white rounded-2xl px-9 py-6 flex flex-col justify-between gap-y-4 relative">

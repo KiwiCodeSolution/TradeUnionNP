@@ -4,7 +4,6 @@ import HistoryItem from "./HistoryItem";
 
 const HistoryList = () => {
   const t = useTranslations("About.history");
-  console.log(t(`history_points.0.events.0`));
 
   const length = data.length - 1;
   return (
