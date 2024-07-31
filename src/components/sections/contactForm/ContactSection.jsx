@@ -2,11 +2,12 @@ import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import ContactForm from "./ContactForm";
+import { Link } from "@/navigation";
 
 import Title from "@/components/Title";
 import ContactFormImages from "./ContactFormImages";
 
-const ContactSection = ({ bgStyle }) => {
+const ContactSection = ({ bgStyle, locale }) => {
   const t = useTranslations("HomePage.contact_section");
   return (
     <BaseSection style={bgStyle}>
@@ -18,9 +19,9 @@ const ContactSection = ({ bgStyle }) => {
 
           <p className="text-lg text-grey mt-5 mb-8">
             {t(`subtitle.0`)}
-            <a href="" className="text-red underline underline-offset-1">
+            <Link href="/blanky" className="text-red underline underline-offset-1" locale={locale}>
               {t(`subtitle.1`)}
-            </a>{" "}
+            </Link>
             {t(`subtitle.2`)}
           </p>
           <ContactForm inputStyle={bgStyle} />

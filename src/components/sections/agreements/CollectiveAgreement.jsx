@@ -38,9 +38,12 @@ const CollectiveAgreement = () => {
               {t(`title.0`)} <span className="text-red">{t(`title.1`)}</span>
             </Title>
             <p className="text-base md:text-lg text-grey">{t(`text`)}</p>
-            <LinkButton view="red" style={"mt-5"} goTo={"/files/koldogovor.pdf"} icon>
+            <a
+              className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mt-5"
+              href={"/files/koldogovor.pdf"}
+            >
               {t(`button`)}
-            </LinkButton>
+            </a>
           </div>
           <ImagesAgreement />
         </article>

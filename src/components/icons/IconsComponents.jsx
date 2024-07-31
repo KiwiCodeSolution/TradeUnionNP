@@ -190,8 +190,8 @@ export const ArrowNews = () => (
     stroke="currentColor"
     strokeWidth="2"
     fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
     <path d="M5 12h14"></path>
     <path d="M12 5l7 7-7 7"></path>

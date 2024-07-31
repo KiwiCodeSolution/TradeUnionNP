@@ -10,12 +10,12 @@
     ],
     "aboutPageLinks": [
       { "title": "Collective labor agreement", "link": "/kolektyvnyy-dohovir" },
-      { "title": "Regional cells", "link": "/ppo" },
       { "title": "Protection of labor rights", "link": "/zakhyst-trudovykh-prav" },
       { "title": "Financial aid", "link": "/materialna-dopomoga" },
       { "title": "Sports and leisure", "link": "/dozvillya-ta-sport" },
       { "title": "I am the Trade Union", "link": "/ya-profspilka" },
-      { "title": "Appeal", "link": "/zvernennya" }
+      { "title": "Appeal", "link": "/zvernennya" },
+      { "title": "", "link": "" }
     ]
   },
   "HomePage": {
@@ -556,7 +556,7 @@
       "additional payments to certain categories of employees"
     ],
     "hero_button": "review",
-    "title": ["Collective", "labour agreement"],
+    "title": ["Collective ", "labour agreement"],
     "collective_agreement": [
       {
         "title": "Additional guarantees for mobilised trade unionists",
@@ -676,7 +676,7 @@
       }
     ],
     "law_title": "Law of Ukraine",
-    "law_subtitle": ["On", "Collective Labour Agreement", "and Contracts"],
+    "law_subtitle": ["On ", "Collective Labour Agreement ", "and Contracts"],
     "law": [
       {
         "title": "Article 1",
@@ -715,15 +715,15 @@
         "title": "LEGAL VALIDITY",
         "text": [
           "This ",
-          "Collective Labour Agreement has been made pursuant to the Law of Ukraine",
+          "Collective Labour Agreement has been made pursuant to the Law of Ukraine ",
           "'On Collective Labour Agreements and Contracts', determines the mutual industrial, labour and socio-economic relations between the Administration and the Trade Union Party."
         ]
       },
       {
         "title": "BINDING NATURE",
         "text": [
-          "The terms and conditions of the Collective Labour Agreement",
-          "shall be binding",
+          "The terms and conditions of the Collective Labour Agreement ",
+          "shall be binding ",
           "on the Parties who have signed it. In case of any disputes and disagreements, these conditions may not deteriorate the position of employees in comparison with the current legislation of Ukraine."
         ]
       },
@@ -731,14 +731,14 @@
         "title": "UNIVERSAL NATURE",
         "text": [
           "The provisions of this Collective Labour Agreement shall apply to all employees and shall be binding upon both ",
-          "the Administration and each member",
+          "the Administration and each member ",
           "of the staff."
         ]
       },
       {
         "title": "UNILATERAL CONTINUITY",
         "text": [
-          "Neither Party who has signed the Collective Labour Agreement",
+          "Neither Party who has signed the Collective Labour Agreement ",
           "may unilaterally stop the compliance ",
           "with the provisions thereof."
         ]
@@ -746,7 +746,7 @@
       {
         "title": "VALIDITY",
         "text": [
-          "This Collective Labour Agreement shall be valid in case of change in the composition, structure, and name of the Company, and in case of its reorganization, it may be revised subject to agreement of the Parties.",
+          "This Collective Labour Agreement shall be valid in case of change in the composition, structure, and name of the Company, and in case of its reorganization, it may be revised subject to agreement of the Parties. ",
           "The provisions of this Collective Labour Agreement shall be valid until a new agreement is signed.",
           ""
         ]
@@ -754,15 +754,15 @@
       {
         "title": "COLLECTIVE NATURE",
         "text": [
-          "The highest body of the staff shall be",
-          "the Staff Conference.",
+          "The highest body of the staff shall be ",
+          "the Staff Conference. ",
           "Delegates to the staff conference shall be elected according to the rules of representation: 60 (sixty) delegates from the Operations Directorate in proportion to the number of employees in the regional network, and 1 (one) delegate from each other Directorate."
         ]
       }
     ],
     "warning": [
-      "No employment agreement (contract), ",
-      "signed with the employees of Nova Poshta LLC,",
+      "No employment agreement (contract)",
+      "signed with the employees of Nova Poshta LLC",
       " may contradict this Collective Agreement",
       " in such a way that the employee's rights and interests in the employment agreement (contract) are in any way limited compared to the latter. Some provisions were suspended by the employer for the period of martial law. At the same time, the Trade Union helped to restore almost all provisions of the Collective Agreement, although the employer had the option not to renew them."
     ],
@@ -775,15 +775,15 @@
     "path": "Protection of labor rights",
     "title": ["Protection", "of labor rights"],
     "subtitle": [
-      "The main and priority right of the Trade Union",
+      "The main and priority right of the Trade Union ",
       "is to represent and protect the labor and socio-economic rights and interests of the trade union members."
     ],
     "hero_text": [
       "over",
       "Appeals for legal protection processed",
-      "The feature of the trade union's human rights activism function is that",
-      "employees unite independently and on a voluntary basis in order to protect their rights",
-      ", freedoms, and interests. Human rights activism shall be carried out within the limits of the granted rights and obligations."
+      "The feature of the trade union's human rights activism function is that ",
+      "employees unite independently and on a voluntary basis in order to protect their rights, ",
+      "freedoms, and interests. Human rights activism shall be carried out within the limits of the granted rights and obligations."
     ],
     "law_subtitle": ["On Trade Unions,", "Their Rights ", "and Guarantees of Activity"],
     "law": [
@@ -807,28 +807,28 @@
     "agreement_title": ["Collective", "labor agreement"],
     "agreement_text": "The collective labor agreement shall be an agreement between the Administration of Nova Poshta LLC and the Trade Union of Nova Poshta LLC (Nova Poshta LLC VPSP ), which represents the staff. The collective bargaining agreement shall define the mutual production, labor and socio-economic relations between two parties. The provisions of theCollective Bargaining Agreement shall apply to all employees and shall be binding upon them.",
     "agreement_button": "review",
-    "rights_title": ["Each employee", "shall have the right to:"],
+    "rights_title": ["Each employee ", "shall have the right to:"],
     "rights_list": {
       "1": [
-        "Protection of his/her labor rights",
+        "Protection of his/her labor rights ",
         "in accordance with the procedure established by the current legislation of Ukraine;"
       ],
-      "2": ["Working conditions", "meeting sanitary", ", safety and hygiene requirements;"],
-      "3": ["Social", "insurance assistance;"],
+      "2": ["Working conditions", "meeting sanitary, ", "safety and hygiene requirements;"],
+      "3": ["Social ", "insurance assistance"],
       "4": [
-        "Rest",
+        "Rest ",
         "which is guaranteed by the duration of working hours set by the current legislation of Ukraine and is ensured by the provision of days off, holidays and non-business days, paid annual leave;"
       ],
       "5": [
-        "Remuneration of labor without any discrimination",
+        "Remuneration of labor without any discrimination ",
         "and no lower than the minimum amount set by the current legislation of Ukraine;"
       ],
       "6": [
-        "Social security in case of disability",
+        "Social security in case of disability ",
         "additional labor and social benefits stipulated by the current legislation of Ukraine and Collective Bargaining Agreement."
       ]
     },
-    "appeals_title": ["Most", "common appeals:"],
+    "appeals_title": ["Most ", "common appeals:"],
     "appeals": [
       "Pecuniary liability",
       "Reprimands",
@@ -942,8 +942,8 @@
     "path": "Financial aid",
     "title": ["Financial", "aid"],
     "subtitle": [
-      "Financial aid is provided to employees",
-      "who are members of the All-Ukrainian Trade Union of Nova Poshta LLC Employees",
+      "Financial aid is provided to employees ",
+      "who are members of the All-Ukrainian Trade Union of Nova Poshta LLC Employees ",
       "(are registered) and pay monthly membership fees."
     ],
     "button": "get help",
@@ -1084,8 +1084,8 @@
     "path": "Sports and leisure",
     "title": ["Sports and ", "leisure"],
     "subtitle": [
-      "The Trade Union",
-      "creates conditions for organized leisure",
+      "The Trade Union ",
+      "creates conditions for organized leisure ",
       "and meaningful recreation of trade union members."
     ],
     "first_text": [
@@ -1409,5 +1409,7 @@
       "Inaction on the part of the Site Administration in the event of a violation by any of the Users of the provisions of the Agreement does not deprive the Site Administration of the right to later take appropriate actions to protect its interests and protect copyrights on the Site's materials, which are protected in accordance with the law."
     ],
     "last_point": "The user confirms that he is familiar with all clauses of this Agreement and unconditionally accepts them."
-  }
+  },
+  "News": { "path": "News" },
+  "Photo": { "path": "Photo" }
 }

@@ -3,8 +3,8 @@ import BaseSection from "@/components/BaseSection";
 import PathPage from "@/components/PathPage";
 import Wrapper from "@/components/Wrapper";
 
-const NewsPathHero = () => {
-  const t = useTranslations("News");
+const PhotoPathHero = () => {
+  const t = useTranslations("Photo");
   return (
     <BaseSection style={""}>
       <Wrapper>
@@ -14,4 +14,4 @@ const NewsPathHero = () => {
   );
 };
 
-export default NewsPathHero;
+export default PhotoPathHero;

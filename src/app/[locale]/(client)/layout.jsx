@@ -1,5 +1,4 @@
 import Header from "@/components/Header.jsx";
-
 import Footer from "@/components/sections/footer/Footer";
 import UpButton from "@/components/UI/buttons/UpButton";
 

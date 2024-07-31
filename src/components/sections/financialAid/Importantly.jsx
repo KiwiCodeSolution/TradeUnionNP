@@ -1,13 +1,13 @@
 import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
-import LinkButton from "@/components/UI/buttons/LinkButton";
+import Arrow from "@/images/arrow_red.svg";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import Hand from "@/images/aid/statement.svg";
 
-const Importantly = () => {
+const Importantly = ({ locale }) => {
   const t = useTranslations("Financial_Aid");
   return (
     <BaseSection style={"bg-bgGrey pt-12 sm:pt-32 pb-12"}>
@@ -19,24 +19,30 @@ const Importantly = () => {
               {t(`important_subtitle.0`)} <strong> {t(`important_subtitle.1`)}</strong>
             </p>
             <p className="text-lg text-grey">
-              {t(`important_text.0`)}
+              {t(`important_text.0`)}{" "}
               <Link href="/blanky" className="text-red underline hover:underline-offset-2">
                 {t(`important_text.1`)}
               </Link>{" "}
-              {t(`important_text.2`)}
+              {t(`important_text.2`)}{" "}
               <Link href="/kontakty" className="text-red underline hover:underline-offset-2">
                 {t(`important_text.3`)}
               </Link>
             </p>
-            <LinkButton
-              view={"red"}
-              goToPage
-              goTo={"/blanky"}
-              style={"uppercase mt-4 text-sm md:text-base"}
-              icon
+            <Link
+              href={"/blanky"}
+              className="w-fit h-[60px] flex items-center justify-between rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 mt-4 text-sm md:text-base"
+              locale={locale}
             >
               {t(`link`)}
-            </LinkButton>
+              <Image
+                src={Arrow}
+                width={30}
+                height={30}
+                alt="зображення червоної іконки-стрілочки вправо на білому фоні"
+                className="arrow-icon"
+                locale={locale}
+              />
+            </Link>
           </div>
           <Image
             src={Hand}

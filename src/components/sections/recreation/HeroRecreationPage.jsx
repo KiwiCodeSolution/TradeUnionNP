@@ -15,7 +15,7 @@ const HeroRecreationPage = () => {
     <BaseSection style={""}>
       <Wrapper>
         <PathPage endPath={t(`path`)} />
-        <div className="w-full flex flex-col md:flex-row mt-16 items-center">
+        <div className="w-full flex flex-col md:flex-row mt-8 items-center">
           <div className="w-full md:w-1/2 flex flex-col">
             <Title tag={"h1"} styles={"text-center md:text-left"}>
               <span className="text-red">{t(`title.0`)}</span> {t(`title.1`)}

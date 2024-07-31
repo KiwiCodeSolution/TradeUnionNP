@@ -15,7 +15,7 @@ export default function FinancialAidPage({ params }) {
       <Limitation />
       <Documents locale={params.locale} />
       <Template />
-      <Importantly />
+      <Importantly locale={params.locale} />
     </main>
   );
 }

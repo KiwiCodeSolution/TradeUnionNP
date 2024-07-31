@@ -54,7 +54,7 @@ const DocumentsList = ({ locale }) => {
       </ul>
       {currentDocument && (
         <Modal onClose={() => setIsOpenModal(false)} isOpen={isOpenModal}>
-          <ul className="flex flex-col gap-y-3 max-h-[500px] px-8 overflow-auto py-10">
+          <ul className="flex flex-col gap-y-3 max-h-[500px] xl:max-h-fit px-8 overflow-auto py-12">
             {locale === "uk"
               ? currentDocument.points_ua.map((el, index) => (
                   <ListItem item={el} gap={5} key={el} />

@@ -1,22 +1,22 @@
 [
   {
     "title": "Заява на вступ 'Нова Пошта'/'НоваПей'",
-    "file": "files/zajava_na_vstup.pdf"
+    "file": "/files/zajava_na_vstup.pdf"
   },
   {
     "title": "Заява на вступ 'НП Глобал'",
-    "file": "files/zajava_na_vstup_np_global.pdf"
+    "file": "/files/zajava_na_vstup_np_global.pdf"
   },
   {
     "title": "Заява на вступ 'НОВОБОКС'",
-    "file": "files/zajava_na_vstup_novoboks.pdf"
+    "file": "/files/zajava_na_vstup_novoboks.pdf"
   },
   {
     "title": "Заява на вступ 'НП Центр'",
-    "file": "files/zajava_na_vstup_np_centr.pdf"
+    "file": "/files/zajava_na_vstup_np_centr.pdf"
   },
   {
     "title": "Заява на вступ 'НП Діджитал'",
-    "file": "files/zajava_na_vstup_np-didzhital.pdf"
+    "file": "/files/zajava_na_vstup_np-didzhital.pdf"
   }
 ]

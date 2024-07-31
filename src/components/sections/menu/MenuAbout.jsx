@@ -5,12 +5,14 @@ import Wrapper from "../../Wrapper";
 
 const MenuAbout = ({ locale }) => {
   const t = useTranslations("Root");
+  const links =
+    locale === "en" ? aboutLinks.filter(el => el.name !== "Обласні осередки") : aboutLinks;
 
   return (
     <div className="hidden md:block w-full bg-bgBlack">
       <Wrapper>
         <nav className="w-full flex items-center justify-between h-10">
-          {aboutLinks.map((el, index) => (
+          {links.map((el, index) => (
             <Link
               href={el.link}
               key={el.link}

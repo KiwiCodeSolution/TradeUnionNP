@@ -1,9 +1,12 @@
-import PhotoReportList from "@/components/sections/photo/PhotoReportList";
+import PaginatedItems from "@/components/sections/news/PaginatedItems";
+import PhotoPathHero from "@/components/sections/photo/PhotoPathHero";
+
 
 export default function PhotoPage() {
   return (
     <main className="w-full bg-bgGrey">
-      <PhotoReportList />
+      <PhotoPathHero />
+      <PaginatedItems />
     </main>
   );
 }

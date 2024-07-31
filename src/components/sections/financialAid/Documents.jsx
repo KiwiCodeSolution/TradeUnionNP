@@ -6,7 +6,7 @@ import DocumentsList from "./DocumentsList";
 import Image from "next/image";
 import Arrow from "@/images/arrow_red.svg";
 
-const Documents = () => {
+const Documents = ({ locale }) => {
   const t = useTranslations("Financial_Aid");
   return (
     <BaseSection id={"documents"} style={"bg-bgGrey pt-16"}>
@@ -15,7 +15,7 @@ const Documents = () => {
           <span className="text-red">{t(`documents_title.0`)} </span> {t(`documents_title.1`)}{" "}
           <br /> {t(`documents_title.2`)}
         </Title>
-        <DocumentsList />
+        <DocumentsList locale={locale} />
         <div className="mx-auto mt-12">
           <a
             href="/files/pologennya.pdf"

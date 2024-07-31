@@ -8,7 +8,7 @@ const TellUs = () => {
   const t = useTranslations("I");
   return (
     <BaseSection style={""}>
-      <Wrapper styles={"pt-32 pb-20"}>
+      <Wrapper styles={"pt-32 pb-20 z-[10] relative"}>
         <Title tag={"h2"} styles={"text-center"}>
           {t(`tell_title.0`)} {t(`tell_title.1`)} <br />
           <span className="text-red ">{t(`tell_title.2`)}</span>
@@ -80,6 +80,7 @@ const TellUs = () => {
           </li>
         </ul>
       </Wrapper>
+      <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-bgGrey to-white" />
     </BaseSection>
   );
 };

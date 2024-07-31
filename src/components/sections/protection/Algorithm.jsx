@@ -53,8 +53,7 @@ const Algorithm = () => {
     <BaseSection style={"pt-10 bg-white"}>
       <div className="border-dashed border-4 border-bgBlack w-screen border-opacity-20 absolute top-[290px] left-0" />
       <Title tag={"h2"} styles={"text-center"}>
-        {t(`algorithm_title.0`)}
-        Алгоритм та{" "}
+        {t(`algorithm_title.0`)}{" "}
         <span className="text-red">
           {t(`algorithm_title.1`)} <br />
           {t(`algorithm_title.2`)}

@@ -62,7 +62,7 @@ const HeroITradeSection = () => {
           {ITEMS.map((el, index) => (
             <article
               key={el.link}
-              className="flex md:flex-col bg-white rounded-2xl px-6 md:px-0 py-8 md:justify-center items-center hover:bg-red text-red hover:text-white hover:scale-x-[1.2] hover:scale-y-[1.2] transform ease-linear transition-all gap-x-5 md:gap-4 fill-current shadow-2xl box-shadow hover:z-[20]"
+              className="flex md:flex-col bg-white rounded-2xl px-6 md:px-0 py-8 md:justify-center items-center hover:bg-red text-red hover:text-white hover:scale-x-[1.1] hover:scale-y-[1.1] transform ease-linear transition-all gap-x-5 md:gap-4 fill-current shadow-2xl box-shadow hover:z-[20]"
             >
               {el.image}
               <div className="flex flex-col gap-4">
@@ -70,7 +70,10 @@ const HeroITradeSection = () => {
                   {t(`list.${index}.text`)} <br />{" "}
                   <strong> {t(`list.${index}.text_accent`)} </strong>
                 </h3>
-                <Link href={el.link} className="i-trade-link text-red underline underline-offset-1">
+                <Link
+                  href={el.link}
+                  className="i-trade-link text-red underline underline-offset-1 md:text-center"
+                >
                   {t(`link`)}
                 </Link>
               </div>
