@@ -7,8 +7,8 @@ import NewsItem from "./NewsItem";
 import items from "@/data/news.json";
 import { Arrow } from "@/components/icons/IconsComponents";
 
-const PaginatedItems = () => {
-  const itemsPerPage = 9;
+const PaginatedItems = ({ section }) => {
+  const itemsPerPage = section !== "admin" ? 9 : 3;
   const [itemOffset, setItemOffset] = useState(0);
 
   const endOffset = itemOffset + itemsPerPage;
@@ -32,7 +32,33 @@ const PaginatedItems = () => {
     </div>
   );
 
-  return (
+  return section === "admin" ? (
+    <div className="w-full overflow-auto ">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
+        {currentItems.map(item => (
+          <NewsItem item={item} key={item.id} section={"admin"} />
+        ))}
+      </div>
+      <div className="flex mx-auto">
+        <ReactPaginate
+          breakLabel="..."
+          // nextLabel="next >"
+          nextLabel={nextLabel}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          // previousLabel="< previous"
+          previousLabel={previousLabel}
+          renderOnZeroPageCount={null}
+          containerClassName="pagination-container"
+          pageClassName="pagination-page"
+          activeClassName="pagination-active"
+          previousClassName="pagination-previous"
+          nextClassName="pagination-next"
+        />
+      </div>
+    </div>
+  ) : (
     <BaseSection style={""}>
       <Wrapper styles={"pt-8 pb-[110px] relative"}>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">

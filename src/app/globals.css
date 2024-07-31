@@ -278,9 +278,27 @@ a:hover .back {
 
 .pagination-page:hover {
   background-color: theme("colors.red");
+  color: white;
 }
 
 .pagination-active {
   border: 1px theme("colors.red") solid; /* Жирний шрифт для активної сторінки */
   /* Колір тексту */
+}
+
+.edit,
+.trash {
+  stroke: theme("colors.red");
+}
+.archive {
+  fill: theme("colors.red");
+}
+
+button:hover .edit,
+button:hover .trash {
+  stroke: white;
+}
+
+button:hover .archive {
+  fill: white;
 }

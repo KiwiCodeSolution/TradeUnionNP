@@ -3,7 +3,7 @@ import SearchInputAdminPage from "./SearchInputAdminPage";
 
 const PageNavBar = ({ goTo, toggleArchive, isArchive }) => {
   return (
-    <section className="w-full flex gap-x-4 items-end pt-5 px-3">
+    <section className="w-full flex gap-x-4 items-end pt-5 px-3 mb-4">
       <SearchInputAdminPage />
       <div className="w-1/5 h-full flex gap-x-2 items-center">
         <Link

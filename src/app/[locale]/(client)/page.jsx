@@ -17,7 +17,6 @@ export default function ClientHome({ params }) {
       <DirectionsWork locale={params.locale} />
       <Interview locale={params.locale} />
       {params.locale === "uk" && <NewsSectionHomePage />}
-
       <ContactSection bgStyle={"bg-bgGrey"} />
     </main>
   );

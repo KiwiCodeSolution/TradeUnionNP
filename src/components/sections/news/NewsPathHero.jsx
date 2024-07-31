@@ -6,7 +6,7 @@ const NewsPathHero = () => {
   return (
     <BaseSection style={""}>
       <Wrapper>
-        <PathPage endPath={"новини"} />
+        <PathPage endPath={"Новини"} />
       </Wrapper>
     </BaseSection>
   );

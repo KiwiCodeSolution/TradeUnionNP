@@ -1,0 +1,32 @@
+[
+  {
+    "id": "8917234175",
+    "date": "27.05.2021",
+    "section": "Стаття",
+    "sectionLink": "/novyny",
+    "titleImage": "/images/news_text_folder/kd_1.png",
+    "title": "Що потрібно знати про посадові інструкції?",
+    "slug": "https://profspilka.org/uk/shcho-potribno-znaty-pro-posadovi-instruktsiyi",
+    "pageName": "kol_dog"
+  },
+  {
+    "id": "2227234175",
+    "date": "21.05.2021",
+    "section": "Стаття",
+    "sectionLink": "/novyny",
+    "titleImage": "/images/news_text_folder/kd_2.png",
+    "title": "Про переведення працівника з посади на посаду",
+    "slug": "https://profspilka.org/uk/pro-perevedennya-pratsivnyka-z-posady-na-posadu",
+    "pageName": "kol_dog"
+  },
+  {
+    "id": "7167234175",
+    "date": "15.02.2021",
+    "section": "Новини",
+    "sectionLink": "/novyny",
+    "titleImage": "/images/news_text_folder/kd_3.png",
+    "title": "Робота з колективним договором у 2020 році",
+    "slug": "https://profspilka.org/uk/robota-z-kolektyvnym-dohovorom-u-2020-rotsi",
+    "pageName": "kol_dog"
+  }
+]

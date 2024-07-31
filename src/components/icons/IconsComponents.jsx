@@ -188,7 +188,7 @@ export const ArrowNews = () => (
     class="w-4 h-4 ml-2"
     viewBox="0 0 24 24"
     stroke="currentColor"
-    stroke-width="2"
+    strokeWidth="2"
     fill="none"
     stroke-linecap="round"
     stroke-linejoin="round"
@@ -208,5 +208,74 @@ export const Clock = () => (
       d="M7.73038 3.85973C7.71372 3.37937 8.22089 2.9816 8.68386 3.11419C9.01787 3.19099 9.27798 3.51268 9.27146 3.85756C9.27798 5.29937 9.27073 6.74119 9.27508 8.18228C9.97497 8.87855 10.672 9.57699 11.3682 10.2762C11.6494 10.5522 11.6646 11.0427 11.3958 11.3318C11.119 11.6564 10.5756 11.6731 10.2786 11.3673C9.59749 10.6949 8.92513 10.0146 8.24697 9.33935C8.01222 9.10967 7.71662 8.86406 7.73111 8.50179C7.72676 6.95492 7.72748 5.4066 7.73038 3.85973Z"
       fill="#BBBBBB"
     />
+  </svg>
+);
+
+export const Edit = ({ className }) => (
+  <svg
+    width="32px"
+    height="32px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="edit"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <path
+        d="M12.4445 19.6875H20.9445M14.4443 5.68747L5.44587 14.6859C4.78722 15.3446 4.26719 16.1441 4.10888 17.062C3.94903 17.9888 3.89583 19.139 4.44432 19.6875C4.99281 20.236 6.14299 20.1828 7.0698 20.0229C7.98772 19.8646 8.78722 19.3446 9.44587 18.6859L18.4443 9.68747M14.4443 5.68747C14.4443 5.68747 17.4443 2.68747 19.4443 4.68747C21.4443 6.68747 18.4443 9.68747 18.4443 9.68747M14.4443 5.68747L18.4443 9.68747"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </g>
+  </svg>
+);
+
+export const Archive = ({ className }) => (
+  <svg
+    width="32px"
+    height="32px"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    className="archive"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      {" "}
+      <g>
+        {" "}
+        <path fill="none" d="M0 0h24v24H0z"></path>{" "}
+        <path
+          fillRule="nonzero"
+          d="M20 3l2 4v13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.004L4 3h16zm0 6H4v10h16V9zm-8 1l4 4h-3v4h-2v-4H8l4-4zm6.764-5H5.236l-.999 2h15.527l-1-2z"
+        ></path>{" "}
+      </g>{" "}
+    </g>
+  </svg>
+);
+
+export const Trash = ({ className }) => (
+  <svg
+    width="32px"
+    height="32px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="trash"
+  >
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      {" "}
+      <path
+        d="M10 12L14 16M14 12L10 16M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>{" "}
+    </g>
   </svg>
 );

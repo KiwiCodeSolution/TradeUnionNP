@@ -1,0 +1,32 @@
+[
+  {
+    "id": "891123175",
+    "date": "06.04.2024",
+    "section": "Новини",
+    "sectionLink": "/novyny",
+    "titleImage": "/images/news_text_folder/sport_1.jpg",
+    "title": "Заходи до Дня захисту дітей від Профспілки: фоторепортаж",
+    "slug": "https://profspilka.org/uk/zakhody-do-dnya-zakhystu-ditey-vid-profspilky-fotoreportazh",
+    "pageName": "sport"
+  },
+  {
+    "id": "222456175",
+    "date": "30.01.2024",
+    "section": "Новини",
+    "sectionLink": "/novyny",
+    "titleImage": "/images/news_text_folder/sport_2.png",
+    "title": "Зимові путівки від Профспілки – фоторепортаж профспілчан",
+    "slug": "https://profspilka.org/uk/zymovi-putivky-vid-profspilky-fotoreportazh-profspilchan",
+    "pageName": "sport"
+  },
+  {
+    "id": "7167789175",
+    "date": "104.01.2024",
+    "section": "Новини",
+    "sectionLink": "/novyny",
+    "titleImage": "/images/news_text_folder/sport_3.png",
+    "title": "Новорічні свята для дітей від Профспілки – фоторепортаж",
+    "slug": "https://profspilka.org/uk/novorichni-svyata-dlya-ditey-vid-profspilky-fotoreportazh",
+    "pageName": "sport"
+  }
+]
