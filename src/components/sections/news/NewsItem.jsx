@@ -1,4 +1,4 @@
-import { Archive, ArrowNews, Edit, Trash } from "@/components/icons/IconsComponents";
+import { Archive, ArrowNews, Edit, Trash, Views } from "@/components/icons/IconsComponents";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -60,7 +60,7 @@ const NewsItem = ({ item, section }) => {
         className="w-[calc(100%-48px-12px)] md:w-[calc(100%-48px-24px)] h-full hover:shadow-xl rounded-lg overflow-hidden"
         target="_blank"
       >
-        <div className="rounded-lg h-64 overflow-hidden mb-4">
+        <div className="rounded-lg h-64 overflow-hidden mb-4 relative">
           <Image
             className="w-full h-full object-cover object-center"
             src={item.titleImage}
@@ -69,6 +69,12 @@ const NewsItem = ({ item, section }) => {
           />
         </div>
         <div className="px-2 flex flex-col justify-between">
+          {section === "admin" && (
+            <div className="flex w-full h-fit gap-x-3 text-base text-liteGrey items-center mb-2">
+              <Views /> {item.views}
+            </div>
+          )}
+
           <h2 className="text-liteGrey font-medium text-[22px] leading-[1.3] mb-3">{item.title}</h2>
           <p className="text-[15px] leading-[1.625] mb-5">{item.shortText}</p>
           <div className="text-[#6366f1] flex items-center gap-x-1 mb-2">
