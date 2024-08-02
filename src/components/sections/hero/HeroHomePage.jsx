@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import TitleHomePage from "@/components/UI/titles/TitleHomePage";
 import Wrapper from "@/components/Wrapper";
 import HeroHomePageItems from "./HeroHomePageItems";
@@ -10,13 +11,27 @@ import Join from "./Join";
 import BaseSection from "@/components/BaseSection";
 
 const HeroHomePage = () => {
+  const t = useTranslations("HomePage.join");
+  const modalTitle = [t(`modalTitle.0`), t(`modalTitle.1`), t(`modalTitle.2`)];
+  const confirmModalTitle = [t(`confirmModalTitle.0`), t(`confirmModalTitle.1`)];
+  const confirmModalText = [
+    t(`confirmModalText.0`),
+    t(`confirmModalText.1`),
+    t(`confirmModalText.2`),
+  ];
+
   return (
     <BaseSection style="bg-bgGrey h-fit xl:h-[628px]">
       <Wrapper styles={"flex flex-col md:flex-row"}>
         <div className="order-2 md:order-1 w-full md:w-1/2 flex flex-col">
           <TitleHomePage />
           <HeroHomePageItems />
-          <Join />
+          <Join
+            title={t(`title`)}
+            modalTitle={modalTitle}
+            confirmModalTitle={confirmModalTitle}
+            confirmModalText={confirmModalText}
+          />
         </div>
         <div className="order-1 md:order-2 w-full md:w-1/2 h-[445px] md:h-[514px] xl:h-full relative">
           <Image

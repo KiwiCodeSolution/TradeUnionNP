@@ -20,7 +20,10 @@ const Subscription = () => {
               {t(`subscription_title.0`)}{" "}
               <span className="text-red"> {t(`subscription_title.1`)}</span>
             </Title>
-            <SubscriptionForm />
+            <SubscriptionForm
+              button={t(`subscription_button`)}
+              errorText={t(`subscription_error`)}
+            />
             <div className="flex flex-col items-center md:flex-row gap-6">
               <p className="text-center md:text-left"> {t(`subscription_text`)}</p>
               <ul className="flex gap-5 items-center">

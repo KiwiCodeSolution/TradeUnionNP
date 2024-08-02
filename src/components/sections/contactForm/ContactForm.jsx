@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import Image from "next/image";
@@ -7,8 +7,7 @@ import Flag from "@/images/flag.svg";
 import { regions } from "@/constants/regions";
 import Button from "@/components/UI/buttons/Buttons";
 
-const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
-  const t = useTranslations("HomePage.contact_form");
+const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, button }) => {
   const [phone, setPhone] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [formError, setFormError] = useState("");
@@ -47,11 +46,11 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
       }
     } else {
       if (!isPhoneValid && !selectedOption) {
-        setFormError(t(`error_all_inputs`));
+        setFormError(errors[0]);
       } else if (!isPhoneValid) {
-        setFormError(t(`error_phone`));
+        setFormError(errors[1]);
       } else if (!selectedOption) {
-        setFormError(t(`error_region`));
+        setFormError(errors[2]);
       }
     }
   };
@@ -71,7 +70,9 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
                 {...inputProps}
                 type="text"
                 placeholder="+38 (___) ___-__-__"
-                className={`w-full md:w-4/5 py-5 pl-[70px] pr-5 text-lg border-0 focus:outline-none focus:shadow-none rounded-full h-14  ${
+                className={`w-full ${
+                  section === "modal" ? "md:w-full" : "md:w-4/5"
+                }  py-5 pl-[70px] pr-5 text-lg border-0 focus:outline-none focus:shadow-none rounded-full h-14  ${
                   inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
                 }`}
               />
@@ -91,7 +92,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
         type="text"
         value={selectedOption}
         onChange={handleSelectChange}
-        placeholder={t(`placeholder_region`)}
+        placeholder={placeholder}
         list="regions-list"
         className={`text-[15px] ${section === "modal" ? "w-full" : "w-full md:w-4/5"} ${
           inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
@@ -104,7 +105,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle }) => {
       </datalist>
 
       <Button view={"red"} btnType="submit" style={section === "modal" ? "mx-auto mt-5" : ""} icon>
-        {t(`button`)}
+        {button}
       </Button>
       {formError && <p className="text-red absolute -bottom-1 left-1 italic">{formError}</p>}
     </form>

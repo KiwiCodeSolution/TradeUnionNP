@@ -14,7 +14,7 @@ const RegionalOffices = () => {
           {t(`regional_offices_title.1`)} <br /> {t(`regional_offices_title.2`)}
         </Title>
 
-        <RegionalOfficesList />
+        <RegionalOfficesList placeholder={t(`form_placeholder`)} button={t(`form_button`)} />
       </Wrapper>
     </BaseSection>
   );

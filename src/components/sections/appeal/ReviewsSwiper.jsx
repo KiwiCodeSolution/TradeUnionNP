@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
@@ -9,10 +9,8 @@ import "swiper/css/scrollbar";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 import Image from "next/image";
 import ReviewImage from "@/images/appeal/review.svg";
-import reviews from "@/data/reviews.json";
 
-const ReviewsSwiper = () => {
-  const t = useTranslations("I");
+const ReviewsSwiper = ({ reviews }) => {
   return (
     <div className="w-full relative flex">
       <div className="flex flex-col items-center justify-center">
@@ -41,11 +39,10 @@ const ReviewsSwiper = () => {
         }}
       >
         {reviews.map((el, index) => (
-          <SwiperSlide key={t(`reviews.${index}.text`)} className="py-10">
+          <SwiperSlide key={el.text} className="py-10">
             <article className="w-[95%] min-h-[136px] md:h-full bg-white rounded-xl p-8 relative mx-auto">
               <p className="text-base">
-                "{t(`reviews.${index}.text`)} " - {t(`reviews.${index}.name`)} (
-                {t(`reviews.${index}.address`)} )
+                "{el.text} " - {el.name} ({el.address} )
               </p>
 
               <Image

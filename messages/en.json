@@ -16,7 +16,8 @@
       { "title": "I am the Trade Union", "link": "/ya-profspilka" },
       { "title": "Appeal", "link": "/zvernennya" },
       { "title": "", "link": "" }
-    ]
+    ],
+    "Metadata_Blanks_Page": "Forms | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
   },
   "HomePage": {
     "path": "Home",
@@ -1002,59 +1003,147 @@
     "docs": [
       {
         "title": "Treatment of illness of a Trade Union member",
-        "text": "50% of confirmed expenses, but not more than UAH 6,000"
+        "text": "50% of confirmed expenses, but not more than UAH 6,000",
+        "points": [
+          "Statement of a member of the Trade Union;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "a copy of the Trade Union member's disability certificate (provided it is issued);",
+          "originals of medical documents (extract from the medical card of an outpatient/inpatient (epicrisis) form No. 027/o/certificate with the name of the patient from the hospital);",
+          "originals of fiscal checks (receipts for payment of FOP, bank payment orders with a seal) for treatment and/or medicines;",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Treatment of close relatives of a Trade Union member",
-        "text": "50% of confirmed expenses, but not more than 6,000 hryvnias"
+        "text": "50% of confirmed expenses, but not more than 6,000 hryvnias",
+        "points": [
+          "Statement of a member of the Trade Union;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "a copy of a document confirming family ties, namely: a copy of a birth certificate/marriage certificate;",
+          "originals of medical documents (certificate of incapacity for work, extract from the medical history/epicrisis/certificate with the name of the patient from the hospital);",
+          "originals of fiscal checks (receipts for payment of FOP, bank payment orders with a seal) for treatment and/or medicines.",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Death of the Trade Union member",
-        "text": "UAH 5,000"
+        "text": "UAH 5,000",
+        "points": [
+          "Statement of a relative of the deceased;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "a copy of the passport and identification code of the deceased member of the Trade Union;",
+          "copy of death certificate;",
+          "a copy of a document confirming family ties, namely: a copy of a birth certificate/marriage certificate/relative's passport;",
+          "certificate from the bank on the opening of the applicant's card account in IBAN format."
+        ]
       },
       {
         "title": "Death of a close relative of the Trade Union member",
-        "text": "from UAH 1750 to UAH 3500"
+        "text": "from UAH 1750 to UAH 3500",
+        "points": [
+          "Statement of a member of the Trade Union;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "a copy of a document confirming family ties, namely: a copy of a birth certificate/marriage certificate/relative's passport;",
+          "copy of death certificate;",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Marriage registration",
-        "text": "from UAH 1750 to UAH 3500"
+        "text": "from UAH 1750 to UAH 3500",
+        "points": [
+          "Statement of a member of the Trade Union;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "copy of marriage certificate;",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Birth of a child",
-        "text": "from UAH 1750 to UAH 3500"
+        "text": "from UAH 1750 to UAH 3500",
+        "points": [
+          "Statement of a member of the Trade Union;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "copy of the child's birth certificate",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "50-60-65-year anniversary",
-        "text": "from 1250 to 2500 UAH"
+        "text": "from 1250 to 2500 UAH",
+        "points": [
+          "Statement of the head of the primary trade union organization or jubilee;",
+          "a copy of the passport and identification code of a member of the Trade Union receiving material assistance;",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Health improvement of a child and recreation",
-        "text": "from UAH 1500 to UAH 3000"
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "Statement of a member of the Trade Union;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "copy of the child's birth certificate;",
+          "a copy of the voucher form or a copy of the referral for rehabilitation;",
+          "copy of medical certificate form No. 079/o;",
+          "originals of fiscal checks for the payment of the trip, or bank payment orders;",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "War veterans",
-        "text": "from 1250 to 2500 UAH (payment is made annually in October)"
+        "text": "from 1250 to 2500 UAH (payment is made annually in October)",
+        "points": [
+          "Statement of a member of the Trade Union;",
+          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "copies of documents confirming the participation of a member of the Trade Union in ATO or OOS (certificate of a participant in hostilities of the established model);",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Trip",
-        "text": "For health improvement"
+        "text": "For health improvement",
+        "points": [
+          "copy of passport and identification code/copy of passport in the form of an ID card;",
+          "excerpt from the leave order/copy of the application for leave with a manager's visa;",
+          "a copy of the receipt for the payment of part of the ticket price"
+        ]
       },
       {
         "title": "To the mobilized wounded trade unionists",
-        "text": "from UAH 1500 to UAH 3000"
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "a copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+          "a copy of the certificate on the circumstances of the injury/injury;",
+          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "To trade union members in the TOT of Ukraine",
-        "text": "from UAH 1500 to UAH 3000"
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+          "A copy of the documents confirming the stay in the occupied city/village after 02/24/2022. In the absence of official documents, you can provide a photo of a receipt from a store/gas station against the background of the first page of the passport and geolocation screens;",
+          "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Internally displaced persons",
-        "text": "from UAH 1500 to UAH 3000"
+        "text": "from UAH 1500 to UAH 3000",
+        "points": [
+          "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+          "A copy of the certificate on the temporary registration of the place of residence or stay of a member of the Trade Union;",
+          "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
+        ]
       },
       {
         "title": "Other",
-        "text": "from UAH 1000 to UAH 5000"
+        "text": "from UAH 1000 to UAH 5000",
+        "points": [
+          "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+          "A copy of documents confirming difficult life circumstances that require compensation**;",
+          "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
+        ]
       }
     ],
     "template_title": ["Internal", "submission", "template"],
@@ -1238,7 +1327,8 @@
     "fifth": ["Get", "a branded gift or certificate for active leisure"],
     "subscription_title": ["Want", "to receive news?"],
     "subscription_text": "Follow the news in messengers:",
-    "subscription_button": "subscribe"
+    "subscription_button": "subscribe",
+    "subscription_error": "Please enter your email."
   },
   "Appeal": {
     "path": "Appeal",

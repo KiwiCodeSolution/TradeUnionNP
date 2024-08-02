@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+
 import Slide from "./Slide";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y } from "swiper/modules";
@@ -10,7 +10,6 @@ import "swiper/css/scrollbar";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 
 const SlidesSwiper = () => {
-  const t = useTranslations("Protection");
   return (
     <div className="w-full relative">
       <Swiper
