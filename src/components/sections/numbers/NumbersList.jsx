@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { numbersValue } from "@/constants/numbers";
 import Blanc from "@/images/home/icon_benef_dog.svg";
-import { inter } from "@/app/[locale]/fonts";
+import { inter } from "@/app/[locale]/(client)/fonts";
 import NumberItem from "./NumberItem";
 
 const NumbersList = () => {

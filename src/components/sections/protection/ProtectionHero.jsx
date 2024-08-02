@@ -5,7 +5,7 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import HeroImage from "@/images/protection/protection_hero.svg";
 import Hand from "@/images/hand.svg";
-import { inter } from "@/app/[locale]/fonts";
+import { inter } from "@/app/[locale]/(client)/fonts";
 import Title from "@/components/Title";
 
 const ProtectionHero = () => {

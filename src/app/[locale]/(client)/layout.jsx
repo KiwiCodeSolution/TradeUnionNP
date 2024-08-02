@@ -2,6 +2,10 @@ import Header from "@/components/Header.jsx";
 import Footer from "@/components/sections/footer/Footer";
 import UpButton from "@/components/UI/buttons/UpButton";
 import { getTranslations } from "next-intl/server";
+import "./globals.css";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { roboto } from "./fonts";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -28,13 +32,22 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function ClientLayout({ children, params: { locale } }) {
+export default async function RootLayout({ children, params: { locale } }) {
+  const messages = await getMessages();
+
   return (
-    <div className="min-h-screen">
-      <Header locale={locale} />
-      {children}
-      <Footer locale={locale} />
-      <UpButton />
-    </div>
+    <html lang={locale} className="min-h-screen">
+      <body className={roboto.className}>
+        <NextIntlClientProvider messages={messages}>
+          <div className="min-h-screen">
+            <Header locale={locale} />
+            {children}
+            <Footer locale={locale} />
+            <UpButton />
+          </div>
+          <div id="modal-root"></div>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

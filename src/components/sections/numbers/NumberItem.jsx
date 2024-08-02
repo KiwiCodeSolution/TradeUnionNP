@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import CountUp from "react-countup";
 import Image from "next/image";
-import { inter } from "@/app/[locale]/fonts";
+import { inter } from "@/app/[locale]/(client)/fonts";
 
 const NumberItem = ({ item, index, text }) => {
   const [isVisible, setIsVisible] = useState(false);
