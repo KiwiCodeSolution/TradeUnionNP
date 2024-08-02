@@ -5,6 +5,27 @@ import HeroFinancialAidPage from "@/components/sections/financialAid/HeroFinanci
 import Importantly from "@/components/sections/financialAid/Importantly";
 import Limitation from "@/components/sections/financialAid/Limitation";
 import Template from "@/components/sections/financialAid/Template";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale });
+
+  return {
+    title: t("Root.Metadata_FinancialAid_Page"),
+    metadataBase: new URL("https://profspilka.org"),
+    alternates: {
+      canonical: "https://profspilka.org/uk/materialna-dopomoga",
+      languages: {
+        "en-US": "/en",
+        "uk-UA": "/uk",
+      },
+    },
+    openGraph: {
+      title: t("Root.Metadata_FinancialAid_Page"),
+      url: "https://profspilka.org",
+    },
+  };
+}
 
 export default function FinancialAidPage({ params }) {
   return (

@@ -1,21 +1,27 @@
 import Header from "@/components/Header.jsx";
 import Footer from "@/components/sections/footer/Footer";
 import UpButton from "@/components/UI/buttons/UpButton";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale });
+
   return {
-    title:
-      locale === "uk"
-        ? "Профспілка ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»"
-        : "Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
-    description:
-      locale === "uk"
-        ? "Офіційний сайт Профспілки групи компаній «Нова Пошта» | Всеукраїнська професійна спілка працівників ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»"
-        : "Official site of the Trade Union of the Nova Poshta group of companies | All-Ukrainian Professional Union of Employees of Nova Poshta LLC | VPSP 'Nova Poshta' LLC",
-    content:
-      locale === "uk"
-        ? "Офіційний сайт Профспілки групи компаній «Нова Пошта» | Всеукраїнська професійна спілка працівників ТОВ «Нова Пошта» | ВПСП ТОВ «Нова Пошта»"
-        : "Official site of the Trade Union of the Nova Poshta group of companies | All-Ukrainian Professional Union of Employees of Nova Poshta LLC | VPSP 'Nova Poshta' LLC",
+    title: t("Root.Metadata_Home_Page"),
+    description: t("Root.Description"),
+    content: t("Root.Content"),
+    metadataBase: new URL("https://profspilka.org"),
+    alternates: {
+      canonical: "https://profspilka.org/uk/zvernennya",
+      languages: {
+        "en-US": "/en",
+        "uk-UA": "/uk",
+      },
+    },
+    openGraph: {
+      title: t("Root.Metadata_Home_Page"),
+      url: "https://profspilka.org",
+    },
     icons: {
       icon: "/favicon.ico",
     },

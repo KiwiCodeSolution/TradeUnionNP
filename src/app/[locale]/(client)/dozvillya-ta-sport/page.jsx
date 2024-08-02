@@ -5,6 +5,27 @@ import PrincipleRecreation from "@/components/sections/recreation/PrincipleRecre
 import RecreationActivity from "@/components/sections/recreation/RecreationActivity";
 import RecreationProjects from "@/components/sections/recreation/RecreationProjects";
 import StatuteRecreationPage from "@/components/sections/recreation/StatuteRecreationPage";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale });
+
+  return {
+    title: t("Root.Metadata_Recreation_Page"),
+    metadataBase: new URL("https://profspilka.org"),
+    alternates: {
+      canonical: "https://profspilka.org/uk/dozvillya-ta-sport",
+      languages: {
+        "en-US": "/en",
+        "uk-UA": "/uk",
+      },
+    },
+    openGraph: {
+      title: t("Root.Metadata_Recreation_Page"),
+      url: "https://profspilka.org",
+    },
+  };
+}
 
 export default function RecreationPage({ params }) {
   return (

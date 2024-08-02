@@ -8,6 +8,27 @@ import ProtectionAgreement from "@/components/sections/protection/ProtectionAgre
 import ProtectionHero from "@/components/sections/protection/ProtectionHero";
 import ProtectionRights from "@/components/sections/protection/ProtectionRights";
 import ResolutionPeriod from "@/components/sections/protection/ResolutionPeriod";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale });
+
+  return {
+    title: t("Root.Metadata_Protection_Page"),
+    metadataBase: new URL("https://profspilka.org"),
+    alternates: {
+      canonical: "https://profspilka.org/uk/zakhyst-trudovykh-prav",
+      languages: {
+        "en-US": "/en",
+        "uk-UA": "/uk",
+      },
+    },
+    openGraph: {
+      title: t("Root.Metadata_Protection_Page"),
+      url: "https://profspilka.org",
+    },
+  };
+}
 
 import data from "@/data/law_protect.json";
 

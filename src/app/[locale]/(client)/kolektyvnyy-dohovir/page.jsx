@@ -7,6 +7,27 @@ import TitleAgreementsPage from "@/components/sections/agreements/TitleAgreement
 import AgreementsBlogSection from "@/components/sections/blog/AgreementsBlogSection";
 import HeroAgreementsPage from "@/components/sections/hero/HeroAgreementsPage";
 import law from "@/data/law.json";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale });
+
+  return {
+    title: t("Root.Metadata_CollectiveAgreement_Page"),
+    metadataBase: new URL("https://profspilka.org"),
+    alternates: {
+      canonical: "https://profspilka.org/uk/kolektyvnyy-dohovir",
+      languages: {
+        "en-US": "/en",
+        "uk-UA": "/uk",
+      },
+    },
+    openGraph: {
+      title: t("Root.Metadata_CollectiveAgreement_Page"),
+      url: "https://profspilka.org",
+    },
+  };
+}
 
 export default function CollectiveAgreementPage({ params }) {
   return (
