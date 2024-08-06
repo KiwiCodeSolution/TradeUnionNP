@@ -901,7 +901,7 @@
         "text": "The appeal was resolved, the employee received the explanation"
       }
     ],
-    "algorithm_title": ["Algorithm and", "chronology", "of processing", "the appeals"],
+    "algorithm_title": ["Algorithm and ", "chronology", " of processing ", "the appeals"],
     "step": "step",
     "algorithm_steps": [
       {
@@ -1163,7 +1163,7 @@
       }
     ],
     "template_title": ["Internal", "submission", "template"],
-    "template_text": "Send a package of documents for financial assistance using the template for internal shipments ‘Financial assistance from the Union’, Poltava, Nova Poshta branch No. 23",
+    "template_text": "Send a package of documents for financial assistance using the template for internal shipments ‘Financial assistance from the Union’",
     "points": [
       "payment is received on the salary card;",
 
@@ -1517,5 +1517,13 @@
     "last_point": "The user confirms that he is familiar with all clauses of this Agreement and unconditionally accepts them."
   },
   "News": { "path": "News" },
-  "Photo": { "path": "Photo" }
+  "Photo": { "path": "Photo" },
+  "Search": {
+    "title": ["Result", "search by query"],
+    "text": "The request was for the following words:",
+    "warning": [
+      "Please note",
+      "search is currently running in test mode. The database connection is not configured."
+    ]
+  }
 }

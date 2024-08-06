@@ -37,7 +37,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 
   return (
     <html lang={locale} className="min-h-screen">
-      <body className={roboto.className}>
+      <body className={`${roboto.className} min-h-screen`}>
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen">
             <Header locale={locale} />

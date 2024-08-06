@@ -23,7 +23,7 @@ const StatuteRecreationPage = () => {
           <Title tag={"h2"} styles={"text-center"}>
             {t(`statute_recreation_title`)}
           </Title>
-          <div className="flex flex-col sm:flex-row w-full gap-4 md:gap-8 items-start justify-between">
+          {/* <div className="flex flex-col sm:flex-row w-full gap-4 md:gap-8 items-start justify-between">
             <h3 className="w-full md:w-2/5 text-xl font-bold text-bgBlack">
               {t(`statute_recreation_subtitle.0`)} <br />
               {t(`statute_recreation_subtitle.1`)}
@@ -33,7 +33,7 @@ const StatuteRecreationPage = () => {
                 <ListItem item={t(`tasks.${index}`)} key={t(`tasks.${index}`)} gap={5} />
               ))}
             </ul>
-          </div>
+          </div> */}
           <div className="flex flex-col sm:flex-row w-full gap-4 md:gap-8 items-start justify-between">
             <h3 className="w-full md:w-2/5 text-xl font-bold text-bgBlack">
               {t(`statute_recreation_text.0`)} <br />

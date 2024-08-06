@@ -4,7 +4,7 @@ import Users from "@/images/icon-users.svg";
 import { useState } from "react";
 import RedDot from "@/components/UI/RedDot";
 import Link from "next/link";
-import NoPhoto from "@/images/no-photo.svg";
+import NoPhoto from "@/images/no-photo.png";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 import Tell from "@/images/phone-white.svg";
 import Post from "@/images/contacts/mail.svg";

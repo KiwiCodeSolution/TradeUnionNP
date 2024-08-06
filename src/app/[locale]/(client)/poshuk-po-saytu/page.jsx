@@ -1,3 +1,8 @@
+import BaseSection from "@/components/BaseSection";
+import SearchPageComponent from "@/components/sections/search/SearchPageComponent";
+import Title from "@/components/Title";
+import Wrapper from "@/components/Wrapper";
+import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
@@ -13,9 +18,19 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 export default function SearchPage() {
+  const t = useTranslations("Search");
+
   return (
     <main className="w-full">
-      <h1> Search Page</h1>
+      <BaseSection style={""}>
+        <Wrapper styles={"pt-16 "}>
+          <Title tag={"h1"} styles={"text-center mb-16"}>
+            <span className="text-red">{t(`title.0`)}</span>
+            {t(`title.1`)}
+          </Title>
+          <SearchPageComponent text={t(`text`)} warning={[t(`warning.0`), t(`warning.1`)]} />
+        </Wrapper>
+      </BaseSection>
     </main>
   );
 }

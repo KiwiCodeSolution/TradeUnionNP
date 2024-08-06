@@ -63,10 +63,10 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
   }
 
   return (
-    <nav className="w-4 md:hidden">
+    <>
       <button
         onClick={toggleMenu}
-        className="absolute top-1/2 -translate-y-1/2 left-0.5 w-[26px] h-[26px] flex items-center justify-center"
+        className="absolute top-1/3 -translate-y-1/2 left-0.5 w-[26px] h-[26px] flex items-center justify-center"
       >
         <Image src={Burger} width={26} height={26} alt="іконка відкриття меню" />
       </button>
@@ -161,7 +161,8 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
           </div>
         </div>
       </motion.div>
-    </nav>
+      <div className="text-white"> help@profspilka.org</div>
+    </>
   );
 };
 

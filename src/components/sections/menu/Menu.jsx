@@ -16,32 +16,35 @@ const Menu = ({ locale }) => {
   const navItems = navLinks.slice(0, navLinks.length - 1);
 
   return (
-    <Wrapper styles="flex items-center justify-between xl:gap-x-3">
-      <MenuMobile locale={locale} />
-      <Link href="/" className="w-[190px] md:h-20 flex items-center justify-between">
-        <Image
-          src={locale === "uk" ? LogoUA : LogoEn}
-          height={80}
-          className="w-[186px] h-16"
-          alt="Зображення логотипу Профспілки 'Нова Пошта'"
-        />
-      </Link>
+    <Wrapper styles="flex flex-col md:flex-row relative pb-12 md:pb-0 pt-1 md:pt-0">
+      <div className="flex items-center justify-between xl:gap-x-3">
+        <MenuMobile locale={locale} />
+        <Link href="/" className="w-[190px] md:h-20 flex items-center justify-between">
+          <Image
+            src={locale === "uk" ? LogoUA : LogoEn}
+            height={80}
+            className="w-[186px] h-16"
+            alt="Зображення логотипу Профспілки 'Нова Пошта'"
+          />
+        </Link>
 
-      <nav className="w-fit hidden md:flex items-center h-20 mx-auto gap-x-3">
-        {navItems.map((el, index) => (
-          <Link
-            href={el.link}
-            key={el.link}
-            className="leading-loose border-transparent hover:border-red hover:text-red border-b-2"
-            locale={locale}
-          >
-            {t(`navBarLinks.${index}.title`)}
-          </Link>
-        ))}
-      </nav>
-      <SearchInput />
-      <EmailAndSocLinks />
-      <LangButtons locale={locale} />
+        <nav className="w-fit hidden md:flex items-center h-20 mx-auto gap-x-3">
+          {navItems.map((el, index) => (
+            <Link
+              href={el.link}
+              key={el.link}
+              className="leading-loose border-transparent hover:border-red hover:text-red border-b-2"
+              locale={locale}
+            >
+              {t(`navBarLinks.${index}.title`)}
+            </Link>
+          ))}
+        </nav>
+        <SearchInput />
+        <EmailAndSocLinks />
+        <LangButtons locale={locale} />
+      </div>
+      <SearchInput size={"mobile"} />
     </Wrapper>
   );
 };

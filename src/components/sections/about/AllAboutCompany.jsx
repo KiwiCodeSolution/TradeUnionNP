@@ -46,7 +46,7 @@ const AllAboutCompany = () => {
         <Container>
           <h3 className="text-[30px] font-bold">
             <span className="text-red"> {t(`all_about.3.title.0`)} </span>
-            {t(`all_about.3.title.0`)}
+            {t(`all_about.3.title.1`)}
           </h3>
           <ul className="flex flex-col gap-y-5">
             <ListItem item={t(`all_about.3.text.0`)} gap={5} />

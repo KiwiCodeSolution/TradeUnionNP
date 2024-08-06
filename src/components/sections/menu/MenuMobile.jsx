@@ -31,11 +31,6 @@ const MenuMobile = ({ locale }) => {
       link: "/kontakty",
       aria: "",
     },
-    {
-      name: t(`navBarLinks.5.title`),
-      link: "/poshuk-po-saytu",
-      aria: "",
-    },
   ];
 
   const aboutLinks = [
