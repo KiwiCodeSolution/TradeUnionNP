@@ -55,11 +55,17 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
 
   function toggleMenu() {
     toggleOpen();
-    if (isOpen) {
-      allowScroll();
-    } else {
+
+    if (!isOpen) {
       blockScroll();
+    } else {
+      allowScroll();
     }
+  }
+
+  function redirectLink() {
+    toggleOpen();
+    allowScroll();
   }
 
   return (
@@ -109,7 +115,7 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
                 href={navLinks[0].link}
                 aria-label={navLinks[0].aria}
                 className="uppercase leading-10 font-medium"
-                onClick={() => toggleOpen()}
+                onClick={() => redirectLink()}
                 locale={locale}
               >
                 {navLinks[0].name}
@@ -129,7 +135,7 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
                     aria-label={el.aria}
                     key={el.link}
                     className="text-white text-opacity-80 leading-10"
-                    onClick={() => toggleOpen()}
+                    onClick={() => redirectLink()}
                     locale={locale}
                   >
                     {el.name}
@@ -150,7 +156,7 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
                     href={el.link}
                     aria-label={el.aria}
                     className="uppercase leading-10 font-medium"
-                    onClick={() => toggleOpen()}
+                    onClick={() => redirectLink()}
                     locale={locale}
                   >
                     {el.name}
