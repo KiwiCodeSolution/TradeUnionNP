@@ -2,14 +2,14 @@ import { socLinks } from "@/constants/socLinks";
 import Image from "next/image";
 
 const EmailAndSocLinks = ({ section, title }) => {
-  const socLinksList = socLinks.filter(el => el.iconRed !== "");
+  const socLinksListRed = socLinks.filter(el => el.iconRed !== "");
 
   return (
     <article
       className={`flex ${
         section === "footer"
           ? "flex-col gap-y-4"
-          : "hidden md:flex gap-x-5 items-center justify-between"
+          : "hidden xl:flex gap-x-5 items-center justify-between"
       } `}
     >
       {section === "footer" && (
@@ -22,7 +22,7 @@ const EmailAndSocLinks = ({ section, title }) => {
         help@profspilka.org
       </a>
       <div className="flex gap-x-2">
-        {socLinksList.map(el => (
+        {socLinksListRed.map(el => (
           <a
             key={el.link}
             href={el.link}

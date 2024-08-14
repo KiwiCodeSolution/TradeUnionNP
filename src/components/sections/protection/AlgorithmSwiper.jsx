@@ -60,18 +60,22 @@ const AlgorithmSwiper = ({ steps, step }) => {
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 30,
         },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
         1200: {
-          slidesPerView: 6,
+          slidesPerView: 4,
           spaceBetween: 60,
         },
       }}
     >
       {steps.map((el, index) => (
-        <SwiperSlide key={index + 66} className="pt-10 mx-auto">
-          <article className="cursor-grab w-64 h-fit relative overflow-visible mx-auto">
+        <SwiperSlide key={index + 66} style={{ width: "150px" }} className="pt-10 mx-auto">
+          <article className="cursor-grab w-72 h-fit relative overflow-visible mx-auto">
             <div className="w-full flex flex-col items-center relative">
               <div className="rotate-45 w-16 h-16 bg-red rounded-md absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 transform z-[2]" />
 

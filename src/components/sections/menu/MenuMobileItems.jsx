@@ -7,6 +7,8 @@ import MenuLogo from "@/images/menu-logo.svg";
 import Cross from "@/images/close.svg";
 import Burger from "@/images/burger.svg";
 import useScrollBlock from "@/hooks/useScrollBlock";
+import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
+import { socLinks } from "@/constants/socLinks";
 
 const menuAnimation = {
   visible: {
@@ -52,6 +54,7 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
   const [blockScroll, allowScroll] = useScrollBlock();
   const [isOpen, toggleOpen] = useCycle(false, true);
   const navItems = navLinks.slice(1, navLinks.length);
+  const socLinksListWhite = socLinks.filter(el => el.iconWhite !== "");
 
   function toggleMenu() {
     toggleOpen();
@@ -165,9 +168,28 @@ const MenuMobileItems = ({ locale, aboutLinks, navLinks }) => {
               ))}
             </div>
           </div>
+          <a href="mailto:help@profspilka.org" className="text-white text-base mt-10">
+            help@profspilka.org
+          </a>
+          <div className="flex gap-x-2">
+            {socLinksListWhite.map(el => (
+              <a
+                key={el.link}
+                href={el.link}
+                target="_blank"
+                className="flex items-center justify-center"
+              >
+                <Image
+                  src={el.iconWhite}
+                  width={25}
+                  height={25}
+                  alt={`зображення білої іконки ${el.title} у червоному колі`}
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </motion.div>
-      <div className="text-white"> help@profspilka.org</div>
     </>
   );
 };

@@ -34,7 +34,7 @@ const Algorithm = () => {
   ];
 
   return (
-    <BaseSection style={"pt-10 bg-white"}>
+    <BaseSection style={"pt-10 bg-white algorithm"}>
       <div className="border-dashed border-4 border-bgBlack w-screen border-opacity-20 absolute top-[290px] left-0" />
       <Title tag={"h2"} styles={"text-center"}>
         {t(`algorithm_title.0`)}{" "}
