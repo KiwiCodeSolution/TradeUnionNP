@@ -45,6 +45,7 @@ const BlogItem = ({ item }) => {
             src={item.titleImage}
             width={375}
             height={210}
+            alt={`фото до новини ${item.title}`}
           />
         </div>
         <ul className="flex flex-col p-7 gap-y-6 pb-4">

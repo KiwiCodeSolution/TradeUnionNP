@@ -26,7 +26,7 @@ export default function NewsPage() {
   return (
     <main className="w-full  bg-bgGrey">
       <NewsPathHero />
-      <PaginatedItems />
+      <PaginatedItems section={"news"} />
     </main>
   );
 }

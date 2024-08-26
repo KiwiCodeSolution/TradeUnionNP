@@ -15,7 +15,7 @@ const standardShadow = ({ item, last, index }) => {
       <ul className="w-full md:w-9/12 flex flex-col gap-y-4">
         {item.appeal && (
           <li className="flex gap-x-5">
-            <Image src={Appeal} width={49} height={49} alt="" />
+            <Image src={Appeal} width={49} height={49} alt="Appeal" />
             <div className="w-fit flex flex-col gap-y-1">
               <p className="text-xl md:text-3xl font-bold text-red">{item.appeal}</p>
               <p className="text-lg"> {t(`history_points.${index}.appeal`)}</p>

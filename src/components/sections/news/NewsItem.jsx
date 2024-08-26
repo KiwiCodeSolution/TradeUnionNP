@@ -66,6 +66,7 @@ const NewsItem = ({ item, section }) => {
             src={item.titleImage}
             width={293}
             height={256}
+            alt={`фото до новини ${item.title}`}
           />
         </div>
         <div className="px-2 flex flex-col justify-between">

@@ -26,7 +26,7 @@ export default function PhotoPage() {
   return (
     <main className="w-full bg-bgGrey">
       <PhotoPathHero />
-      <PaginatedItems />
+      <PaginatedItems section={"photo"} />
     </main>
   );
 }
