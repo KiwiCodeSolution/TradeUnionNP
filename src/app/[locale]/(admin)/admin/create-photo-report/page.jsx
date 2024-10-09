@@ -19,7 +19,7 @@ export default function CreatePhotoReportPage() {
   return (
     <main className="px-10 py-5">
       <TitleAdmin>Створення фотозвіту</TitleAdmin>{" "}
-      <ButtonBack path={"/admin/photo-report"} className={"mt-5"} />
+      <ButtonBack path={"/uk/admin/photo-report"} className={"mt-5"} />
     </main>
   );
 }

@@ -261,6 +261,10 @@ a:hover .back {
   align-items: center;
 }
 
+.pagination-container_admin {
+  bottom: 10px;
+}
+
 .pagination-page {
   width: 44px; /* Розмір сторінки */
   height: 44px; /* Розмір сторінки */

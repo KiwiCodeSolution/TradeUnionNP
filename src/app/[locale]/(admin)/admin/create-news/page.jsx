@@ -19,7 +19,7 @@ export default function CreateNewsPage() {
   return (
     <main className="px-10 py-5">
       <TitleAdmin>Створення новини</TitleAdmin>
-      <ButtonBack path={"/admin/news"} className={"mt-5"} />
+      <ButtonBack path={"/uk/admin/news"} className={"mt-5"} />
     </main>
   );
 }

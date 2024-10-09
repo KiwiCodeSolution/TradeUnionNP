@@ -24,7 +24,7 @@ export default function AdminNewsPage() {
       <TitleAdmin>Новини {isArchive && <span>/ Архів</span>}</TitleAdmin>
 
       <PageNavBar
-        goTo={"/admin/create-news"}
+        goTo={"/uk/admin/create-news"}
         toggleArchive={() => setIsArchive(!isArchive)}
         isArchive={isArchive}
       />

@@ -97,7 +97,7 @@ const PaginatedItems = ({ section }) => {
           pageCount={pageCount}
           previousLabel={previousLabel}
           renderOnZeroPageCount={null}
-          containerClassName="pagination-container"
+          containerClassName="pagination-container pagination-container_admin"
           pageClassName="pagination-page"
           activeClassName="pagination-active"
           previousClassName="pagination-previous"

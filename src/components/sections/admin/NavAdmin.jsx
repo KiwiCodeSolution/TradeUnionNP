@@ -11,7 +11,7 @@ const NavAdmin = () => {
   const { logout } = useAuth();
 
   return (
-    <div className="w-1/5 h-full flex flex-col items-center gap-y-20 bg-red py-10 px-8 rounded-r-2xl">
+    <div className="w-1/5 h-screen flex flex-col items-center gap-y-20 bg-red py-10 px-8 rounded-r-2xl">
       <div className="flex flex-col gap-y-5">
         <Image src={Logo} width={200} height={165} alt="Логотип компанії" />
         <p className="text-lg text-white text-center italic">Вітаю, User!</p>

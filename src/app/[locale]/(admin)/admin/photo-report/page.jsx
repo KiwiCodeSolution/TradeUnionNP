@@ -21,7 +21,7 @@ export default function AdminPhotoPage() {
     <main className="px-10 py-5">
       <TitleAdmin>Фотозвіти {isArchive && <span>/ Архів</span>}</TitleAdmin>
       <PageNavBar
-        goTo={"/admin/create-photo-report"}
+        goTo={"/uk/admin/create-photo-report"}
         toggleArchive={() => setIsArchive(!isArchive)}
         isArchive={isArchive}
       />
