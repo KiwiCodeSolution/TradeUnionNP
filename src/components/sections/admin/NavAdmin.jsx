@@ -27,6 +27,9 @@ const NavAdmin = () => {
         <NavLink href="/uk/admin/contacts" currentPath={pathname}>
           Контакти
         </NavLink>
+        <NavLink href="/uk/admin/files" currentPath={pathname}>
+          Файли
+        </NavLink>
       </nav>
       <button
         className="w-full h-20 mx-auto flex items-center justify-center border border-white text-red font-semibold text-xl bg-white rounded-md hover:bg-red hover:text-white"
