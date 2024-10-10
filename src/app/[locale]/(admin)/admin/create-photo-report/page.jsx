@@ -1,25 +1,13 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import ButtonBack from "@/components/sections/admin/ButtonBack";
 import TitleAdmin from "@/components/sections/admin/TitleAdmin";
+import CreatePhotoReport from "@/components/sections/photo/CreatePhotoReport";
 
 export default function CreatePhotoReportPage() {
-  const router = useRouter();
-
-  // useEffect(() => {
-  //   const user = localStorage.getItem("user");
-
-  //   if (!user) {
-  //     router.push("/login");
-  //   }
-  // }, [router]);
-
   return (
     <main className="px-10 py-5">
-      <TitleAdmin>Створення фотозвіту</TitleAdmin>{" "}
-      <ButtonBack path={"/uk/admin/photo-report"} className={"mt-5"} />
+      <TitleAdmin>Створення фотозвіту</TitleAdmin>
+      <section className="flex-grow overflow-y-auto" style={{ maxHeight: "calc(100vh - 120px)" }}>
+        <CreatePhotoReport />
+      </section>
     </main>
   );
 }

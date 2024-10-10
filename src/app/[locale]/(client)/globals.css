@@ -306,3 +306,39 @@ button:hover .trash {
 button:hover .archive {
   fill: white;
 }
+
+.custom-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-checkbox {
+  display: none;
+}
+
+.custom-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+}
+
+.custom-checkbox-label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid theme("colors.red");
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+}
+
+.custom-checkbox:checked + .custom-checkbox-label:before {
+  background-repeat: no-repeat;
+  background-image: url("/images/bullet.svg");
+  background-position: center;
+}

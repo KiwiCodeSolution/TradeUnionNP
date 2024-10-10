@@ -38,9 +38,12 @@ const NewsItem = ({ item, section }) => {
         </div>
         {section === "admin" && (
           <div className="w-full flex flex-col gap-y-3 items-center justify-between">
-            <button className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center">
+            <Link
+              href={`/uk/admin/news/${item.id}`}
+              className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
+            >
               <Edit />
-            </button>
+            </Link>
             <button className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center">
               <Archive />
             </button>

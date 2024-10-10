@@ -10,6 +10,8 @@ const NavAdmin = () => {
   const pathname = usePathname();
   const { logout } = useAuth();
 
+  console.log(pathname);
+
   return (
     <div className="w-1/5 h-screen flex flex-col items-center gap-y-20 bg-red py-10 px-8 rounded-r-2xl">
       <div className="flex flex-col gap-y-5">
@@ -42,7 +44,11 @@ const NavAdmin = () => {
 };
 
 const NavLink = ({ href, children, currentPath }) => {
-  const isActive = currentPath === href;
+  // Визначення активного стану на основі шляху
+  const isActive =
+    currentPath === href ||
+    (href === "/uk/admin/news" && currentPath.includes("/uk/admin/create-news")) ||
+    (href === "/uk/admin/photo-report" && currentPath.includes("/uk/admin/create-photo-report"));
 
   return (
     <Link
