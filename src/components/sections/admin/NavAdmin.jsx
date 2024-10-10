@@ -47,8 +47,8 @@ const NavLink = ({ href, children, currentPath }) => {
   // Визначення активного стану на основі шляху
   const isActive =
     currentPath === href ||
-    (href === "/uk/admin/news" && currentPath.includes("/uk/admin/create-news")) ||
-    (href === "/uk/admin/photo-report" && currentPath.includes("/uk/admin/create-photo-report"));
+    (href === "/uk/admin/news" && currentPath.includes("/uk/admin/news")) ||
+    (href === "/uk/admin/photo-report" && currentPath.includes("/uk/admin/photo-report"));
 
   return (
     <Link

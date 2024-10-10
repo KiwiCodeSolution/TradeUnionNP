@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
-const CreatePhotoReport = () => {
+const PhotoReportForm = () => {
   const [formData, setFormData] = useState({
     title: "",
     sections: [],
@@ -191,4 +191,4 @@ const CreatePhotoReport = () => {
   );
 };
 
-export default CreatePhotoReport;
+export default PhotoReportForm;
