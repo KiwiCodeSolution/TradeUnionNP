@@ -294,6 +294,11 @@ a:hover .back {
 .trash {
   stroke: theme("colors.red");
 }
+
+a:hover .edit {
+  stroke: white;
+}
+
 .archive {
   fill: theme("colors.red");
 }

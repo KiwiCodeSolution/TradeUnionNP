@@ -2,7 +2,7 @@
   {
     "id": "8917234567",
     "date": "11.07.2024",
-    "section": "новини",
+    "sections": ["Новина", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/11-07-2024.jpg",
     "title": "Звіт: матеріальна допомога у червні 2024",
@@ -13,7 +13,7 @@
   {
     "id": "5432789012",
     "date": "08.07.2024",
-    "section": "новини",
+    "sections": ["Звіт", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/08-07-2024.jpg",
     "title": "Безплатне перевезення речей для учасників бойових дій та ВПО",
@@ -24,7 +24,7 @@
   {
     "id": "1234567890",
     "date": "05.07.2024",
-    "section": "новини",
+    "sections": ["Культура", "Новина"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/05-07-2024.jpg",
     "title": "Переможці розіграшу до Дня народження Профспілки!",
@@ -35,7 +35,7 @@
   {
     "id": "9876543210",
     "date": "03.07.2024",
-    "section": "новини",
+    "sections": ["Новина", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/03-07-2024.jpg",
     "title": "Запитання профспілчан – відповідь Профспілки: виплата матеріальної допомоги",
@@ -46,7 +46,7 @@
   {
     "id": "4567890123",
     "date": "28.06.2024",
-    "section": "новини",
+    "sections": ["Новина", "Наука"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/28-06-2024.jpg",
     "title": "Профспілка вітає з Днем Конституції України!",
@@ -57,7 +57,7 @@
   {
     "id": "8901234567",
     "date": "26.06.2024",
-    "section": "новини",
+    "sections": ["Інтерв'ю", "Культура"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/26-06-2024.jpg",
     "title": "Перемоги Профспілки: весна 2024",
@@ -68,7 +68,7 @@
   {
     "id": "2345678901",
     "date": "21.06.2024",
-    "section": "новини",
+    "sections": ["Новина", "Звіт", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/21-06-2024.jpg",
     "title": "Пройдіть анонімне опитування щодо забезпечення питною водою",
@@ -79,7 +79,7 @@
   {
     "id": "6789012345",
     "date": "18.06.2024",
-    "section": "новини",
+    "sections": ["Звіт", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/18-06-2024.jpg",
     "title": "Профспілці 9 років! Наше привітання!",
@@ -90,7 +90,7 @@
   {
     "id": "3456789012",
     "date": "17.06.2024",
-    "section": "новини",
+    "sections": ["Новина", "Культура"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/17-06-2024.jpg",
     "title": "Профспілка запрошує на святкову онлайн-зустріч до Дня народження!",
@@ -101,7 +101,7 @@
   {
     "id": "5678901234",
     "date": "13.06.2024",
-    "section": "новини",
+    "sections": ["Інтерв'ю", "Культура"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/13-06-2024.jpg",
     "title": "Звіт: матеріальна допомога у травні 2024",
@@ -112,7 +112,7 @@
   {
     "id": "5301234567",
     "date": "10.06.2024",
-    "section": "новини",
+    "sections": ["Наука", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/10-06-2024.jpg",
     "title": "Профспілка розігрує 9 навушників JBL серед профспілчан до Дня народження!",
@@ -123,7 +123,7 @@
   {
     "id": "9656789012",
     "date": "06.06.2024",
-    "section": "новини",
+    "sections": ["Наука", "Звіт"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/06-06-2024.jpg",
     "title": "Заходи до Дня захисту дітей від Профспілки: фоторепортаж",

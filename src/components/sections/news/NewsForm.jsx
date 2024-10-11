@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
-const CreateNews = ({ news }) => {
+const NewsForm = ({ news }) => {
   const [formData, setFormData] = useState({
     title: news?.title || "",
     sections: news?.sections || [],
@@ -132,7 +132,7 @@ const CreateNews = ({ news }) => {
         </label>
         <Editor
           apiKey="b76g9vsla6spw8xc9itg2m7ap8z9vey1xpn2jrcsq06jcv23"
-          initialValue=""
+          initialValue={formData.content}
           id="news-editor"
           init={{
             height: 900,
@@ -191,4 +191,4 @@ const CreateNews = ({ news }) => {
   );
 };
 
-export default CreateNews;
+export default NewsForm;
