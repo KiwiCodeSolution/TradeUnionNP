@@ -76,63 +76,61 @@ const AdminContactsForm = ({ initialContacts }) => {
   };
 
   return (
-    <section className="w-full p-10">
-      <form className="w-full flex flex-col gap-y-10" onSubmit={handleSubmit}>
-        <div className="w-full grid grid-cols-2 gap-x-5 gap-y-10">
-          <div className="flex flex-col gap-y-2">
-            <p className="text-xl text-main font-semibold">Пошта</p>
-            {renderField("Пошта", "mail", contacts.mail, true)}
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-xl text-main font-semibold">Messenger</p>
-            {renderField("Messenger", "messenger", contacts.messenger)}
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-xl text-main font-semibold">Instagram</p>
-            {renderField("Instagram", "instagram", contacts.instagram)}
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-xl text-main font-semibold">Youtube</p>
-            {renderField("Youtube", "youtube", contacts.youtube)}
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-xl text-main font-semibold">Telegram</p>
-            {renderField("Telegram", "telegram", contacts.telegram)}
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-xl text-main font-semibold">Facebook</p>
-            {renderField("Facebook", "facebook", contacts.facebook)}
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <p className="text-xl text-main font-semibold">Viber</p>
-            {renderField("Viber", "viber", contacts.viber)}
-          </div>
+    <form className="w-full flex flex-col gap-y-10" onSubmit={handleSubmit}>
+      <div className="w-full grid grid-cols-2 gap-x-5 gap-y-10">
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">Пошта</p>
+          {renderField("Пошта", "mail", contacts.mail, true)}
         </div>
-        <div className="flex justify-between mt-10">
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">Messenger</p>
+          {renderField("Messenger", "messenger", contacts.messenger)}
+        </div>
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">Instagram</p>
+          {renderField("Instagram", "instagram", contacts.instagram)}
+        </div>
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">Youtube</p>
+          {renderField("Youtube", "youtube", contacts.youtube)}
+        </div>
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">Telegram</p>
+          {renderField("Telegram", "telegram", contacts.telegram)}
+        </div>
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">Facebook</p>
+          {renderField("Facebook", "facebook", contacts.facebook)}
+        </div>
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">Viber</p>
+          {renderField("Viber", "viber", contacts.viber)}
+        </div>
+      </div>
+      <div className="flex justify-between mt-10">
+        <button
+          type="button"
+          onClick={() => {
+            if (editMode) {
+              handleCancel(); // Скасування редагування
+            } else {
+              setEditMode(true); // Вмикаємо режим редагування
+            }
+          }}
+          className="px-4 h-10 border border-red rounded-2xl text-red text-xl font-semibold hover:bg-red hover:text-white"
+        >
+          {editMode ? "Скасувати редагування" : "Редагувати"}
+        </button>
+        {editMode && (
           <button
-            type="button"
-            onClick={() => {
-              if (editMode) {
-                handleCancel(); // Скасування редагування
-              } else {
-                setEditMode(true); // Вмикаємо режим редагування
-              }
-            }}
+            type="submit"
             className="px-4 h-10 border border-red rounded-2xl text-red text-xl font-semibold hover:bg-red hover:text-white"
           >
-            {editMode ? "Скасувати редагування" : "Редагувати"}
+            Зберегти зміни
           </button>
-          {editMode && (
-            <button
-              type="submit"
-              className="px-4 h-10 border border-red rounded-2xl text-red text-xl font-semibold hover:bg-red hover:text-white"
-            >
-              Зберегти зміни
-            </button>
-          )}
-        </div>
-      </form>
-    </section>
+        )}
+      </div>
+    </form>
   );
 };
 

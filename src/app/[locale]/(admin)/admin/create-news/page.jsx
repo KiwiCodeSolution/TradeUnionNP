@@ -6,6 +6,7 @@ export default function CreateNewsPage() {
     <main className="px-10 py-5">
       <TitleAdmin>Створення новини</TitleAdmin>
       {/* <ButtonBack path={"/uk/admin/news"} className={"mt-5"} /> */}
+
       <section className="flex-grow overflow-y-auto" style={{ maxHeight: "calc(100vh - 120px)" }}>
         <CreateNews />
       </section>

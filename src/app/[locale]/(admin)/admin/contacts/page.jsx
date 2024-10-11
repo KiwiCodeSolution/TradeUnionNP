@@ -1,3 +1,4 @@
+import AdminBaseSection from "@/components/sections/admin/AdminBaseSection";
 import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import AdminContactsForm from "@/components/sections/contacts/AdminContactsForm";
 
@@ -20,8 +21,10 @@ export default async function AdminContactsPage() {
   return (
     <main className="px-10 py-5">
       <TitleAdmin>Контакти та соціальні мережі</TitleAdmin>
-      {/* Передаємо отримані дані у компонент через пропси */}
-      <AdminContactsForm initialContacts={initialContacts} />
+      <AdminBaseSection styles={"p-10"}>
+        {/* Передаємо отримані дані у компонент через пропси */}
+        <AdminContactsForm initialContacts={initialContacts} />
+      </AdminBaseSection>
     </main>
   );
 }
