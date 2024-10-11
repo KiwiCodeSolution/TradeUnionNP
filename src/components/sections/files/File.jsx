@@ -49,7 +49,7 @@ const FileExample = ({ file }) => {
         type="file"
         onChange={handleFileChange}
         className="w-1/4"
-        accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" // Формати файлів
+        accept=".pdf,.png,.jpg,.jpeg" // Формати файлів
       />
       <button
         onClick={handleReplaceClick}
@@ -61,7 +61,7 @@ const FileExample = ({ file }) => {
               : "bg-white text-red border-red hover:shadow-redButton"
           }`}
       >
-        Оновити файл
+        Зберегти зміни
       </button>
 
       <button

@@ -21,10 +21,10 @@ export default function SearchPage() {
   const t = useTranslations("Search");
 
   return (
-    <main className="w-full">
+    <main className="w-full bg-bgGrey">
       <BaseSection style={""}>
-        <Wrapper styles={"pt-16 "}>
-          <Title tag={"h1"} styles={"text-center mb-16"}>
+        <Wrapper styles={"pt-10"}>
+          <Title tag={"h1"} styles={"text-center mb-10"}>
             <span className="text-red">{t(`title.0`)}</span>
             {t(`title.1`)}
           </Title>

@@ -117,14 +117,14 @@ const AdminContactsForm = ({ initialContacts }) => {
               setEditMode(true); // Вмикаємо режим редагування
             }
           }}
-          className="px-4 h-10 border border-red rounded-2xl text-red text-xl font-semibold hover:bg-red hover:text-white"
+          className="px-4 h-10 border border-red rounded text-red text-xl font-semibold hover:bg-red hover:text-white"
         >
           {editMode ? "Скасувати редагування" : "Редагувати"}
         </button>
         {editMode && (
           <button
             type="submit"
-            className="px-4 h-10 border border-red rounded-2xl text-red text-xl font-semibold hover:bg-red hover:text-white"
+            className="px-4 h-10 border border-red rounded text-red text-xl font-semibold hover:bg-red hover:text-white"
           >
             Зберегти зміни
           </button>
