@@ -4,5 +4,5 @@ export const metadata = {
 };
 
 export default function CreateNewsLayout({ children }) {
-  return <div className="w-4/5 h-full">{children}</div>;
+  return <div className="w-full h-full">{children}</div>;
 }

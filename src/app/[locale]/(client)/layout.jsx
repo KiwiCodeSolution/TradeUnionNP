@@ -6,6 +6,9 @@ import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { roboto } from "./fonts";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Bounce } from "react-toastify";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -44,6 +47,7 @@ export default async function RootLayout({ children, params: { locale } }) {
             {children}
             <Footer locale={locale} />
             <UpButton />
+            <ToastContainer transition={Bounce} />
           </div>
           <div id="modal-root"></div>
         </NextIntlClientProvider>

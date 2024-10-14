@@ -2,8 +2,15 @@
 
 import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import { useRouter } from "next/navigation";
+import { createNews } from "@/services/newsService";
+import { toast } from "react-toastify";
+import { optionsToastify } from "@/constants/configStyles";
 
 const NewsForm = ({ news }) => {
+  const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
+
+  const router = useRouter();
   const [formData, setFormData] = useState({
     title: news?.title || "",
     sections: news?.sections || [],
@@ -46,10 +53,59 @@ const NewsForm = ({ news }) => {
     });
   };
 
+  function resetForm() {
+    setFormData({
+      title: "",
+      sections: [],
+      metaTags: "",
+      status: "created",
+      content: "",
+    });
+  }
+
   // Відправка форми
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    console.log(formData);
+    if (!formData.title) {
+      toast.error("Поле 'Назва' є обов'язковим полем", optionsToastify);
+
+      return;
+    }
+    if (formData.sections.length === 0) {
+      toast.error("Виберіть хоча б одну категорію", optionsToastify);
+      return;
+    }
+
+    if (!formData.content) {
+      toast.error("Контент має бути заповненим", optionsToastify);
+      return;
+    }
+
+    const metaTagsArray = formData.metaTags.split(", ").map(tag => tag.trim());
+    const newsData = { ...formData, metaTags: metaTagsArray };
+
+    try {
+      const data = await createNews(newsData, "<YOUR_TOKEN_HERE>");
+      if (data) {
+        resetForm();
+        toast.success("Новина успішно створена!", optionsToastify);
+        router.push("/uk/admin/news");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Сталася помилка при створенні новини.", optionsToastify);
+    }
+  };
+
+  const images_upload_handler = (blobInfo, success, failure) => {
+    // Імітуємо обробку завантаження зображення
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const imgBase64 = e.target.result; // Отримуємо Base64 URL зображення
+      success(imgBase64); // Вставляємо зображення безпосередньо в контент
+    };
+
+    reader.readAsDataURL(blobInfo.blob()); // Зчитуємо зображення як Base64
   };
 
   return (
@@ -66,7 +122,7 @@ const NewsForm = ({ news }) => {
           value={formData.title}
           onChange={handleChange}
           className="border border-gray-300 p-2 w-full focus:border-none focus:outline-red focus:rounded-lg"
-          required
+          // required
         />
       </div>
 
@@ -130,13 +186,15 @@ const NewsForm = ({ news }) => {
         <label htmlFor="content" className="block font-medium mb-2">
           Контент
         </label>
+
         <Editor
-          apiKey="b76g9vsla6spw8xc9itg2m7ap8z9vey1xpn2jrcsq06jcv23"
-          initialValue={formData.content}
+          apiKey={apiKey}
+          value={formData.content}
           id="news-editor"
           init={{
-            height: 900,
+            height: 500,
             menubar: true,
+
             plugins: [
               "advlist autolink lists link image charmap print preview anchor",
               "searchreplace visualblocks code fullscreen",
@@ -178,6 +236,9 @@ const NewsForm = ({ news }) => {
               { title: "Заголовок 6", format: "h6" },
               { title: "Параграф", format: "p" },
             ],
+            // images_upload_url: "/upload", // URL для завантаження зображень
+            // automatic_uploads: true,
+            images_upload_handler: images_upload_handler,
           }}
           onEditorChange={handleEditorChange}
         />

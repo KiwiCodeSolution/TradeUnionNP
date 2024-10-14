@@ -20,5 +20,10 @@
   },
   "peacock.color": "#241052",
   "cSpell.words": [],
-  "i18n-ally.localesPaths": []
+  "i18n-ally.localesPaths": [],
+  "i18n-ally.extract.ignoredByFiles": {
+    "src\\components\\sections\\news\\NewsForm.jsx": [
+      "Поле 'Назва' є обов'язковим полем"
+    ]
+  }
 }

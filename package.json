@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && echo 'Visit: http://localhost:3000/uk/admin'",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,6 +11,7 @@
   "dependencies": {
     "@tinymce/tinymce-react": "^5.1.1",
     "autoprefixer": "^10.4.19",
+    "axios": "^1.7.7",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
     "next-intl": "^3.17.1",
@@ -24,6 +25,7 @@
     "react-just-parallax": "^3.1.16",
     "react-paginate": "^8.2.0",
     "react-text-mask": "^5.5.0",
+    "react-toastify": "^10.0.6",
     "swiper": "^11.1.4",
     "text-mask-addons": "^3.8.0"
   },
