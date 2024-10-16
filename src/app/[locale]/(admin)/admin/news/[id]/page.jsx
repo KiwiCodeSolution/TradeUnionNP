@@ -1,45 +1,42 @@
 import ButtonBack from "@/components/sections/admin/ButtonBack";
 import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import NewsForm from "@/components/sections/news/NewsForm";
-import data from "@/data/news.json";
+import { BaseURL } from "@/constants/BaseUrl";
 
 // Функція для отримання новини із серверу
-async function fetchNewsById(id) {
-  // const response = await fetch(`https://api.example.com/news/${id}`);
-  // const news = await response.json();
-  const currentNews = data.find(el => el.id === id);
-
-  const news = {
-    ...currentNews,
-    // title: `Це перша тестова новина з id:${id}`,
-    // sections: ["Новина", "Інтерв'ю"],
-    metaTags: currentNews.sections,
-    status: "published",
-    content: currentNews.shortText,
-  };
-  return news;
+async function fetchNewsById() {
+  const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+  if (!res.ok) {
+    throw new Error("Failed to fetch the news");
+  }
+  const data = await res.json(); // Чекаємо, поки проміс завершиться
+  return data;
 }
 
 // Функція для генерації метаданих
 export async function generateMetadata({ params: { id } }) {
-  const news = await fetchNewsById(id);
+  const news = await fetchNewsById();
+  const currentNews = news.find(el => el._id === id);
+  // console.log(currentNews);
 
   return {
-    title: `Редагування новини: ${news.title}`, // Динамічний title
-    description: news.metaTags || "Опис цієї новини", // Динамічний description
-    keywords: news.metaTags, // Метатеги
+    title: `Редагування новини: ${currentNews.title}`,
+    description: currentNews.metaTags || "Опис цієї новини",
+    keywords: currentNews.metaTags,
   };
 }
 
 export default async function AdminNewsPageWithId({ params: { id } }) {
-  const news = await fetchNewsById(id);
+  const news = await fetchNewsById();
+  const currentNews = news.find(el => el._id === id);
+  console.log("currentNews", currentNews);
 
   return (
     <main className="px-10 py-5 relative">
       <TitleAdmin>Редагування новини id: {id}</TitleAdmin>
       <ButtonBack path={"/uk/admin/news"} className={"absolute top-8"} />
       <section className="flex-grow overflow-y-auto" style={{ maxHeight: "calc(100vh - 120px)" }}>
-        <NewsForm news={news} />
+        <NewsForm news={currentNews} /> {/* Передаємо новину у форму для редагування */}
       </section>
     </main>
   );

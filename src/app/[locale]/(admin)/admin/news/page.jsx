@@ -1,25 +1,22 @@
-"use client";
-import TitleAdmin from "@/components/sections/admin/TitleAdmin";
-import PageNavBar from "@/components/sections/admin/PageNavBar";
-import { useState } from "react";
+import NewsAdminPageComponent from "@/components/sections/news/NewsAdminPageComponent";
+import { BaseURL } from "@/constants/BaseUrl";
 
-import PaginatedItems from "@/components/sections/news/PaginatedItems";
-import AdminBaseSection from "@/components/sections/admin/AdminBaseSection";
+async function fetchNews() {
+  const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
 
-export default function AdminNewsPage() {
-  const [isArchive, setIsArchive] = useState(false);
+  if (!res.ok) {
+    throw new Error("Failed to fetch news");
+  }
+
+  return res.json();
+}
+
+export default async function AdminNewsPage() {
+  const news = await fetchNews();
 
   return (
     <main className="px-10 py-5 admin relative max-h-screen">
-      <TitleAdmin>Новини {isArchive && <span>/ Архів</span>}</TitleAdmin>
-      <AdminBaseSection>
-        <PageNavBar
-          goTo={"/uk/admin/create-news"}
-          toggleArchive={() => setIsArchive(!isArchive)}
-          isArchive={isArchive}
-        />
-        <PaginatedItems section={"admin"} />
-      </AdminBaseSection>
+      <NewsAdminPageComponent news={news} />
     </main>
   );
 }
