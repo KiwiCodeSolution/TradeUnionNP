@@ -23,9 +23,10 @@ const NewsAdminPageComponent = ({ news }) => {
         <div className="grid grid-cols-3 gap-x-4 gap-y-8">
           {news &&
             news.map(el => (
-              <div id={el._id} className="w-1/3 bg-slate-300">
+              <div key={el._id} className="w-1/3 bg-slate-300">
                 <Link href={`/admin/news/${el._id}`}>
                   <h3>{el.title}</h3>
+                  <h3>{el._id}</h3>
                 </Link>
               </div>
             ))}

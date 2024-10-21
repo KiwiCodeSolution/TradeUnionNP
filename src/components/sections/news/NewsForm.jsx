@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { createNews } from "@/services/newsService";
 
 const NewsForm = ({ news }) => {
-  console.log("NewsForm", news);
+  // console.log("NewsForm", news);
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
 
   const router = useRouter();
@@ -96,17 +96,6 @@ const NewsForm = ({ news }) => {
     }
   };
 
-  const images_upload_handler = (blobInfo, success, failure) => {
-    // Імітуємо обробку завантаження зображення
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const imgBase64 = e.target.result; // Отримуємо Base64 URL зображення
-      success(imgBase64); // Вставляємо зображення безпосередньо в контент
-    };
-
-    reader.readAsDataURL(blobInfo.blob()); // Зчитуємо зображення як Base64
-  };
-
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-5">
       {/* Назва новини */}
@@ -193,7 +182,7 @@ const NewsForm = ({ news }) => {
           init={{
             height: 500,
             menubar: true,
-
+            language: "uk",
             plugins: [
               "advlist autolink lists link image charmap print preview anchor",
               "searchreplace visualblocks code fullscreen",
@@ -235,9 +224,39 @@ const NewsForm = ({ news }) => {
               { title: "Заголовок 6", format: "h6" },
               { title: "Параграф", format: "p" },
             ],
-            // images_upload_url: "/upload", // URL для завантаження зображень
-            // automatic_uploads: true,
-            images_upload_handler: images_upload_handler,
+            external_plugins: {
+              preview: "/tinymce/plugins/preview/plugin.min.js",
+              searchreplace: "/tinymce/plugins/searchreplace/plugin.min.js",
+              directionality: "/tinymce/plugins/directionality/plugin.min.js",
+              visualchars: "/tinymce/plugins/visualchars/plugin.min.js",
+              visualblocks: "/tinymce/plugins/visualblocks/plugin.min.js",
+              autolink: "/tinymce/plugins/autolink/plugin.min.js",
+              fullscreen: "/tinymce/plugins/fullscreen/plugin.min.js",
+              media: "/tinymce/plugins/media/plugin.min.js",
+              codesample: "/tinymce/plugins/codesample/plugin.min.js",
+              charmap: "/tinymce/plugins/charmap/plugin.min.js",
+              pagebreak: "/tinymce/plugins/pagebreak/plugin.min.js",
+              anchor: "/tinymce/plugins/anchor/plugin.min.js",
+              nonbreaking: "/tinymce/plugins/nonbreaking/plugin.min.js",
+              insertdatetime: "/tinymce/plugins/insertdatetime/plugin.min.js",
+              advlist: "/tinymce/plugins/advlist/plugin.min.js",
+              wordcount: "/tinymce/plugins/wordcount/plugin.min.js",
+              help: "/tinymce/plugins/help/plugin.min.js",
+            },
+            images_upload_handler: function (blobInfo, success, failure) {
+              // Конвертація зображення у Base64
+              const reader = new FileReader();
+              reader.readAsDataURL(blobInfo.blob()); // Читання зображення у форматі Base64
+              reader.onloadend = function () {
+                success(reader.result); // Повертаємо результат у форматі Base64
+              };
+              reader.onerror = function () {
+                failure("Failed to load image");
+              };
+            },
+            automatic_uploads: false, // Вимикаємо автоматичне завантаження через сервер
+            file_picker_types: "image", // Вибираємо тільки зображення
+            images_reuse_filename: true,
           }}
           onEditorChange={handleEditorChange}
         />

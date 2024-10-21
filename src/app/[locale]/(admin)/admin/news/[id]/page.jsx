@@ -29,7 +29,7 @@ export async function generateMetadata({ params: { id } }) {
 export default async function AdminNewsPageWithId({ params: { id } }) {
   const news = await fetchNewsById();
   const currentNews = news.find(el => el._id === id);
-  console.log("currentNews", currentNews);
+  // console.log("currentNews", currentNews);
 
   return (
     <main className="px-10 py-5 relative">

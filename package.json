@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && opn http://localhost:3000/uk/admin",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -28,10 +28,12 @@
     "react-paginate": "^8.2.0",
     "react-text-mask": "^5.5.0",
     "swiper": "^11.1.4",
-    "text-mask-addons": "^3.8.0"
+    "text-mask-addons": "^3.8.0",
+    "tinymce": "^7.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.11",
+    "opn-cli": "^4.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   }
