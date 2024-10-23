@@ -1,34 +1,31 @@
-// Функція для отримання новини із серверу
-// async function fetchNewsBySlug(slug) {
-//   // const response = await fetch(`https://api.example.com/news/${slug}`);
-//   // const news = await response.json();
+import NewsPageComponent from "@/components/sections/news/NewsPageComponent";
+import { BaseURL } from "@/constants/BaseUrl";
 
-//   const news = {
-//     ...currentNews,
-//     // title: `Це перша тестова новина з id:${id}`,
-//     // sections: ["Новина", "Інтерв'ю"],
-//     metaTags: currentNews.sections,
-//     status: "published",
-//     content: currentNews.shortText,
-//   };
-//   return news;
-// }
+// Функція для отримання новини із серверу
+async function fetchNewsBySlug(slug) {
+  const response = await fetch(`${BaseURL}news/${slug}`, { method: "GET" });
+  const news = await response.json();
+
+  return news;
+}
 
 // Функція для генерації метаданих
-// export async function generateMetadata({ params: { slug } }) {
-//   const news = await fetchNewsBySlug(slug);
+export async function generateMetadata({ params: { slug } }) {
+  const news = await fetchNewsBySlug(slug);
 
-//   return {
-//     title: `Редагування новини: ${news.title}`, // Динамічний title
-//     description: news.metaTags || "Опис цієї новини", // Динамічний description
-//     keywords: news.metaTags, // Метатеги
-//   };
-// }
+  return {
+    title: news.title,
+    description: news.metaTags,
+    keywords: news.metaTags,
+  };
+}
 
-export default function NewsPageBySlug({ params: { slug } }) {
+export default async function NewsPageBySlug({ params: { slug } }) {
+  const news = await fetchNewsBySlug(slug);
+
   return (
     <main className="w-full  bg-bgGrey">
-      <h1>{slug}</h1>
+      <NewsPageComponent news={news} />
     </main>
   );
 }

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { useRouter } from "next/navigation";
 import { createNews } from "@/services/newsService";
+import toast from "react-hot-toast";
 
 const NewsForm = ({ news }) => {
   // console.log("NewsForm", news);
@@ -15,6 +16,10 @@ const NewsForm = ({ news }) => {
     sections: news?.sections || [],
     metaTags: news?.metaTags || "",
     status: news?.status || "created",
+    author: news?.author || "Пресслужба",
+    publishDate: news?.publishDate
+      ? new Date(news?.publishDate).toISOString().split("T")[0]
+      : new Date().toISOString().split("T")[0],
     content: news?.content || "",
   });
 
@@ -58,6 +63,8 @@ const NewsForm = ({ news }) => {
       sections: [],
       metaTags: "",
       status: "created",
+      author: "",
+      date: "",
       content: "",
     });
   }
@@ -66,38 +73,42 @@ const NewsForm = ({ news }) => {
   const handleSubmit = async e => {
     e.preventDefault();
     if (!formData.title) {
-      alert("Поле 'Назва' є обов'язковим полем");
-
+      toast.error("Поле 'Назва' є обов'язковим полем");
       return;
     }
     if (formData.sections.length === 0) {
-      alert("Виберіть хоча б одну категорію");
+      toast.error("Виберіть хоча б одну категорію");
       return;
     }
 
     if (!formData.content) {
-      alert("Контент має бути заповненим");
+      toast.error("Контент має бути заповненим");
       return;
     }
 
     const metaTagsArray = formData.metaTags.split(", ").map(tag => tag.trim());
-    const newsData = { ...formData, metaTags: metaTagsArray };
+    const newsData = {
+      ...formData,
+      metaTags: metaTagsArray,
+    };
+    console.log(newsData);
 
     try {
       const data = await createNews(newsData, "<YOUR_TOKEN_HERE>");
       if (data) {
         resetForm();
-        alert("Новина успішно створена!");
+        toast.success("Новину створено!");
         router.push("/uk/admin/news");
-        router.reload();
+        // router.reload();
       }
     } catch (error) {
+      toast.error("Сталася помилка при створенні новини.");
       console.error("Сталася помилка при створенні новини.", error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-5 pr-4">
       {/* Назва новини */}
       <div>
         <label htmlFor="title" className="text-main block font-medium mb-2">
@@ -109,7 +120,7 @@ const NewsForm = ({ news }) => {
           name="title"
           value={formData.title}
           onChange={handleChange}
-          className="border border-gray-300 p-2 w-full focus:border-none focus:outline-red focus:rounded-lg"
+          className="border border-gray-300 p-2 w-full outline-none focus:border-red focus:rounded-lg"
           // required
         />
       </div>
@@ -146,9 +157,41 @@ const NewsForm = ({ news }) => {
           name="metaTags"
           value={formData.metaTags}
           onChange={handleChange}
-          className="border border-gray-300 p-2 w-full focus:border-none focus:outline-red focus:rounded-lg"
+          className="border border-gray-300 p-2 w-full outline-none focus:border-red focus:rounded-lg"
           rows="3"
         />
+      </div>
+      <div className="grid grid-cols-2 gap-x-8 items-center mb-2">
+        {/* автор */}
+        <div className="">
+          <label htmlFor="author" className="text-main block font-medium">
+            Автор
+          </label>
+          <input
+            type="author"
+            id="author"
+            name="author"
+            value={formData.author}
+            onChange={handleChange}
+            className="border h-10 border-gray-300 p-2 w-full outline-none focus:border-red focus:rounded-lg"
+            // required
+          />
+        </div>
+        {/* дата */}
+        <div className="">
+          <label htmlFor="publishDate" className="text-main block font-medium">
+            Дата
+          </label>
+          <input
+            type="date"
+            id="publishDate"
+            name="publishDate"
+            value={formData.publishDate}
+            onChange={handleChange}
+            className="border h-10 border-gray-300 p-2 w-full outline-none focus:border-none focus:outline-red focus:rounded-lg"
+            // required
+          />
+        </div>
       </div>
 
       {/* Статус */}
@@ -161,7 +204,7 @@ const NewsForm = ({ news }) => {
           name="status"
           value={formData.status}
           onChange={handleChange}
-          className="border border-gray-300 p-2 w-full focus:border-none focus:outline-red focus:rounded-lg"
+          className="border border-gray-300 p-2 w-full outline-none focus:border-red focus:rounded-lg"
         >
           <option value="published">Опубліковано</option>
           <option value="archived">Архів</option>
