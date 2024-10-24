@@ -1,6 +1,8 @@
 import NewsPathHero from "@/components/sections/news/NewsPathHero";
 import PaginatedItems from "@/components/sections/news/PaginatedItems";
 import { getTranslations } from "next-intl/server";
+import news from "@/data/news";
+import NewsFiltersSection from "@/components/sections/news/NewsFiltersSection";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -26,7 +28,8 @@ export default function NewsPage() {
   return (
     <main className="w-full  bg-bgGrey">
       <NewsPathHero />
-      <PaginatedItems section={"news"} />
+      <NewsFiltersSection news={news} />
+      <PaginatedItems section={"news"} items={news} />
     </main>
   );
 }

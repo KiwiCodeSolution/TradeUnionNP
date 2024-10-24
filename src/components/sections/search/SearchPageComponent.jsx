@@ -21,8 +21,6 @@ export default function SearchPageComponent({ text, warning }) {
       (el.director && el.director.toLowerCase().includes(search.toLowerCase()))
   );
 
-  console.log(filteredRegions);
-
   return (
     <>
       <p className=" px-5">

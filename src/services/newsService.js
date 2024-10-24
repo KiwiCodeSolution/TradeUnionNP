@@ -42,3 +42,32 @@ export const updateNews = async (newsId, newsData, token) => {
     throw new Error("Сталася помилка при оновленні новини.");
   }
 };
+
+export const deleteNews = async (slug, userId) => {
+  try {
+    const res = await fetch(`${BaseURL}news/${slug}/${userId}`, {
+      method: "DELETE",
+    });
+
+    // Перевіряємо, чи статус відповіді вказує на успішну операцію
+    if (!res.ok) {
+      let errorMessage = "Failed to delete news";
+
+      // Якщо сервер повертає тіло помилки, читаємо його
+      try {
+        const errorData = await res.json();
+        errorMessage = errorData.message || errorMessage;
+      } catch (e) {
+        console.error("Failed to parse error response", e);
+      }
+
+      throw new Error(errorMessage);
+    }
+
+    // Якщо статус 204 (No Content), просто повертаємо
+    return; // Нічого не потрібно повертати, якщо 204
+  } catch (error) {
+    console.error("Error deleting news:", error);
+    throw error;
+  }
+};

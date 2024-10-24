@@ -9,7 +9,6 @@ import { Link } from "@/navigation";
 
 const NewsAdminPageComponent = ({ news }) => {
   const [isArchive, setIsArchive] = useState(false);
-  console.log();
 
   const getMonthName = monthNumber => {
     const months = [
@@ -38,26 +37,21 @@ const NewsAdminPageComponent = ({ news }) => {
           toggleArchive={() => setIsArchive(!isArchive)}
           isArchive={isArchive}
         />
-        {/* <PaginatedItems section={"admin"} /> */}
-        <div className="grid grid-cols-3 gap-x-4 gap-y-8">
+        <PaginatedItems section={"admin"} items={news} />
+        {/* <div className="grid grid-cols-3 gap-x-4 gap-y-8">
           {news &&
             news.map(el => {
-              {
-                /* console.log("slug:", el.slug); // Додаємо консольний лог */
-              }
-              return (
-                <div key={el._id} className="w-1/3 bg-slate-300">
-                  <Link href={`/novyny/${el.slug}`} target="_blank">
-                    <h3>{el.title}</h3>
+              <div key={el._id} className="w-1/3 bg-slate-300">
+                <Link href={`/novyny/${el.slug}`} target="_blank">
+                  <h3>{el.title}</h3>
 
-                    {el.publishDate && <h3>{new Date(el.publishDate).getFullYear()}</h3>}
-                    {el.publishDate && <h3>{getMonthName(new Date(el.publishDate).getMonth())}</h3>}
-                    {el.publishDate && <h3>{new Date(el.publishDate).getDate()}</h3>}
-                  </Link>
-                </div>
-              );
+                  {el.publishDate && <h3>{new Date(el.publishDate).getFullYear()}</h3>}
+                  {el.publishDate && <h3>{getMonthName(new Date(el.publishDate).getMonth())}</h3>}
+                  {el.publishDate && <h3>{new Date(el.publishDate).getDate()}</h3>}
+                </Link>
+              </div>;
             })}
-        </div>
+        </div> */}
       </AdminBaseSection>
     </>
   );

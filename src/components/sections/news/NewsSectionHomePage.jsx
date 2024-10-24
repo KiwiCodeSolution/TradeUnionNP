@@ -16,7 +16,7 @@ const NewsSectionHomePage = () => {
         <FilterNews />
         <LinkButton
           view={"transparent"}
-          goTo={"/news"}
+          goTo={"/novyny"}
           icon
           style={
             "border border-red mt-9 mx-auto relative z-[7] py-[15px] px-[33px] rounded-full w-fit uppercase flex items-center justify-between gap-x-5 text-[14px] font-bold"
