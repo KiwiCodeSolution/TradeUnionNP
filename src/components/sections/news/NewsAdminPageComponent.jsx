@@ -5,28 +5,19 @@ import { useState } from "react";
 
 import PaginatedItems from "@/components/sections/news/PaginatedItems";
 import AdminBaseSection from "@/components/sections/admin/AdminBaseSection";
-import { Link } from "@/navigation";
 
 const NewsAdminPageComponent = ({ news }) => {
   const [isArchive, setIsArchive] = useState(false);
 
-  const getMonthName = monthNumber => {
-    const months = [
-      "січ",
-      "лют",
-      "бер",
-      "квіт",
-      "трав",
-      "черв",
-      "лип",
-      "серп",
-      "вер",
-      "жовт",
-      "лист",
-      "груд",
-    ];
-    return months[parseInt(monthNumber, 10) - 1];
-  };
+  const filteredNewsArray = news
+    .filter(item => {
+      if (isArchive) {
+        return item.status === "archived";
+      } else {
+        return item.status !== "archived";
+      }
+    })
+    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
   return (
     <>
@@ -37,21 +28,7 @@ const NewsAdminPageComponent = ({ news }) => {
           toggleArchive={() => setIsArchive(!isArchive)}
           isArchive={isArchive}
         />
-        <PaginatedItems section={"admin"} items={news} />
-        {/* <div className="grid grid-cols-3 gap-x-4 gap-y-8">
-          {news &&
-            news.map(el => {
-              <div key={el._id} className="w-1/3 bg-slate-300">
-                <Link href={`/novyny/${el.slug}`} target="_blank">
-                  <h3>{el.title}</h3>
-
-                  {el.publishDate && <h3>{new Date(el.publishDate).getFullYear()}</h3>}
-                  {el.publishDate && <h3>{getMonthName(new Date(el.publishDate).getMonth())}</h3>}
-                  {el.publishDate && <h3>{new Date(el.publishDate).getDate()}</h3>}
-                </Link>
-              </div>;
-            })}
-        </div> */}
+        <PaginatedItems section={"admin"} items={filteredNewsArray} />
       </AdminBaseSection>
     </>
   );

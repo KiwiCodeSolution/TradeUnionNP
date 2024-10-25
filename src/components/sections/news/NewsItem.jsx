@@ -1,10 +1,18 @@
-import { Archive, ArrowNews, Edit, Trash, Views } from "@/components/icons/IconsComponents";
+"use client";
+
+import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icons/IconsComponents";
 import Image from "next/image";
 import Link from "next/link";
 import NoImage from "@/images/No_Image.jpg";
 import { deleteNews } from "@/services/newsService";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const NewsItem = ({ item, section }) => {
+  // console.log(new Date(item.publishDate));
+  // console.log(item);
+
+  const router = useRouter();
   const getMonthName = monthNumber => {
     const months = [
       "січ",
@@ -20,24 +28,57 @@ const NewsItem = ({ item, section }) => {
       "лист",
       "груд",
     ];
-    return months[parseInt(monthNumber, 10) - 1];
+    return months[parseInt(monthNumber, 10)];
   };
+  const today = new Date();
 
   const handleDelete = async (slug, userId) => {
-    if (confirm("Are you sure you want to delete this news item?")) {
-      try {
-        await deleteNews(slug, userId);
-
-        // router.refresh();
-      } catch (error) {
-        console.error("Error deleting news:", error);
-        alert("Failed to delete news. Please try again.");
-      }
-    }
+    toast.custom(t => (
+      <div
+        className={`bg-white p-4 rounded shadow-lg flex flex-col ${
+          t.visible ? "animate-enter" : "animate-leave"
+        }`}
+      >
+        <p className="mb-3">Ви дійсно бажаєте видалити цей запис? </p>
+        <div className="flex justify-end gap-2">
+          <button
+            onClick={async () => {
+              try {
+                await deleteNews(slug, userId);
+                toast.success("Новину видалено!");
+                router.push("/uk/admin/news");
+                router.reload();
+              } catch (error) {
+                console.error("Error deleting news:", error);
+                if (error.message === "News not found") {
+                  toast.error("Таку новину не знайдено.");
+                } else toast.error("Щось пішло не так. Спробуйте ще раз.");
+              } finally {
+                toast.dismiss(t.id);
+              }
+            }}
+            className="bg-red text-white px-3 py-1 rounded"
+          >
+            Так
+          </button>
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="bg-black text-white px-3 py-1 rounded"
+          >
+            Ні
+          </button>
+        </div>
+      </div>
+    ));
   };
+  console.log(item.publishDate > today);
 
   return (
-    <article className="w-full h-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative">
+    <article
+      className={`w-full h-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
+        item.status === "created" ? "opacity-35" : ""
+      }`}
+    >
       <div className="w-12 h-full flex flex-col gap-y-10">
         <div className="flex flex-col">
           <p className="text-[15px] text-center">{new Date(item.publishDate).getFullYear()}</p>
@@ -63,6 +104,11 @@ const NewsItem = ({ item, section }) => {
             >
               <Trash />
             </button>
+            {new Date(item.publishDate) > today && (
+              <div className="outline outline-1 outline-red rounded-xl text-red text-base   font-medium w-full h-fit py-2 flex items-center justify-center">
+                <Timer />
+              </div>
+            )}
           </div>
         )}
       </div>
