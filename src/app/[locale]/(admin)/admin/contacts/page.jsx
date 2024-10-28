@@ -1,6 +1,17 @@
 import AdminBaseSection from "@/components/sections/admin/AdminBaseSection";
 import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import AdminContactsForm from "@/components/sections/contacts/AdminContactsForm";
+import { BaseURL } from "@/constants/BaseUrl";
+
+async function fetchContacts() {
+  const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch news");
+  }
+
+  return res.json();
+}
 
 export default async function AdminContactsPage() {
   // Тут робимо запит на сервер для отримання початкових даних

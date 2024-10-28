@@ -38,8 +38,32 @@ export const updateNews = async (newsId, newsData, token) => {
     });
     return res;
   } catch (error) {
-    console.error("Сталася помилка при створенні новини.", error);
+    console.error("Сталася помилка при оновленні новини.", error);
     throw new Error("Сталася помилка при оновленні новини.");
+  }
+};
+
+export const toggleArchiveStatus = async (newsId, currentStatus, token) => {
+  try {
+    // Визначаємо новий статус на основі поточного
+    const updatedStatus = currentStatus === "archived" ? "created" : "archived";
+
+    // Виконуємо PUT-запит для оновлення тільки поля status
+    const res = await axios.put(
+      `${BaseURL}news/${newsId}`,
+      { status: updatedStatus }, // Надсилаємо об'єкт з новим статусом
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    return res;
+  } catch (error) {
+    console.error("Сталася помилка при оновленні статусу новини.", error);
+    throw new Error("Сталася помилка при оновленні статусу новини.");
   }
 };
 

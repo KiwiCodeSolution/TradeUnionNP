@@ -3,22 +3,22 @@
 import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { useRouter } from "next/navigation";
-import { createNews } from "@/services/newsService";
+import { createNews, updateNews } from "@/services/newsService";
 import toast from "react-hot-toast";
 
 const NewsForm = ({ news }) => {
-  // console.log("NewsForm", news);
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
 
   const router = useRouter();
+
   const [formData, setFormData] = useState({
     title: news?.title || "",
     sections: news?.sections || [],
-    metaTags: news?.metaTags || "",
+    metaTags: news?.metaTags.join(", ") || [],
     status: news?.status || "created",
-    author: news?.author || "Пресслужба",
+    author: news?.author ?? "Пресслужба",
     publishDate: news?.publishDate
-      ? new Date(news?.publishDate).toISOString().split("T")[0]
+      ? new Date(news.publishDate).toISOString().split("T")[0]
       : new Date().toISOString().split("T")[0],
     content: news?.content || "",
   });
@@ -69,7 +69,6 @@ const NewsForm = ({ news }) => {
     });
   }
 
-  // Відправка форми
   const handleSubmit = async e => {
     e.preventDefault();
     if (!formData.title) {
@@ -87,25 +86,40 @@ const NewsForm = ({ news }) => {
     }
 
     const metaTagsArray = formData.metaTags.split(", ").map(tag => tag.trim());
-    const newsData = {
+
+    let newsData = {
       ...formData,
       metaTags: metaTagsArray,
     };
-    console.log(newsData);
+
+    if (news) {
+      const { author, ...rest } = newsData;
+      newsData = rest;
+    }
 
     try {
-      const data = await createNews(newsData, "<YOUR_TOKEN_HERE>");
-      if (data) {
-        resetForm();
-        toast.success("Новину створено!");
-        router.push("/uk/admin/news");
-        // router.reload();
+      if (!news) {
+        const data = await createNews(newsData, "<YOUR_TOKEN_HERE>");
+        if (data) {
+          resetForm();
+          toast.success("Новину створено!");
+          router.replace("/uk/admin/news");
+        }
+      } else {
+        const data = await updateNews(news.slug, newsData, "<YOUR_TOKEN_HERE>");
+        if (data) {
+          resetForm();
+          toast.success("Новину оновлено!");
+          router.replace("/uk/admin/news");
+        }
       }
     } catch (error) {
-      toast.error("Сталася помилка при створенні новини.");
-      console.error("Сталася помилка при створенні новини.", error);
+      toast.error(`Сталася помилка при ${news ? "оновленні" : "створенні"} новини.`);
+      console.error(`Сталася помилка при ${news ? "оновленні" : "створенні"} новини.`, error);
     }
   };
+
+
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-5 pr-4">
@@ -307,7 +321,7 @@ const NewsForm = ({ news }) => {
 
       {/* Кнопка для відправки */}
       <button type="submit" className="px-4 py-2 bg-red text-white rounded hover:shadow-redButton">
-        Створити новину
+        {news ? "Оновити новину" : "Створити новину"}
       </button>
     </form>
   );

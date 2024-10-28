@@ -1,11 +1,10 @@
 "use client";
 
 import { Cross, Search } from "@/components/icons/IconsComponents";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const SearchInputAdminPage = () => {
+const SearchInputAdminPage = ({ searchValue, setSearchValue }) => {
   const [isInputFocused, setInputFocused] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
 
   const handleInputChange = event => {
     setSearchValue(event.target.value);
@@ -14,6 +13,7 @@ const SearchInputAdminPage = () => {
   const handleClearInput = () => {
     setSearchValue("");
   };
+
   return (
     <form className="w-4/5 relative">
       <input
@@ -26,7 +26,7 @@ const SearchInputAdminPage = () => {
         onBlur={() => setInputFocused(false)}
       />
       {isInputFocused ? (
-        <button className="absolute top-0 right-3" onClick={handleClearInput}>
+        <button type="button" className="absolute top-0 right-3" onClick={handleClearInput}>
           <Cross />
         </button>
       ) : (

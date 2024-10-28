@@ -1,7 +1,6 @@
 import NewsPathHero from "@/components/sections/news/NewsPathHero";
 import PaginatedItems from "@/components/sections/news/PaginatedItems";
 import { getTranslations } from "next-intl/server";
-// import news from "@/data/news";
 import NewsFiltersSection from "@/components/sections/news/NewsFiltersSection";
 import { BaseURL } from "@/constants/BaseUrl";
 

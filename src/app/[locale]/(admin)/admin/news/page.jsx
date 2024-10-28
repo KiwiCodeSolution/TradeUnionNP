@@ -1,33 +1,50 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import NewsAdminPageComponent from "@/components/sections/news/NewsAdminPageComponent";
 import { BaseURL } from "@/constants/BaseUrl";
+import toast from "react-hot-toast";
+import { toggleArchiveStatus } from "@/services/newsService";
 
-async function fetchNews() {
-  const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+export default function AdminNewsPage() {
+  const [news, setNews] = useState([]);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch news");
-  }
+  const fetchNews = async () => {
+    try {
+      const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+      if (!res.ok) throw new Error("Failed to fetch news");
+      const data = await res.json();
+      setNews(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  return res.json();
-}
+  useEffect(() => {
+    fetchNews();
+  }, []);
 
-export default async function AdminNewsPage() {
-  const news = await fetchNews();
+  const handleArchiveToggle = async (slug, status) => {
+    try {
+      const updatedNews = await toggleArchiveStatus(slug, status, "<YOUR_TOKEN_HERE>");
 
-  const today = new Date();
-
-  //треба виводити новини зі статусами опубліковано та створено. ті, котрі створені, виділити окремим кольором, або ж виводити статус. крім того, зробити прозорість на новинах, які з майбутнього. тобто, в адмінці ми виводимо і новини з майбутнього, але іншим кольором.
-  //переписати функцію, що нижче! вона для клієнта!
-
-  const filteredNewsArray = news
-    .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
-    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-
-  console.log(news.filter(item => new Date(item.publishDate) >= today));
+      if (updatedNews) {
+        setNews(prevNews =>
+          prevNews.map(item =>
+            item.slug === slug ? { ...item, status: updatedNews.data.status } : item
+          )
+        );
+        toast.success(`Новина успішно ${status === "archived" ? "деархівована" : "архівована"}.`);
+      }
+    } catch (error) {
+      toast.error("Сталася помилка при зміні статусу новини.");
+      console.error("Помилка зміни статусу:", error);
+    }
+  };
 
   return (
     <main className="px-10 py-5 admin relative max-h-screen">
-      <NewsAdminPageComponent news={news} />
+      <NewsAdminPageComponent news={news} onToggleArchive={handleArchiveToggle} />
     </main>
   );
 }

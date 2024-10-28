@@ -4,14 +4,11 @@ import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icon
 import Image from "next/image";
 import Link from "next/link";
 import NoImage from "@/images/No_Image.jpg";
-import { deleteNews } from "@/services/newsService";
+import { deleteNews, toggleArchiveStatus } from "@/services/newsService";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-const NewsItem = ({ item, section }) => {
-  // console.log(new Date(item.publishDate));
-  // console.log(item);
-
+const NewsItem = ({ item, section, onToggleArchive }) => {
   const router = useRouter();
   const getMonthName = monthNumber => {
     const months = [
@@ -71,7 +68,21 @@ const NewsItem = ({ item, section }) => {
       </div>
     ));
   };
-  console.log(item.publishDate > today);
+
+  const handleArchiveStatus = async () => {
+    try {
+      const updatedNews = await toggleArchiveStatus(item.slug, item.status, "<YOUR_TOKEN_HERE>");
+      if (updatedNews) {
+        toast.success(
+          `Новина успішно ${item.status === "archived" ? "деархівована" : "архівована"}.`
+        );
+        router.replace("/uk/admin/news");
+      }
+    } catch (error) {
+      toast.error("Сталася помилка при зміні статусу новини.");
+      console.error("Помилка зміни статусу:", error);
+    }
+  };
 
   return (
     <article
@@ -95,7 +106,10 @@ const NewsItem = ({ item, section }) => {
             >
               <Edit />
             </Link>
-            <button className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center">
+            <button
+              className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
+              onClick={() => onToggleArchive(item.slug, item.status)}
+            >
               <Archive />
             </button>
             <button

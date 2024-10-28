@@ -7,11 +7,11 @@ import NewsItem from "./NewsItem";
 import { Arrow } from "@/components/icons/IconsComponents";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
-const PaginatedItems = ({ section, items }) => {
+const PaginatedItems = ({ section, items, onToggleArchive, isArchive }) => {
   const itemsPerPage = section !== "admin" ? 9 : 3;
   const router = useRouter();
   const searchParams = useSearchParams();
-  const pathname = usePathname(); // Отримуємо поточний шлях
+  const pathname = usePathname();
 
   const getSectionParams = searchParams.get("section") || "vsi_novyny";
   const currentPageFromURL = parseInt(searchParams.get("page")) || 1;
@@ -30,7 +30,6 @@ const PaginatedItems = ({ section, items }) => {
   const filterSection = sectionMap[getSectionParams] || "Всі новини";
 
   useEffect(() => {
-    // Оновлення поточної сторінки при зміні параметрів у URL
     setCurrentPage(currentPageFromURL);
   }, [currentPageFromURL]);
 
@@ -38,14 +37,15 @@ const PaginatedItems = ({ section, items }) => {
     // Перевірка та редирект на ?page=1, якщо відсутній параметр, тільки якщо ми не на адмінці
     if (!searchParams.get("page") && !pathname.includes("admin")) {
       router.replace(
-        `/uk/${section === "photo" ? "foto" : `novyny?section=${getSectionParams}`}&page=1`
+        `/uk/${
+          section === "photo" ? "foto" : `novyny?section=${getSectionParams}`
+        }&page=1&archive=${isArchive ? "true" : "false"}`
       );
     } else if (!searchParams.get("page") && pathname.includes("admin")) {
-      router.replace(`/uk/admin/news?page=1`);
+      router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
     }
-  }, [searchParams, router, section, getSectionParams, pathname]);
+  }, [searchParams, router, section, getSectionParams, pathname, isArchive]);
 
-  // Фільтруємо елементи на основі секції
   const filteredItems = items.filter(item => {
     if (filterSection === "Всі новини") return true;
     return item.sections.includes(filterSection);
@@ -59,7 +59,6 @@ const PaginatedItems = ({ section, items }) => {
   const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
 
   useEffect(() => {
-    // Оновлюємо зсув елементів при зміні сторінки
     setItemOffset(initialOffset);
   }, [initialOffset]);
 
@@ -69,7 +68,11 @@ const PaginatedItems = ({ section, items }) => {
 
     // Умовне оновлення URL залежно від того, чи ми в адмінці
     if (pathname.includes("admin")) {
-      router.push(`/uk/admin/news?page=${selectedPage}`, undefined, { shallow: true });
+      router.push(
+        `/uk/admin/news?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
+        undefined,
+        { shallow: true }
+      );
     } else {
       const newURL = `/uk/${
         section === "photo" ? "foto" : `novyny?section=${getSectionParams}`
@@ -97,7 +100,12 @@ const PaginatedItems = ({ section, items }) => {
       <div className="h-full w-full overflow-auto relative">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {currentItems.map(item => (
-            <NewsItem item={item} key={item._id} section={"admin"} />
+            <NewsItem
+              item={item}
+              key={item._id}
+              section={"admin"}
+              onToggleArchive={onToggleArchive}
+            />
           ))}
         </div>
         <div className="flex mx-auto">
@@ -107,7 +115,7 @@ const PaginatedItems = ({ section, items }) => {
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            forcePage={currentPage - 1} // Контролюємо активну сторінку
+            forcePage={currentPage - 1}
             previousLabel={previousLabel}
             renderOnZeroPageCount={null}
             containerClassName="pagination-container pagination-container_admin"
@@ -134,7 +142,7 @@ const PaginatedItems = ({ section, items }) => {
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            forcePage={currentPage - 1} // Контролюємо активну сторінку
+            forcePage={currentPage - 1}
             previousLabel={previousLabel}
             renderOnZeroPageCount={null}
             containerClassName="pagination-container"
