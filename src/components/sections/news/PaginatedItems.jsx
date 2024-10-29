@@ -8,6 +8,7 @@ import { Arrow } from "@/components/icons/IconsComponents";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
 const PaginatedItems = ({ section, items, onToggleArchive, isArchive }) => {
+  console.log(section);
   const itemsPerPage = section !== "admin" ? 9 : 3;
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -37,9 +38,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive }) => {
     // Перевірка та редирект на ?page=1, якщо відсутній параметр, тільки якщо ми не на адмінці
     if (!searchParams.get("page") && !pathname.includes("admin")) {
       router.replace(
-        `/uk/${
-          section === "photo" ? "foto" : `novyny?section=${getSectionParams}`
-        }&page=1&archive=${isArchive ? "true" : "false"}`
+        `/uk/${section === "photo" ? "foto" : `novyny?section=${getSectionParams}`}&page=1`
       );
     } else if (!searchParams.get("page") && pathname.includes("admin")) {
       router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
@@ -132,7 +131,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive }) => {
       <Wrapper styles={"pt-8 pb-[110px] relative"}>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {currentItems.map(item => (
-            <NewsItem item={item} key={item.id} section={section} />
+            <NewsItem item={item} key={item._id} section={section} />
           ))}
         </div>
         <div className="flex mx-auto">

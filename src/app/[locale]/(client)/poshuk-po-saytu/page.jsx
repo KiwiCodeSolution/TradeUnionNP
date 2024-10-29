@@ -28,7 +28,7 @@ export default function SearchPage() {
             <span className="text-red">{t(`title.0`)}</span>
             {t(`title.1`)}
           </Title>
-          <SearchPageComponent text={t(`text`)} warning={[t(`warning.0`), t(`warning.1`)]} />
+          <SearchPageComponent />
         </Wrapper>
       </BaseSection>
     </main>
