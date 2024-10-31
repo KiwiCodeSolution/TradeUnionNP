@@ -1,0 +1,31 @@
+export default function robots() {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      allow: "/",
+      disallow: "/uk/admin",
+      disallow: "/uk/admin",
+      disallow: "/uk/admin",
+      disallow: "/uk/admin",
+      disallow: "/uk/admin",
+      disallow: "/uk/admin",
+      disallow: "/uk/admin",
+      disallow: "/uk/admin",
+    },
+    // sitemap: 'https://наш-домен/sitemap.xml',
+  };
+}

@@ -6,6 +6,7 @@ import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { roboto } from "./fonts";
+import { Providers } from "@/components/Providers";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -38,15 +39,17 @@ export default async function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale} className="min-h-screen">
       <body className={`${roboto.className} min-h-screen`}>
-        <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen">
-            <Header locale={locale} />
-            {children}
-            <Footer locale={locale} />
-            <UpButton />
-          </div>
-          <div id="modal-root"></div>
-        </NextIntlClientProvider>
+        <Providers>
+          <NextIntlClientProvider messages={messages}>
+            <div className="min-h-screen">
+              <Header locale={locale} />
+              {children}
+              <Footer locale={locale} />
+              <UpButton />
+            </div>
+            <div id="modal-root"></div>
+          </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );

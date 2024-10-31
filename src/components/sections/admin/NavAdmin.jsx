@@ -4,17 +4,34 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "@/images/menu-logo.svg";
-import { useAuth } from "@/context/AuthContext";
+import axios from "axios";
+import { signOut } from "next-auth/react";
+import { BaseURL } from "@/constants/BaseUrl";
 
-const NavAdmin = () => {
+const NavAdmin = ({ username }) => {
   const pathname = usePathname();
-  const { logout } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      // Виклик на бекенд для очищення токена
+      await axios.get(`${BaseURL}auth/logout`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+
+      // Після успішного виходу, очищуємо сесію на клієнті
+      signOut({ callbackUrl: "/signin" });
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
 
   return (
     <div className="w-1/5 h-screen flex flex-col items-center gap-y-20 bg-red py-10 px-8 rounded-r-2xl">
       <div className="flex flex-col gap-y-5">
         <Image src={Logo} width={200} height={165} alt="Логотип компанії" />
-        <p className="text-lg text-white text-center italic">Вітаю, User!</p>
+        <p className="text-lg text-white text-center italic">Вітаю, {username}!</p>
       </div>
 
       <nav className="h-full flex flex-col gap-y-10 justify-center items-center">
@@ -33,7 +50,7 @@ const NavAdmin = () => {
       </nav>
       <button
         className="w-full h-20 mx-auto flex items-center justify-center border border-white text-red font-semibold text-xl bg-white rounded-md hover:bg-red hover:text-white"
-        onClick={logout}
+        onClick={handleLogout}
       >
         Вийти
       </button>

@@ -1,15 +1,44 @@
 "use client";
 
 import { Hide, Show } from "@/components/icons/IconsComponents";
-import { useAuth } from "@/context/AuthContext";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import Loader from "@/components/UI/loader/Loader";
 
 const LoginForm = () => {
-  const [isShowPassword, setIsSowPassword] = useState(false);
+  const [isShowPassword, setIsShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
-  const { login } = useAuth();
+  const [loading, setLoading] = useState(false); // Додаємо стан для лоадера
+
+  const router = useRouter();
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    if (!password || !username) {
+      setError("Всі поля потрібно заповнити");
+      return;
+    }
+
+    setLoading(true);
+    const res = await signIn("credentials", {
+      username,
+      password,
+      redirect: false,
+    });
+
+    if (res && !res.error) {
+      router.push("/admin/news");
+      setLoading(false);
+      setUsername("");
+      setPassword("");
+    } else {
+      console.log(res);
+      setError("Неправильне ім'я користувача або пароль");
+    }
+  };
 
   useEffect(() => {
     if (username || password) {
@@ -17,37 +46,22 @@ const LoginForm = () => {
     }
   }, [username, password]);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    if (!password || !username) {
-      setError("Всі поля потрібно заповнити");
-      return;
-    }
-
-    login(username, password);
-    setUsername("");
-    setPassword("");
-  };
-
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <form onSubmit={handleSubmit} className="w-2/3 mt-10 flex flex-col gap-y-10 relative">
       <div className="flex items-end justify-between">
-        <label htmlFor="login" className="">
-          Login
-        </label>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
-          id="login"
+          id="username"
           className="w-4/5 outline-none px-4 py-2 border-b border-red"
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
       </div>
       <div className="flex items-end justify-between relative">
-        <label htmlFor="password" className="">
-          Password
-        </label>
+        <label htmlFor="password">Password</label>
         <input
           type={isShowPassword ? "text" : "password"}
           id="password"
@@ -58,7 +72,7 @@ const LoginForm = () => {
         <button
           className="absolute top-1/2 -translate-y-1/2 right-2"
           type="button"
-          onClick={() => setIsSowPassword(!isShowPassword)}
+          onClick={() => setIsShowPassword(!isShowPassword)}
         >
           {isShowPassword ? <Show /> : <Hide />}
         </button>
