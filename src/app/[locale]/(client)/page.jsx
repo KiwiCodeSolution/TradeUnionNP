@@ -7,7 +7,7 @@ import Interview from "@/components/sections/interview/Interview";
 import NewsSectionHomePage from "@/components/sections/news/NewsSectionHomePage";
 import Values from "@/components/sections/numbers/ValuesHomepage";
 
-export default function ClientHome({ params }) {
+export default async function ClientHome({ params }) {
   return (
     <main className="flex flex-col relative">
       <HeroHomePage />

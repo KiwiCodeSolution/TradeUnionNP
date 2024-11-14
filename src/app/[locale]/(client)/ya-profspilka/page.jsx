@@ -5,6 +5,7 @@ import HeroITradeSection from "@/components/sections/iTradeUnion/HeroITradeSecti
 import Invite from "@/components/sections/iTradeUnion/Invite";
 import Subscription from "@/components/sections/iTradeUnion/Subscription";
 import TellUs from "@/components/sections/iTradeUnion/TellUs";
+import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
@@ -27,16 +28,28 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function TradeUnionistPage() {
+async function fetchContacts() {
+  const res = await fetch(`${BaseURL}contacts`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch contacts");
+  }
+
+  return res.json();
+}
+
+export default async function TradeUnionistPage() {
+  const contacts = await fetchContacts();
+  const [{ _id, __v, ...initialContacts }] = contacts;
   return (
     <main className="w-full">
       <HeroITradeSection />
       <Advantages />
       <ContactSection bgStyle={"bg-white"} />
-      <TellUs />
+      <TellUs contacts={initialContacts} />
       <Reviews section={"iTrade"} />
       <Invite />
-      <Subscription />
+      <Subscription contacts={initialContacts} />
     </main>
   );
 }

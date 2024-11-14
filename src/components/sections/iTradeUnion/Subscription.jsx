@@ -9,8 +9,11 @@ import Telegram from "@/images/soc-icons/telegram-color.svg";
 import Facebook from "@/images/soc-icons/facebook-color.svg";
 import Viber from "@/images/soc-icons/viber-color.svg";
 
-const Subscription = () => {
+const Subscription = ({ contacts }) => {
   const t = useTranslations("I");
+
+  const hasLinks = [contacts.telegram, contacts.viber, contacts.facebook].some(link => link);
+
   return (
     <BaseSection style={"bg-bgGrey"}>
       <Wrapper styles={"pt-8 md:pt-32 pb-10"}>
@@ -26,38 +29,47 @@ const Subscription = () => {
             />
             <div className="flex flex-col items-center md:flex-row gap-6">
               <p className="text-center md:text-left"> {t(`subscription_text`)}</p>
-              <ul className="flex gap-5 items-center">
-                <li>
-                  <a href="https://t.me/profspilka_np">
-                    <Image
-                      className="shtelegram relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
-                      width={43}
-                      height={43}
-                      src={Telegram}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://invite.viber.com/?g2=AQB5jyDD9hRH2E4T1sgP3mF5DLFT3M6rGUUWfv2%2FHB1AddnNt8Vy6o2DXH793wQk">
-                    <Image
-                      className="shviber relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
-                      width={43}
-                      height={43}
-                      src={Viber}
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/profspilka.novaposhta">
-                    <Image
-                      className="shfacebook relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
-                      width={43}
-                      height={43}
-                      src={Facebook}
-                    />
-                  </a>
-                </li>
-              </ul>
+
+              {hasLinks && (
+                <ul className="flex gap-5 items-center">
+                  {contacts.telegram && (
+                    <li>
+                      <a href={contacts.telegram} target="_blank" rel="noopener noreferrer">
+                        <Image
+                          className="shtelegram relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          width={43}
+                          height={43}
+                          src={Telegram}
+                        />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.viber && (
+                    <li>
+                      <a href={contacts.viber} target="_blank" rel="noopener noreferrer">
+                        <Image
+                          className="shviber relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          width={43}
+                          height={43}
+                          src={Viber}
+                        />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.facebook && (
+                    <li>
+                      <a href={contacts.facebook} target="_blank" rel="noopener noreferrer">
+                        <Image
+                          className="shfacebook relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          width={43}
+                          height={43}
+                          src={Facebook}
+                        />
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              )}
             </div>
           </div>
           <div className="hidden sm:block w-1/3 relative">

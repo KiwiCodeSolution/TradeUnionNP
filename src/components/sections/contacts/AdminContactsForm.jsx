@@ -1,13 +1,13 @@
 "use client";
 
+import { updateContacts } from "@/services/contactsService";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const AdminContactsForm = ({ initialContacts }) => {
   const [contacts, setContacts] = useState(initialContacts);
+  const [editMode, setEditMode] = useState(false);
 
-  const [editMode, setEditMode] = useState(false); // Стейт для режиму редагування
-
-  // Обробка зміни значення в інпуті
   const handleChange = e => {
     const { id, value } = e.target;
     setContacts(prevContacts => ({
@@ -16,32 +16,32 @@ const AdminContactsForm = ({ initialContacts }) => {
     }));
   };
 
-  // Обробка надсилання форми
   const handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch("contacts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(contacts),
-    });
 
-    if (response.ok) {
-      const updatedData = await response.json();
-      setContacts(updatedData);
-      setEditMode(false); // Вимкнути режим редагування після збереження
-    } else {
-      console.error("Помилка при збереженні змін");
+    try {
+      const res = await updateContacts(contacts, "<YOUR_TOKEN_HERE>");
+
+      if (res && res.data) {
+        const { _id, __v, ...updatedData } = res.data;
+
+        setContacts(updatedData);
+        setEditMode(false);
+        toast.success("Контакти успішно оновлено!");
+      } else {
+        throw new Error("Помилка при збереженні змін");
+      }
+    } catch (error) {
+      console.error("Помилка:", error);
+
+      if (Array.isArray(error.message)) {
+        error.message.forEach(msg => toast.error("У полі 'Пошта' має бути валідна адреса"));
+      } else {
+        toast.error("Не вдалося оновити контакти. Спробуйте знову.");
+      }
     }
   };
 
-  const handleCancel = () => {
-    setContacts(initialContacts); // Повертаємо значення до початкових
-    setEditMode(false); // Вимикаємо режим редагування
-  };
-
-  // Визначаємо, чи відображати посилання чи інпут
   const renderField = (label, id, value, isEmail = false) => {
     if (editMode) {
       return (
@@ -56,7 +56,6 @@ const AdminContactsForm = ({ initialContacts }) => {
     }
 
     if (!value) {
-      // Якщо значення порожнє, показуємо текст "Немає інформації"
       return <p className="text-gray-500">Немає інформації</p>;
     }
 
@@ -74,6 +73,11 @@ const AdminContactsForm = ({ initialContacts }) => {
       </a>
     );
   };
+
+   const handleCancel = () => {
+     setContacts(initialContacts);
+     setEditMode(false);
+   };
 
   return (
     <form className="w-full flex flex-col gap-y-10" onSubmit={handleSubmit}>
