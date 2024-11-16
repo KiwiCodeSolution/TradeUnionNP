@@ -17,26 +17,34 @@ const LoginForm = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
+
     if (!password || !username) {
       setError("Всі поля потрібно заповнити");
       return;
     }
 
     setLoading(true);
-    const res = await signIn("credentials", {
-      username,
-      password,
-      redirect: false,
-    });
 
-    if (res && !res.error) {
-      router.push("/admin/news");
+    try {
+      const res = await signIn("credentials", {
+        username,
+        password,
+        redirect: false,
+      });
+
+      if (res && !res.error) {
+        await router.push("/admin/news?page=1&archive=false");
+
+        setUsername("");
+        setPassword("");
+      } else {
+        setError("Неправильне ім'я користувача або пароль");
+      }
+    } catch (error) {
+      console.error("Помилка під час авторизації:", error);
+      setError("Сталася помилка. Спробуйте пізніше.");
+    } finally {
       setLoading(false);
-      setUsername("");
-      setPassword("");
-    } else {
-      console.log(res);
-      setError("Неправильне ім'я користувача або пароль");
     }
   };
 

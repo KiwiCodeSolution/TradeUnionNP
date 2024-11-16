@@ -103,14 +103,15 @@ const NewsForm = ({ news }) => {
         if (data) {
           resetForm();
           toast.success("Новину створено!");
-          router.replace("/uk/admin/news");
+          router.replace("/uk/admin/news?page=1&archive=false");
+          console.log("Новину створено!");
         }
       } else {
         const data = await updateNews(news.slug, newsData, "<YOUR_TOKEN_HERE>");
         if (data) {
           resetForm();
           toast.success("Новину оновлено!");
-          router.replace("/uk/admin/news");
+          router.replace("/uk/admin/news?page=1&archive=false");
         }
       }
     } catch (error) {
@@ -118,8 +119,6 @@ const NewsForm = ({ news }) => {
       console.error(`Сталася помилка при ${news ? "оновленні" : "створенні"} новини.`, error);
     }
   };
-
-
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-5 pr-4">

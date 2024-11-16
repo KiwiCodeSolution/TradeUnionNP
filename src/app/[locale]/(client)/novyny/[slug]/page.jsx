@@ -15,8 +15,8 @@ export async function generateMetadata({ params: { slug } }) {
 
   return {
     title: news.title,
-    description: news.metaTags,
-    keywords: news.metaTags,
+    description: news.metaTags.join(", "),
+    keywords: news.metaTags.join(", "),
   };
 }
 

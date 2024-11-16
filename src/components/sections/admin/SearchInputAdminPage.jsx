@@ -25,7 +25,7 @@ const SearchInputAdminPage = ({ searchValue, setSearchValue }) => {
         onFocus={() => setInputFocused(true)}
         onBlur={() => setInputFocused(false)}
       />
-      {isInputFocused ? (
+      {isInputFocused || searchValue !== "" ? (
         <button type="button" className="absolute top-0 right-3" onClick={handleClearInput}>
           <Cross />
         </button>

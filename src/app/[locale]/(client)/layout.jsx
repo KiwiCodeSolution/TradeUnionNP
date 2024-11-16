@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { roboto } from "./fonts";
 import { Providers } from "@/components/Providers";
+import { Toaster } from "react-hot-toast";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -47,6 +48,7 @@ export default async function RootLayout({ children, params: { locale } }) {
               <Footer locale={locale} />
               <UpButton />
             </div>
+            <Toaster />
             <div id="modal-root"></div>
           </NextIntlClientProvider>
         </Providers>

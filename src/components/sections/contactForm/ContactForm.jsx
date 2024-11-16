@@ -6,6 +6,8 @@ import Image from "next/image";
 import Flag from "@/images/flag.svg";
 import { regions } from "@/constants/regions";
 import Button from "@/components/UI/buttons/Buttons";
+import { joinUp } from "@/services/joinService";
+import toast from "react-hot-toast";
 
 const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, button }) => {
   const [phone, setPhone] = useState("");
@@ -26,23 +28,31 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
     setPhone("");
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    // Перевірка валідності телефону
     const numericValue = phone.replace(/\D/g, "");
     const isPhoneValid = numericValue.length === 12;
 
     if (isPhoneValid && selectedOption) {
       console.log("Selected Option:", selectedOption, "Phone:", phone);
-      setFormError("");
+      try {
+        const res = await joinUp({ firstName: selectedOption, phone });
+        console.log(res);
+        if (res) {
+          setFormError("");
 
-      // Скидання форми
-      resetForm();
+          // Скидання форми
+          resetForm();
 
-      // Відправка даних та виклик колбека
-      if (onFormSubmit) {
-        onFormSubmit();
+          if (onFormSubmit) {
+            onFormSubmit();
+          }
+
+          toast.success("Запит успішно відправлено!");
+        }
+      } catch (error) {
+        toast.error(error.message || "Сталася помилка. Спробуйте ще раз.");
       }
     } else {
       if (!isPhoneValid && !selectedOption) {

@@ -4,11 +4,9 @@ import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icon
 import Image from "next/image";
 import Link from "next/link";
 import NoImage from "@/images/No_Image.jpg";
-import { deleteNews, toggleArchiveStatus } from "@/services/newsService";
-import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-const NewsItem = ({ item, section, onToggleArchive }) => {
+const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
   const router = useRouter();
   const getMonthName = monthNumber => {
     const months = [
@@ -28,61 +26,6 @@ const NewsItem = ({ item, section, onToggleArchive }) => {
     return months[parseInt(monthNumber, 10)];
   };
   const today = new Date();
-
-  const handleDelete = async (slug, userId) => {
-    toast.custom(t => (
-      <div
-        className={`bg-white p-4 rounded shadow-lg flex flex-col ${
-          t.visible ? "animate-enter" : "animate-leave"
-        }`}
-      >
-        <p className="mb-3">Ви дійсно бажаєте видалити цей запис? </p>
-        <div className="flex justify-end gap-2">
-          <button
-            onClick={async () => {
-              try {
-                await deleteNews(slug, userId);
-                toast.success("Новину видалено!");
-                router.push("/uk/admin/news");
-                router.reload();
-              } catch (error) {
-                console.error("Error deleting news:", error);
-                if (error.message === "News not found") {
-                  toast.error("Таку новину не знайдено.");
-                } else toast.error("Щось пішло не так. Спробуйте ще раз.");
-              } finally {
-                toast.dismiss(t.id);
-              }
-            }}
-            className="bg-red text-white px-3 py-1 rounded"
-          >
-            Так
-          </button>
-          <button
-            onClick={() => toast.dismiss(t.id)}
-            className="bg-black text-white px-3 py-1 rounded"
-          >
-            Ні
-          </button>
-        </div>
-      </div>
-    ));
-  };
-
-  const handleArchiveStatus = async () => {
-    try {
-      const updatedNews = await toggleArchiveStatus(item.slug, item.status, "<YOUR_TOKEN_HERE>");
-      if (updatedNews) {
-        toast.success(
-          `Новина успішно ${item.status === "archived" ? "деархівована" : "архівована"}.`
-        );
-        router.replace("/uk/admin/news");
-      }
-    } catch (error) {
-      toast.error("Сталася помилка при зміні статусу новини.");
-      console.error("Помилка зміни статусу:", error);
-    }
-  };
 
   return (
     <article
@@ -114,7 +57,7 @@ const NewsItem = ({ item, section, onToggleArchive }) => {
             </button>
             <button
               className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
-              onClick={() => handleDelete(item.slug, "admin_Evgenija")}
+              onClick={() => onDelete(item.slug, "admin_Evgenija")}
             >
               <Trash />
             </button>
@@ -156,7 +99,7 @@ const NewsItem = ({ item, section, onToggleArchive }) => {
 
       <Link
         href={`/novyny/${item.slug}`}
-        className="w-[calc(100%-48px-12px)] md:w-[calc(100%-48px-24px)] h-full hover:shadow-xl rounded-lg overflow-hidden"
+        className="w-[calc(100%-48px-12px)] md:w-[calc(100%-48px-24px)] h-full hover:shadow-xl rounded-lg overflow-hidden relative"
         target="_blank"
       >
         <div className="rounded-lg h-64 overflow-hidden mb-4 relative">
@@ -176,8 +119,8 @@ const NewsItem = ({ item, section, onToggleArchive }) => {
           )}
 
           <h2 className="text-liteGrey font-medium text-[22px] leading-[1.3] mb-3">{item.title}</h2>
-          <p className="text-[15px] leading-[1.625] mb-5">{item.shortText}</p>
-          <div className="text-[#6366f1] flex items-center gap-x-1 mb-2">
+          <p className="text-[15px] leading-[1.625] mb-7">{item.previewText}</p>
+          <div className="absolute text-[#6366f1] flex items-center gap-x-1 left-2 bottom-0">
             <h3 className="text-[#6366f1] text-[15px] font-medium">Читати</h3>
             <ArrowNews />
           </div>

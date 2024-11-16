@@ -7,8 +7,7 @@ import NewsItem from "./NewsItem";
 import { Arrow } from "@/components/icons/IconsComponents";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
-const PaginatedItems = ({ section, items, onToggleArchive, isArchive }) => {
-  console.log(section);
+const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete }) => {
   const itemsPerPage = section !== "admin" ? 9 : 3;
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -104,6 +103,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive }) => {
               key={item._id}
               section={"admin"}
               onToggleArchive={onToggleArchive}
+              onDelete={onDelete}
             />
           ))}
         </div>

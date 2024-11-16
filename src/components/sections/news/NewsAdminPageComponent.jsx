@@ -7,7 +7,7 @@ import PaginatedItems from "@/components/sections/news/PaginatedItems";
 import AdminBaseSection from "@/components/sections/admin/AdminBaseSection";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const NewsAdminPageComponent = ({ news, onToggleArchive }) => {
+const NewsAdminPageComponent = ({ news, onToggleArchive, onDelete }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -54,6 +54,7 @@ const NewsAdminPageComponent = ({ news, onToggleArchive }) => {
           items={filteredNewsArray}
           onToggleArchive={onToggleArchive}
           isArchive={isArchive}
+          onDelete={onDelete}
         />
       </AdminBaseSection>
     </>
