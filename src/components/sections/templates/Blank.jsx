@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Bookmark from "@/images/bookmark.svg";
+import { BaseURL } from "@/constants/BaseUrl";
 
-const Blank = ({ index, title, text, file }) => {
+const Blank = ({ title, text, link }) => {
   const t = useTranslations("Forms");
   return (
     <article className="w-full bg-white rounded-2xl px-9 py-6 flex flex-col justify-between gap-y-4 relative">
@@ -17,7 +18,9 @@ const Blank = ({ index, title, text, file }) => {
       <div className="flex flex-col gap-y-4">
         {text && <p className="text-lg text-grey">{text}</p>}
         <a
-          href={file}
+          href={`${BaseURL}${link}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-lg text-red underline underline-offset-1 hover:underline-offset-4"
         >
           {t(`link`)}

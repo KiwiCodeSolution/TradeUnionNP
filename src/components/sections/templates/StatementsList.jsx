@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import statements from "@/data/statements.json";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import Blank from "./Blank";
@@ -7,6 +6,78 @@ import Title from "@/components/Title";
 
 const StatementsList = () => {
   const t = useTranslations("Forms");
+  const files = [
+    {
+      title: t(`statements.0.title`),
+      text: t(`statements.0.text`),
+      link: "files/narodzhennya.pdf",
+    },
+    {
+      title: t(`statements.1.title`),
+      text: t(`statements.1.text`),
+      link: "files/odruzhennya.pdf",
+    },
+    {
+      title: t(`statements.2.title`),
+      text: t(`statements.2.text`),
+      link: "files/ozdorovlenna-dytyny.pdf",
+    },
+    {
+      title: t(`statements.3.title`),
+      text: t(`statements.3.text`),
+      link: "files/yuviley.pdf",
+    },
+    {
+      title: t(`statements.4.title`),
+      text: t(`statements.4.text`),
+      link: "files/likuvannya-chlena-profspilki.pdf",
+    },
+    {
+      title: t(`statements.5.title`),
+      text: t(`statements.5.text`),
+      link: "files/likuvannya-rodicha.pdf",
+    },
+    {
+      title: t(`statements.6.title`),
+      text: t(`statements.6.text`),
+      link: "files/putivka.pdf",
+    },
+    {
+      title: t(`statements.7.title`),
+      text: t(`statements.7.text`),
+      link: "files/ubd.pdf",
+    },
+    {
+      title: t(`statements.8.title`),
+      text: t(`statements.8.text`),
+      link: "files/zagibel-pracivnika.pdf",
+    },
+    {
+      title: t(`statements.9.title`),
+      text: t(`statements.9.text`),
+      link: "files/pokhovannya-rodicha.pdf",
+    },
+    {
+      title: t(`statements.10.title`),
+      text: t(`statements.10.text`),
+      link: "files/poranenna.pdf",
+    },
+    {
+      title: t(`statements.11.title`),
+      text: t(`statements.11.text`),
+      link: "files/occupation.pdf",
+    },
+    {
+      title: t(`statements.12.title`),
+      text: t(`statements.12.text`),
+      link: "files/vpo.pdf",
+    },
+    {
+      title: t(`statements.13.title`),
+      text: t(`statements.13.text`),
+      link: "files/other.pdf",
+    },
+  ];
   return (
     <BaseSection style={"bg-bgGrey pt-8 md:pt-16"}>
       <Wrapper styles={"flex flex-col"}>
@@ -16,13 +87,8 @@ const StatementsList = () => {
         </Title>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {statements.map((el, index) => (
-            <Blank
-              key={t(`statements.${index}.title`)}
-              title={t(`statements.${index}.title`)}
-              text={t(`statements.${index}.text`)}
-              file={el.file}
-            />
+          {files.map((el, index) => (
+            <Blank key={el.link} link={el.link} title={el.title} text={el.text} />
           ))}
         </div>
       </Wrapper>

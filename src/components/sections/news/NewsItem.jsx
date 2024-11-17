@@ -72,16 +72,16 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
       <div className="absolute top-0 left-[88px] flex items-center ">
         {item.sections.map(el => {
           const currentLink =
-            el === "Новина"
+            el === "Новини"
               ? "/novyny"
-              : el === "Звіт"
-              ? "/novyny?section=zvit"
+              : el === "Дозвілля"
+              ? "/novyny?section=dozvilla"
               : el === "Інтерв'ю"
               ? "/novyny?section=interview"
-              : el === "Культура"
-              ? "/novyny?section=kultura"
-              : el === "Наука"
-              ? "/novyny?section=nauka"
+              : el === "Звітність"
+              ? "/novyny?section=zvitnist"
+              : el === "Стаття"
+              ? "/novyny?section=statta"
               : "/novyny";
           return (
             <Link

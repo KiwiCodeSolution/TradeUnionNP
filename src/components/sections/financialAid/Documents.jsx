@@ -5,6 +5,7 @@ import Wrapper from "@/components/Wrapper";
 import DocumentsList from "./DocumentsList";
 import Image from "next/image";
 import Arrow from "@/images/arrow_red.svg";
+import { BaseURL } from "@/constants/BaseUrl";
 
 const Documents = ({ locale }) => {
   const t = useTranslations("Financial_Aid");
@@ -21,7 +22,7 @@ const Documents = ({ locale }) => {
         t(`docs.0.points.4`),
         t(`docs.0.points.5`),
       ],
-      file: "/files/likuvannya-chlena-profspilki.pdf",
+      file: "likuvannya-chlena-profspilki.pdf",
     },
     {
       title: t(`docs.1.title`),
@@ -34,7 +35,7 @@ const Documents = ({ locale }) => {
         t(`docs.1.points.4`),
         t(`docs.1.points.5`),
       ],
-      file: "/files/likuvannya-rodicha.pdf",
+      file: "likuvannya-rodicha.pdf",
     },
     {
       title: t(`docs.2.title`),
@@ -47,7 +48,7 @@ const Documents = ({ locale }) => {
         t(`docs.2.points.4`),
         t(`docs.2.points.5`),
       ],
-      file: "/files/zagibel-pracivnika.pdf",
+      file: "zagibel-pracivnika.pdf",
     },
     {
       title: t(`docs.3.title`),
@@ -59,7 +60,7 @@ const Documents = ({ locale }) => {
         t(`docs.3.points.3`),
         t(`docs.3.points.4`),
       ],
-      file: "/files/pokhovannya-rodicha.pdf",
+      file: "pokhovannya-rodicha.pdf",
     },
     {
       title: t(`docs.4.title`),
@@ -70,7 +71,7 @@ const Documents = ({ locale }) => {
         t(`docs.4.points.2`),
         t(`docs.4.points.3`),
       ],
-      file: "/files/odruzhennya.pdf",
+      file: "odruzhennya.pdf",
     },
     {
       title: t(`docs.5.title`),
@@ -81,13 +82,13 @@ const Documents = ({ locale }) => {
         t(`docs.5.points.2`),
         t(`docs.5.points.3`),
       ],
-      file: "/files/narodzhennya.pdf",
+      file: "narodzhennya.pdf",
     },
     {
       title: t(`docs.6.title`),
       text: t(`docs.6.text`),
       points: [t(`docs.6.points.0`), t(`docs.6.points.1`), t(`docs.6.points.2`)],
-      file: "/files/yuviley.pdf",
+      file: "yuviley.pdf",
     },
     {
       title: t(`docs.7.title`),
@@ -101,7 +102,7 @@ const Documents = ({ locale }) => {
         t(`docs.7.points.5`),
         t(`docs.7.points.6`),
       ],
-      file: "/files/ozdorovlenna-dytyny.pdf",
+      file: "ozdorovlenna-dytyny.pdf",
     },
     {
       title: t(`docs.8.title`),
@@ -112,37 +113,37 @@ const Documents = ({ locale }) => {
         t(`docs.8.points.2`),
         t(`docs.8.points.3`),
       ],
-      file: "/files/ubd.pdf",
+      file: "ubd.pdf",
     },
     {
       title: t(`docs.9.title`),
       text: t(`docs.9.text`),
       points: [t(`docs.9.points.0`), t(`docs.9.points.1`), t(`docs.9.points.2`)],
-      file: "/files/putivka.pdf",
+      file: "putivka.pdf",
     },
     {
       title: t(`docs.10.title`),
       text: t(`docs.10.text`),
       points: [t(`docs.10.points.0`), t(`docs.10.points.1`), t(`docs.10.points.2`)],
-      file: "/files/poranenna.pdf",
+      file: "poranenna.pdf",
     },
     {
       title: t(`docs.11.title`),
       text: t(`docs.11.text`),
       points: [t(`docs.11.points.0`), t(`docs.11.points.1`), t(`docs.11.points.2`)],
-      file: "/files/occupation.pdf",
+      file: "occupation.pdf",
     },
     {
       title: t(`docs.12.title`),
       text: t(`docs.12.text`),
       points: [t(`docs.12.points.0`), t(`docs.12.points.0`), t(`docs.12.points.0`)],
-      file: "/files/vpo.pdf",
+      file: "vpo.pdf",
     },
     {
       title: t(`docs.13.title`),
       text: t(`docs.13.text`),
       points: [t(`docs.13.points.0`), t(`docs.13.points.1`), t(`docs.13.points.2`)],
-      file: "/files/other.pdf",
+      file: "other.pdf",
     },
   ];
   return (
@@ -160,7 +161,7 @@ const Documents = ({ locale }) => {
         />
         <div className="mx-auto mt-12">
           <a
-            href="/files/pologennya.pdf"
+            href={`${BaseURL}files/pologennya.pdf`}
             target="_blank"
             className="w-fit flex flex-row items-center gap-3 text-red text-sm uppercase font-bold mx-auto"
           >

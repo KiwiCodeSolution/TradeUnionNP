@@ -3,11 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BlogItem = ({ item }) => {
-  const dateParts = item.date.split(".");
-  const day = dateParts[0];
-  const month = dateParts[1];
-  const year = dateParts[2];
-
+  console.log(item);
+  const today = new Date();
   const getMonthName = monthNumber => {
     const months = [
       "січня",
@@ -27,13 +24,13 @@ const BlogItem = ({ item }) => {
   };
   return (
     <article className="relative w-full h-[400px] bg-white rounded-xl">
-      <Link
-        href={item.sectionLink}
-        className="absolute top-3 left-3 w-fit h-[29px] flex items-center justify-between px-2 bg-main bg-opacity-60 rounded-md"
-        target="_blank"
-      >
-        <h3 className="text-[15px] tracking-widest text-white text-opacity-80">{item.section}</h3>
-      </Link>
+      <div className="absolute top-3 left-3 w-fit h-[29px] flex items-center justify-between px-2 bg-main bg-opacity-60 rounded-md">
+        {item.sections.map(el => (
+          <h3 className="text-[15px] tracking-widest mr-1 pr-1 text-white text-opacity-80 border-r border-r-white-opacity-80 last:border-none">
+            {el}
+          </h3>
+        ))}
+      </div>
       <Link
         href={item.slug}
         className="w-full h-full flex flex-col rounded-t-xl overflow-hidden"
@@ -51,7 +48,9 @@ const BlogItem = ({ item }) => {
         <ul className="flex flex-col p-7 gap-y-6 pb-4">
           <li className="flex gap-x-2 items-center text-[15px] text-newsData">
             <Clock />
-            {day} {getMonthName(month)} {year}
+            {new Date(item.publishDate).getDate()}{" "}
+            {getMonthName(new Date(item.publishDate).getMonth())}{" "}
+            {new Date(item.publishDate).getFullYear()}
           </li>
           <li>
             <h2 className="font-bold text-[22px] leading-[1.3] mb-3 hover:underline hover:underline-offset-2 hover:text-red">

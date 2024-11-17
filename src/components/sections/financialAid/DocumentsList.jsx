@@ -5,6 +5,7 @@ import Bookmark from "@/images/bookmark.svg";
 import { useState } from "react";
 import Modal from "@/components/UI/modal/Modal";
 import ListItem from "@/components/UI/items/ListItem";
+import { BaseURL } from "@/constants/BaseUrl";
 
 const DocumentsList = ({ documents, button, link }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -40,7 +41,7 @@ const DocumentsList = ({ documents, button, link }) => {
                 {button} <span> &gt;</span>
               </button>
               <a
-                href={el.file}
+                href={`${BaseURL}files/${el.file}`}
                 target="_blank"
                 className="text-lg text-red hover:underline hover:underline-offset-2"
               >

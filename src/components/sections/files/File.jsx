@@ -1,36 +1,48 @@
-import { useEffect, useState } from "react";
+import { BaseURL } from "@/constants/BaseUrl";
+import { uploadFile } from "@/services/filesService";
+import { useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 const FileExample = ({ file }) => {
   const [newFile, setNewFile] = useState(null);
-  const [fileLink, setFileLink] = useState("");
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setFileLink(`${window.location.origin}${file.link}`);
-    }
-  }, [file.link]);
-  // const fileLink = `${window.location.origin}${file.link}`;
+  const fileLink = `${BaseURL}${file.link}`;
 
-  // Обробник зміни файлу
+  const fileInputRef = useRef(null);
+
   const handleFileChange = e => {
-    const selectedFile = e.target.files[0]; // Вибраний файл
-    console.log("Selected file:", selectedFile); // Додаємо лог для перевірки
+    const selectedFile = e.target.files[0];
     setNewFile(selectedFile);
   };
 
-  // Обробник завантаження нового файлу
-  const handleReplaceClick = () => {
-    if (newFile) {
-      console.log("Replacing with:", newFile); // Додаємо лог для перевірки
-      // onReplace(file.id, newFile);
-      setNewFile(null); // Очистити після заміни
-    }
+  const handleReplaceClick = async () => {
+    if (!newFile) return;
+
+    toast.promise(
+      (async () => {
+        const fileExtension = newFile.name.split(".").pop();
+        const renamedFile = new File([newFile], `${file.fileName}.${fileExtension}`, {
+          type: newFile.type,
+        });
+
+        const data = await uploadFile(renamedFile, "<YOUR_TOKEN_HERE>");
+
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
+
+        setNewFile(null);
+      })(),
+      {
+        loading: "Оновлення файлу...",
+        success: <b>Файл успішно оновлено!</b>,
+        error: <b>Не вдалося оновити файл.</b>,
+      }
+    );
   };
 
-  // Обробник видалення
   const handleDeleteClick = () => {
     console.log("Deleting file with id:", file.id);
-    // onDelete(file.id);
   };
 
   return (
@@ -46,10 +58,11 @@ const FileExample = ({ file }) => {
       </a>
 
       <input
+        ref={fileInputRef}
         type="file"
         onChange={handleFileChange}
         className="w-1/4"
-        accept=".pdf,.png,.jpg,.jpeg" // Формати файлів
+        accept=".pdf,.png,.jpg,.jpeg"
       />
       <button
         onClick={handleReplaceClick}
@@ -64,12 +77,12 @@ const FileExample = ({ file }) => {
         Зберегти зміни
       </button>
 
-      <button
+      {/* <button
         onClick={handleDeleteClick}
         className="px-4 py-2 bg-red text-white rounded hover:shadow-standardShadow"
       >
         Видалити
-      </button>
+      </button> */}
     </li>
   );
 };

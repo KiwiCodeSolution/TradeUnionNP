@@ -1,28 +1,33 @@
 "use client";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
-import Link from "next/link";
+import { sectionMap, sectionMapEn } from "@/constants/news_sections";
+import { Link } from "@/navigation";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const NewsFiltersSection = ({ news }) => {
+const normalizeText = text => text.replace(/’/g, "'");
+
+const NewsFiltersSection = ({ news, locale }) => {
   const searchParams = useSearchParams();
   const [sections, setSections] = useState([]);
 
+  const reverseSectionMap = map => {
+    const reversedMap = {};
+    Object.entries(map).forEach(([key, value]) => {
+      reversedMap[value] = key;
+    });
+    return reversedMap;
+  };
+
+  const reversedSectionMap = reverseSectionMap(sectionMap);
+
   useEffect(() => {
-    const allSections = news.flatMap(item => item.sections);
+    const allSections = news.flatMap(item => item.sections.map(section => normalizeText(section)));
     setSections([...new Set(allSections)]);
   }, [news]);
 
-  const getSectionParams = searchParams.get("section") || "novyny";
-
-  const sectionMap = {
-    Новина: "novyny",
-    Звіт: "zvit",
-    "Інтерв'ю": "interview",
-    Культура: "kultura",
-    Наука: "nauka",
-  };
+  const getSectionParams = normalizeText(searchParams.get("section") || "novyny");
 
   return (
     <BaseSection style={"pb-8"}>
@@ -30,12 +35,15 @@ const NewsFiltersSection = ({ news }) => {
         {sections && (
           <div className="w-full flex items-center justify-center mx-auto">
             {sections.map(el => {
-              const currentLink = sectionMap[el] ? `/novyny?section=${sectionMap[el]}` : "/novyny";
-              const isActive = sectionMap[el] === getSectionParams;
+              const currentLink = reversedSectionMap[el]
+                ? `/novyny?section=${reversedSectionMap[el]}`
+                : "/novyny";
+              const isActive = reversedSectionMap[el] === getSectionParams;
 
               return (
                 <Link
                   href={currentLink}
+                  locale={locale}
                   className={`w-full md:w-fit px-6 py-3 xl:px-10 xl:py-3 md:pt-0 md:pb-4 text-lg transition border-solid border-b-2 ${
                     isActive ? "text-red border-red" : "text-bgBlack border-main border-opacity-20"
                   }`}

@@ -6,7 +6,6 @@ import FileExample from "@/components/sections/files/File";
 import files from "@/data/admin_applications.json";
 
 export default function UpdateFilesPage() {
-  // console.log(files.find(el => el.sections === "statutory"));
   return (
     <main className="flex flex-col min-h-screen px-10 py-5">
       <TitleAdmin>Робота з файлами</TitleAdmin>

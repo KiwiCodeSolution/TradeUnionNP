@@ -6,28 +6,21 @@ import Wrapper from "@/components/Wrapper";
 import NewsItem from "./NewsItem";
 import { Arrow } from "@/components/icons/IconsComponents";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { sectionMap } from "@/constants/news_sections";
 
-const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete }) => {
+const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, locale }) => {
   const itemsPerPage = section !== "admin" ? 9 : 3;
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
   const getSectionParams = searchParams.get("section") || "vsi_novyny";
+
   const currentPageFromURL = parseInt(searchParams.get("page")) || 1;
 
   const [currentPage, setCurrentPage] = useState(currentPageFromURL);
 
-  // Логіка мапінгу секцій
-  const sectionMap = {
-    zvit: "Звіт",
-    interview: "Інтерв'ю",
-    kultura: "Культура",
-    nauka: "Наука",
-    vsi_novyny: "Всі новини",
-  };
-
-  const filterSection = sectionMap[getSectionParams] || "Всі новини";
+  const filterSection = sectionMap[getSectionParams] || "Новини";
 
   useEffect(() => {
     setCurrentPage(currentPageFromURL);
@@ -37,7 +30,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete }
     // Перевірка та редирект на ?page=1, якщо відсутній параметр, тільки якщо ми не на адмінці
     if (!searchParams.get("page") && !pathname.includes("admin")) {
       router.replace(
-        `/uk/${section === "photo" ? "foto" : `novyny?section=${getSectionParams}`}&page=1`
+        `/${locale}/${section === "photo" ? "foto" : `novyny?section=${getSectionParams}`}&page=1`
       );
     } else if (!searchParams.get("page") && pathname.includes("admin")) {
       router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
@@ -45,7 +38,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete }
   }, [searchParams, router, section, getSectionParams, pathname, isArchive]);
 
   const filteredItems = items.filter(item => {
-    if (filterSection === "Всі новини") return true;
+    if (filterSection === "Новини") return true;
     return item.sections.includes(filterSection);
   });
 
@@ -72,7 +65,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete }
         { shallow: true }
       );
     } else {
-      const newURL = `/uk/${
+      const newURL = `/${locale}/${
         section === "photo" ? "foto" : `novyny?section=${getSectionParams}`
       }&page=${selectedPage}`;
       router.push(newURL, undefined, { shallow: true });

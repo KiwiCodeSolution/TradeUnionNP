@@ -4,6 +4,7 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import Statute from "@/images/about/statut.svg";
 import Arrow from "@/images/arrow_white.svg";
+import { BaseURL } from "@/constants/BaseUrl";
 
 const StatutoryDocuments = () => {
   const t = useTranslations("About.documents");
@@ -26,7 +27,7 @@ const StatutoryDocuments = () => {
             {t(`charter.1`)}
           </h3>
           <a
-            href="/files/statut.pdf"
+            href={`${BaseURL}files/statut.pdf`}
             target="_blank"
             className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mx-auto md:ml-0"
           >
@@ -38,7 +39,7 @@ const StatutoryDocuments = () => {
             {t(`agreement.1`)}
           </h3>
           <a
-            href="/files/koldogovor.pdf"
+            href={`${BaseURL}files/koldogovor.pdf`}
             target="_blank"
             className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mx-auto md:ml-0"
           >

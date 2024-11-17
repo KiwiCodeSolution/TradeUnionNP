@@ -5,6 +5,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import { useRouter } from "next/navigation";
 import { createNews, updateNews } from "@/services/newsService";
 import toast from "react-hot-toast";
+import { NEWS_SECTIONS } from "@/constants/news_sections";
 
 const NewsForm = ({ news }) => {
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
@@ -142,7 +143,7 @@ const NewsForm = ({ news }) => {
       <div>
         <label className="block font-medium mb-2">Розділи</label>
         <div className="flex flex-wrap gap-4">
-          {["Новина", "Звіт", "Інтерв'ю", "Культура", "Наука"].map(section => (
+          {NEWS_SECTIONS.map(section => (
             <div key={section} className="custom-checkbox-container">
               <input
                 type="checkbox"

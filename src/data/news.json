@@ -1,7 +1,7 @@
 [
   {
     "id": "8917234567",
-    "date": "11.07.2024",
+    "publishDate": "11.07.2024",
     "sections": ["Новина", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/11-07-2024.jpg",
@@ -12,7 +12,7 @@
   },
   {
     "id": "5432789012",
-    "date": "08.07.2024",
+    "publishDate": "08.07.2024",
     "sections": ["Звіт", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/08-07-2024.jpg",
@@ -23,7 +23,7 @@
   },
   {
     "id": "1234567890",
-    "date": "05.07.2024",
+    "publishDate": "05.07.2024",
     "sections": ["Культура", "Новина"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/05-07-2024.jpg",
@@ -34,7 +34,7 @@
   },
   {
     "id": "9876543210",
-    "date": "03.07.2024",
+    "publishDate": "03.07.2024",
     "sections": ["Новина", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/03-07-2024.jpg",
@@ -45,7 +45,7 @@
   },
   {
     "id": "4567890123",
-    "date": "28.06.2024",
+    "publishDate": "28.06.2024",
     "sections": ["Новина", "Наука"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/28-06-2024.jpg",
@@ -56,7 +56,7 @@
   },
   {
     "id": "8901234567",
-    "date": "26.06.2024",
+    "publishDate": "26.06.2024",
     "sections": ["Інтерв'ю", "Культура"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/26-06-2024.jpg",
@@ -67,7 +67,7 @@
   },
   {
     "id": "2345678901",
-    "date": "21.06.2024",
+    "publishDate": "21.06.2024",
     "sections": ["Новина", "Звіт", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/21-06-2024.jpg",
@@ -78,7 +78,7 @@
   },
   {
     "id": "6789012345",
-    "date": "18.06.2024",
+    "publishDate": "18.06.2024",
     "sections": ["Звіт", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/18-06-2024.jpg",
@@ -89,7 +89,7 @@
   },
   {
     "id": "3456789012",
-    "date": "17.06.2024",
+    "publishDate": "17.06.2024",
     "sections": ["Новина", "Культура"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/17-06-2024.jpg",
@@ -100,7 +100,7 @@
   },
   {
     "id": "5678901234",
-    "date": "13.06.2024",
+    "publishDate": "13.06.2024",
     "sections": ["Інтерв'ю", "Культура"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/13-06-2024.jpg",
@@ -111,7 +111,7 @@
   },
   {
     "id": "5301234567",
-    "date": "10.06.2024",
+    "publishDate": "10.06.2024",
     "sections": ["Наука", "Інтерв'ю"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/10-06-2024.jpg",
@@ -122,7 +122,7 @@
   },
   {
     "id": "9656789012",
-    "date": "06.06.2024",
+    "publishDate": "06.06.2024",
     "sections": ["Наука", "Звіт"],
     "sectionLink": "/novyny",
     "titleImage": "/images/news_text_folder/06-06-2024.jpg",

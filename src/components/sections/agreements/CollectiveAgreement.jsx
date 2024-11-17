@@ -8,6 +8,7 @@ import agr_2 from "@/images/home/agr_2.svg";
 import agr_3 from "@/images/home/agr_3.svg";
 import ParallaxSection from "@/components/UI/parallax/ParallaxSection";
 import Title from "@/components/Title";
+import { BaseURL } from "@/constants/BaseUrl";
 
 const ITEMS = [
   {
@@ -40,7 +41,9 @@ const CollectiveAgreement = () => {
             <p className="text-base md:text-lg text-grey">{t(`text`)}</p>
             <a
               className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mt-5"
-              href={"/files/koldogovor.pdf"}
+              href={`${BaseURL}files/koldogovor.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {t(`button`)}
             </a>
