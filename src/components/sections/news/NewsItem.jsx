@@ -40,9 +40,9 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
 
   return (
     <article
-      className={`w-full h-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
+      className={`w-full  flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
         item.status === "created" ? "opacity-35" : ""
-      }`}
+      } ${section === "admin" ? "h-[600px]" : "h-full"}`}
     >
       <div className="w-12 h-full flex flex-col gap-y-10">
         <div className="flex flex-col">
@@ -116,7 +116,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
       >
         <div className="rounded-lg h-64 overflow-hidden mb-4 relative">
           <Image
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
             src={imageSrc}
             width={293}
             height={256}

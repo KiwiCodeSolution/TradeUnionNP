@@ -17,7 +17,7 @@ const NewsForm = ({ news, part }) => {
     title: news?.title || "",
     sections: news?.sections || [],
     metaTags: news?.metaTags.join(", ") || [],
-    status: news?.status || "created",
+    status: news?.status || "published",
     author: news?.author ?? "Пресслужба",
     publishDate: news?.publishDate
       ? new Date(news.publishDate).toISOString().split("T")[0]
@@ -64,7 +64,7 @@ const NewsForm = ({ news, part }) => {
       title: "",
       sections: [],
       metaTags: "",
-      status: "created",
+      status: "published",
       author: "",
       date: "",
       content: "",
@@ -95,7 +95,7 @@ const NewsForm = ({ news, part }) => {
       metaTags: metaTagsArray,
     };
 
-    const handleDataAction = async (type, data, slug) => {
+    const handleDataAction = async (part, data, slug) => {
       try {
         let response;
         if (!data) {
@@ -251,7 +251,7 @@ const NewsForm = ({ news, part }) => {
           value={formData.content}
           id="news-editor"
           init={{
-            height: 500,
+            height: 1000,
             menubar: true,
             language: "uk",
             plugins: [
