@@ -5,8 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 import NoImage from "@/images/No_Image.jpg";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
+  // шукаємо першу картинку у контенті
+  function extractFirstImage(content) {
+    const imgRegex = /<img\s[^>]*src="([^"]*)"/i;
+    const match = content.match(imgRegex);
+    return match ? match[1] : null;
+  }
+  const imageItemLink = extractFirstImage(item.content);
+
+  const [imageSrc, setImageSrc] = useState(imageItemLink || NoImage);
+
   const router = useRouter();
   const getMonthName = monthNumber => {
     const months = [
@@ -105,10 +116,11 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
         <div className="rounded-lg h-64 overflow-hidden mb-4 relative">
           <Image
             className="w-full h-full object-cover object-center"
-            src={item.titleImage || NoImage}
+            src={imageSrc}
             width={293}
             height={256}
             alt={`фото до новини ${item.title}`}
+            onError={() => setImageSrc(NoImage)}
           />
         </div>
         <div className="px-2 flex flex-col justify-between">

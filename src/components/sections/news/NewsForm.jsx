@@ -93,10 +93,10 @@ const NewsForm = ({ news }) => {
       metaTags: metaTagsArray,
     };
 
-    if (news) {
-      const { author, ...rest } = newsData;
-      newsData = rest;
-    }
+    // if (news) {
+    //   const { author, ...rest } = newsData;
+    //   newsData = rest;
+    // }
 
     try {
       if (!news) {
