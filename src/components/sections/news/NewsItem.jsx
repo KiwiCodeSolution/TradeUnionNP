@@ -82,18 +82,19 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
       </div>
       <div className="absolute top-0 left-[88px] flex items-center ">
         {item.sections.map(el => {
+          const path = part === "photo" ? "foto" : "novyny";
           const currentLink =
             el === "Новини"
-              ? "/novyny"
+              ? `/${path}`
               : el === "Дозвілля"
-              ? "/novyny?section=dozvilla"
-              : el === "Інтерв'ю"
-              ? "/novyny?section=interview"
+              ? `/${path}?section=dozvilla`
+              : el === "Інтерв`ю"
+              ? `/${path}?section=interview`
               : el === "Звітність"
-              ? "/novyny?section=zvitnist"
+              ? `/${path}?section=zvitnist`
               : el === "Стаття"
-              ? "/novyny?section=statta"
-              : "/novyny";
+              ? `/${path}?section=statta`
+              : `/${path}`;
           return (
             <Link
               href={currentLink}
@@ -119,7 +120,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
             src={imageSrc}
             width={293}
             height={256}
-            alt={`фото до новини ${item.title}`}
+            alt={`фото до запису ${item.title}`}
             onError={() => setImageSrc(NoImage)}
           />
         </div>

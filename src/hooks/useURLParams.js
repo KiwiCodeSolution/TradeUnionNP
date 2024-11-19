@@ -5,7 +5,7 @@ export const useURLParams = ({ locale, section, isArchive, part }) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const getSectionParams = searchParams.get("section") || "vsi_novyny";
+  const getSectionParams = searchParams.get("section") || "vse";
   const currentPageFromURL = parseInt(searchParams.get("page")) || 1;
 
   const updatePageURL = selectedPage => {
