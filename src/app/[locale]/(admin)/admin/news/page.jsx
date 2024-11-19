@@ -5,29 +5,26 @@ import NewsAdminPageComponent from "@/components/sections/news/NewsAdminPageComp
 import { BaseURL } from "@/constants/BaseUrl";
 import toast from "react-hot-toast";
 import { toggleArchiveStatus } from "@/services/newsService";
-import { deleteNews } from "@/services/newsService"; 
+import { deleteNews } from "@/services/newsService";
 
 export default function AdminNewsPage() {
   const [news, setNews] = useState([]);
-
 
   const fetchNews = async () => {
     try {
       const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
       if (!res.ok) throw new Error("Failed to fetch news");
       const data = await res.json();
-      setNews(data); 
+      setNews(data);
     } catch (error) {
       console.error(error);
       toast.error("Не вдалося завантажити новини.");
     }
   };
 
-  
   useEffect(() => {
     fetchNews();
   }, []);
-
 
   const handleArchiveToggle = async (slug, status) => {
     try {
@@ -46,7 +43,6 @@ export default function AdminNewsPage() {
     }
   };
 
-
   const handleDelete = async (slug, userId) => {
     toast.custom(t => (
       <div
@@ -59,9 +55,8 @@ export default function AdminNewsPage() {
           <button
             onClick={async () => {
               try {
-                await deleteNews(slug, userId);
                 toast.dismiss(t.id);
-
+                await deleteNews(slug, userId);
                 toast.success("Новину видалено!");
 
                 fetchNews();
@@ -80,7 +75,7 @@ export default function AdminNewsPage() {
             Так
           </button>
           <button
-            onClick={() => toast.dismiss(t.id)} 
+            onClick={() => toast.dismiss(t.id)}
             className="bg-black text-white px-3 py-1 rounded"
           >
             Ні
@@ -93,9 +88,10 @@ export default function AdminNewsPage() {
   return (
     <main className="px-10 py-5 admin relative max-h-screen">
       <NewsAdminPageComponent
-        news={news}
+        section={"news"}
+        items={news}
         onToggleArchive={handleArchiveToggle}
-        onDelete={handleDelete} 
+        onDelete={handleDelete}
       />
     </main>
   );

@@ -6,8 +6,9 @@ import { useRouter } from "next/navigation";
 import { createNews, updateNews } from "@/services/newsService";
 import toast from "react-hot-toast";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
+import { createReport, updateReport } from "@/services/photoService";
 
-const NewsForm = ({ news }) => {
+const NewsForm = ({ news, part }) => {
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
 
   const router = useRouter();
@@ -72,6 +73,8 @@ const NewsForm = ({ news }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+
+    // Валідація форми
     if (!formData.title) {
       toast.error("Поле 'Назва' є обов'язковим полем");
       return;
@@ -80,7 +83,6 @@ const NewsForm = ({ news }) => {
       toast.error("Виберіть хоча б одну категорію");
       return;
     }
-
     if (!formData.content) {
       toast.error("Контент має бути заповненим");
       return;
@@ -88,36 +90,48 @@ const NewsForm = ({ news }) => {
 
     const metaTagsArray = formData.metaTags.split(", ").map(tag => tag.trim());
 
-    let newsData = {
+    const itemData = {
       ...formData,
       metaTags: metaTagsArray,
     };
 
-    // if (news) {
-    //   const { author, ...rest } = newsData;
-    //   newsData = rest;
-    // }
+    const handleDataAction = async (type, data, slug) => {
+      try {
+        let response;
+        if (!data) {
+          response =
+            part === "news"
+              ? await createNews(itemData, "<YOUR_TOKEN_HERE>")
+              : await createReport(itemData, "<YOUR_TOKEN_HERE>");
+          toast.success(part === "news" ? "Новину створено!" : "Запис створено!");
+        } else {
+          response =
+            part === "news"
+              ? await updateNews(slug, itemData, "<YOUR_TOKEN_HERE>")
+              : await updateReport(slug, itemData, "<YOUR_TOKEN_HERE>");
+          toast.success(part === "news" ? "Новину оновлено!" : "Запис оновлено!");
+        }
 
-    try {
-      if (!news) {
-        const data = await createNews(newsData, "<YOUR_TOKEN_HERE>");
-        if (data) {
+        if (response) {
           resetForm();
-          toast.success("Новину створено!");
-          router.replace("/uk/admin/news?page=1&archive=false");
-          console.log("Новину створено!");
+          router.replace(
+            `/uk/admin/${part === "news" ? "news" : "photo-report"}?page=1&archive=false`
+          );
         }
-      } else {
-        const data = await updateNews(news.slug, newsData, "<YOUR_TOKEN_HERE>");
-        if (data) {
-          resetForm();
-          toast.success("Новину оновлено!");
-          router.replace("/uk/admin/news?page=1&archive=false");
-        }
+      } catch (error) {
+        toast.error(
+          `Сталася помилка при ${data ? "оновленні" : "створенні"} ${
+            part === "news" ? "новини" : "запису"
+          }.`
+        );
       }
-    } catch (error) {
-      toast.error(`Сталася помилка при ${news ? "оновленні" : "створенні"} новини.`);
-      console.error(`Сталася помилка при ${news ? "оновленні" : "створенні"} новини.`, error);
+    };
+
+    // Вибір обробки для новин чи фото
+    if (part === "news") {
+      handleDataAction("news", news, news?.slug);
+    } else if (part === "photo") {
+      handleDataAction("photo", news, news?.slug);
     }
   };
 
@@ -126,7 +140,7 @@ const NewsForm = ({ news }) => {
       {/* Назва новини */}
       <div>
         <label htmlFor="title" className="text-main block font-medium mb-2">
-          Назва новини
+          Назва
         </label>
         <input
           type="text"
@@ -164,7 +178,7 @@ const NewsForm = ({ news }) => {
       {/* Метатеги */}
       <div>
         <label htmlFor="metaTags" className="block font-medium mb-2">
-          Мета-теги (слова чи фрази через кому)
+          Мета-теги (слова чи фрази через кому, щонайменше 2)
         </label>
         <textarea
           id="metaTags"
@@ -321,7 +335,10 @@ const NewsForm = ({ news }) => {
 
       {/* Кнопка для відправки */}
       <button type="submit" className="px-4 py-2 bg-red text-white rounded hover:shadow-redButton">
-        {news ? "Оновити новину" : "Створити новину"}
+        {part === "news" && news && "Оновити новину"}
+        {part === "news" && !news && "Створити новину"}
+        {part === "photo" && news && "Оновити запис"}
+        {part === "photo" && !news && "Створити запис"}
       </button>
     </form>
   );

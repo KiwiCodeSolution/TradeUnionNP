@@ -6,9 +6,9 @@ export const getAllNews = async () => {
     const res = await axios.get(`${BaseURL}news`);
     return res;
   } catch (error) {
-    console.error("Сталася помилка при створенні новини.", error);
+    console.error("Сталася помилка при отриманні новин.", error);
 
-    throw new Error("Сталася помилка при створенні новини.");
+    throw new Error("Сталася помилка при отриманні новин.");
   }
 };
 
@@ -45,13 +45,11 @@ export const updateNews = async (newsId, newsData, token) => {
 
 export const toggleArchiveStatus = async (newsId, currentStatus, token) => {
   try {
-    // Визначаємо новий статус на основі поточного
     const updatedStatus = currentStatus === "archived" ? "created" : "archived";
 
-    // Виконуємо PUT-запит для оновлення тільки поля status
     const res = await axios.put(
       `${BaseURL}news/${newsId}`,
-      { status: updatedStatus }, // Надсилаємо об'єкт з новим статусом
+      { status: updatedStatus },
       {
         headers: {
           Authorization: `Bearer ${token}`,

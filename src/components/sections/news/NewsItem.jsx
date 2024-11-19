@@ -7,7 +7,7 @@ import NoImage from "@/images/No_Image.jpg";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
+const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
   // шукаємо першу картинку у контенті
   function extractFirstImage(content) {
     const imgRegex = /<img\s[^>]*src="([^"]*)"/i;
@@ -55,7 +55,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
         {section === "admin" && (
           <div className="w-full flex flex-col gap-y-3 items-center justify-between">
             <Link
-              href={`/uk/admin/news/${item._id}`}
+              href={`/uk/admin/${part === "photo" ? "photo-report" : "news"}/${item._id}`}
               className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
             >
               <Edit />
@@ -109,7 +109,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
       </div>
 
       <Link
-        href={`/novyny/${item.slug}`}
+        href={`/${part === "photo" ? "foto" : "novyny"}/${item.slug}`}
         className="w-[calc(100%-48px-12px)] md:w-[calc(100%-48px-24px)] h-full hover:shadow-xl rounded-lg overflow-hidden relative"
         target="_blank"
       >

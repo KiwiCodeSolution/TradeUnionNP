@@ -21,7 +21,7 @@ export const updateContacts = async (updateData, token) => {
 export const getContacts = async () => {
   try {
     const res = await axios.get(`${BaseURL}contacts`);
-
+    console.log(res);
     return res;
   } catch (error) {
     if (error.response && error.response.data) {

@@ -9,7 +9,7 @@ export default function CreateNewsPage() {
       <TitleAdmin>Створення новини</TitleAdmin>
       <ButtonBack path={"/uk/admin/news"} className={"absolute top-8"} />
       <AdminBaseSection>
-        <NewsForm />
+        <NewsForm part={"news"} />
       </AdminBaseSection>
     </main>
   );

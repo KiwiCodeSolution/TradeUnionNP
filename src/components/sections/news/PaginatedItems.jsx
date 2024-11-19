@@ -8,7 +8,7 @@ import { Arrow } from "@/components/icons/IconsComponents";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { sectionMap } from "@/constants/news_sections";
 
-const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, locale }) => {
+const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, locale, part }) => {
   const itemsPerPage = section !== "admin" ? 9 : 3;
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -32,8 +32,10 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
       router.replace(
         `/${locale}/${section === "photo" ? "foto" : `novyny?section=${getSectionParams}`}&page=1`
       );
-    } else if (!searchParams.get("page") && pathname.includes("admin")) {
+    } else if (!searchParams.get("page") && pathname.includes("admin") && part === "news") {
       router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
+    } else if (!searchParams.get("page") && pathname.includes("admin") && part === "photo") {
+      router.replace(`/uk/admin/photo-report?page=1&archive=${isArchive ? "true" : "false"}`);
     }
   }, [searchParams, router, section, getSectionParams, pathname, isArchive]);
 
@@ -59,11 +61,20 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
 
     // Умовне оновлення URL залежно від того, чи ми в адмінці
     if (pathname.includes("admin")) {
-      router.push(
-        `/uk/admin/news?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
-        undefined,
-        { shallow: true }
-      );
+      if (part === "news") {
+        router.push(
+          `/uk/admin/news?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
+          undefined,
+          { shallow: true }
+        );
+      }
+      if (part === "photo") {
+        router.push(
+          `/uk/admin/photo-report?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
+          undefined,
+          { shallow: true }
+        );
+      }
     } else {
       const newURL = `/${locale}/${
         section === "photo" ? "foto" : `novyny?section=${getSectionParams}`
@@ -97,6 +108,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
               section={"admin"}
               onToggleArchive={onToggleArchive}
               onDelete={onDelete}
+              part={part}
             />
           ))}
         </div>
@@ -124,7 +136,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
       <Wrapper styles={"pt-8 pb-[110px] relative"}>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {currentItems.map(item => (
-            <NewsItem item={item} key={item._id} section={section} />
+            <NewsItem item={item} key={item._id} section={section} part={part} />
           ))}
         </div>
         <div className="flex mx-auto">

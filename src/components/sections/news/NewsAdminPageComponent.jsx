@@ -7,7 +7,7 @@ import PaginatedItems from "@/components/sections/news/PaginatedItems";
 import AdminBaseSection from "@/components/sections/admin/AdminBaseSection";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const NewsAdminPageComponent = ({ news, onToggleArchive, onDelete }) => {
+const NewsAdminPageComponent = ({ items, onToggleArchive, onDelete, section }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -15,7 +15,7 @@ const NewsAdminPageComponent = ({ news, onToggleArchive, onDelete }) => {
   const [isArchive, setIsArchive] = useState(isArchiveFromURL);
   const [searchValue, setSearchValue] = useState("");
 
-  const filteredNewsArray = news
+  const filteredNewsArray = items
     .filter(item => {
       const isStatusMatch = isArchive ? item.status === "archived" : item.status !== "archived";
       const isSearchMatch =
@@ -33,17 +33,41 @@ const NewsAdminPageComponent = ({ news, onToggleArchive, onDelete }) => {
   const toggleArchive = () => {
     const newArchiveState = !isArchive;
     setIsArchive(newArchiveState);
-    router.push(`/uk/admin/news?page=1&archive=${newArchiveState ? "true" : "false"}`, undefined, {
-      shallow: true,
-    });
+    if (section === "news") {
+      router.push(
+        `/uk/admin/news?page=1&archive=${newArchiveState ? "true" : "false"}`,
+        undefined,
+        {
+          shallow: true,
+        }
+      );
+    } else {
+      router.push(
+        `/uk/admin/photo-report?page=1&archive=${newArchiveState ? "true" : "false"}`,
+        undefined,
+        {
+          shallow: true,
+        }
+      );
+    }
   };
 
   return (
     <>
-      <TitleAdmin>Новини {isArchive && <span>/ Архів</span>}</TitleAdmin>
+      <TitleAdmin>
+        {section === "news" ? (
+          <>Новини {isArchive && <span>/ Архів</span>}</>
+        ) : (
+          <>Фотозвіти {isArchive && <span>/ Архів</span>}</>
+        )}
+      </TitleAdmin>
       <AdminBaseSection>
         <PageNavBar
-          goTo={"/uk/admin/news/create-news"}
+          goTo={
+            section === "news"
+              ? "/uk/admin/news/create-news"
+              : "/uk/admin/photo-report/create-photo-report"
+          }
           toggleArchive={toggleArchive}
           isArchive={isArchive}
           searchValue={searchValue}
@@ -55,6 +79,7 @@ const NewsAdminPageComponent = ({ news, onToggleArchive, onDelete }) => {
           onToggleArchive={onToggleArchive}
           isArchive={isArchive}
           onDelete={onDelete}
+          part={section}
         />
       </AdminBaseSection>
     </>
