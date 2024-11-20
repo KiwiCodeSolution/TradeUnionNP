@@ -12,11 +12,11 @@ export default async function AdminLayout({ children }) {
   const session = await getServerSession(authConfig);
 
   return (
-    <AuthProvider>
-      <div className="w-screen h-full flex ">
-        <NavAdmin username={session.user.username} />
-        {children}
-      </div>
-    </AuthProvider>
+    // <AuthProvider>
+    <div className="w-screen h-full flex ">
+      <NavAdmin username={session.user.username} />
+      {children}
+    </div>
+    // </AuthProvider>
   );
 }

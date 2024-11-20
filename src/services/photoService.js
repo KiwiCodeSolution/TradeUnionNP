@@ -65,10 +65,13 @@ export const toggleArchiveReportStatus = async (reportId, currentStatus, token) 
   }
 };
 
-export const deleteReport = async (slug, userId) => {
+export const deleteReport = async (slug, userId, token) => {
   try {
-    const res = await fetch(`${BaseURL}gallerey/${slug}/${userId}`, {
-      method: "DELETE",
+    const res = await axios.delete(`${BaseURL}gallerey/${slug}/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
     });
 
     if (!res.ok) {

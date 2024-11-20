@@ -65,25 +65,21 @@ export const toggleArchiveStatus = async (newsId, currentStatus, token) => {
   }
 };
 
-export const deleteNews = async (slug, userId) => {
+export const deleteNews = async (slug, userId, token) => {
   try {
-    const res = await fetch(`${BaseURL}news/${slug}/${userId}`, {
-      method: "DELETE",
+    const response = await axios.delete(`${BaseURL}news/${slug}/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
     });
 
-    if (!res.ok) {
-      let errorMessage = "Сталася помилка при видаленні новини";
-      try {
-        const errorData = await res.json();
-        errorMessage = errorData.message || errorMessage;
-      } catch (e) {
-        console.error("Сталася помилка при видаленні новини", e);
-      }
-
-      throw new Error(errorMessage);
+    if (response.status !== 200) {
+      throw new Error("Сталася помилка при видаленні новини");
     }
 
-    return;
+    console.log("Новина успішно видалена");
+    return response.data;
   } catch (error) {
     console.error("Сталася помилка при видаленні новини", error);
     throw error;

@@ -3,6 +3,6 @@ export const metadata = {
   description: "АдмінПанель | Створення новини",
 };
 
-export default function CreateNewsLayout({ children }) {
+export default async function CreateNewsLayout({ children }) {
   return <div className="w-full h-full">{children}</div>;
 }

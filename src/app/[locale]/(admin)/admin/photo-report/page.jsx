@@ -5,9 +5,11 @@ import NewsAdminPageComponent from "@/components/sections/news/NewsAdminPageComp
 import { BaseURL } from "@/constants/BaseUrl";
 import toast from "react-hot-toast";
 import { deleteReport, toggleArchiveReportStatus } from "@/services/photoService";
+import useAuth from "@/hooks/useAuth";
 
 export default function AdminPhotoPage() {
   const [entries, setEntries] = useState([]);
+  const { token } = useAuth();
 
   const fetchEntries = async () => {
     try {
@@ -27,7 +29,7 @@ export default function AdminPhotoPage() {
 
   const handleArchiveToggle = async (slug, status) => {
     try {
-      const updatedEntries = await toggleArchiveReportStatus(slug, status, "<YOUR_TOKEN_HERE>");
+      const updatedEntries = await toggleArchiveReportStatus(slug, status, token);
       if (updatedEntries) {
         setEntries(prevEntries =>
           prevEntries.map(item =>
@@ -55,7 +57,7 @@ export default function AdminPhotoPage() {
             onClick={async () => {
               try {
                 toast.dismiss(t.id);
-                await deleteReport(slug, userId);
+                await deleteReport(slug, userId, token);
                 toast.success("Запис видалено!");
                 fetchEntries();
               } catch (error) {

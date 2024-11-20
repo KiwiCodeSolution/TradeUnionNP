@@ -4,27 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "@/images/menu-logo.svg";
-import axios from "axios";
 import { signOut } from "next-auth/react";
-import { BaseURL } from "@/constants/BaseUrl";
 
 const NavAdmin = ({ username }) => {
   const pathname = usePathname();
 
   const handleLogout = async () => {
-    try {
-      // Виклик на бекенд для очищення токена
-      await axios.get(`${BaseURL}auth/logout`, {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
-
-      // Після успішного виходу, очищуємо сесію на клієнті
-      signOut({ callbackUrl: "/signin" });
-    } catch (error) {
-      console.error("Logout error:", error);
-    }
+    signOut({ callbackUrl: "/signin" });
   };
 
   return (

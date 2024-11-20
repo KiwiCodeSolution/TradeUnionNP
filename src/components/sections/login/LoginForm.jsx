@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import Loader from "@/components/UI/loader/Loader";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -38,11 +39,14 @@ const LoginForm = () => {
         setUsername("");
         setPassword("");
       } else {
-        setError("Неправильне ім'я користувача або пароль");
+        toast.error(`Неправильне ім'я користувача або пароль.`);
+        // setError("Неправильне ім'я користувача або пароль");
       }
     } catch (error) {
       console.error("Помилка під час авторизації:", error);
-      setError("Сталася помилка. Спробуйте пізніше.");
+      toast.error(`Сталася помилка. Спробуйте пізніше.`);
+
+      // setError("Сталася помилка. Спробуйте пізніше.");
     } finally {
       setLoading(false);
     }

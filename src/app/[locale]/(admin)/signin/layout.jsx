@@ -7,8 +7,8 @@ export const metadata = {
 
 export default function LoginLayout({ children }) {
   return (
-    <AuthProvider>
-      <div className="w-4/5 h-full"> {children}</div>
-    </AuthProvider>
+    // <AuthProvider>
+    <div className="w-4/5 h-full"> {children}</div>
+    // </AuthProvider>
   );
 }

@@ -3,7 +3,7 @@ import { uploadFile } from "@/services/filesService";
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
 
-const FileExample = ({ file }) => {
+const FileExample = ({ file, token }) => {
   const [newFile, setNewFile] = useState(null);
 
   const fileLink = `${BaseURL}${file.link}`;
@@ -25,7 +25,7 @@ const FileExample = ({ file }) => {
           type: newFile.type,
         });
 
-        const data = await uploadFile(renamedFile, "<YOUR_TOKEN_HERE>");
+        const data = await uploadFile(renamedFile, token);
 
         if (fileInputRef.current) {
           fileInputRef.current.value = "";

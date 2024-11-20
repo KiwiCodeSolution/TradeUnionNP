@@ -6,9 +6,11 @@ import { BaseURL } from "@/constants/BaseUrl";
 import toast from "react-hot-toast";
 import { toggleArchiveStatus } from "@/services/newsService";
 import { deleteNews } from "@/services/newsService";
+import useAuth from "@/hooks/useAuth";
 
 export default function AdminNewsPage() {
   const [news, setNews] = useState([]);
+  const { token } = useAuth();
 
   const fetchNews = async () => {
     try {
@@ -28,7 +30,7 @@ export default function AdminNewsPage() {
 
   const handleArchiveToggle = async (slug, status) => {
     try {
-      const updatedNews = await toggleArchiveStatus(slug, status, "<YOUR_TOKEN_HERE>");
+      const updatedNews = await toggleArchiveStatus(slug, status, token);
       if (updatedNews) {
         setNews(prevNews =>
           prevNews.map(item =>
@@ -56,7 +58,7 @@ export default function AdminNewsPage() {
             onClick={async () => {
               try {
                 toast.dismiss(t.id);
-                await deleteNews(slug, userId);
+                await deleteNews(slug, userId, token);
                 toast.success("Новину видалено!");
 
                 fetchNews();
@@ -92,6 +94,7 @@ export default function AdminNewsPage() {
         items={news}
         onToggleArchive={handleArchiveToggle}
         onDelete={handleDelete}
+        token={token}
       />
     </main>
   );

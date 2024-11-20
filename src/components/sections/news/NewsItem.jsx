@@ -4,7 +4,7 @@ import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icon
 import Image from "next/image";
 import Link from "next/link";
 import NoImage from "@/images/No_Image.jpg";
-import { useRouter } from "next/navigation";
+
 import { useState } from "react";
 
 const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
@@ -18,7 +18,6 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
 
   const [imageSrc, setImageSrc] = useState(imageItemLink || NoImage);
 
-  const router = useRouter();
   const getMonthName = monthNumber => {
     const months = [
       "січ",

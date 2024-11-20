@@ -7,10 +7,12 @@ import { createNews, updateNews } from "@/services/newsService";
 import toast from "react-hot-toast";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
 import { createReport, updateReport } from "@/services/photoService";
+import useAuth from "@/hooks/useAuth";
 
 const NewsForm = ({ news, part }) => {
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
-
+  const { token } = useAuth();
+  console.log(token);
   const router = useRouter();
 
   const [formData, setFormData] = useState({
@@ -101,14 +103,14 @@ const NewsForm = ({ news, part }) => {
         if (!data) {
           response =
             part === "news"
-              ? await createNews(itemData, "<YOUR_TOKEN_HERE>")
-              : await createReport(itemData, "<YOUR_TOKEN_HERE>");
+              ? await createNews(itemData, token)
+              : await createReport(itemData, token);
           toast.success(part === "news" ? "Новину створено!" : "Запис створено!");
         } else {
           response =
             part === "news"
-              ? await updateNews(slug, itemData, "<YOUR_TOKEN_HERE>")
-              : await updateReport(slug, itemData, "<YOUR_TOKEN_HERE>");
+              ? await updateNews(slug, itemData, token)
+              : await updateReport(slug, itemData, token);
           toast.success(part === "news" ? "Новину оновлено!" : "Запис оновлено!");
         }
 

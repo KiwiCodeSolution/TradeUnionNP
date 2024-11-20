@@ -3,10 +3,12 @@
 import { updateContacts } from "@/services/contactsService";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import useAuth from "@/hooks/useAuth";
 
 const AdminContactsForm = ({ initialContacts }) => {
   const [contacts, setContacts] = useState(initialContacts);
   const [editMode, setEditMode] = useState(false);
+  const { token } = useAuth();
 
   const handleChange = e => {
     const { id, value } = e.target;
@@ -20,7 +22,7 @@ const AdminContactsForm = ({ initialContacts }) => {
     e.preventDefault();
 
     try {
-      const res = await updateContacts(contacts, "<YOUR_TOKEN_HERE>");
+      const res = await updateContacts(contacts, token);
 
       if (res && res.data) {
         const { _id, __v, ...updatedData } = res.data;
@@ -74,10 +76,10 @@ const AdminContactsForm = ({ initialContacts }) => {
     );
   };
 
-   const handleCancel = () => {
-     setContacts(initialContacts);
-     setEditMode(false);
-   };
+  const handleCancel = () => {
+    setContacts(initialContacts);
+    setEditMode(false);
+  };
 
   return (
     <form className="w-full flex flex-col gap-y-10" onSubmit={handleSubmit}>

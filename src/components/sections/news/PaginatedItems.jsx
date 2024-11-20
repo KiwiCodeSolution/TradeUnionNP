@@ -99,9 +99,9 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
   );
 
   return section === "admin" ? (
-    <BaseSection style="h-[90%]">
-      <div className="h-full w-full overflow-auto relative">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
+    <BaseSection style="h-[90%] ">
+      <div className="h-full w-full overflow-auto ">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6 pb-10 xl:pb-14">
           {currentItems.map(item => (
             <NewsItem
               item={item}
@@ -113,7 +113,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
             />
           ))}
         </div>
-        <div className="flex mx-auto">
+        <div className="flex mx-auto relative">
           <ReactPaginate
             breakLabel="..."
             nextLabel={nextLabel}
