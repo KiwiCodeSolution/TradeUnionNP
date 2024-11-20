@@ -30,7 +30,7 @@ const SubscriptionForm = ({ button, errorText }) => {
       const res = await subscription(data);
 
       if (res.email) {
-        toast.success("Підписку оформлено!");
+        toast.success("Запит на підписку відправлено. Перевірте пошту для підтвердження!");
       }
       setEmail("");
     } catch (error) {
