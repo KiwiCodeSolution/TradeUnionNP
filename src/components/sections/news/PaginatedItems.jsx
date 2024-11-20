@@ -137,7 +137,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
       <Wrapper styles={"pt-8 pb-[110px] relative"}>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {currentItems.map(item => (
-            <NewsItem item={item} key={item._id} part={part} />
+            <NewsItem item={item} key={item._id} part={part} locale={locale} />
           ))}
         </div>
         <div className="flex mx-auto">

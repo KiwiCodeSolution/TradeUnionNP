@@ -2,12 +2,13 @@
 
 import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icons/IconsComponents";
 import Image from "next/image";
-import Link from "next/link";
+
 import NoImage from "@/images/No_Image.jpg";
 
 import { useState } from "react";
+import { Link } from "@/navigation";
 
-const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
+const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) => {
   // шукаємо першу картинку у контенті
   function extractFirstImage(content) {
     const imgRegex = /<img\s[^>]*src="([^"]*)"/i;
@@ -112,6 +113,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part }) => {
         href={`/${part === "photo" ? "foto" : "novyny"}/${item.slug}`}
         className="w-[calc(100%-48px-12px)] md:w-[calc(100%-48px-24px)] h-full hover:shadow-xl rounded-lg overflow-hidden relative"
         target="_blank"
+        locale={locale}
       >
         <div className="rounded-lg h-64 overflow-hidden mb-4 relative">
           <Image
