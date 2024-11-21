@@ -1529,6 +1529,14 @@
   },
   "Subscription": {
     "title": "Congratulations!",
-    "text": ["The subscription to the news at the e-mail address ", " completed!"]
+    "successText": ["Subscription to the news at the e-mail address ", " completed!"],
+    "errorText": ["Subscription to news by e-mail address", " checkout failed. Please try again."],
+    "existsText": [
+      "Subscription to news by e-mail address",
+      " registration failed. This address is already in use."
+    ],
+    "confirmationSuccess": "Subscription successful",
+    "confirmationError": "Failed to subscribe. Please try again later.",
+    "confirmationExists": "This address has already been subscribed to."
   }
 }

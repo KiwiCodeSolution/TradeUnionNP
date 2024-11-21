@@ -7,14 +7,11 @@ import NoImage from "@/images/No_Image.jpg";
 
 import { useState } from "react";
 import { Link } from "@/navigation";
+import { extractFirstImage } from "@/utils/extractFirstImage";
 
 const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) => {
   // шукаємо першу картинку у контенті
-  function extractFirstImage(content) {
-    const imgRegex = /<img\s[^>]*src="([^"]*)"/i;
-    const match = content.match(imgRegex);
-    return match ? match[1] : null;
-  }
+
   const imageItemLink = extractFirstImage(item.content);
 
   const [imageSrc, setImageSrc] = useState(imageItemLink || NoImage);
@@ -40,9 +37,9 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
 
   return (
     <article
-      className={`w-full  flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
+      className={`w-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
         item.status === "created" ? "opacity-35" : ""
-      } ${section === "admin" ? "h-[600px]" : "h-full"}`}
+      } ${section === "admin" ? "h-[680px]" : "h-full"}`}
     >
       <div className="w-12 h-full flex flex-col gap-y-10">
         <div className="flex flex-col">
@@ -55,7 +52,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
         {section === "admin" && (
           <div className="w-full flex flex-col gap-y-3 items-center justify-between">
             <Link
-              href={`/uk/admin/${part === "photo" ? "photo-report" : "news"}/${item._id}`}
+              href={`/admin/${part === "photo" ? "photo-report" : "news"}/${item._id}`}
               className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
             >
               <Edit />

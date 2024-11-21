@@ -8,15 +8,14 @@ import toast from "react-hot-toast";
 const SubscriptionForm = ({ button, errorText }) => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [userName, setUserName] = useState("");
 
   const handleSubmit = async e => {
     e.preventDefault();
 
     const data = {
-      name: "name",
+      name: userName || "name",
       email,
-      subscribed: true,
-      array_subscripts: ["subscripts"],
     };
 
     if (!email) {

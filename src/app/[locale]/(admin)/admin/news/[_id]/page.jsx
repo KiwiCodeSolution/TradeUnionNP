@@ -3,8 +3,11 @@ import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import NewsForm from "@/components/sections/news/NewsForm";
 import { BaseURL } from "@/constants/BaseUrl";
 
-async function fetchNewsById() {
-  const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+async function fetchNewsById(id) {
+  const res = await fetch(`${BaseURL}news/id/${id}`, {
+    method: "GET",
+    cache: "no-store",
+  });
   if (!res.ok) {
     throw new Error("Failed to fetch the news");
   }
@@ -12,9 +15,8 @@ async function fetchNewsById() {
   return data;
 }
 
-export async function generateMetadata({ params: { id } }) {
-  const news = await fetchNewsById();
-  const currentNews = news.find(el => el._id === id);
+export async function generateMetadata({ params: { _id } }) {
+  const currentNews = await fetchNewsById(_id);
 
   return {
     title: `Редагування новини: ${currentNews.title}`,
@@ -23,9 +25,9 @@ export async function generateMetadata({ params: { id } }) {
   };
 }
 
-export default async function AdminNewsPageWithId({ params: { id } }) {
-  const news = await fetchNewsById();
-  const currentNews = news.find(el => el._id === id);
+export default async function AdminNewsPageWithId({ params: { _id } }) {
+  const currentNews = await fetchNewsById(_id);
+  console.log(currentNews);
 
   return (
     <main className="px-10 py-5 relative">

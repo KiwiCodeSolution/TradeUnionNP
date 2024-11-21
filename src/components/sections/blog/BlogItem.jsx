@@ -1,9 +1,13 @@
 import { Clock } from "@/components/icons/IconsComponents";
+import { extractFirstImage } from "@/utils/extractFirstImage";
 import Image from "next/image";
 import Link from "next/link";
+import NoImage from "@/images/No_Image.jpg";
 
-const BlogItem = ({ item }) => {
-  console.log(item);
+const BlogItem = ({ item, section }) => {
+  const imageItemLink = section === "home" ? extractFirstImage(item.content) : item.previewImg;
+  const currentImage = imageItemLink || NoImage;
+
   const today = new Date();
   const getMonthName = monthNumber => {
     const months = [
@@ -39,7 +43,7 @@ const BlogItem = ({ item }) => {
         <div className="h-[210px] overflow-hidden">
           <Image
             className="w-full h-full object-cover object-center"
-            src={item.titleImage}
+            src={currentImage}
             width={375}
             height={210}
             alt={`фото до новини ${item.title}`}

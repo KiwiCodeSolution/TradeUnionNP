@@ -1,6 +1,6 @@
 import BaseSection from "@/components/BaseSection";
 import SubscriptionPageComponent from "@/components/sections/subscription/SubscriptionPageComponent";
-import Title from "@/components/Title";
+
 import Wrapper from "@/components/Wrapper";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -27,15 +27,20 @@ export async function generateMetadata({ params: { locale } }) {
 export default function SubscriptionConfirmPage() {
   const t = useTranslations("Subscription");
 
-  const text = [t(`text.0`), t(`text.1`)];
-  console.log(text);
+  const text = {
+    title: t(`title`),
+    successText: [t(`successText.0`), t(`successText.1`)],
+    errorText: [t(`errorText.0`), t(`errorText.1`)],
+    existsText: [t(`existsText.0`), t(`existsText.1`)],
+    confirmationSuccess: t(`confirmationSuccess`),
+    confirmationError: t(`confirmationError`),
+    confirmationExists: t(`confirmationExists`),
+  };
+
   return (
     <main className="w-full">
       <BaseSection style={""}>
         <Wrapper styles={"pt-10"}>
-          <Title tag={"h1"} styles={"text-center mb-10"}>
-            {t(`title`)}
-          </Title>
           <SubscriptionPageComponent text={text} />
         </Wrapper>
       </BaseSection>

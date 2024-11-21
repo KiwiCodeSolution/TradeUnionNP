@@ -3,8 +3,8 @@ import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import NewsForm from "@/components/sections/news/NewsForm";
 import { BaseURL } from "@/constants/BaseUrl";
 
-async function fetchReportById() {
-  const res = await fetch(`${BaseURL}gallerey`, { method: "GET", cache: "no-store" });
+async function fetchReportById(id) {
+  const res = await fetch(`${BaseURL}gallerey/id/${id}`, { method: "GET", cache: "no-store" });
   if (!res.ok) {
     throw new Error("Failed to fetch the report");
   }
@@ -12,9 +12,8 @@ async function fetchReportById() {
   return data;
 }
 
-export async function generateMetadata({ params: { id } }) {
-  const report = await fetchReportById();
-  const currentReport = report.find(el => el._id === id);
+export async function generateMetadata({ params: { _id } }) {
+  const currentReport = await fetchReportById(_id);
 
   return {
     title: `Редагування запису: ${currentReport.title}`,
@@ -23,9 +22,8 @@ export async function generateMetadata({ params: { id } }) {
   };
 }
 
-export default async function AdminReportPageWithId({ params: { id } }) {
-  const report = await fetchReportById();
-  const currentReport = report.find(el => el._id === id);
+export default async function AdminReportPageWithId({ params: { _id } }) {
+  const currentReport = await fetchReportById(_id);
 
   return (
     <main className="px-10 py-5 relative">

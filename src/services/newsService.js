@@ -22,8 +22,13 @@ export const createNews = async (newsData, token) => {
     });
     return res;
   } catch (error) {
-    console.error("Сталася помилка при створенні новини.", error);
+    if (error.response && error.response.status === 409) {
+      const message = error.response.data?.message || "Новина з такою назвою вже існує.";
+      console.error("Конфлікт при створенні новини: ", message);
+      throw new Error(message);
+    }
 
+    console.error("Сталася помилка при створенні новини.", error);
     throw new Error("Сталася помилка при створенні новини.");
   }
 };
