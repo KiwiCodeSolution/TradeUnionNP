@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   images: {
     domains: ["localhost"], // Додаємо localhost до дозволених доменів
+    // domains: ["kiwicode.tech"],
   },
 };
 
