@@ -22,6 +22,12 @@ export const createReport = async (data, token) => {
     });
     return res;
   } catch (error) {
+    if (error.response && error.response.status === 409) {
+      const message = error.response.data?.message || "Запис з такою назвою вже існує.";
+      console.error("Конфлікт при створенні запису: ", message);
+      throw new Error(message);
+    }
+
     console.error("Сталася помилка при створенні фотозвіту.", error);
 
     throw new Error("Сталася помилка при створенні фотозвіту.");
@@ -74,19 +80,12 @@ export const deleteReport = async (slug, userId, token) => {
       },
     });
 
-    if (!res.ok) {
-      let errorMessage = "Сталася помилка при видаленні фотозвіту";
-      try {
-        const errorData = await res.json();
-        errorMessage = errorData.message || errorMessage;
-      } catch (e) {
-        console.error("Сталася помилка при видаленні фотозвіту", e);
-      }
-
-      throw new Error(errorMessage);
+    if (res.status !== 200) {
+      throw new Error("Сталася помилка при видаленні звіту");
     }
 
-    return;
+    console.log("Звіт успішно видалено");
+    return res.data;
   } catch (error) {
     console.error("Сталася помилка при видаленні фотозвіту", error);
     throw error;

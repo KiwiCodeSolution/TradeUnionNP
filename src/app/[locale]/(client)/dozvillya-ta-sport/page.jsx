@@ -5,7 +5,18 @@ import PrincipleRecreation from "@/components/sections/recreation/PrincipleRecre
 import RecreationActivity from "@/components/sections/recreation/RecreationActivity";
 import RecreationProjects from "@/components/sections/recreation/RecreationProjects";
 import StatuteRecreationPage from "@/components/sections/recreation/StatuteRecreationPage";
+import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
+
+async function fetchReports() {
+  const res = await fetch(`${BaseURL}gallerey`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch reports");
+  }
+
+  return res.json();
+}
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -27,7 +38,15 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function RecreationPage({ params }) {
+export default async function RecreationPage({ params }) {
+  const reports = await fetchReports();
+
+  const today = new Date();
+
+  const filteredReportsArray = reports
+    .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
+    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+
   return (
     <main className="w-full bg-bgGrey">
       <HeroRecreationPage />
@@ -36,7 +55,7 @@ export default function RecreationPage({ params }) {
       <PrincipleRecreation />
       {params.locale === "uk" && <RecreationProjects />}
       <ContactSection bgStyle={"bg-bgGrey"} />
-      {params.locale === "uk" && <PhotoReports />}
+      {params.locale === "uk" && <PhotoReports items={filteredReportsArray} />}
     </main>
   );
 }
