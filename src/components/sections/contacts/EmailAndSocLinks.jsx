@@ -55,7 +55,7 @@ const EmailAndSocLinks = ({ section, title, isMobile }) => {
           }))
         );
       } catch (err) {
-        setError("Не вдалося завантажити контакти.");
+        setError("Не вдалося завантажити контакти");
         console.error("Помилка завантаження контактів:", err);
       } finally {
         setLoading(false);

@@ -35,7 +35,6 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function NewsPage({ params: { locale } }) {
-  console.log("locale", locale);
   const news = await fetchNews();
 
   const today = new Date();
@@ -47,8 +46,8 @@ export default async function NewsPage({ params: { locale } }) {
   return (
     <main className="w-full  bg-bgGrey">
       <NewsPathHero />
-      <NewsFiltersSection news={news} locale={locale} />
-      <PaginatedItems section={"news"} items={filteredNewsArray} locale={locale} />
+      <NewsFiltersSection news={news} locale={locale} part={"novyny"} />
+      <PaginatedItems section={"news"} items={filteredNewsArray} locale={locale} part={"news"} />
     </main>
   );
 }

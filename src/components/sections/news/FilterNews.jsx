@@ -9,6 +9,7 @@ const BUTTONS = NEWS_SECTIONS;
 const FilterNews = () => {
   const [nameButton, setNameButton] = useState("Новини");
   const [news, setNews] = useState([]);
+  console.log(nameButton);
 
   useEffect(() => {
     fetchNews();
@@ -54,7 +55,7 @@ const FilterNews = () => {
         {currentNews.length > 0 ? (
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-x-10">
             {currentNews.map(el => (
-              <BlogItem key={el.title} item={el} />
+              <BlogItem key={el.title} item={el} section={"home"} />
             ))}
           </div>
         ) : (

@@ -259,10 +259,13 @@ a:hover .back {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: wh;
 }
 
 .pagination-container_admin {
-  bottom: 10px;
+  bottom: 0px;
+  /* background-color: white; */
+  padding: 5px;
 }
 
 .pagination-page {

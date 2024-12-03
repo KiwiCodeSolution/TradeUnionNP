@@ -1,5 +1,5 @@
 export const sectionMap = {
-  vsi_novyny: "Новини",
+  vse: "Новини",
   zvitnist: "Звітність",
   interview: "Інтерв`ю",
   dozvilla: "Дозвілля",
@@ -7,7 +7,7 @@ export const sectionMap = {
 };
 
 export const sectionMapEn = {
-  vsi_novyny: "All News",
+  vse: "All News",
   zvitnist: "Reports",
   interview: "Interview",
   dozvilla: "Leisure",

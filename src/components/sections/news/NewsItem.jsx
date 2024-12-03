@@ -2,23 +2,20 @@
 
 import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icons/IconsComponents";
 import Image from "next/image";
-import Link from "next/link";
-import NoImage from "@/images/No_Image.jpg";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
-const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
+import NoImage from "@/images/No_Image.jpg";
+
+import { useState } from "react";
+import { Link } from "@/navigation";
+import { extractFirstImage } from "@/utils/extractFirstImage";
+
+const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) => {
   // шукаємо першу картинку у контенті
-  function extractFirstImage(content) {
-    const imgRegex = /<img\s[^>]*src="([^"]*)"/i;
-    const match = content.match(imgRegex);
-    return match ? match[1] : null;
-  }
+
   const imageItemLink = extractFirstImage(item.content);
 
   const [imageSrc, setImageSrc] = useState(imageItemLink || NoImage);
 
-  const router = useRouter();
   const getMonthName = monthNumber => {
     const months = [
       "січ",
@@ -40,9 +37,9 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
 
   return (
     <article
-      className={`w-full h-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
+      className={`w-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
         item.status === "created" ? "opacity-35" : ""
-      }`}
+      } ${section === "admin" ? "h-[680px]" : "h-full"}`}
     >
       <div className="w-12 h-full flex flex-col gap-y-10">
         <div className="flex flex-col">
@@ -55,7 +52,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
         {section === "admin" && (
           <div className="w-full flex flex-col gap-y-3 items-center justify-between">
             <Link
-              href={`/uk/admin/news/${item._id}`}
+              href={`/admin/${part === "photo" ? "photo-report" : "news"}/${item._id}`}
               className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
             >
               <Edit />
@@ -82,18 +79,19 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
       </div>
       <div className="absolute top-0 left-[88px] flex items-center ">
         {item.sections.map(el => {
+          const path = part === "photo" ? "foto" : "novyny";
           const currentLink =
             el === "Новини"
-              ? "/novyny"
+              ? `/${path}`
               : el === "Дозвілля"
-              ? "/novyny?section=dozvilla"
-              : el === "Інтерв'ю"
-              ? "/novyny?section=interview"
+              ? `/${path}?section=dozvilla`
+              : el === "Інтерв`ю"
+              ? `/${path}?section=interview`
               : el === "Звітність"
-              ? "/novyny?section=zvitnist"
+              ? `/${path}?section=zvitnist`
               : el === "Стаття"
-              ? "/novyny?section=statta"
-              : "/novyny";
+              ? `/${path}?section=statta`
+              : `/${path}`;
           return (
             <Link
               href={currentLink}
@@ -109,17 +107,18 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete }) => {
       </div>
 
       <Link
-        href={`/novyny/${item.slug}`}
+        href={`/${part === "photo" ? "foto" : "novyny"}/${item.slug}`}
         className="w-[calc(100%-48px-12px)] md:w-[calc(100%-48px-24px)] h-full hover:shadow-xl rounded-lg overflow-hidden relative"
         target="_blank"
+        locale={locale}
       >
         <div className="rounded-lg h-64 overflow-hidden mb-4 relative">
           <Image
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
             src={imageSrc}
             width={293}
             height={256}
-            alt={`фото до новини ${item.title}`}
+            alt={`фото до запису ${item.title}`}
             onError={() => setImageSrc(NoImage)}
           />
         </div>

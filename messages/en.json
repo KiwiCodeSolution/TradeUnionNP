@@ -33,7 +33,8 @@
     "Metadata_UserAgreement_Page": "User Agreement | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_TradeUnionist_Page": "I am the Trade Union| Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Protection_Page": "Protection of labor rights | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
-    "Metadata_Appeal_Page": "Appeals | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
+    "Metadata_Appeal_Page": "Appeals | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
+    "Metadata_Subscription_Page": "News subscription | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
   },
   "HomePage": {
     "path": "Home",
@@ -1525,5 +1526,17 @@
       "Please note",
       "search is currently running in test mode. The database connection is not configured."
     ]
+  },
+  "Subscription": {
+    "title": "Congratulations!",
+    "successText": ["Subscription to the news at the e-mail address ", " completed!"],
+    "errorText": ["Subscription to news by e-mail address", " checkout failed. Please try again."],
+    "existsText": [
+      "Subscription to news by e-mail address",
+      " registration failed. This address is already in use."
+    ],
+    "confirmationSuccess": "Subscription successful",
+    "confirmationError": "Failed to subscribe. Please try again later.",
+    "confirmationExists": "This address has already been subscribed to."
   }
 }

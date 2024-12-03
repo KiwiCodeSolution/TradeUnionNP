@@ -1,22 +1,41 @@
 "use client";
 
 import Button from "@/components/UI/buttons/Buttons";
+import { subscription } from "@/services/subscriptionService";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const SubscriptionForm = ({ button, errorText }) => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [userName, setUserName] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
+
+    const data = {
+      name: userName || "name",
+      email,
+    };
+
     if (!email) {
+      toast.error(`Будь ласка, введіть ваш email.`);
       setError("Будь ласка, введіть ваш email.");
       return;
     }
-    setError("");
-    console.log("Email для підписки:", email);
 
-    setEmail("");
+    setError("");
+    try {
+      const res = await subscription(data);
+
+      if (res.email) {
+        toast.success("Запит на підписку відправлено. Перевірте пошту для підтвердження!");
+      }
+      setEmail("");
+    } catch (error) {
+      toast.error("Помилка при спробі підписки");
+      console.error("Помилка у запиті підписки:", error);
+    }
   };
 
   const handleFocus = () => {

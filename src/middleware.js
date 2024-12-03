@@ -17,6 +17,7 @@ const publicPages = [
   "/dozvillya-ta-sport",
   "/ya-profspilka",
   "/zvernennya",
+  "/subscription",
   "/signin",
 ];
 const locales = ["uk", "en"];
@@ -33,17 +34,15 @@ const authMiddleware = withAuth(
   },
   {
     callbacks: {
-      // authorized: () => console.log("start"),
-      // authorized: ({ token }) => token != null,
       authorized: async ({ req }) => {
-        console.log("start");
-
-        // Отримуємо токен або перевіряємо наявність сесії користувача
         const res = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-        console.log("res:", res);
 
         if (res?.user) {
-          // Перевіряємо, чи є дані користувача
+          const currentTime = Math.floor(Date.now() / 1000);
+          if (res.exp < currentTime) {
+            return false;
+          }
+
           console.log("User is authorized");
           return true;
         } else {
@@ -62,10 +61,11 @@ const authMiddleware = withAuth(
 export default function middleware(req) {
   const publicPathnameRegex = RegExp(
     `^(/(${locales.join("|")}))?(${publicPages
-      .flatMap(p => (p === "/" ? ["", "/"] : p))
+      .flatMap(p => (p === "/" ? ["", "/"] : [`${p}(?:/.*)?`]))
       .join("|")})/?$`,
     "i"
   );
+
   const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
 
   if (isPublicPage) {
@@ -78,7 +78,3 @@ export default function middleware(req) {
 export const config = {
   matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
-
-// export const config = {
-//   matcher: ["/((?!api|_next|.*\\..*|favicon.ico|login|admin).*)"],
-// };

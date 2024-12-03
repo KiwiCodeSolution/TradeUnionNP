@@ -4,7 +4,7 @@ import PhotoReportList from "../photo/PhotoReportList";
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import Title from "@/components/Title";
 
-const PhotoReports = () => {
+const PhotoReports = ({ items }) => {
   return (
     <BaseSection style={""}>
       <Wrapper styles={"min-h-[840px] py-16 xl:py-32"}>
@@ -12,7 +12,7 @@ const PhotoReports = () => {
           <span className="text-red">Фотозвіти</span> з культурно - <br />
           масових заходів
         </Title>
-        <PhotoReportList />
+        <PhotoReportList items={items} />
 
         <LinkButton
           view={"transparent"}

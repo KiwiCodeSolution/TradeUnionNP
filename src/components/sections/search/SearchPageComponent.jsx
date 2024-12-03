@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import SearchItem from "./SearchItem";
-
 import { inter } from "@/app/[locale]/(client)/fonts";
 import { searchNews } from "@/services/searchService";
 

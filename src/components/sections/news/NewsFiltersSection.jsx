@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const normalizeText = text => text.replace(/’/g, "'");
 
-const NewsFiltersSection = ({ news, locale }) => {
+const NewsFiltersSection = ({ news, locale, part }) => {
   const searchParams = useSearchParams();
   const [sections, setSections] = useState([]);
 
@@ -27,7 +27,9 @@ const NewsFiltersSection = ({ news, locale }) => {
     setSections([...new Set(allSections)]);
   }, [news]);
 
-  const getSectionParams = normalizeText(searchParams.get("section") || "novyny");
+  const getSectionParams = normalizeText(
+    searchParams.get("section") || (part === "novyny" ? "novyny" : "foto")
+  );
 
   return (
     <BaseSection style={"pb-8"}>
@@ -36,8 +38,8 @@ const NewsFiltersSection = ({ news, locale }) => {
           <div className="w-full flex items-center justify-center mx-auto">
             {sections.map(el => {
               const currentLink = reversedSectionMap[el]
-                ? `/novyny?section=${reversedSectionMap[el]}`
-                : "/novyny";
+                ? `/${part}?section=${reversedSectionMap[el]}`
+                : `/${part}`;
               const isActive = reversedSectionMap[el] === getSectionParams;
 
               return (

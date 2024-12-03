@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
+import { BaseURL } from "@/constants/BaseUrl";
 
 const AuthContext = createContext();
 
@@ -14,38 +15,30 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("token", token);
   };
 
-  const login = async (username, password) => {
-    //тимчасове рішення
-    generateRandomToken();
-    const token = localStorage.getItem("token");
+  // const login = async (username, password) => {
+  //   const response = await fetch(`${BaseURL}auth/login`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ username, password }),
+  //   });
 
-    if (token) {
-      localStorage.setItem("user", "Admin");
-      router.push("/uk/admin/news");
-    }
-    // const response = await fetch("/api/login", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ username, password }),
-    // });
-    // if (response.ok) {
-    //   const data = await response.json();
-    //   setUser(data.user);
-    //   localStorage.setItem("token", data.token);
-    //   router.push("/admin/news");
-    // } else {
-    //   throw new Error("Invalid login credentials");
-    // }
-  };
+  //   if (response.ok) {
+  //     const data = await response.json();
+  //     setUser(data.user);
+  //     router.push("/uk/admin/news");
+  //   } else {
+  //     throw new Error("Invalid login credentials");
+  //   }
+  // };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+  // const logout = () => {
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("user");
 
-    router.push("/uk/login");
-  };
+  //   router.push("/uk/login");
+  // };
 
-  return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>;
+  // return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);

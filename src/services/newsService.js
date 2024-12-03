@@ -6,9 +6,9 @@ export const getAllNews = async () => {
     const res = await axios.get(`${BaseURL}news`);
     return res;
   } catch (error) {
-    console.error("Сталася помилка при створенні новини.", error);
+    console.error("Сталася помилка при отриманні новин.", error);
 
-    throw new Error("Сталася помилка при створенні новини.");
+    throw new Error("Сталася помилка при отриманні новин.");
   }
 };
 
@@ -22,8 +22,13 @@ export const createNews = async (newsData, token) => {
     });
     return res;
   } catch (error) {
-    console.error("Сталася помилка при створенні новини.", error);
+    if (error.response && error.response.status === 409) {
+      const message = error.response.data?.message || "Новина з такою назвою вже існує.";
+      console.error("Конфлікт при створенні новини: ", message);
+      throw new Error(message);
+    }
 
+    console.error("Сталася помилка при створенні новини.", error);
     throw new Error("Сталася помилка при створенні новини.");
   }
 };
@@ -45,13 +50,11 @@ export const updateNews = async (newsId, newsData, token) => {
 
 export const toggleArchiveStatus = async (newsId, currentStatus, token) => {
   try {
-    // Визначаємо новий статус на основі поточного
     const updatedStatus = currentStatus === "archived" ? "created" : "archived";
 
-    // Виконуємо PUT-запит для оновлення тільки поля status
     const res = await axios.put(
       `${BaseURL}news/${newsId}`,
-      { status: updatedStatus }, // Надсилаємо об'єкт з новим статусом
+      { status: updatedStatus },
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -67,25 +70,21 @@ export const toggleArchiveStatus = async (newsId, currentStatus, token) => {
   }
 };
 
-export const deleteNews = async (slug, userId) => {
+export const deleteNews = async (slug, userId, token) => {
   try {
-    const res = await fetch(`${BaseURL}news/${slug}/${userId}`, {
-      method: "DELETE",
+    const response = await axios.delete(`${BaseURL}news/${slug}/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
     });
 
-    if (!res.ok) {
-      let errorMessage = "Сталася помилка при видаленні новини";
-      try {
-        const errorData = await res.json();
-        errorMessage = errorData.message || errorMessage;
-      } catch (e) {
-        console.error("Сталася помилка при видаленні новини", e);
-      }
-
-      throw new Error(errorMessage);
+    if (response.status !== 200) {
+      throw new Error("Сталася помилка при видаленні новини");
     }
 
-    return;
+    console.log("Новина успішно видалена");
+    return response.data;
   } catch (error) {
     console.error("Сталася помилка при видаленні новини", error);
     throw error;

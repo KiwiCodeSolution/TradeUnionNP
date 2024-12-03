@@ -4,8 +4,11 @@ import AdminBaseSection from "@/components/sections/admin/AdminBaseSection";
 import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import FileExample from "@/components/sections/files/File";
 import files from "@/data/admin_applications.json";
+import useAuth from "@/hooks/useAuth";
 
 export default function UpdateFilesPage() {
+  const { token } = useAuth();
+
   return (
     <main className="flex flex-col min-h-screen px-10 py-5">
       <TitleAdmin>Робота з файлами</TitleAdmin>
@@ -14,15 +17,15 @@ export default function UpdateFilesPage() {
         {files
           .filter(el => el.sections === "statutory")
           .map(el => (
-            <FileExample key={el.id} file={el} />
+            <FileExample key={el.id} file={el} token={token} />
           ))}
 
         <h2 className="text-center text-3xl font-bold my-5">Заяви</h2>
         {files
           .filter(el => el.sections === "application")
-          .sort((a, b) => a.name.localeCompare(b.name)) // Додаємо сортування
+          .sort((a, b) => a.name.localeCompare(b.name))
           .map(el => (
-            <FileExample key={el.id} file={el} />
+            <FileExample key={el.id} file={el} token={token} />
           ))}
       </AdminBaseSection>
     </main>

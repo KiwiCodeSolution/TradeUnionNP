@@ -8,13 +8,13 @@ import { Arrow } from "@/components/icons/IconsComponents";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { sectionMap } from "@/constants/news_sections";
 
-const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, locale }) => {
+const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, locale, part }) => {
   const itemsPerPage = section !== "admin" ? 9 : 3;
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const getSectionParams = searchParams.get("section") || "vsi_novyny";
+  const getSectionParams = searchParams.get("section") || "vse";
 
   const currentPageFromURL = parseInt(searchParams.get("page")) || 1;
 
@@ -29,11 +29,12 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
   useEffect(() => {
     // Перевірка та редирект на ?page=1, якщо відсутній параметр, тільки якщо ми не на адмінці
     if (!searchParams.get("page") && !pathname.includes("admin")) {
-      router.replace(
-        `/${locale}/${section === "photo" ? "foto" : `novyny?section=${getSectionParams}`}&page=1`
-      );
-    } else if (!searchParams.get("page") && pathname.includes("admin")) {
+      const path = section === "photo" ? "foto" : "novyny";
+      router.replace(`/${locale}/${path}?section=${getSectionParams}&page=1`);
+    } else if (!searchParams.get("page") && pathname.includes("admin") && part === "news") {
       router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
+    } else if (!searchParams.get("page") && pathname.includes("admin") && part === "photo") {
+      router.replace(`/uk/admin/photo-report?page=1&archive=${isArchive ? "true" : "false"}`);
     }
   }, [searchParams, router, section, getSectionParams, pathname, isArchive]);
 
@@ -59,14 +60,25 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
 
     // Умовне оновлення URL залежно від того, чи ми в адмінці
     if (pathname.includes("admin")) {
-      router.push(
-        `/uk/admin/news?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
-        undefined,
-        { shallow: true }
-      );
+      if (part === "news") {
+        router.push(
+          `/uk/admin/news?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
+          undefined,
+          { shallow: true }
+        );
+      }
+      if (part === "photo") {
+        router.push(
+          `/uk/admin/photo-report?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
+          undefined,
+          { shallow: true }
+        );
+      }
     } else {
       const newURL = `/${locale}/${
-        section === "photo" ? "foto" : `novyny?section=${getSectionParams}`
+        section === "photo"
+          ? `foto?section=${getSectionParams}`
+          : `novyny?section=${getSectionParams}`
       }&page=${selectedPage}`;
       router.push(newURL, undefined, { shallow: true });
     }
@@ -87,9 +99,9 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
   );
 
   return section === "admin" ? (
-    <BaseSection style="h-[90%]">
-      <div className="h-full w-full overflow-auto relative">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
+    <BaseSection style="h-[90%] ">
+      <div className="h-full w-full overflow-auto ">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6 pb-10 xl:pb-14">
           {currentItems.map(item => (
             <NewsItem
               item={item}
@@ -97,10 +109,11 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
               section={"admin"}
               onToggleArchive={onToggleArchive}
               onDelete={onDelete}
+              part={part}
             />
           ))}
         </div>
-        <div className="flex mx-auto">
+        <div className="flex mx-auto relative">
           <ReactPaginate
             breakLabel="..."
             nextLabel={nextLabel}
@@ -124,7 +137,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
       <Wrapper styles={"pt-8 pb-[110px] relative"}>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {currentItems.map(item => (
-            <NewsItem item={item} key={item._id} section={section} />
+            <NewsItem item={item} key={item._id} part={part} locale={locale} />
           ))}
         </div>
         <div className="flex mx-auto">

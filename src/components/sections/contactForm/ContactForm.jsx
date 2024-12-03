@@ -35,14 +35,11 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
     const isPhoneValid = numericValue.length === 12;
 
     if (isPhoneValid && selectedOption) {
-      console.log("Selected Option:", selectedOption, "Phone:", phone);
       try {
-        const res = await joinUp({ firstName: selectedOption, phone });
-        console.log(res);
+        const res = await joinUp({ region: selectedOption, phone });
+
         if (res) {
           setFormError("");
-
-          // Скидання форми
           resetForm();
 
           if (onFormSubmit) {
