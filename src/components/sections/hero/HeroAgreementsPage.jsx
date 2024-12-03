@@ -8,6 +8,7 @@ import BookMark from "@/images/agreement/bookmark-logo.svg";
 import Arrow from "@/images/arrow_white.svg";
 import Title from "@/components/Title";
 import { BaseURL } from "@/constants/BaseUrl";
+import FileButton from "@/components/UI/buttons/FileButton";
 
 const HeroAgreementsPage = () => {
   const t = useTranslations("Collective_labour_agreement");
@@ -63,20 +64,7 @@ const HeroAgreementsPage = () => {
             alt="зображення анкети чи бланку договору та руки із ручкою"
             className="hidden md:block w-[320px] xl:w-[468px] right-9 absolute bottom-0 xl:right-16"
           />
-          <a
-            href={`${BaseURL}files/koldogovor.pdf`}
-            target="_blank"
-            className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 mt-8 flex items-center justify-center mx-auto md:ml-0"
-          >
-            {t(`hero_button`)}
-            <Image
-              src={Arrow}
-              width={30}
-              height={30}
-              alt="зображення червоної іконки-стрілочки вправо на білому фоні"
-              className="arrow-icon"
-            />
-          </a>
+          <FileButton name={t(`hero_button`)} link={`koldogovor.pdf`} />
         </div>
       </Wrapper>
     </BaseSection>

@@ -1,4 +1,3 @@
-import BaseSection from "@/components/BaseSection";
 import PathPage from "@/components/PathPage";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
@@ -7,7 +6,7 @@ import Image from "next/image";
 
 const HealthHero = () => {
   return (
-    <BaseSection style={""}>
+    <section className="w-full relative">
       <Wrapper styles={"flex flex-col"}>
         <PathPage endPath={"Оздоровлення"} />
         <div className="flex flex-col md:flex-row gap-[60px]">
@@ -33,18 +32,18 @@ const HealthHero = () => {
               </p>
             </div>
           </div>
-          <div className="w-full sm:w-2/5 md:w-3/5 md:my-auto">
+          <div className="w-full sm:w-2/5 md:w-3/5 md:my-auto ">
             <Image
               src={HealthImage}
               width={825}
               height={520}
               alt="Зображення Дівчини у капелюсі, що тримає на руках хлопчика, та квитки."
-              className="-mb-14"
+              className="-bottom-8 right-32 absolute z-[2]"
             />
           </div>
         </div>
       </Wrapper>
-    </BaseSection>
+    </section>
   );
 };
 

@@ -7,7 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        "health-gradient": "linear-gradient(180deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 100%)",
+      },
       colors: {
         main: "#222222",
         grey: "#666666",

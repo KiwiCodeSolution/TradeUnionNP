@@ -1097,6 +1097,7 @@
       {
         "title": "Health improvement of a child and recreation",
         "text": "from UAH 1500 to UAH 3000",
+        "health_text": "up to UAH 3000",
         "points": [
           "Statement of a member of the Trade Union;",
           "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
@@ -1110,6 +1111,7 @@
       {
         "title": "War veterans",
         "text": "from 1250 to 2500 UAH (payment is made annually in October)",
+        "health_text": "up to UAH 2500",
         "points": [
           "Statement of a member of the Trade Union;",
           "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
@@ -1129,6 +1131,7 @@
       {
         "title": "To the mobilized wounded trade unionists",
         "text": "from UAH 1500 to UAH 3000",
+        "health_text": "up to UAH 3000",
         "points": [
           "a copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
           "a copy of the certificate on the circumstances of the injury/injury;",
@@ -1538,5 +1541,8 @@
     "confirmationSuccess": "Subscription successful",
     "confirmationError": "Failed to subscribe. Please try again later.",
     "confirmationExists": "This address has already been subscribed to."
+  },
+  "Health": {
+    "section": "Documents required"
   }
 }

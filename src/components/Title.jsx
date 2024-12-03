@@ -8,16 +8,18 @@ const Title = ({ children, styles, tag }) => {
         <h1
           className={`${currentStyle} ${inter.className} text-[36px] md:text-5xl leading-[1.2] md:leading-[1.25] font-extrabold`}
         >
-          {children}{" "}
+          {children}
         </h1>
       ) : tag === "h2" ? (
         <h2
           className={`${currentStyle} ${inter.className} text-[34px] md:text-[46px] leading-[1.2] font-extrabold`}
         >
-          {children}{" "}
+          {children}
         </h2>
-      ) : (
+      ) : tag === "h3" ? (
         <h3 className={`${currentStyle} ${inter.className} text-4xl`}>{children} </h3>
+      ) : (
+        <h4 className={`${currentStyle} ${inter.className} text-3xl font-extrabold`}>{children}</h4>
       )}
     </>
   );
