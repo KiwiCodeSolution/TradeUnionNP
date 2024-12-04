@@ -1,3 +1,4 @@
+import Places from "@/components/sections/health/Places";
 import ConditionsHealth from "@/components/sections/health/ConditionsHealth";
 import HealthHero from "@/components/sections/health/HealthHero";
 import Quantity from "@/components/sections/health/Quantity";
@@ -27,6 +28,7 @@ export default function HealthImprovementPage() {
       <ConditionsHealth />
       <TemplateHealthSection />
       <Quantity />
+      <Places />
     </main>
   );
 }
