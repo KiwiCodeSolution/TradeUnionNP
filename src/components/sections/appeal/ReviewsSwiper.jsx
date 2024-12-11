@@ -50,6 +50,7 @@ const ReviewsSwiper = ({ reviews }) => {
                 width={58}
                 height={59}
                 className="absolute -bottom-8 right-8 z-[30]"
+                alt="Зображення білого трикутника, частинка фонового зображення"
               />
             </article>
           </SwiperSlide>

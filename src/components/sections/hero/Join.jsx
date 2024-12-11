@@ -18,7 +18,7 @@ const Join = ({ title, confirmModalTitle, confirmModalText, modalTitle }) => {
 
   return (
     <>
-      <Button view="red" clickFn={() => setIsOpenModal(true)} style={"mt-9 mb-16 "}>
+      <Button view="red" clickFn={() => setIsOpenModal(true)} style={"mt-9 mb-16"}>
         {title}
         <Image
           src={Arrow}
@@ -34,7 +34,7 @@ const Join = ({ title, confirmModalTitle, confirmModalText, modalTitle }) => {
             {modalTitle[0]} <span className="text-red">{modalTitle[1]}</span> <br />
             {modalTitle[2]}
           </h3>
-          <ContactForm onFormSubmit={handleFormSubmit} section="modal" />
+          <ContactForm onFormSubmit={handleFormSubmit} section="modal" button={title} />
         </div>
       </Modal>
       <Modal onClose={() => setIsOpenConfirmModal(false)} isOpen={isOpenConfirmModal}>

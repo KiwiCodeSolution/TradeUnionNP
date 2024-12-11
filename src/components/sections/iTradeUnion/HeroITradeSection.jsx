@@ -19,7 +19,7 @@ const ITEMS = [
     text: "Профспілка — це",
     text_accent: "матеріальна допомога",
     image: <Blanc />,
-    link: "/materialna-dopomoha",
+    link: "/materialna-dopomoga",
   },
   {
     text: "Профспілка — це",

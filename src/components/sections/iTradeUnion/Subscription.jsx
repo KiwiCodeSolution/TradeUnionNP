@@ -40,6 +40,7 @@ const Subscription = ({ contacts }) => {
                           width={43}
                           height={43}
                           src={Telegram}
+                          alt="зображення логотипу Телеграм"
                         />
                       </a>
                     </li>
@@ -52,6 +53,7 @@ const Subscription = ({ contacts }) => {
                           width={43}
                           height={43}
                           src={Viber}
+                          alt="зображення логотипу Viber"
                         />
                       </a>
                     </li>
@@ -64,6 +66,7 @@ const Subscription = ({ contacts }) => {
                           width={43}
                           height={43}
                           src={Facebook}
+                          alt="зображення логотипу Facebook"
                         />
                       </a>
                     </li>

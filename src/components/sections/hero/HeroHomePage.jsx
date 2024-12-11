@@ -20,6 +20,8 @@ const HeroHomePage = () => {
     t(`confirmModalText.2`),
   ];
 
+  console.log(t(`title`));
+
   return (
     <BaseSection style="bg-bgGrey h-fit xl:h-[628px]">
       <Wrapper styles={"flex flex-col md:flex-row"}>

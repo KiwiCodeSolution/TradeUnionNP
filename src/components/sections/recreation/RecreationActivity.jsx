@@ -30,6 +30,7 @@ const RecreationActivity = () => {
                   width={85}
                   height={85}
                   className="absolute bottom-0 right-1/2 transform translate-x-1/2 z-0"
+                  alt="зображення малюнку до відповідної активності"
                 />
                 <div className="bg-gradient-to-b from-transparent to-white absolute top-0 bottom-0 right-0 left-0 z-10" />
                 <p className="text-red text-[30px] md:text-[50px] font-bold text-center leading-[42px] z-[20]">

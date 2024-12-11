@@ -36,6 +36,7 @@ const RegionalOfficePageItem = ({ office }) => {
             width={900}
             height={400}
             className="mx-auto h-full object-cover opacity-50"
+            alt={`фото співробітників ${office.region}`}
           />
         </div>
         <div className="w-fit h-full absolute top-0 left-1 md:left-0 md:right-1/2 px-3 py-8 md:p-12 flex flex-col gap-y-1 justify-end">

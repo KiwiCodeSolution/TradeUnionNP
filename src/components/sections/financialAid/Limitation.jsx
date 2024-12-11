@@ -42,6 +42,7 @@ const Limitation = () => {
           width={592}
           height={518}
           className="w-full md:w-1/2 relative order-1 md:order-2"
+          alt="зображення календаря"
         />
       </Wrapper>
     </BaseSection>

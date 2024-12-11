@@ -25,6 +25,7 @@ const Invite = () => {
           <Image
             className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"
             src={BgImage}
+            alt="зображення сірої стрілочки-логотипу"
           />
           <Image
             className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
@@ -37,13 +38,21 @@ const Invite = () => {
             alt="схематичний малюнок звивистого шляху пунктирною лінією"
           />
           <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-1 md:order-1">
-            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={First} />
+            <Image
+              className="w-20 h-[100px] md:w-28 md:h-auto"
+              src={First}
+              alt="малюнок розкритої коробки та цифра 1 червоного кольору"
+            />
             <p className="md:text-center">
               <strong>{t(`first.0`)}</strong> {t(`first.1`)}
             </p>
           </div>
           <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-2 md:order-4">
-            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Second} />
+            <Image
+              className="w-20 h-[100px] md:w-28 md:h-auto"
+              src={Second}
+              alt="малюнок закритої коробки та цифра 2 червоного кольору"
+            />
             <p className="md:text-center">
               {t(`second.0`)} <strong>{t(`second.1`)}</strong>{" "}
               <a className="text-red underline" href="">
@@ -52,7 +61,11 @@ const Invite = () => {
             </p>
           </div>
           <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-3 md:order-2">
-            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Third} />
+            <Image
+              className="w-20 h-[100px] md:w-28 md:h-auto"
+              src={Third}
+              alt="малюнок закритої коробки та цифра 3 червоного кольору"
+            />
             <p className="md:text-center">
               <strong>{t(`third.0`)}</strong> {t(`third.1`)}
               <br />(
@@ -63,7 +76,11 @@ const Invite = () => {
             </p>
           </div>
           <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-4 md:order-5">
-            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Fourth} />
+            <Image
+              className="w-20 h-[100px] md:w-28 md:h-auto"
+              src={Fourth}
+              alt="малюнок закритої та запечатаної коробки та цифра 4 червоного кольору"
+            />
             <p className="md:text-center">
               <strong>{t(`fourth.0`)} </strong> {t(`fourth.1`)}{" "}
               <a className="text-red underline" href="mailto:help@profspilka.org">
@@ -73,7 +90,11 @@ const Invite = () => {
             </p>
           </div>
           <div className="w-full md:w-1/4 flex md:flex-col justify-center items-center gap-4 relative z-30 order-5 md:order-3">
-            <Image className="w-20 h-[100px] md:w-28 md:h-auto" src={Fifth} />
+            <Image
+              className="w-20 h-[100px] md:w-28 md:h-auto"
+              src={Fifth}
+              alt="малюнок коробки, загорнутої у подарунковий папір червоного кольору з жовтим бантом та цифра 5 червоного кольору"
+            />
             <p className="md:text-center">
               <strong>{t(`fifth.0`)}</strong> {t(`fifth.1`)}
             </p>

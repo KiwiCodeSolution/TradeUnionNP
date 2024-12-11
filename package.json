@@ -17,6 +17,8 @@
     "import": "^0.0.6",
     "isomorphic-dompurify": "^2.16.0",
     "jsdom": "^25.0.1",
+    "mobx": "^6.13.5",
+    "mobx-react-lite": "^4.0.7",
     "next": "14.2.3",
     "next-auth": "^4.24.10",
     "next-intl": "^3.17.1",
