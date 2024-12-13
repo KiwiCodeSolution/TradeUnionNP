@@ -7,7 +7,8 @@ import QuantityImg from "@/images/health/quantity.png";
 const Quantity = () => {
   return (
     <BaseSection style={"py-14 "}>
-      <Wrapper>
+      <div className="w-full h-[796px] bg-health-gradient absolute -top-[268px] left-0 z-0" />
+      <Wrapper styles={"z-[2] relative"}>
         <Title tag={"h2"} styles={"text-center"}>
           Кількість <span className="text-red">наданих путівок</span>
         </Title>

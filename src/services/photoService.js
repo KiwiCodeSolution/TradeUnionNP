@@ -1,6 +1,16 @@
 import axios from "axios";
 import { BaseURL } from "@/constants/BaseUrl";
 
+export async function fetchReports() {
+  const res = await fetch(`${BaseURL}reports`, { method: "GET", cache: "no-store" });
+  console.log(res);
+  if (!res.ok) {
+    throw new Error("Failed to fetch reports");
+  }
+
+  return res.json();
+}
+
 export const getAllReports = async () => {
   try {
     const res = await axios.get(`${BaseURL}gallerey`);

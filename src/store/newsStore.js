@@ -1,32 +1,118 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
+import axios from "axios";
+import { BaseURL } from "@/constants/BaseUrl";
 
 class NewsStore {
   news = [];
+  isLoading = false;
+  error = null;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setNews(news) {
-    this.news = news;
+  async fetchAllNews() {
+    this.isLoading = true;
+    this.error = null;
+
+    try {
+      const res = await axios.get(`${BaseURL}news`);
+      runInAction(() => {
+        this.news = res.data;
+      });
+    } catch (error) {
+      runInAction(() => {
+        this.error = "Сталася помилка при отриманні новин.";
+      });
+      console.error("Сталася помилка при отриманні новин.", error);
+    } finally {
+      runInAction(() => {
+        this.isLoading = false;
+      });
+    }
   }
 
-  addNewsItem(newsItem) {
-    this.news.push(newsItem);
+  async createNews(newsData, token) {
+    try {
+      const res = await axios.post(`${BaseURL}news`, newsData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      runInAction(() => {
+        this.news.push(res.data); // Додаємо новину у список
+      });
+    } catch (error) {
+      if (error.response?.status === 409) {
+        throw new Error("Новина з такою назвою вже існує.");
+      }
+      console.error("Сталася помилка при створенні новини.", error);
+      throw new Error("Сталася помилка при створенні новини.");
+    }
+  }
+
+  async updateNews(newsId, newsData, token) {
+    try {
+      const res = await axios.put(`${BaseURL}news/${newsId}`, newsData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      runInAction(() => {
+        const index = this.news.findIndex(n => n.id === newsId);
+        if (index !== -1) {
+          this.news[index] = res.data; // Оновлюємо новину
+        }
+      });
+    } catch (error) {
+      console.error("Сталася помилка при оновленні новини.", error);
+      throw new Error("Сталася помилка при оновленні новини.");
+    }
+  }
+
+  async toggleArchiveStatus(newsId, currentStatus, token) {
+    try {
+      const updatedStatus = currentStatus === "archived" ? "created" : "archived";
+      const res = await axios.put(
+        `${BaseURL}news/${newsId}`,
+        { status: updatedStatus },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      runInAction(() => {
+        const index = this.news.findIndex(n => n.id === newsId);
+        if (index !== -1) {
+          this.news[index].status = updatedStatus; // Оновлюємо статус
+        }
+      });
+    } catch (error) {
+      console.error("Сталася помилка при оновленні статусу новини.", error);
+      throw new Error("Сталася помилка при оновленні статусу новини.");
+    }
+  }
+
+  async deleteNews(slug, userId, token) {
+    try {
+      await axios.delete(`${BaseURL}news/${slug}/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      runInAction(() => {
+        this.news = this.news.filter(n => n.slug !== slug);
+      });
+    } catch (error) {
+      console.error("Сталася помилка при видаленні новини", error);
+      throw new Error("Сталася помилка при видаленні новини.");
+    }
   }
 }
 
-let store;
-
-export const initializeStore = (initialData = null) => {
-  const _store = store ?? new NewsStore();
-
-  if (initialData) {
-    _store.setNews(initialData);
-  }
-
-  if (typeof window === "undefined") return _store;
-  if (!store) store = _store;
-
-  return _store;
-};
+export const newsStore = new NewsStore();

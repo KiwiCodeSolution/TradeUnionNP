@@ -31,6 +31,9 @@
       ],
       "@/config": [
         "src/app/config/*"
+      ],
+      "@/store": [
+        "src/app/store/*"
       ]
     }
   }

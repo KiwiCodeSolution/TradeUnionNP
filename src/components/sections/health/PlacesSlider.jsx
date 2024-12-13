@@ -8,9 +8,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 import Place from "./Place";
-import places from "@/data/places.json";
 
-const PlacesSlider = () => {
+const PlacesSlider = ({ places }) => {
   return (
     <div className="w-full relative flex places">
       <div className="flex flex-col items-center justify-center">

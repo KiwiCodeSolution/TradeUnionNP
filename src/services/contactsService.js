@@ -1,6 +1,16 @@
 import axios from "axios";
 import { BaseURL } from "@/constants/BaseUrl";
 
+export async function fetchContacts() {
+  const res = await fetch(`${BaseURL}contacts`, { method: "GET", cache: "no-store" });
+  console.log(res);
+  if (!res.ok) {
+    throw new Error("Failed to fetch contacts");
+  }
+
+  return res.json();
+}
+
 export const updateContacts = async (updateData, token) => {
   try {
     const res = await axios.put(`${BaseURL}contacts`, updateData, {

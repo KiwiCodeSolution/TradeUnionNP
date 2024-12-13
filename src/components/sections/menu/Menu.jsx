@@ -17,7 +17,7 @@ const Menu = ({ locale }) => {
 
   return (
     <Wrapper styles="flex flex-col md:flex-row relative pb-12 md:pb-0 pt-1 md:pt-0">
-      <div className="flex items-center justify-between xl:gap-x-3">
+      <div className="w-full flex items-center justify-between xl:gap-x-3">
         <MenuMobile locale={locale} />
         <Link href="/" className="w-[190px] md:h-20 flex items-center justify-between">
           <Image

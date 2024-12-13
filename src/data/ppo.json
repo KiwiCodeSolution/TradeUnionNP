@@ -82,11 +82,11 @@
   {
     "region": "Житомирська Профспілка",
     "region_name": "Житомирської",
-    "quantity": "214",
+    "quantity": 214,
     "image": "/images/ppo/zhitomirska-ppo.jpg",
     "director": "Наталія Бортник",
     "position": "Голова Житомирської ППО",
-    "email": "help@profspilka.org",
+    "email": "bortnik.n@profspilka.org",
     "phone": "+380675457339",
     "avatar": "/images/ppo/zhitomirska-ppo-avatar.jpg",
     "admission_address": "м. Житомир; Бортник Наталія, термінал; ном.тел. одержувача: +380675457339; за шаблоном внутрішніх відправок",
@@ -102,7 +102,7 @@
   {
     "region": "Закарпатська Профспілка",
     "region_name": "Закарпатської",
-    "quantity": "153",
+    "quantity": 153,
     "image": "/images/ppo/zakarpatska-ppo.jpg",
     "director": "Крістіна Звєрєва",
     "position": "Голова Закарпатської ППО",
@@ -122,7 +122,7 @@
   {
     "region": "Івано-Франківська Профспілка",
     "region_name": "Івано-Франківської",
-    "quantity": "93",
+    "quantity": 93,
     "image": "/images/ppo/ivano-frankivsk-ppo.jpg",
     "director": "Володимир Дробко",
     "position": "Голова Івано-Франківської ППО",
@@ -138,7 +138,7 @@
   {
     "region": "Запорізька Профспілка",
     "region_name": "Запорізької",
-    "quantity": "269",
+    "quantity": 269,
     "image": "/images/ppo/zaporizka-ppo.jpg",
     "director": "Надія Міщенко",
     "position": "Голова Запорізької ППО",
@@ -161,7 +161,7 @@
   {
     "region": "Кіровоградська Профспілка",
     "region_name": "Кіровоградської",
-    "quantity": "126",
+    "quantity": 126,
     "image": "/images/ppo/kirovogradska-ppo.jpg",
     "director": "Дарʼя Лавренюк",
     "position": "Голова Кіровоградської ППО",
@@ -182,11 +182,11 @@
   {
     "region": "Київська Профспілка",
     "region_name": "Київської",
-    "quantity": "2615",
+    "quantity": 2615,
     "image": "/images/ppo/kiivska-ppo.jpg",
     "director": "Антон Горб",
     "position": "Голова Київської ППО",
-    "email": "help@profspilka.org",
+    "email": "gorb.a@profspilka.org",
     "phone": "+380675455411",
     "avatar": "/images/ppo/kiivska-ppo-avatar.jpg",
     "admission_address": "м. Київ; Мінгазова Ірина, відділення НП № 295; ном.тел. одержувача: +380674033795; за шаблоном внутрішніх відправок",
@@ -203,7 +203,7 @@
   {
     "region": "Луганська Профспілка",
     "region_name": "Луганської",
-    "quantity": "2",
+    "quantity": 2,
     "image": "/images/ppo/luganska-ppo.jpg",
     "director": "",
     "position": "Голова Луганської ППО",
@@ -219,11 +219,11 @@
   {
     "region": "Львівська Профспілка",
     "region_name": "Львівської",
-    "quantity": "913",
+    "quantity": 913,
     "image": "/images/ppo/lvivska-ppo.jpg",
     "director": "Ігор Полешко",
     "position": "Голова Львівської ППО",
-    "email": "help@profspilka.org",
+    "email": "poleshko.i@profspilka.org",
     "phone": "+380676767673",
     "avatar": "/images/ppo/lvivska-ppo-avatar.jpg",
     "admission_address": "м. Львів; Цепак Анна, відділення НП № 4; ном.тел. одержувача: +380676262678; за шаблоном внутрішніх відправок",
@@ -241,7 +241,7 @@
   {
     "region": "Миколаївська Профспілка",
     "region_name": "Миколаївської",
-    "quantity": "157",
+    "quantity": 157,
     "image": "/images/ppo/mikolaivska-ppo.jpg",
     "director": "Ольга Буга",
     "position": "Голова Миколаївської ППО",
@@ -261,7 +261,7 @@
   {
     "region": "Одеська Профспілка",
     "region_name": "Одеської",
-    "quantity": "615",
+    "quantity": 615,
     "image": "/images/ppo/odeska-ppo.jpg",
     "director": "Ірина Свідрак",
     "position": "Голова Одеської",
@@ -283,12 +283,12 @@
   {
     "region": "Полтавська Профспілка",
     "region_name": "Полтавської",
-    "quantity": "883",
+    "quantity": 883,
     "image": "/images/ppo/poltavska-ppo.jpg",
     "director": "Софія Буньо",
     "position": "Голова Полтавської ППО",
-    "email": "help@profspilka.org",
-    "phone": "+380677008125",
+    "email": "sbunoprofspilka2024@gmail.com",
+    "phone": "+380675468794",
     "avatar": "",
     "admission_address": "м. Полтава; Калюжна Вікторія, відділення НП № 9; ном.тел. одержувача: +380675013920; за шаблоном внутрішніх відправок",
     "application_address": "",
@@ -305,7 +305,7 @@
   {
     "region": "Рівненська Профспілка",
     "region_name": "Рівненської",
-    "quantity": "216",
+    "quantity": 216,
     "image": "/images/ppo/rivnenska-ppo.jpg",
     "director": "Тетяна Момоток",
     "position": "Голова Рівненської ППО",
@@ -327,7 +327,7 @@
   {
     "region": "Сумська Профспілка",
     "region_name": "Сумської",
-    "quantity": "177",
+    "quantity": 177,
     "image": "/images/ppo/sumska-ppo.jpg",
     "director": "",
     "position": "Голова Сумської ППО",
@@ -343,7 +343,7 @@
   {
     "region": "Тернопільська Профспілка",
     "region_name": "Тернопільської",
-    "quantity": "128",
+    "quantity": 128,
     "image": "/images/ppo/ternopilska-ppo.jpg",
     "director": "Лілія Гачок",
     "position": "Голова Тернопільської ППО ",
@@ -364,7 +364,7 @@
   {
     "region": "Харківська Профспілка",
     "region_name": "Харківської",
-    "quantity": "540",
+    "quantity": 540,
     "image": "/images/ppo/kharkivska-ppo.jpg",
     "director": "",
     "position": "Голова Харківської ППО",
@@ -380,7 +380,7 @@
   {
     "region": "Херсонська Профспілка",
     "region_name": "Херсонської",
-    "quantity": "37",
+    "quantity": 37,
     "image": "/images/ppo/kherson-ppo.jpg",
     "director": "Тетяна Найдьонова",
     "position": "Голова Херсонської ППО ",
@@ -396,7 +396,7 @@
   {
     "region": "Хмельницька Профспілка",
     "region_name": "Хмельницької",
-    "quantity": "441",
+    "quantity": 441,
     "image": "/images/ppo/khmelnicka-ppo.jpg",
     "director": "Ольга Дацюк",
     "position": "Голова Хмельницької ППО",
@@ -419,7 +419,7 @@
   {
     "region": "Черкаська Профспілка",
     "region_name": "Черкаської",
-    "quantity": "207",
+    "quantity": 207,
     "image": "/images/ppo/cherkaska-ppo.jpg",
     "director": "Оксана Бабій",
     "position": "Голова Черкаської ППО",
@@ -440,7 +440,7 @@
   {
     "region": "Чернівецька Профспілка",
     "region_name": "Чернівецької",
-    "quantity": "377",
+    "quantity": 377,
     "image": "/images/ppo/chernivecka-ppo.jpg",
     "director": "Оксана Данчук",
     "position": "Голова Чернівецької ППО",
@@ -462,7 +462,7 @@
   {
     "region": "Чернігівська Профспілка",
     "region_name": "Чернігівської",
-    "quantity": "214",
+    "quantity": 214,
     "image": "/images/ppo/chernigivska-ppo.jpg",
     "director": "Тетяна Дусь",
     "position": "Голова Чернігівської ППО",

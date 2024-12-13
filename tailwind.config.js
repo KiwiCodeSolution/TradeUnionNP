@@ -9,7 +9,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         "health-gradient": "linear-gradient(180deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 100%)",
+        "health-gradient-2":
+          "linear-gradient(360deg, rgba(244, 244, 244, 0) 0%, #EEEEEE 50%, rgba(244, 244, 244, 0) 100%);",
       },
+
       colors: {
         main: "#222222",
         grey: "#666666",

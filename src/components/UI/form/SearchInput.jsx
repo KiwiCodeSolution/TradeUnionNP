@@ -29,7 +29,7 @@ const SearchInput = ({ size }) => {
       className={`${
         size === "mobile"
           ? "md:hidden absolute bottom-0 flex w-[95%] left-1/2 -translate-x-1/2"
-          : "hidden md:flex "
+          : "hidden md:flex w-[148px] xl:w-[200px] "
       } gap-x-2`}
       onSubmit={onSubmit}
     >
@@ -37,7 +37,7 @@ const SearchInput = ({ size }) => {
         onChange={e => setSearchparams(e.target.value)}
         value={searchparams}
         type="text"
-        className="w-full md:w-[148px] h-[38px] py-2 px-3 border border-1 border-liteGrey rounded-lg"
+        className="w-full md:w-full h-[38px] py-2 px-3 border border-1 border-liteGrey rounded-lg"
       />
       <button type="submit">
         <Image
