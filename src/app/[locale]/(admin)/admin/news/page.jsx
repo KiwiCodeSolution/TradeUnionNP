@@ -4,29 +4,47 @@ import { useState, useEffect } from "react";
 import NewsAdminPageComponent from "@/components/sections/news/NewsAdminPageComponent";
 import { BaseURL } from "@/constants/BaseUrl";
 import toast from "react-hot-toast";
-import { toggleArchiveStatus } from "@/services/newsService";
-import { deleteNews } from "@/services/newsService";
+import { toggleArchiveStatus, deleteNews } from "@/services/newsService";
 import useAuth from "@/hooks/useAuth";
+import { observer } from "mobx-react-lite";
+import Loader from "@/components/UI/loader/Loader";
+import { StoreProvider, useStore } from "@/store/StoreProvider";
 
-export default function AdminNewsPage() {
-  const [news, setNews] = useState([]);
-  const { token } = useAuth();
+const NewsContent = observer(() => {
+  const { newsStore } = useStore(); // MobX Store
+  const allNews = newsStore.news;
+  const isLoading = newsStore.isLoading;
 
-  const fetchNews = async () => {
-    try {
-      const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
-      if (!res.ok) throw new Error("Failed to fetch news");
-      const data = await res.json();
-      setNews(data);
-    } catch (error) {
-      console.error(error);
-      toast.error("Не вдалося завантажити новини.");
-    }
-  };
+  const [news, setNews] = useState([]); // Локальний стан для списку новин
+  const { token } = useAuth(); // Аутентифікація користувача
+  const [isHydrated, setIsHydrated] = useState(false); // Стан для гідратації
 
   useEffect(() => {
-    fetchNews();
+    setIsHydrated(true); // Оновлюємо стан, коли компоненти на клієнті
   }, []);
+
+  // Викликаємо хуки useEffect одразу, без умов
+  useEffect(() => {
+    if (allNews.length === 0 && !isLoading) {
+      newsStore.fetchAllNews(); // Завантаження новин зі стору
+    }
+  }, [allNews, isLoading, newsStore]);
+
+  // useEffect(() => {
+  //   const fetchNews = async () => {
+  //     try {
+  //       const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+  //       if (!res.ok) throw new Error("Failed to fetch news");
+  //       const data = await res.json();
+  //       setNews(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //       toast.error("Не вдалося завантажити новини.");
+  //     }
+  //   };
+
+  //   fetchNews(); // Завантаження новин із бекенду
+  // }, []);
 
   const handleArchiveToggle = async (slug, status) => {
     try {
@@ -61,7 +79,7 @@ export default function AdminNewsPage() {
                 await deleteNews(slug, userId, token);
                 toast.success("Новину видалено!");
 
-                fetchNews();
+                newsStore.fetchAllNews(); // Оновлення даних у сторі
               } catch (error) {
                 toast.dismiss(t.id);
                 console.error("Error deleting news:", error);
@@ -87,15 +105,31 @@ export default function AdminNewsPage() {
     ));
   };
 
+  if (!isHydrated) {
+    return null; // Чекаємо, поки компонент не буде готовий до гідратації
+  }
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <main className="px-10 py-5 admin relative max-h-screen">
       <NewsAdminPageComponent
         section={"news"}
-        items={news}
+        items={allNews}
         onToggleArchive={handleArchiveToggle}
         onDelete={handleDelete}
         token={token}
       />
     </main>
+  );
+});
+
+export default function AdminNewsPage() {
+  return (
+    <StoreProvider>
+      <NewsContent />
+    </StoreProvider>
   );
 }

@@ -1,3 +1,4 @@
+import HydrateStores from "@/components/helpers/HydrateStores";
 import CollectiveAgreement from "@/components/sections/agreements/CollectiveAgreement";
 import ContactSection from "@/components/sections/contactForm/ContactSection";
 import DirectionsWork from "@/components/sections/directionsWork/DirectionsWork";
@@ -8,25 +9,29 @@ import NewsSectionHomePage from "@/components/sections/news/NewsSectionHomePage"
 import Values from "@/components/sections/numbers/ValuesHomepage";
 import { getContacts } from "@/services/contactsService";
 import { getAllNews } from "@/services/newsService";
-import { getAllReports } from "@/services/photoService";
+import { StoreProvider } from "@/store/StoreProvider";
 
 export default async function ClientHome({ params }) {
-  const [news, reports, contacts] = await Promise.all([
-    getAllNews(),
-    getAllReports(),
-    getContacts(),
-  ]);
+  const [news, contacts] = await Promise.all([getAllNews(), getContacts()]);
 
   return (
-    <main className="flex flex-col relative">
-      <HeroHomePage />
-      <FinancialAid />
-      <Values />
-      <CollectiveAgreement />
-      <DirectionsWork locale={params.locale} />
-      <Interview locale={params.locale} />
-      {params.locale === "uk" && <NewsSectionHomePage />}
-      <ContactSection bgStyle={"bg-bgGrey"} locale={params.locale} />
-    </main>
+    <>
+      <main className="flex flex-col relative">
+        <HeroHomePage />
+        <FinancialAid />
+        <Values />
+        <CollectiveAgreement />
+        <DirectionsWork locale={params.locale} />
+        <Interview locale={params.locale} />
+        {params.locale === "uk" && <NewsSectionHomePage />}
+        <ContactSection bgStyle={"bg-bgGrey"} locale={params.locale} />
+
+        {news.data && news.data.length > 0 && contacts.data && contacts.data.length > 0 && (
+          <StoreProvider>
+            <HydrateStores initialData={{ news: news.data, contacts: contacts.data }} />
+          </StoreProvider>
+        )}
+      </main>
+    </>
   );
 }

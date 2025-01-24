@@ -1,4 +1,7 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction, action } from "mobx";
+import { makePersistable } from "mobx-persist-store";
+import axios from "axios";
+import { BaseURL } from "@/constants/BaseUrl";
 
 class ContactsStore {
   contacts = [];
@@ -7,7 +10,7 @@ class ContactsStore {
     makeAutoObservable(this);
   }
 
-  setContacts(contacts) {
+  setItems(contacts) {
     this.contacts = contacts;
   }
 }

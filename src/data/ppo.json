@@ -2,6 +2,7 @@
   {
     "region": "Вінницька Профспілка",
     "region_name": "Вінницької",
+    "region_pattern": "",
     "quantity": 210,
     "image": "/images/ppo/vinnicka-ppo.jpg",
     "director": "Олександр Козак",
@@ -22,6 +23,7 @@
   {
     "region": "Волинська Профспілка",
     "region_name": "Волинської",
+    "region_pattern": "",
     "quantity": 206,
     "image": "/images/ppo/volinska-ppo.jpg",
     "director": "Денис Краснобай",
@@ -45,6 +47,7 @@
   {
     "region": "Дніпропетровська Профспілка",
     "region_name": "Дніпропетровської",
+    "region_pattern": "",
     "quantity": 719,
     "image": "/images/ppo/dnipropetrovska-ppo.jpg",
     "director": "Григорій Борисов",
@@ -66,6 +69,7 @@
   {
     "region": "Донецька Профспілка",
     "region_name": "Донецької",
+    "region_pattern": "",
     "quantity": 210,
     "image": "/images/ppo/donecka-ppo.jpg",
     "director": "",
@@ -82,6 +86,7 @@
   {
     "region": "Житомирська Профспілка",
     "region_name": "Житомирської",
+    "region_pattern": "",
     "quantity": 214,
     "image": "/images/ppo/zhitomirska-ppo.jpg",
     "director": "Наталія Бортник",
@@ -102,6 +107,7 @@
   {
     "region": "Закарпатська Профспілка",
     "region_name": "Закарпатської",
+    "region_pattern": "",
     "quantity": 153,
     "image": "/images/ppo/zakarpatska-ppo.jpg",
     "director": "Крістіна Звєрєва",
@@ -122,6 +128,7 @@
   {
     "region": "Івано-Франківська Профспілка",
     "region_name": "Івано-Франківської",
+    "region_pattern": "",
     "quantity": 93,
     "image": "/images/ppo/ivano-frankivsk-ppo.jpg",
     "director": "Володимир Дробко",
@@ -138,6 +145,7 @@
   {
     "region": "Запорізька Профспілка",
     "region_name": "Запорізької",
+    "region_pattern": "",
     "quantity": 269,
     "image": "/images/ppo/zaporizka-ppo.jpg",
     "director": "Надія Міщенко",
@@ -161,6 +169,7 @@
   {
     "region": "Кіровоградська Профспілка",
     "region_name": "Кіровоградської",
+    "region_pattern": "",
     "quantity": 126,
     "image": "/images/ppo/kirovogradska-ppo.jpg",
     "director": "Дарʼя Лавренюк",
@@ -182,6 +191,7 @@
   {
     "region": "Київська Профспілка",
     "region_name": "Київської",
+    "region_pattern": "",
     "quantity": 2615,
     "image": "/images/ppo/kiivska-ppo.jpg",
     "director": "Антон Горб",
@@ -203,6 +213,7 @@
   {
     "region": "Луганська Профспілка",
     "region_name": "Луганської",
+    "region_pattern": "Луганську",
     "quantity": 2,
     "image": "/images/ppo/luganska-ppo.jpg",
     "director": "",
@@ -219,6 +230,7 @@
   {
     "region": "Львівська Профспілка",
     "region_name": "Львівської",
+    "region_pattern": "Львівську",
     "quantity": 913,
     "image": "/images/ppo/lvivska-ppo.jpg",
     "director": "Ігор Полешко",
@@ -241,6 +253,7 @@
   {
     "region": "Миколаївська Профспілка",
     "region_name": "Миколаївської",
+    "region_pattern": "Миколаївську",
     "quantity": 157,
     "image": "/images/ppo/mikolaivska-ppo.jpg",
     "director": "Ольга Буга",
@@ -261,6 +274,7 @@
   {
     "region": "Одеська Профспілка",
     "region_name": "Одеської",
+    "region_pattern": "Одеську",
     "quantity": 615,
     "image": "/images/ppo/odeska-ppo.jpg",
     "director": "Ірина Свідрак",
@@ -283,6 +297,7 @@
   {
     "region": "Полтавська Профспілка",
     "region_name": "Полтавської",
+    "region_pattern": "Полтавську",
     "quantity": 883,
     "image": "/images/ppo/poltavska-ppo.jpg",
     "director": "Софія Буньо",
@@ -305,6 +320,7 @@
   {
     "region": "Рівненська Профспілка",
     "region_name": "Рівненської",
+    "region_pattern": "Рівненську",
     "quantity": 216,
     "image": "/images/ppo/rivnenska-ppo.jpg",
     "director": "Тетяна Момоток",
@@ -327,6 +343,7 @@
   {
     "region": "Сумська Профспілка",
     "region_name": "Сумської",
+    "region_pattern": "Сумську",
     "quantity": 177,
     "image": "/images/ppo/sumska-ppo.jpg",
     "director": "",
@@ -343,6 +360,7 @@
   {
     "region": "Тернопільська Профспілка",
     "region_name": "Тернопільської",
+    "region_pattern": "Тернопільську",
     "quantity": 128,
     "image": "/images/ppo/ternopilska-ppo.jpg",
     "director": "Лілія Гачок",
@@ -364,6 +382,7 @@
   {
     "region": "Харківська Профспілка",
     "region_name": "Харківської",
+    "region_pattern": "Харківську",
     "quantity": 540,
     "image": "/images/ppo/kharkivska-ppo.jpg",
     "director": "",
@@ -380,6 +399,7 @@
   {
     "region": "Херсонська Профспілка",
     "region_name": "Херсонської",
+    "region_pattern": "Херсонську",
     "quantity": 37,
     "image": "/images/ppo/kherson-ppo.jpg",
     "director": "Тетяна Найдьонова",
@@ -396,6 +416,7 @@
   {
     "region": "Хмельницька Профспілка",
     "region_name": "Хмельницької",
+    "region_pattern": "Хмельницьку",
     "quantity": 441,
     "image": "/images/ppo/khmelnicka-ppo.jpg",
     "director": "Ольга Дацюк",
@@ -419,6 +440,7 @@
   {
     "region": "Черкаська Профспілка",
     "region_name": "Черкаської",
+    "region_pattern": "Черкаську",
     "quantity": 207,
     "image": "/images/ppo/cherkaska-ppo.jpg",
     "director": "Оксана Бабій",
@@ -440,6 +462,7 @@
   {
     "region": "Чернівецька Профспілка",
     "region_name": "Чернівецької",
+    "region_pattern": "Чернівецьку",
     "quantity": 377,
     "image": "/images/ppo/chernivecka-ppo.jpg",
     "director": "Оксана Данчук",
@@ -462,6 +485,7 @@
   {
     "region": "Чернігівська Профспілка",
     "region_name": "Чернігівської",
+    "region_pattern": "Чернігівську",
     "quantity": 214,
     "image": "/images/ppo/chernigivska-ppo.jpg",
     "director": "Тетяна Дусь",

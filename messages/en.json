@@ -825,6 +825,204 @@
     "agreement_title": ["Collective", "labor agreement"],
     "agreement_text": "The collective labor agreement shall be an agreement between the Administration of Nova Poshta LLC and the Trade Union of Nova Poshta LLC (Nova Poshta LLC VPSP ), which represents the staff. The collective bargaining agreement shall define the mutual production, labor and socio-economic relations between two parties. The provisions of theCollective Bargaining Agreement shall apply to all employees and shall be binding upon them.",
     "agreement_button": "review",
+    "cases": [
+      {
+        "title": "Bonus reduction",
+        "details": [
+          {
+            "title": "Bonus reduced",
+            "text": "The employee's bonus was reduced by UAH 1,200, he applied for protection to the Trade Union"
+          },
+          { "title": "Applied", "text": "We received the appeal and entered it into the log" },
+          {
+            "title": "Submitting the request",
+            "text": "We wrote to the Director of the Labor Department and Director of HR Management"
+          },
+          {
+            "title": "Providing arguments",
+            "text": "Based on the laws, regulations and Collective Bargaining Agreement, we demand to accrue the deducted funds"
+          },
+          {
+            "title": "Cancelling",
+            "text": "We receive the response on cancellation of the bonus reduction"
+          },
+          {
+            "title": "Resolved",
+            "text": "The employee receives the deducted funds along with the salary"
+          }
+        ]
+      },
+      {
+        "title": "Sick pay",
+        "details": [
+          {
+            "title": "Sick pay",
+            "text": "It was explained to the employee in the salary explanation that the sick pay was accrued, yet it was not credited"
+          },
+          { "title": "Applied", "text": "The employee applied for help to the Trade Union" },
+          {
+            "title": "Submitting the request",
+            "text": "We submitting a request to the accounting department for an explanation of sick pay accrual"
+          },
+          {
+            "title": "Received a response",
+            "text": "The sick and vacation pay accrual department paid part of the salary, and the part for which the social insurance fund is responsible will be paid after consideration of the application"
+          },
+          {
+            "title": "Resolved",
+            "text": "The appeal was resolved, the employee received the explanation"
+          }
+        ]
+      },
+      {
+        "title": "Salary",
+        "details": [
+          {
+            "title": "Incorrect Salary Calculation.",
+            "text": "A Trade Union member complained about unaccounted working hours."
+          },
+          { "title": "Complaint received:", "text": "We logged the member’s complaint." },
+          {
+            "title": "Request submitted:",
+            "text": "Addressed the Motivation Department, conducted analysis, and monitored data verification."
+          },
+          {
+            "title": "Argumentation:",
+            "text": "Based on laws, regulatory acts, and the Collective Agreement, we demanded the funds be recalculated."
+          },
+          {
+            "title": "Result:",
+            "text": "40 hours were added to the salary calculation, and the difference was paid out."
+          },
+          {
+            "title": "Resolution:",
+            "text": "The Trade Union corrected the error and ensured accurate payments."
+          }
+        ]
+      },
+      {
+        "title": "Change in Working Conditions",
+        "details": [
+          {
+            "title": "Change in Working Conditions Due to Health Issues",
+            "text": "An employee with a disability required adjusted working conditions based on medical recommendations."
+          },
+          { "title": "Complaint received:", "text": "We logged the request." },
+          {
+            "title": "Request submitted:",
+            "text": "Prepared inquiries to the employer and provided legal consultations."
+          },
+          {
+            "title": "Argumentation:",
+            "text": "Citing laws, regulatory acts, and the Collective Agreement, we demanded the working conditions be revised."
+          },
+          {
+            "title": "Result:",
+            "text": "Working conditions were adjusted in compliance with medical advice."
+          },
+          {
+            "title": "Resolution:",
+            "text": "The Trade Union successfully defended the employee’s right to a comfortable working environment."
+          }
+        ]
+      },
+      {
+        "title": "Ammunition procurement",
+        "details": [
+          {
+            "title": "Ammunition procurement",
+            "text": "Procurement of Additional Equipment for a Mobilized Member"
+          },
+          { "title": "Complaint received:", "text": "The request was logged." },
+          {
+            "title": "Request submitted:",
+            "text": "Inquiries were prepared and sent to the employer."
+          },
+          {
+            "title": "Actions:",
+            "text": "Referred the request to specialists and negotiated with the employer."
+          },
+          {
+            "title": "Result:",
+            "text": "The necessary equipment was purchased and delivered to the employee."
+          },
+          {
+            "title": "Resolution:",
+            "text": "The Trade Union promptly addressed the member’s needs."
+          }
+        ]
+      },
+      {
+        "title": "Replacement of a Cooler and Increased Water Supply Limit",
+        "details": [
+          {
+            "title": "Replacement of a Cooler",
+            "text": "Employees complained about an old water cooler and insufficient water supply."
+          },
+          { "title": "Complaint received:", "text": "The issue was logged." },
+          { "title": "Request submitted:", "text": "Prepared inquiries to the employer." },
+          {
+            "title": "Actions:",
+            "text": "Initiated a request to the Supply Department and negotiated with the employer."
+          },
+          {
+            "title": "Result:",
+            "text": "The cooler was replaced, and the water supply limit was increased."
+          },
+          {
+            "title": "Resolution:",
+            "text": "The Trade Union’s prompt intervention improved working conditions."
+          }
+        ]
+      },
+      {
+        "title": "Compensation",
+        "details": [
+          {
+            "title": "Compensation for Downtime Due to a Cyberattack.",
+            "text": "Employees were left unable to work due to the unavailability of equipment."
+          },
+          { "title": "Complaint received:", "text": "The issue was logged." },
+          {
+            "title": "Request submitted:",
+            "text": "Inquiries were prepared and sent to the employer."
+          },
+          {
+            "title": "Actions:",
+            "text": "Negotiated with management for compensation during the downtime."
+          },
+          { "title": "Result:", "text": "Employees received bonuses for the downtime period." },
+
+          {
+            "title": "Resolution:",
+            "text": "The Trade Union protected employees’ rights to compensation."
+          }
+        ]
+      },
+      {
+        "title": "Restoration of Labor Rights",
+        "details": [
+          {
+            "title": "Restoration of Labor Rights After Illegal Suspension of Employment Relations.",
+            "text": "An employee discovered their employment relations had been suspended without prior notice."
+          },
+          { "title": "Complaint received:", "text": "The case was logged." },
+          { "title": "Request submitted:", "text": "Prepared inquiries to the employer." },
+          {
+            "title": "Actions:",
+            "text": "Conducted an investigation and requested explanations from the employer."
+          },
+          {
+            "title": "Result:",
+            "text": "The suspension was canceled, and the employee was paid for the downtime period."
+          },
+          {
+            "title": "Resolution:",
+            "text": "The Trade Union restored the employee’s rights through effective advocacy."
+          }
+        ]
+      }
+    ],
     "rights_title": ["Each employee ", "shall have the right to:"],
     "rights_list": {
       "1": [
@@ -1309,6 +1507,46 @@
     "tell_text": "Send a link to a friend or colleague, let him/her join too!",
     "review_title": ["Feedback and thanks", " from our trade union members"],
     "reviews": [
+      {
+        "text": "Good afternoon. The shift supervisor just called me and said that I can go to work tomorrow. I am very grateful for your help. ",
+        "name": "Ivan O.",
+        "address": "Kyiv dep."
+      },
+      {
+        "text": "They called me with good news. Everything worked out. I am being transferred. I will finally write an application for a transfer. Thank you very much",
+        "name": "Tetyana Sh.",
+        "address": "Kirovohrad dep."
+      },
+      {
+        "text": "I am very satisfied. Thank you for your advice and concern.",
+        "name": "Taras P.",
+        "address": "Kyiv dep."
+      },
+      {
+        "text": "Thank you to all the terminals. For always helping us. And always 100% performance. You inspire!",
+        "name": "Maxim L",
+        "address": "Chernihiv dep."
+      },
+      {
+        "text": "I am very grateful to you for the work you have done, which lasted almost 7 months, and your help! I believe that this is the right decision, once again I am very grateful to you. For my part, I am trying to attract as many staff as possible to the Trade Union, using a case from my own experience. Take care of yourself!",
+        "name": "Evgeny V.",
+        "address": "Kyiv dep."
+      },
+      {
+        "text": "Good evening, the funds have arrived, thank you for the work done",
+        "name": "Egor M.",
+        "address": "Vinnytsia dep."
+      },
+      {
+        "text": "Good afternoon, for me this is very good news. I did not even expect a quick return of the surcharge, and even more so the return of the discharge from March. Yes, my appeal is completely resolved thanks to you. Thank you for your help.",
+        "name": "Olga Z.",
+        "address": "Kyiv dep."
+      },
+      {
+        "text": "Thank you for your help. The situation has really changed.",
+        "name": "Nataliya S.",
+        "address": "Zhytomyr dep."
+      },
       {
         "text": "All good, the trade union helped me solve all of my appeals, no remarks",
         "name": "Mykola K",

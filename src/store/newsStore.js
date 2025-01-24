@@ -1,4 +1,5 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable, runInAction, action } from "mobx";
+import { makePersistable } from "mobx-persist-store";
 import axios from "axios";
 import { BaseURL } from "@/constants/BaseUrl";
 
@@ -8,7 +9,37 @@ class NewsStore {
   error = null;
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {
+      setItems: action,
+      hydrate: action.bound,
+    });
+
+    if (typeof window !== "undefined" && !this.isHydrated) {
+      this.isHydrated = true;
+      makePersistable(this, {
+        name: "news",
+        properties: ["news"],
+        storage: window.localStorage,
+      })
+        .then(() => {
+          runInAction(() => {
+            this.news = Array.isArray(this.news) ? this.news : [];
+          });
+        })
+        .catch(error => {
+          console.error("Failed to make persistable:", error);
+        });
+    }
+  }
+
+  hydrate(data) {
+    if (Array.isArray(data)) {
+      this.setItems(data);
+    }
+  }
+
+  setItems(items) {
+    this.news = items;
   }
 
   async fetchAllNews() {
@@ -18,7 +49,7 @@ class NewsStore {
     try {
       const res = await axios.get(`${BaseURL}news`);
       runInAction(() => {
-        this.news = res.data;
+        this.setItems(res.data);
       });
     } catch (error) {
       runInAction(() => {
@@ -41,7 +72,7 @@ class NewsStore {
         },
       });
       runInAction(() => {
-        this.news.push(res.data); // Додаємо новину у список
+        this.news.push(res.data);
       });
     } catch (error) {
       if (error.response?.status === 409) {
@@ -63,7 +94,7 @@ class NewsStore {
       runInAction(() => {
         const index = this.news.findIndex(n => n.id === newsId);
         if (index !== -1) {
-          this.news[index] = res.data; // Оновлюємо новину
+          this.news[index] = res.data;
         }
       });
     } catch (error) {
@@ -88,7 +119,7 @@ class NewsStore {
       runInAction(() => {
         const index = this.news.findIndex(n => n.id === newsId);
         if (index !== -1) {
-          this.news[index].status = updatedStatus; // Оновлюємо статус
+          this.news[index].status = updatedStatus;
         }
       });
     } catch (error) {
@@ -115,4 +146,4 @@ class NewsStore {
   }
 }
 
-export const newsStore = new NewsStore();
+export default NewsStore;

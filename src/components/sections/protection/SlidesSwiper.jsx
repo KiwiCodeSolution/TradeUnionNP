@@ -10,6 +10,8 @@ import "swiper/css/scrollbar";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 
 const SlidesSwiper = () => {
+  const slides = Array.from({ length: 8 }, (_, index) => index);
+  console.log("slides", slides);
   return (
     <div className="w-full relative">
       <Swiper
@@ -21,12 +23,13 @@ const SlidesSwiper = () => {
           prevEl: ".slide-button-prev",
         }}
       >
-        <SwiperSlide>
-          <Slide slideNumber={1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Slide slideNumber={2} />
-        </SwiperSlide>
+        {slides.map(el => {
+          return (
+            <SwiperSlide key={el}>
+              <Slide slideNumber={el} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
       <div className="w-fit absolute -top-8 md:top-5 right-0 flex justify-center items-center gap-x-8 z-[5]">
         <ShowButton btnStyle="slide-button-prev" style="-rotate-180" />

@@ -7,7 +7,7 @@ class OfficesStore {
     makeAutoObservable(this);
   }
 
-  setOffices(offices) {
+  setItems(offices) {
     this.offices = offices;
   }
 

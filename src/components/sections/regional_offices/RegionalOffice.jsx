@@ -27,6 +27,12 @@ const RegionalOffice = ({ item }) => {
     } else setIsShowContacts(type);
   }
 
+  const vacancy = { phone: "+380677008125", email: "help@profspilka.org" };
+
+  const pattern = item.region.split(" ")[0].slice(0, -1);
+  // console.log("ppo-------->", pattern + "у");
+  // console.log("name-------->", pattern + "ої");
+
   return (
     <article className="w-full h-fit flex flex-col rounded-2xl overflow-hidden">
       <div className="w-full h-80 relative overflow-hidden bg-black">
@@ -81,13 +87,17 @@ const RegionalOffice = ({ item }) => {
           <div className="flex gap-x-4 mx-auto xl:hidden ">
             <a
               className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-              href={`tel:${item.phone}`}
+              href={item.director ? `tel:${item.phone}` : `tel:${vacancy.phone}`}
             >
               <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
             </a>
             <a
               className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-              href={`mailto:${item.email}&body=питання щодо ${item.region} профспілки`}
+              href={
+                item.director
+                  ? `mailto:${item.email}&body=питання щодо ${item.region} профспілки`
+                  : `mailto:${vacancy.email}`
+              }
             >
               <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
             </a>
@@ -110,9 +120,13 @@ const RegionalOffice = ({ item }) => {
 
           <div className="hidden xl:block">
             {isShowContacts === "tell" && (
-              <p className="text-center">{formatPhoneNumber(item.phone)}</p>
+              <p className="text-center">
+                {formatPhoneNumber(item.director ? item.phone : vacancy.phone)}
+              </p>
             )}
-            {isShowContacts === "email" && <p className="text-center">{item.email}</p>}
+            {isShowContacts === "email" && (
+              <p className="text-center">{item.director ? item.email : vacancy.email}</p>
+            )}
           </div>
         </li>
         <li className="flex flex-col pb-4 border-b-[2px] border-bgGrey">
@@ -130,7 +144,11 @@ const RegionalOffice = ({ item }) => {
               isShowAdmissionAddress ? "max-h-20 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
             }`}
           >
-            <p>{item.admission_address || "Адресу не вказано"}</p>
+            <p>
+              {item.director
+                ? `Документи в ${pattern}у ППО`
+                : "За шаблоном внутрішніх відправлень “Матеріальна допомога від Профспілки”"}
+            </p>
           </div>
         </li>
         <li className="flex flex-col pb-4 border-b-[2px] border-bgGrey">
@@ -152,15 +170,16 @@ const RegionalOffice = ({ item }) => {
             }`}
           >
             <p>
-              {item.application_address ||
-                "м. Полтава, відділення “Нової пошти” №23; за шаблоном внутрішніх відправок “Матеріальна допомога від Профспілки”"}
+              {/* {item.application_address ||
+                "м. Полтава, відділення “Нової пошти” №23; за шаблоном внутрішніх відправок “Матеріальна допомога від Профспілки”"} */}
+              За шаблоном внутрішніх відправлень “Матеріальна допомога від Профспілки”
             </p>
           </div>
         </li>
         <li className="flex flex-col">
           <div className="flex items-center justify-between">
             <p className="w-4/5 text-[15px] font-bold">
-              Склад Профкому {item.region_name} первинної профспілкової організації:
+              Склад Профкому {pattern + "ої"} первинної профспілкової організації:
             </p>
             <ShowButton
               style={isShowCommittee ? "-rotate-90" : "rotate-90"}

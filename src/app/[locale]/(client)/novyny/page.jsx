@@ -1,19 +1,9 @@
 import NewsPathHero from "@/components/sections/news/NewsPathHero";
-import PaginatedItems from "@/components/sections/news/PaginatedItems";
+import NewsComponent from "@/components/sections/news/NewsComponent";
 import { getTranslations } from "next-intl/server";
-import NewsFiltersSection from "@/components/sections/news/NewsFiltersSection";
-import { BaseURL } from "@/constants/BaseUrl";
+import { StoreProvider } from "@/store/StoreProvider";
 
-async function fetchNews() {
-  const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch news");
-  }
-
-  return res.json();
-}
-
+// Генерація метаданих для сторінки
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
 
@@ -34,20 +24,13 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default async function NewsPage({ params: { locale } }) {
-  const news = await fetchNews();
-
-  const today = new Date();
-
-  const filteredNewsArray = news
-    .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
-    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-
+export default function NewsPage({ params: { locale } }) {
   return (
-    <main className="w-full  bg-bgGrey">
+    <main className="w-full bg-bgGrey">
       <NewsPathHero />
-      <NewsFiltersSection news={news} locale={locale} part={"novyny"} />
-      <PaginatedItems section={"news"} items={filteredNewsArray} locale={locale} part={"news"} />
+      <StoreProvider>
+        <NewsComponent locale={locale} />
+      </StoreProvider>
     </main>
   );
 }

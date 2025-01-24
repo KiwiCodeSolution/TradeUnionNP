@@ -7,7 +7,7 @@ class PhotoReportsStore {
     makeAutoObservable(this);
   }
 
-  setPhotoReports(photoReports) {
+  setItems(photoReports) {
     this.photoReports = photoReports;
   }
 

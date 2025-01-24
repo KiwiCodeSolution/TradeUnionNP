@@ -1,6 +1,6 @@
 [
   {
-    "id": "8917234175",
+    "_id": "8917234175",
     "publishDate": "2021-05-27T00:00:00.000Z",
     "sections": ["Стаття"],
     "sectionLink": "/novyny",
@@ -10,7 +10,7 @@
     "pageName": "kol_dog"
   },
   {
-    "id": "2227234175",
+    "_id": "2227234175",
     "publishDate": "2021-05-21T00:00:00.000Z",
     "sections": ["Стаття"],
     "sectionLink": "/novyny",
@@ -20,7 +20,7 @@
     "pageName": "kol_dog"
   },
   {
-    "id": "7167234175",
+    "_id": "7167234175",
     "publishDate": "2021-02-15T00:00:00.000Z",
     "sections": ["Стаття"],
     "sectionLink": "/novyny",

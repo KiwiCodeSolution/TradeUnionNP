@@ -3,16 +3,19 @@
 import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { useRouter } from "next/navigation";
-import { createNews, updateNews } from "@/services/newsService";
+
 import toast from "react-hot-toast";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
 import { createReport, updateReport } from "@/services/photoService";
 import useAuth from "@/hooks/useAuth";
+import { observer } from "mobx-react-lite";
 
-const NewsForm = ({ news, part }) => {
+import { useStore } from "@/store/StoreProvider";
+
+const NewsForm = observer(({ news, part }) => {
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
   const { token } = useAuth();
-  console.log(token);
+  const { newsStore } = useStore();
   const router = useRouter();
 
   const [formData, setFormData] = useState({
@@ -103,13 +106,13 @@ const NewsForm = ({ news, part }) => {
         if (!data) {
           response =
             part === "news"
-              ? await createNews(itemData, token)
+              ? await newsStore.createNews(itemData, token)
               : await createReport(itemData, token);
           toast.success(part === "news" ? "Новину створено!" : "Запис створено!");
         } else {
           response =
             part === "news"
-              ? await updateNews(slug, itemData, token)
+              ? await newsStore.updateNews(slug, itemData, token)
               : await updateReport(slug, itemData, token);
           toast.success(part === "news" ? "Новину оновлено!" : "Запис оновлено!");
         }
@@ -346,6 +349,6 @@ const NewsForm = ({ news, part }) => {
       </button>
     </form>
   );
-};
+});
 
 export default NewsForm;
