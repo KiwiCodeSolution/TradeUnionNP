@@ -39,7 +39,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
     <article
       className={`w-full flex gap-x-3 md:gap-x-6 items-start mx-auto md:py-8 md:px-4 relative ${
         item.status === "created" ? "opacity-35" : ""
-      } ${section === "admin" ? "h-[680px]" : "h-full"}`}
+      } ${section === "admin" ? "h-[630px]" : "h-full"}`}
     >
       <div className="w-12 h-full flex flex-col gap-y-10">
         <div className="flex flex-col">

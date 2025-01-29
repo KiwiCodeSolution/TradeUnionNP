@@ -1,4 +1,5 @@
-import { makeAutoObservable, runInAction, action } from "mobx";
+import { makeAutoObservable, runInAction, action, makeObservable } from "mobx";
+import { computed } from "mobx";
 import { makePersistable } from "mobx-persist-store";
 import axios from "axios";
 import { BaseURL } from "@/constants/BaseUrl";
@@ -7,11 +8,19 @@ class NewsStore {
   news = [];
   isLoading = false;
   error = null;
+  news = [];
 
   constructor() {
     makeAutoObservable(this, {
       setItems: action,
       hydrate: action.bound,
+    });
+    makeObservable(this, {
+      news: observable,
+      isLoading: observable,
+      error: observable,
+      filteredNewsArray: computed,
+      fetchAllNews: action,
     });
 
     if (typeof window !== "undefined" && !this.isHydrated) {
@@ -40,6 +49,19 @@ class NewsStore {
 
   setItems(items) {
     this.news = items;
+  }
+
+  get filteredNewsArray() {
+    return this.news
+      .filter(item => {
+        const isStatusMatch = isArchive ? item.status === "archived" : item.status !== "archived";
+        const isSearchMatch =
+          item.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+          item.content.toLowerCase().includes(searchValue.toLowerCase());
+
+        return isStatusMatch && isSearchMatch;
+      })
+      .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
   }
 
   async fetchAllNews() {
@@ -103,11 +125,11 @@ class NewsStore {
     }
   }
 
-  async toggleArchiveStatus(newsId, currentStatus, token) {
+  async toggleArchiveStatus(slug, currentStatus, token) {
     try {
       const updatedStatus = currentStatus === "archived" ? "created" : "archived";
       const res = await axios.put(
-        `${BaseURL}news/${newsId}`,
+        `${BaseURL}news/${slug}`,
         { status: updatedStatus },
         {
           headers: {
@@ -116,10 +138,14 @@ class NewsStore {
           },
         }
       );
+
+      console.log(res.data);
       runInAction(() => {
-        const index = this.news.findIndex(n => n.id === newsId);
+        const index = this.news.findIndex(n => n.slug === slug);
         if (index !== -1) {
           this.news[index].status = updatedStatus;
+        } else {
+          console.warn(`Новину зі slug ${slug} не знайдено в локальному стані.`);
         }
       });
     } catch (error) {
