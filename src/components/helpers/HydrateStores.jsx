@@ -18,10 +18,11 @@ const HydrateStores = ({ initialData }) => {
       console.log("Hydrated news:", toJS(newsStore.news));
     }
     if (initialData.contacts) {
-      contactsStore.setItems(initialData.contacts); // Обробка контактів
+      contactsStore.setItems(initialData.contacts);
     }
     if (initialData.offices) {
       officesStore.setItems(initialData.offices);
+      console.log("Hydrated offices:", toJS(officesStore.offices));
     }
     if (initialData.photoReports) {
       photoReportsStore.setItems(initialData.photoReports);

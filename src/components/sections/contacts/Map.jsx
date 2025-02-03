@@ -3,7 +3,7 @@
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import { useState } from "react";
-import offices from "@/data/offices.json";
+import offices from "@/data/ppo.json";
 import TelMailBlock from "../regional_offices/TelMailBlock";
 import Modal from "@/components/UI/modal/Modal";
 import { Cross } from "@/components/icons/IconsComponents";
@@ -66,8 +66,8 @@ const Map = () => {
       const infoWindowY = boundingRect.top;
 
       setInformation(id);
-      setX(infoWindowX - 300);
-      setY(infoWindowY - 350);
+      setX(infoWindowX - 200);
+      setY(infoWindowY - 150);
       setHovering(true);
       setShowInformation(true);
     } else {

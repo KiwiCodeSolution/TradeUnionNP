@@ -1,6 +1,7 @@
 [
   {
     "region": "Вінницька Профспілка",
+    "regionId": "vinnytsia",
     "region_name": "Вінницької",
     "region_pattern": "",
     "quantity": 210,
@@ -22,6 +23,7 @@
   },
   {
     "region": "Волинська Профспілка",
+    "regionId": "volyn",
     "region_name": "Волинської",
     "region_pattern": "",
     "quantity": 206,
@@ -46,6 +48,7 @@
   },
   {
     "region": "Дніпропетровська Профспілка",
+    "regionId": "dnipro",
     "region_name": "Дніпропетровської",
     "region_pattern": "",
     "quantity": 719,
@@ -68,6 +71,7 @@
   },
   {
     "region": "Донецька Профспілка",
+    "regionId": "donetsk",
     "region_name": "Донецької",
     "region_pattern": "",
     "quantity": 210,
@@ -85,6 +89,7 @@
   },
   {
     "region": "Житомирська Профспілка",
+    "regionId": "zhytomyr",
     "region_name": "Житомирської",
     "region_pattern": "",
     "quantity": 214,
@@ -106,6 +111,7 @@
   },
   {
     "region": "Закарпатська Профспілка",
+    "regionId": "zakarpattia",
     "region_name": "Закарпатської",
     "region_pattern": "",
     "quantity": 153,
@@ -127,6 +133,7 @@
   },
   {
     "region": "Івано-Франківська Профспілка",
+    "regionId": "ivano-frankivsk",
     "region_name": "Івано-Франківської",
     "region_pattern": "",
     "quantity": 93,
@@ -144,6 +151,7 @@
   },
   {
     "region": "Запорізька Профспілка",
+    "regionId": "zaporizhia",
     "region_name": "Запорізької",
     "region_pattern": "",
     "quantity": 269,
@@ -168,6 +176,7 @@
   },
   {
     "region": "Кіровоградська Профспілка",
+    "regionId": "kirovohrad",
     "region_name": "Кіровоградської",
     "region_pattern": "",
     "quantity": 126,
@@ -190,6 +199,7 @@
   },
   {
     "region": "Київська Профспілка",
+    "regionId": "kyiv",
     "region_name": "Київської",
     "region_pattern": "",
     "quantity": 2615,
@@ -212,6 +222,7 @@
   },
   {
     "region": "Луганська Профспілка",
+    "regionId": "luhansk",
     "region_name": "Луганської",
     "region_pattern": "Луганську",
     "quantity": 2,
@@ -229,6 +240,7 @@
   },
   {
     "region": "Львівська Профспілка",
+    "regionId": "lviv",
     "region_name": "Львівської",
     "region_pattern": "Львівську",
     "quantity": 913,
@@ -252,6 +264,7 @@
   },
   {
     "region": "Миколаївська Профспілка",
+    "regionId": "mykolaiv",
     "region_name": "Миколаївської",
     "region_pattern": "Миколаївську",
     "quantity": 157,
@@ -273,6 +286,7 @@
   },
   {
     "region": "Одеська Профспілка",
+    "regionId": "odessa",
     "region_name": "Одеської",
     "region_pattern": "Одеську",
     "quantity": 615,
@@ -296,6 +310,7 @@
   },
   {
     "region": "Полтавська Профспілка",
+    "regionId": "poltava",
     "region_name": "Полтавської",
     "region_pattern": "Полтавську",
     "quantity": 883,
@@ -319,6 +334,7 @@
   },
   {
     "region": "Рівненська Профспілка",
+    "regionId": "rivne",
     "region_name": "Рівненської",
     "region_pattern": "Рівненську",
     "quantity": 216,
@@ -342,6 +358,7 @@
   },
   {
     "region": "Сумська Профспілка",
+    "regionId": "sumy",
     "region_name": "Сумської",
     "region_pattern": "Сумську",
     "quantity": 177,
@@ -359,6 +376,7 @@
   },
   {
     "region": "Тернопільська Профспілка",
+    "regionId": "ternopil",
     "region_name": "Тернопільської",
     "region_pattern": "Тернопільську",
     "quantity": 128,
@@ -381,6 +399,7 @@
   },
   {
     "region": "Харківська Профспілка",
+    "regionId": "kharkiv",
     "region_name": "Харківської",
     "region_pattern": "Харківську",
     "quantity": 540,
@@ -398,6 +417,7 @@
   },
   {
     "region": "Херсонська Профспілка",
+    "regionId": "kherson",
     "region_name": "Херсонської",
     "region_pattern": "Херсонську",
     "quantity": 37,
@@ -415,6 +435,7 @@
   },
   {
     "region": "Хмельницька Профспілка",
+    "regionId": "khmelnytskyi",
     "region_name": "Хмельницької",
     "region_pattern": "Хмельницьку",
     "quantity": 441,
@@ -439,6 +460,7 @@
   },
   {
     "region": "Черкаська Профспілка",
+    "regionId": "cherkasy",
     "region_name": "Черкаської",
     "region_pattern": "Черкаську",
     "quantity": 207,
@@ -461,6 +483,7 @@
   },
   {
     "region": "Чернівецька Профспілка",
+    "regionId": "chernivtsi",
     "region_name": "Чернівецької",
     "region_pattern": "Чернівецьку",
     "quantity": 377,
@@ -484,6 +507,7 @@
   },
   {
     "region": "Чернігівська Профспілка",
+    "regionId": "chernihiv",
     "region_name": "Чернігівської",
     "region_pattern": "Чернігівську",
     "quantity": 214,

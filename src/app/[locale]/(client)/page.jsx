@@ -9,10 +9,15 @@ import NewsSectionHomePage from "@/components/sections/news/NewsSectionHomePage"
 import Values from "@/components/sections/numbers/ValuesHomepage";
 import { getContacts } from "@/services/contactsService";
 import { getAllNews } from "@/services/newsService";
+import { getAllOffices } from "@/services/officeService";
 import { StoreProvider } from "@/store/StoreProvider";
 
 export default async function ClientHome({ params }) {
-  const [news, contacts] = await Promise.all([getAllNews(), getContacts()]);
+  const [news, contacts, offices] = await Promise.all([
+    getAllNews(),
+    getContacts(),
+    getAllOffices(),
+  ]);
 
   return (
     <>
@@ -26,11 +31,18 @@ export default async function ClientHome({ params }) {
         {params.locale === "uk" && <NewsSectionHomePage />}
         <ContactSection bgStyle={"bg-bgGrey"} locale={params.locale} />
 
-        {news.data && news.data.length > 0 && contacts.data && contacts.data.length > 0 && (
-          <StoreProvider>
-            <HydrateStores initialData={{ news: news.data, contacts: contacts.data }} />
-          </StoreProvider>
-        )}
+        {news.data &&
+          news.data.length > 0 &&
+          contacts.data &&
+          contacts.data.length > 0 &&
+          offices.data &&
+          offices.data.length > 0 && (
+            <StoreProvider>
+              <HydrateStores
+                initialData={{ news: news.data, contacts: contacts.data, offices: offices.data }}
+              />
+            </StoreProvider>
+          )}
       </main>
     </>
   );

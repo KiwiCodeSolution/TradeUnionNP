@@ -1,5 +1,4 @@
-import { makeAutoObservable, runInAction, action, makeObservable } from "mobx";
-import { computed } from "mobx";
+import { makeAutoObservable, runInAction, action } from "mobx";
 import { makePersistable } from "mobx-persist-store";
 import axios from "axios";
 import { BaseURL } from "@/constants/BaseUrl";
@@ -8,19 +7,10 @@ class NewsStore {
   news = [];
   isLoading = false;
   error = null;
-  news = [];
 
   constructor() {
     makeAutoObservable(this, {
-      setItems: action,
       hydrate: action.bound,
-    });
-    makeObservable(this, {
-      news: observable,
-      isLoading: observable,
-      error: observable,
-      filteredNewsArray: computed,
-      fetchAllNews: action,
     });
 
     if (typeof window !== "undefined" && !this.isHydrated) {
@@ -29,15 +19,9 @@ class NewsStore {
         name: "news",
         properties: ["news"],
         storage: window.localStorage,
-      })
-        .then(() => {
-          runInAction(() => {
-            this.news = Array.isArray(this.news) ? this.news : [];
-          });
-        })
-        .catch(error => {
-          console.error("Failed to make persistable:", error);
-        });
+      }).catch(error => {
+        console.error("Failed to make persistable:", error);
+      });
     }
   }
 
@@ -45,6 +29,10 @@ class NewsStore {
     if (Array.isArray(data)) {
       this.setItems(data);
     }
+  }
+
+  setItems(items) {
+    this.news = items;
   }
 
   setItems(items) {

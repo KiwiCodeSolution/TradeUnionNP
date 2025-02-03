@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import offices from "@/data/offices.json";
+import offices from "@/data/ppo.json";
 import Office from "./Office";
 import Button from "@/components/UI/buttons/Buttons";
 
