@@ -17,10 +17,10 @@ export const searchNews = async searchParams => {
 
     return res.data;
   } catch (error) {
-    console.error("Сталася помилка при пошуку новин:", {
+    console.error("Сталася помилка при пошуку", {
       message: error.message,
     });
 
-    throw new Error("Сталася помилка при пошуку новин.");
+    throw new Error("Сталася помилка при пошуку.");
   }
 };

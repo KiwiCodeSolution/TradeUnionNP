@@ -9,7 +9,6 @@ import { NEWS_SECTIONS } from "@/constants/news_sections";
 import { createReport, updateReport } from "@/services/photoService";
 import useAuth from "@/hooks/useAuth";
 import { observer } from "mobx-react-lite";
-
 import { useStore } from "@/store/StoreProvider";
 
 const NewsForm = observer(({ news, part }) => {
@@ -106,7 +105,7 @@ const NewsForm = observer(({ news, part }) => {
         if (!data) {
           response =
             part === "news"
-              ? await newsStore.createNews(itemData, token)
+              ? await newsStore.createNews(itemData, token, router)
               : await createReport(itemData, token);
           toast.success(part === "news" ? "Новину створено!" : "Запис створено!");
         } else {
@@ -119,9 +118,9 @@ const NewsForm = observer(({ news, part }) => {
 
         if (response) {
           resetForm();
-          router.replace(
-            `/uk/admin/${part === "news" ? "news" : "photo-report"}?page=1&archive=false`
-          );
+          // router.replace(
+          //   `/uk/admin/${part === "news" ? "news" : "photo-report"}?page=1&archive=false`
+          // );
         }
       } catch (error) {
         // Виводимо конкретне повідомлення з помилки
@@ -136,9 +135,9 @@ const NewsForm = observer(({ news, part }) => {
 
     // Вибір обробки для новин чи фото
     if (part === "news") {
-      handleDataAction("news", news, news?.slug);
+      await handleDataAction("news", news, news?.slug);
     } else if (part === "photo") {
-      handleDataAction("photo", news, news?.slug);
+      await handleDataAction("photo", news, news?.slug);
     }
   };
 

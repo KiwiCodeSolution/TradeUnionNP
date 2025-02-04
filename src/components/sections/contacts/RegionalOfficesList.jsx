@@ -1,14 +1,35 @@
 "use client";
 
-import { useState } from "react";
-import offices from "@/data/ppo.json";
+import { useEffect, useState } from "react";
 import Office from "./Office";
 import Button from "@/components/UI/buttons/Buttons";
+import { observer } from "mobx-react-lite";
+import { StoreProvider, useStore } from "@/store/StoreProvider";
+import Loader from "@/components/UI/loader/Loader";
 
-const RegionalOfficesList = ({ placeholder, button }) => {
+export const AllRegionalOfficesList = observer(({ placeholder, button }) => {
+
+  const { officesStore } = useStore();
+  const offices = officesStore.offices;
+  const isLoading = officesStore.isLoading;
+  const [isHydrated, setIsHydrated] = useState(false);
   const [filterText, setFilterText] = useState("");
   const [showAll, setShowAll] = useState(false);
   const initialDisplayCount = 6;
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (offices.length === 0 && !isLoading) {
+      officesStore.fetchAllOffices();
+    }
+  }, [offices, isLoading, officesStore]);
+
+  if (!isHydrated) {
+    return null;
+  }
 
   const handleShowMore = () => {
     setShowAll(true);
@@ -18,7 +39,9 @@ const RegionalOfficesList = ({ placeholder, button }) => {
     ? offices.filter(office => office.region.toLowerCase().includes(filterText?.toLowerCase()))
     : offices;
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className="w-full flex flex-col gap-y-8 pb-10">
       <input
         type="text"
@@ -42,6 +65,12 @@ const RegionalOfficesList = ({ placeholder, button }) => {
       )}
     </div>
   );
-};
+});
 
-export default RegionalOfficesList;
+export default function RegionalOfficesList({ placeholder, button }) {
+  return (
+    <StoreProvider>
+      <AllRegionalOfficesList placeholder={placeholder} button={button} />
+    </StoreProvider>
+  );
+}

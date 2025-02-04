@@ -30,8 +30,6 @@ const RegionalOffice = ({ item }) => {
   const vacancy = { phone: "+380677008125", email: "help@profspilka.org" };
 
   const pattern = item.region.split(" ")[0].slice(0, -1);
-  // console.log("ppo-------->", pattern + "у");
-  // console.log("name-------->", pattern + "ої");
 
   return (
     <article className="w-full h-fit flex flex-col rounded-2xl overflow-hidden">

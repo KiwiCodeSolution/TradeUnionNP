@@ -1,67 +1,56 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import NewsAdminPageComponent from "@/components/sections/news/NewsAdminPageComponent";
-import { BaseURL } from "@/constants/BaseUrl";
 import toast from "react-hot-toast";
-import { toggleArchiveStatus, deleteNews } from "@/services/newsService";
+import { deleteNews } from "@/services/newsService";
 import useAuth from "@/hooks/useAuth";
 import { observer } from "mobx-react-lite";
 import Loader from "@/components/UI/loader/Loader";
 import { StoreProvider, useStore } from "@/store/StoreProvider";
 
-const NewsContent = observer(() => {
-  const { newsStore } = useStore(); // MobX Store
+export const NewsContent = observer(() => {
+  const { newsStore } = useStore();
   const allNews = newsStore.news;
   const isLoading = newsStore.isLoading;
 
-  const [news, setNews] = useState([]); // Локальний стан для списку новин
-  const { token } = useAuth(); // Аутентифікація користувача
-  const [isHydrated, setIsHydrated] = useState(false); // Стан для гідратації
+  const { token } = useAuth();
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    setIsHydrated(true); // Оновлюємо стан, коли компоненти на клієнті
+    setIsHydrated(true);
   }, []);
 
-  // Викликаємо хуки useEffect одразу, без умов
   useEffect(() => {
     if (allNews.length === 0 && !isLoading) {
-      newsStore.fetchAllNews(); // Завантаження новин зі стору
+      newsStore.fetchAllNews();
     }
   }, [allNews, isLoading, newsStore]);
 
-  // useEffect(() => {
-  //   const fetchNews = async () => {
-  //     try {
-  //       const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
-  //       if (!res.ok) throw new Error("Failed to fetch news");
-  //       const data = await res.json();
-  //       setNews(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //       toast.error("Не вдалося завантажити новини.");
-  //     }
-  //   };
-
-  //   fetchNews(); // Завантаження новин із бекенду
-  // }, []);
-
-  const handleArchiveToggle = async (slug, status) => {
+  const handleArchiveToggle = async (slug, currentStatus) => {
     try {
-      const updatedNews = await toggleArchiveStatus(slug, status, token);
-      if (updatedNews) {
-        setNews(prevNews =>
-          prevNews.map(item =>
-            item.slug === slug ? { ...item, status: updatedNews.data.status } : item
-          )
-        );
-        toast.success(`Новина успішно ${status === "archived" ? "деархівована" : "архівована"}.`);
-      }
+      await newsStore.toggleArchiveStatus(slug, currentStatus, token);
+      toast.success(
+        `Новина успішно ${currentStatus === "archived" ? "деархівована" : "архівована"}.`
+      );
     } catch (error) {
       toast.error("Сталася помилка при зміні статусу новини.");
       console.error("Помилка зміни статусу:", error);
     }
   };
+
+  const sortedNews = useMemo(() => {
+    return [...allNews].sort((a, b) => {
+      const publishDateA = new Date(a.publishDate);
+      const publishDateB = new Date(b.publishDate);
+
+      if (publishDateB - publishDateA !== 0) {
+        return publishDateB - publishDateA;
+      }
+
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+  }, [allNews]);
 
   const handleDelete = async (slug, userId) => {
     toast.custom(t => (
@@ -79,7 +68,7 @@ const NewsContent = observer(() => {
                 await deleteNews(slug, userId, token);
                 toast.success("Новину видалено!");
 
-                newsStore.fetchAllNews(); // Оновлення даних у сторі
+                newsStore.fetchAllNews();
               } catch (error) {
                 toast.dismiss(t.id);
                 console.error("Error deleting news:", error);
@@ -106,7 +95,7 @@ const NewsContent = observer(() => {
   };
 
   if (!isHydrated) {
-    return null; // Чекаємо, поки компонент не буде готовий до гідратації
+    return null;
   }
 
   if (isLoading) {
@@ -117,7 +106,7 @@ const NewsContent = observer(() => {
     <main className="px-10 py-5 admin relative max-h-screen">
       <NewsAdminPageComponent
         section={"news"}
-        items={allNews}
+        items={sortedNews}
         onToggleArchive={handleArchiveToggle}
         onDelete={handleDelete}
         token={token}

@@ -2,11 +2,13 @@
 
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
-import { useState } from "react";
-import offices from "@/data/ppo.json";
+import { useEffect, useState } from "react";
 import TelMailBlock from "../regional_offices/TelMailBlock";
 import Modal from "@/components/UI/modal/Modal";
 import { Cross } from "@/components/icons/IconsComponents";
+import { StoreProvider, useStore } from "@/store/StoreProvider";
+import { observer } from "mobx-react-lite";
+import Loader from "@/components/UI/loader/Loader";
 
 const InformationWindow = ({ item, x, y, isModal, fnc }) => {
   return (
@@ -50,13 +52,31 @@ const InformationModalWindow = ({ item, fnc }) => {
   );
 };
 
-const Map = () => {
+export const MapWrapper = observer(() => {
+  const { officesStore } = useStore();
+  const offices = officesStore.offices;
+  const isLoading = officesStore.isLoading;
+  const [isHydrated, setIsHydrated] = useState(false);
   const [showInformation, setShowInformation] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [information, setInformation] = useState("");
   const [hovering, setHovering] = useState(false);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (offices.length === 0 && !isLoading) {
+      officesStore.fetchAllOffices();
+    }
+  }, [offices, isLoading, officesStore]);
+
+  if (!isHydrated) {
+    return null;
+  }
 
   const handleMouseOver = (clientX, clientY, id) => {
     const element = document.getElementById(id);
@@ -99,7 +119,9 @@ const Map = () => {
           phone: "",
         };
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <BaseSection style={""}>
       <Wrapper styles={"flex flex-col relative"}>
         {showInformation && <InformationWindow item={currentRegion} x={x} y={y} />}
@@ -391,6 +413,12 @@ const Map = () => {
       </Wrapper>
     </BaseSection>
   );
-};
+});
 
-export default Map;
+export default function Map() {
+  return (
+    <StoreProvider>
+      <MapWrapper />
+    </StoreProvider>
+  );
+}

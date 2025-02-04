@@ -1,5 +1,6 @@
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import Image from "next/image";
+import { Link } from "@/navigation";
 
 const ProjectsItem = ({ item }) => {
   return (
@@ -15,9 +16,12 @@ const ProjectsItem = ({ item }) => {
       </div>
 
       <h3 className="text-[15px] font-bold">{item.text}</h3>
-      <LinkButton view={"transparent"} goToPage icon goTo={item.link} style={"font-bold w-[163px]"}>
+      <Link href={item.link} className="font-bold w-[163px] h-fit text-red">
         ПЕРЕГЛЯНУТИ
-      </LinkButton>
+      </Link>
+      {/* <LinkButton view={"transparent"} goToPage icon goTo={item.link} style={"font-bold w-[163px]"}>
+        ПЕРЕГЛЯНУТИ
+      </LinkButton> */}
     </article>
   );
 };

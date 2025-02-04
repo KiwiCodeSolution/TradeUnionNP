@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction, action } from "mobx";
+import { makeAutoObservable, runInAction, action, autorun } from "mobx";
 import { makePersistable } from "mobx-persist-store";
 import axios from "axios";
 import { BaseURL } from "@/constants/BaseUrl";
@@ -29,10 +29,6 @@ class NewsStore {
     if (Array.isArray(data)) {
       this.setItems(data);
     }
-  }
-
-  setItems(items) {
-    this.news = items;
   }
 
   setItems(items) {
@@ -73,7 +69,7 @@ class NewsStore {
     }
   }
 
-  async createNews(newsData, token) {
+  async createNews(newsData, token, router) {
     try {
       const res = await axios.post(`${BaseURL}news`, newsData, {
         headers: {
@@ -83,6 +79,8 @@ class NewsStore {
       });
       runInAction(() => {
         this.news.push(res.data);
+        router.replace(`/uk/admin/news?page=1&archive=false`);
+        console.log(this.news);
       });
     } catch (error) {
       if (error.response?.status === 409) {
@@ -102,9 +100,11 @@ class NewsStore {
         },
       });
       runInAction(() => {
-        const index = this.news.findIndex(n => n.id === newsId);
+        const index = this.news.findIndex(n => n.slug === slug);
         if (index !== -1) {
-          this.news[index] = res.data;
+          const updatedNews = { ...this.news[index], status: updatedStatus };
+          this.news[index] = updatedNews;
+          this.news = [...this.news];
         }
       });
     } catch (error) {
@@ -127,13 +127,12 @@ class NewsStore {
         }
       );
 
-      console.log(res.data);
       runInAction(() => {
         const index = this.news.findIndex(n => n.slug === slug);
         if (index !== -1) {
-          this.news[index].status = updatedStatus;
-        } else {
-          console.warn(`Новину зі slug ${slug} не знайдено в локальному стані.`);
+          const updatedNews = { ...this.news[index], status: updatedStatus };
+          this.news[index] = updatedNews;
+          this.news = [...this.news];
         }
       });
     } catch (error) {

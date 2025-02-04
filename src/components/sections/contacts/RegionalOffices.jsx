@@ -6,6 +6,7 @@ import Title from "@/components/Title";
 
 const RegionalOffices = () => {
   const t = useTranslations("Contacts");
+
   return (
     <BaseSection style={""}>
       <Wrapper styles={"pt-16"}>

@@ -5,19 +5,24 @@ import { useSearchParams } from "next/navigation";
 import SearchItem from "./SearchItem";
 import { inter } from "@/app/[locale]/(client)/fonts";
 import { searchNews } from "@/services/searchService";
+import Loader from "@/components/UI/loader/Loader";
 
 export default function SearchPageComponent() {
   const searchParams = useSearchParams();
   const search = searchParams.get("query");
 
   const [searchResult, setSearchResult] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       try {
         const result = await searchNews(search);
         setSearchResult(result);
+        setIsLoading(false);
       } catch (error) {
+        setIsLoading(false);
         console.error("Error fetching search results:", error);
       }
     };
@@ -25,7 +30,9 @@ export default function SearchPageComponent() {
     fetchData();
   }, [search]);
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
       <p className="w-fit mx-auto text-2xl font-bold">{search}</p>
 
