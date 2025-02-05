@@ -15,9 +15,9 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
   // const imageItemPreviewLink = extractFirstImage(item.previewImg);
 
   const [imageSrc, setImageSrc] = useState(
-    imageItemLink || `${BaseURLImage}${item.previewImg}` || NoImage
+    (item.previewImg && `${BaseURLImage}${item.previewImg}`) || imageItemLink || NoImage
   );
-  console.log(`${BaseURLImage}${item.previewImg}`);
+  console.log(imageItemLink);
 
   const getMonthName = monthNumber => {
     const months = [
