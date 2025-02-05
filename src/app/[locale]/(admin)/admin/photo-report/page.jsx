@@ -1,51 +1,59 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import NewsAdminPageComponent from "@/components/sections/news/NewsAdminPageComponent";
-import { BaseURL } from "@/constants/BaseUrl";
 import toast from "react-hot-toast";
-import { deleteReport, toggleArchiveReportStatus } from "@/services/photoService";
+import { deleteReport } from "@/services/photoService";
 import useAuth from "@/hooks/useAuth";
+import { StoreProvider, useStore } from "@/store/StoreProvider";
+import { observer } from "mobx-react-lite";
+import Loader from "@/components/UI/loader/Loader";
 
-export default function AdminPhotoPage() {
-  const [entries, setEntries] = useState([]);
-  const { token } = useAuth();
+export const PhotoReportsComponenTPage = observer(() => {
+  const { photoReportsStore } = useStore();
+  const allReports = photoReportsStore.photoReports || [];
+  const isLoading = photoReportsStore.isLoading;
 
-  const fetchEntries = async () => {
-    try {
-      const res = await fetch(`${BaseURL}gallerey`, { method: "GET", cache: "no-store" });
-      if (!res.ok) throw new Error("Failed to fetch entries");
-      const data = await res.json();
-      setEntries(data);
-    } catch (error) {
-      console.error(error);
-      toast.error("Не вдалося завантажити записи.");
-    }
-  };
+  const { token, username } = useAuth();
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    fetchEntries();
+    setIsHydrated(true);
   }, []);
 
-  const handleArchiveToggle = async (slug, status) => {
+  useEffect(() => {
+    if (allReports.length === 0 && !isLoading) {
+      photoReportsStore.fetchAllReports();
+    }
+  }, [allReports, isLoading, photoReportsStore]);
+
+  const handleArchiveToggle = async (slug, currentStatus) => {
     try {
-      const updatedEntries = await toggleArchiveReportStatus(slug, status, token);
-      if (updatedEntries) {
-        setEntries(prevEntries =>
-          prevEntries.map(item =>
-            item.slug === slug ? { ...item, status: updatedEntries.data.status } : item
-          )
-        );
-        toast.success(`Запис успішно ${status === "archived" ? "деархівована" : "архівована"}.`);
-      }
+      await photoReportsStore.toggleArchiveStatus(slug, currentStatus, token);
+      toast.success(
+        `Запис успішно ${currentStatus === "archived" ? "деархівовано" : "архівовано"}.`
+      );
     } catch (error) {
-      toast.error("Сталася помилка при зміні статусу.");
+      toast.error("Сталася помилка при зміні статусу запису.");
       console.error("Помилка зміни статусу:", error);
     }
   };
 
-  const handleDelete = async (slug, userId) => {
-    toast.custom(t => (
+  const sortedReports = useMemo(() => {
+    return [...allReports].sort((a, b) => {
+      const publishDateA = new Date(a.publishDate);
+      const publishDateB = new Date(b.publishDate);
+
+      if (publishDateB - publishDateA !== 0) {
+        return publishDateB - publishDateA;
+      }
+
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+  }, [allReports]);
+
+  const handleDelete = async slug => {
+    const toastId = toast.custom(t => (
       <div
         className={`bg-white p-4 rounded shadow-lg flex flex-col ${
           t.visible ? "animate-enter" : "animate-leave"
@@ -55,15 +63,14 @@ export default function AdminPhotoPage() {
         <div className="flex justify-end gap-2">
           <button
             onClick={async () => {
+              toast.dismiss(t.id);
               try {
-                toast.dismiss(t.id);
-                await deleteReport(slug, userId, token);
+                await deleteReport(slug, username, token);
                 toast.success("Запис видалено!");
-                fetchEntries();
+                photoReportsStore.fetchAllReports();
               } catch (error) {
-                toast.dismiss(t.id);
-                console.error("Error deleting entries:", error);
-                if (error.message === "Entries not found") {
+                console.error("Error deleting news:", error);
+                if (error.message === "News not found") {
                   toast.error("Такий запис не знайдено.");
                 } else {
                   toast.error("Щось пішло не так. Спробуйте ще раз.");
@@ -85,14 +92,31 @@ export default function AdminPhotoPage() {
     ));
   };
 
+  if (!isHydrated) {
+    return null;
+  }
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <main className="px-10 py-5">
       <NewsAdminPageComponent
         section={"photo"}
-        items={entries}
+        items={sortedReports}
         onToggleArchive={handleArchiveToggle}
         onDelete={handleDelete}
+        token={token}
       />
     </main>
+  );
+});
+
+export default function AdminPhotoReportsPage() {
+  return (
+    <StoreProvider>
+      <PhotoReportsComponenTPage />
+    </StoreProvider>
   );
 }

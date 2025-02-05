@@ -11,10 +11,10 @@ import { StoreProvider, useStore } from "@/store/StoreProvider";
 
 export const NewsContent = observer(() => {
   const { newsStore } = useStore();
-  const allNews = newsStore.news;
+  const allNews = newsStore.news || [];
   const isLoading = newsStore.isLoading;
 
-  const { token } = useAuth();
+  const { token, username } = useAuth();
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
@@ -52,8 +52,8 @@ export const NewsContent = observer(() => {
     });
   }, [allNews]);
 
-  const handleDelete = async (slug, userId) => {
-    toast.custom(t => (
+  const handleDelete = async slug => {
+    const toastId = toast.custom(t => (
       <div
         className={`bg-white p-4 rounded shadow-lg flex flex-col ${
           t.visible ? "animate-enter" : "animate-leave"
@@ -63,14 +63,12 @@ export const NewsContent = observer(() => {
         <div className="flex justify-end gap-2">
           <button
             onClick={async () => {
+              toast.dismiss(t.id);
               try {
-                toast.dismiss(t.id);
-                await deleteNews(slug, userId, token);
+                await deleteNews(slug, username, token);
                 toast.success("Новину видалено!");
-
                 newsStore.fetchAllNews();
               } catch (error) {
-                toast.dismiss(t.id);
                 console.error("Error deleting news:", error);
                 if (error.message === "News not found") {
                   toast.error("Таку новину не знайдено.");

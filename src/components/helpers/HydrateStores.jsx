@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useStore } from "@/store/StoreProvider";
-import { toJS } from "mobx";
 
 const HydrateStores = ({ initialData }) => {
   const { newsStore, contactsStore, officesStore, photoReportsStore } = useStore();
@@ -15,14 +14,12 @@ const HydrateStores = ({ initialData }) => {
 
     if (initialData.news) {
       newsStore.hydrate(initialData.news);
-      console.log("Hydrated news:", toJS(newsStore.news));
     }
     if (initialData.contacts) {
       contactsStore.setItems(initialData.contacts);
     }
     if (initialData.offices) {
       officesStore.setItems(initialData.offices);
-      console.log("Hydrated offices:", toJS(officesStore.offices));
     }
     if (initialData.photoReports) {
       photoReportsStore.setItems(initialData.photoReports);

@@ -34,17 +34,43 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
+// export default async function RootLayout({ children, params: { locale } }) {
+//   const messages = await getMessages();
+
+//   return (
+//     <html lang={locale} className="min-h-screen">
+//       <body className={`${roboto.className} min-h-screen flex flex-col`}>
+//         <Providers>
+//           <NextIntlClientProvider messages={messages}>
+//             <div className="min-h-screen">
+//               <Header locale={locale} />
+//               <div className="flex-grow">{children}</div>
+//               <Footer locale={locale} />
+//               <UpButton />
+//             </div>
+//             <Toaster />
+//             <div id="modal-root"></div>
+//           </NextIntlClientProvider>
+//         </Providers>
+//       </body>
+//     </html>
+//   );
+// }
+
 export default async function RootLayout({ children, params: { locale } }) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="min-h-screen">
-      <body className={`${roboto.className} min-h-screen`}>
+    <html lang={locale} className="h-full">
+      <body className={`${roboto.className} min-h-screen flex flex-col`}>
         <Providers>
           <NextIntlClientProvider messages={messages}>
-            <div className="min-h-screen">
+            <div className="flex flex-col min-h-screen">
               <Header locale={locale} />
-              {children}
+
+              {/* Контейнер для основного контенту */}
+              <div className="flex-grow">{children}</div>
+
               <Footer locale={locale} />
               <UpButton />
             </div>

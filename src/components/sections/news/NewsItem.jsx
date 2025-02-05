@@ -2,9 +2,7 @@
 
 import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icons/IconsComponents";
 import Image from "next/image";
-
 import NoImage from "@/images/No_Image.jpg";
-
 import { useState } from "react";
 import { Link } from "@/navigation";
 import { extractFirstImage } from "@/utils/extractFirstImage";
@@ -49,28 +47,47 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
           </p>
           <p className="text-[15px] text-center">{new Date(item.publishDate).getDate()}</p>
         </div>
+        {/* кнопки керування записом: редагування, архівування, видалення */}
         {section === "admin" && (
           <div className="w-full flex flex-col gap-y-3 items-center justify-between">
-            <Link
-              href={`/admin/${part === "photo" ? "photo-report" : "news"}/${item._id}`}
-              className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
-            >
-              <Edit />
-            </Link>
-            <button
-              className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
-              onClick={() => onToggleArchive(item.slug, item.status)}
-            >
-              <Archive />
-            </button>
-            <button
-              className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full h-fit py-2 flex items-center justify-center"
-              onClick={() => onDelete(item.slug, "admin_Evgenija")}
-            >
-              <Trash />
-            </button>
+            <div className="relative group w-full">
+              <Link
+                href={`/admin/${part === "photo" ? "photo-report" : "news"}/${item._id}`}
+                className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full py-2 flex items-center justify-center"
+              >
+                <Edit />
+              </Link>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                Редагування
+              </span>
+            </div>
+
+            <div className="relative group w-full">
+              <button
+                className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full py-2 flex items-center justify-center"
+                onClick={() => onToggleArchive(item.slug, item.status)}
+              >
+                <Archive />
+              </button>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                Архівування
+              </span>
+            </div>
+
+            <div className="relative group w-full">
+              <button
+                className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full py-2 flex items-center justify-center"
+                onClick={() => onDelete(item.slug)}
+              >
+                <Trash />
+              </button>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                Видалення
+              </span>
+            </div>
+
             {new Date(item.publishDate) > today && (
-              <div className="outline outline-1 outline-red rounded-xl text-red text-base   font-medium w-full h-fit py-2 flex items-center justify-center">
+              <div className="outline outline-1 outline-red rounded-xl text-red text-base font-medium w-full py-2 flex items-center justify-center">
                 <Timer />
               </div>
             )}

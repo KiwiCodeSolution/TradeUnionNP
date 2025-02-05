@@ -14,36 +14,39 @@ import { StoreProvider } from "@/store/StoreProvider";
 
 export default async function ClientHome({ params }) {
   const [news, contacts, offices] = await Promise.all([
-    getAllNews(),
-    getContacts(),
-    getAllOffices(),
+    getAllNews().catch(() => null),
+    getContacts().catch(() => null),
+    getAllOffices().catch(() => null),
   ]);
 
-  return (
-    <>
-      <main className="flex flex-col relative">
-        <HeroHomePage />
-        <FinancialAid />
-        <Values />
-        <CollectiveAgreement />
-        <DirectionsWork locale={params.locale} />
-        <Interview locale={params.locale} />
-        {news.data && news.data.length > 0 && params.locale === "uk" && <NewsSectionHomePage />}
-        <ContactSection bgStyle={"bg-bgGrey"} locale={params.locale} />
+  const hasNews = news?.data?.length > 0;
+  const hasContacts = contacts?.data?.length > 0;
+  const hasOffices = offices?.data?.length > 0;
 
-        {news.data &&
-          news.data.length > 0 &&
-          contacts.data &&
-          contacts.data.length > 0 &&
-          offices.data &&
-          offices.data.length > 0 && (
-            <StoreProvider>
-              <HydrateStores
-                initialData={{ news: news.data, contacts: contacts.data, offices: offices.data }}
-              />
-            </StoreProvider>
-          )}
-      </main>
-    </>
+  return (
+    <main className="flex flex-col relative">
+      <HeroHomePage />
+      <FinancialAid />
+      <Values />
+      <CollectiveAgreement />
+      <DirectionsWork locale={params.locale} />
+      <Interview locale={params.locale} />
+
+      {hasNews && params.locale === "uk" && <NewsSectionHomePage />}
+      <ContactSection bgStyle={"bg-bgGrey"} locale={params.locale} />
+
+      {/* прокидаємо ініціальні дані у стор через гідрацію */}
+      {(hasNews || hasContacts || hasOffices) && (
+        <StoreProvider>
+          <HydrateStores
+            initialData={{
+              ...(hasNews && { news: news.data }),
+              ...(hasContacts && { contacts: contacts.data }),
+              ...(hasOffices && { offices: offices.data }),
+            }}
+          />
+        </StoreProvider>
+      )}
+    </main>
   );
 }

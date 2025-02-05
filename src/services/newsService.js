@@ -93,7 +93,6 @@ export const deleteNews = async (slug, userId, token) => {
       throw new Error("Сталася помилка при видаленні новини");
     }
 
-    console.log("Новина успішно видалена");
     return response.data;
   } catch (error) {
     console.error("Сталася помилка при видаленні новини", error);

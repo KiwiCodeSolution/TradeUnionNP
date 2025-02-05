@@ -3,10 +3,8 @@
 import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { useRouter } from "next/navigation";
-
 import toast from "react-hot-toast";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
-import { createReport, updateReport } from "@/services/photoService";
 import useAuth from "@/hooks/useAuth";
 import { observer } from "mobx-react-lite";
 import { useStore } from "@/store/StoreProvider";
@@ -14,7 +12,7 @@ import { useStore } from "@/store/StoreProvider";
 const NewsForm = observer(({ news, part }) => {
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
   const { token } = useAuth();
-  const { newsStore } = useStore();
+  const { newsStore, photoReportsStore } = useStore();
   const router = useRouter();
 
   const [formData, setFormData] = useState({
@@ -76,6 +74,7 @@ const NewsForm = observer(({ news, part }) => {
   }
 
   const handleSubmit = async e => {
+    console.log("handleSubmit");
     e.preventDefault();
 
     // Валідація форми
@@ -106,21 +105,19 @@ const NewsForm = observer(({ news, part }) => {
           response =
             part === "news"
               ? await newsStore.createNews(itemData, token, router)
-              : await createReport(itemData, token);
+              : await photoReportsStore.createReports(itemData, token, router);
           toast.success(part === "news" ? "Новину створено!" : "Запис створено!");
-        } else {
+        } else if (news) {
           response =
             part === "news"
-              ? await newsStore.updateNews(slug, itemData, token)
-              : await updateReport(slug, itemData, token);
+              ? await newsStore.updateNews(slug, itemData, token, router, news._id)
+              : await photoReportsStore.updateReports(slug, itemData, token, router, news._id);
+
           toast.success(part === "news" ? "Новину оновлено!" : "Запис оновлено!");
         }
 
         if (response) {
           resetForm();
-          // router.replace(
-          //   `/uk/admin/${part === "news" ? "news" : "photo-report"}?page=1&archive=false`
-          // );
         }
       } catch (error) {
         // Виводимо конкретне повідомлення з помилки

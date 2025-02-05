@@ -6,12 +6,57 @@ import { BaseURL } from "@/constants/BaseUrl";
 class ContactsStore {
   contacts = [];
 
+  isLoading = false;
+  error = null;
+
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {
+      hydrate: action.bound,
+    });
+
+    if (typeof window !== "undefined" && !this.isHydrated) {
+      this.isHydrated = true;
+      makePersistable(this, {
+        name: "contacts",
+        properties: ["contacts"],
+        storage: window.localStorage,
+      }).catch(error => {
+        console.error("Failed to make persistable:", error);
+      });
+    }
   }
 
-  setItems(contacts) {
-    this.contacts = contacts;
+  hydrate(data) {
+    if (Array.isArray(data)) {
+      this.setItems(data);
+    }
+  }
+
+  setItems(items) {
+    this.contacts = items;
+  }
+
+  async fetchContacts() {
+    this.isLoading = true;
+    this.error = null;
+
+    try {
+      const res = await axios.get(`${BaseURL}contacts`);
+
+      const [{ _id, __v, ...initialContacts }] = res.data;
+      runInAction(() => {
+        this.setItems(initialContacts);
+      });
+    } catch (error) {
+      runInAction(() => {
+        this.error = "Сталася помилка при отриманні контактів.";
+      });
+      console.error("Сталася помилка при отриманні контактів.", error);
+    } finally {
+      runInAction(() => {
+        this.isLoading = false;
+      });
+    }
   }
 }
 

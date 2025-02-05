@@ -80,7 +80,6 @@ class NewsStore {
       runInAction(() => {
         this.news.push(res.data);
         router.replace(`/uk/admin/news?page=1&archive=false`);
-        console.log(this.news);
       });
     } catch (error) {
       if (error.response?.status === 409) {
@@ -91,22 +90,26 @@ class NewsStore {
     }
   }
 
-  async updateNews(newsId, newsData, token) {
+  async updateNews(slug, newsData, token, router, id) {
     try {
-      const res = await axios.put(`${BaseURL}news/${newsId}`, newsData, {
+      const res = await axios.put(`${BaseURL}news/${slug}`, newsData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       });
       runInAction(() => {
-        const index = this.news.findIndex(n => n.slug === slug);
+        const index = this.news.findIndex(n => n._id === id);
         if (index !== -1) {
-          const updatedNews = { ...this.news[index], status: updatedStatus };
+          const updatedNews = { ...this.news[index], ...res.data };
+          console.log(updatedNews);
           this.news[index] = updatedNews;
           this.news = [...this.news];
+          router.replace(`/uk/admin/news?page=1&archive=false`);
         }
       });
+
+      return res.data;
     } catch (error) {
       console.error("Сталася помилка при оновленні новини.", error);
       throw new Error("Сталася помилка при оновленні новини.");

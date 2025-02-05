@@ -3,7 +3,7 @@ import { BaseURL } from "@/constants/BaseUrl";
 
 export async function fetchContacts() {
   const res = await fetch(`${BaseURL}contacts`, { method: "GET", cache: "no-store" });
-  console.log(res);
+
   if (!res.ok) {
     throw new Error("Failed to fetch contacts");
   }

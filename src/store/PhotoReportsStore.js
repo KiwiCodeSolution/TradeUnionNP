@@ -35,12 +35,12 @@ class PhotoReportsStore {
     this.photoReports = items;
   }
 
-  async fetchAllNews() {
+  async fetchAllReports() {
     this.isLoading = true;
     this.error = null;
 
     try {
-      const res = await axios.get(`${BaseURL}reports`);
+      const res = await axios.get(`${BaseURL}gallerey`);
       runInAction(() => {
         this.setItems(res.data);
       });
@@ -56,9 +56,9 @@ class PhotoReportsStore {
     }
   }
 
-  async createNews(newsData, token, router) {
+  async createReports(reportsData, token, router) {
     try {
-      const res = await axios.post(`${BaseURL}reports`, newsData, {
+      const res = await axios.post(`${BaseURL}gallerey`, reportsData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ class PhotoReportsStore {
       });
       runInAction(() => {
         this.photoReports.push(res.data);
-        router.replace(`/uk/admin/news?page=1&archive=false`);
+        router.replace(`/uk/admin/photo-report?page=1&archive=false`);
       });
     } catch (error) {
       if (error.response?.status === 409) {
@@ -77,22 +77,29 @@ class PhotoReportsStore {
     }
   }
 
-  async updateNews(newsId, newsData, token) {
+  async updateReports(slug, reportsData, token, router, id) {
     try {
-      const res = await axios.put(`${BaseURL}reports/${newsId}`, newsData, {
+      const res = await axios.put(`${BaseURL}gallerey/${slug}`, reportsData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       });
+
       runInAction(() => {
-        const index = this.photoReports.findIndex(n => n.slug === slug);
+        const index = this.photoReports.findIndex(n => n._id === id);
+
         if (index !== -1) {
-          const updatedNews = { ...this.photoReports[index], status: updatedStatus };
-          this.photoReports[index] = updatedNews;
+          const updatedReports = { ...this.photoReports[index], ...res.data };
+
+          this.photoReports[index] = updatedReports;
           this.photoReports = [...this.photoReports];
+
+          router.replace(`/uk/admin/photo-report?page=1&archive=false`);
         }
       });
+
+      return res.data;
     } catch (error) {
       console.error("Сталася помилка при оновленні фотозвіту", error);
       throw new Error("Сталася помилка при оновленні фотозвіту");
@@ -103,7 +110,7 @@ class PhotoReportsStore {
     try {
       const updatedStatus = currentStatus === "archived" ? "created" : "archived";
       const res = await axios.put(
-        `${BaseURL}reports/${slug}`,
+        `${BaseURL}gallerey/${slug}`,
         { status: updatedStatus },
         {
           headers: {
@@ -116,8 +123,8 @@ class PhotoReportsStore {
       runInAction(() => {
         const index = this.photoReports.findIndex(n => n.slug === slug);
         if (index !== -1) {
-          const updatedNews = { ...this.photoReports[index], status: updatedStatus };
-          this.photoReports[index] = updatedNews;
+          const updatedReports = { ...this.photoReports[index], status: updatedStatus };
+          this.photoReports[index] = updatedReports;
           this.photoReports = [...this.photoReports];
         }
       });
@@ -127,9 +134,9 @@ class PhotoReportsStore {
     }
   }
 
-  async deleteNews(slug, userId, token) {
+  async deleteReports(slug, userId, token) {
     try {
-      await axios.delete(`${BaseURL}reports/${slug}/${userId}`, {
+      await axios.delete(`${BaseURL}gallerey/${slug}/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

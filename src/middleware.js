@@ -19,6 +19,7 @@ const publicPages = [
   "/zvernennya",
   "/subscription",
   "/signin",
+  "/ozdorovlennya",
 ];
 const locales = ["uk", "en"];
 

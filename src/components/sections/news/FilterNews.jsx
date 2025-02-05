@@ -9,7 +9,6 @@ const BUTTONS = NEWS_SECTIONS;
 const FilterNews = () => {
   const [nameButton, setNameButton] = useState("Новини");
   const [news, setNews] = useState([]);
-  console.log(nameButton);
 
   useEffect(() => {
     fetchNews();
