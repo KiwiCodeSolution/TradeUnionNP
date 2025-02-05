@@ -6,11 +6,13 @@ import NoImage from "@/images/No_Image.jpg";
 import { useState } from "react";
 import { Link } from "@/navigation";
 import { extractFirstImage } from "@/utils/extractFirstImage";
+import { BaseURLImage } from "@/constants/BaseUrl";
 
 const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) => {
   // шукаємо першу картинку у контенті
 
   const imageItemLink = extractFirstImage(item.content);
+  const imagePreviewImg = `${BaseURLImage}${item.previewImg}`;
 
   const [imageSrc, setImageSrc] = useState(imageItemLink || NoImage);
 

@@ -13,20 +13,32 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
-        port: "3000", // Порт для зображень
-        pathname: "/images/**", // Шлях до зображень
+        port: "3000",
+        pathname: "/images/**",
       },
       {
         protocol: "http",
         hostname: "localhost",
-        port: "5000", // Порт для API
-        pathname: "/uploads/**", // Шлях до API-запитів (якщо це потрібно)
+        port: "5000",
+        pathname: "/uploads/**",
       },
       {
         protocol: "http",
         hostname: "localhost",
-        port: "5000", // Порт для API
-        pathname: "/uploads_gallerey/**", // Шлях до API-запитів (якщо це потрібно)
+        port: "4000",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "4000",
+        pathname: "/uploads_gallerey/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "5000",
+        pathname: "/uploads_gallerey/**",
       },
     ],
   },

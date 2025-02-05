@@ -74,7 +74,6 @@ const NewsForm = observer(({ news, part }) => {
   }
 
   const handleSubmit = async e => {
-    console.log("handleSubmit");
     e.preventDefault();
 
     // Валідація форми

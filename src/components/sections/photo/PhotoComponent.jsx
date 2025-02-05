@@ -6,7 +6,7 @@ import PaginatedItems from "@/components/sections/news/PaginatedItems";
 import NewsFiltersSection from "@/components/sections/news/NewsFiltersSection";
 import { observer } from "mobx-react-lite";
 import Loader from "@/components/UI/loader/Loader";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const PhotoComponent = observer(({ locale }) => {
   const { photoReportsStore } = useStore();
@@ -17,20 +17,20 @@ const PhotoComponent = observer(({ locale }) => {
 
   useEffect(() => {
     if (!searchParams.get("section") && !searchParams.get("page")) {
-      // Якщо в URL немає параметрів section і page, встановлюємо їх за замовчуванням
       const defaultSection = "vse";
       const defaultPage = 1;
       const path = `/${locale}/foto`;
 
       const newURL = `${path}?section=${defaultSection}&page=${defaultPage}`;
 
-      // Оновлюємо URL без перезавантаження сторінки
-      router.replace(newURL, undefined, { shallow: true });
+      if (!searchParams.get("section") || !searchParams.get("page")) {
+        router.replace(newURL, undefined, { shallow: true });
+      }
     }
   }, [locale, searchParams, router]);
 
   useEffect(() => {
-    if (photoReportsStore.length === 0 && !isLoading) {
+    if (!photoReportsStore.photoReports.length && !isLoading) {
       photoReportsStore.fetchAllReports();
     }
   }, [photoReportsStore, isLoading]);
@@ -45,15 +45,17 @@ const PhotoComponent = observer(({ locale }) => {
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
   return (
-    <>
-      <NewsFiltersSection news={allReports} locale={locale} part={"foto"} />
-      <PaginatedItems
-        part={"photo"}
-        section={"photo"}
-        items={filteredReportsArray}
-        locale={locale}
-      />
-    </>
+    allReports.length > 0 && (
+      <>
+        <NewsFiltersSection news={allReports} locale={locale} part={"foto"} />
+        <PaginatedItems
+          part={"photo"}
+          section={"photo"}
+          items={filteredReportsArray}
+          locale={locale}
+        />
+      </>
+    )
   );
 });
 

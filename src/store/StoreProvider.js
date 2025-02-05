@@ -2,10 +2,12 @@
 import React, { createContext, useContext } from "react";
 import RootStore from "@/store/RootStore";
 
+// Створення єдиного екземпляра
+const rootStore = new RootStore();
+
 const StoreContext = createContext(null);
 
 export const StoreProvider = ({ children }) => {
-  const rootStore = new RootStore();
   return <StoreContext.Provider value={rootStore}>{children}</StoreContext.Provider>;
 };
 

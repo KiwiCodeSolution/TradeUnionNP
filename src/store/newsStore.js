@@ -102,7 +102,6 @@ class NewsStore {
         const index = this.news.findIndex(n => n._id === id);
         if (index !== -1) {
           const updatedNews = { ...this.news[index], ...res.data };
-          console.log(updatedNews);
           this.news[index] = updatedNews;
           this.news = [...this.news];
           router.replace(`/uk/admin/news?page=1&archive=false`);

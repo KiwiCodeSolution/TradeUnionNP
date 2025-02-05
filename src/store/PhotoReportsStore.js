@@ -41,6 +41,7 @@ class PhotoReportsStore {
 
     try {
       const res = await axios.get(`${BaseURL}gallerey`);
+      console.log("fetchAllReports", res.data);
       runInAction(() => {
         this.setItems(res.data);
       });

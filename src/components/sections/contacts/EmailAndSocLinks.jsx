@@ -67,17 +67,22 @@ const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
   }, []);
 
   useEffect(() => {
-    if (!contactsStore.isLoading && Object.keys(allContacts).length === 0) {
+    if (!contactsStore.isLoading && !contactsStore.contacts?.length) {
       contactsStore.fetchContacts();
-    } else {
+    }
+  }, [contactsStore]);
+
+  useEffect(() => {
+    if (allContacts && allContacts.length > 0) {
+      const [{ _id, __v, ...initialContacts }] = allContacts;
       setSocLinks(prevLinks =>
         prevLinks.map(link => ({
           ...link,
-          link: allContacts[link.title] || link.link,
+          link: initialContacts[link.title] || link.link,
         }))
       );
     }
-  }, [allContacts, contactsStore]);
+  }, [contactsStore.contacts]);
 
   if (contactsStore.isLoading || !isClient) {
     return <Skeleton isMobile={isMobile} section={section} />;
@@ -87,7 +92,7 @@ const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
     <>
       {allContacts && (
         <a href={`mailto:${allContacts.mail}`} className="text-white text-base mt-10">
-          {allContacts.mail}
+          {allContacts[0].mail}
         </a>
       )}
 
@@ -128,7 +133,7 @@ const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
           href={`mailto:${allContacts.mail}`}
           className="text-red text-base text-center md:text-left underline underline-offset-1 hover:underline-offset-4"
         >
-          {allContacts.mail}
+          {allContacts[0].mail}
         </a>
       )}
 

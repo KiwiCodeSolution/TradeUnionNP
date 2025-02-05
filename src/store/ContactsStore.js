@@ -45,7 +45,7 @@ class ContactsStore {
 
       const [{ _id, __v, ...initialContacts }] = res.data;
       runInAction(() => {
-        this.setItems(initialContacts);
+        this.setItems(res.data);
       });
     } catch (error) {
       runInAction(() => {
