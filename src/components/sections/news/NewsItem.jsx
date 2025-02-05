@@ -6,15 +6,18 @@ import NoImage from "@/images/No_Image.jpg";
 import { useState } from "react";
 import { Link } from "@/navigation";
 import { extractFirstImage } from "@/utils/extractFirstImage";
+import { BaseURLImage } from "@/constants/BaseUrl";
 
 const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) => {
   // шукаємо першу картинку у контенті
 
   const imageItemLink = extractFirstImage(item.content);
+  // const imageItemPreviewLink = extractFirstImage(item.previewImg);
 
-  console.log(imageItemLink);
-
-  const [imageSrc, setImageSrc] = useState(imageItemLink || NoImage);
+  const [imageSrc, setImageSrc] = useState(
+    imageItemLink || `${BaseURLImage}${item.previewImg}` || NoImage
+  );
+  console.log(`${BaseURLImage}${item.previewImg}`);
 
   const getMonthName = monthNumber => {
     const months = [
