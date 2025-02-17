@@ -1,14 +1,13 @@
 import { Clock } from "@/components/icons/IconsComponents";
-import { extractFirstImage } from "@/utils/extractFirstImage";
 import Image from "next/image";
 import Link from "next/link";
 import NoImage from "@/images/No_Image.jpg";
 
-const BlogItem = ({ item, section }) => {
-  const imageItemLink = section === "home" ? extractFirstImage(item.content) : item.previewImg;
+const BlogItem = ({ item }) => {
+  const imageItemLink = item.previewImg;
+
   const currentImage = imageItemLink || NoImage;
 
-  const today = new Date();
   const getMonthName = monthNumber => {
     const months = [
       "січня",
@@ -24,8 +23,14 @@ const BlogItem = ({ item, section }) => {
       "листопада",
       "грудня",
     ];
-    return months[parseInt(monthNumber, 10) - 1];
+    return months[parseInt(monthNumber, 10)];
   };
+
+  const date = new Date(item.publishDate);
+  const day = date.getDate();
+  const month = getMonthName(date.getMonth());
+  const year = date.getFullYear();
+
   return (
     <article className="relative w-full h-[400px] bg-white rounded-xl">
       <div className="absolute top-3 left-3 w-fit h-[29px] flex items-center justify-between px-2 bg-main bg-opacity-60 rounded-md">
@@ -55,9 +60,8 @@ const BlogItem = ({ item, section }) => {
         <ul className="flex flex-col p-7 gap-y-6 pb-4">
           <li className="flex gap-x-2 items-center text-[15px] text-newsData">
             <Clock />
-            {new Date(item.publishDate).getDate()}{" "}
-            {getMonthName(new Date(item.publishDate).getMonth())}{" "}
-            {new Date(item.publishDate).getFullYear()}
+            <Clock />
+            {day} {month} {year}
           </li>
           <li>
             <h2 className="font-bold text-[22px] leading-[1.3] mb-3 hover:underline hover:underline-offset-2 hover:text-red">

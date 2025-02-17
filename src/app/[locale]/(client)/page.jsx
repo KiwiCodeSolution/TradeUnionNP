@@ -24,7 +24,7 @@ export default async function ClientHome({ params }) {
   const hasOffices = offices?.data?.length > 0;
 
   return (
-    <main className="flex flex-col relative">
+    <main className="flex flex-col relative min-h-[2000px]">
       <HeroHomePage />
       <FinancialAid />
       <Values />

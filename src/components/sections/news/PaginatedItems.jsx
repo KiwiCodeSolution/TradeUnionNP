@@ -23,25 +23,37 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
   const filterSection = sectionMap[getSectionParams] || "Новини";
 
   useEffect(() => {
-    setCurrentPage(currentPageFromURL);
-  }, [currentPageFromURL]);
+    setCurrentPage(parseInt(searchParams.get("page")) || 1);
+  }, [searchParams]);
 
-  useEffect(() => {
-    // Перевірка та редирект на ?page=1, якщо відсутній параметр, тільки якщо ми не на адмінці
-    if (!searchParams.get("page") && !pathname.includes("admin")) {
-      const path = section === "photo" ? "foto" : "novyny";
-      router.replace(`/${locale}/${path}?section=${getSectionParams}&page=1`);
-    } else if (!searchParams.get("page") && pathname.includes("admin") && part === "news") {
-      router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
-    } else if (!searchParams.get("page") && pathname.includes("admin") && part === "photo") {
-      router.replace(`/uk/admin/photo-report?page=1&archive=${isArchive ? "true" : "false"}`);
-    }
-  }, [searchParams, router, section, getSectionParams, pathname, isArchive]);
+  // useEffect(() => {
+  //   // Перевірка та редирект на ?page=1, якщо відсутній параметр, тільки якщо ми не на адмінці
+  //   if (!searchParams.get("page") && !pathname.includes("admin")) {
+  //     const path = section === "photo" ? "foto" : "novyny";
+  //     router.replace(`/${locale}/${path}?section=${getSectionParams}&page=1`);
+  //   } else if (!searchParams.get("page") && pathname.includes("admin") && part === "news") {
+  //     router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
+  //   } else if (!searchParams.get("page") && pathname.includes("admin") && part === "photo") {
+  //     router.replace(`/uk/admin/photo-report?page=1&archive=${isArchive ? "true" : "false"}`);
+  //   }
+  // }, [searchParams, router, section, getSectionParams, pathname, isArchive]);
 
   const filteredItems = items.filter(item => {
     if (filterSection === "Новини") return true;
     return item.sections.includes(filterSection);
   });
+
+  useEffect(() => {
+    if (!searchParams.get("page")) {
+      const newURL = pathname.includes("admin")
+        ? `/uk/admin/${part === "news" ? "news" : "photo-report"}?page=1&archive=${isArchive}`
+        : `/${locale}/${
+            section === "photo" ? "foto" : "novyny"
+          }?section=${getSectionParams}&page=1`;
+
+      router.replace(newURL);
+    }
+  }, [searchParams, pathname, part, isArchive, locale, section, getSectionParams, router]);
 
   // Обчислюємо початковий зсув елементів на основі поточної сторінки
   const initialOffset = (currentPage - 1) * itemsPerPage;
@@ -120,7 +132,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            forcePage={currentPage - 1}
+            forcePage={parseInt(searchParams.get("page") || "1", 10) - 1}
             previousLabel={previousLabel}
             renderOnZeroPageCount={null}
             containerClassName="pagination-container pagination-container_admin"
@@ -147,7 +159,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            forcePage={currentPage - 1}
+            forcePage={parseInt(searchParams.get("page") || "1", 10) - 1}
             previousLabel={previousLabel}
             renderOnZeroPageCount={null}
             containerClassName="pagination-container"

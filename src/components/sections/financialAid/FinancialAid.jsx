@@ -14,7 +14,7 @@ const FinancialAid = () => {
   const t = useTranslations("HomePage.financialAid");
   return (
     <BaseSection style={""}>
-      <Wrapper styles={"flex flex-col md:flex-row gap-8 py-16 h-fit xl:h-[1031px]"}>
+      <Wrapper styles={"flex flex-col md:flex-row gap-8 py-16 h-fit xl:min-h-[1031px]"}>
         <div className="order-1 w-full md:w-3/5 flex flex-col">
           <Title tag="h2">
             <span className="text-red">{t(`title.0`)}</span> {t(`title.1`)}

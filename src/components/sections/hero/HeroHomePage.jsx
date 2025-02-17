@@ -21,7 +21,7 @@ const HeroHomePage = () => {
   ];
 
   return (
-    <BaseSection style="bg-bgGrey h-fit xl:h-[628px]">
+    <BaseSection style="bg-bgGrey h-fit xl:min-h-[628px]">
       <Wrapper styles={"flex flex-col md:flex-row"}>
         <div className="order-2 md:order-1 w-full md:w-1/2 flex flex-col">
           <TitleHomePage />
