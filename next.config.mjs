@@ -5,40 +5,83 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // images: {
-  //   domains: ["localhost"], // Додаємо localhost до дозволених доменів
-  //   // domains: ["kiwicode.tech"],
+  //   remotePatterns: [
+  //     {
+  //       protocol: "http",
+  //       hostname: "localhost",
+  //       port: "3000",
+  //       pathname: "/images/**",
+  //     },
+  //     {
+  //       protocol: "http",
+  //       hostname: "localhost",
+  //       port: "5000",
+  //       pathname: "/uploads/**",
+  //     },
+  //     {
+  //       protocol: "http",
+  //       hostname: "localhost",
+  //       port: "4000",
+  //       pathname: "/uploads/**",
+  //     },
+  //     {
+  //       protocol: "http",
+  //       hostname: "localhost",
+  //       port: "4000",
+  //       pathname: "/uploads_gallerey/**",
+  //     },
+  //     {
+  //       protocol: "http",
+  //       hostname: "localhost",
+  //       port: "5000",
+  //       pathname: "/uploads_gallerey/**",
+  //     },
+  //     {
+  //       protocol: "https",
+  //       hostname: "kiwicode.digital",
+  //       pathname: "/bc/uploads/**",
+  //     },
+  //     {
+  //       protocol: "https",
+  //       hostname: "kiwicode.digital",
+  //       pathname: "/bc/uploads_gallerey/**",
+  //     },
+  //     {
+  //       protocol: "https",
+  //       hostname: "kiwicode.digital",
+  //       pathname: "/bc/images/**",
+  //     },
+  //   ],
+  // },
+  // images: {
+  //   domains: ["kiwicode.digital"],
   // },
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "3000",
-        pathname: "/images/**",
+        protocol: "https",
+        hostname: "kiwicode.digital",
+        pathname: "/bc/**",
       },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "5000",
-        pathname: "/uploads/**",
+        protocol: "https",
+        hostname: "kiwicode.digital",
+        pathname: "/**",
       },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "4000",
-        pathname: "/uploads/**",
+        protocol: "https",
+        hostname: "kiwicode.digital",
+        pathname: "/bc/images/**",
       },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "4000",
-        pathname: "/uploads_gallerey/**",
+        protocol: "https",
+        hostname: "kiwicode.digital",
+        pathname: "/bc/uploads/**",
       },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "5000",
-        pathname: "/uploads_gallerey/**",
+        protocol: "https",
+        hostname: "kiwicode.digital",
+        pathname: "/bc/uploads_gallerey/**",
       },
     ],
   },

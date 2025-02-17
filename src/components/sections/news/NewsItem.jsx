@@ -3,21 +3,31 @@
 import { Archive, ArrowNews, Edit, Timer, Trash, Views } from "@/components/icons/IconsComponents";
 import Image from "next/image";
 import NoImage from "@/images/No_Image.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "@/navigation";
 import { extractFirstImage } from "@/utils/extractFirstImage";
 import { BaseURLImage } from "@/constants/BaseUrl";
 
 const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) => {
-  // шукаємо першу картинку у контенті
-
+  const [imageSrc, setImageSrc] = useState(NoImage);
   const imageItemLink = extractFirstImage(item.content);
-  // const imageItemPreviewLink = extractFirstImage(item.previewImg);
+  const filteredSrc = item.previewImg === 'src="/preview/qwerty.jpeg"';
+  useEffect(() => {
+    const newSrc =
+      (item.previewImg && !filteredSrc && `${BaseURLImage}${item.previewImg}`) ||
+      (imageItemLink && imageItemLink) ||
+      NoImage;
+    setImageSrc(newSrc);
+  }, [item.previewImg, imageItemLink]);
 
-  const [imageSrc, setImageSrc] = useState(
-    (item.previewImg && `${BaseURLImage}${item.previewImg}`) || imageItemLink || NoImage
-  );
-  console.log(imageItemLink);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+  // шукаємо першу картинку у контенті
 
   const getMonthName = monthNumber => {
     const months = [
