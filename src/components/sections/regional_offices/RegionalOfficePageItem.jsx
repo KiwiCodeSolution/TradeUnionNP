@@ -3,30 +3,17 @@
 import Users from "@/images/icon-users.svg";
 import NoPhoto from "@/images/no-photo.png";
 import Image from "next/image";
-import Tell from "@/images/phone-white.svg";
-import Post from "@/images/contacts/mail.svg";
-import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
 import { useState } from "react";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 import RedDot from "@/components/UI/RedDot";
 import { Link } from "@/navigation";
+import TelMailBlock from "./TelMailBlock";
 
 const RegionalOfficePageItem = ({ office }) => {
   const [isShowAdmissionAddress, setIsShowAdmissionAddress] = useState(false);
   const [isShowApplicationAddress, setIsShowApplicationAddress] = useState(false);
   const [isShowCommittee, setIsShowCommittee] = useState(false);
-  const [isShowContacts, setIsShowContacts] = useState("");
 
-  function handleShowContacts(type) {
-    if (isShowContacts === "tell" && type === "tell") {
-      setIsShowContacts("");
-      return;
-    }
-    if (isShowContacts === "email" && type === "email") {
-      setIsShowContacts("");
-      return;
-    } else setIsShowContacts(type);
-  }
   return (
     <article className="w-full xl:w-[900px] mx-auto flex flex-col pb-10">
       <div className="w-full h-200 xl:h-[400px] mx-auto overflow-hidden relative">
@@ -71,56 +58,14 @@ const RegionalOfficePageItem = ({ office }) => {
             <p className="text-[15px] text-center md:text-left">{office.position} </p>
           </div>
         </li>
-        <li className="flex flex-col h-[100px] justify-between">
-          <div className="flex gap-x-4 mx-auto xl:hidden items-center h-full">
-            <a
-              className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-              href={`tel:${office.phone}`}
-            >
-              <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
-            </a>
-            <a
-              className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-              href={`mailto:${office.email}&body=питання щодо ${office.region} профспілки`}
-            >
-              <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
-            </a>
-          </div>
-          <div className="h-full gap-y-1 items-center hidden xl:flex">
-            <div className="flex gap-x-2 items-center">
-              <button
-                className="w-14 h-14 rounded-full flex items-center justify-center hover:shadow-redButtonHover bg-red"
-                onClick={() => handleShowContacts("tell")}
-              >
-                <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
-              </button>
 
-              <div
-                className={`transition-all duration-500 ease-in-out ${
-                  isShowContacts === "tell" ? "max-w-xs opacity-100" : "max-w-0 opacity-0"
-                } w-40`}
-              >
-                <p className="whitespace-nowrap">{formatPhoneNumber(office.phone)}</p>
-              </div>
-            </div>
-            <div className="flex gap-x-2 items-center">
-              <button
-                className="w-14 h-14 rounded-full flex items-center justify-center hover:shadow-redButtonHover bg-white border border-red relative z-[2]"
-                onClick={() => handleShowContacts("email")}
-              >
-                <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
-              </button>
-
-              <div
-                className={`overflow-hidden transition-all duration-500 ${
-                  isShowContacts === "email" ? "max-w-xs opacity-100" : "max-w-0 opacity-0"
-                }`}
-              >
-                <p className="text-center"> {office.email}</p>
-              </div>
-            </div>
-          </div>
-        </li>
+        <TelMailBlock
+          email={office.email}
+          phone={office.phone}
+          director={office.director}
+          region={office.region}
+          page={"ppo"}
+        />
       </ul>
       <ul>
         <li className="flex flex-col py-4 border-b-[2px] border-white">

@@ -10,7 +10,7 @@ const Place = ({ place }) => {
       <p className="w-[calc(100%-190px)] text-[30.3px] font-bold leading-[33.33px] relative z-[1]">
         {place.name}
       </p>
-      <RatingComponent styles={"absolute top-8 right-8"} rating={place.rating} />
+      <RatingComponent styles={"absolute top-8 right-8 items-end"} rating={place.rating} />
       <div className="flex items-center gap-x-3">
         <Image src={Locale} width={27} height={27} className="" alt="зображення точки навігації" />
         <p className="text-lg text-grey leading-6">{place.address}</p>

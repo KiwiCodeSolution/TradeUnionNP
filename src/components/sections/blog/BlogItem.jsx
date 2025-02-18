@@ -2,11 +2,10 @@ import { Clock } from "@/components/icons/IconsComponents";
 import Image from "next/image";
 import Link from "next/link";
 import NoImage from "@/images/No_Image.jpg";
+import { BaseURLImage } from "@/constants/BaseUrl";
 
 const BlogItem = ({ item }) => {
-  const imageItemLink = item.previewImg;
-
-  const currentImage = imageItemLink || NoImage;
+  const currentImage = (item.previewImg && `${BaseURLImage}${item.previewImg}`) || NoImage;
 
   const getMonthName = monthNumber => {
     const months = [
@@ -50,7 +49,7 @@ const BlogItem = ({ item }) => {
       >
         <div className="h-[210px] overflow-hidden">
           <Image
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-top"
             src={currentImage}
             width={375}
             height={210}
@@ -59,7 +58,6 @@ const BlogItem = ({ item }) => {
         </div>
         <ul className="flex flex-col p-7 gap-y-6 pb-4">
           <li className="flex gap-x-2 items-center text-[15px] text-newsData">
-            <Clock />
             <Clock />
             {day} {month} {year}
           </li>

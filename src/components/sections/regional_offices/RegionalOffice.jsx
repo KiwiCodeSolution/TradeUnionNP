@@ -6,28 +6,12 @@ import RedDot from "@/components/UI/RedDot";
 import Link from "next/link";
 import NoPhoto from "@/images/no-photo.png";
 import ShowButton from "@/components/UI/buttons/ShowButton";
-import Tell from "@/images/phone-white.svg";
-import Post from "@/images/contacts/mail.svg";
-import { formatPhoneNumber } from "@/utils/formatPhoneNumber";
+import TelMailBlock from "./TelMailBlock";
 
 const RegionalOffice = ({ item }) => {
   const [isShowAdmissionAddress, setIsShowAdmissionAddress] = useState(false);
   const [isShowApplicationAddress, setIsShowApplicationAddress] = useState(false);
   const [isShowCommittee, setIsShowCommittee] = useState(false);
-  const [isShowContacts, setIsShowContacts] = useState("");
-
-  function handleShowContacts(type) {
-    if (isShowContacts === "tell" && type === "tell") {
-      setIsShowContacts("");
-      return;
-    }
-    if (isShowContacts === "email" && type === "email") {
-      setIsShowContacts("");
-      return;
-    } else setIsShowContacts(type);
-  }
-
-  const vacancy = { phone: "+380677008125", email: "help@profspilka.org" };
 
   const pattern = item.region.split(" ")[0].slice(0, -1);
 
@@ -81,52 +65,15 @@ const RegionalOffice = ({ item }) => {
             <p className="text-[15px] text-center md:text-left">{item.position} </p>
           </div>
         </li>
-        <li className="flex flex-col h-[100px] justify-between">
-          <div className="flex gap-x-4 mx-auto xl:hidden ">
-            <a
-              className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-              href={item.director ? `tel:${item.phone}` : `tel:${vacancy.phone}`}
-            >
-              <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
-            </a>
-            <a
-              className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-              href={
-                item.director
-                  ? `mailto:${item.email}&body=питання щодо ${item.region} профспілки`
-                  : `mailto:${vacancy.email}`
-              }
-            >
-              <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
-            </a>
-          </div>
 
-          <div className="hidden xl:flex gap-x-4 mx-auto">
-            <button
-              className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-              onClick={() => handleShowContacts("tell")}
-            >
-              <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
-            </button>
-            <button
-              className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-              onClick={() => handleShowContacts("email")}
-            >
-              <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
-            </button>
-          </div>
+        <TelMailBlock
+          email={item.email}
+          phone={item.phone}
+          director={item.director}
+          region={item.region}
+          page={"ppo"}
+        />
 
-          <div className="hidden xl:block">
-            {isShowContacts === "tell" && (
-              <p className="text-center">
-                {formatPhoneNumber(item.director ? item.phone : vacancy.phone)}
-              </p>
-            )}
-            {isShowContacts === "email" && (
-              <p className="text-center">{item.director ? item.email : vacancy.email}</p>
-            )}
-          </div>
-        </li>
         <li className="flex flex-col pb-4 border-b-[2px] border-bgGrey">
           <div className="flex items-center justify-between">
             <p className="w-4/5 text-[15px] font-bold">Адреса відправлення Заяв на вступ:</p>

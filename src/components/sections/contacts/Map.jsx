@@ -15,7 +15,7 @@ const InformationWindow = ({ item, x, y, isModal, fnc }) => {
     <div
       className={`${
         !isModal ? "absolute min-w-[300px]" : "min-w-[350px] relative"
-      }  bg-white h-fit z-30 rounded-2xl hidden md:flex flex-col gap-y-3 p-8 `}
+      }  bg-white h-fit z-30 rounded-2xl hidden md:flex flex-col gap-y-3 p-8`}
       style={{ top: `${y}px`, left: `${x}px` }}
     >
       {isModal && (
@@ -26,9 +26,14 @@ const InformationWindow = ({ item, x, y, isModal, fnc }) => {
           <Cross />
         </button>
       )}
-      <h3 className="text-lg font-bold">{item.region}</h3>
-      <p className="text-base">Голова: {item.director || "Вакансія"} </p>
-      <TelMailBlock email={item.email} phone={item.phone} />
+      <h3 className="text-lg font-bold text-center">{item.region}</h3>
+      <p className="text-base text-center">Голова: {item.director || "Вакансія"} </p>
+      <TelMailBlock
+        email={item.email}
+        phone={item.phone}
+        director={item.director}
+        region={item.region}
+      />
     </div>
   );
 };
@@ -45,9 +50,14 @@ const InformationModalWindow = ({ item, fnc }) => {
         <Cross />
       </button>
 
-      <h3 className="text-lg font-bold">{item.region}</h3>
-      <p className="text-base">Голова: {item.director || "Вакансія"} </p>
-      <TelMailBlock email={item.email} phone={item.phone} />
+      <h3 className="text-lg font-bold text-center">{item.region}</h3>
+      <p className="text-base text-center">Голова: {item.director || "Вакансія"} </p>
+      <TelMailBlock
+        email={item.email}
+        phone={item.phone}
+        director={item.director}
+        region={item.region}
+      />
     </div>
   );
 };

@@ -142,6 +142,16 @@ a:hover .arrow-icon {
   fill: white;
 }
 
+.health-button-prev .arrow,
+.health-button-next .arrow {
+  fill: white;
+}
+
+.health-button-prev:hover .arrow,
+.health-button-next:hover .arrow {
+  fill: theme("colors.red");
+}
+
 .algorithm.swiper-slide {
   width: 200px;
   height: 100px;
@@ -355,6 +365,14 @@ button:hover .archive {
   padding-right: 20px;
 }
 
+.reviews .swiper-wrapper {
+  padding: 20px;
+}
+
+.reviews .swiper-slide {
+  margin-right: 0px !important;
+}
+
 .places .swiper-slide-next article,
 .places .swiper-slide-prev article {
   transform: scale(0.7);
@@ -402,4 +420,18 @@ button:hover .archive {
 
 .places .swiper-slide-active article {
   animation: slideTransform 1.2s ease;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 45s linear infinite;
 }

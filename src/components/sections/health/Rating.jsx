@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const RatingComponent = ({ rating, styles }) => {
   return (
-    <div className={`${styles} flex items-end`}>
+    <div className={`${styles} flex items-baseline`}>
       <Rating
         initialRating={rating}
         readonly
