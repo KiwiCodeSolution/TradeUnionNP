@@ -13,17 +13,17 @@ const TemplateHealthSection = () => {
   ];
   return (
     <BaseSection style={"bg-bgGrey py-8"}>
-      <Wrapper styles={"flex gap-x-10"}>
-        <div className="w-1/2 flex flex-col gap-y-8 my-auto">
+      <Wrapper styles={"flex gap-x-10 flex-col xl:flex-row"}>
+        <div className="w-full xl:w-1/2 flex flex-col gap-y-8 my-auto">
           <Title tag={"h2"}>
             Шаблон <span className="text-red">внутрішніх</span> відправок
           </Title>
-          <p className="text-grey text-lg">
+          <p className="text-grey text-lg mb-8 xl:mb-0">
             Віправте пакет документів на отримання матеріальної допомоги, скориставшись шаблоном
             внутрішніх відправок <strong>Матеріальна допомога від Профспілки</strong>
           </p>
         </div>
-        <ul className="w-1/2 bg-white rounded-[20px] py-[15px] px-[30px] flex flex-col gap-y-4">
+        <ul className="w-full xl:w-1/2 bg-white rounded-[20px] py-[15px] px-[30px] flex flex-col gap-y-4">
           {points.map(el => (
             <li className="w-full flex items-center gap-x-4" key={el}>
               <RedDot />

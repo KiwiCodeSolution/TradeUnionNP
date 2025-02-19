@@ -34,6 +34,9 @@ const RatingComponent = ({ rating, styles }) => {
             />
           </div>
         }
+        placeholderSymbol={
+          <Image src={EmptyStar} alt="напівзаповнена зірка" width={24} height={24} />
+        }
         fractions={10}
       />
       <span className="text-red text-[30.3px] font-bold leading-[1.1]">{rating}</span>

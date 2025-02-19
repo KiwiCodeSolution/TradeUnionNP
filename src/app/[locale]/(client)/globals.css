@@ -360,13 +360,17 @@ button:hover .archive {
   background-position: center;
 }
 
-.places .swiper-wrapper {
-  padding-left: 20px;
-  padding-right: 20px;
+@media (min-width: 1024px) {
+  .places .swiper-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
-.reviews .swiper-wrapper {
-  padding: 20px;
+@media (min-width: 1024px) {
+  .reviews .swiper-wrapper {
+    padding: 20px;
+  }
 }
 
 .reviews .swiper-slide {
@@ -434,4 +438,11 @@ button:hover .archive {
 .animate-scroll {
   display: flex;
   animation: scroll 45s linear infinite;
+}
+
+.card-bar {
+  background-image: url("/images/health/card.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

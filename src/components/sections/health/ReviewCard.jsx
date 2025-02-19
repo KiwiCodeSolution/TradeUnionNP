@@ -4,13 +4,13 @@ import RatingComponent from "./Rating";
 
 const ReviewCard = ({ review }) => {
   return (
-    <article className="w-[560px] h-fit bg-white shadow-lg rounded-[32px] p-6 flex flex-col gap-y-3 relative mx-auto">
-      <div className="w-full h-[471px] rounded-[20px] overflow-hidden">
+    <article className="w-full xl:w-[560px] h-fit bg-white shadow-lg rounded-[32px] p-6 flex flex-col gap-y-3 relative mx-auto">
+      <div className="w-full h-[274px] xl:h-[471px] rounded-[20px] overflow-hidden">
         <Image
           src={review.image || NoPhoto}
           width={512}
           height={471}
-          className="w-full h-full content-center"
+          className="w-[274px] h-[274px] xl:w-full xl:h-full content-center"
           alt={`фото ${review.author}`}
         />
       </div>

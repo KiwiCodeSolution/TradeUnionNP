@@ -2,12 +2,12 @@ import { BaseURL } from "@/constants/BaseUrl";
 import Arrow from "@/images/arrow_white.svg";
 import Image from "next/image";
 
-const FileButton = ({ link, name }) => {
+const FileButton = ({ link, name, styles }) => {
   return (
     <a
       href={`${BaseURL}files/${link}`}
       target="_blank"
-      className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 mt-8 flex items-center justify-center mx-auto md:ml-0"
+      className={`w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-center mx-auto md:ml-0 ${styles}`}
     >
       {name}
       <Image
