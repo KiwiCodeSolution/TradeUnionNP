@@ -4,6 +4,8 @@ import BlogItem from "../blog/BlogItem";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
 import { observer } from "mobx-react-lite";
 import { StoreProvider, useStore } from "@/store/StoreProvider";
+import SkeletonBlogItem from "../blog/SkeletonBlogItem";
+import LinkButton from "@/components/UI/buttons/LinkButton";
 
 const BUTTONS = NEWS_SECTIONS;
 
@@ -18,10 +20,24 @@ const FilterNewsHomePage = observer(() => {
     if (news.length === 0 && !isLoading) {
       newsStore.fetchAllNews();
     }
-  }, [news, isLoading]);
+  }, [news, isLoading, newsStore]);
 
-  if (isLoading) {
-    return <Loader />;
+  // Якщо новини не завантажені і масив новин порожній
+  if (isLoading && news.length === 0) {
+    return (
+      <div className="min-h-[400px]">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-x-10">
+          <SkeletonBlogItem />
+          <SkeletonBlogItem />
+          <SkeletonBlogItem />
+        </div>
+      </div>
+    );
+  }
+
+  // Якщо новин немає після завантаження
+  if (!isLoading && news.length === 0) {
+    return <h3 className="text-center">Вибачте, новини не знайдені</h3>;
   }
 
   const today = new Date();
@@ -63,6 +79,17 @@ const FilterNewsHomePage = observer(() => {
           <h3 className="text-center">Вибачте, по Вашому запиту нічого не знайдено</h3>
         )}
       </div>
+
+      <LinkButton
+        view={"transparent"}
+        goTo={"/novyny"}
+        icon
+        style={
+          "border border-red mt-9 mx-auto relative z-[7] py-[15px] px-[33px] rounded-full w-fit uppercase flex items-center justify-between gap-x-5 text-[14px] font-bold"
+        }
+      >
+        Всі новини
+      </LinkButton>
     </div>
   );
 });
