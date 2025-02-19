@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import BlogItem from "../blog/BlogItem";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
-// import { BaseURL } from "@/constants/BaseUrl";
 import { observer } from "mobx-react-lite";
 import { StoreProvider, useStore } from "@/store/StoreProvider";
 
@@ -14,7 +13,6 @@ const FilterNewsHomePage = observer(() => {
   const isLoading = newsStore.isLoading;
 
   const [nameButton, setNameButton] = useState("Новини");
-  // const [news, setNews] = useState([]);
 
   useEffect(() => {
     if (news.length === 0 && !isLoading) {
@@ -31,29 +29,10 @@ const FilterNewsHomePage = observer(() => {
     .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
-  // useEffect(() => {
-  //   fetchNews();
-  // }, []);
-
-  // const fetchNews = async () => {
-  //   try {
-  //     const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
-  //     if (!res.ok) throw new Error("Failed to fetch news");
-  //     const data = await res.json();
-
-  //     setNews(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //     toast.error("Не вдалося завантажити новини.");
-  //   }
-  // };
-
   const currentNews =
     nameButton === "Новини"
       ? filteredNewsArray.slice(0, 3)
       : filteredNewsArray.filter(el => el.sections.includes(nameButton)).slice(0, 3);
-
-  console.log("currentNews", currentNews);
 
   return (
     <div className="relative z-[7]">
