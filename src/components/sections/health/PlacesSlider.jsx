@@ -21,7 +21,8 @@ const PlacesSlider = ({ places }) => {
         spaceBetween={20}
         speed={500}
         autoplay
-        loop={true}
+        rewind={true}
+        // loop={true}
         navigation={{
           nextEl: ".places-button-next",
           prevEl: ".places-button-prev",

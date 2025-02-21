@@ -369,11 +369,11 @@ button:hover .archive {
 
 @media (min-width: 1024px) {
   .reviews .swiper-wrapper {
-    padding: 20px;
+    padding: 10px 5px;
   }
-  .reviews .swiper-slide {
+  /* .reviews .swiper-slide {
     margin-right: 0px !important;
-  }
+  } */
 }
 
 .places .swiper-slide-next article,

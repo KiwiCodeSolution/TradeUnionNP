@@ -23,23 +23,20 @@ const ReviewsSlider = ({ reviews }) => {
 
       <Swiper
         modules={[Navigation, A11y]}
-        spaceBetween={20}
+        slidesPerView={2}
         speed={500}
-        autoplay
-        loop={true}
+        // loop={true}
+        rewind={true}
         navigation={{
           nextEl: ".health-button-next",
           prevEl: ".health-button-prev",
         }}
-        className="w-full xl:pb-20 xl:pt-10"
+        className="w-full xl:pb-10 xl:pt-10"
         breakpoints={{
           320: {
             slidesPerView: 1,
           },
           768: {
-            slidesPerView: 2,
-          },
-          1024: {
             slidesPerView: 2,
           },
         }}
