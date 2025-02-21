@@ -34,7 +34,8 @@
     "Metadata_TradeUnionist_Page": "I am the Trade Union| Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Protection_Page": "Protection of labor rights | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Appeal_Page": "Appeals | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
-    "Metadata_Subscription_Page": "News subscription | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
+    "Metadata_Subscription_Page": "News subscription | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
+    "Metadata_Healthy_Page": "Health improvement | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
   },
   "HomePage": {
     "path": "Home",
@@ -1385,7 +1386,8 @@
       "and send it",
       "Heads of PTUO (primary trade union organization)."
     ],
-    "link": "DOWNLOAD THE APPLICATION"
+    "link": "DOWNLOAD THE APPLICATION",
+    "conditions_title_healthy": ["Conditions ", "for providing financial assistance for recovery"]
   },
   "Sport": {
     "path": "Sports and leisure",
@@ -1781,6 +1783,146 @@
     "confirmationExists": "This address has already been subscribed to."
   },
   "Health": {
-    "section": "Documents required"
+    "title": "Health improvement",
+    "path": "Health improvement",
+    "wellnessTrips": "Wellness trips <strong>{season}</strong>",
+    "materialHelp": "Material aid for wellness <strong>{participants}</strong> on Defender of Ukraine Day and rehabilitation after injuries during military action",
+    "helpForChildren": "Material aid <strong>{help}</strong> for children of Union members",
+    "season": "in summer and winter",
+    "participants": "military personnel",
+    "help": "for wellness and recreation",
+    "variant_title": ["Rehabilitation ", "of trade union members"],
+    "wellnessTrips_detalis": {
+      "title": "Health care vouchers for trade union members",
+      "text": [
+        "Health care vouchers ",
+        "are distributed among primary trade union organizations",
+        " by decision of the central committee according to quotas in proportion to the number of PPO members and the PPO budget."
+      ]
+    },
+    "materialHelp_detalis": {
+      "title": "Rehabilitation for combatants",
+      "text": [
+        "Payment of material assistance for the recovery of combatants - members of the Trade Union ",
+        "on the occasion of the Day of the Defender of Ukraine"
+      ]
+    },
+    "rehabilitationHelp": {
+      "title": "Rehabilitation of mobilized trade unionists",
+      "text": [
+        "Compensation for the rehabilitation of mobilized trade unionists after ",
+        "being injured while participating in hostilities",
+        " and other war-related cases."
+      ]
+    },
+    "childrenRehabilitation": {
+      "title": "Healthcare for children",
+      "text": [
+        "Compensation of expenses for health care in Ukraine during the summer period (from 01.06 to 31.08) for children of Trade Union members",
+        "aged 6 to 13 years inclusive."
+      ]
+    },
+    "periods": {
+      "summer_winter": "annually, summer and winter",
+      "october": "annually, October",
+      "as_needed": "as needed",
+      "summer": "annually, June - August"
+    },
+    "documents": "Required documents",
+    "template_title": ["Internal ", "shipping", " template"],
+    "template_subtitle": [
+      "Send a package of documents to receive financial assistance using the internal mailing template ",
+      "Material Assistance from the Trade Union"
+    ],
+    "template_points": [
+      "the payment is made to a card, the details of which are provided by a member of the Trade Union;",
+      "the payment of benefits is made every Friday (or the day before, if it is a holiday);",
+      "if we have any questions regarding the documents, we will definitely contact you;",
+      "in the event of a refusal to pay the benefit, you will definitely receive feedback with the reason for the refusal;",
+      "if you have additional questions, contact the Head of the Trade Union Branch."
+    ],
+    "quantity_title": ["Number ", "of vouchers issued"],
+    "places_title": ["Pensions ", "selected for vacation packages"],
+    "places_subtitle": [
+      "Each boarding house is rated by trade union members using a specially developed system from 1 to 5 points. ",
+      "From 4.3 to 5 points",
+      " - this is how our employees rated the boarding houses where they rested"
+    ],
+    "places_title_second": [
+      "What to do if you didn't win a voucher? The trade union ",
+      "offers preferential terms",
+      " for purchasing vouchers to partner boarding houses!"
+    ],
+    "about_voucher": [
+      "The trip includes accommodation for two people in a standard room and three meals a day for 7 days. The union pays 80% of the cost of the trip, and the union member must pay 20% of the cost of the trip, round-trip travel, and personal expenses.",
+      "The trip includes accommodation for two people in a standard room and three meals a day for 7 days. ",
+      "he union pays 80% of the cost of the trip, and the union member must pay 20% of the cost of the trip, round-trip travel, and personal expenses."
+    ],
+    "participation_rules": [
+      "joined the Trade Union at least a year before the start of the project;",
+      "continuously pay dues to the Trade Union throughout the year;",
+      "did not receive financial assistance during the last year prior to the draw (exceptions are UBD, anniversary benefits, burial benefits, and newly introduced financial assistance for wartime);",
+      "have not received travel vouchers for the past four years."
+    ],
+    "participation_titles": ["Who can participate in the draw? ", "Trade union members", " who:"],
+    "participation_details": [
+      "The draw of vouchers is held in the “live” mode in the Facebook group of each branch, which guarantees transparency and fairness in the distribution of vouchers. We also invite observers from trade union committee members, trade union group organizers, participants of the draw and independent persons to the draw. Winners are selected using the website random.org.",
+      "If the winner refuses to use the received voucher, the right to receive such a voucher passes to the next trade union member in the draw list, who will be selected at random. The voucher is provided only to a member of the Trade Union, without the right to transfer it to other persons."
+    ],
+    "places": [
+      {
+        "name": "Recreation center “Source of Health”",
+        "description": "The cost of the tour includes accommodation in rooms of the “junior suite” category, three meals a day in the own dining room, children's entertainment programs, free Wi-Fi, access to the pool and parking. The recreation center has a playground, gazebos with barbecues, a relaxation area, a parking lot, as well as a bicycle rental point.",
+        "address": "Kherson region, Genichesky district, Genicheska girka village, Azovskaya st., 97."
+      },
+      {
+        "name": "Sadiba “Chersak”",
+        "description": "Accommodation in comfortable junior suite rooms with three meals a day in the dining room, as well as access to Wi-Fi and the pool is included in the price of the tour. In addition, guests are offered children's animation, parking, a barbecue area, gazebos, a playground and bicycle rental.",
+        "address": "Ivano-Frankivsk region, Mykulychyn village"
+      },
+      {
+        "name": "Golden Sands Resort",
+        "description": "The cost of the holiday includes accommodation in cozy junior suite rooms, three meals a day in the dining room, as well as access to the pool, parking and Wi-Fi. The territory has a playground, picnic areas with barbecues, gazebos for relaxation, a relaxation area and bicycle rental. Animation programs are provided for children.",
+        "address": "Zaporizhzhya region, Akimovsky district, Kyrylivka village, kosa Peresyp,36"
+      },
+      {
+        "name": "Recreation center “Amulet”",
+        "description": "Accommodation in rooms of the “junior suite” category with three meals a day in the dining room is included in the price of the tour. You will also get access to Wi-Fi, a swimming pool, a car park, children's animation and bicycle rental. The base is equipped with a playground, barbecue areas, picnic pavilions and a recreation area.",
+        "address": "Kherson region, Holoprystan district, Zaliznyi Port village, Shkilna st., 2A"
+      },
+      {
+        "name": "Health spa complex “Trembita",
+        "description": "The tour price includes accommodation in comfortable rooms of the “junior suite” category, three meals a day in the dining room, access to the pool and Wi-Fi. The territory of the recreation center includes a playground, barbecue areas, gazebos, a car park and bicycle rental. Entertainment animation programs are available for children.",
+        "address": "Transcarpathian region, Khust district, village of Velyatino, Dumentsi tract."
+      },
+      {
+        "name": "Hotel complex “Nebokray”",
+        "description": "The cost of the tour includes accommodation in junior suites, meals three times a day in the dining room, children's animation, use of the pool, Wi-Fi and parking. The territory has a playground, barbecue areas with gazebos, bike rental and a recreation area for the whole family.",
+        "address": "Ivano-Frankivsk region, city of Yaremche"
+      }
+    ],
+    "reviews_title": ["Reviews of trade union members about", " vacationing with the Trade Union"],
+    "reviews": [
+      {
+        "author": "Dmytro Ralets",
+        "address": "Manor 'Chersak' village of Mykulychyn, summer vacation 2023",
+        "description": "The impressions are wonderful, the summer Carpathians are simply incredible. I rested in 'Chersak', the room is clean, tidy. The food is quite acceptable, on the territory there is a swimming pool, a bathhouse, a kolyba for relaxation, a playground."
+      },
+      {
+        "author": "Natalia Glushko",
+        "address": "Hotel complex 'Nebokray' village Yaremche, summer vacation 2024",
+        "description": "The recreation center is very comfortable and tidy. The staff is friendly and will always advise and tell you who to contact about excursions. The location of the base is in a good place, nearby there are enclosures with wild animals, the Carpathians in miniature, the Maiden's Tears waterfall. I am satisfied with my vacation, I liked everything very much, the food is delicious and varied. I would be happy to come back here!"
+      },
+      {
+        "author": "Dmytro Ralets",
+        "address": "Manor 'Chersak' village of Mykulychyn, summer vacation 2023",
+        "description": "The impressions are wonderful, the summer Carpathians are simply incredible. I rested in 'Chersak', the room is clean, tidy. The food is quite acceptable, on the territory there is a swimming pool, a bathhouse, a kolyba for relaxation, a playground."
+      },
+      {
+        "author": "Natalia Glushko",
+        "address": "Hotel complex 'Nebokray' village Yaremche, summer vacation 2024",
+        "description": "The recreation center is very comfortable and tidy. The staff is friendly and will always advise and tell you who to contact about excursions. The location of the base is in a good place, nearby there are enclosures with wild animals, the Carpathians in miniature, the Maiden's Tears waterfall. I am satisfied with my vacation, I liked everything very much, the food is delicious and varied. I would be happy to come back here!"
+      }
+    ]
   }
 }

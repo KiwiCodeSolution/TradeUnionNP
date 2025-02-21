@@ -11,13 +11,13 @@ const Importantly = ({ locale, page }) => {
   const t = useTranslations("Financial_Aid");
   return (
     <BaseSection style={`${page === "health" ? "bg-white" : "bg-bgGrey"} pt-12 sm:pt-32 pb-12`}>
-      <Wrapper>
-        <div className="w-full bg-white rounded-2xl px-6 pt-7 md:py-14 md:pl-16 md:pr-0 relative flex">
-          <div
-            className={`w-full md:w-1/2 flex flex-col gap-y-4 ${
-              page === "health" ? "shadow-standardShadow" : ""
-            }`}
-          >
+      <Wrapper styles={`pb-4 md:pb-0 `}>
+        <div
+          className={`w-full h-fit bg-white rounded-2xl px-4 pt-7 md:py-14 md:pl-16 md:pr-0 relative flex flex-col md:flex-row ${
+            page === "health" ? "shadow-standardShadow" : ""
+          }`}
+        >
+          <div className={`w-full h-fit md:w-1/2 flex flex-col gap-y-4 `}>
             <Title tag={"h2"}>{t(`important_title`)}</Title>
             <p className="text-lg text-grey">
               {t(`important_subtitle.0`)} <strong> {t(`important_subtitle.1`)}</strong>

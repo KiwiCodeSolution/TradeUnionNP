@@ -22,10 +22,13 @@ const RunningLine = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden bg-white py-4 mt-8">
+    <div className="relative w-full h-[120px] md:h-[200px] xl:h-fit overflow-hidden bg-white xl:py-4 xl:mt-8">
       <div key={key} className="flex w-max animate-scroll">
         {[...images, ...images].map((image, index) => (
-          <div key={index} className="mx-4 w-[360px] h-[360px] rounded-xl overflow-hidden">
+          <div
+            key={index}
+            className="mx-4 w-[115px] h-[115px] md:w-[195px] md:h-[195px] xl:w-[360px] xl:h-[360px] rounded-xl overflow-hidden"
+          >
             <Image
               src={image}
               alt="фото відпочинку"

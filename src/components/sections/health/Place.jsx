@@ -1,17 +1,19 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import Mountains from "@/images/health/mountains.png";
 import Deckchair from "@/images/health/deckchair.png";
 import Locale from "@/images/health/locale.png";
 import RatingComponent from "./Rating";
 
 const Place = ({ place }) => {
+  const t = useTranslations("Health");
   return (
-    <article className="w-full xl:w-[560px] min-h-[405px] md:min-h-[450px] bg-white shadow-lg rounded-xl pt-[30px] pb-[74px] xl:py-7 px-[14px] xl:px-8 flex flex-col gap-y-4 relative mx-auto  overflow-hidden">
+    <article className="w-full md:w-[560px] min-h-[405px] md:min-h-[450px] bg-white shadow-lg rounded-xl pt-[30px] pb-[74px] xl:py-7 px-[14px] xl:px-8 flex flex-col gap-y-4 relative mx-auto overflow-hidden">
       <p className="w-full xl:w-[calc(100%-190px)] text-[25px] xl:text-[30.3px] font-bold leading-[33.33px] relative z-[1]">
         {place.name}
       </p>
       <RatingComponent
-        styles={"absolute bottom-6 left-2 xl:top-8 xl:bottom-0 xl:left-[335px] items-end z-[2]"}
+        styles={"absolute bottom-6 left-2 md:top-8 md:bottom-0 md:left-[335px] items-end z-[2]"}
         rating={place.rating}
       />
       <div className="flex items-center gap-x-3">

@@ -1,20 +1,23 @@
 import { inter } from "@/app/[locale]/(client)/fonts";
 import Title from "@/components/Title";
+import { useTranslations } from "next-intl";
 
 const ParticipationRules = () => {
+  const t = useTranslations("Health");
   const rules = [
-    "вступили до Профспілки не менше року до старту проєкту;",
-    "протягом року безперервно сплачують внески до Профспілки;",
-    "не отримували матеріальної допомоги протягом останнього року до моменту розіграшу (винятком є УБД, допомоги на ювілей, поховання та нововведені на воєнний час матеріальні допомоги);",
-    "не отримували путівок протягом останніх чотирьох років.",
+    t("participation_rules.0"),
+    t("participation_rules.1"),
+    t("participation_rules.2"),
+    t("participation_rules.3"),
   ];
 
   return (
     <>
       <div className="w-full bg-white rounded-[20px] py-6 px-2 md:py-10 md:pl-[64px] md:pr-9 xl:px-20 my-14">
         <Title tag={"h2"}>
-          Хто може взяти участь в розіграші?
-          <br /> <span className="text-red">Профспілчани</span>, які:
+          {t("participation_titles.0")}
+          <br /> <span className="text-red"> {t("participation_titles.1")}</span>
+          {t("participation_titles.2")}
         </Title>
         <ul className="list-disc list-inside flex flex-col gap-y-[18px] mt-8">
           {rules.map(rule => (
@@ -32,15 +35,10 @@ const ParticipationRules = () => {
       </div>
       <div className="w-full bg-white rounded-[20px] p-3 md:py-10 md:px-[64px] flex flex-col gap-y-6">
         <p className={`${inter.className} text-[16px] md:text-lg leading-[1.2]`}>
-          Розіграш путівок проводиться в режимі “прямий ефір” в групі Facebook кожного осередку, що
-          гарантує прозорість та чесність розподілу путівок. Також на розіграш ми запрошуємо
-          спостерігачів з членів профкому, профгрупоргів, учасників розіграшу та незалежних осіб.
-          Переможців обираємо користуючись сайтом random.org.
+          {t("participation_details.0")}
         </p>
         <p className={`${inter.className} text-[16px] md:text-lg leading-[1.2]`}>
-          При відмові переможця скористатись отриманою путівкою, право отримання такої путівки
-          переходить до наступного по порядку профспілковця в списку розіграшу, що обиратиметься
-          навмання. Путівка надається лише члену Профспілки, без права передачі іншим особам.
+          {t("participation_details.1")}
         </p>
       </div>
     </>

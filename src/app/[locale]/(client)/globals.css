@@ -371,10 +371,9 @@ button:hover .archive {
   .reviews .swiper-wrapper {
     padding: 20px;
   }
-}
-
-.reviews .swiper-slide {
-  margin-right: 0px !important;
+  .reviews .swiper-slide {
+    margin-right: 0px !important;
+  }
 }
 
 .places .swiper-slide-next article,
@@ -396,6 +395,20 @@ button:hover .archive {
   justify-content: center;
   overflow: hidden;
   margin-right: 6px;
+}
+
+.star-wrapper-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 2px;
+}
+
+@media (min-width: 1024px) {
+  .star-wrapper-custom {
+    margin-right: 6px;
+  }
 }
 
 .star-icon {

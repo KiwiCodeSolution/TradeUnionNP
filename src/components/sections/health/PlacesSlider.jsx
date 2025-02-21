@@ -40,7 +40,7 @@ const PlacesSlider = ({ places }) => {
         }}
       >
         {places.map(el => (
-          <SwiperSlide key={el._id} className="xl:py-16">
+          <SwiperSlide key={el._id} className="md:pb-10 xl:py-16">
             <Place place={el} />
           </SwiperSlide>
         ))}

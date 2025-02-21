@@ -15,7 +15,7 @@ const BlanksHealth = ({ documents, name }) => {
   const toggleItem = title => {
     setOpenItems(prev => ({
       ...prev,
-      [title]: !prev[title], // Перемикаємо конкретний елемент
+      [title]: !prev[title],
     }));
   };
 
@@ -36,7 +36,7 @@ const BlanksHealth = ({ documents, name }) => {
             </div>
             <ul className="w-3/5">
               <li>
-                <h4 className="text-lg font-bold mb-2.5">{t(`section`)}:</h4>
+                <h4 className="text-lg font-bold mb-2.5">{t(`documents`)}:</h4>
               </li>
               {el.points.map(point => (
                 <li className="w-full flex items-center gap-x-4" key={point}>
@@ -62,7 +62,7 @@ const BlanksHealth = ({ documents, name }) => {
             </div>
             <ul className="w-full">
               <li className="flex">
-                <h4 className="text-lg font-bold mb-2.5">{t(`section`)}:</h4>
+                <h4 className="text-lg font-bold mb-2.5">{t(`documents`)}:</h4>
                 <button
                   className="w-6 h-6 flex items-center justify-center md:hidden"
                   onClick={() => toggleItem(el.title)}

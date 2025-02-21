@@ -6,16 +6,19 @@ import Image from "next/image";
 import Seasons from "@/images/health/seasons.svg";
 import Horse from "@/images/health/horse.svg";
 import Military from "@/images/health/military.svg";
+import { useTranslations } from "next-intl";
 
 const HealthHero = () => {
+  const t = useTranslations("Health");
+
   return (
     <section className="w-full relative">
       <Wrapper styles="flex flex-col">
-        <PathPage endPath={"Оздоровлення"} />
+        <PathPage endPath={t(`path`)} />
         <div className="flex flex-col lg:flex-row gap-x-[60px] pb-[280px] md:pb-[516px] lg:pb-0">
           <div className="flex flex-col w-full lg:w-2/5 text-xl-1 text-black-100 text-left xs:text-center md:text-left">
             <Title tag="h1" styles="mb-8 xl:mt-14 md:mb-10 text-red">
-              Оздоровлення
+              {t(`title`)}
             </Title>
             <ul className="flex flex-col gap-y-6 pb-6">
               <li className="flex items-start gap-x-6">
@@ -26,9 +29,12 @@ const HealthHero = () => {
                   alt="червона іконка, на якій зображено половинку сонця та половинку сніжинки"
                   className="xl:hidden"
                 />
+
                 <p className="text-[17px] md:text-lg">
-                  Путівки на оздоровлення
-                  <strong> в літній та зимовий періоди</strong>
+                  {t.rich("wellnessTrips", {
+                    season: t("season"),
+                    strong: chunks => <strong>{chunks}</strong>,
+                  })}
                 </p>
               </li>
               <li className="flex items-start gap-x-6">
@@ -39,10 +45,12 @@ const HealthHero = () => {
                   alt="схематичне зображення військового"
                   className="xl:hidden"
                 />
+
                 <p className="text-[17px] md:text-lg">
-                  Виплати матеріальної допомоги на оздоровлення
-                  <strong> учасникам бойових дій</strong> з нагоди Дня захисника та захисниць
-                  України і на реабілітацію після отримання поранення при участі у бойових діях
+                  {t.rich("materialHelp", {
+                    participants: t("participants"),
+                    strong: chunks => <strong>{chunks}</strong>,
+                  })}
                 </p>
               </li>
               <li className="flex items-start gap-x-6">
@@ -53,9 +61,12 @@ const HealthHero = () => {
                   alt="зображення іграшкової конячки-гойдалки"
                   className="xl:hidden"
                 />
+
                 <p className="text-[17px] md:text-lg">
-                  Матеріальна допомога
-                  <strong>на оздоровлення та відпочинок</strong> дітей членів Профспілки
+                  {t.rich("helpForChildren", {
+                    help: t("help"),
+                    strong: chunks => <strong>{chunks}</strong>,
+                  })}
                 </p>
               </li>
             </ul>

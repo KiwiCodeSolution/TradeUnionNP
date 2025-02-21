@@ -1,26 +1,31 @@
+import { useTranslations } from "next-intl";
+
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import RedDot from "@/components/UI/RedDot";
 import Wrapper from "@/components/Wrapper";
 
 const TemplateHealthSection = () => {
+  const t = useTranslations("Health");
   const points = [
-    "виплата надходить на картку, реквізити якої надає член Профспілки;",
-    "пиплата допомоги щопʼятниці (або напередодні, якщо це святковий день);",
-    "якщо в нас виникнути питання стосовно документів, ми обовʼязково з вами звʼяжемося;",
-    "у випадку відмови у виплаті допопмоги, ви обовʼязклвл отримаєте зворотній звʼязок з причиною відмови;",
-    "якщо є додаткові питання — зверніться до Голови профспілкового осередку.",
+    t("template_points.0"),
+    t("template_points.1"),
+    t("template_points.2"),
+    t("template_points.3"),
+    t("template_points.4"),
   ];
   return (
     <BaseSection style={"bg-bgGrey py-8"}>
       <Wrapper styles={"flex gap-x-10 flex-col xl:flex-row"}>
         <div className="w-full xl:w-1/2 flex flex-col gap-y-8 my-auto">
           <Title tag={"h2"}>
-            Шаблон <span className="text-red">внутрішніх</span> відправок
+            {t("template_title.0")}
+            <span className="text-red">{t("template_title.1")}</span>
+            {t("template_title.2")}
           </Title>
           <p className="text-grey text-lg mb-8 xl:mb-0">
-            Віправте пакет документів на отримання матеріальної допомоги, скориставшись шаблоном
-            внутрішніх відправок <strong>Матеріальна допомога від Профспілки</strong>
+            {t("template_subtitle.0")}
+            <strong>{t("template_subtitle.1")}</strong>
           </p>
         </div>
         <ul className="w-full xl:w-1/2 bg-white rounded-[20px] py-[15px] px-[30px] flex flex-col gap-y-4">

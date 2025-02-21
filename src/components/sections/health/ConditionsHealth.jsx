@@ -38,7 +38,8 @@ const ConditionsHealth = () => {
     <section className="w-full py-14 relative z-[1]">
       <Wrapper styles={""}>
         <Title tag={"h2"} styles={"mb-8 text-center"}>
-          <span className="text-red">Умови надання</span> матеріальної допомоги на оздоровлення
+          <span className="text-red">{t(`conditions_title_healthy.0`)}</span>
+          {t(`conditions_title_healthy.1`)}
         </Title>
         <BlanksHealth documents={documentsList} name={t(`link`)} />
       </Wrapper>
