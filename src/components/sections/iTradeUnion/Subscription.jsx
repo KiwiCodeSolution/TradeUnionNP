@@ -15,8 +15,6 @@ const Subscription = ({ contacts }) => {
 
   const hasLinks = [contacts.telegram, contacts.viber, contacts.facebook].some(link => link);
 
-  console.log(contacts);
-
   return (
     <BaseSection style={"bg-bgGrey"}>
       <Wrapper styles={"pt-8 md:pt-32 pb-10"}>

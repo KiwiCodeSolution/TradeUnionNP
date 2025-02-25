@@ -11,7 +11,7 @@ import ShowButton from "@/components/UI/buttons/ShowButton";
 
 const SlidesSwiper = () => {
   const slides = Array.from({ length: 8 }, (_, index) => index);
-  console.log("slides", slides);
+
   return (
     <div className="w-full relative">
       <Swiper

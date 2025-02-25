@@ -371,9 +371,6 @@ button:hover .archive {
   .reviews .swiper-wrapper {
     padding: 10px 5px;
   }
-  /* .reviews .swiper-slide {
-    margin-right: 0px !important;
-  } */
 }
 
 .places .swiper-slide-next article,
@@ -458,4 +455,50 @@ button:hover .archive {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.wrapper-slider {
+  position: relative;
+}
+
+.items {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+
+  padding-top: 70px;
+  font-size: 0;
+  cursor: pointer;
+
+  &.active {
+    cursor: grab;
+  }
+}
+
+.item {
+  display: inline-block;
+  margin-left: 25px;
+  user-select: none;
+
+  width: 288px;
+  height: 300px;
+  vertical-align: top;
+
+  &:last-child {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper-slider {
+    margin-left: -20px;
+  }
+}
+
+.reviews-i article {
+  width: 95% !important;
 }

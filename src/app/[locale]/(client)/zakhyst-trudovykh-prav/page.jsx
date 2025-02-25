@@ -1,5 +1,5 @@
 import Law from "@/components/sections/agreements/Law";
-import AgreementsBlogSection from "@/components/sections/blog/AgreementsBlogSection";
+// import AgreementsBlogSection from "@/components/sections/blog/AgreementsBlogSection";
 import ContactSection from "@/components/sections/contactForm/ContactSection";
 import Algorithm from "@/components/sections/protection/Algorithm";
 import Appeals from "@/components/sections/protection/Appeals";
@@ -44,7 +44,7 @@ export default function ProtectionPage({ params }) {
       <Algorithm />
       <ResolutionPeriod gradient />
       <ContactSection bgStyle={"bg-bgGrey"} />
-      {params.locale === "uk" && <AgreementsBlogSection />}
+      {/* {params.locale === "uk" && <AgreementsBlogSection />} */}
     </main>
   );
 }

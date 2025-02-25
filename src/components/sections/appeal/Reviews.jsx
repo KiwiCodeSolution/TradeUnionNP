@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
-import ReviewsSwiper from "./ReviewsSwiper";
 import Title from "@/components/Title";
+import ReviewsSwiper from "./ReviewsSwiper";
 
 const Reviews = ({ section }) => {
   const t = useTranslations("I");

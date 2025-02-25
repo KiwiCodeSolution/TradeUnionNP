@@ -13,10 +13,7 @@ import ReviewImage from "@/images/appeal/review.svg";
 const ReviewsSwiper = ({ reviews }) => {
   return (
     <div className="w-full relative flex">
-      <div className="flex flex-col items-center justify-center">
-        <ShowButton btnStyle="review-button-next" style="-rotate-180" />
-      </div>
-
+      <ShowButton btnStyle="rev-btn-next mt-[130px]" style="-rotate-180" />
       <Swiper
         modules={[Navigation, A11y]}
         // slidesPerView={2}
@@ -25,8 +22,8 @@ const ReviewsSwiper = ({ reviews }) => {
         autoplay
         loop={true}
         navigation={{
-          nextEl: ".review-button-next",
-          prevEl: ".review-button-prev",
+          nextEl: ".rev-btn-next",
+          prevEl: ".rev-btn-prev",
         }}
         className="w-[calc(100%-44px-44px)]"
         breakpoints={{
@@ -56,9 +53,7 @@ const ReviewsSwiper = ({ reviews }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex flex-col items-center justify-center z-[20]">
-        <ShowButton btnStyle="review-button-prev" style="" />
-      </div>
+      <ShowButton btnStyle="rev-btn-prev mt-[130px]" style="" />
     </div>
   );
 };

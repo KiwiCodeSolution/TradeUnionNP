@@ -13,7 +13,7 @@ const PlacesSlider = ({ places }) => {
   return (
     <div className="w-full relative flex places">
       <div className="hidden xl:flex flex-col items-center justify-center">
-        <ShowButton btnStyle="places-button-prev" style="-rotate-180" />
+        <ShowButton btnStyle="places-healthy-button-prev" style="-rotate-180" />
       </div>
 
       <Swiper
@@ -21,11 +21,11 @@ const PlacesSlider = ({ places }) => {
         spaceBetween={20}
         speed={500}
         autoplay
-        rewind={true}
+        // rewind={true}
         // loop={true}
         navigation={{
-          nextEl: ".places-button-next",
-          prevEl: ".places-button-prev",
+          nextEl: ".places-healthy-button-next",
+          prevEl: ".places-healthy-button-prev",
         }}
         className="w-full xl:w-[calc(100%-44px-44px)]"
         breakpoints={{
@@ -47,7 +47,7 @@ const PlacesSlider = ({ places }) => {
         ))}
       </Swiper>
       <div className="hidden xl:flex flex-col items-center justify-center z-[20]">
-        <ShowButton btnStyle="places-button-next" style="" />
+        <ShowButton btnStyle="places-healthy-button-next" style="" />
       </div>
     </div>
   );

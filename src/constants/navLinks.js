@@ -67,4 +67,9 @@ export const aboutLinks = [
     link: "/zvernennya",
     aria: "",
   },
+  {
+    name: "Оздоровлення",
+    link: "/ozdorovlennya",
+    aria: "",
+  },
 ];

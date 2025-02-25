@@ -18,8 +18,8 @@ const ProjectsSwiper = () => {
         speed={500}
         rewind={true}
         navigation={{
-          nextEl: ".project-button-next",
-          prevEl: ".project-button-prev",
+          nextEl: ".project-btn-next",
+          prevEl: ".project-btn-prev",
         }}
         className="project-swiper"
         breakpoints={{
@@ -41,8 +41,8 @@ const ProjectsSwiper = () => {
         ))}
       </Swiper>
       <div className="w-fit absolute -top-10 right-0 md:top-[350px]  md:-left-60 flex justify-center items-center gap-x-8 z-[5]">
-        <ShowButton btnStyle="project-button-prev" style="-rotate-180" />
-        <ShowButton btnStyle="project-button-next" />
+        <ShowButton btnStyle="project-btn-prev" style="-rotate-180" />
+        <ShowButton btnStyle="project-btn-next" />
       </div>
     </div>
   );

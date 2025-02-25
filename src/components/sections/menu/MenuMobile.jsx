@@ -68,6 +68,11 @@ const MenuMobile = ({ locale }) => {
       link: "/zvernennya",
       aria: "",
     },
+    {
+      name: t(`aboutPageLinks.7.title`),
+      link: "/ozdorovlennya",
+      aria: "",
+    },
   ];
 
   const navItems = navLinks.slice(1, navLinks.length);

@@ -11,7 +11,7 @@ const INVISIBLE = [1, 2, 3, 4, 5, 6, 7];
 
 const AlgorithmSwiper = ({ steps, step }) => {
   const [swiperStyle, setSwiperStyle] = useState({
-    touchAction: "pan-y",
+    // touchAction: "pan-y",
     paddingLeft: "100px",
     paddingTop: "20px",
   });
@@ -20,19 +20,19 @@ const AlgorithmSwiper = ({ steps, step }) => {
     const updateSwiperStyle = () => {
       if (window.innerWidth < 768) {
         setSwiperStyle({
-          touchAction: "pan-y",
+          // touchAction: "pan-y",
           paddingLeft: "100px",
           paddingTop: "20px",
         });
       } else if (window.innerWidth < 1200) {
         setSwiperStyle({
-          touchAction: "pan-y",
+          // touchAction: "pan-y",
           paddingLeft: "60px",
           paddingTop: "32px",
         });
       } else {
         setSwiperStyle({
-          touchAction: "pan-y",
+          // touchAction: "pan-y",
           paddingLeft: "430px",
           paddingTop: "80px",
         });

@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
-import AlgorithmSwiper from "./AlgorithmSwiper";
+import DragSlider from "./DragSlider";
 
 const Algorithm = () => {
   const t = useTranslations("Protection");
@@ -35,7 +35,7 @@ const Algorithm = () => {
 
   return (
     <BaseSection style={"pt-10 bg-white algorithm"}>
-      <div className="border-dashed border-4 border-bgBlack w-screen border-opacity-20 absolute top-[290px] left-0" />
+      <div className="border-dashed border-4 border-bgBlack w-screen border-opacity-20 absolute top-[263px] md:top-[216px] xl:top-[240px] left-0 " />
       <Title tag={"h2"} styles={"text-center"}>
         {t(`algorithm_title.0`)}{" "}
         <span className="text-red">
@@ -44,7 +44,8 @@ const Algorithm = () => {
         </span>
         {t(`algorithm_title.3`)}
       </Title>
-      <AlgorithmSwiper steps={steps} step={t(`step`)} />
+
+      <DragSlider steps={steps} step={t(`step`)} />
     </BaseSection>
   );
 };

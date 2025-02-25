@@ -47,7 +47,7 @@ const BlogItem = ({ item }) => {
         className="w-full h-full flex flex-col rounded-t-xl overflow-hidden"
         target="_blank"
       >
-        <div className="relative w-full h-[260px] md:h-[170px] xl:h-[320px]">
+        <div className="relative w-full h-[260px] md:h-[170px] xl:h-[320px] overflow-hidden">
           <Image
             className="absolute inset-0 object-contain object-top z-[1]"
             src={currentImage}
