@@ -3,7 +3,7 @@ export const numbersValue = [
     img: "/images/home/icon_benef_lawcure.svg",
     text: "Звернень на правовий захист опрацьовано",
     start: 0,
-    end: 5000,
+    end: 5520,
   },
   {
     img: "/images/home/icon_benef_events.svg",
@@ -20,7 +20,7 @@ export const numbersValue = [
   {
     img: "/images/home/icon_benef_wallet.svg",
     text: "Надано матеріальної допомоги",
-    start: 20000000,
-    end: 30000000,
+    start: 25000000,
+    end: 34000000,
   },
 ];

@@ -70,7 +70,7 @@ const FilterNewsHomePage = observer(() => {
 
       <div className="min-h-[400px]">
         {currentNews.length > 0 ? (
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-x-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-5 gap-x-10">
             {currentNews.map(el => (
               <BlogItem key={el._id} item={el} section={"home"} />
             ))}

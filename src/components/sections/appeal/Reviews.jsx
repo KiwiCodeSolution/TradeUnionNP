@@ -28,6 +28,46 @@ const Reviews = ({ section }) => {
       name: t(`reviews.4.name`),
       address: t(`reviews.4.address`),
     },
+    {
+      text: t(`reviews.5.text`),
+      name: t(`reviews.5.name`),
+      address: t(`reviews.5.address`),
+    },
+    {
+      text: t(`reviews.6.text`),
+      name: t(`reviews.6.name`),
+      address: t(`reviews.6.address`),
+    },
+    {
+      text: t(`reviews.7.text`),
+      name: t(`reviews.7.name`),
+      address: t(`reviews.7.address`),
+    },
+    {
+      text: t(`reviews.8.text`),
+      name: t(`reviews.8.name`),
+      address: t(`reviews.8.address`),
+    },
+    {
+      text: t(`reviews.9.text`),
+      name: t(`reviews.9.name`),
+      address: t(`reviews.9.address`),
+    },
+    {
+      text: t(`reviews.10.text`),
+      name: t(`reviews.10.name`),
+      address: t(`reviews.10.address`),
+    },
+    {
+      text: t(`reviews.11.text`),
+      name: t(`reviews.11.name`),
+      address: t(`reviews.11.address`),
+    },
+    {
+      text: t(`reviews.12.text`),
+      name: t(`reviews.12.name`),
+      address: t(`reviews.12.address`),
+    },
   ];
   return (
     <BaseSection style={section === "iTrade" ? "bg-bgGrey" : "pb-6"}>

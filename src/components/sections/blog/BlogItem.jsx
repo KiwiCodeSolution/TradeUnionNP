@@ -31,8 +31,8 @@ const BlogItem = ({ item }) => {
   const year = date.getFullYear();
 
   return (
-    <article className="relative w-full h-[400px] bg-white rounded-xl">
-      <div className="absolute top-3 left-3 w-fit h-[29px] flex items-center justify-between px-2 bg-main bg-opacity-60 rounded-md">
+    <article className="relative w-full h-full xl:min-h-[400px] bg-white rounded-xl">
+      <div className="absolute top-3 left-3 w-fit h-[29px] flex items-center justify-between px-2 bg-main bg-opacity-60 rounded-md z-[3]">
         {item.sections.map((el, index) => (
           <h3
             className="text-[15px] tracking-widest mr-1 pr-1 text-white text-opacity-80 border-r border-r-white-opacity-80 last:border-none"
@@ -47,12 +47,12 @@ const BlogItem = ({ item }) => {
         className="w-full h-full flex flex-col rounded-t-xl overflow-hidden"
         target="_blank"
       >
-        <div className="h-[210px] overflow-hidden">
+        <div className="relative w-full h-[260px] md:h-[170px] xl:h-[320px]">
           <Image
-            className="w-full h-full object-cover object-top"
+            className="absolute inset-0 object-contain object-top z-[1]"
             src={currentImage}
             width={375}
-            height={210}
+            height={370}
             alt={`фото до новини ${item.title}`}
           />
         </div>

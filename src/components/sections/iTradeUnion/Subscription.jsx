@@ -7,12 +7,15 @@ import Mail from "@/images/i-trade/getmail.svg";
 import SubscriptionForm from "./SubscriptionForm";
 import Telegram from "@/images/soc-icons/telegram-color.svg";
 import Facebook from "@/images/soc-icons/facebook-color.svg";
+import Insta from "@/images/soc-icons/instagram-color.svg";
 import Viber from "@/images/soc-icons/viber-color.svg";
 
 const Subscription = ({ contacts }) => {
   const t = useTranslations("I");
 
   const hasLinks = [contacts.telegram, contacts.viber, contacts.facebook].some(link => link);
+
+  console.log(contacts);
 
   return (
     <BaseSection style={"bg-bgGrey"}>
@@ -67,6 +70,19 @@ const Subscription = ({ contacts }) => {
                           height={43}
                           src={Facebook}
                           alt="зображення логотипу Facebook"
+                        />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.instagram && (
+                    <li>
+                      <a href={contacts.instagram} target="_blank" rel="noopener noreferrer">
+                        <Image
+                          className="shinstagram relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          width={43}
+                          height={43}
+                          src={Insta}
+                          alt="зображення логотипу Snstagram"
                         />
                       </a>
                     </li>

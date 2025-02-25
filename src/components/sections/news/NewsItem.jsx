@@ -156,7 +156,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
         </div>
         <div className="px-2 flex flex-col justify-between">
           {section === "admin" && (
-            <div className="flex w-full h-fit gap-x-3 text-base text-liteGrey items-center mb-2">
+            <div className="flex w-full h-fit gap-x-3 text-base text-main items-center mb-2">
               <Views /> {item.views}
             </div>
           )}

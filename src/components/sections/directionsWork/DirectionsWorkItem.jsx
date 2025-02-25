@@ -6,6 +6,8 @@ import ListItem from "@/components/UI/items/ListItem";
 
 const DirectionsWorkItem = ({ item, index, locale }) => {
   const t = useTranslations("HomePage.directions");
+  const ITEMS = Array.from({ length: 13 }, (_, idx) => `items.${index}.list.${idx}`);
+
   return (
     <article
       className={`flex flex-col w-full ${index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"}`}
@@ -35,8 +37,8 @@ const DirectionsWorkItem = ({ item, index, locale }) => {
 
           {item.list && (
             <ul className="md:pl-5 flex flex-col gap-y-5">
-              {item.list.map((listItem, idx) => (
-                <ListItem item={t(`items.${index}.list.${idx}`)} gap={5} key={idx} />
+              {ITEMS.map(listItem => (
+                <ListItem item={t(listItem)} gap={5} key={listItem} />
               ))}
             </ul>
           )}

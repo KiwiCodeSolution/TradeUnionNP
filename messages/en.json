@@ -135,16 +135,19 @@
             ""
           ],
           "list": [
-            "On marriage",
-            "On birth of a child",
-            "On summer vacation of children in summer camps",
-            "On 50-55-60-year anniversary",
-            "On close relative funeral",
-            "On treatment of him-/herself or 1-st degree family members (parents, spouse, children)",
-            "For the rehabilitation of a participant in hostilities (payment is made annually in October)",
-            "For an internally displaced person (since 2022) from the places of active hostilities.",
-            "For the trade union members from the temporarily occupied territories (since 24/02/22)",
-            "Mobilized members of the Trade Union who were injured (trauma/contusion, etc.) during participation in hostilities and other war-related actions."
+            "Birth of a Trade Union Member’s Child",
+            "Registration of a Trade Union Member’s Marriage",
+            "Death of a Close Relative of a Trade Union Member",
+            "Milestone Birthday Celebration",
+            "Reimbursement of Medical Expenses for Close Relatives",
+            "Reimbursement of Medical Expenses for a Trade Union Member",
+            "For Trade Union Members with IDP Status (since 2022) from Areas of Active Combat",
+            "Death of a Trade Union Member",
+            "Compensation for Material Damage",
+            "Assistance for Rehabilitation After Injury Due to Participation in Combat",
+            "Reimbursement of Expenses for Children's Health and Recreation (Summer Period)",
+            "For Defender’s Day of Ukraine (October)",
+            "For Trade Union Members in Temporarily Occupied Territories"
           ]
         }
       ]
@@ -1166,17 +1169,19 @@
     "button": "get help",
     "currency": "UAH",
     "list": [
-      "On marriage",
-      "On birth of a child",
-      "On summer vacation of children in summer camps",
-      "On 50-55-60-year anniversary",
-      "On close relative funeral",
-      "On treatment of him-/herself or 1-st degree family members (parents, spouse, children)",
-      "For the rehabilitation of a combatant (the application is reviewed annually in October)",
-      "Mobilized trade unionists who were injured",
-      "Trade union members on the temporarily occupied territories",
-      "Internally displaced persons",
-      "У зв'язку із смертю члена Профспілки"
+      "Birth of a Trade Union Member’s Child",
+      "Registration of a Trade Union Member’s Marriage",
+      "Death of a Close Relative of a Trade Union Member",
+      "Milestone Birthday Celebration",
+      "Reimbursement of Medical Expenses for Close Relatives",
+      "Reimbursement of Medical Expenses for a Trade Union Member",
+      "For Trade Union Members with IDP Status (since 2022) from Areas of Active Combat",
+      "Death of a Trade Union Member",
+      "Compensation for Material Damage",
+      "Assistance for Rehabilitation After Injury Due to Participation in Combat",
+      "Reimbursement of Expenses for Children's Health and Recreation (Summer Period)",
+      "For Defender’s Day of Ukraine (October)",
+      "For Trade Union Members in Temporarily Occupied Territories"
     ],
     "conditions_title": ["Conditions", "for providing financial aid"],
     "conditions_text": [
@@ -1368,7 +1373,7 @@
     "template_title": ["Internal", "submission", "template"],
     "template_text": "Send a package of documents for financial assistance using the template for internal shipments ‘Financial assistance from the Union’",
     "points": [
-      "payment is received on the salary card;",
+      "payment is made to the details specified by the recipient;",
 
       "payment of aid is made every Friday (or the day before, if it is a public holiday);",
 

@@ -61,7 +61,7 @@ const TellUsContacts = ({ currentContacts }) => {
             <li key={el.link}>
               <a href={el.link} target="_blank" rel="noopener noreferrer">
                 <Image
-                  className={`w-16 md:w-32 xl:w-28 shinstagram relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700 ${el.style}`}
+                  className={`w-16 md:w-32 xl:w-28 relative h-16 md:h-28 cursor-pointer transform hover:-translate-y-8 transition-all duration-700 ${el.style}`}
                   width={112}
                   height={112}
                   src={el.iconColor}

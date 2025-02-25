@@ -9,22 +9,9 @@ import HeroImages from "@/images/aid/dop-top.svg";
 import CountAid from "./CountAid";
 import ListItem from "@/components/UI/items/ListItem";
 
-const ITEMS = [
-  "На одруження",
-  "На народження дитини",
-  "На літній відпочинок дітей у дитячих таборах",
-  "На ювілей 50-55-60 років",
-  "Поховання близького родича",
-  "На лікування себе або родичів 1-го ступеня споріднення (батьки, чоловік/дружина, діти)",
-  "На оздоровлення УБД (заява розглядається щорічно в жовтні)",
-  "Мобілізованим профспілчанам, що отримали поранення",
-  "Профспілчанам на тимчасово окупованих територіях",
-  "Внутрішньо переміщеним особам",
-  "У зв'язку із смертю члена Профспілки",
-];
-
 const HeroFinancialAidPage = () => {
   const t = useTranslations("Financial_Aid");
+  const ITEMS = Array.from({ length: 13 }, (_, index) => `list.${index}`);
   return (
     <BaseSection style={"pb-20"}>
       <Wrapper>
@@ -59,8 +46,8 @@ const HeroFinancialAidPage = () => {
               <CountAid currency={t(`currency`)} />
               <div className="border-dotted border-b-8 border-bgBlack w-3/4 border-opacity-20 mx-auto" />
               <ul className="w-4/5 flex flex-col gap-y-4 mx-auto mt-8">
-                {ITEMS.map((el, index) => (
-                  <ListItem item={t(`list.${index}`)} gap={5} key={t(`list.${index}`)} />
+                {ITEMS.map(el => (
+                  <ListItem item={t(el)} gap={5} key={el} />
                 ))}
               </ul>
             </div>

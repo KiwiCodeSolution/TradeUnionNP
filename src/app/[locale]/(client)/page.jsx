@@ -15,7 +15,7 @@ export default async function ClientHome({ params }) {
       <Values />
       <CollectiveAgreement />
       <DirectionsWork locale={params.locale} />
-      <Interview locale={params.locale} />
+      {/* <Interview locale={params.locale} /> */}
       <NewsSectionHomePage locale={params.locale} />
       <ContactSection bgStyle={"bg-bgGrey"} locale={params.locale} />
     </main>

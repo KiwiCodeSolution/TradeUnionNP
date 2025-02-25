@@ -51,7 +51,7 @@ const RegionalOffice = ({ item }) => {
         <li className="flex md:min-h-[132px] xl:h-full flex-col md:flex-row gap-8 items-center">
           <div className="w-24 h-24 rounded-full overflow-hidden">
             <Image
-              src={item.avatar || NoPhoto}
+              src={item.director ? item.avatar || NoPhoto : NoPhoto}
               width={96}
               height={96}
               alt={`фото регіонального голови ${item.region}`}

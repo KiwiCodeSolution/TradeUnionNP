@@ -1,21 +1,21 @@
 [
   {
-    "text": "Першокласники Профспілки – подарували всім першокласникам рюкзаки",
-    "image": "/images/recreations/projects/first-graders.svg",
-    "link": "/novyny/profspilka-podaruvala-ryukzaki-vsim-pershoklasnikam-yaki-vzyali-uchast-u-konkursi",
-    "alt_ukr": "зображення червоного рюкзака із логотипом Профспілки"
-  },
-  {
     "text": "Захисти захисників – додатково забезпечили мобілізованих профспілчан амуніцією",
     "image": "/images/recreations/projects/defender.svg",
     "link": "/novyny/profspilka-ogoloshuie-pro-pochatok-proiektu-zahisti-zahisnikiv",
     "alt_ukr": "зображення рюкзаку кольору хакі"
   },
   {
-    "text": "Повербанк за підписку – розіграли повербанки серед профспілчан",
-    "image": "/images/recreations/projects/powerbank.svg",
-    "link": "/novyny/sered-profspilchan-rozigrali-poverbanki-peremozhci-viznacheni",
-    "alt_ukr": "зображення павербанку"
+    "text": "«Плащ-палатка» – 500 комплектів для мобілізованих профспілчан",
+    "image": "/images/recreations/projects/cloak.svg",
+    "link": "/novyny/proiekt-plashch-namet-dlya-zahisnikiv-zaversheno",
+    "alt_ukr": "малюнок плащ-палатки"
+  },
+  {
+    "text": "«Сухий душ» – 700 наборів та енергобатончиків для мобилізованих профспілчан",
+    "image": "/images/recreations/projects/shower.svg",
+    "link": "/novyny/profspilka-pid-chas-viyni-naygolovnishi-proiekti",
+    "alt_ukr": "зображення чоловіка, що приймає душ"
   },
   {
     "text": "Новорічні подарунки мобілізованим профспілчанам – подарували усім тактичні ножі",
@@ -23,6 +23,19 @@
     "link": "/novyny/profspilka-podaruie-skladni-nozhi-usim-mobilizovanim-profspilchanam",
     "alt_ukr": "зображення тактичного ножа"
   },
+  {
+    "text": "Першокласники Профспілки – подарували всім першокласникам рюкзаки",
+    "image": "/images/recreations/projects/first-graders.svg",
+    "link": "/novyny/profspilka-podaruvala-ryukzaki-vsim-pershoklasnikam-yaki-vzyali-uchast-u-konkursi",
+    "alt_ukr": "зображення червоного рюкзака із логотипом Профспілки"
+  },
+  {
+    "text": "Повербанк за підписку – розіграли повербанки серед профспілчан",
+    "image": "/images/recreations/projects/powerbank.svg",
+    "link": "/novyny/sered-profspilchan-rozigrali-poverbanki-peremozhci-viznacheni",
+    "alt_ukr": "зображення павербанку"
+  },
+
   {
     "text": "Екопроєкт",
     "image": "/images/recreations/projects/eko.svg",
@@ -41,18 +54,7 @@
     "link": "/novyny/vesnyana-liga-on-layn-kvestu",
     "alt_ukr": "малюнок настільного комп'ютера"
   },
-  {
-    "text": "«Плащ-палатка» – 500 комплектів для мобілізованих профспілчан",
-    "image": "/images/recreations/projects/cloak.svg",
-    "link": "/novyny/proiekt-plashch-namet-dlya-zahisnikiv-zaversheno",
-    "alt_ukr": "малюнок плащ-палатки"
-  },
-  {
-    "text": "«Сухий душ» – 700 наборів та енергобатончиків для мобилізованих профспілчан",
-    "image": "/images/recreations/projects/shower.svg",
-    "link": "/novyny/profspilka-pid-chas-viyni-naygolovnishi-proiekti",
-    "alt_ukr": "зображення чоловіка, що приймає душ"
-  },
+
   {
     "text": "«My Top» – клуб гірських походів для Профспілчан",
     "image": "/images/recreations/projects/mountains.svg",

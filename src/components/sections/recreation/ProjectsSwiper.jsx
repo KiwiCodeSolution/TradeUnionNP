@@ -14,8 +14,9 @@ const ProjectsSwiper = () => {
     <div className="w-full md:w-4/5 relative">
       <Swiper
         modules={[Navigation, A11y]}
-        loop={true}
+        // loop={true}
         speed={500}
+        rewind={true}
         navigation={{
           nextEl: ".project-button-next",
           prevEl: ".project-button-prev",
