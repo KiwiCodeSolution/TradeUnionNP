@@ -64,7 +64,11 @@ const HeroAgreementsPage = () => {
             alt="зображення анкети чи бланку договору та руки із ручкою"
             className="hidden md:block w-[320px] xl:w-[468px] right-9 absolute bottom-0 xl:right-16"
           />
-          <FileButton name={t(`hero_button`)} link={`koldogovor.pdf`} styles={"mt-8"} />
+          <FileButton
+            name={t(`hero_button`)}
+            link={`koldogovor.pdf`}
+            styles={"mx-auto mt-8 md:ml-0"}
+          />
         </div>
       </Wrapper>
     </BaseSection>

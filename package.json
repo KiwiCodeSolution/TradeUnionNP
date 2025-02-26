@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev && opn http://localhost:3000/uk/ozdorovlennya or http://localhost:3000/uk/admin ",
+    "dev": "next dev && opn http://localhost:3000/uk/yak-vstupyty",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

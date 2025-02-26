@@ -60,11 +60,15 @@ module.exports = {
         redButtonHover: "0px 10px 40px 0px rgba(237,28,36,0.6)",
         standardShadow: "0px 10px 50px 0px rgba(174,174,174,0.15)",
         itemShadow: "0px 1px 12px 0px rgba(34,34,34,0.15)",
+        joinSections: "0px 5px 8px 0px rgba(0,0,0,0.08)",
       },
       dropShadow: {
         news: "0 20px 35px rgba(167,167,167,0.25)",
         redButton: "0px 10px 40px 0px rgba(237,28,36,0.3)",
         standardShadow: "0px 10px 50px 0px rgba(174,174,174,0.15)",
+      },
+      borderRadius: {
+        20: "20px",
       },
     },
   },

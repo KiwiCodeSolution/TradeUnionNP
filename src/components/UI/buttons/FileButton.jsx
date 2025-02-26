@@ -7,7 +7,7 @@ const FileButton = ({ link, name, styles }) => {
     <a
       href={`${BaseURL}files/${link}`}
       target="_blank"
-      className={`w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-center mx-auto md:ml-0 ${styles}`}
+      className={`w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-center ${styles}`}
     >
       {name}
       <Image

@@ -35,7 +35,8 @@
     "Metadata_Protection_Page": "Protection of labor rights | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Appeal_Page": "Appeals | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Subscription_Page": "News subscription | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
-    "Metadata_Healthy_Page": "Health improvement | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
+    "Metadata_Healthy_Page": "Health improvement | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
+    "Metadata_Join_Page": "Join | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
   },
   "HomePage": {
     "path": "Home",
@@ -463,6 +464,7 @@
       "according to the template 'Material assistance from the Trade Union'"
     ],
     "link": "Download statement",
+    "button": "Download",
     "statement_title": ["Application ", "for financial", "aid"],
     "statements": [
       {

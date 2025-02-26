@@ -32,7 +32,7 @@ const BlanksHealth = ({ documents, name }) => {
                 {el.title}
               </Title>
               <p className="text-red text-[22px] font-extrabold mb-6">{el.text}</p>
-              <FileButton link={el.file} name={name} />
+              <FileButton link={el.file} name={name} styles={"mx-auto md:ml-0"} />
             </div>
             <ul className="w-3/5">
               <li>
@@ -94,7 +94,7 @@ const BlanksHealth = ({ documents, name }) => {
                   ))}
               </li>
             </ul>
-            <FileButton link={el.file} name={name} />
+            <FileButton link={el.file} name={name} styles={"mx-auto md:ml-0"} />
           </li>
         ))}
       </ul>
