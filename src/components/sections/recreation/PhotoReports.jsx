@@ -4,7 +4,7 @@ import PhotoReportList from "../photo/PhotoReportList";
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import Title from "@/components/Title";
 
-const PhotoReports = ({ items }) => {
+const PhotoReports = ({ items, locale }) => {
   return (
     <BaseSection style={""}>
       <Wrapper styles={"min-h-[840px] py-16 xl:py-32"}>
@@ -17,7 +17,9 @@ const PhotoReports = ({ items }) => {
         <LinkButton
           view={"transparent"}
           goTo={"/novyny"}
+          goToPage
           icon
+          locale={locale}
           style={
             "border border-red mt-9 mx-auto relative z-[7] py-[15px] px-[33px] rounded-full w-fit uppercase flex items-center justify-between gap-x-5 text-[14px] font-bold"
           }

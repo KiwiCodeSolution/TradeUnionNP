@@ -9,7 +9,7 @@ import LinkButton from "@/components/UI/buttons/LinkButton";
 
 const BUTTONS = NEWS_SECTIONS;
 
-const FilterNewsHomePage = observer(() => {
+const FilterNewsHomePage = observer(({ locale }) => {
   const { newsStore } = useStore();
   const news = newsStore.news;
   const isLoading = newsStore.isLoading;
@@ -83,6 +83,8 @@ const FilterNewsHomePage = observer(() => {
       <LinkButton
         view={"transparent"}
         goTo={"/novyny"}
+        locale={locale}
+        goToPage
         icon
         style={
           "border border-red mt-9 mx-auto relative z-[7] py-[15px] px-[33px] rounded-full w-fit uppercase flex items-center justify-between gap-x-5 text-[14px] font-bold"

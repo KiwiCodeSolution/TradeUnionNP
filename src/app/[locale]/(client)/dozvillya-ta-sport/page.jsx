@@ -55,7 +55,9 @@ export default async function RecreationPage({ params }) {
       <PrincipleRecreation />
       {params.locale === "uk" && <RecreationProjects />}
       <ContactSection bgStyle={"bg-bgGrey"} />
-      {params.locale === "uk" && <PhotoReports items={filteredReportsArray} />}
+      {params.locale === "uk" && (
+        <PhotoReports items={filteredReportsArray} locale={params.locale} />
+      )}
     </main>
   );
 }

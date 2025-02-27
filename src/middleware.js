@@ -20,6 +20,7 @@ const publicPages = [
   "/subscription",
   "/signin",
   "/ozdorovlennya",
+  "/yak-vstupyty",
 ];
 const locales = ["uk", "en"];
 
@@ -44,10 +45,8 @@ const authMiddleware = withAuth(
             return false;
           }
 
-          console.log("User is authorized");
           return true;
         } else {
-          console.log("User is not authorized");
           return false;
         }
       },

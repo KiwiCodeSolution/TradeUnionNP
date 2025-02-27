@@ -1,36 +1,10 @@
-// export default function robots() {
-//   return {
-//     rules: {
-//       userAgent: "*",
-//       allow: "/",
-//       allow: "/pro-nas",
-//       allow: "/blanky",
-//       allow: "/novyny",
-//       allow: "/foto",
-//       allow: "/kontakty",
-//       allow: "/poshuk-po-saytu",
-//       allow: "/kolektyvnyy-dohovir",
-//       allow: "/ppo",
-//       allow: "/zakhyst-trudovykh-prav",
-//       allow: "/materialna-dopomoga",
-//       allow: "/dozvillya-ta-sport",
-//       allow: "/ya-profspilka",
-//       allow: "/zvernennya",
-//       disallow: "/subscription",
-//       disallow: "/signin",
-//       disallow: "/uk/admin",
-//     },
-//     // sitemap: 'https://наш-домен/sitemap.xml',
-//   };
-// }
-
 export default function robots() {
   return {
     rules: [
       {
         userAgent: "*",
         allow: [
-          "/", // корінь сайту
+          "/",
           "/pro-nas",
           "/blanky",
           "/novyny",
@@ -44,7 +18,9 @@ export default function robots() {
           "/dozvillya-ta-sport",
           "/ya-profspilka",
           "/zvernennya",
-          // Додаємо версії для локалей:
+          "/ozdorovlennya",
+          "/yak-vstupyty",
+
           "/uk/",
           "/uk/pro-nas",
           "/uk/blanky",
@@ -59,6 +35,8 @@ export default function robots() {
           "/uk/dozvillya-ta-sport",
           "/uk/ya-profspilka",
           "/uk/zvernennya",
+          "/uk/ozdorovlennya",
+          "/uk/yak-vstupyty",
           "/en/",
           "/en/pro-nas",
           "/en/blanky",
@@ -73,6 +51,8 @@ export default function robots() {
           "/en/dozvillya-ta-sport",
           "/en/ya-profspilka",
           "/en/zvernennya",
+          "/en/ozdorovlennya",
+          "/en/yak-vstupyty",
         ],
         disallow: ["/uk/admin", "/en/admin", "/subscription", "/signin"],
       },

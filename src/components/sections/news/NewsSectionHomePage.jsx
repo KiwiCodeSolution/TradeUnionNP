@@ -35,7 +35,7 @@ const NewsSectionHomePage = ({ locale, page }) => {
         {page !== "join" && (
           <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-bgGrey to-white" />
         )}
-        <FilterNews />
+        <FilterNews locale={locale} />
       </Wrapper>
       {page !== "join" && (
         <div className="absolute bottom-0 h-64 left-0 right-0 z-0 bg-gradient-to-t from-bgGrey to-white" />

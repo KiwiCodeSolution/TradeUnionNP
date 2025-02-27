@@ -13,7 +13,7 @@ const LinkButton = ({ children, goTo, view, style, goToPage, icon, locale }) => 
   const currentStyle = `${buttonsStyle[view]} ${additionalStyle} flex items-center justify-between`;
 
   return (
-    <Link href={goTo} className={currentStyle} target={!goToPage ? "_blank" : ""}>
+    <Link href={goTo} className={currentStyle} target={!goToPage ? "_blank" : ""} locale={locale}>
       {children}
       {icon && (
         <Image
@@ -22,7 +22,6 @@ const LinkButton = ({ children, goTo, view, style, goToPage, icon, locale }) => 
           height={30}
           alt="зображення червоної іконки-стрілочки вправо на білому фоні"
           className="arrow-icon"
-          locale={locale}
         />
       )}
     </Link>
