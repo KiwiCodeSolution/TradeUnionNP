@@ -31,7 +31,7 @@ const BlogItem = ({ item }) => {
   const year = date.getFullYear();
 
   return (
-    <article className="relative w-full h-full xl:min-h-[400px] bg-white rounded-xl">
+    <article className="relative w-full h-full xl:min-h-[400px] bg-white rounded-xl shadow-standardShadow">
       <div className="absolute top-3 left-3 w-fit h-[29px] flex items-center justify-between px-2 bg-main bg-opacity-60 rounded-md z-[3]">
         {item.sections.map((el, index) => (
           <h3

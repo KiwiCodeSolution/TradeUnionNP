@@ -10,27 +10,27 @@ const StepOne = () => {
     {
       title: t(`templates.0`),
       fileName: "zajava_na_vstup",
-      link: "files/zajava_na_vstup.pdf",
+      link: "zajava_na_vstup.pdf",
     },
     {
       title: t(`templates.1`),
       fileName: "zajava_na_vstup_np_global",
-      link: "files/zajava_na_vstup_np_global.pdf",
+      link: "zajava_na_vstup_np_global.pdf",
     },
     {
       title: t(`templates.2`),
       fileName: "zajava_na_vstup_novoboks",
-      link: "files/zajava_na_vstup_novoboks.pdf",
+      link: "zajava_na_vstup_novoboks.pdf",
     },
     {
       title: t(`templates.3`),
       fileName: "zajava_na_vstup_np_centr",
-      link: "files/zajava_na_vstup_np_centr.pdf",
+      link: "zajava_na_vstup_np_centr.pdf",
     },
     {
       title: t(`templates.4`),
       fileName: "zajava_na_vstup_np-didzhital",
-      link: "files/zajava_na_vstup_np-didzhital.pdf",
+      link: "zajava_na_vstup_np-didzhital.pdf",
     },
   ];
 
@@ -41,12 +41,12 @@ const StepOne = () => {
           <span className="text-red">Крок 1.</span> Спочатку обери потрібний тобі бланк. Він
           залежить від того, хто твій роботодавець.
         </Title>
-        <ul className="grid grid-cols-4 gap-x-10 gap-y-8 mt-14">
+        <ul className="grid grid-cols-2 xl:grid-cols-4 gap-x-10 gap-y-8 mt-14">
           {files.map((el, idx) => (
             <li
               key={el.link}
-              className={`w-full bg-white rounded-[20px] pt-[37px] px-[38px] pb-[31px] shadow-standardShadow col-span-2 ${
-                idx === 0 ? "col-start-2" : ""
+              className={`w-full bg-white rounded-[20px] pt-[37px] px-[38px] pb-[31px] md:px-[77px] xl:px-[38px] shadow-standardShadow col-span-2 ${
+                idx === 0 ? "xl:col-start-2" : ""
               }`}
             >
               <p className="text-[32px] text-grey font-extrabold leading-[1.5] mb-3">{el.title}</p>

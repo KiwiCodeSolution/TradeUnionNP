@@ -1,28 +1,27 @@
 import { useTranslations } from "next-intl";
-import { aboutLinks } from "@/constants/navLinks";
-import { Link } from "@/navigation";
 import Wrapper from "../../Wrapper";
+import NavBar from "./NavBar";
 
 const MenuAbout = ({ locale }) => {
   const t = useTranslations("Root");
-  const links =
-    locale === "en" ? aboutLinks.filter(el => el.name !== "Обласні осередки") : aboutLinks;
+
+  const aboutLinks = [
+    { title: t("aboutPageLinks.0.title"), link: "/kolektyvnyy-dohovir" },
+    { title: t("aboutPageLinks.1.title"), link: "/ppo" },
+    { title: t("aboutPageLinks.2.title"), link: "/zakhyst-trudovykh-prav" },
+    { title: t("aboutPageLinks.3.title"), link: "/materialna-dopomoga" },
+    { title: t("aboutPageLinks.4.title"), link: "/dozvillya-ta-sport" },
+    { title: t("aboutPageLinks.5.title"), link: "/ya-profspilka" },
+    { title: t("aboutPageLinks.6.title"), link: "/zvernennya" },
+    { title: t("aboutPageLinks.7.title"), link: "/ozdorovlennya" },
+  ];
+
+  const links = locale === "en" ? aboutLinks.filter(el => el.link !== "/ppo") : aboutLinks;
 
   return (
     <div className="hidden md:block w-full bg-bgBlack">
       <Wrapper>
-        <nav className="w-full flex items-center justify-between h-10">
-          {links.map((el, index) => (
-            <Link
-              href={el.link}
-              key={el.link}
-              className="text-[15px] text-white text-opacity-60 hover:text-opacity-100"
-              locale={locale}
-            >
-              {t(`aboutPageLinks.${index}.title`)}
-            </Link>
-          ))}
-        </nav>
+        <NavBar locale={locale} navItems={links} section={"about"} />
       </Wrapper>
     </div>
   );

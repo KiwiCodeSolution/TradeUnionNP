@@ -5,6 +5,8 @@ import StepFour from "@/components/sections/join/StepFour";
 import StepOne from "@/components/sections/join/StepOne";
 import StepsTwoAndThree from "@/components/sections/join/StepsTwoAndThree";
 import StepSeven from "@/components/sections/join/StepSeven";
+import ManagersActions from "@/components/sections/join/ManagersActions";
+import NewsSectionHomePage from "@/components/sections/news/NewsSectionHomePage";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -21,13 +23,15 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default function HowToJoinLayout({ params }) {
   return (
-    <main className="w-full ">
+    <main className="w-full pb-[111px]">
       <HeroJoinPage />
       <StepOne />
       <StepsTwoAndThree />
       <StepFour />
       <StepsFiveAndSix />
       <StepSeven />
+      <ManagersActions />
+      <NewsSectionHomePage locale={params.locale} page={"join"} />
     </main>
   );
 }

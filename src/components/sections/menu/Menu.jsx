@@ -1,8 +1,6 @@
 import { useTranslations } from "next-intl";
-import { navLinks } from "@/constants/navLinks";
 import LogoUA from "@/images/logo.svg";
 import LogoEn from "@/images/logo-eng.svg";
-
 import Image from "next/image";
 import { Link } from "@/navigation";
 import LangButtons from "../../UI/buttons/LangButtons";
@@ -10,10 +8,18 @@ import MenuMobile from "./MenuMobile";
 import Wrapper from "@/components/Wrapper";
 import SearchInput from "@/components/UI/form/SearchInput";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
+import NavBar from "./NavBar";
 
 const Menu = ({ locale }) => {
   const t = useTranslations("Root");
-  const navItems = navLinks.slice(0, navLinks.length - 1);
+
+  const navItems = [
+    { title: t("navBarLinks.0.title"), link: "/pro-nas" },
+    { title: t("navBarLinks.1.title"), link: "/blanky" },
+    { title: t("navBarLinks.2.title"), link: "/novyny" },
+    { title: t("navBarLinks.3.title"), link: "/foto" },
+    { title: t("navBarLinks.4.title"), link: "/kontakty" },
+  ];
 
   return (
     <Wrapper styles="flex flex-col md:flex-row relative pb-12 md:pb-0 pt-1 md:pt-0">
@@ -27,19 +33,8 @@ const Menu = ({ locale }) => {
             alt="Зображення логотипу Профспілки 'Нова Пошта'"
           />
         </Link>
+        <NavBar locale={locale} navItems={navItems} />
 
-        <nav className="w-fit hidden md:flex items-center h-20 mx-auto gap-x-3">
-          {navItems.map((el, index) => (
-            <Link
-              href={el.link}
-              key={el.link}
-              className="leading-loose border-transparent hover:border-red hover:text-red border-b-2"
-              locale={locale}
-            >
-              {t(`navBarLinks.${index}.title`)}
-            </Link>
-          ))}
-        </nav>
         <SearchInput />
         <EmailAndSocLinks />
         <LangButtons locale={locale} />

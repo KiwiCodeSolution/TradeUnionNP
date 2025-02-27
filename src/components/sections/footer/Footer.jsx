@@ -3,14 +3,36 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import LogoFooterUA from "@/images/logo_bottom.svg";
 import LogoFooterEn from "@/images/logo_bottom_eng.svg";
-import { aboutLinks, navLinks } from "@/constants/navLinks";
+
 import { Link } from "@/navigation";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
+import NavBarFooter from "../menu/NavBarFooter";
 
 const Footer = ({ locale }) => {
   const t = useTranslations();
-  const navItems = navLinks.slice(0, navLinks.length - 1);
   const year = new Date().getFullYear();
+
+  const aboutLinks = [
+    { title: t("Root.aboutPageLinks.0.title"), link: "/kolektyvnyy-dohovir" },
+    { title: t("Root.aboutPageLinks.1.title"), link: "/ppo" },
+    { title: t("Root.aboutPageLinks.2.title"), link: "/zakhyst-trudovykh-prav" },
+    { title: t("Root.aboutPageLinks.3.title"), link: "/materialna-dopomoga" },
+    { title: t("Root.aboutPageLinks.4.title"), link: "/dozvillya-ta-sport" },
+    { title: t("Root.aboutPageLinks.5.title"), link: "/ya-profspilka" },
+    { title: t("Root.aboutPageLinks.6.title"), link: "/zvernennya" },
+    { title: t("Root.aboutPageLinks.7.title"), link: "/ozdorovlennya" },
+  ];
+
+  const navItems = [
+    { title: t("Root.navBarLinks.0.title"), link: "/pro-nas" },
+    { title: t("Root.navBarLinks.1.title"), link: "/blanky" },
+    { title: t("Root.navBarLinks.2.title"), link: "/novyny" },
+    { title: t("Root.navBarLinks.3.title"), link: "/foto" },
+    { title: t("Root.navBarLinks.4.title"), link: "/kontakty" },
+  ];
+
+  const links = locale === "en" ? aboutLinks.filter(el => el.link !== "/ppo") : aboutLinks;
+
   return (
     <footer className="w-full flex flex-col relative">
       <Wrapper
@@ -25,38 +47,18 @@ const Footer = ({ locale }) => {
           alt="логотип компанії 'Профспілка Новой пошти': червоний ромб із білою стрілкою та маленьким колом. напис червоними та чорними літерами"
           className="mb-auto"
         />
-        <nav className="w-fit flex flex-col items-center md:items-start justify-start gap-y-2">
-          <h3 className="text-base text-liteGrey mb-3 uppercase">
-            {t(`HomePage.footer.titles.0`)}
-          </h3>
-          {navItems.map((el, index) => (
-            <Link
-              href={el.link}
-              aria-label={el.aria}
-              key={el.link}
-              className="text-base text-grey leading-[22px]"
-            >
-              {t(`Root.navBarLinks.${index}.title`)}
-            </Link>
-          ))}
-        </nav>
-        <nav className="w-fit flex flex-col items-center md:items-start justify-start gap-y-2">
-          <h3 className="text-base text-liteGrey mb-3 uppercase">
-            {t(`HomePage.footer.titles.1`)}
-          </h3>
-          {aboutLinks.map((el, index) => (
-            <Link
-              href={el.link}
-              aria-label={el.aria}
-              key={el.link}
-              className="text-base text-grey leading-[22px]"
-            >
-              {t(`Root.aboutPageLinks.${index}.title`)}
-            </Link>
-          ))}
-        </nav>
+
+        <NavBarFooter
+          navItems={navItems}
+          aboutLinks={links}
+          titleLinks={t(`HomePage.footer.titles.0`)}
+          titleAboutLinks={t(`HomePage.footer.titles.1`)}
+          locale={locale}
+        />
+
         <EmailAndSocLinks section={"footer"} title={t(`HomePage.footer.titles.2`)} />
       </Wrapper>
+
       <Wrapper>
         <div className="w-full py-4 flex flex-col md:flex-row items-center md:items-start justify-between border-main border-t border-opacity-20">
           <p className="text-[15px] md:text-lg text-grey">

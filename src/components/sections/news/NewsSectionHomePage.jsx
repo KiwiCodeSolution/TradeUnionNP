@@ -5,7 +5,7 @@ import Wrapper from "@/components/Wrapper";
 import FilterNews from "./FilterNews";
 import Title from "@/components/Title";
 
-const NewsSectionHomePage = ({ locale }) => {
+const NewsSectionHomePage = ({ locale, page }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -19,14 +19,27 @@ const NewsSectionHomePage = ({ locale }) => {
   return locale === "uk" ? (
     <BaseSection style={"relative"}>
       <Wrapper styles={"pt-20 h-fit"}>
-        <Title tag="h2" styles="text-center mb-10">
-          Новини
+        {page === "join" && (
+          <div className="absolute top-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-bgGrey to-white rotate-180" />
+        )}
+        <Title tag="h2" styles="text-center mb-10 relative z-[6]">
+          {page !== "join" ? (
+            "Новини"
+          ) : (
+            <>
+              Останні <span className="text-red">новини</span>
+            </>
+          )}
         </Title>
 
-        <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-gray to-white" />
+        {page !== "join" && (
+          <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-bgGrey to-white" />
+        )}
         <FilterNews />
       </Wrapper>
-      <div className="absolute bottom-0 h-64 left-0 right-0 z-0 bg-gradient-to-t from-bgGrey to-white" />
+      {page !== "join" && (
+        <div className="absolute bottom-0 h-64 left-0 right-0 z-0 bg-gradient-to-t from-bgGrey to-white" />
+      )}
     </BaseSection>
   ) : null;
 };

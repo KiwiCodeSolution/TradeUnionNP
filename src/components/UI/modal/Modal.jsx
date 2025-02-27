@@ -1,9 +1,11 @@
+"use client";
+
 import { Cross } from "@/components/icons/IconsComponents";
 import useScrollBlock from "@/hooks/useScrollBlock";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-const Modal = ({ children, isOpen, onClose }) => {
+const Modal = ({ children, isOpen, onClose, type }) => {
   const [blockScroll, allowScroll] = useScrollBlock();
   const [mounted, setMounted] = useState(false);
   const [modalRoot, setModalRoot] = useState(null);
@@ -48,10 +50,14 @@ const Modal = ({ children, isOpen, onClose }) => {
   return createPortal(
     isOpen ? (
       <div
-        className="fixed w-full h-screen top-0 left-0 bg-slate-400 bg-opacity-50 flex items-center justify-center"
+        className="fixed w-full h-screen top-0 left-0 bg-slate-400 bg-opacity-50 flex items-center justify-center z-[19]"
         onClick={handleOverlayClick}
       >
-        <div className="flex flex-col min-w-[200px] max-w-[600px] bg-white rounded-2xl mx-auto relative">
+        <div
+          className={`flex flex-col min-w-[200px] ${
+            type === "join" ? "w-full md:w-[90%] xl:w-[70%] max-h-[90hv]" : "max-w-[600px]"
+          } bg-white rounded-2xl mx-auto relative`}
+        >
           <button
             onClick={closeModal}
             className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red z-20"
