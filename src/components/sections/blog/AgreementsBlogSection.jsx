@@ -4,14 +4,14 @@ import LinkButton from "@/components/UI/buttons/LinkButton";
 import Wrapper from "@/components/Wrapper";
 import BlogList from "./BlogList";
 
-const AgreementsBlogSection = () => {
+const AgreementsBlogSection = ({ locale }) => {
   return (
     <BaseSection style={""}>
       <Wrapper styles={"min-h-[840px] py-16 xl:py-32"}>
         <Title tag={"h2"} styles={"text-center mb-10"}>
           Корисне з блогу
         </Title>
-        <BlogList pageName={"kol_dog"} />
+        <BlogList pageName={"kol_dog"} locale={locale} part={"novyny"} />
 
         <LinkButton
           view={"transparent"}

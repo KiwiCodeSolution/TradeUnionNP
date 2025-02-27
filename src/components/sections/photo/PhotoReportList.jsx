@@ -1,6 +1,6 @@
 import BlogItem from "../blog/BlogItem";
 
-const PhotoReportList = ({ items }) => {
+const PhotoReportList = ({ items, locale }) => {
   if (!Array.isArray(items) || items.length === 0) {
     return (
       <p className="text-center text-red-500">
@@ -12,7 +12,7 @@ const PhotoReportList = ({ items }) => {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-3 gap-x-10">
       {items.slice(0, 3).map(el => (
-        <BlogItem key={el._id} item={el} />
+        <BlogItem key={el._id} item={el} locale={locale} part={"photo"} />
       ))}
     </div>
   );

@@ -1,10 +1,10 @@
 import { Clock } from "@/components/icons/IconsComponents";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import NoImage from "@/images/No_Image.jpg";
 import { BaseURLImage } from "@/constants/BaseUrl";
 
-const BlogItem = ({ item }) => {
+const BlogItem = ({ item, locale, part }) => {
   const currentImage = (item.previewImg && `${BaseURLImage}${item.previewImg}`) || NoImage;
 
   const getMonthName = monthNumber => {
@@ -43,9 +43,10 @@ const BlogItem = ({ item }) => {
         ))}
       </div>
       <Link
-        href={item.slug}
+        href={`/${part === "photo" ? "foto" : "novyny"}/${item.slug}`}
         className="w-full h-full flex flex-col rounded-t-xl overflow-hidden"
         target="_blank"
+        locale={locale}
       >
         <div className="relative w-full h-[260px] md:h-[170px] xl:h-[320px] overflow-hidden">
           <Image

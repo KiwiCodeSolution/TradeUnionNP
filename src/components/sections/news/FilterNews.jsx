@@ -72,7 +72,7 @@ const FilterNewsHomePage = observer(({ locale }) => {
         {currentNews.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-5 gap-x-10">
             {currentNews.map(el => (
-              <BlogItem key={el._id} item={el} section={"home"} />
+              <BlogItem key={el._id} item={el} section={"home"} locale={locale} part={"novyny"} />
             ))}
           </div>
         ) : (

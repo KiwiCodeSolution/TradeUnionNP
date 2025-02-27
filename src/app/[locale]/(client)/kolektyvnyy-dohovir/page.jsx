@@ -39,7 +39,7 @@ export default function CollectiveAgreementPage({ params }) {
       <AboutAgreement />
       <OurAgreement />
       <Honors />
-      {/* {params.locale === "uk" && <AgreementsBlogSection />} */}
+      {/* {params.locale === "uk" && <AgreementsBlogSection locale={params.locale}/>} */}
     </main>
   );
 }

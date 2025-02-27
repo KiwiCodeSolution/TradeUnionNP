@@ -12,11 +12,11 @@ const PhotoReports = ({ items, locale }) => {
           <span className="text-red">Фотозвіти</span> з культурно - <br />
           масових заходів
         </Title>
-        <PhotoReportList items={items} />
+        <PhotoReportList items={items} locale={locale} />
 
         <LinkButton
           view={"transparent"}
-          goTo={"/novyny"}
+          goTo={"/foto"}
           goToPage
           icon
           locale={locale}
@@ -24,7 +24,7 @@ const PhotoReports = ({ items, locale }) => {
             "border border-red mt-9 mx-auto relative z-[7] py-[15px] px-[33px] rounded-full w-fit uppercase flex items-center justify-between gap-x-5 text-[14px] font-bold"
           }
         >
-          Всі новини
+          Всі фотозвіти
         </LinkButton>
       </Wrapper>
     </BaseSection>
