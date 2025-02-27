@@ -21,7 +21,7 @@ const ButtonsSection = () => {
 
   return (
     <>
-      <div className="flex flex-col xl:flex-row gap-y-9 items-center justify-between">
+      <div className="flex flex-col md:flex-row gap-y-9 items-center justify-between">
         <Button
           view="red"
           clickFn={() => toggleModal("Awis")}

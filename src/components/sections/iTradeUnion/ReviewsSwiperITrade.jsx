@@ -10,10 +10,10 @@ import ShowButton from "@/components/UI/buttons/ShowButton";
 import Image from "next/image";
 import ReviewImage from "@/images/appeal/review.svg";
 
-const ReviewsSwiper = ({ reviews }) => {
+const ReviewsSwiperITrade = ({ reviews }) => {
   return (
     <div className="w-full relative flex">
-      <ShowButton btnStyle="apswiperbtn-next mt-[130px]" style="-rotate-180" />
+      <ShowButton btnStyle="revitrade-btn-prev mt-[130px]" style="-rotate-180" />
       <Swiper
         modules={[Navigation, A11y]}
         // slidesPerView={2}
@@ -22,8 +22,8 @@ const ReviewsSwiper = ({ reviews }) => {
         autoplay
         loop={true}
         navigation={{
-          nextEl: ".apswiperbtn-next",
-          prevEl: ".apswiperbtn-prev",
+          nextEl: ".revitrade-btn-next",
+          prevEl: ".revitrade-btn-prev",
         }}
         className="w-[calc(100%-44px-44px)]"
         breakpoints={{
@@ -53,9 +53,9 @@ const ReviewsSwiper = ({ reviews }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <ShowButton btnStyle="apswiperbtn-prev mt-[130px]" style="" />
+      <ShowButton btnStyle="revitrade-btn-next mt-[130px]" style="" />
     </div>
   );
 };
 
-export default ReviewsSwiper;
+export default ReviewsSwiperITrade;

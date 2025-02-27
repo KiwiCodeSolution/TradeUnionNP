@@ -10,6 +10,7 @@
     ],
     "aboutPageLinks": [
       { "title": "Collective labor agreement", "link": "/kolektyvnyy-dohovir" },
+      { "title": "How to Enroll?", "link": "/yak-vstupyty" },
       { "title": "PPO", "link": "/ppo" },
       { "title": "Protection of labor rights", "link": "/zakhyst-trudovykh-prav" },
       { "title": "Financial aid", "link": "/materialna-dopomoga" },
@@ -37,7 +38,7 @@
     "Metadata_Appeal_Page": "Appeals | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Subscription_Page": "News subscription | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Healthy_Page": "Health improvement | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
-    "Metadata_Join_Page": "Join | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
+    "Metadata_Join_Page": "How to Enroll? | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
   },
   "HomePage": {
     "path": "Home",
@@ -1941,6 +1942,59 @@
         "address": "Manor 'Chersak' village of Mykulychyn",
         "description": "My family and I are very satisfied with our stay at Chersak Estate. Everything is clean, with a well-kept territory, very delicious food, and large portions. We, two adults and a 5-year-old child, were completely full after two portions! A special thanks to the staff, all of whom are very polite and friendly, especially the admin-waiter, Hennadiy. He is a great guy and helped us with everything. 🤗 We all became one big family, one team, one great movement! 👍🏻✌🏻😁 Thank you very much for the wonderful vacation! I hope we will come back again!"
       }
+    ]
+  },
+  "Join": {
+    "title": ["Hello!", " We are glad that you have decided ", "to join our team!"],
+    "subtitle": "Here, you will find a convenient, step-by-step guide for filling out an application to join the trade union group of companies 'NOVA'",
+    "path": "How to Enroll?",
+    "step_1_title": [
+      "Step 1.",
+      " First, choose the form you need. It depends on who your employer is."
+    ],
+    "step_2_title": [
+      "Step 2.",
+      " Print the selected application and fill it out. We explain how to fill it out correctly below."
+    ],
+    "step_3_title": ["Step 3.", " Filling out the forms."],
+    "step_4_title": [
+      "Step 4.",
+      " Leave the upper left corner empty; the head of your cell should fill it."
+    ],
+    "step_5_title": ["Step 5.", " Enter today&#39;s date below and sign."],
+    "step_6_title": [
+      "Step 6.",
+      " Below the dotted line you will see an additional statement. You must also fill it out."
+    ],
+    "step_7_title": ["Step 7.", " Check if everything is filled out."],
+    "step_3_text": [
+      "In ",
+      "the upper right corner",
+      ", fill in your information: the region in which you work, your last name, first name, patronymic in Ukrainian in the genitive case, indicate your taxpayer registration card number (you know it as TIN or identification number), as well as the contact phone number on which Viber or Telegram is open."
+    ],
+    "step_5_text": "Be sure to put a cross in the appropriate box indicating whether you have children under the age of 14. If so, enter their date of birth and last name, first name, and patronymic in Ukrainian in the nominative case.",
+    "step_6_text": "Write your last name, first name, and patronymic in Ukrainian in the genitive case. Below, put today's date and your signature.",
+    "step_7_text": "Make sure that all fields marked with red elements are filled in.",
+    "heading": [
+      "Region in which you work",
+      "Last name, First name, Patronary name",
+      "Last name, First name,",
+      "Patronary name"
+    ],
+    "congratulations": "Congratulations! You have completed the application for joining the Trade Union. We are almost there! You should take this application to your manager, who will help you send it using the internal mailing template to the Head of your Trade Union branch. Welcome to the family of trade unionists!",
+    "managers_text": [
+      "What should you do if you are a ",
+      "manager",
+      " who has been presented with an application for membership in the Trade Union? We will explain it step by step below. ",
+      "The application for membership must be sent using the",
+      "“Documents in ___PPO” template.",
+      "Choose your software"
+    ],
+    "modal_awis": [
+      "Step 1. If you have the “Avis” version of the software, click “documents” in the menu.",
+      "Step 2. Select “express invoice”",
+      "year 3. In the open express invoice window, click “CREATE” – “INTERNAL SHIPMENT”",
+      "Step 4. Click the “Trade Union” folder and select the desired option from the templates. Select the “Documents in ___PPO” template. Please note that the name and recipient will be different for each PPO, it depends on the region in which you work. That is, if you are in Lviv, the template will be called “Documents in Lviv PPO” – Poleshko Ihor, etc."
     ]
   }
 }

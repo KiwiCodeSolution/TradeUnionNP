@@ -8,7 +8,7 @@ const NavBar = ({ locale, navItems, section }) => {
   const normalizedPath = pathname.replace(`/${locale}`, "");
 
   return section === "about" ? (
-    <nav className="w-full flex items-center justify-between h-10">
+    <nav className="w-full flex items-center justify-between min-h-10 gap-x-3">
       {navItems.map((el, index) => {
         const isActive = normalizedPath === el.link;
 
@@ -16,7 +16,7 @@ const NavBar = ({ locale, navItems, section }) => {
           <Link
             href={el.link}
             key={el.link}
-            className={`text-[15px] text-white ${
+            className={`text-[15px] text-white text-center ${
               isActive ? "text-opacity-100" : "text-opacity-60 hover:text-opacity-100"
             }`}
             locale={locale}

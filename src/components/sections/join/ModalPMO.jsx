@@ -26,7 +26,7 @@ const ModalPMO = () => {
           width={58}
           height={73}
           alt=""
-          className="w-10 h-10 xl:w-[58px] xl:h-[73px] absolute top-[-9px] left-[8px] xl:top-[35px] xl:left-[80px] rotate-90"
+          className="w-10 h-10 xl:w-[58px] xl:h-[73px] absolute top-[-9px] md:top-[25px] left-[8px] md:left-[38px] xl:top-[35px] xl:left-[80px] rotate-90"
         />
         <Image src={Pmo_2} width={920} height={511} alt="" className="mx-auto" />
       </div>
@@ -36,7 +36,7 @@ const ModalPMO = () => {
           width={112}
           height={114}
           alt=""
-          className="w-10 h-10 xl:w-[112px] xl:h-[114px] absolute top-[70px] left-[135px] xl:top-[200px] xl:left-[430px] rotate-180"
+          className="w-10 h-10 xl:w-[112px] xl:h-[114px] absolute top-[70px] md:top-[165px] left-[135px] md:left-[295px] xl:top-[200px] xl:left-[430px] rotate-180"
         />
         <Image src={Pmo_3} width={920} height={511} alt="" className="mx-auto" />
       </div>
@@ -46,7 +46,7 @@ const ModalPMO = () => {
           width={112}
           height={114}
           alt=""
-          className="w-10 h-10 xl:w-[112px] xl:h-[114px] absolute top-[70px] left-[165px] xl:top-[228px] xl:left-[506px] -rotate-90"
+          className="w-10 h-10 xl:w-[112px] xl:h-[114px] absolute top-[70px] md:top-[150px] left-[165px] md:left-[375px] xl:top-[228px] xl:left-[506px] -rotate-90"
         />
         <Image src={Pmo_4} width={920} height={511} alt="" className="mx-auto" />
       </div>
@@ -56,7 +56,7 @@ const ModalPMO = () => {
           width={112}
           height={112}
           alt=""
-          className="w-10 h-10 xl:w-[112px] xl:h-[112px] absolute bottom-[15px] right-[60px] xl:bottom-[5px] xl:right-[190px]"
+          className="w-10 h-10 xl:w-[112px] xl:h-[112px] absolute bottom-[15px] right-[60px] md:bottom-[32px] md:right-[130px] xl:bottom-[5px] xl:right-[190px]"
         />
         <Image src={Pmo_5} width={920} height={511} alt="" className="mx-auto mb-5" />
       </div>
