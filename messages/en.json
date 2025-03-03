@@ -1801,7 +1801,7 @@
     "participants": "military personnel",
     "help": "for wellness and recreation",
     "variant_title": ["Rehabilitation ", "of trade union members"],
-    "wellnessTrips_detalis": {
+    "wellnessTrips_details": {
       "title": "Health care vouchers for trade union members",
       "text": [
         "Health care vouchers ",
@@ -1809,7 +1809,7 @@
         " by decision of the central committee according to quotas in proportion to the number of PPO members and the PPO budget."
       ]
     },
-    "materialHelp_detalis": {
+    "materialHelp_details": {
       "title": "Rehabilitation for combatants",
       "text": [
         "Payment of material assistance for the recovery of combatants - members of the Trade Union ",

@@ -5,24 +5,24 @@ import CardTablet from "@/images/health/card_tablet.png";
 
 const Variant = ({ variant }) => {
   return (
-    <>
-      <article className="w-full lg:w-[360px] h-fit lg:h-[445px] rounded-[20px] flex flex-col overflow-hidden shadow-standardShadow relative md:hidden lg:flex">
+    <ul className="relative">
+      <li className="w-full h-fit xl:h-full rounded-[20px] flex flex-col overflow-hidden shadow-standardShadow relative md:hidden xl:flex">
         <div className="w-full h-[45px] bg-bgBlack bg-opacity-40 flex items-center justify-center">
           <h3 className="text-white font-medium">{variant.period}</h3>
         </div>
-        <div className="w-[34px] h-[34px] rounded-full bg-[#f4f4f4] absolute top-[196px] -translate-y-[50%] left-[-17px] z-[3]" />
-        <div className="w-[34px] h-[34px] rounded-full bg-[#f4f4f4] absolute top-[196px] -translate-y-[50%] right-[-17px] z-[3]" />
+        <div className="w-[34px] h-[34px] rounded-full bg-[#f4f4f4] absolute top-[205px] -translate-y-[50%] left-[-17px] z-[3]" />
+        <div className="w-[34px] h-[34px] rounded-full bg-[#f4f4f4] absolute top-[205px] -translate-y-[50%] right-[-17px] z-[3]" />
         <Image
           src={Dashed}
           width={360}
           height={4}
-          className="absolute top-[196px] -translate-y-[50%]"
+          className="absolute top-[205px] -translate-y-[50%]"
           alt="Пунктирна полоска, що імітує лінію відрізу чи відриву"
         />
-        <div className="bg-white h-[calc(100%-45px)] flex flex-col gap-y-12 px-[30px] pt-2.5 pb-[22px] xl:px-10 xl:py-5">
-          <div className="min-h-[108px]">
+        <div className="bg-white h-[calc(100%-45px)] flex flex-col gap-y-12 xl:gap-y-8 px-[30px] pt-2 pb-[22px] xl:px-8 xl:py-5">
+          <div className="min-h-[108px] xl:min-h-[145px]">
             <h4
-              className={`text-[25px] xl:text-[30px] ${inter.className} font-extrabold leading-9`}
+              className={`text-[25px] xl:text-[26px] ${inter.className} font-extrabold leading-9`}
             >
               {variant.title}
             </h4>
@@ -34,9 +34,9 @@ const Variant = ({ variant }) => {
             {variant.text[2]}
           </p>
         </div>
-      </article>
+      </li>
 
-      <article className="w-full hidden h-fit rounded-[20px] md:flex overflow-hidden shadow-standardShadow relative lg:hidden">
+      <li className="w-full hidden h-fit rounded-[20px] md:flex overflow-hidden shadow-standardShadow relative xl:hidden">
         <Image
           src={CardTablet}
           width={640}
@@ -60,8 +60,8 @@ const Variant = ({ variant }) => {
             {variant.text[2]}
           </p>
         </div>
-      </article>
-    </>
+      </li>
+    </ul>
   );
 };
 
