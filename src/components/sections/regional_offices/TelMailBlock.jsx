@@ -27,13 +27,13 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
       <div className="flex gap-x-4 mx-auto xl:hidden items-center h-full">
         <a
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-          href={`tel:${phone}`}
+          href={director ? `tel:${phone}` : `tel:${vacancy.phone}`}
         >
           <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
         </a>
         <a
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-          href={`mailto:${email}&body=питання щодо ${region} профспілки`}
+          href={director ? `mailto:${email}` : `mailto:${vacancy.email}`}
         >
           <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
         </a>
@@ -52,7 +52,9 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
               isShowContacts === "tell" ? "max-w-xs opacity-100" : "max-w-0 opacity-0"
             } w-40`}
           >
-            <p className="whitespace-nowrap">{formatPhoneNumber(phone)}</p>
+            <p className="whitespace-nowrap">
+              {formatPhoneNumber(director ? phone : vacancy.phone)}
+            </p>
           </div>
         </div>
         <div className="flex gap-x-2 items-center">
@@ -68,7 +70,7 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
               isShowContacts === "email" ? "max-w-xs opacity-100" : "max-w-0 opacity-0"
             }`}
           >
-            <p className="text-center"> {email}</p>
+            <p className="text-center"> {director ? email : vacancy.email}</p>
           </div>
         </div>
       </div>
@@ -84,11 +86,7 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
         </a>
         <a
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-          href={
-            director
-              ? `mailto:${email}&body=питання щодо ${region} профспілки`
-              : `mailto:${vacancy.email}`
-          }
+          href={director ? `mailto:${email}` : `mailto:${vacancy.email}`}
         >
           <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
         </a>

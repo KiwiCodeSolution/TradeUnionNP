@@ -3,12 +3,13 @@ import Image from "next/image";
 import Users from "@/images/icon-users.svg";
 import { useState } from "react";
 import RedDot from "@/components/UI/RedDot";
-import Link from "next/link";
+
 import NoPhoto from "@/images/no-photo.png";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 import TelMailBlock from "./TelMailBlock";
+import { Link } from "@/navigation";
 
-const RegionalOffice = ({ item }) => {
+const RegionalOffice = ({ item, locale }) => {
   const [isShowAdmissionAddress, setIsShowAdmissionAddress] = useState(false);
   const [isShowApplicationAddress, setIsShowApplicationAddress] = useState(false);
   const [isShowCommittee, setIsShowCommittee] = useState(false);
@@ -138,12 +139,15 @@ const RegionalOffice = ({ item }) => {
             }`}
           >
             <ul className="flex flex-col mt-4 pl-4">
-              {item.committee.map(el => (
-                <li className="w-full flex items-center gap-x-3" key={el}>
-                  <RedDot />
-                  <p className="w-[calc(100%-9px-12px)]">{el}</p>
-                </li>
-              ))}
+              {item.committee.map(
+                el =>
+                  el !== "" && (
+                    <li className="w-full flex items-center gap-x-3" key={el}>
+                      <RedDot />
+                      <p className="w-[calc(100%-9px-12px)]">{el}</p>
+                    </li>
+                  )
+              )}
             </ul>
           </div>
         </li>
@@ -159,6 +163,7 @@ const RegionalOffice = ({ item }) => {
         <Link
           href="/blanky"
           className="w-1/2 py-4 px-8 uppercase text-[15px] font-bold text-red hover:bg-red text-center hover:text-white"
+          locale={locale}
         >
           бланки
         </Link>

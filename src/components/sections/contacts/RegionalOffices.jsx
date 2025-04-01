@@ -4,7 +4,7 @@ import Wrapper from "@/components/Wrapper";
 import RegionalOfficesList from "./RegionalOfficesList";
 import Title from "@/components/Title";
 
-const RegionalOffices = () => {
+const RegionalOffices = ({ items }) => {
   const t = useTranslations("Contacts");
 
   return (
@@ -15,7 +15,11 @@ const RegionalOffices = () => {
           {t(`regional_offices_title.1`)} <br /> {t(`regional_offices_title.2`)}
         </Title>
 
-        <RegionalOfficesList placeholder={t(`form_placeholder`)} button={t(`form_button`)} />
+        <RegionalOfficesList
+          placeholder={t(`form_placeholder`)}
+          button={t(`form_button`)}
+          items={items}
+        />
       </Wrapper>
     </BaseSection>
   );

@@ -113,6 +113,32 @@ const nextConfig = {
         hostname: "kiwicode.digital",
         pathname: "/bc/uploads_gallerey/**",
       },
+
+      {
+        protocol: "https",
+        hostname: "profspilka.org",
+        pathname: "/bc/**",
+      },
+      {
+        protocol: "https",
+        hostname: "profspilka.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "profspilka.org",
+        pathname: "/bc/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "profspilka.org",
+        pathname: "/bc/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "profspilka.org",
+        pathname: "/bc/uploads_gallerey/**",
+      },
     ],
   },
 };

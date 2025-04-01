@@ -2,13 +2,10 @@
 
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TelMailBlock from "../regional_offices/TelMailBlock";
 import Modal from "@/components/UI/modal/Modal";
 import { Cross } from "@/components/icons/IconsComponents";
-import { StoreProvider, useStore } from "@/store/StoreProvider";
-import { observer } from "mobx-react-lite";
-import Loader from "@/components/UI/loader/Loader";
 
 const InformationWindow = ({ item, x, y, isModal, fnc }) => {
   return (
@@ -62,11 +59,7 @@ const InformationModalWindow = ({ item, fnc }) => {
   );
 };
 
-export const MapWrapper = observer(() => {
-  const { officesStore } = useStore();
-  const offices = officesStore.offices;
-  const isLoading = officesStore.isLoading;
-  const [isHydrated, setIsHydrated] = useState(false);
+export default function Map({ items }) {
   const [showInformation, setShowInformation] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [information, setInformation] = useState("");
@@ -74,17 +67,7 @@ export const MapWrapper = observer(() => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    if (offices.length === 0 && !isLoading) {
-      officesStore.fetchAllOffices();
-    }
-  }, [offices, isLoading, officesStore]);
-
-  if (!isHydrated) {
+  if (!items) {
     return null;
   }
 
@@ -121,7 +104,7 @@ export const MapWrapper = observer(() => {
 
   const currentRegion =
     information !== "crimea"
-      ? offices.find(el => el.regionId === information)
+      ? items.find(el => el.regionId === information)
       : {
           region: "АР Крим",
           director: "",
@@ -129,9 +112,7 @@ export const MapWrapper = observer(() => {
           phone: "",
         };
 
-  return isLoading ? (
-    <Loader />
-  ) : (
+  return (
     <BaseSection style={""}>
       <Wrapper styles={"flex flex-col relative"}>
         {showInformation && <InformationWindow item={currentRegion} x={x} y={y} />}
@@ -422,13 +403,5 @@ export const MapWrapper = observer(() => {
         </Modal>
       </Wrapper>
     </BaseSection>
-  );
-});
-
-export default function Map() {
-  return (
-    <StoreProvider>
-      <MapWrapper />
-    </StoreProvider>
   );
 }

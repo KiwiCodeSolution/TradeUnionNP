@@ -2,7 +2,18 @@ import Management from "@/components/sections/contacts/Management";
 import Map from "@/components/sections/contacts/Map";
 import RegionalOffices from "@/components/sections/contacts/RegionalOffices";
 import TitleContactsPage from "@/components/sections/contacts/TitleContactsPage";
+import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
+
+async function getRegionalOfficesData() {
+  const res = await fetch(`${BaseURL}ppo`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -24,13 +35,15 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function ContactsPage() {
+export default async function ContactsPage() {
+  const officesData = await getRegionalOfficesData();
+
   return (
     <main className="w-full bg-bgGrey">
       <TitleContactsPage />
-      <Map />
+      <Map items={officesData} />
       <Management />
-      <RegionalOffices />
+      <RegionalOffices items={officesData} />
     </main>
   );
 }

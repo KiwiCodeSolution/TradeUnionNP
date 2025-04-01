@@ -1,6 +1,17 @@
 import RegionalOffices from "@/components/sections/regional_offices/RegionalOffices";
 import TitleRegionOfficesPage from "@/components/sections/regional_offices/TitleRegionOfficesPage";
+import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
+
+async function getRegionalOfficesData() {
+  const res = await fetch(`${BaseURL}ppo`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -22,11 +33,13 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function RegionalCellsPage() {
+export default async function RegionalCellsPage({ params: { locale } }) {
+  const officesData = await getRegionalOfficesData();
+
   return (
     <main className="w-full bg-bgGrey">
       <TitleRegionOfficesPage />
-      <RegionalOffices />
+      <RegionalOffices items={officesData} locale={locale} />
     </main>
   );
 }
