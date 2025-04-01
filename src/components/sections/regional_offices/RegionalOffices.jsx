@@ -1,10 +1,11 @@
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import RegionalOffice from "./RegionalOffice";
+import Loader from "@/components/UI/loader/Loader";
 
 export default function RegionalOffices({ items, locale }) {
   if (!items) {
-    return null;
+    return <Loader />;
   }
 
   return (

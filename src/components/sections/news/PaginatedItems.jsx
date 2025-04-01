@@ -26,18 +26,6 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
     setCurrentPage(parseInt(searchParams.get("page")) || 1);
   }, [searchParams]);
 
-  // useEffect(() => {
-  //   // Перевірка та редирект на ?page=1, якщо відсутній параметр, тільки якщо ми не на адмінці
-  //   if (!searchParams.get("page") && !pathname.includes("admin")) {
-  //     const path = section === "photo" ? "foto" : "novyny";
-  //     router.replace(`/${locale}/${path}?section=${getSectionParams}&page=1`);
-  //   } else if (!searchParams.get("page") && pathname.includes("admin") && part === "news") {
-  //     router.replace(`/uk/admin/news?page=1&archive=${isArchive ? "true" : "false"}`);
-  //   } else if (!searchParams.get("page") && pathname.includes("admin") && part === "photo") {
-  //     router.replace(`/uk/admin/photo-report?page=1&archive=${isArchive ? "true" : "false"}`);
-  //   }
-  // }, [searchParams, router, section, getSectionParams, pathname, isArchive]);
-
   const filteredItems = items.filter(item => {
     if (filterSection === "Новини") return true;
     return item.sections.includes(filterSection);

@@ -2,46 +2,41 @@
 import { useEffect, useState } from "react";
 import BlogItem from "../blog/BlogItem";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
-import { observer } from "mobx-react-lite";
-import { StoreProvider, useStore } from "@/store/StoreProvider";
-import SkeletonBlogItem from "../blog/SkeletonBlogItem";
 import LinkButton from "@/components/UI/buttons/LinkButton";
+import { BaseURL } from "@/constants/BaseUrl";
 
 const BUTTONS = NEWS_SECTIONS;
 
-const FilterNewsHomePage = observer(({ locale }) => {
-  const { newsStore } = useStore();
-  const news = newsStore.news;
-  const isLoading = newsStore.isLoading;
+export default function FilterNews({ locale }) {
+  const [allNews, setAllNews] = useState([]);
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch news");
+        }
+
+        const data = await res.json();
+        setAllNews(data);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      }
+    };
+
+    fetchNews();
+  }, []);
 
   const [nameButton, setNameButton] = useState("Новини");
 
-  useEffect(() => {
-    if (news.length === 0 && !isLoading) {
-      newsStore.fetchAllNews();
-    }
-  }, [news, isLoading, newsStore]);
-
-  // Якщо новини не завантажені і масив новин порожній
-  if (isLoading && news.length === 0) {
-    return (
-      <div className="min-h-[400px]">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-x-10">
-          <SkeletonBlogItem />
-          <SkeletonBlogItem />
-          <SkeletonBlogItem />
-        </div>
-      </div>
-    );
-  }
-
   // Якщо новин немає після завантаження
-  if (!isLoading && news.length === 0) {
+  if (allNews.length === 0) {
     return <h3 className="text-center">Вибачте, новини не знайдені</h3>;
   }
 
   const today = new Date();
-  const filteredNewsArray = news
+  const filteredNewsArray = allNews
     .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
@@ -93,13 +88,5 @@ const FilterNewsHomePage = observer(({ locale }) => {
         Всі новини
       </LinkButton>
     </div>
-  );
-});
-
-export default function FilterNews() {
-  return (
-    <StoreProvider>
-      <FilterNewsHomePage />
-    </StoreProvider>
   );
 }

@@ -4,13 +4,12 @@ import Wrapper from "@/components/Wrapper";
 import { sectionMap, sectionMapEn } from "@/constants/news_sections";
 import { Link } from "@/navigation";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 const normalizeText = text => text.replace(/’/g, "'");
 
 const NewsFiltersSection = ({ news, locale, part }) => {
   const searchParams = useSearchParams();
-  const [sections, setSections] = useState([]);
 
   const reverseSectionMap = map => {
     const reversedMap = {};
@@ -22,9 +21,8 @@ const NewsFiltersSection = ({ news, locale, part }) => {
 
   const reversedSectionMap = reverseSectionMap(sectionMap);
 
-  useEffect(() => {
-    const allSections = news.flatMap(item => item.sections.map(section => normalizeText(section)));
-    setSections([...new Set(allSections)]);
+  const sections = useMemo(() => {
+    return [...new Set(news.flatMap(item => item.sections.map(section => normalizeText(section))))];
   }, [news]);
 
   const getSectionParams = normalizeText(

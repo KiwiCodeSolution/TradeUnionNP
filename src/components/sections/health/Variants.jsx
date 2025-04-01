@@ -37,14 +37,14 @@ const Variants = () => {
     },
   ];
   return (
-    <BaseSection style={"bg-health-gradient pt-5 xl:pt-9 pb-4 xl:pb-[96px]"}>
+    <BaseSection style={"bg-health-gradient pt-5 xl:pt-9 pb-4 xl:pb-[60px]"}>
       {/* <div className="w-full h-full absolute top-0 left-0 z-[1] " /> */}
       <Wrapper styles={"relative z-[2] "}>
         <Title tag={"h2"} styles={"text-center mb-10 xl:mb-8"}>
           {t("variant_title.0")}
           <span className="text-red">{t("variant_title.1")}</span>
         </Title>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-6 gap-y-6 mb-[74px]">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-6 gap-y-6 mb-[74px] xl:mb-0">
           {variants.map(el => (
             <Variant key={el.title} variant={el} />
           ))}

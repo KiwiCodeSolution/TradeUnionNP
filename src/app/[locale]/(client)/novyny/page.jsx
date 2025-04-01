@@ -1,7 +1,17 @@
 import NewsPathHero from "@/components/sections/news/NewsPathHero";
 import NewsComponent from "@/components/sections/news/NewsComponent";
 import { getTranslations } from "next-intl/server";
-import { StoreProvider } from "@/store/StoreProvider";
+import { BaseURL } from "@/constants/BaseUrl";
+
+async function getAllNews() {
+  const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
 
 // Генерація метаданих для сторінки
 export async function generateMetadata({ params: { locale } }) {
@@ -24,13 +34,13 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function NewsPage({ params: { locale } }) {
+export default async function NewsPage({ params: { locale } }) {
+  const allNews = await getAllNews();
+
   return (
     <main className="w-full bg-bgGrey">
       <NewsPathHero />
-      <StoreProvider>
-        <NewsComponent locale={locale} />
-      </StoreProvider>
+      <NewsComponent locale={locale} items={allNews} />
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Office from "./Office";
 import Button from "@/components/UI/buttons/Buttons";
+import Loader from "@/components/UI/loader/Loader";
 
 export default function RegionalOfficesList({ placeholder, button, items }) {
   const [filterText, setFilterText] = useState("");
@@ -10,7 +11,7 @@ export default function RegionalOfficesList({ placeholder, button, items }) {
   const initialDisplayCount = 6;
 
   if (!items) {
-    return null;
+    return <Loader />;
   }
 
   const handleShowMore = () => {

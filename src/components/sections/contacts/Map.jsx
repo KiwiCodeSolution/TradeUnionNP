@@ -6,6 +6,7 @@ import { useState } from "react";
 import TelMailBlock from "../regional_offices/TelMailBlock";
 import Modal from "@/components/UI/modal/Modal";
 import { Cross } from "@/components/icons/IconsComponents";
+import Loader from "@/components/UI/loader/Loader";
 
 const InformationWindow = ({ item, x, y, isModal, fnc }) => {
   return (
@@ -68,7 +69,7 @@ export default function Map({ items }) {
   const [y, setY] = useState(0);
 
   if (!items) {
-    return null;
+    return <Loader />;
   }
 
   const handleMouseOver = (clientX, clientY, id) => {

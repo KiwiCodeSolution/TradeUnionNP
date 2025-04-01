@@ -1,10 +1,18 @@
-import PaginatedItems from "@/components/sections/news/PaginatedItems";
 import PhotoPathHero from "@/components/sections/photo/PhotoPathHero";
 import { getTranslations } from "next-intl/server";
 import { BaseURL } from "@/constants/BaseUrl";
-import NewsFiltersSection from "@/components/sections/news/NewsFiltersSection";
 import { StoreProvider } from "@/store/StoreProvider";
 import PhotoComponent from "@/components/sections/photo/PhotoComponent";
+
+async function getAllReports() {
+  const res = await fetch(`${BaseURL}gallerey`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -27,11 +35,13 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function PhotoPage({ params: { locale } }) {
+  const allReports = await getAllReports();
+
   return (
     <main className="w-full bg-bgGrey">
       <PhotoPathHero />
       <StoreProvider>
-        <PhotoComponent locale={locale} />
+        <PhotoComponent locale={locale} items={allReports} />
       </StoreProvider>
     </main>
   );
