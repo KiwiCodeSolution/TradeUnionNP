@@ -3,7 +3,7 @@ import { BaseURL } from "@/constants/BaseUrl";
 
 // Функція для отримання новини із серверу
 async function fetchNewsBySlug(slug) {
-  const response = await fetch(`${BaseURL}news/${slug}`, { method: "GET" });
+  const response = await fetch(`${BaseURL}news/${slug}`, { method: "GET", cache: "no-store" });
   const news = await response.json();
 
   return news;
@@ -12,11 +12,12 @@ async function fetchNewsBySlug(slug) {
 // Функція для генерації метаданих
 export async function generateMetadata({ params: { slug } }) {
   const news = await fetchNewsBySlug(slug);
+  const metaTags = news.metaTags.length < 2 ? [...news.metaTags, " "] : news.metaTags;
 
   return {
     title: news.title,
-    description: news.metaTags.join(", "),
-    keywords: news.metaTags.join(", "),
+    description: metaTags.join(", "),
+    keywords: metaTags.join(", "),
   };
 }
 

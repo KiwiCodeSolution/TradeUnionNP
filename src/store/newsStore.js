@@ -18,7 +18,7 @@ class NewsStore {
       makePersistable(this, {
         name: "news",
         properties: ["news"],
-        storage: window.localStorage,
+        // storage: window.localStorage,
       }).catch(error => {
         console.error("Failed to make persistable:", error);
       });
@@ -51,9 +51,10 @@ class NewsStore {
   async fetchAllNews() {
     this.isLoading = true;
     this.error = null;
-
+    console.log("start fetch news");
     try {
       const res = await axios.get(`${BaseURL}news`);
+      console.log(res);
       runInAction(() => {
         this.setItems(res.data);
       });
@@ -104,7 +105,9 @@ class NewsStore {
           const updatedNews = { ...this.news[index], ...res.data };
           this.news[index] = updatedNews;
           this.news = [...this.news];
+
           router.replace(`/uk/admin/news?page=1&archive=false`);
+          console.log("news update!");
         }
       });
 

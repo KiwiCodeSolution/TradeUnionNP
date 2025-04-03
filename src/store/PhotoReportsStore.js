@@ -18,7 +18,7 @@ class PhotoReportsStore {
       makePersistable(this, {
         name: "photoReports",
         properties: ["photoReports"],
-        storage: window.localStorage,
+        // storage: window.localStorage,
       }).catch(error => {
         console.error("Failed to make persistable:", error);
       });
