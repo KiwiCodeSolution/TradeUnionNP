@@ -25,7 +25,7 @@ export default async function NewsPageBySlug({ params: { slug } }) {
   const news = await fetchNewsBySlug(slug);
 
   return (
-    <main className="w-full  bg-bgGrey">
+    <main className="w-full bg-bgGrey news-page">
       <NewsPageComponent news={news} />
     </main>
   );

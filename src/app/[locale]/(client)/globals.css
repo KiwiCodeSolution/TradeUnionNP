@@ -80,14 +80,13 @@ svg {
   color: inherit;
 }
 
-ul,
+/* ul,
 li,
 ol {
   padding: 0px;
   margin: 0px;
-
   list-style: none;
-}
+} */
 
 .inter {
   font-family: "Inter", sans-serif;
@@ -514,4 +513,20 @@ button:hover .archive {
     width: 100% !important;
     padding: 12px 30px !important;
   }
+}
+
+.news-page ul,
+.news-page ol {
+  list-style-type: unset;
+  list-style-position: outside;
+  margin-left: 1.5em !important;
+  padding-left: 1em !important;
+}
+
+.news-page ul li {
+  display: list-item;
+}
+
+.news-page ol {
+  list-style-type: revert;
 }

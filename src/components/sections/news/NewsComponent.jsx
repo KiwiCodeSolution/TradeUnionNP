@@ -9,7 +9,8 @@ const NewsComponent = ({ locale, items }) => {
 
   const today = new Date();
   const filteredNewsArray = items
-    .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
+    // .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
+    .filter(item => item.status === "published")
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
   return (

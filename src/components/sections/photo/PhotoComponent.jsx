@@ -9,7 +9,8 @@ const PhotoComponent = ({ locale, items }) => {
 
   const today = new Date();
   const filteredReportsArray = items
-    .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
+    // .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
+    .filter(item => item.status === "published")
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
   return (

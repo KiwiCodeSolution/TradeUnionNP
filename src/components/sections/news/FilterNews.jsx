@@ -37,7 +37,8 @@ export default function FilterNews({ locale }) {
 
   const today = new Date();
   const filteredNewsArray = allNews
-    .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
+    // .filter(item => item.status === "published" && new Date(item.publishDate) <= today)
+    .filter(item => item.status === "published" )
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
   const currentNews =
