@@ -7,7 +7,7 @@ export default function NotFound({ params }) {
   return (
     <BaseSection style={""}>
       <Wrapper styles={""}>
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center h-[50vh]">
           <div className="w-1/3 flex items-center justify-center">
             <p className="text-[200px] text-red font-bold">404</p>
           </div>
@@ -19,7 +19,7 @@ export default function NotFound({ params }) {
               href="/uk"
               className="w-fit py-4 px-10 text-center h-16 outline outline-1 outline-red rounded-lg flex items-center justify-center text-red text-3xl font-bold hover:bg-red hover:text-white"
             >
-              Повернутись на домашню сторінку
+              Повернутись на Головну сторінку
             </Link>
           </div>
         </div>

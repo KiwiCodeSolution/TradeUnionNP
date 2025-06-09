@@ -1,80 +1,61 @@
 import { withAuth } from "next-auth/middleware";
-import createMiddleware from "next-intl/middleware";
+import createIntlMiddleware from "next-intl/middleware";
 import { getToken } from "next-auth/jwt";
 
-const publicPages = [
-  "/",
-  "/pro-nas",
-  "/blanky",
-  "/novyny",
-  "/foto",
-  "/kontakty",
-  "/poshuk-po-saytu",
-  "/kolektyvnyy-dohovir",
-  "/ppo",
-  "/zakhyst-trudovykh-prav",
-  "/materialna-dopomoga",
-  "/dozvillya-ta-sport",
-  "/ya-profspilka",
-  "/zvernennya",
-  "/subscription",
-  "/signin",
-  "/ozdorovlennya",
-  "/yak-vstupyty",
-];
 const locales = ["uk", "en"];
 
-const intlMiddleware = createMiddleware({
+const intlMiddleware = createIntlMiddleware({
   locales: ["uk", "en"],
   defaultLocale: "uk",
   prefixDefault: true,
 });
 
-const authMiddleware = withAuth(
-  function onSuccess(req) {
-    return intlMiddleware(req);
+// шляхи, які потребують авторизації
+const protectedRoutes = ["/uk/admin", "/uk/admin/*", "/en/admin", "/en/admin/*"];
+
+const authMiddleware = withAuth(req => intlMiddleware(req), {
+  callbacks: {
+    authorized: async ({ req }) => {
+      const token = await getToken({
+        req,
+        secret: process.env.NEXTAUTH_SECRET,
+        secureCookie: false,
+      });
+
+      if (!token || !token.user) return false;
+
+      const currentTime = Math.floor(Date.now() / 1000);
+
+      if (token.exp && token.exp < currentTime) {
+        return false;
+      }
+
+      return true;
+    },
   },
-  {
-    callbacks: {
-      authorized: async ({ req }) => {
-        const res = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-
-        if (res?.user) {
-          const currentTime = Math.floor(Date.now() / 1000);
-          if (res.exp < currentTime) {
-            return false;
-          }
-
-          return true;
-        } else {
-          return false;
-        }
-      },
-    },
-
-    pages: {
-      signIn: "/signin",
-    },
-  }
-);
+  pages: {
+    signIn: "/signin",
+  },
+});
 
 export default function middleware(req) {
-  const publicPathnameRegex = RegExp(
-    `^(/(${locales.join("|")}))?(${publicPages
-      .flatMap(p => (p === "/" ? ["", "/"] : [`${p}(?:/.*)?`]))
+  const protectedPathnameRegex = RegExp(
+    `^(/(${locales.join("|")}))?(${protectedRoutes
+      .flatMap(p => (p === "/" ? ["", "/"] : p))
       .join("|")})/?$`,
     "i"
   );
+  const isProtectedPage = protectedPathnameRegex.test(req.nextUrl.pathname);
 
-  const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
-
-  if (isPublicPage) {
-    return intlMiddleware(req);
-  } else {
+  if (isProtectedPage) {
     return authMiddleware(req);
+  } else {
+    return intlMiddleware(req);
   }
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  matcher: [
+    "/((?!api|_next|favicon.ico|.*\\.(?:png|jpg|svg|webp)$|robots.txt|sitemap.xml|\\.well-known).*)",
+  ],
 };

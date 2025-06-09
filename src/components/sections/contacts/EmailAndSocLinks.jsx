@@ -91,7 +91,7 @@ const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
   return isMobile ? (
     <>
       {allContacts && (
-        <a href={`mailto:${allContacts.mail}`} className="text-white text-base mt-10">
+        <a href={`mailto:${allContacts[0].mail}`} className="text-white text-base mt-10">
           {allContacts[0].mail}
         </a>
       )}
@@ -130,7 +130,7 @@ const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
       )}
       {allContacts && (
         <a
-          href={`mailto:${allContacts.mail}`}
+          href={`mailto:${allContacts[0].mail}`}
           className="text-red text-base text-center md:text-left underline underline-offset-1 hover:underline-offset-4"
         >
           {allContacts[0].mail}

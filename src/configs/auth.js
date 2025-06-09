@@ -3,6 +3,8 @@ import axios from "axios";
 import { BaseURL } from "@/constants/BaseUrl";
 import toast from "react-hot-toast";
 
+import { jwtDecode } from "jwt-decode";
+
 export const authConfig = {
   providers: [
     Credentials({
@@ -20,9 +22,13 @@ export const authConfig = {
           });
 
           if (response.status === 200) {
+            const decoded = jwtDecode(response.data.access_token);
             return {
               username: credentials.username,
               token: response.data.access_token,
+              exp: decoded.exp,
+              iat: decoded.iat,
+              sub: decoded.sub,
             };
           }
 
@@ -37,13 +43,20 @@ export const authConfig = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.user = user;
+        token.user = {
+          username: user.username,
+          token: user.token,
+        };
+        token.exp = user.exp;
+        token.iat = user.iat;
+        token.sub = user.sub;
       }
       return token;
     },
     // Callback для сесії
     async session({ session, token }) {
-      session.user = token.user; // Додаємо дані користувача у сесію
+      session.user = token.user;
+      session.tokenExp = token.exp;
       return session;
     },
   },

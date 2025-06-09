@@ -51,10 +51,10 @@ class NewsStore {
   async fetchAllNews() {
     this.isLoading = true;
     this.error = null;
-    console.log("start fetch news");
+
     try {
       const res = await axios.get(`${BaseURL}news`);
-      console.log(res);
+
       runInAction(() => {
         this.setItems(res.data);
       });
