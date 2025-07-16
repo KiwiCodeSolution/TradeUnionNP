@@ -27,7 +27,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
   }, []);
 
   if (!isClient) return null;
-  // шукаємо першу картинку у контенті
+
 
   const getMonthName = monthNumber => {
     const months = [

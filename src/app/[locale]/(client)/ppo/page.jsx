@@ -3,8 +3,11 @@ import TitleRegionOfficesPage from "@/components/sections/regional_offices/Title
 import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
 
-async function getRegionalOfficesData() {
-  const res = await fetch(`${BaseURL}ppo`);
+export async function getRegionalOfficesData() {
+  const res = await fetch(`${BaseURL}ppo`, {
+    method: "GET",
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");

@@ -4,6 +4,8 @@ import StatutoryDocuments from "@/components/sections/about/StatutoryDocuments";
 import VideoSection from "@/components/sections/about/VideoSection";
 import HeroAboutPage from "@/components/sections/hero/HeroAboutPage";
 import { getTranslations } from "next-intl/server";
+import { getAllNews } from "../novyny/page";
+import BlogSection from "@/components/sections/blog/BlogSection";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -25,7 +27,13 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function AboutUsPage() {
+export default async function AboutUsPage({ params }) {
+  const allNews = await getAllNews();
+  const blogItems = allNews
+    .filter(n => n.sections.includes("Інтерв`ю"))
+    .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+    .slice(0, 3);
+
   return (
     <main className="w-full">
       <HeroAboutPage />
@@ -33,6 +41,9 @@ export default function AboutUsPage() {
       <StatutoryDocuments />
       <VideoSection />
       <History />
+      {blogItems && blogItems.length > 0 && (
+        <BlogSection locale={params.locale} items={blogItems} />
+      )}
     </main>
   );
 }

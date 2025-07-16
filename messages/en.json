@@ -447,6 +447,10 @@
           ]
         }
       ]
+    },
+    "blog": {
+      "title": ["News", "by topic"],
+      "button": "All news"
     }
   },
   "Forms": {

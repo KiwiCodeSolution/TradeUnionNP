@@ -3,9 +3,15 @@ import Image from "next/image";
 import { Link } from "@/navigation";
 import NoImage from "@/images/No_Image.jpg";
 import { BaseURLImage } from "@/constants/BaseUrl";
+import { extractFirstImage } from "@/utils/extractFirstImage";
 
 const BlogItem = ({ item, locale, part }) => {
-  const currentImage = (item.previewImg && `${BaseURLImage}${item.previewImg}`) || NoImage;
+  const filteredSrc = item.previewImg === 'src="/preview/qwerty.jpeg"';
+  const imageItemLink = extractFirstImage(item.content);
+  const currentImage =
+    (item.previewImg && !filteredSrc && `${BaseURLImage}${item.previewImg}`) ||
+    imageItemLink ||
+    NoImage;
 
   const getMonthName = monthNumber => {
     const months = [

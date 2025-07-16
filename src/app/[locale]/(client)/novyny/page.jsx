@@ -3,7 +3,7 @@ import NewsComponent from "@/components/sections/news/NewsComponent";
 import { getTranslations } from "next-intl/server";
 import { BaseURL } from "@/constants/BaseUrl";
 
-async function getAllNews() {
+export async function getAllNews() {
   const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
 
   if (!res.ok) {
