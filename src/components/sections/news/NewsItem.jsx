@@ -28,7 +28,6 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
 
   if (!isClient) return null;
 
-
   const getMonthName = monthNumber => {
     const months = [
       "січ",
@@ -70,7 +69,7 @@ const NewsItem = ({ item, section, onToggleArchive, onDelete, part, locale }) =>
                 href={`/admin/${part === "photo" ? "photo-report" : "news"}/${item._id}`}
                 className="outline outline-1 outline-red rounded-xl text-red text-base hover:bg-red hover:text-white font-medium w-full py-2 flex items-center justify-center"
               >
-                <Edit />
+                <Edit className={"w-8 h-8"} />
               </Link>
               <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-black text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                 Редагування

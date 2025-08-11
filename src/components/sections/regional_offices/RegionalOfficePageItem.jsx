@@ -26,6 +26,7 @@ const RegionalOfficePageItem = ({ office }) => {
             alt={`фото співробітників ${office.region}`}
           />
         </div>
+
         <div className="w-fit h-full absolute top-0 left-1 md:left-0 md:right-1/2 px-3 py-8 md:p-12 flex flex-col gap-y-1 justify-end">
           <h2 className="text-2xl font-bold leading-[1.3] text-white">{office.region}</h2>
           <p className="flex gap-x-4 items-center text-[15px] text-white opacity-75">
@@ -42,9 +43,9 @@ const RegionalOfficePageItem = ({ office }) => {
       </div>
       <ul className="w-full py-8 flex items-center justify-between gap-x-8 border-b-[2px] border-white">
         <li className="flex md:min-h-[132px] xl:h-full flex-col md:flex-row gap-8 items-center">
-          <div className="w-24 h-24 rounded-full overflow-hidden">
+          <div className="relative w-24 h-24 rounded-full overflow-hidden">
             <Image
-              src={office.avatar || NoPhoto}
+              src={office.director ? office.avatar || NoPhoto : NoPhoto}
               width={96}
               height={96}
               alt={`фото регіонального голови ${office.region}`}

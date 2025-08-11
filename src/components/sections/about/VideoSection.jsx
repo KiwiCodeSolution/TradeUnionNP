@@ -6,13 +6,13 @@ const VideoSection = () => {
     <BaseSection style={"my-8 md:my-16"}>
       <Wrapper>
         <iframe
-          height="315"
-          src="https://www.youtube.com/embed/lxWLxcB0o4k"
+          // height="315"
+          src="https://www.youtube.com/embed/vRKRXjHTWAo?si=8-iqfNPdebyGCjAo"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen=""
-          className="w-full md:w-[560px] mx-auto"
+          className="w-full h-[315px] md:w-[560px] xl:w-9/12 xl:h-[450px] mx-auto"
         ></iframe>
       </Wrapper>
     </BaseSection>

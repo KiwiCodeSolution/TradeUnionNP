@@ -8,8 +8,10 @@ import NoPhoto from "@/images/no-photo.png";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 import TelMailBlock from "./TelMailBlock";
 import { Link } from "@/navigation";
+import LinkButton from "@/components/UI/buttons/LinkButton";
+import { Edit } from "@/components/icons/IconsComponents";
 
-const RegionalOffice = ({ item, locale }) => {
+const RegionalOffice = ({ item, locale, section }) => {
   const [isShowAdmissionAddress, setIsShowAdmissionAddress] = useState(false);
   const [isShowApplicationAddress, setIsShowApplicationAddress] = useState(false);
   const [isShowCommittee, setIsShowCommittee] = useState(false);
@@ -33,18 +35,35 @@ const RegionalOffice = ({ item, locale }) => {
           alt={`це зображення членів ${item.region}`}
           className="hidden md:block w-full object-cover opacity-50"
         />
-        <div className="w-full h-full absolute top-0 left-0 p-12 flex flex-col gap-y-1 justify-end">
-          <h2 className="text-2xl font-bold leading-[1.3] text-white">{item.region}</h2>
-          <p className="flex gap-x-4 items-center text-[15px] text-white opacity-75">
-            <Image
-              src={Users}
-              width={21}
-              height={20}
-              alt="схематичне зображення людей, користувачів, прозорий фон білі контури"
-              className=""
-            />
-            Кількість членів: {item.quantity} чол.
-          </p>
+
+        {section === "admin" && (
+          <div className="w-full h-full absolute top-0 left-0 p-12 flex flex-col justify-start z-[5]">
+            <LinkButton
+              view={"red"}
+              goToPage
+              goTo={`/admin/ppo/${item._id}`}
+              style={"font-semibold min-w-[163px] group"}
+            >
+              Редагувати запис{" "}
+              <Edit className={"fill-white group-hover:fill-transparent w-8 h-8"} />
+            </LinkButton>
+          </div>
+        )}
+
+        <div className="w-full h-full absolute top-0 left-0 p-12 flex flex-col justify-end">
+          <div className="flex flex-col gap-y-1">
+            <h2 className="text-2xl font-bold leading-[1.3] text-white">{item.region}</h2>
+            <p className="flex gap-x-4 items-center text-[15px] text-white opacity-75">
+              <Image
+                src={Users}
+                width={21}
+                height={20}
+                alt="схематичне зображення людей, користувачів, прозорий фон білі контури"
+                className=""
+              />
+              Кількість членів: {item.quantity} чол.
+            </p>
+          </div>
         </div>
       </div>
 
