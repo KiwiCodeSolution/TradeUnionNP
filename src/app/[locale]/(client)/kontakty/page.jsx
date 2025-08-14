@@ -6,7 +6,10 @@ import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
 
 async function getRegionalOfficesData() {
-  const res = await fetch(`${BaseURL}ppo`);
+  const res = await fetch(`${BaseURL}ppo`, {
+    method: "GET",
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -37,6 +40,7 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function ContactsPage() {
   const officesData = await getRegionalOfficesData();
+  console.log(officesData);
 
   return (
     <main className="w-full bg-bgGrey">
