@@ -40,7 +40,6 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function ContactsPage() {
   const officesData = await getRegionalOfficesData();
-  console.log(officesData);
 
   return (
     <main className="w-full bg-bgGrey">
