@@ -3,7 +3,7 @@ import { BaseURL } from "@/constants/BaseUrl";
 
 // Функція для отримання новини із серверу
 async function fetchReportBySlug(slug) {
-  const response = await fetch(`${BaseURL}gallerey/${slug}`, { method: "GET" });
+  const response = await fetch(`${BaseURL}gallerey/${slug}`, { method: "GET", cache: "no-store" });
   const report = await response.json();
 
   return report;

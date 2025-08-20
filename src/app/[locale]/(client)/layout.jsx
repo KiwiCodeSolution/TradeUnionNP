@@ -8,6 +8,7 @@ import { getMessages } from "next-intl/server";
 import { roboto } from "./fonts";
 import { Providers } from "@/components/Providers";
 import { Toaster } from "react-hot-toast";
+import Analytics from "@/components/Analytics";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -40,6 +41,7 @@ export default async function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale} className="h-full">
       <body className={`${roboto.className} min-h-screen flex flex-col`}>
+        <Analytics />
         <Providers>
           <NextIntlClientProvider messages={messages}>
             <div className="flex flex-col min-h-screen">
