@@ -8,51 +8,93 @@ import { BaseURL, BaseURLImage } from "@/constants/BaseUrl";
 import { extractFirstImage } from "@/utils/extractFirstImage";
 import axios from "axios";
 import useAuth from "@/hooks/useAuth";
+import RegionalOfficeBGPhotoEditor from "./RegionalOfficeBGPhotoEditor";
+import { Router } from "next/router";
+import { useParams, useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const getPreviewUrl = fileOrUrl => {
   if (!fileOrUrl) return NoPhoto;
   if (fileOrUrl instanceof File) return URL.createObjectURL(fileOrUrl); // новий файл
   if (typeof fileOrUrl === "string") {
     if (fileOrUrl.startsWith("blob:")) return fileOrUrl; // локальне прев'ю
-    return `${BaseURLImage}${fileOrUrl}`; // бекенд-рядок
+
+    const url = `${BaseURLImage}${fileOrUrl}`;
+
+    return `${url}`;
   }
   return NoPhoto;
 };
 
-const EditPpoForm = ({ office }) => {
-  const {
-    _id,
-    director,
-    position,
-    avatar,
-    quantity,
-    image,
-    email,
-    phone,
-    admission_address,
-    application_address,
-    committee,
-    link,
-    region,
-  } = office;
+const EditPpoForm = () => {
+  const { _id } = useParams(); // Отримуємо ID з URL
   const { token } = useAuth();
-  const [initialData, setInitialData] = useState(office);
+  const router = useRouter();
 
-  const [formData, setFormData] = useState({
-    director: director || "",
-    position: position || "",
-    avatar: avatar || "", // бекенд-шлях або File
-    _avatarFile: null, // новий файл для сабміту
-    image: image || "", // бекенд-шлях або File
-    _imageFile: null, // новий файл для сабміту
-    quantity: quantity || "",
-    email: email || "",
-    phone: phone || "",
-    admission_address: admission_address || "",
-    application_address: application_address || "",
-    committee: committee?.join(", ") || "",
-    link: link || "",
-  });
+  const [initialData, setInitialData] = useState(null);
+  const [formData, setFormData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!_id || !token) {
+        setLoading(false);
+        return;
+      }
+      try {
+        const response = await axios.get(`${BaseURL}ppo/${_id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const office = response.data;
+        setInitialData(office);
+        setFormData({
+          director: office.director || "",
+          position: office.position || "",
+          avatar: office.avatar || "",
+          _avatarFile: null,
+          image: office.image || "",
+          _imageFile: null,
+          quantity: office.quantity || "",
+          email: office.email || "",
+          phone: office.phone || "",
+          admission_address: office.admission_address || "",
+          application_address: office.application_address || "",
+          committee: office.committee?.join(", ") || "",
+          link_news: office.link_news || "",
+          link: office.link || "",
+          is_active: office.is_active ?? true,
+        });
+      } catch (error) {
+        console.error("Помилка завантаження даних:", error);
+        toast.error("Не вдалося завантажити дані.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [_id, token]); // Виконуємо ефект, коли ID або токен змінюються
+
+  // Обробляємо стан завантаження
+  if (loading) {
+    return (
+      <div className="fixed w-full h-screen top-0 left-0 bg-slate-400 bg-opacity-60 flex items-center justify-center">
+        <Image
+          src="/images/logo-sm.svg"
+          width={164}
+          height={165}
+          alt="Логотип компанії"
+          className="animate-bounce"
+        />
+      </div>
+    );
+  }
+
+  if (!formData) {
+    return <div>Дані не знайдено.</div>;
+  }
 
   const handleAvatarChange = file => {
     setFormData(prev => ({
@@ -62,27 +104,30 @@ const EditPpoForm = ({ office }) => {
     }));
   };
 
-  const handleChange = e => {
-    const { name, value } = e.target;
+  const handleImageChange = file => {
     setFormData(prev => ({
       ...prev,
-      [name]: value,
+      image: file, // для preview
+      _imageFile: file, // для сабміту
     }));
   };
 
-  // const parts = avatar.split("/"); // ['','ppo','volinska-ppo']
-
-  // 2. Взяти останній елемент масиву за допомогою pop()
-  // const cleanedLink = parts.pop();
-  console.log(avatar);
+  const handleChange = e => {
+    const { name, value, type, checked } = e.target;
+    // Оновлена логіка для обробки радіокнопок
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === "radio" ? value === "true" : value, // Змінено тут
+    }));
+  };
 
   const validateForm = () => {
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      alert("Некоректний email");
+      toast.error("Некоректний email");
       return false;
     }
     if (formData.phone && !/^\+380\d{9}$/.test(formData.phone)) {
-      alert("Телефон має бути у форматі +380XXXXXXXXX");
+      toast.error("Телефон має бути у форматі +380XXXXXXXXX");
       return false;
     }
     return true;
@@ -90,113 +135,96 @@ const EditPpoForm = ({ office }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    if (!validateForm()) return;
+    if (!validateForm()) return; // Обрізаємо пробіли для всіх текстових полів
 
-    const fd = new FormData();
+    const trimmedData = Object.keys(formData).reduce((acc, key) => {
+      if (typeof formData[key] === "string") {
+        acc[key] = formData[key].trim();
+      } else {
+        acc[key] = formData[key];
+      }
+      return acc;
+    }, {});
 
-    // Додаємо файли окремо від циклу
-    // Логіка для аватара
-    if (formData._avatarFile instanceof File) {
-      fd.set("avatar", formData._avatarFile);
-    } else {
-      fd.set("avatar", formData.avatar);
+    const fd = new FormData(); // Додаємо файли окремо від циклу
+
+    if (trimmedData._avatarFile instanceof File) {
+      fd.append("avatar", trimmedData._avatarFile);
     }
 
-    // Логіка для зображення
-    if (formData._imageFile instanceof File) {
-      fd.set("image", formData._imageFile);
-    } else {
-      fd.set("image", formData.image);
+    if (trimmedData._imageFile instanceof File) {
+      fd.append("image", trimmedData._imageFile);
+    } // Перебираємо оновлені поля
+
+    if (trimmedData.is_active !== initialData.is_active) {
+      fd.append("is_active", trimmedData.is_active);
     }
 
-    // Тепер, в окремому циклі, перебираємо інші поля
-    for (const key in formData) {
-      // Ігноруємо допоміжні поля та файли
-      if (key.startsWith("_") || key === "avatar" || key === "image") {
+    for (const key in trimmedData) {
+      if (key.startsWith("_") || key === "avatar" || key === "image" || key === "is_active") {
         continue;
       }
 
-      // Перевіряємо, чи змінилося поле
-      if (JSON.stringify(formData[key]) !== JSON.stringify(initialData[key])) {
+      if (JSON.stringify(trimmedData[key]) !== JSON.stringify(initialData[key])) {
         if (key === "committee") {
-          const committeeArray = formData.committee
-            ? formData.committee.split(",").map(el => el.trim())
+          const committeeArray = trimmedData.committee
+            ? trimmedData.committee.split(",").map(el => el.trim())
             : [];
           committeeArray.forEach(member => {
             fd.append("committee", member);
           });
         } else {
-          fd.append(key, formData[key]);
+          fd.append(key, trimmedData[key]);
         }
       }
     }
-    const parts = link.split("/"); // ['','ppo','volinska-ppo']
+    const parts = initialData.link.split("/"); // ['','ppo','volinska-ppo']
 
-    // 2. Взяти останній елемент масиву за допомогою pop()
-    const cleanedLink = parts.pop();
-    console.log(parts, cleanedLink);
-    fd.append("place", cleanedLink);
+    const cleanedLink = parts.pop(); // Якщо FormData порожній - нічого не робимо
 
-    // Якщо FormData порожній - нічого не робимо
     if ([...fd.entries()].length === 0) {
-      alert("Немає змін для збереження.");
+      toast.error("Немає змін для збереження.");
       return;
     }
 
-    // Перевірка у консолі
-    for (let [k, v] of fd.entries()) {
-      if (v instanceof File) console.log(k, v.name, v.size);
-      else console.log(k, v);
-    }
-
     try {
-      const response = await axios.put(`${BaseURL}ppo/${_id}`, fd, {
+      const response = await axios.put(`${BaseURL}ppo/${_id}/${cleanedLink}`, fd, {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
         },
       });
 
-      console.log("Відповідь від сервера:", response);
-
-      // Дані успішно оновлено, вони знаходяться у response.data
-      console.log("Дані успішно оновлено:", response.data);
-      // Можна вивести а також оновити стан, якщо потрібно
-
       const result = response.data;
+      console.log("Успіх:", result);
 
-      console.log("Дані успішно оновлено:", result);
+      if (result) {
+        toast.success("Запис оновлено!");
+        router.replace(`/uk/admin/ppo`);
+        router.refresh();
+      }
     } catch (error) {
       console.error(error);
-      // axios помилки містять більше інформації
       if (error.response) {
-        // Сервер відповів з кодом, що не є 2xx
         console.error("Дані помилки від сервера:", error.response.data);
-        alert(`Помилка: ${error.response.data.message} || 'Невідома помилка'}`);
+        toast.error(`Помилка: ${error.response.data.message || "Невідома помилка"}`);
       } else if (error.request) {
-        // Запит було зроблено, але відповіді не було
         console.error("Немає відповіді від сервера");
-        alert("Немає відповіді від сервера. Перевірте з'єднання.");
+        toast.error("Немає відповіді від сервера. Перевірте з'єднання.");
       } else {
-        // Щось пішло не так при налаштуванні запиту
         console.error("Помилка налаштування запиту", error.message);
-        alert("Виникла помилка. Спробуйте ще раз.");
+        toast.error("Виникла помилка. Спробуйте ще раз.");
       }
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="w-full xl:w-9/12 py-5 flex flex-col gap-y-4 mx-auto">
-      <div className="w-full h-200 mx-auto overflow-hidden relative">
-        <div className="w-fit mx-auto bg-black">
-          <Image
-            src={getPreviewUrl(formData.image) || NoPhoto}
-            width={750}
-            height={200}
-            className="mx-auto h-full object-cover opacity-50"
-            alt={`фото співробітників ${office.region}`}
-          />
-        </div>
-      </div>
+      <RegionalOfficeBGPhotoEditor
+        initialImage={getPreviewUrl(formData.image) || NoPhoto}
+        onImageChange={handleImageChange}
+      />
+
       <div className="flex gap-x-4">
         {/* Аватар */}
         <div className="flex flex-col gap-y-1 relative w-1/5 ">
@@ -204,9 +232,6 @@ const EditPpoForm = ({ office }) => {
           <RegionalOfficeAvatarEditor
             initialAvatar={formData.director ? getPreviewUrl(formData.avatar) || NoPhoto : NoPhoto}
             onAvatarChange={handleAvatarChange}
-            // onAvatarChange={file => {
-            //   console.log("avatar", file);
-            // }}
           />
         </div>
         <div className="flex flex-col gap-y-4 w-4/5">
@@ -346,6 +371,34 @@ const EditPpoForm = ({ office }) => {
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none  focus:outline-red focus:border-none focus:rounded-lg"
         />
+      </div>
+      {/* Приховати запис */}
+      <div className="flex flex-col gap-y-1">
+        <label className="text-main block font-medium">Приховати запис?</label>
+        <div className="flex items-center gap-x-4">
+          <label className="flex items-center gap-x-2">
+            <input
+              type="radio"
+              name="is_active"
+              value="false"
+              checked={!formData.is_active}
+              onChange={handleChange}
+              className="w-4 h-4 text-red border-gray-300 focus:ring-red"
+            />
+            Так
+          </label>
+          <label className="flex items-center gap-x-2">
+            <input
+              type="radio"
+              name="is_active"
+              value="true"
+              checked={formData.is_active}
+              onChange={handleChange}
+              className="w-4 h-4 text-red border-gray-300 focus:ring-red"
+            />
+            Ні
+          </label>
+        </div>
       </div>
 
       {/* Кнопка зберегти */}

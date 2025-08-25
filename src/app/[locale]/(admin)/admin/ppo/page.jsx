@@ -19,6 +19,7 @@ export async function getRegionalOfficesData() {
 
 export default async function UpdatePPOPage() {
   const officesData = await getRegionalOfficesData();
+  // const officesVisible = officesData.filter(el => el.is_active !== false);
 
   return (
     <main className="flex flex-col min-h-screen px-10 py-5 bg-bgGrey">

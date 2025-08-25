@@ -38,11 +38,12 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function RegionalCellsPage({ params: { locale } }) {
   const officesData = await getRegionalOfficesData();
+  const officesVisible = officesData.filter(el => el.is_active !== false);
 
   return (
     <main className="w-full bg-bgGrey">
       <TitleRegionOfficesPage />
-      <RegionalOffices items={officesData} locale={locale} />
+      <RegionalOffices items={officesVisible} locale={locale} />
     </main>
   );
 }

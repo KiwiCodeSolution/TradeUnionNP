@@ -38,7 +38,6 @@ export default async function AdminPpoPageWithId({ params: { _id } }) {
         <ButtonBack path={"/uk/admin/ppo"} className={"absolute top-8"} />
         <section className="flex-grow overflow-y-auto" style={{ maxHeight: "calc(100vh - 120px)" }}>
           <EditPpoForm office={currentPpo} />
-          {/* <RegionalOfficePageItem office={currentPpo} section={"admin"} /> */}
         </section>
       </main>
     </StoreProvider>

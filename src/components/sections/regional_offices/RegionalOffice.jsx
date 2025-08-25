@@ -17,10 +17,14 @@ const RegionalOffice = ({ item, locale, section }) => {
   const [isShowCommittee, setIsShowCommittee] = useState(false);
 
   const pattern = item.region.split(" ")[0].slice(0, -1);
-  console.log(item.image);
+  const isHidden = item.is_active === false && section === "admin";
 
   return (
-    <article className="w-full h-fit flex flex-col rounded-2xl overflow-hidden">
+    <article
+      className={`w-full h-fit flex flex-col rounded-2xl overflow-hidden ${
+        isHidden ? "opacity-50" : "opacity-100"
+      }`}
+    >
       <div className="w-full h-80 relative overflow-hidden bg-black">
         <Image
           src={item.image}
