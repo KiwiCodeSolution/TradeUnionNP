@@ -60,30 +60,21 @@ const nextConfig = {
         port: "5000",
         pathname: "/uploads_gallerey/**",
       },
+
       {
         protocol: "https",
-        hostname: "kiwicode.digital",
-        pathname: "/bc/**",
+        hostname: "profspilka.org",
+        pathname: "/images/**",
       },
       {
         protocol: "https",
-        hostname: "kiwicode.digital",
-        pathname: "/**",
+        hostname: "profspilka.org",
+        pathname: "/images/ppo/**",
       },
       {
         protocol: "https",
-        hostname: "kiwicode.digital",
-        pathname: "/bc/images/**",
-      },
-      {
-        protocol: "https",
-        hostname: "kiwicode.digital",
-        pathname: "/bc/uploads/**",
-      },
-      {
-        protocol: "https",
-        hostname: "kiwicode.digital",
-        pathname: "/bc/uploads_gallerey/**",
+        hostname: "profspilka.org",
+        pathname: "/ppo_images/**",
       },
 
       {
@@ -100,6 +91,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "profspilka.org",
         pathname: "/bc/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "profspilka.org",
+        pathname: "/bc/images/ppo/**",
       },
       {
         protocol: "https",
