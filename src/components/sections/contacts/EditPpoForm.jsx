@@ -5,7 +5,6 @@ import NoPhoto from "@/images/no-photo.png";
 import RegionalOfficeAvatarEditor from "../regional_offices/RegionalOfficeAvatarEditor";
 import Image from "next/image";
 import { BaseURL, BaseURLImage } from "@/constants/BaseUrl";
-import { extractFirstImage } from "@/utils/extractFirstImage";
 import axios from "axios";
 import useAuth from "@/hooks/useAuth";
 import RegionalOfficeBGPhotoEditor from "./RegionalOfficeBGPhotoEditor";
@@ -196,7 +195,6 @@ const EditPpoForm = () => {
       });
 
       const result = response.data;
-      console.log("Успіх:", result);
 
       if (result) {
         toast.success("Запис оновлено!");
@@ -229,9 +227,11 @@ const EditPpoForm = () => {
         {/* Аватар */}
         <div className="flex flex-col gap-y-1 relative w-1/5 ">
           <label className="text-main block font-medium">Фото Голови</label>
+
           <RegionalOfficeAvatarEditor
             initialAvatar={formData.director ? getPreviewUrl(formData.avatar) || NoPhoto : NoPhoto}
             onAvatarChange={handleAvatarChange}
+            isShowAvatar={formData.director.length > 0}
           />
         </div>
         <div className="flex flex-col gap-y-4 w-4/5">
@@ -316,13 +316,13 @@ const EditPpoForm = () => {
       {/* Адреса прийому */}
       <div className="flex flex-col gap-y-1">
         <label htmlFor="admission_address" className="text-main block font-medium">
-          Адреса прийому
+          Адреса відправлення Заяв на вступ:
         </label>
         <textarea
-          id="admission_address"
+          id="application_address"
           type="text"
-          name="admission_address"
-          value={formData.admission_address}
+          name="application_address"
+          value={formData.application_address}
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none  focus:outline-red focus:border-none focus:rounded-lg"
         />
@@ -331,13 +331,13 @@ const EditPpoForm = () => {
       {/* Адреса для заяв */}
       <div className="flex flex-col gap-y-1">
         <label htmlFor="application_address" className="text-main block font-medium">
-          Адреса для подачі заяв
+          Адреса відправлення Заяв на Матеріальну допомогу:
         </label>
         <textarea
-          id="application_address"
+          id="admission_address"
           type="text"
-          name="application_address"
-          value={formData.application_address}
+          name="admission_address"
+          value={formData.admission_address}
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none  focus:outline-red focus:border-none focus:rounded-lg"
         />

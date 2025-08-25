@@ -22,6 +22,7 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
   }
 
   const vacancy = { phone: "+380677008125", email: "help@profspilka.org" };
+
   return page === "ppo" ? (
     <li className="flex flex-col h-[100px] justify-between">
       <div className="flex gap-x-4 mx-auto xl:hidden items-center h-full">

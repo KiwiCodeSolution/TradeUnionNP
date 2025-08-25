@@ -8,58 +8,6 @@ import Modal from "@/components/UI/modal/Modal";
 import { Cross } from "@/components/icons/IconsComponents";
 import Loader from "@/components/UI/loader/Loader";
 
-const InformationWindow = ({ item, x, y, isModal, fnc }) => {
-  return (
-    <div
-      className={`${
-        !isModal ? "absolute min-w-[300px]" : "min-w-[350px] relative"
-      }  bg-white h-fit z-30 rounded-2xl hidden md:flex flex-col gap-y-3 p-8`}
-      style={{ top: `${y}px`, left: `${x}px` }}
-    >
-      {isModal && (
-        <button
-          onClick={fnc}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red z-20"
-        >
-          <Cross />
-        </button>
-      )}
-      <h3 className="text-lg font-bold text-center">{item.region}</h3>
-      <p className="text-base text-center">Голова: {item.director || "Вакансія"} </p>
-      <TelMailBlock
-        email={item.email}
-        phone={item.phone}
-        director={item.director}
-        region={item.region}
-      />
-    </div>
-  );
-};
-
-const InformationModalWindow = ({ item, fnc }) => {
-  return (
-    <div
-      className={`absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 min-w-[350px] bg-white h-fit z-30 rounded-2xl flex flex-col gap-y-3 p-8`}
-    >
-      <button
-        onClick={fnc}
-        className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red z-20"
-      >
-        <Cross />
-      </button>
-
-      <h3 className="text-lg font-bold text-center">{item.region}</h3>
-      <p className="text-base text-center">Голова: {item.director || "Вакансія"} </p>
-      <TelMailBlock
-        email={item.email}
-        phone={item.phone}
-        director={item.director}
-        region={item.region}
-      />
-    </div>
-  );
-};
-
 export default function Map({ items }) {
   const [showInformation, setShowInformation] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -112,6 +60,62 @@ export default function Map({ items }) {
           email: "",
           phone: "",
         };
+
+  const InformationWindow = ({ item, x, y, isModal, fnc }) => {
+    return (
+      <div
+        className={`${
+          !isModal ? "absolute min-w-[300px]" : "min-w-[350px] relative"
+        }  bg-white h-fit z-30 rounded-2xl hidden md:flex flex-col gap-y-3 p-8`}
+        style={{ top: `${y}px`, left: `${x}px` }}
+      >
+        {isModal && (
+          <button
+            onClick={fnc}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red z-20"
+          >
+            <Cross />
+          </button>
+        )}
+        <h3 className="text-lg font-bold text-center">{item?.region || "інформація відсутня"}</h3>
+        <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
+        {item && (
+          <TelMailBlock
+            email={item.email}
+            phone={item.phone}
+            director={item.director}
+            region={item.region}
+          />
+        )}
+      </div>
+    );
+  };
+
+  const InformationModalWindow = ({ item, fnc }) => {
+    return (
+      <div
+        className={`absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 min-w-[350px] bg-white h-fit z-30 rounded-2xl flex flex-col gap-y-3 p-8`}
+      >
+        <button
+          onClick={fnc}
+          className="absolute top-4 right-4 w-8 h-8 rounded-full border border-red flex items-center justify-center cross-button hover:bg-red z-20"
+        >
+          <Cross />
+        </button>
+
+        <h3 className="text-lg font-bold text-center">{item?.region || "інформація відсутня"}</h3>
+        <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
+        {item && (
+          <TelMailBlock
+            email={item.email}
+            phone={item.phone}
+            director={item.director}
+            region={item.region}
+          />
+        )}
+      </div>
+    );
+  };
 
   return (
     <BaseSection style={""}>

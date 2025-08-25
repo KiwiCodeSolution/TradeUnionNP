@@ -1,14 +1,26 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import NoPhoto from "@/images/no-photo.png";
 import AvatarCropper from "@/components/UI/AvatarCropper";
 import { Edit, EditPhoto } from "@/components/icons/IconsComponents";
 
-export default function RegionalOfficeAvatarEditor({ initialAvatar, onAvatarChange }) {
+export default function RegionalOfficeAvatarEditor({
+  initialAvatar,
+  onAvatarChange,
+  isShowAvatar,
+}) {
   const [avatarPreview, setAvatarPreview] = useState(initialAvatar || null);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    if (!isShowAvatar) {
+      setAvatarPreview(null);
+    } else if (isShowAvatar) {
+      setAvatarPreview(initialAvatar);
+    }
+  }, [isShowAvatar]);
 
   const handleFileChange = e => {
     e.preventDefault();

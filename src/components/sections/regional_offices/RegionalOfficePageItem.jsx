@@ -23,7 +23,7 @@ const RegionalOfficePageItem = ({ office }) => {
             width={900}
             height={400}
             className="mx-auto h-full object-cover opacity-50"
-            alt={`фото співробітників ${office.region}`}
+            alt={`це зображення членів ${office.region}`}
           />
         </div>
 

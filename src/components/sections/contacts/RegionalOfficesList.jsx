@@ -18,9 +18,11 @@ export default function RegionalOfficesList({ placeholder, button, items }) {
     setShowAll(true);
   };
 
+  const officesVisible = items.filter(el => el.is_active !== false);
+
   const filteredOffices = filterText
-    ? items.filter(item => item.region.toLowerCase().includes(filterText?.toLowerCase()))
-    : items;
+    ? officesVisible.filter(item => item.region.toLowerCase().includes(filterText?.toLowerCase()))
+    : officesVisible;
 
   return (
     <div className="w-full flex flex-col gap-y-8 pb-10">

@@ -4,7 +4,7 @@ import Link from "next/link";
 const SearchItem = ({ item }) => {
   const title = item.title || item.region || "";
 
-  const activeLink = item.slug ? `/novyny/${item.slug}` : `/ppo/${item._id}`;
+  const activeLink = item.slug ? `/novyny/${item.slug}` : `${item.link}`;
 
   return (
     <article className="w-full border-b py-4 px-5 flex flex-col gap-y-5 hover:shadow-xl">
