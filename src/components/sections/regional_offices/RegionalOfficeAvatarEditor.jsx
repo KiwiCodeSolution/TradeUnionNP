@@ -18,10 +18,23 @@ export default function RegionalOfficeAvatarEditor({ initialAvatar, onAvatarChan
     }
   };
 
+  // const handleSaveCropped = croppedBlob => {
+  //   const previewUrl = URL.createObjectURL(croppedBlob);
+  //   setAvatarPreview(previewUrl);
+  //   onAvatarChange(croppedBlob);
+  // };
+
   const handleSaveCropped = croppedBlob => {
+    // Створюємо URL для локального прев'ю
     const previewUrl = URL.createObjectURL(croppedBlob);
     setAvatarPreview(previewUrl);
+
+    // Важливо: передаємо сам Blob (який є типом File) до батьківського компонента
+    // Батьківський компонент збереже його у _avatarFile для подальшої відправки на сервер
     onAvatarChange(croppedBlob);
+
+    // Закриваємо модальне вікно після збереження
+    setSelectedImage(null);
   };
 
   return (
@@ -36,6 +49,7 @@ export default function RegionalOfficeAvatarEditor({ initialAvatar, onAvatarChan
         <button
           className="absolute w-full h-full bg-white/50 flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
           onClick={() => setSelectedImage(avatarPreview)}
+          type="button"
         >
           <Edit className="fill-red w-6 h-6 " />
         </button>

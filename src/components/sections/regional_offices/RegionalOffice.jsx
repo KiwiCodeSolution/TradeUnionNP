@@ -17,6 +17,7 @@ const RegionalOffice = ({ item, locale, section }) => {
   const [isShowCommittee, setIsShowCommittee] = useState(false);
 
   const pattern = item.region.split(" ")[0].slice(0, -1);
+  console.log(item.image);
 
   return (
     <article className="w-full h-fit flex flex-col rounded-2xl overflow-hidden">

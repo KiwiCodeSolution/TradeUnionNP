@@ -1,9 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NoPhoto from "@/images/no-photo.png";
 import RegionalOfficeAvatarEditor from "../regional_offices/RegionalOfficeAvatarEditor";
 import Image from "next/image";
+import { BaseURL, BaseURLImage } from "@/constants/BaseUrl";
+import { extractFirstImage } from "@/utils/extractFirstImage";
+import axios from "axios";
+import useAuth from "@/hooks/useAuth";
+
+const getPreviewUrl = fileOrUrl => {
+  if (!fileOrUrl) return NoPhoto;
+  if (fileOrUrl instanceof File) return URL.createObjectURL(fileOrUrl); // новий файл
+  if (typeof fileOrUrl === "string") {
+    if (fileOrUrl.startsWith("blob:")) return fileOrUrl; // локальне прев'ю
+    return `${BaseURLImage}${fileOrUrl}`; // бекенд-рядок
+  }
+  return NoPhoto;
+};
 
 const EditPpoForm = ({ office }) => {
   const {
@@ -18,22 +32,35 @@ const EditPpoForm = ({ office }) => {
     admission_address,
     application_address,
     committee,
-    link_news,
+    link,
+    region,
   } = office;
+  const { token } = useAuth();
+  const [initialData, setInitialData] = useState(office);
 
   const [formData, setFormData] = useState({
     director: director || "",
     position: position || "",
-    avatar: avatar || "",
+    avatar: avatar || "", // бекенд-шлях або File
+    _avatarFile: null, // новий файл для сабміту
+    image: image || "", // бекенд-шлях або File
+    _imageFile: null, // новий файл для сабміту
     quantity: quantity || "",
-    image: image || "",
     email: email || "",
     phone: phone || "",
     admission_address: admission_address || "",
     application_address: application_address || "",
     committee: committee?.join(", ") || "",
-    link_news: link_news || "",
+    link: link || "",
   });
+
+  const handleAvatarChange = file => {
+    setFormData(prev => ({
+      ...prev,
+      avatar: file, // для preview
+      _avatarFile: file, // для сабміту
+    }));
+  };
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -42,6 +69,12 @@ const EditPpoForm = ({ office }) => {
       [name]: value,
     }));
   };
+
+  // const parts = avatar.split("/"); // ['','ppo','volinska-ppo']
+
+  // 2. Взяти останній елемент масиву за допомогою pop()
+  // const cleanedLink = parts.pop();
+  console.log(avatar);
 
   const validateForm = () => {
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -55,20 +88,100 @@ const EditPpoForm = ({ office }) => {
     return true;
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     if (!validateForm()) return;
 
-    const committeeArray = formData.committee
-      ? formData.committee.split(",").map(el => el.trim())
-      : [];
+    const fd = new FormData();
 
-    const itemData = {
-      ...formData,
-      committee: committeeArray,
-    };
+    // Додаємо файли окремо від циклу
+    // Логіка для аватара
+    if (formData._avatarFile instanceof File) {
+      fd.set("avatar", formData._avatarFile);
+    } else {
+      fd.set("avatar", formData.avatar);
+    }
 
-    console.log("Form data to submit:", itemData);
+    // Логіка для зображення
+    if (formData._imageFile instanceof File) {
+      fd.set("image", formData._imageFile);
+    } else {
+      fd.set("image", formData.image);
+    }
+
+    // Тепер, в окремому циклі, перебираємо інші поля
+    for (const key in formData) {
+      // Ігноруємо допоміжні поля та файли
+      if (key.startsWith("_") || key === "avatar" || key === "image") {
+        continue;
+      }
+
+      // Перевіряємо, чи змінилося поле
+      if (JSON.stringify(formData[key]) !== JSON.stringify(initialData[key])) {
+        if (key === "committee") {
+          const committeeArray = formData.committee
+            ? formData.committee.split(",").map(el => el.trim())
+            : [];
+          committeeArray.forEach(member => {
+            fd.append("committee", member);
+          });
+        } else {
+          fd.append(key, formData[key]);
+        }
+      }
+    }
+    const parts = link.split("/"); // ['','ppo','volinska-ppo']
+
+    // 2. Взяти останній елемент масиву за допомогою pop()
+    const cleanedLink = parts.pop();
+    console.log(parts, cleanedLink);
+    fd.append("place", cleanedLink);
+
+    // Якщо FormData порожній - нічого не робимо
+    if ([...fd.entries()].length === 0) {
+      alert("Немає змін для збереження.");
+      return;
+    }
+
+    // Перевірка у консолі
+    for (let [k, v] of fd.entries()) {
+      if (v instanceof File) console.log(k, v.name, v.size);
+      else console.log(k, v);
+    }
+
+    try {
+      const response = await axios.put(`${BaseURL}ppo/${_id}`, fd, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      console.log("Відповідь від сервера:", response);
+
+      // Дані успішно оновлено, вони знаходяться у response.data
+      console.log("Дані успішно оновлено:", response.data);
+      // Можна вивести а також оновити стан, якщо потрібно
+
+      const result = response.data;
+
+      console.log("Дані успішно оновлено:", result);
+    } catch (error) {
+      console.error(error);
+      // axios помилки містять більше інформації
+      if (error.response) {
+        // Сервер відповів з кодом, що не є 2xx
+        console.error("Дані помилки від сервера:", error.response.data);
+        alert(`Помилка: ${error.response.data.message} || 'Невідома помилка'}`);
+      } else if (error.request) {
+        // Запит було зроблено, але відповіді не було
+        console.error("Немає відповіді від сервера");
+        alert("Немає відповіді від сервера. Перевірте з'єднання.");
+      } else {
+        // Щось пішло не так при налаштуванні запиту
+        console.error("Помилка налаштування запиту", error.message);
+        alert("Виникла помилка. Спробуйте ще раз.");
+      }
+    }
   };
 
   return (
@@ -76,7 +189,7 @@ const EditPpoForm = ({ office }) => {
       <div className="w-full h-200 mx-auto overflow-hidden relative">
         <div className="w-fit mx-auto bg-black">
           <Image
-            src={formData.image}
+            src={getPreviewUrl(formData.image) || NoPhoto}
             width={750}
             height={200}
             className="mx-auto h-full object-cover opacity-50"
@@ -89,10 +202,11 @@ const EditPpoForm = ({ office }) => {
         <div className="flex flex-col gap-y-1 relative w-1/5 ">
           <label className="text-main block font-medium">Фото Голови</label>
           <RegionalOfficeAvatarEditor
-            initialAvatar={formData.director ? formData.avatar || NoPhoto : NoPhoto}
-            onAvatarChange={file => {
-              console.log("avatar", file);
-            }}
+            initialAvatar={formData.director ? getPreviewUrl(formData.avatar) || NoPhoto : NoPhoto}
+            onAvatarChange={handleAvatarChange}
+            // onAvatarChange={file => {
+            //   console.log("avatar", file);
+            // }}
           />
         </div>
         <div className="flex flex-col gap-y-4 w-4/5">
