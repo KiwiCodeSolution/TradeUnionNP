@@ -76,6 +76,16 @@ const EditPpoForm = () => {
     fetchData();
   }, [_id, token]); // Виконуємо ефект, коли ID або токен змінюються
 
+  useEffect(() => {
+    if (!formData?.director) {
+      setFormData(prev => ({
+        ...prev,
+        phone: "",
+        email: "",
+      }));
+    }
+  }, [formData?.director]);
+
   // Обробляємо стан завантаження
   if (loading) {
     return (
@@ -137,7 +147,7 @@ const EditPpoForm = () => {
     if (!validateForm()) return; // Обрізаємо пробіли для всіх текстових полів
 
     const trimmedData = Object.keys(formData).reduce((acc, key) => {
-      if (typeof formData[key] === "string") {
+      if (typeof formData[key] === "string" && key !== "committee") {
         acc[key] = formData[key].trim();
       } else {
         acc[key] = formData[key];
@@ -164,27 +174,35 @@ const EditPpoForm = () => {
         continue;
       }
 
-      if (JSON.stringify(trimmedData[key]) !== JSON.stringify(initialData[key])) {
-        if (key === "committee") {
-          const committeeArray = trimmedData.committee
-            ? trimmedData.committee.split(",").map(el => el.trim())
-            : [];
-          committeeArray.forEach(member => {
-            fd.append("committee", member);
-          });
-        } else {
-          fd.append(key, trimmedData[key]);
+      if (key === "committee") {
+        const committeeArray = trimmedData.committee
+          ? trimmedData.committee
+              .split(",")
+              .map(el => el.trim())
+              .filter(Boolean)
+          : [];
+
+        const initialCommitteeArray = initialData.committee || [];
+        const isChanged =
+          JSON.stringify(committeeArray.sort()) !== JSON.stringify(initialCommitteeArray.sort());
+
+        if (isChanged) {
+          if (committeeArray.length > 0) {
+            committeeArray.forEach(member => {
+              fd.append("committee", member);
+            });
+          } else {
+            fd.append("committee", "");
+          }
         }
+      } else if (JSON.stringify(trimmedData[key]) !== JSON.stringify(initialData[key])) {
+        fd.append(key, trimmedData[key]);
       }
     }
+
     const parts = initialData.link.split("/"); // ['','ppo','volinska-ppo']
 
     const cleanedLink = parts.pop(); // Якщо FormData порожній - нічого не робимо
-
-    if ([...fd.entries()].length === 0) {
-      toast.error("Немає змін для збереження.");
-      return;
-    }
 
     try {
       const response = await axios.put(`${BaseURL}ppo/${_id}/${cleanedLink}`, fd, {
@@ -231,7 +249,7 @@ const EditPpoForm = () => {
           <RegionalOfficeAvatarEditor
             initialAvatar={formData.director ? getPreviewUrl(formData.avatar) || NoPhoto : NoPhoto}
             onAvatarChange={handleAvatarChange}
-            isShowAvatar={formData.director.length > 0}
+            isShowAvatar={!!formData?.director?.trim()}
           />
         </div>
         <div className="flex flex-col gap-y-4 w-4/5">
@@ -291,6 +309,7 @@ const EditPpoForm = () => {
           id="email"
           type="email"
           name="email"
+          placeholder="email@email.com"
           value={formData.email}
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none  focus:outline-red focus:border-none focus:rounded-lg"
@@ -306,7 +325,7 @@ const EditPpoForm = () => {
           id="phone"
           type="tel"
           name="phone"
-          placeholder="+380675455023"
+          placeholder="+380123456789"
           value={formData.phone}
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none  focus:outline-red focus:border-none focus:rounded-lg"

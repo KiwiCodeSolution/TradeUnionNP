@@ -19,10 +19,11 @@ export default function RegionalOfficesList({ placeholder, button, items }) {
   };
 
   const officesVisible = items.filter(el => el.is_active !== false);
-
   const filteredOffices = filterText
     ? officesVisible.filter(item => item.region.toLowerCase().includes(filterText?.toLowerCase()))
     : officesVisible;
+
+  filteredOffices.sort((a, b) => a.region.localeCompare(b.region));
 
   return (
     <div className="w-full flex flex-col gap-y-8 pb-10">

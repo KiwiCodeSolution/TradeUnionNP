@@ -206,14 +206,20 @@ const RegionalOffice = ({ item, locale, section, source }) => {
             }`}
           >
             <ul className="flex flex-col mt-4 pl-4">
-              {item.committee.map(
-                el =>
-                  el !== "" && (
-                    <li className="w-full flex items-center gap-x-3" key={el}>
-                      <RedDot />
-                      <p className="w-[calc(100%-9px-12px)]">{el}</p>
-                    </li>
-                  )
+              {item.committee.length > 0 ? (
+                item.committee.map(
+                  el =>
+                    el !== "" && (
+                      <li className="w-full flex items-center gap-x-3" key={el}>
+                        <RedDot />
+                        <p className="w-[calc(100%-9px-12px)]">{el}</p>
+                      </li>
+                    )
+                )
+              ) : (
+                <li className="w-full flex items-center gap-x-3">
+                  <p className="w-[calc(100%-9px-12px)]">Інформація про склад комітету відсутня</p>
+                </li>
               )}
             </ul>
           </div>
@@ -221,9 +227,8 @@ const RegionalOffice = ({ item, locale, section, source }) => {
       </ul>
       <div className="flex items-center bg-white">
         <a
-          href={item.link_news}
+          href={item.link_news || "/novyny/"}
           className="w-1/2 py-4 px-8 border-r-[2px] border-bgGrey uppercase text-[15px] font-bold text-red text-center hover:bg-red hover:text-white"
-          target="_blank"
         >
           новини
         </a>

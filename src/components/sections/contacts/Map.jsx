@@ -36,6 +36,7 @@ export default function Map({ items }) {
       console.error(`Елемент з id ${id} не знайдений.`);
     }
   };
+
   const handleClick = id => {
     setShowInformation(false);
     setInformation(id);
@@ -77,15 +78,23 @@ export default function Map({ items }) {
             <Cross />
           </button>
         )}
-        <h3 className="text-lg font-bold text-center">{item?.region || "інформація відсутня"}</h3>
-        <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
-        {item && (
-          <TelMailBlock
-            email={item.email}
-            phone={item.phone}
-            director={item.director}
-            region={item.region}
-          />
+        {!item || !item.is_active ? (
+          <p className="text-lg font-bold text-center">Інформація відсутня</p>
+        ) : (
+          <>
+            <h3 className="text-lg font-bold text-center">
+              {item?.region || "інформація відсутня"}
+            </h3>
+            <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
+            {item && (
+              <TelMailBlock
+                email={item.email}
+                phone={item.phone}
+                director={item.director}
+                region={item.region}
+              />
+            )}
+          </>
         )}
       </div>
     );
@@ -102,16 +111,23 @@ export default function Map({ items }) {
         >
           <Cross />
         </button>
-
-        <h3 className="text-lg font-bold text-center">{item?.region || "інформація відсутня"}</h3>
-        <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
-        {item && (
-          <TelMailBlock
-            email={item.email}
-            phone={item.phone}
-            director={item.director}
-            region={item.region}
-          />
+        {!item || !item.is_active ? (
+          <p className="text-lg font-bold text-center">Інформація відсутня</p>
+        ) : (
+          <>
+            <h3 className="text-lg font-bold text-center">
+              {item?.region || "інформація відсутня"}
+            </h3>
+            <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
+            {item && (
+              <TelMailBlock
+                email={item.email}
+                phone={item.phone}
+                director={item.director}
+                region={item.region}
+              />
+            )}
+          </>
         )}
       </div>
     );

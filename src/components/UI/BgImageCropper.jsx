@@ -26,7 +26,7 @@ export default function BgImageCropper({ imageSrc, onClose, onSave }) {
             image={imageSrc}
             crop={crop}
             zoom={zoom}
-            aspect={1.75}
+            aspect={1.8}
             onCropChange={setCrop}
             onZoomChange={setZoom}
             onCropComplete={onCropComplete}

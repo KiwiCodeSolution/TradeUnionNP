@@ -22,19 +22,30 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
   }
 
   const vacancy = { phone: "+380677008125", email: "help@profspilka.org" };
+  const showPhone = director
+    ? phone
+      ? `tel:${phone}`
+      : `tel:${vacancy.phone}`
+    : `tel:${vacancy.phone}`;
+
+  const showEmail = director
+    ? email
+      ? `mailto:${email}`
+      : `mailto:${vacancy.email}`
+    : `mailto:${vacancy.email}`;
 
   return page === "ppo" ? (
     <li className="flex flex-col h-[100px] justify-between">
       <div className="flex gap-x-4 mx-auto xl:hidden items-center h-full">
         <a
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-          href={director ? `tel:${phone}` : `tel:${vacancy.phone}`}
+          href={showPhone}
         >
           <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
         </a>
         <a
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-          href={director ? `mailto:${email}` : `mailto:${vacancy.email}`}
+          href={showEmail}
         >
           <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
         </a>
@@ -54,7 +65,7 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
             } w-40`}
           >
             <p className="whitespace-nowrap">
-              {formatPhoneNumber(director ? phone : vacancy.phone)}
+              {formatPhoneNumber(director ? (phone ? phone : vacancy.phone) : vacancy.phone)}
             </p>
           </div>
         </div>
@@ -71,7 +82,10 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
               isShowContacts === "email" ? "max-w-xs opacity-100" : "max-w-0 opacity-0"
             }`}
           >
-            <p className="text-center"> {director ? email : vacancy.email}</p>
+            <p className="text-center">
+              {" "}
+              {director ? (email ? email : vacancy.email) : vacancy.email}
+            </p>
           </div>
         </div>
       </div>
@@ -81,13 +95,13 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
       <div className="flex gap-x-4 mx-auto xl:hidden">
         <a
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover bg-red"
-          href={director ? `tel:${phone}` : `tel:${vacancy.phone}`}
+          href={showPhone}
         >
           <Image src={Tell} width={20} height={20} alt="червона телефонна трубка" />
         </a>
         <a
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-redButtonHover border border-red"
-          href={director ? `mailto:${email}` : `mailto:${vacancy.email}`}
+          href={showEmail}
         >
           <Image src={Post} width={21} height={19} alt="червоний поштовий конверт" />
         </a>
@@ -110,10 +124,14 @@ const TelMailBlock = ({ phone, email, director, region, page }) => {
 
       <div className="hidden xl:block">
         {isShowContacts === "tell" && (
-          <p className="text-center">{formatPhoneNumber(director ? phone : vacancy.phone)}</p>
+          <p className="text-center">
+            {formatPhoneNumber(director ? (phone ? phone : vacancy.phone) : vacancy.phone)}
+          </p>
         )}
         {isShowContacts === "email" && (
-          <p className="text-center">{director ? email : vacancy.email}</p>
+          <p className="text-center">
+            {director ? (email ? email : vacancy.email) : vacancy.email}
+          </p>
         )}
       </div>
     </div>

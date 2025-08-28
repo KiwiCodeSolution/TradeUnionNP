@@ -20,9 +20,10 @@ export async function getRegionalOfficesData() {
 export default async function UpdatePPOPage() {
   const officesData = await getRegionalOfficesData();
   // const officesVisible = officesData.filter(el => el.is_active !== false);
+  officesData.sort((a, b) => a.region.localeCompare(b.region));
 
   return (
-    <main className="flex flex-col min-h-screen px-10 py-5 bg-bgGrey">
+    <main className="flex flex-col min-h-screen px-10 py-5 bg-bgGrey min-w-[80%] admin">
       <TitleAdmin>Оновлення даних ППО</TitleAdmin>
       <AdminBaseSection styles={"w-full pt-5"}>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-8 xl:gap-10 pr-4">
