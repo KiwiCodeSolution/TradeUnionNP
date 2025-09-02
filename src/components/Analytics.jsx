@@ -6,13 +6,16 @@ export default function Analytics() {
   return (
     <>
       {/* Google tag (gtag.js) */}
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YHGB59KBZD"></Script>
-      <Script>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-YHGB59KBZD"
+      ></Script>
+      <Script id="gtag-init" strategy="afterInteractive">
         {` window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-YHGB59KBZD');`}
+  gtag('config', 'G-YHGB59KBZD', { page_path: window.location.pathname });`}
       </Script>
     </>
   );
