@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import InputMask from "react-input-mask";
+
 import Image from "next/image";
 import Flag from "@/images/flag.svg";
 import { regions } from "@/constants/regions";
@@ -65,34 +65,24 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
   return (
     <form className="flex flex-col gap-y-5 pb-7 relative" onSubmit={handleSubmit}>
       <div className="w-full h-full relative">
-        <InputMask
-          mask="+38 (999) 999-99-99"
-          maskChar="_"
+        <input
+          type="text"
           value={phone}
           onChange={handlePhoneChange}
-        >
-          {inputProps => (
-            <div className="w-full h-full relative">
-              <input
-                {...inputProps}
-                type="text"
-                placeholder="+38 (___) ___-__-__"
-                className={`w-full ${
-                  section === "modal" ? "md:w-full" : "md:w-4/5"
-                }  py-5 pl-[70px] pr-5 text-lg border-0 focus:outline-none focus:shadow-none rounded-full h-14  ${
-                  inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
-                }`}
-              />
-              <Image
-                src={Flag}
-                width={40}
-                height={30}
-                alt="прапор України"
-                className="w-10 absolute left-10 top-1/2 transform -translate-x-1/2 -translate-y-1/2 "
-              />
-            </div>
-          )}
-        </InputMask>
+          placeholder="+38 (___) ___-__-__"
+          className={`w-full ${
+            section === "modal" ? "md:w-full" : "md:w-4/5"
+          } py-5 pl-[70px] pr-5 text-lg border-0 focus:outline-none focus:shadow-none rounded-full h-14 ${
+            inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
+          }`}
+        />
+        <Image
+          src={Flag}
+          width={40}
+          height={30}
+          alt="прапор України"
+          className="w-10 absolute left-10 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        />
       </div>
 
       <input
@@ -111,7 +101,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
         ))}
       </datalist>
 
-      <Button view={"red"} btnType="submit" style={section === "modal" ? "mx-auto mt-5" : ""} icon>
+      <Button view="red" btnType="submit" style={section === "modal" ? "mx-auto mt-5" : ""} icon>
         {button}
       </Button>
       {formError && <p className="text-red absolute -bottom-1 left-1 italic">{formError}</p>}

@@ -4,16 +4,21 @@ import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
 
 export async function getRegionalOfficesData() {
-  const res = await fetch(`${BaseURL}ppo`, {
-    method: "GET",
-    cache: "no-store",
-  });
+  try {
+    const res = await fetch(`${BaseURL}ppo`, {
+      method: "GET",
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    if (!res.ok) {
+      return [];
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error("Помилка завантаження:", error);
+    return [];
   }
-
-  return res.json();
 }
 
 export async function generateMetadata({ params: { locale } }) {
@@ -38,13 +43,21 @@ export async function generateMetadata({ params: { locale } }) {
 
 export default async function RegionalCellsPage({ params: { locale } }) {
   const officesData = await getRegionalOfficesData();
-  const officesVisible = officesData.filter(el => el.is_active !== false);
-  officesVisible.sort((a, b) => a.region.localeCompare(b.region));
+
+  const officesVisible = Array.isArray(officesData)
+    ? officesData
+        .filter(el => el.is_active !== false)
+        .sort((a, b) => a.region.localeCompare(b.region))
+    : [];
 
   return (
     <main className="w-full bg-bgGrey">
       <TitleRegionOfficesPage />
-      <RegionalOffices items={officesVisible} locale={locale} />
+      {officesVisible.length > 0 ? (
+        <RegionalOffices items={officesVisible} locale={locale} />
+      ) : (
+        <p className="text-center py-10">Немає доступних регіональних осередків</p>
+      )}
     </main>
   );
 }

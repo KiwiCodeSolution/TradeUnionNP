@@ -11,7 +11,7 @@ export async function getRegionalOfficesData() {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return [];
   }
 
   return res.json();
@@ -27,10 +27,13 @@ export default async function UpdatePPOPage() {
       <TitleAdmin>Оновлення даних ППО</TitleAdmin>
       <AdminBaseSection styles={"w-full pt-5"}>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-8 xl:gap-10 pr-4">
-          {officesData &&
+          {officesData.length > 0 ? (
             officesData.map(el => (
               <RegionalOffice key={el._id} item={el} locale={"uk"} section="admin" />
-            ))}
+            ))
+          ) : (
+            <p className="text-center py-10">Немає доступних регіональних осередків</p>
+          )}
         </div>
       </AdminBaseSection>
     </main>

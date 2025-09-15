@@ -12,7 +12,7 @@ async function getRegionalOfficesData() {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return [];
   }
 
   return res.json();
@@ -44,9 +44,18 @@ export default async function ContactsPage() {
   return (
     <main className="w-full bg-bgGrey">
       <TitleContactsPage />
-      <Map items={officesData} />
+      {officesData.length > 0 ? (
+        <Map items={officesData} />
+      ) : (
+        <p className="text-center py-10">Інформація про контакти відсутня</p>
+      )}
+
       <Management />
-      <RegionalOffices items={officesData} />
+      {officesData.length > 0 ? (
+        <RegionalOffices items={officesData} />
+      ) : (
+        <p className="text-center py-10">Інформація про контакти відсутня</p>
+      )}
     </main>
   );
 }

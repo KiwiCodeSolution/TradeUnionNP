@@ -1,7 +1,7 @@
 import ContactsStore from "@/store/ContactsStore";
 import OfficesStore from "@/store/OfficesStore";
 import PhotoReportsStore from "@/store/PhotoReportsStore";
-import NewsStore from "./NewsStore";
+import NewsStore from "./NewsStor";
 
 class RootStore {
   constructor() {
