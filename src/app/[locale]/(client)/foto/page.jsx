@@ -8,7 +8,7 @@ async function getAllReports() {
   const res = await fetch(`${BaseURL}gallerey`, { method: "GET", cache: "no-store" });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    return [];
   }
 
   return res.json();
@@ -40,9 +40,13 @@ export default async function PhotoPage({ params: { locale } }) {
   return (
     <main className="w-full bg-bgGrey">
       <PhotoPathHero />
-      <StoreProvider>
-        <PhotoComponent locale={locale} items={allReports} />
-      </StoreProvider>
+      {allReports.length > 0 ? (
+        <StoreProvider>
+          <PhotoComponent locale={locale} items={allReports} />
+        </StoreProvider>
+      ) : (
+        <p className="text-center py-10">Інформація відсутня</p>
+      )}
     </main>
   );
 }
