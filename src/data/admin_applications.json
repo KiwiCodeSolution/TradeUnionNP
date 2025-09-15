@@ -3,154 +3,154 @@
     "id": "388820",
     "name": "Статут",
     "fileName": "statut",
-    "link": "files/statut.pdf",
+    "link": "doc/statut.pdf",
     "sections": "statutory"
   },
   {
     "id": "296361",
     "name": "Колективний договір",
     "fileName": "koldogovor",
-    "link": "files/koldogovor.pdf",
+    "link": "doc/koldogovor.pdf",
     "sections": "statutory"
   },
   {
     "id": "487376",
     "name": "Положення про порядок та умови надання мат.допомоги",
     "fileName": "pologennya",
-    "link": "files/pologennya.pdf",
+    "link": "doc/pologennya.pdf",
     "sections": "statutory"
   },
   {
     "id": "110173",
     "name": "Заява на вступ 'Нова Пошта'/'НоваПей'",
     "fileName": "zajava_na_vstup",
-    "link": "files/zajava_na_vstup.pdf",
+    "link": "doc/zajava_na_vstup.pdf",
     "sections": "application"
   },
   {
     "id": "110133",
     "name": "Заява на вступ 'НП Глобал'",
     "fileName": "zajava_na_vstup_np_global",
-    "link": "files/zajava_na_vstup_np_global.pdf",
+    "link": "doc/zajava_na_vstup_np_global.pdf",
     "sections": "application"
   },
   {
     "id": "110103",
     "name": "Заява на вступ 'НОВОБОКС'",
     "fileName": "zajava_na_vstup_novoboks",
-    "link": "files/zajava_na_vstup_novoboks.pdf",
+    "link": "doc/zajava_na_vstup_novoboks.pdf",
     "sections": "application"
   },
   {
     "id": "110118",
     "name": "Заява на вступ 'НП Центр'",
     "fileName": "zajava_na_vstup_np_centr",
-    "link": "files/zajava_na_vstup_np_centr.pdf",
+    "link": "doc/zajava_na_vstup_np_centr.pdf",
     "sections": "application"
   },
   {
     "id": "110199",
     "name": "Заява на вступ 'НП Діджитал'",
     "fileName": "zajava_na_vstup_np-didzhital",
-    "link": "files/zajava_na_vstup_np-didzhital.pdf",
+    "link": "doc/zajava_na_vstup_np-didzhital.pdf",
     "sections": "application"
   },
   {
     "id": "110159",
     "name": "Лікування хвороби члена Профспілки",
     "fileName": "likuvannya-chlena-profspilki",
-    "link": "files/likuvannya-chlena-profspilki.pdf",
+    "link": "doc/likuvannya-chlena-profspilki.pdf",
     "sections": "application"
   },
   {
     "id": "483731",
     "name": "Лікування близьких родичів члена Профспілки",
     "fileName": "likuvannya-rodicha",
-    "link": "files/likuvannya-rodicha.pdf",
+    "link": "doc/likuvannya-rodicha.pdf",
     "sections": "application"
   },
   {
     "id": "475230",
     "name": "Смерть члена Профспілки",
     "fileName": "zagibel-pracivnika",
-    "link": "files/zagibel-pracivnika.pdf",
+    "link": "doc/zagibel-pracivnika.pdf",
     "sections": "application"
   },
   {
     "id": "388137",
     "name": "Смерть близького родича члена Профспілки",
     "fileName": "pokhovannya-rodicha",
-    "link": "files/pokhovannya-rodicha.pdf",
+    "link": "doc/pokhovannya-rodicha.pdf",
     "sections": "application"
   },
   {
     "id": "294210",
     "name": "Реєстрація шлюбу",
     "fileName": "odruzhennya",
-    "link": "files/odruzhennya.pdf",
+    "link": "doc/odruzhennya.pdf",
     "sections": "application"
   },
   {
     "id": "421878",
     "name": "Народження дитини",
     "fileName": "narodzhennya",
-    "link": "files/narodzhennya.pdf",
+    "link": "doc/narodzhennya.pdf",
     "sections": "application"
   },
   {
     "id": "361817",
     "name": "Ювілей 50-60-65 років",
     "fileName": "yuviley",
-    "link": "files/yuviley.pdf",
+    "link": "doc/yuviley.pdf",
     "sections": "application"
   },
   {
     "id": "262212",
     "name": "Оздоровлення дитини та відпочинок",
     "fileName": "ozdorovlenna-dytyny",
-    "link": "files/ozdorovlenna-dytyny.pdf",
+    "link": "doc/ozdorovlenna-dytyny.pdf",
     "sections": "application"
   },
   {
     "id": "220768",
     "name": "Учасники бойових дій",
     "fileName": "ubd",
-    "link": "files/ubd.pdf",
+    "link": "doc/ubd.pdf",
     "sections": "application"
   },
   {
     "id": "381582",
     "name": "Путівка",
     "fileName": "putivka",
-    "link": "files/putivka.pdf",
+    "link": "doc/putivka.pdf",
     "sections": "application"
   },
   {
     "id": "370399",
     "name": "Мобілізованим пораненим профспілчанам",
     "fileName": "poranenna",
-    "link": "files/poranenna.pdf",
+    "link": "doc/poranenna.pdf",
     "sections": "application"
   },
   {
     "id": "490800",
     "name": "Профспілчанам на ТОТ України",
     "fileName": "occupation",
-    "link": "files/occupation.pdf",
+    "link": "doc/occupation.pdf",
     "sections": "application"
   },
   {
     "id": "335650",
     "name": "Внутрішньо переміщеним особам",
     "fileName": "vpo",
-    "link": "files/vpo.pdf",
+    "link": "doc/vpo.pdf",
     "sections": "application"
   },
   {
     "id": "335950",
     "name": "Інше",
     "fileName": "other",
-    "link": "files/other.pdf",
+    "link": "doc/other.pdf",
     "sections": "application"
   }
 ]

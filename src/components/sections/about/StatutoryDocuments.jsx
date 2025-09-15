@@ -27,7 +27,7 @@ const StatutoryDocuments = () => {
             {t(`charter.1`)}
           </h3>
           <a
-            href={`${BaseURL}files/statut.pdf`}
+            href={`${BaseURL}doc/statut.pdf`}
             target="_blank"
             className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mx-auto md:ml-0"
           >
@@ -39,7 +39,7 @@ const StatutoryDocuments = () => {
             {t(`agreement.1`)}
           </h3>
           <a
-            href={`${BaseURL}files/koldogovor.pdf`}
+            href={`${BaseURL}doc/koldogovor.pdf`}
             target="_blank"
             className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mx-auto md:ml-0"
           >

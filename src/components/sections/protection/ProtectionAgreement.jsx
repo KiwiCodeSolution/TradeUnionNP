@@ -28,7 +28,7 @@ const ProtectionAgreement = () => {
 
           <p className="text-[15px]">{t(`agreement_text`)}</p>
           <a
-            href={`${BaseURL}files/statut.pdf`}
+            href={`${BaseURL}doc/statut.pdf`}
             target="_blank"
             className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mt-4 md:mt-0 md:mb-8 xl:mb-0"
           >

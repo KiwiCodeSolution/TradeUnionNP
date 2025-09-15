@@ -10,72 +10,72 @@ const StatementsList = () => {
     {
       title: t(`statements.0.title`),
       text: t(`statements.0.text`),
-      link: "files/narodzhennya.pdf",
+      link: "doc/narodzhennya.pdf",
     },
     {
       title: t(`statements.1.title`),
       text: t(`statements.1.text`),
-      link: "files/odruzhennya.pdf",
+      link: "doc/odruzhennya.pdf",
     },
     {
       title: t(`statements.2.title`),
       text: t(`statements.2.text`),
-      link: "files/ozdorovlenna-dytyny.pdf",
+      link: "doc/ozdorovlenna-dytyny.pdf",
     },
     {
       title: t(`statements.3.title`),
       text: t(`statements.3.text`),
-      link: "files/yuviley.pdf",
+      link: "doc/yuviley.pdf",
     },
     {
       title: t(`statements.4.title`),
       text: t(`statements.4.text`),
-      link: "files/likuvannya-chlena-profspilki.pdf",
+      link: "doc/likuvannya-chlena-profspilki.pdf",
     },
     {
       title: t(`statements.5.title`),
       text: t(`statements.5.text`),
-      link: "files/likuvannya-rodicha.pdf",
+      link: "doc/likuvannya-rodicha.pdf",
     },
     {
       title: t(`statements.6.title`),
       text: t(`statements.6.text`),
-      link: "files/putivka.pdf",
+      link: "doc/putivka.pdf",
     },
     {
       title: t(`statements.7.title`),
       text: t(`statements.7.text`),
-      link: "files/ubd.pdf",
+      link: "doc/ubd.pdf",
     },
     {
       title: t(`statements.8.title`),
       text: t(`statements.8.text`),
-      link: "files/zagibel-pracivnika.pdf",
+      link: "doc/zagibel-pracivnika.pdf",
     },
     {
       title: t(`statements.9.title`),
       text: t(`statements.9.text`),
-      link: "files/pokhovannya-rodicha.pdf",
+      link: "doc/pokhovannya-rodicha.pdf",
     },
     {
       title: t(`statements.10.title`),
       text: t(`statements.10.text`),
-      link: "files/poranenna.pdf",
+      link: "doc/poranenna.pdf",
     },
     {
       title: t(`statements.11.title`),
       text: t(`statements.11.text`),
-      link: "files/occupation.pdf",
+      link: "doc/occupation.pdf",
     },
     {
       title: t(`statements.12.title`),
       text: t(`statements.12.text`),
-      link: "files/vpo.pdf",
+      link: "doc/vpo.pdf",
     },
     {
       title: t(`statements.13.title`),
       text: t(`statements.13.text`),
-      link: "files/other.pdf",
+      link: "doc/other.pdf",
     },
   ];
   return (

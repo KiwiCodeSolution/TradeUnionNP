@@ -161,7 +161,7 @@ const Documents = ({ locale }) => {
         />
         <div className="mx-auto mt-12">
           <a
-            href={`${BaseURL}files/pologennya.pdf`}
+            href={`${BaseURL}doc/pologennya.pdf`}
             target="_blank"
             className="w-fit flex flex-row items-center gap-3 text-red text-sm uppercase font-bold mx-auto"
           >
