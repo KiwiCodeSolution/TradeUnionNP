@@ -11,27 +11,27 @@ const TemplatesList = () => {
     {
       title: t(`templates.0`),
       fileName: "zajava_na_vstup",
-      link: "doc/zajava_na_vstup.pdf",
+      link: "files/zajava_na_vstup.pdf",
     },
     {
       title: t(`templates.1`),
       fileName: "zajava_na_vstup_np_global",
-      link: "doc/zajava_na_vstup_np_global.pdf",
+      link: "files/zajava_na_vstup_np_global.pdf",
     },
     {
       title: t(`templates.2`),
       fileName: "zajava_na_vstup_novoboks",
-      link: "doc/zajava_na_vstup_novoboks.pdf",
+      link: "files/zajava_na_vstup_novoboks.pdf",
     },
     {
       title: t(`templates.3`),
       fileName: "zajava_na_vstup_np_centr",
-      link: "doc/zajava_na_vstup_np_centr.pdf",
+      link: "files/zajava_na_vstup_np_centr.pdf",
     },
     {
       title: t(`templates.4`),
       fileName: "zajava_na_vstup_np-didzhital",
-      link: "doc/zajava_na_vstup_np-didzhital.pdf",
+      link: "files/zajava_na_vstup_np-didzhital.pdf",
     },
   ];
   return (

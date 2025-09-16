@@ -41,7 +41,7 @@ const CollectiveAgreement = () => {
             <p className="text-base md:text-lg text-grey">{t(`text`)}</p>
             <a
               className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mt-5"
-              href={`${BaseURL}doc/koldogovor.pdf`}
+              href={`${BaseURL}files/koldogovor.pdf`}
               target="_blank"
               rel="noopener noreferrer"
             >

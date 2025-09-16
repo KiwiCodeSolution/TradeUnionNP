@@ -41,7 +41,7 @@ const DocumentsList = ({ documents, button, link }) => {
                 {button} <span> &gt;</span>
               </button>
               <a
-                href={`${BaseURL}doc/${el.file}`}
+                href={`${BaseURL}files/${el.file}`}
                 target="_blank"
                 className="text-lg text-red hover:underline hover:underline-offset-2"
               >
