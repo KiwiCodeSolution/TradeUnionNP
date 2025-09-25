@@ -1,16 +1,17 @@
 "use client";
-import Image from "next/image";
-import Users from "@/images/icon-users.svg";
-import { useEffect, useState } from "react";
 import RedDot from "@/components/UI/RedDot";
+import Users from "@/images/icon-users.svg";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-import NoPhoto from "@/images/no-photo.png";
-import ShowButton from "@/components/UI/buttons/ShowButton";
-import TelMailBlock from "./TelMailBlock";
-import { Link } from "@/navigation";
 import LinkButton from "@/components/UI/buttons/LinkButton";
+import ShowButton from "@/components/UI/buttons/ShowButton";
 import { Edit } from "@/components/icons/IconsComponents";
 import { BaseURLImage } from "@/constants/BaseUrl";
+import NoPhoto from "@/images/no-photo.png";
+import { Link } from "@/navigation";
+import PhoneMailBlockAdminPage from "./PhoneMailBlockAdminPage";
+import TelMailBlock from "./TelMailBlock";
 
 const RegionalOffice = ({ item, locale, section, source }) => {
   const [isShowAdmissionAddress, setIsShowAdmissionAddress] = useState(false);
@@ -119,8 +120,16 @@ const RegionalOffice = ({ item, locale, section, source }) => {
             <p className="text-[15px] text-center md:text-left">{item.position} </p>
           </div>
         </li>
-
-        <TelMailBlock director={item.director} region={item.region} page={"ppo"} id={item._id} />
+        {section === "admin" ? (
+          <PhoneMailBlockAdminPage
+            phone={item.phone}
+            email={item.email}
+            director={item.director}
+            page={"ppo"}
+          />
+        ) : (
+          <TelMailBlock director={item.director} region={item.region} page={"ppo"} id={item._id} />
+        )}
       </ul>
       <ul
         className={`w-full p-8 flex gap-y-8 border-b-[2px] flex-col ${
