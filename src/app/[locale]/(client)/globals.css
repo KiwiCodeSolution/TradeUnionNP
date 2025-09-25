@@ -276,6 +276,11 @@ a:hover .back {
   padding: 5px;
 }
 
+.pagination-container_search {
+  bottom: 0;
+  padding: 5px;
+}
+
 .pagination-page {
   width: 44px; /* Розмір сторінки */
   height: 44px; /* Розмір сторінки */

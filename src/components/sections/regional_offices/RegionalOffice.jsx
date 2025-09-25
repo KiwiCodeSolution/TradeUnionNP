@@ -120,13 +120,7 @@ const RegionalOffice = ({ item, locale, section, source }) => {
           </div>
         </li>
 
-        <TelMailBlock
-          email={item.email}
-          phone={item.phone}
-          director={item.director}
-          region={item.region}
-          page={"ppo"}
-        />
+        <TelMailBlock director={item.director} region={item.region} page={"ppo"} id={item._id} />
       </ul>
       <ul
         className={`w-full p-8 flex gap-y-8 border-b-[2px] flex-col ${

@@ -1,4 +1,3 @@
-import BaseSection from "@/components/BaseSection";
 import SearchPageComponent from "@/components/sections/search/SearchPageComponent";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
@@ -17,20 +16,20 @@ export async function generateMetadata({ params: { locale } }) {
     },
   };
 }
-export default function SearchPage() {
+export default function SearchPage({ params: { locale } }) {
   const t = useTranslations("Search");
 
   return (
     <main className="w-full bg-bgGrey">
-      <BaseSection style={""}>
-        <Wrapper styles={"pt-10"}>
+      <section className="w-full relative">
+        <Wrapper styles={"py-10 h-fit "}>
           <Title tag={"h1"} styles={"text-center mb-10"}>
             <span className="text-red">{t(`title.0`)}</span>
             {t(`title.1`)}
           </Title>
-          <SearchPageComponent />
+          <SearchPageComponent locale={locale} />
         </Wrapper>
-      </BaseSection>
+      </section>
     </main>
   );
 }

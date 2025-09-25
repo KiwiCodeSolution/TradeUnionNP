@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import Wrapper from "../../Wrapper";
 import NavBar from "./NavBar";
 
 const MenuAbout = ({ locale }) => {
@@ -21,9 +20,9 @@ const MenuAbout = ({ locale }) => {
 
   return (
     <div className="hidden md:block w-full bg-bgBlack">
-      <Wrapper>
+      <div className="w-full xl:w-[1280px] px-8 md:px-1 xl:px-10 mx-auto">
         <NavBar locale={locale} navItems={links} section={"about"} />
-      </Wrapper>
+      </div>
     </div>
   );
 };

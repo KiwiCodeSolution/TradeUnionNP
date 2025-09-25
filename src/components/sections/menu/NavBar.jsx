@@ -1,14 +1,14 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { Link } from "@/navigation";
+import { usePathname } from "next/navigation";
 
 const NavBar = ({ locale, navItems, section }) => {
   const pathname = usePathname();
   const normalizedPath = pathname.replace(`/${locale}`, "");
 
   return section === "about" ? (
-    <nav className="w-full flex items-center justify-between min-h-10 gap-x-3">
+    <nav className="w-full flex items-center justify-between min-h-10 gap-x-3 md:gap-x-1 xl:gap-x-3">
       {navItems.map((el, index) => {
         const isActive = normalizedPath === el.link;
 

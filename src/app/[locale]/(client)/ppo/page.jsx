@@ -46,6 +46,7 @@ export default async function RegionalCellsPage({ params: { locale } }) {
 
   const officesVisible = Array.isArray(officesData)
     ? officesData
+        .map(({ phone, email, ...rest }) => rest) // забираємо закриті дані
         .filter(el => el.is_active !== false)
         .sort((a, b) => a.region.localeCompare(b.region))
     : [];

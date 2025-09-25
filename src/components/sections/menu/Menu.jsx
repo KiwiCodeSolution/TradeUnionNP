@@ -1,13 +1,12 @@
-import { useTranslations } from "next-intl";
-import LogoUA from "@/images/logo.svg";
-import LogoEn from "@/images/logo-eng.svg";
-import Image from "next/image";
-import { Link } from "@/navigation";
-import LangButtons from "../../UI/buttons/LangButtons";
-import MenuMobile from "./MenuMobile";
-import Wrapper from "@/components/Wrapper";
 import SearchInput from "@/components/UI/form/SearchInput";
+import LogoEn from "@/images/logo-eng.svg";
+import LogoUA from "@/images/logo.svg";
+import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import LangButtons from "../../UI/buttons/LangButtons";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
+import MenuMobile from "./MenuMobile";
 import NavBar from "./NavBar";
 
 const Menu = ({ locale }) => {
@@ -22,7 +21,7 @@ const Menu = ({ locale }) => {
   ];
 
   return (
-    <Wrapper styles="flex flex-col md:flex-row relative pb-12 md:pb-0 pt-1 md:pt-0">
+    <div className="w-full xl:w-[1280px] px-8 md:px-4 xl:px-10 mx-auto flex flex-col md:flex-row relative pb-12 md:pb-0 pt-1 md:pt-0">
       <div className="w-full flex items-center justify-between xl:gap-x-3">
         <MenuMobile locale={locale} />
         <Link href="/" className="w-[190px] md:h-20 flex items-center justify-between">
@@ -40,7 +39,7 @@ const Menu = ({ locale }) => {
         <LangButtons locale={locale} />
       </div>
       <SearchInput size={"mobile"} />
-    </Wrapper>
+    </div>
   );
 };
 

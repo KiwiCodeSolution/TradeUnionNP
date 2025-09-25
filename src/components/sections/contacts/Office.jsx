@@ -8,12 +8,7 @@ const Office = ({ office }) => {
         Голова: <span className="text-grey ">{office.director || "вакансія"}</span>
       </p>
 
-      <TelMailBlock
-        email={office.email}
-        phone={office.phone}
-        director={office.director}
-        region={office.region}
-      />
+      <TelMailBlock director={office.director} region={office.region} id={office._id} />
     </article>
   );
 };

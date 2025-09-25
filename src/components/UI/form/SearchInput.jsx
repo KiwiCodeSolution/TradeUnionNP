@@ -1,8 +1,8 @@
 "use client";
-import { useCallback, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Image from "next/image";
 import Search from "@/images/search.svg";
+import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useState } from "react";
 
 const SearchInput = ({ size }) => {
   const [searchparams, setSearchparams] = useState("");
@@ -10,9 +10,16 @@ const SearchInput = ({ size }) => {
   const searchParams = useSearchParams();
 
   const createQueryString = useCallback(
-    (name, value) => {
-      const params = new URLSearchParams(searchParams);
-      params.set(name, value);
+    paramsToUpdate => {
+      const params = new URLSearchParams(searchParams.toString());
+
+      // Видаляємо старий page
+      params.delete("page");
+
+      // Додаємо нові параметри
+      Object.entries(paramsToUpdate).forEach(([key, value]) => {
+        params.set(key, value);
+      });
 
       return params.toString();
     },
@@ -21,7 +28,11 @@ const SearchInput = ({ size }) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    router.push(`poshuk-po-saytu?${createQueryString("query", searchparams)}`);
+
+    // ✅ Передаємо об'єкт з query і page
+    const queryString = createQueryString({ query: searchparams, page: "1" });
+    router.push(`poshuk-po-saytu?${queryString}`);
+    setSearchparams("");
   };
 
   return (

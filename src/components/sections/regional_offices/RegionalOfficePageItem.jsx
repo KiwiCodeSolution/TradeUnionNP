@@ -1,12 +1,12 @@
 "use client";
 
-import Users from "@/images/icon-users.svg";
-import NoPhoto from "@/images/no-photo.png";
-import Image from "next/image";
-import { useState } from "react";
 import ShowButton from "@/components/UI/buttons/ShowButton";
 import RedDot from "@/components/UI/RedDot";
+import Users from "@/images/icon-users.svg";
+import NoPhoto from "@/images/no-photo.png";
 import { Link } from "@/navigation";
+import Image from "next/image";
+import { useState } from "react";
 import TelMailBlock from "./TelMailBlock";
 
 const RegionalOfficePageItem = ({ office }) => {
@@ -61,11 +61,10 @@ const RegionalOfficePageItem = ({ office }) => {
         </li>
 
         <TelMailBlock
-          email={office.email}
-          phone={office.phone}
           director={office.director}
           region={office.region}
           page={"ppo"}
+          id={office._id}
         />
       </ul>
       <ul>

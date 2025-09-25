@@ -1,12 +1,12 @@
 "use client";
 
 import BaseSection from "@/components/BaseSection";
+import { Cross } from "@/components/icons/IconsComponents";
+import Loader from "@/components/UI/loader/Loader";
+import Modal from "@/components/UI/modal/Modal";
 import Wrapper from "@/components/Wrapper";
 import { useState } from "react";
 import TelMailBlock from "../regional_offices/TelMailBlock";
-import Modal from "@/components/UI/modal/Modal";
-import { Cross } from "@/components/icons/IconsComponents";
-import Loader from "@/components/UI/loader/Loader";
 
 export default function Map({ items }) {
   const [showInformation, setShowInformation] = useState(false);
@@ -88,10 +88,11 @@ export default function Map({ items }) {
             <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
             {item && (
               <TelMailBlock
-                email={item.email}
-                phone={item.phone}
+                // email={item.email}
+                // phone={item.phone}
                 director={item.director}
                 region={item.region}
+                id={item._id}
               />
             )}
           </>
@@ -121,10 +122,11 @@ export default function Map({ items }) {
             <p className="text-base text-center">Голова: {item?.director || "Вакансія"} </p>
             {item && (
               <TelMailBlock
-                email={item.email}
-                phone={item.phone}
+                // email={item.email}
+                // phone={item.phone}
                 director={item.director}
                 region={item.region}
+                id={item._id}
               />
             )}
           </>
