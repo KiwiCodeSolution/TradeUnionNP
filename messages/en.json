@@ -176,7 +176,7 @@
       "placeholder_region": "Enter or select a region from the list (in Ukrainian)",
       "button": "send",
       "error_all_inputs": "Please fill in all fields",
-      "error_phone": "Please enter a phone number",
+      "error_phone": "Check the phone number is correct",
       "error_region": "Please select a region"
     },
     "footer": {

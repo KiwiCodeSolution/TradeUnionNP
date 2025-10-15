@@ -32,7 +32,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
     e.preventDefault();
 
     const numericValue = phone.replace(/\D/g, "");
-    const isPhoneValid = numericValue.length === 12;
+    const isPhoneValid = numericValue.length >= 9 && numericValue.length <= 12;
 
     if (isPhoneValid && selectedOption) {
       try {
