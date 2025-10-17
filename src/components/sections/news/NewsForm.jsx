@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
-import { Editor } from "@tinymce/tinymce-react";
-import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import { BaseURLImage } from "@/constants/BaseUrl";
 import { NEWS_SECTIONS } from "@/constants/news_sections";
 import useAuth from "@/hooks/useAuth";
-import { observer } from "mobx-react-lite";
 import { useStore } from "@/store/StoreProvider";
+import { fixTinyMCEImages } from "@/utils/fixTinyMCEImages";
+import { Editor } from "@tinymce/tinymce-react";
+import { observer } from "mobx-react-lite";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const NewsForm = observer(({ news, part }) => {
   const apiKey = process.env.NEXT_PUBLIC_EDITOR_API_KEY;
@@ -26,6 +28,15 @@ const NewsForm = observer(({ news, part }) => {
       : new Date().toISOString().split("T")[0],
     content: news?.content || "",
   });
+
+  useEffect(() => {
+    if (news?.content) {
+      setFormData(prev => ({
+        ...prev,
+        content: fixTinyMCEImages(news.content, BaseURLImage),
+      }));
+    }
+  }, [news?.content]);
 
   // Обробник зміни текстових полів
   const handleChange = e => {
@@ -250,6 +261,7 @@ const NewsForm = observer(({ news, part }) => {
 
         <Editor
           apiKey={apiKey}
+          // value={formData.content}
           value={formData.content}
           id="news-editor"
           init={{
@@ -297,25 +309,25 @@ const NewsForm = observer(({ news, part }) => {
               { title: "Заголовок 6", format: "h6" },
               { title: "Параграф", format: "p" },
             ],
-            external_plugins: {
-              preview: "/tinymce/plugins/preview/plugin.min.js",
-              searchreplace: "/tinymce/plugins/searchreplace/plugin.min.js",
-              directionality: "/tinymce/plugins/directionality/plugin.min.js",
-              visualchars: "/tinymce/plugins/visualchars/plugin.min.js",
-              visualblocks: "/tinymce/plugins/visualblocks/plugin.min.js",
-              autolink: "/tinymce/plugins/autolink/plugin.min.js",
-              fullscreen: "/tinymce/plugins/fullscreen/plugin.min.js",
-              media: "/tinymce/plugins/media/plugin.min.js",
-              codesample: "/tinymce/plugins/codesample/plugin.min.js",
-              charmap: "/tinymce/plugins/charmap/plugin.min.js",
-              pagebreak: "/tinymce/plugins/pagebreak/plugin.min.js",
-              anchor: "/tinymce/plugins/anchor/plugin.min.js",
-              nonbreaking: "/tinymce/plugins/nonbreaking/plugin.min.js",
-              insertdatetime: "/tinymce/plugins/insertdatetime/plugin.min.js",
-              advlist: "/tinymce/plugins/advlist/plugin.min.js",
-              wordcount: "/tinymce/plugins/wordcount/plugin.min.js",
-              help: "/tinymce/plugins/help/plugin.min.js",
-            },
+            // external_plugins: {
+            //   preview: "/tinymce/plugins/preview/plugin.min.js",
+            //   searchreplace: "/tinymce/plugins/searchreplace/plugin.min.js",
+            //   directionality: "/tinymce/plugins/directionality/plugin.min.js",
+            //   visualchars: "/tinymce/plugins/visualchars/plugin.min.js",
+            //   visualblocks: "/tinymce/plugins/visualblocks/plugin.min.js",
+            //   autolink: "/tinymce/plugins/autolink/plugin.min.js",
+            //   fullscreen: "/tinymce/plugins/fullscreen/plugin.min.js",
+            //   media: "/tinymce/plugins/media/plugin.min.js",
+            //   codesample: "/tinymce/plugins/codesample/plugin.min.js",
+            //   charmap: "/tinymce/plugins/charmap/plugin.min.js",
+            //   pagebreak: "/tinymce/plugins/pagebreak/plugin.min.js",
+            //   anchor: "/tinymce/plugins/anchor/plugin.min.js",
+            //   nonbreaking: "/tinymce/plugins/nonbreaking/plugin.min.js",
+            //   insertdatetime: "/tinymce/plugins/insertdatetime/plugin.min.js",
+            //   advlist: "/tinymce/plugins/advlist/plugin.min.js",
+            //   wordcount: "/tinymce/plugins/wordcount/plugin.min.js",
+            //   help: "/tinymce/plugins/help/plugin.min.js",
+            // },
             images_upload_handler: function (blobInfo, success, failure) {
               // Конвертація зображення у Base64
               const reader = new FileReader();
