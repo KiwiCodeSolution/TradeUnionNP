@@ -72,21 +72,11 @@ button {
 
 img {
   display: block;
-  /* max-width: 100%;
-  height: auto; */
 }
 
 svg {
   color: inherit;
 }
-
-/* ul,
-li,
-ol {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-} */
 
 .inter {
   font-family: "Inter", sans-serif;
