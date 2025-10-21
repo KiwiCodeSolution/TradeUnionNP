@@ -83,6 +83,8 @@ jobs:
 
             echo 'Крок 2: Оновлення коду з репозиторію' &&
             # Переконайтесь, що на сервері налаштований доступ до репозиторію по HTTPS з токеном
+            eval \$(ssh-agent -s) &&
+            ssh-add ~/.ssh/yevbober_rsa &&
             git fetch origin dev &&
             git checkout front &&
             git reset --hard origin/dev &&
@@ -93,7 +95,7 @@ jobs:
             rm -rf .tmp_deploy &&
 
             echo 'Крок 4: Встановлення залежностей, білд та перезапуск' &&
-            npm install --production &&
+            npm install &&
             npm run build &&
             pm2 restart frontend &&
             sleep 5 &&
