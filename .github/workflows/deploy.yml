@@ -75,7 +75,7 @@ jobs:
       - name: Connect and deploy
         run: |
           ssh -p 52201 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            cd ${{ secrets.DEPLOY_PATH_FRONTEND }} &&
+            cd ${{ secrets.DEPLOY_PATH }} &&
 
             echo 'Крок 1: Тимчасово переміщуємо файли .env (якщо є)' &&
             mkdir -p .tmp_deploy &&
