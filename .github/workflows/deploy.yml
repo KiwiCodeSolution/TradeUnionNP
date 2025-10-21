@@ -78,8 +78,7 @@ jobs:
             cd ${{ secrets.DEPLOY_PATH }} &&
 
             echo 'Крок 1: Тимчасово переміщуємо файли .env (якщо є)' &&
-            mkdir -p .tmp_deploy &&
-            mv .env .tmp_deploy/ || true &&
+            mv .env ../.env_temp || true &&
 
             echo 'Крок 2: Оновлення коду з репозиторію' &&
             # Переконайтесь, що на сервері налаштований доступ до репозиторію по HTTPS з токеном
@@ -90,9 +89,7 @@ jobs:
             git reset --hard origin/dev &&
 
             echo 'Крок 3: Повертаємо збережені файли' &&
-            rm -rf ./.env &&
-            mv .tmp_deploy/.env . || true &&
-            rm -rf .tmp_deploy &&
+            mv ../.env_temp .env || true &&
 
             echo 'Крок 4: Встановлення залежностей, білд та перезапуск' &&
             npm install &&
