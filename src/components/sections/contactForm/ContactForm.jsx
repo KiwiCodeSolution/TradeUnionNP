@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
-import Image from "next/image";
-import Flag from "@/images/flag.svg";
-import { regions } from "@/constants/regions";
 import Button from "@/components/UI/buttons/Buttons";
+import { regions } from "@/constants/regions";
+import Flag from "@/images/flag.svg";
 import { joinUp } from "@/services/joinService";
+import Image from "next/image";
 import toast from "react-hot-toast";
 
 const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, button }) => {
@@ -27,6 +27,8 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
     setSelectedOption("");
     setPhone("");
   };
+
+  console.log(selectedOption);
 
   const handleSubmit = async e => {
     e.preventDefault();
