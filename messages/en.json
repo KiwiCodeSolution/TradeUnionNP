@@ -173,7 +173,7 @@
       ]
     },
     "contact_form": {
-      "placeholder_region": "Enter or select a region from the list (in Ukrainian)",
+      "placeholder_region": "Select a region from the list",
       "button": "send",
       "error_all_inputs": "Please fill in all fields",
       "error_phone": "Check the phone number is correct",

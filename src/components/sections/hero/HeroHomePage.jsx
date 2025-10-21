@@ -1,23 +1,28 @@
-import { useTranslations } from "next-intl";
+import BaseSection from "@/components/BaseSection";
 import TitleHomePage from "@/components/UI/titles/TitleHomePage";
 import Wrapper from "@/components/Wrapper";
-import HeroHomePageItems from "./HeroHomePageItems";
-import Image from "next/image";
 import HeroImageFirst from "@/images/frame_1.svg";
 import HeroImageSecond from "@/images/frame_2.svg";
 import HeroImageThird from "@/images/frame_3.svg";
 import HeroImageMobile from "@/images/hero.svg";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import HeroHomePageItems from "./HeroHomePageItems";
 import Join from "./Join";
-import BaseSection from "@/components/BaseSection";
 
 const HeroHomePage = () => {
-  const t = useTranslations("HomePage.join");
-  const modalTitle = [t(`modalTitle.0`), t(`modalTitle.1`), t(`modalTitle.2`)];
-  const confirmModalTitle = [t(`confirmModalTitle.0`), t(`confirmModalTitle.1`)];
+  const t = useTranslations("HomePage");
+  const modalTitle = [t(`join.modalTitle.0`), t(`join.modalTitle.1`), t(`join.modalTitle.2`)];
+  const confirmModalTitle = [t(`join.confirmModalTitle.0`), t(`join.confirmModalTitle.1`)];
   const confirmModalText = [
-    t(`confirmModalText.0`),
-    t(`confirmModalText.1`),
-    t(`confirmModalText.2`),
+    t(`join.confirmModalText.0`),
+    t(`join.confirmModalText.1`),
+    t(`join.confirmModalText.2`),
+  ];
+  const errors = [
+    t(`contact_form.error_all_inputs`),
+    t(`contact_form.error_phone`),
+    t(`contact_form.error_region`),
   ];
 
   return (
@@ -27,10 +32,12 @@ const HeroHomePage = () => {
           <TitleHomePage />
           <HeroHomePageItems />
           <Join
-            title={t(`title`)}
+            title={t(`join.title`)}
             modalTitle={modalTitle}
             confirmModalTitle={confirmModalTitle}
             confirmModalText={confirmModalText}
+            errors={errors}
+            placeholder={t(`contact_form.placeholder_region`)}
           />
         </div>
         <div className="order-1 md:order-2 w-full md:w-1/2 h-[445px] md:h-[514px] xl:h-full relative">

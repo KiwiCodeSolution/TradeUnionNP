@@ -5,7 +5,6 @@ import { useState } from "react";
 import Button from "@/components/UI/buttons/Buttons";
 import { regions } from "@/constants/regions";
 import Flag from "@/images/flag.svg";
-import { joinUp } from "@/services/joinService";
 import Image from "next/image";
 import toast from "react-hot-toast";
 
@@ -16,10 +15,12 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
 
   const handlePhoneChange = e => {
     setPhone(e.target.value);
+    if (formError) setFormError("");
   };
 
   const handleSelectChange = e => {
     setSelectedOption(e.target.value);
+    if (formError) setFormError("");
   };
 
   const resetForm = () => {
@@ -87,7 +88,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
         />
       </div>
 
-      <input
+      {/* <input
         type="text"
         value={selectedOption}
         onChange={handleSelectChange}
@@ -101,9 +102,26 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
         {regions.map((region, index) => (
           <option key={index} value={region} />
         ))}
-      </datalist>
+      </datalist> */}
 
-      <Button view="red" btnType="submit" style={section === "modal" ? "mx-auto mt-5" : ""} icon>
+      <select
+        value={selectedOption}
+        onChange={handleSelectChange}
+        className={`text-[15px] ${section === "modal" ? "w-full" : "w-full md:w-4/5"} ${
+          inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
+        } rounded-full h-14 py-4 px-5 focus:outline-none focus:shadow-none relative`}
+      >
+        <option value="" disabled>
+          {placeholder}
+        </option>
+        {regions.map((region, index) => (
+          <option key={index} value={region}>
+            {region}
+          </option>
+        ))}
+      </select>
+
+      <Button view="red" btnType="submit" style={section === "modal" ? "mx-auto mb-7" : ""} icon>
         {button}
       </Button>
       {formError && <p className="text-red absolute -bottom-1 left-1 italic">{formError}</p>}
