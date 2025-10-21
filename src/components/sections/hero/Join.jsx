@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ContactForm from "../contactForm/ContactForm";
 
-const Join = ({ title, confirmModalTitle, confirmModalText, modalTitle }) => {
+const Join = ({ title, confirmModalTitle, confirmModalText, modalTitle, errors, placeholder }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState(false);
 
@@ -34,7 +34,13 @@ const Join = ({ title, confirmModalTitle, confirmModalText, modalTitle }) => {
             {modalTitle[0]} <span className="text-red">{modalTitle[1]}</span> <br />
             {modalTitle[2]}
           </h3>
-          <ContactForm onFormSubmit={handleFormSubmit} section="modal" button={title} />
+          <ContactForm
+            onFormSubmit={handleFormSubmit}
+            section="modal"
+            button={title}
+            errors={errors}
+            placeholder={placeholder}
+          />
         </div>
       </Modal>
       <Modal onClose={() => setIsOpenConfirmModal(false)} isOpen={isOpenConfirmModal}>
