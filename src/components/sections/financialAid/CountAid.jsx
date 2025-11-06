@@ -11,7 +11,7 @@ const CountAid = ({ currency }) => {
   return (
     <p className="text-center text-red text-[30px] md:text-[50px] font-bold">
       <span>&gt;</span>
-      <CountUp start={30000000} end={34000000} formattingFn={formatNumber} /> {currency}
+      <CountUp start={32000000} end={35000000} formattingFn={formatNumber} /> {currency}
     </p>
   );
 };

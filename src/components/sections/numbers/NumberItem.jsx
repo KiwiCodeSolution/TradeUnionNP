@@ -1,8 +1,8 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
-import CountUp from "react-countup";
-import Image from "next/image";
 import { inter } from "@/app/[locale]/(client)/fonts";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
 
 const NumberItem = ({ item, index, text }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,7 +72,7 @@ const NumberItem = ({ item, index, text }) => {
                 formattingFn={formatNumber}
                 className="hidden xl:block"
               />
-              <CountUp start={0} end={34} className="xl:hidden" suffix="млн" />
+              <CountUp start={0} end={35} className="xl:hidden" suffix="млн" />
             </>
           ) : (
             <CountUp start={item.start} end={item.end} formattingFn={formatNumberToString} />
