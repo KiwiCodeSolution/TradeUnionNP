@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
 import BaseSection from "@/components/BaseSection";
-import Wrapper from "@/components/Wrapper";
-import NewsItem from "./NewsItem";
 import { Arrow } from "@/components/icons/IconsComponents";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import Wrapper from "@/components/Wrapper";
 import { sectionMap } from "@/constants/news_sections";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { startTransition, useEffect, useMemo, useState } from "react";
+import ReactPaginate from "react-paginate";
+import NewsItem from "./NewsItem";
 
 const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, locale, part }) => {
   const itemsPerPage = section !== "admin" ? 9 : 3;
@@ -15,22 +15,31 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
   const pathname = usePathname();
 
   const getSectionParams = searchParams.get("section") || "vse";
-
   const currentPageFromURL = parseInt(searchParams.get("page")) || 1;
-
   const [currentPage, setCurrentPage] = useState(currentPageFromURL);
 
   const filterSection = sectionMap[getSectionParams] || "Новини";
 
+  // синхронізація сторінки з URL
   useEffect(() => {
-    setCurrentPage(parseInt(searchParams.get("page")) || 1);
+    const page = parseInt(searchParams.get("page")) || 1;
+    setCurrentPage(page);
   }, [searchParams]);
 
-  const filteredItems = items.filter(item => {
-    if (filterSection === "Новини") return true;
-    return item.sections.includes(filterSection);
-  });
+  // фільтрація — мемоізована для швидкодії
+  const filteredItems = useMemo(() => {
+    if (filterSection === "Новини") return items;
+    return items.filter(item => item.sections.includes(filterSection));
+  }, [items, filterSection]);
 
+  // кількість сторінок
+  const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
+  const currentItems = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return filteredItems.slice(start, start + itemsPerPage);
+  }, [filteredItems, currentPage, itemsPerPage]);
+
+  // якщо сторінка не визначена — встановити 1 без повного перерендеру
   useEffect(() => {
     if (!searchParams.get("page")) {
       const newURL = pathname.includes("admin")
@@ -39,51 +48,36 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
             section === "photo" ? "foto" : "novyny"
           }?section=${getSectionParams}&page=1`;
 
-      router.replace(newURL);
+      // миттєве оновлення адреси без SSR-цикла
+      window.history.replaceState(null, "", newURL);
+      startTransition(() => router.replace(newURL, { scroll: false }));
     }
   }, [searchParams, pathname, part, isArchive, locale, section, getSectionParams, router]);
-
-  // Обчислюємо початковий зсув елементів на основі поточної сторінки
-  const initialOffset = (currentPage - 1) * itemsPerPage;
-  const [itemOffset, setItemOffset] = useState(initialOffset);
-
-  const currentItems = filteredItems.slice(itemOffset, itemOffset + itemsPerPage);
-  const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
-
-  useEffect(() => {
-    setItemOffset(initialOffset);
-  }, [initialOffset]);
 
   const handlePageClick = event => {
     const selectedPage = event.selected + 1;
     setCurrentPage(selectedPage);
 
-    // Умовне оновлення URL залежно від того, чи ми в адмінці
     if (pathname.includes("admin")) {
-      if (part === "news") {
-        router.push(
-          `/uk/admin/news?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
-          undefined,
-          { shallow: true }
-        );
-      }
-      if (part === "photo") {
-        router.push(
-          `/uk/admin/photo-report?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`,
-          undefined,
-          { shallow: true }
-        );
-      }
+      const baseAdmin =
+        part === "news"
+          ? `/uk/admin/news?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`
+          : `/uk/admin/photo-report?page=${selectedPage}&archive=${isArchive ? "true" : "false"}`;
+
+      window.history.replaceState(null, "", baseAdmin);
+      startTransition(() => router.replace(baseAdmin, { scroll: false }));
     } else {
       const newURL = `/${locale}/${
         section === "photo"
           ? `foto?section=${getSectionParams}`
           : `novyny?section=${getSectionParams}`
       }&page=${selectedPage}`;
-      router.push(newURL, undefined, { shallow: true });
+
+      window.history.replaceState(null, "", newURL);
+      startTransition(() => router.replace(newURL, { scroll: false }));
     }
 
-    setItemOffset((selectedPage - 1) * itemsPerPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const nextLabel = (
@@ -91,22 +85,21 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
       <Arrow />
     </div>
   );
-
   const previousLabel = (
     <div className="pagination-page">
-      <Arrow className={"rotate-180"} />
+      <Arrow className="rotate-180" />
     </div>
   );
 
   return section === "admin" ? (
-    <BaseSection style="h-[90%] ">
-      <div className="h-full w-full overflow-auto ">
+    <BaseSection style="h-[90%]">
+      <div className="h-full w-full overflow-auto">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6 pb-10 xl:pb-14">
           {currentItems.map(item => (
             <NewsItem
               item={item}
               key={item._id}
-              section={"admin"}
+              section="admin"
               onToggleArchive={onToggleArchive}
               onDelete={onDelete}
               part={part}
@@ -120,7 +113,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            forcePage={parseInt(searchParams.get("page") || "1", 10) - 1}
+            forcePage={currentPage - 1}
             previousLabel={previousLabel}
             renderOnZeroPageCount={null}
             containerClassName="pagination-container pagination-container_admin"
@@ -133,8 +126,8 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
       </div>
     </BaseSection>
   ) : (
-    <BaseSection style={""}>
-      <Wrapper styles={"pt-8 pb-[110px] relative"}>
+    <BaseSection>
+      <Wrapper styles="pt-8 pb-[110px] relative">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-6">
           {currentItems.map(item => (
             <NewsItem item={item} key={item._id} part={part} locale={locale} />
@@ -147,7 +140,7 @@ const PaginatedItems = ({ section, items, onToggleArchive, isArchive, onDelete, 
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            forcePage={parseInt(searchParams.get("page") || "1", 10) - 1}
+            forcePage={currentPage - 1}
             previousLabel={previousLabel}
             renderOnZeroPageCount={null}
             containerClassName="pagination-container"
