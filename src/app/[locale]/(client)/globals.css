@@ -525,3 +525,39 @@ button:hover .archive {
 .news-page ol {
   list-style-type: revert;
 }
+
+@keyframes running-line {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-running-line {
+  animation: running-line 27s linear infinite;
+}
+
+.running-line-wrapper:hover .animate-running-line {
+  animation-play-state: paused;
+}
+
+.chatbot-anim {
+  animation: chatbotPulse 1.3s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes chatbotPulse {
+  0%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.07, 1.07, 1);
+  }
+}
+.chatbot-anim:hover {
+  animation: none;
+}

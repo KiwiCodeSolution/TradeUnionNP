@@ -29,8 +29,6 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
     setPhone("");
   };
 
-  console.log(selectedOption);
-
   const handleSubmit = async e => {
     e.preventDefault();
 
