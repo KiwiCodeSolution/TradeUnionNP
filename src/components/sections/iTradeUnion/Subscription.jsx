@@ -1,14 +1,16 @@
-import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
+import { ChatBot } from "@/components/icons/IconsComponents";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
-import Image from "next/image";
+import ArrowRed from "@/images/arrow_up.svg";
 import Mail from "@/images/i-trade/getmail.svg";
-import SubscriptionForm from "./SubscriptionForm";
-import Telegram from "@/images/soc-icons/telegram-color.svg";
 import Facebook from "@/images/soc-icons/facebook-color.svg";
 import Insta from "@/images/soc-icons/instagram-color.svg";
+import Telegram from "@/images/soc-icons/telegram-color.svg";
 import Viber from "@/images/soc-icons/viber-color.svg";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import SubscriptionForm from "./SubscriptionForm";
 
 const Subscription = ({ contacts }) => {
   const t = useTranslations("I");
@@ -19,7 +21,7 @@ const Subscription = ({ contacts }) => {
     <BaseSection style={"bg-bgGrey"}>
       <Wrapper styles={"pt-8 md:pt-32 pb-10"}>
         <div className="bg-white rounded-xl my-4 xs:my-8 flex justify-between items-center">
-          <div className="w-full md:w-2/3 p-4 md:p-12 flex flex-col gap-8">
+          <div className="w-full md:w-2/3 p-4 md:p-12 flex flex-col gap-6">
             <Title tag={"h2"} styles={"text-center md:text-left"}>
               {t(`subscription_title.0`)}{" "}
               <span className="text-red"> {t(`subscription_title.1`)}</span>
@@ -37,7 +39,7 @@ const Subscription = ({ contacts }) => {
                     <li>
                       <a href={contacts.telegram} target="_blank" rel="noopener noreferrer">
                         <Image
-                          className="shtelegram relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          className="shtelegram relative cursor-pointer transform hover:-translate-y-3 transition-all duration-700"
                           width={43}
                           height={43}
                           src={Telegram}
@@ -50,7 +52,7 @@ const Subscription = ({ contacts }) => {
                     <li>
                       <a href={contacts.viber} target="_blank" rel="noopener noreferrer">
                         <Image
-                          className="shviber relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          className="shviber relative cursor-pointer transform hover:-translate-y-3 transition-all duration-700"
                           width={43}
                           height={43}
                           src={Viber}
@@ -63,7 +65,7 @@ const Subscription = ({ contacts }) => {
                     <li>
                       <a href={contacts.facebook} target="_blank" rel="noopener noreferrer">
                         <Image
-                          className="shfacebook relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          className="shfacebook relative cursor-pointer transform hover:-translate-y-3 transition-all duration-700"
                           width={43}
                           height={43}
                           src={Facebook}
@@ -76,7 +78,7 @@ const Subscription = ({ contacts }) => {
                     <li>
                       <a href={contacts.instagram} target="_blank" rel="noopener noreferrer">
                         <Image
-                          className="shinstagram relative cursor-pointer transform hover:-translate-y-8 transition-all duration-700"
+                          className="shinstagram relative cursor-pointer transform hover:-translate-y-3 transition-all duration-700"
                           width={43}
                           height={43}
                           src={Insta}
@@ -87,6 +89,27 @@ const Subscription = ({ contacts }) => {
                   )}
                 </ul>
               )}
+            </div>
+            <div className="flex items-center gap-x-3 h-12">
+              <p className="text-xl xl:text-2xl font-extrabold text-red">
+                {t(`subscription_chat_bot_text`)}
+              </p>
+              <Image
+                src={ArrowRed}
+                height={27}
+                width={23}
+                className="rotate-90 ml-1"
+                alt="червона стрілочка вбік"
+              />
+
+              <a
+                href="https://t.me/PROFSPILKA_NP_BOT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="chatbot-anim cursor-pointer"
+              >
+                <ChatBot />
+              </a>
             </div>
           </div>
           <div className="hidden sm:block w-1/3 relative">
