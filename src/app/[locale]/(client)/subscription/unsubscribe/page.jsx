@@ -1,5 +1,5 @@
 import BaseSection from "@/components/BaseSection";
-import SubscriptionPageComponent from "@/components/sections/subscription/SubscriptionPageComponent";
+import UnsubscriptionPageComponent from "@/components/sections/subscription/Unsubscribe";
 
 import Wrapper from "@/components/Wrapper";
 import { useTranslations } from "next-intl";
@@ -24,8 +24,8 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function SubscriptionConfirmPage() {
-  const t = useTranslations("Subscription");
+export default function UnSubscriptionConfirmPage() {
+  const t = useTranslations("UnSubscription");
 
   const text = {
     title: t(`title`),
@@ -41,7 +41,7 @@ export default function SubscriptionConfirmPage() {
     <main className="w-full h-[40%]">
       <BaseSection style={""}>
         <Wrapper styles={"pt-10"}>
-          <SubscriptionPageComponent text={text} />
+          <UnsubscriptionPageComponent text={text} />
         </Wrapper>
       </BaseSection>
     </main>

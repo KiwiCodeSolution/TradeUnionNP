@@ -7,6 +7,7 @@ import { regions } from "@/constants/regions";
 import Flag from "@/images/flag.svg";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { joinUp } from "@/services/joinService";
 
 const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, button }) => {
   const [phone, setPhone] = useState("");
@@ -37,6 +38,7 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
 
     if (isPhoneValid && selectedOption) {
       try {
+        console.log({ region: selectedOption, phone });
         const res = await joinUp({ region: selectedOption, phone });
 
         if (res) {
@@ -85,22 +87,6 @@ const ContactForm = ({ onFormSubmit, section, inputStyle, placeholder, errors, b
           className="w-10 absolute left-10 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
         />
       </div>
-
-      {/* <input
-        type="text"
-        value={selectedOption}
-        onChange={handleSelectChange}
-        placeholder={placeholder}
-        list="regions-list"
-        className={`text-[15px] ${section === "modal" ? "w-full" : "w-full md:w-4/5"} ${
-          inputStyle === "bg-white" ? "bg-bgGrey" : "bg-[#f9f0da]"
-        } rounded-full h-14 py-4 px-5 focus:outline-none focus:shadow-none relative`}
-      />
-      <datalist id="regions-list">
-        {regions.map((region, index) => (
-          <option key={index} value={region} />
-        ))}
-      </datalist> */}
 
       <select
         value={selectedOption}

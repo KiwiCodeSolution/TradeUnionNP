@@ -552,13 +552,9 @@
       {
         "name": "Serhii Ohanesian",
         "position": "Head of the Trade Union",
-        "details": "Legal work, management accounting, personnel issues, accounting, procurement, document management, contractual work"
+        "details": "Legal work, management accounting, personnel issues, accounting, procurement, document management, contractual work, communication"
       },
-      {
-        "name": "Anton Horb",
-        "position": "Deputy Head of the Trade Union",
-        "details": "Legal work, development (including IT) and training, communication, strategy and project activities"
-      },
+
       {
         "name": "Ihor Poleshko",
         "position": "Deputy Head of the Trade Union",
@@ -1795,6 +1791,24 @@
     "confirmationSuccess": "Subscription successful",
     "confirmationError": "Failed to subscribe. Please try again later.",
     "confirmationExists": "This address has already been subscribed to."
+  },
+  "UnSubscription": {
+    "title": "Congratulations!",
+    "successText": [
+      "You have unsubscribed from the newsletter at the email address ",
+      " has been canceled!"
+    ],
+    "errorText": [
+      "Unable to unsubscribe from the newsletter at the email address ",
+      ". Please try again."
+    ],
+    "existsText": [
+      "Unable to unsubscribe from the newsletter at the email address ",
+      ". This address is already in use."
+    ],
+    "confirmationSuccess": "Unsubscribe successfully",
+    "confirmationError": "Unable to unsubscribe. Please try again later.",
+    "confirmationExists": "This email address has already been unsubscribed before."
   },
   "Health": {
     "title": "Health improvement",

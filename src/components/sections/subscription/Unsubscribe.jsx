@@ -2,13 +2,13 @@
 
 import Title from "@/components/Title";
 import Loader from "@/components/UI/loader/Loader";
-import { confirmSubscription } from "@/services/subscriptionService";
+import { BaseURL } from "@/constants/BaseUrl";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
-const SubscriptionPageComponent = ({ text }) => {
-  const [status, setStatus] = useState(null); // "success" | "exists" | "error" | null
+const UnsubscriptionPageComponent = ({ text }) => {
+  const [status, setStatus] = useState(null); // "success" | "error" | null
   const [isLoading, setIsLoading] = useState(true);
 
   const searchParams = useSearchParams();
@@ -20,39 +20,39 @@ const SubscriptionPageComponent = ({ text }) => {
     if (didRun.current) return;
     didRun.current = true;
 
-    const confirm = async () => {
+    const unsubscribe = async () => {
       if (!email) {
         setStatus("error");
         setIsLoading(false);
         return;
       }
-
+      console.log(email);
       try {
-        await confirmSubscription({ email });
+        const res = await fetch(`${BaseURL}subscription/unsubscribe?email=${email}`, {
+          method: "GET",
+        });
+
+        if (!res.ok) throw new Error("Error");
+
         setStatus("success");
         toast.success(text.confirmationSuccess);
       } catch (error) {
-        if (error.message === "Internal server error") {
-          setStatus("exists");
-          toast.error(text.confirmationExists);
-        } else {
-          setStatus("error");
-          toast.error(error.message || text.confirmationError);
-        }
+        setStatus("error");
+        toast.error(text.confirmationError);
       } finally {
         setIsLoading(false);
       }
     };
 
-    confirm();
-  }, [email]);
+    unsubscribe();
+  }, [email, text.confirmationSuccess, text.confirmationError]);
 
-  // --- ПРАВИЛЬНО: нічого не показувати, поки статус = null або isLoading ---
+  // ---- Поки статус не визначений, показуємо Loader ----
   if (isLoading || status === null) {
     return <Loader />;
   }
 
-  // --- Після завантаження показуємо результат ---
+  // ---- Формуємо текст повідомлення ----
   const renderText = () => {
     switch (status) {
       case "success":
@@ -63,14 +63,7 @@ const SubscriptionPageComponent = ({ text }) => {
             {text.successText[1]}
           </>
         );
-      case "exists":
-        return (
-          <>
-            {text.existsText[0]}
-            <span className="text-red italic"> {email} </span>
-            {text.existsText[1]}
-          </>
-        );
+
       case "error":
         return (
           <>
@@ -79,6 +72,7 @@ const SubscriptionPageComponent = ({ text }) => {
             {text.errorText[1]}
           </>
         );
+
       default:
         return null;
     }
@@ -93,4 +87,4 @@ const SubscriptionPageComponent = ({ text }) => {
   );
 };
 
-export default SubscriptionPageComponent;
+export default UnsubscriptionPageComponent;

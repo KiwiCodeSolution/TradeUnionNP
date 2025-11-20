@@ -23,12 +23,12 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function BlanksPage() {
+export default function BlanksPage({ params }) {
   return (
     <main className="w-full">
       <TemplatesList />
       <StatementsList />
-      <ContactSection bgStyle={"bg-bgGrey"} />
+      <ContactSection bgStyle={"bg-bgGrey"} locale={params.locale} />
     </main>
   );
 }
