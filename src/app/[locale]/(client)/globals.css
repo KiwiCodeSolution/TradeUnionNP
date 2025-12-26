@@ -126,6 +126,10 @@ a:hover .arrow-icon {
   fill: theme("colors.red");
 }
 
+.arrow-black {
+  fill: #fff;
+}
+
 .rounded-button:hover .arrow,
 .pagination-page:hover .arrow {
   fill: white;
@@ -560,4 +564,26 @@ button:hover .archive {
 }
 .chatbot-anim:hover {
   animation: none;
+}
+
+.fundraisers-card {
+  box-shadow: 0px 10px 20px 0px rgba(175, 174, 174, 0.15);
+}
+
+.fundraisers-gallery .swiper {
+  overflow: visible !important;
+  @media screen and (min-width: 768px) {
+    overflow: hidden !important;
+  }
+}
+
+.fundraisers-gallery .swiper-pagination-bullet {
+  background-color: #d9d9d9 !important;
+  opacity: 1;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.fundraisers-gallery .swiper-pagination-bullet-active {
+  background-color: theme("colors.red") !important;
 }

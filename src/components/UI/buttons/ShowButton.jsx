@@ -1,14 +1,18 @@
-import { Arrow } from "@/components/icons/IconsComponents";
+import { Arrow, ArrowWhite } from "@/components/icons/IconsComponents";
 
-const ShowButton = ({ func, style, btnStyle, isRed }) => {
+const ShowButton = ({ func, style, btnStyle, isRed, isBlack }) => {
   return (
     <button
       onClick={func}
-      className={`w-[44px] h-[44px] rounded-full ${
-        isRed ? "bg-red hover:bg-white hover:border hover:border-red" : "bg-white hover:bg-red"
+      className={`rounded-full ${
+        isRed
+          ? "w-[44px] h-[44px] bg-red hover:bg-white hover:border hover:border-red"
+          : isBlack
+          ? "w-8 h-8 bg-black"
+          : "w-[44px] h-[44px] bg-white hover:bg-red"
       } rounded-button flex items-center justify-center cursor-pointer ${btnStyle}`}
     >
-      <Arrow className={style} />
+      {isBlack ? <ArrowWhite className={style} /> : <Arrow className={style} />}
     </button>
   );
 };

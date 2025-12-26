@@ -38,7 +38,8 @@
     "Metadata_Appeal_Page": "Appeals | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Subscription_Page": "News subscription | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Healthy_Page": "Health improvement | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
-    "Metadata_Join_Page": "How to Enroll? | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
+    "Metadata_Join_Page": "How to Enroll? | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
+    "Metadata_Defenders_Page": "Help Defenders | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
   },
   "HomePage": {
     "path": "Home",
@@ -2015,5 +2016,24 @@
       "year 3. In the open express invoice window, click “CREATE” – “INTERNAL SHIPMENT”",
       "Step 4. Click the “Trade Union” folder and select the desired option from the templates. Select the “Documents in ___PPO” template. Please note that the name and recipient will be different for each PPO, it depends on the region in which you work. That is, if you are in Lviv, the template will be called “Documents in Lviv PPO” – Poleshko Ihor, etc."
     ]
+  },
+  "Defenders": {
+    "title": "Захисники",
+    "subtitle": "Ми дбаємо про кожного нашого колегу, який став на захист України",
+    "btn": "ДОЄДНАТИСЬ до профспілки",
+    "path": "Захисники України",
+    "join": ["Долучайтесь ", "до постіних зборів"],
+    "current": {
+      "title": "Профспілка завжди поруч зі своїми!",
+
+      "support": "Ми підтримуємо наших профспілчан у найважливіші моменти. Тут ви можете долучитися до актуальних зборів і потреб наших мобілізованих колег у межах проєкту <red>“Свої для своїх”</red>.",
+      "target_title": "Це цільові збори на реальні запити:",
+      "points": [
+        "авто та ремонти",
+        "зарядні станції",
+        "дрони та обладнання",
+        "інші нагальні потреби."
+      ]
+    }
   }
 }
