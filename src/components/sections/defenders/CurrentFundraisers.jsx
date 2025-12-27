@@ -1,9 +1,9 @@
+import { inter } from "@/app/[locale]/(client)/fonts";
 import BaseSection from "@/components/BaseSection";
 import { MoneyHand } from "@/components/icons/IconsComponents";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import FundraisersGallery from "./FundraisersGallery";
-import { inter } from "@/app/[locale]/(client)/fonts";
 
 const CurrentFundraisers = ({ fundraisers, locale }) => {
   const t = useTranslations("Defenders");
@@ -18,7 +18,7 @@ const CurrentFundraisers = ({ fundraisers, locale }) => {
   return (
     <BaseSection>
       <div className={"w-full xl:w-[1280px] flex flex-col gap-y-16 xl:gap-y-8 mx-auto"}>
-        <div className="flex px-4 md:px-16 items-center">
+        <div className="flex px-4 md:px-16 xl:px-[50px] items-center">
           <div className="flex flex-col gap-y-6 items-center xl:items-start">
             <h2
               className={`text-[32px] md:text-[40px] xl:text-[50px] font-extrabold ${inter.className}`}

@@ -9,7 +9,7 @@ const HelpsSection = () => {
     <BaseSection style={"mt-10 md:mt-[60px] xl:mt-8"}>
       <div
         className={
-          "w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-4 mx-auto py-8 px-4 md:px-14 xl:px-0"
+          "w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-4 mx-auto py-8 px-4 md:px-14 xl:px-[50px]"
         }
       >
         <h2

@@ -14,7 +14,7 @@ const Numbers = () => {
 
   return (
     <BaseSection>
-      <div className="w-full xl:w-[1280px] mx-auto py-10 px-4 md:px-14 md:py-8">
+      <div className="w-full xl:w-[1280px] mx-auto py-10 px-4 md:px-14 xl:px-[50px] md:py-8">
         <NumbersListValues values={numbersValues} />
       </div>
     </BaseSection>

@@ -7,7 +7,11 @@ const DynamicSection = () => {
   const t = useTranslations("Defenders");
   return (
     <BaseSection style={"mt-10"}>
-      <div className={"w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-6 mx-auto"}>
+      <div
+        className={
+          "w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-6 mx-auto py-8 px-4 md:px-14 xl:px-[50px]"
+        }
+      >
         <h2
           className={`text-[32px] md:text-[40px] xl:text-[50px] font-extrabold text-center ${inter.className}`}
         >

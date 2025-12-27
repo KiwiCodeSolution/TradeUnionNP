@@ -27,7 +27,7 @@ const HeroDef = () => {
 
   return (
     <section className="w-full mt-10 md:mt-[60px] xl:mt-5 pt-10 md:pt-5 xl:pt-[50px] overflow-hidden">
-      <div className="w-full xl:w-[1280px] md:pl-[60px] xl:px-10 xl:mx-auto flex flex-col items-center">
+      <div className="w-full xl:w-[1280px] md:pl-[60px] xl:px-[50px] xl:mx-auto flex flex-col items-center">
         {/* <PathPage endPath={t("Defenders.path")} /> */}
         <div className="flex flex-col md:flex-row gap-2 md:gap-0 items-center justify-between">
           {/* image */}

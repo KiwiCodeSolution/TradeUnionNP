@@ -607,3 +607,7 @@ button:hover .archive {
 .collapse-shadow {
   box-shadow: 0px 4px 50px 0px #e3e3e340;
 }
+
+.reg-event-shadow {
+  box-shadow: 0px 10px 50px 0px #00000040;
+}

@@ -4,6 +4,7 @@ import HelpsSection from "@/components/sections/defenders/HelpsSection";
 import HeroDef from "@/components/sections/defenders/HeroDef";
 import Numbers from "@/components/sections/defenders/Numbers";
 import Projects from "@/components/sections/defenders/Projects";
+import RegularEvent from "@/components/sections/defenders/RegularEvent";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
@@ -110,6 +111,7 @@ export default function DefendersPage({ params: { locale } }) {
       <Projects />
       <DynamicSection />
       <HelpsSection />
+      <RegularEvent />
     </main>
   );
 }

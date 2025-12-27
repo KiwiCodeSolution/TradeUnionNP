@@ -1,4 +1,5 @@
 import Arrow from "@/images/arrow_red.svg";
+import ArrowRed from "@/images/arrow_white.svg";
 import { Link } from "@/navigation";
 import Image from "next/image";
 
@@ -8,7 +9,7 @@ const buttonsStyle = {
   round: "w-[54px] h-[54px] rounded-full bg-white hover:bg-red",
 };
 
-const LinkButton = ({ children, goTo, view, style, goToPage, icon, locale }) => {
+const LinkButton = ({ children, goTo, view, style, goToPage, icon, locale, isRedArrow }) => {
   const additionalStyle = style || "";
   const currentStyle = `${buttonsStyle[view]} ${additionalStyle} flex items-center justify-center`;
 
@@ -17,7 +18,7 @@ const LinkButton = ({ children, goTo, view, style, goToPage, icon, locale }) => 
       {children}
       {icon && (
         <Image
-          src={Arrow}
+          src={isRedArrow ? ArrowRed : Arrow}
           width={30}
           height={30}
           alt="зображення червоної іконки-стрілочки вправо на білому фоні"
