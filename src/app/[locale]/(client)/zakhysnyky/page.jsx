@@ -1,5 +1,7 @@
 import CurrentFundraisers from "@/components/sections/defenders/CurrentFundraisers";
 import HeroDef from "@/components/sections/defenders/HeroDef";
+import Numbers from "@/components/sections/defenders/Numbers";
+import Projects from "@/components/sections/defenders/Projects";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
@@ -102,6 +104,8 @@ export default function DefendersPage({ params: { locale } }) {
       <HeroDef />
 
       <CurrentFundraisers fundraisers={fundraisers} locale={locale} />
+      <Numbers />
+      <Projects />
     </main>
   );
 }

@@ -36,7 +36,7 @@ const HeroDef = () => {
               width={328}
               height={300}
               alt=""
-              className="w-full h-full"
+              className="xl:w-full xl:h-full w-[328px] h-[300px]"
             />
           </div>
 

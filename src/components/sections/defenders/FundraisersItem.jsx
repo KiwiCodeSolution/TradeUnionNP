@@ -2,10 +2,6 @@ import LinkButton from "@/components/UI/buttons/LinkButton";
 import Image from "next/image";
 
 const FundraisersItem = ({ item, locale }) => {
-  console.log("FundraisersItem item:", item);
-
-  console.log("Current locale:", locale);
-
   return (
     <article className="w-full h-full flex flex-col justify-between bg-white md:pb-10 xl:pb-4 ">
       <div className="w-full h-[146px] overflow-hidden">
