@@ -16,7 +16,7 @@ const Projects = () => {
       }),
       text: t("projects.0.text"),
       image: "/images/defenders/project_1.png",
-      sum: "1 817 508 грн",
+      sum: "1 817 508",
     },
     {
       _id: "yE3oU5arB6mtI6fqW2",
@@ -27,7 +27,7 @@ const Projects = () => {
       }),
       text: t("projects.1.text"),
       image: "/images/defenders/project_2.png",
-      sum: "560 000 грн",
+      sum: "560 000",
     },
     {
       _id: "fE6cY7xkX3slW9wjM6",
@@ -38,7 +38,7 @@ const Projects = () => {
       }),
       text: t("projects.2.text"),
       image: "/images/defenders/project_3.png",
-      sum: "122 500 грн",
+      sum: "122 500",
     },
     {
       _id: "cU1enB2pcI9ehE2fO9",
@@ -49,7 +49,7 @@ const Projects = () => {
       }),
       text: t("projects.3.text"),
       image: "/images/defenders/project_4.png",
-      sum: "863 500 грн",
+      sum: "863 500",
     },
     {
       _id: "tW2msZ3pyG5jzG6vjF",
@@ -60,7 +60,7 @@ const Projects = () => {
       }),
       text: t("projects.4.text"),
       image: "/images/defenders/project_5.png",
-      sum: "478 690 грн",
+      sum: "478 690",
     },
   ]; // Placeholder for projects data
 
@@ -70,7 +70,8 @@ const Projects = () => {
         <h2
           className={`text-[32px] md:text-[40px] xl:text-[50px] text-center font-bold mb-8 ${inter.className}`}
         >
-          <span className="text-red">Проєкти </span>підтримки
+          <span className="text-red">{t("project_title.0")} </span>
+          {t("project_title.1")}
         </h2>
 
         <ProjectsList projects={projects} />

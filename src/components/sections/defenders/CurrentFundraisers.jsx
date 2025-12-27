@@ -18,8 +18,8 @@ const CurrentFundraisers = ({ fundraisers, locale }) => {
   return (
     <BaseSection>
       <div className={"w-full xl:w-[1280px] flex flex-col gap-y-16 xl:gap-y-8 mx-auto"}>
-        <div className="flex px-4 md:px-16 xl:px-[50px] items-center">
-          <div className="flex flex-col gap-y-6 items-center xl:items-start">
+        <div className="flex px-4 md:px-16 xl:px-[50px] items-center relative">
+          <div className="w-full xl:w-4/5 flex flex-col gap-y-6 items-center xl:items-start">
             <h2
               className={`text-[32px] md:text-[40px] xl:text-[50px] font-extrabold ${inter.className}`}
             >
@@ -27,7 +27,7 @@ const CurrentFundraisers = ({ fundraisers, locale }) => {
               {t("join.1")}
             </h2>
 
-            <div className="w-full flex flex-col md:flex-row items-center md:items-start gap-6 md:max-w-[640px]">
+            <div className="w-full flex flex-col md:flex-row items-center md:items-start gap-6">
               <MoneyHand />
               <ul className="flex flex-col">
                 <li className="mb-5 list-none">
@@ -58,8 +58,8 @@ const CurrentFundraisers = ({ fundraisers, locale }) => {
             src="/images/defenders/money.png"
             width={252}
             height={252}
-            alt=""
-            className="hidden xl:block shrink-0 w-[252px] h-[252px]"
+            alt="зображення мішечка з грошами"
+            className="hidden xl:block shrink-0 w-[252px] h-[252px] absolute right-[135px] top-[160px]"
           />
         </div>
         {fundraisers && fundraisers.length > 0 && (

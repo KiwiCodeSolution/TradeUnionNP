@@ -8,7 +8,7 @@ const ShowButton = ({ func, style, btnStyle, isRed, isBlack }) => {
         isRed
           ? "w-[44px] h-[44px] bg-red hover:bg-white hover:border hover:border-red"
           : isBlack
-          ? "w-8 h-8 bg-black"
+          ? "w-8 h-8 bg-black disabled:bg-[#666666]"
           : "w-[44px] h-[44px] bg-white hover:bg-red"
       } rounded-button flex items-center justify-center cursor-pointer ${btnStyle}`}
     >

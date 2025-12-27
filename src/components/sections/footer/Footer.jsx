@@ -1,8 +1,8 @@
-import { useTranslations } from "next-intl";
 import Wrapper from "@/components/Wrapper";
-import Image from "next/image";
 import LogoFooterUA from "@/images/logo_bottom.svg";
 import LogoFooterEn from "@/images/logo_bottom_eng.svg";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import { Link } from "@/navigation";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
@@ -22,6 +22,7 @@ const Footer = ({ locale }) => {
     { title: t("Root.aboutPageLinks.6.title"), link: "/ya-profspilka" },
     { title: t("Root.aboutPageLinks.7.title"), link: "/zvernennya" },
     { title: t("Root.aboutPageLinks.8.title"), link: "/ozdorovlennya" },
+    { title: t("Root.aboutPageLinks.9.title"), link: "/zakhysnyky" },
   ];
 
   const navItems = [

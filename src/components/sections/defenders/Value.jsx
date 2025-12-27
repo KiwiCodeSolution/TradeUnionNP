@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 
-const Value = ({ item, index, textStyle, className, children }) => {
+const Value = ({ item, index, textStyle, className, children, currency }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -102,7 +102,7 @@ const Value = ({ item, index, textStyle, className, children }) => {
           } text-red leading-normal font-bold ${textStyle}`}
         >
           <CountUp start={item.start} end={item.end} formattingFn={formatNumber} />
-          {(index === 0 || index === 3 || index === 4) && <span> грн</span>}
+          {(index === 0 || index === 3 || index === 4) && <span> {currency}</span>}
         </p>
         <div
           className={`w-full flex items-center gap-x-3 ${

@@ -14,6 +14,7 @@ const MenuAbout = ({ locale }) => {
     { title: t("aboutPageLinks.6.title"), link: "/ya-profspilka" },
     { title: t("aboutPageLinks.7.title"), link: "/zvernennya" },
     { title: t("aboutPageLinks.8.title"), link: "/ozdorovlennya" },
+    { title: t("aboutPageLinks.9.title"), link: "/zakhysnyky" },
   ];
 
   const links = locale === "en" ? aboutLinks.filter(el => el.link !== "/ppo") : aboutLinks;

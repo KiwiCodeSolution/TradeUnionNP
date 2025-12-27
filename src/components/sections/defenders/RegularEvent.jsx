@@ -10,7 +10,7 @@ const RegularEvent = () => {
     <BaseSection style={"mt-10 md:mt-[60px] xl:mt-3"}>
       <div
         className={
-          "w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-4 mx-auto pt-12 px-4 md:px-14 xl:px-[50px]"
+          "w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-4 mx-auto pt-12 px-4 md:px-14 xl:px-[50px] pb-4 md:pb-8 xl:pb-14"
         }
       >
         <div className="w-full h-fit flex flex-col reg-event-shadow bg-[#C9C9C903]/[0.01] rounded-[32px] pt-8 relative">

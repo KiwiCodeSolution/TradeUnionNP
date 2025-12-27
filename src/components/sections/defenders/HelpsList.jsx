@@ -98,7 +98,7 @@ const HelpsList = () => {
               </a>
             </p>
             <div className="border-b-[2px] border-t-[2px] border-[#D6D6D6] my-4 py-4 flex gap-x-6 items-center">
-              <div className="w-12 h-12 flex items-center justify-center">
+              <div className="w-12 h-12 flex items-center justify-center shrink-0">
                 <MoneyHand />
               </div>
               <div>
@@ -113,7 +113,7 @@ const HelpsList = () => {
             </div>
 
             <div className="flex gap-x-6 items-center">
-              <div className="w-12 h-12 flex items-center justify-center">
+              <div className="w-12 h-12 flex items-center justify-center shrink-0">
                 <Attention />
               </div>
               <div>

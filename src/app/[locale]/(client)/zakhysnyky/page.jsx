@@ -2,6 +2,7 @@ import CurrentFundraisers from "@/components/sections/defenders/CurrentFundraise
 import DynamicSection from "@/components/sections/defenders/DynamicSection";
 import HelpsSection from "@/components/sections/defenders/HelpsSection";
 import HeroDef from "@/components/sections/defenders/HeroDef";
+import History from "@/components/sections/defenders/History";
 import Numbers from "@/components/sections/defenders/Numbers";
 import Projects from "@/components/sections/defenders/Projects";
 import RegularEvent from "@/components/sections/defenders/RegularEvent";
@@ -112,6 +113,7 @@ export default function DefendersPage({ params: { locale } }) {
       <DynamicSection />
       <HelpsSection />
       <RegularEvent />
+      <History />
     </main>
   );
 }

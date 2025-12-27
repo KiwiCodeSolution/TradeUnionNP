@@ -25,7 +25,7 @@ const FundraisersItem = ({ item, locale }) => {
           style={"font-bold w-full mt-auto"}
           locale={locale}
         >
-          доєднатись
+          {locale === "uk" ? "доєднатись" : "join"}
         </LinkButton>
       </div>
     </article>
