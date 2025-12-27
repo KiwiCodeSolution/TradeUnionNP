@@ -1,4 +1,5 @@
 import CurrentFundraisers from "@/components/sections/defenders/CurrentFundraisers";
+import DynamicSection from "@/components/sections/defenders/DynamicSection";
 import HeroDef from "@/components/sections/defenders/HeroDef";
 import Numbers from "@/components/sections/defenders/Numbers";
 import Projects from "@/components/sections/defenders/Projects";
@@ -52,7 +53,7 @@ const fundraisers = [
     link: "https://www.youtube.com/",
   },
   {
-    _id: "mL3jzA6eiB",
+    _id: "mL3jzA6eit",
     titleUk: "Заголовок 4",
     titleEn: "Title 4",
     descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -106,6 +107,7 @@ export default function DefendersPage({ params: { locale } }) {
       <CurrentFundraisers fundraisers={fundraisers} locale={locale} />
       <Numbers />
       <Projects />
+      <DynamicSection />
     </main>
   );
 }

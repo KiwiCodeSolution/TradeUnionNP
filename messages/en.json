@@ -2070,6 +2070,7 @@
         "text": "Сума допомоги"
       }
     ],
-"projects_text": "Projects in progress"
+    "projects_text": "Projects in progress",
+    "dynamic_title": ["Dynamics", "costs"]
   }
 }

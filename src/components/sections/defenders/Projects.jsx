@@ -67,7 +67,9 @@ const Projects = () => {
   return (
     <BaseSection style={"projects-def"}>
       <div className="w-full xl:w-[1280px] mx-auto py-10 px-4 md:px-14 md:py-8">
-        <h2 className="text-[32px] md:text-[40px] xl:text-[50px] text-center font-bold mb-8">
+        <h2
+          className={`text-[32px] md:text-[40px] xl:text-[50px] text-center font-bold mb-8 ${inter.className}`}
+        >
           <span className="text-red">Проєкти </span>підтримки
         </h2>
 

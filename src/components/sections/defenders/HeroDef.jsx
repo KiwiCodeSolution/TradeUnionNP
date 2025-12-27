@@ -1,3 +1,4 @@
+import { inter } from "@/app/[locale]/(client)/fonts";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Join from "../hero/Join";
@@ -42,7 +43,9 @@ const HeroDef = () => {
 
           {/* text + button Join */}
           <div className="w-full md:w-[404px] xl:w-[587px] flex flex-col gap-y-10 md:gap-y-4 order-2 md:order-1 px-4 md:px-0">
-            <h1 className="text-red text-[64px] md:text-[72px] xl:text-[96px] text-center md:text-left font-bold leading-[1]">
+            <h1
+              className={`text-red text-[64px] md:text-[72px] xl:text-[96px] text-center md:text-left font-bold leading-[1] ${inter.className}`}
+            >
               {t("Defenders.title")}
             </h1>
             <div className="flex flex-col gap-y-1 px-4 md:px-0">

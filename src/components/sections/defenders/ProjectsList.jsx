@@ -38,7 +38,10 @@ const ProjectsList = ({ projects }) => {
       </article>
       {projects.length > 0 &&
         projects.map(project => (
-          <article className="w-full md:max-w-[312px] xl:max-w-[372px] min-h-[312px] rounded-[32px] pt-3 pb-5 relative bg-white overflow-hidden flex flex-col justify-between">
+          <article
+            className="w-full md:max-w-[312px] xl:max-w-[372px] min-h-[312px] rounded-[32px] pt-3 pb-5 relative bg-white overflow-hidden flex flex-col justify-between"
+            key={project._id}
+          >
             <div className="w-full flex items-center gap-x-1 px-3 mb-1">
               <div className="w-20 h-20 flex items-center justify-center">
                 <Image
