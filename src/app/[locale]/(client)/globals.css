@@ -136,7 +136,8 @@ a:hover .arrow-icon {
 }
 
 .health-button-prev .arrow,
-.health-button-next .arrow {
+.health-button-next .arrow,
+.helps-section .arrow {
   fill: white;
 }
 
@@ -601,4 +602,8 @@ button:hover .archive {
     rgba(245, 245, 245, 0.6) 75%,
     #ffffff 100%
   );
+}
+
+.collapse-shadow {
+  box-shadow: 0px 4px 50px 0px #e3e3e340;
 }

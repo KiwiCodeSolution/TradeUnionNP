@@ -7,7 +7,7 @@ const DynamicSection = () => {
   const t = useTranslations("Defenders");
   return (
     <BaseSection style={"mt-10"}>
-      <div className={"w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-4 mx-auto"}>
+      <div className={"w-full xl:w-[1280px] flex flex-col gap-4 xl:gap-6 mx-auto"}>
         <h2
           className={`text-[32px] md:text-[40px] xl:text-[50px] font-extrabold text-center ${inter.className}`}
         >

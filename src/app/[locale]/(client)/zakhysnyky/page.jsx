@@ -1,5 +1,6 @@
 import CurrentFundraisers from "@/components/sections/defenders/CurrentFundraisers";
 import DynamicSection from "@/components/sections/defenders/DynamicSection";
+import HelpsSection from "@/components/sections/defenders/HelpsSection";
 import HeroDef from "@/components/sections/defenders/HeroDef";
 import Numbers from "@/components/sections/defenders/Numbers";
 import Projects from "@/components/sections/defenders/Projects";
@@ -108,6 +109,7 @@ export default function DefendersPage({ params: { locale } }) {
       <Numbers />
       <Projects />
       <DynamicSection />
+      <HelpsSection />
     </main>
   );
 }
