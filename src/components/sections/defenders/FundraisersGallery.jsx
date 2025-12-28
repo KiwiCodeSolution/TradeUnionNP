@@ -53,8 +53,8 @@ const FundraisersGallery = ({ fundraisers, locale }) => {
       >
         {fundraisers.map(el => (
           <SwiperSlide key={el._id} className="xl:px-3">
-            <div className="fundraisers-card min-w-[204px] max-w-[280p] !h-[436px] rounded-[32px] overflow-hidden border-[1px] border-[#D8D8D8] mx-auto">
-              <FundraisersItem item={el} locale={locale} />
+            <div className="fundraisers-card min-w-[204px] max-w-[204px] !h-[436px] rounded-[32px] overflow-hidden border-[1px] border-[#D8D8D8] mx-auto">
+              <FundraisersItem item={el} locale={locale} section="client" />
             </div>
           </SwiperSlide>
         ))}

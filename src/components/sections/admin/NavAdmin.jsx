@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
 import Logo from "@/images/menu-logo.svg";
 import { signOut } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavAdmin = ({ username }) => {
   const pathname = usePathname();
@@ -35,6 +35,9 @@ const NavAdmin = ({ username }) => {
         </NavLink>
         <NavLink href="/uk/admin/ppo" currentPath={pathname}>
           ППО
+        </NavLink>
+        <NavLink href="/uk/admin/defenders" currentPath={pathname}>
+          Допомога
         </NavLink>
       </nav>
       <button

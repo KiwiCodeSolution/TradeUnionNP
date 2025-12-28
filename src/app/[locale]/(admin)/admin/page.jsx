@@ -7,7 +7,7 @@ export default function AdminPage({ params }) {
     <main className="w-4/5">
       <AdminBaseSection>
         <div className="w-full h-screen flex items-center justify-center">
-          <h2 className="text-3xl text-red font-semibold">Вітаємо в Адмін Панелі! </h2>
+          <h2 className="text-3xl text-red font-semibold">Вітаємо в Адмін Панелі!</h2>
         </div>
       </AdminBaseSection>
     </main>

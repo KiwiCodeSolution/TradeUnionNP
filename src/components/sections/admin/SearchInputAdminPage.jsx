@@ -1,7 +1,7 @@
 "use client";
 
 import { Cross, Search } from "@/components/icons/IconsComponents";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const SearchInputAdminPage = ({ searchValue, setSearchValue }) => {
   const [isInputFocused, setInputFocused] = useState(false);
@@ -17,7 +17,6 @@ const SearchInputAdminPage = ({ searchValue, setSearchValue }) => {
   return (
     <form className="w-4/5 relative">
       <input
-        type="search"
         className="w-full h-8 outline-none border-b-2 border-red px-4 py-3 text-grey placeholder:text-liteGrey placeholder:italic"
         placeholder="Введіть інформацію для пошуку"
         value={searchValue}
