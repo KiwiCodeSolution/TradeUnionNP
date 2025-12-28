@@ -1,34 +1,23 @@
 import LinkButton from "@/components/UI/buttons/LinkButton";
 import { BaseURLImage } from "@/constants/BaseUrl";
+import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
+import FunctionalButtons from "./FunctionalButtons";
 
 const FundraisersItem = ({ item, locale, section = "client" }) => {
   const imageUrl = BaseURLImage + item.image;
+  const { token } = useAuth();
 
   return (
     <article
-      className={`w-full h-full flex flex-col justify-between bg-white md:pb-10 xl:pb-4 ${
-        section !== "client" &&
-        "shadow-standardShadow rounded-[32px] max-w-[204px] h-[436px] overflow-hidden border-[1px] border-black/10 relative z-10"
+      className={`w-full  flex flex-col justify-between bg-white md:pb-10 xl:pb-4 ${
+        section !== "client"
+          ? "shadow-standardShadow rounded-[32px] max-w-[204px] h-[436px] overflow-hidden border-[1px] border-black/10 relative z-10"
+          : "h-full"
       }`}
     >
-      {section === "admin" && (
-        <div className="w-full h-8 bg-white/20 absolute top-0 left-0 flex z-0 rounded-t-[32px] overflow-hidden">
-          <Link
-            href={`/defenders/edit/${item._id}`}
-            className="w-1/2 cursor-pointer border-r-[1px] border-black/10 text-center"
-          >
-            edit
-          </Link>
-          <button
-            href={`/defenders/edit/${item._id}`}
-            className="w-1/2 cursor-pointer text-center border-l-[1px] border-black/10"
-          >
-            del
-          </button>
-        </div>
-      )}
+      {section === "admin" && <FunctionalButtons item={item} token={token} />}
 
       <div className="w-full h-[146px] overflow-hidden">
         <Image

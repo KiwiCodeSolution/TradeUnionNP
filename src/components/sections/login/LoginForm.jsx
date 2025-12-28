@@ -86,7 +86,11 @@ const LoginForm = () => {
           type="button"
           onClick={() => setIsShowPassword(!isShowPassword)}
         >
-          {isShowPassword ? <Show /> : <Hide />}
+          {isShowPassword ? (
+            <Show className={"w-6 h-6 fill-red"} />
+          ) : (
+            <Hide className={"w-6 h-6 fill-red"} />
+          )}
         </button>
         {error && <p className="absolute -bottom-8 left-0 text-red italic text-lg">{error}</p>}
       </div>

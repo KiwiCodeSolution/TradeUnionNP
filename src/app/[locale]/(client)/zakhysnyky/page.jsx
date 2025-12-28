@@ -6,7 +6,26 @@ import History from "@/components/sections/defenders/History";
 import Numbers from "@/components/sections/defenders/Numbers";
 import Projects from "@/components/sections/defenders/Projects";
 import RegularEvent from "@/components/sections/defenders/RegularEvent";
+import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
+
+export async function getDefendersData() {
+  try {
+    const res = await fetch(`${BaseURL}defenders`, {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      return [];
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error("Помилка завантаження:", error);
+    return [];
+  }
+}
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -27,87 +46,15 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-const fundraisers = [
-  {
-    _id: "rJ2zdZ0ksR",
-    titleUk: "Заголовок 1",
-    titleEn: "Title 1",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/1.jpg",
-    link: "https://www.youtube.com/",
-  },
-  {
-    _id: "vF3ghV2pwX",
-    titleUk: "Заголовок 2",
-    titleEn: "Title 2",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/2.jpg",
-    link: "https://www.youtube.com/",
-  },
-  {
-    _id: "tE6abD2ryY",
-    titleUk: "Заголовок 3",
-    titleEn: "Title 3",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/3.jpg",
-    link: "https://www.youtube.com/",
-  },
-  {
-    _id: "mL3jzA6eit",
-    titleUk: "Заголовок 4",
-    titleEn: "Title 4",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/4.jpg",
-    link: "https://www.youtube.com/",
-  },
-  {
-    _id: "sF4kmE2qpM",
-    titleUk: "Заголовок 5",
-    titleEn: "Title 5",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/5.jpg",
-    link: "https://www.youtube.com/",
-  },
-  {
-    _id: "wS0kH2gpY1",
-    titleUk: "Заголовок 6",
-    titleEn: "Title 6",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/6.jpg",
-    link: "https://www.youtube.com/",
-  },
-  {
-    _id: "mL3jzA9eiB",
-    titleUk: "Заголовок 7",
-    titleEn: "Title 7",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/7.jpg",
-    link: "https://www.youtube.com/",
-  },
-  {
-    _id: "eK3qI1qyF9",
-    titleUk: "Заголовок 8",
-    titleEn: "Title 8",
-    descriptionUk: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    descriptionEn: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/images/defenders/test/8.jpg",
-    link: "https://www.youtube.com/",
-  },
-];
+export default async function DefendersPage({ params: { locale } }) {
+  const data = await getDefendersData();
 
-export default function DefendersPage({ params: { locale } }) {
+  const filteredToActive = data.filter(item => item.is_active);
   return (
     <main className="w-full">
       <HeroDef />
 
-      <CurrentFundraisers fundraisers={fundraisers} locale={locale} />
+      <CurrentFundraisers fundraisers={filteredToActive} locale={locale} />
       <Numbers />
       <Projects />
       <DynamicSection />

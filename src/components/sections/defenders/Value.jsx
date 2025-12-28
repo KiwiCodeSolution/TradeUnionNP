@@ -55,6 +55,7 @@ const Value = ({ item, index, textStyle, className, children, currency }) => {
           className="absolute bottom-0 left-2 md:left-1/2 md:-translate-x-1/2 w-[260px] h-[122px]"
           width={260}
           height={122}
+          alt="фонове зображення, градієнт у довільній формі"
         />
       )}
       {index === 1 && (
@@ -63,6 +64,7 @@ const Value = ({ item, index, textStyle, className, children, currency }) => {
           className="absolute -bottom-[22px] left-1/2 -translate-x-1/2 w-[264px] h-[91px]"
           width={264}
           height={91}
+          alt="фонове зображення, градієнт у довільній формі"
         />
       )}
       {index === 2 && (
@@ -73,6 +75,7 @@ const Value = ({ item, index, textStyle, className, children, currency }) => {
                w-[357px] h-[150px]"
           width={357}
           height={150}
+          alt="фонове зображення, градієнт у довільній формі"
         />
       )}
       {index === 3 && (
@@ -81,6 +84,7 @@ const Value = ({ item, index, textStyle, className, children, currency }) => {
           className="absolute -bottom-[6px] left-[95px] w-[206px] h-[72px]"
           width={206}
           height={72}
+          alt="фонове зображення, градієнт у довільній формі"
         />
       )}
       {index === 4 && (
@@ -89,6 +93,7 @@ const Value = ({ item, index, textStyle, className, children, currency }) => {
           className="absolute top-[18px] right-[95px] w-[232px] h-[90px]"
           width={232}
           height={90}
+          alt="фонове зображення, градієнт у довільній формі"
         />
       )}
       <div className="flex flex-col gap-y-2 md:gap-y-7">
@@ -117,7 +122,13 @@ const Value = ({ item, index, textStyle, className, children, currency }) => {
             {item.label}
           </p>
           {index === 0 && (
-            <Image src="/images/defenders/people.png" width={66} height={77} alt="" className="" />
+            <Image
+              src="/images/defenders/people.png"
+              width={66}
+              height={77}
+              alt="зображення людини у колі"
+              className=""
+            />
           )}
         </div>
       </div>

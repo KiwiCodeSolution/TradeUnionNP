@@ -20,7 +20,7 @@ export default async function DefendersPage() {
 
   return (
     <main className="flex flex-col justify-center relative max-h-screen px-10 py-5 min-w-[80%] admin">
-      <TitleAdmin>Перелік активних проектів</TitleAdmin>
+      <TitleAdmin>Перелік проектів</TitleAdmin>
 
       <DefendersSection items={data} />
     </main>

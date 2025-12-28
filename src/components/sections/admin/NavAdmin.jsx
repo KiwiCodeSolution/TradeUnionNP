@@ -37,7 +37,7 @@ const NavAdmin = ({ username }) => {
           ППО
         </NavLink>
         <NavLink href="/uk/admin/defenders" currentPath={pathname}>
-          Допомога
+          Збори
         </NavLink>
       </nav>
       <button

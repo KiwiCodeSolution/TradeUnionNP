@@ -3,6 +3,12 @@ import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import ReviewsSlider from "./ReviewsSlider";
 import { useTranslations } from "next-intl";
+import Raletc from "@/images/health/reviews/raletc.jpeg";
+import Hlushko from "@/images/health/reviews/hlushko.jpeg";
+import Sushko from "@/images/health/reviews/sushko.jpg";
+import Suslo from "@/images/health/reviews/suslo.jpg";
+import Stychynska from "@/images/health/reviews/stychynska.jpg";
+import Isaeva from "@/images/health/reviews/isaeva.jpg";
 
 const ReviewPlaces = () => {
   const t = useTranslations("Health");
@@ -10,7 +16,7 @@ const ReviewPlaces = () => {
   const reviews = [
     {
       _id: "vqj1bQ87m4kdG",
-      image: "/images/health/reviews/raletc.jpeg",
+      image: Raletc,
       author: t("reviews.0.author"),
       rating: 4.5,
       address: t("reviews.0.address"),
@@ -18,7 +24,7 @@ const ReviewPlaces = () => {
     },
     {
       _id: "2zqlq7IkaiVTZ",
-      image: "/images/health/reviews/hlushko.jpeg",
+      image: Hlushko,
       author: t("reviews.1.author"),
       rating: 4.8,
       address: t("reviews.1.address"),
@@ -26,7 +32,7 @@ const ReviewPlaces = () => {
     },
     {
       _id: "vqj1bQ87m4kdG",
-      image: "/images/health/reviews/sushko.jpg",
+      image: Sushko,
       author: t("reviews.2.author"),
       rating: 4.5,
       address: t("reviews.2.address"),
@@ -34,7 +40,7 @@ const ReviewPlaces = () => {
     },
     {
       _id: "2zqlq7IkaiVTZ",
-      image: "/images/health/reviews/suslo.jpg",
+      image: Suslo,
       author: t("reviews.3.author"),
       rating: 4.8,
       address: t("reviews.3.address"),
@@ -42,7 +48,7 @@ const ReviewPlaces = () => {
     },
     {
       _id: "vqj1bQ87m4kdG",
-      image: "/images/health/reviews/stychynska.jpg",
+      image: Stychynska,
       author: t("reviews.4.author"),
       rating: 4.5,
       address: t("reviews.4.address"),
@@ -50,7 +56,7 @@ const ReviewPlaces = () => {
     },
     {
       _id: "2zqlq7IkaiVTZ",
-      image: "/images/health/reviews/isaeva.jpg",
+      image: Isaeva,
       author: t("reviews.5.author"),
       rating: 4.8,
       address: t("reviews.5.address"),

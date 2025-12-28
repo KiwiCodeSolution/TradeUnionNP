@@ -47,13 +47,15 @@ const ProjectForm = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
         const project = response.data;
+
         setInitialData(project);
+
         setFormData({
           titleUk: project.titleUk || "",
           titleEn: project.titleEn || "",
           descriptionUk: project.descriptionUk || "",
           descriptionEn: project.descriptionEn || "",
-          image: project.image || null,
+          image: project.image ? `${BaseURLImage}${project.image}` : null,
           _imageFile: null,
           link: project.link || "",
           is_active: project.is_active ?? true,

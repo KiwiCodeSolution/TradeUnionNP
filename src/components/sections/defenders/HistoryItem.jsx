@@ -6,16 +6,20 @@ import {
 } from "@/components/icons/IconsComponents";
 import Bookmark from "@/images/bookmark.svg";
 import Image from "next/image";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
 const HistoryItem = ({ item }) => {
   const icons = [HistoryAvatar_1, HistoryAvatar_2, HistoryAvatar_3, HistoryAvatar_4];
 
   // вибираємо випадкову іконку один раз
-  const RandomIcon = useMemo(() => {
+  const [RandomIcon, setRandomIcon] = useState(null);
+
+  useEffect(() => {
     const index = Math.floor(Math.random() * icons.length);
-    return icons[index];
+    setRandomIcon(() => icons[index]);
   }, []);
+
+  if (!RandomIcon) return null;
 
   return (
     <article className="flex flex-col items-center justify-between w-full md:max-w-[522px] h-[524px] md:min-h-[516px] rounded-[32px] px-4 py-16 md:py-14 relative bg-[rgba(255, 255, 255, 0.01)]">
