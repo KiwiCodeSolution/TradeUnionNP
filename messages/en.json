@@ -17,7 +17,8 @@
       { "title": "Sports and leisure", "link": "/dozvillya-ta-sport" },
       { "title": "I am the Trade Union", "link": "/ya-profspilka" },
       { "title": "Appeal", "link": "/zvernennya" },
-      { "title": "Health improvement", "link": "/ozdorovlennya" }
+      { "title": "Health improvement", "link": "/ozdorovlennya" },
+      { "title": "Help Defenders", "link": "/zakhysnyky" }
     ],
     "Metadata_Home_Page": "Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Description": "Official site of the Trade Union of the Nova Poshta group of companies | All-Ukrainian Professional Union of Employees of Nova Poshta LLC | VPSP 'Nova Poshta' LLC",
@@ -38,7 +39,8 @@
     "Metadata_Appeal_Page": "Appeals | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Subscription_Page": "News subscription | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
     "Metadata_Healthy_Page": "Health improvement | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
-    "Metadata_Join_Page": "How to Enroll? | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
+    "Metadata_Join_Page": "How to Enroll? | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC",
+    "Metadata_Defenders_Page": "Help Defenders | Trade union LLC 'Nova Poshta' | VPSP 'Nova Poshta' LLC"
   },
   "HomePage": {
     "path": "Home",
@@ -2015,5 +2017,104 @@
       "year 3. In the open express invoice window, click “CREATE” – “INTERNAL SHIPMENT”",
       "Step 4. Click the “Trade Union” folder and select the desired option from the templates. Select the “Documents in ___PPO” template. Please note that the name and recipient will be different for each PPO, it depends on the region in which you work. That is, if you are in Lviv, the template will be called “Documents in Lviv PPO” – Poleshko Ihor, etc."
     ]
+  },
+  "Defenders": {
+    "title": "Our Heroes",
+    "subtitle": "We support every teammate serving in the defense of Ukraine.",
+    "btn": "Join",
+    "path": "Our Heroes",
+    "join": ["Join ", "our fundraisers"],
+    "current": {
+      "title": "The Union is always there for its own!",
+
+      "support": "We support our union members in the most crucial moments. Here, you can contribute to current fundraisers and the needs of our mobilized colleagues as part of the <red>“One of Our Own for Our Own”</red> project.",
+      "target_title": "These are targeted fundraisers for real requests:",
+      "points": [
+        "cars and repairs",
+        "charging stations",
+        "drones and equipment",
+        "other urgent needs."
+      ]
+    },
+    "numbers": [
+      "Total amount of aid provided",
+      "Mobilized trade union members",
+      "Projects completed",
+      "Financial assistance",
+      "Potentially lost membership contributions"
+    ],
+    "project_name": "Project",
+    "project_title": ["Support", " Projects"],
+    "projects": [
+      {
+        "name": "Protect the Defende",
+        "description": "<b2>The </b2> <b1>«Protect the Defender»</b1> project helped fulfill <b2>246 combat needs</b2> — from gear to ammunition. Implemented jointly with Nova Poshta, the project provided soldiers with everything necessary to carry out combat missions.",
+        "text": "Total aid"
+      },
+      {
+        "name": "Poncho-Tent",
+        "description": "In 2022, we ensured our defenders had everything they needed for field conditions. <b1>500 poncho-tents</b1> <b2>made of waterproof material have already been delivered to the military.</b2>",
+        "text": "Project cost"
+      },
+      {
+        "name": "Waterless Shower",
+        "description": "<b2>In 2023, the union delivered</b2> <b1>700 waterless shower kits</b1> <b2>and energy bars</b2> to support fighters on the front line - essentials that help maintain hygiene and restore strength in field conditions.",
+        "text": "Initiative cost"
+      },
+      {
+        "name": "Folding Knives",
+        "description": "<b2>In 2024, mobilized</b2> <b1>colleagues received folding knives.</b1> These gifts served as a token of support and gratitude, as well as a practical tool useful in everyday service.",
+        "text": "Project cost"
+      },
+      {
+        "name": "Tourniquets ",
+        "description": "<b2>In 2025, we launched a new aid initiative —</b2> the purchase of Ukrainian-made <b1>tourniquets</b1>. 801 tourniquets have been purchased, which can save lives.",
+        "text": "Total aid"
+      }
+    ],
+    "projects_text": "Projects ongoing",
+    "dynamic_title": ["General ", "Financial Indicators"],
+    "helps_title": ["Profile-Based", " Professional Support:"],
+    "helps_items": [
+      {
+        "title": "Free Legal Aid and Military Rights",
+        "text": [
+          "<b1>Specialized professional assistance is required</b1> to address the needs of mobilized employees during their military service. Please note that the Trade Union specializes exclusively in labor law.",
+          "<b1>For free legal assistance and information</b1> regarding the rights and guarantees of service members, veterans, and their families, we recommend contacting the following NGOs:",
+          "Legal Hundred (Yurydychna Sotnya):",
+          "Feedback Request: Please share the outcomes of your interactions with these organizations. This helps us monitor and analyze the effectiveness of our partners’ work."
+        ]
+      },
+      {
+        "title": "Assistance from the Employer",
+        "text": [
+          "<b1>Gear and Financial Assistance For inquiries regarding gear</b1> (uniforms, footwear, body armor, first aid kits, etc.) and",
+          "<b1>the disbursement of material aid</b1>",
+          "(salary replacement) contacts:",
+          "Anna Holovchenko"
+        ]
+      },
+      {
+        "title": "Contacts from Nova Poshta",
+        "text": [
+          "Employee Support Hotline",
+          "Fundraising for Specialized Needs:",
+          "“By Our Own for Our Own” Project",
+          "For organizing fundraisers for high-value items (vehicles, power stations, drones, repairs, etc.).",
+          "<b1>Please note:</b1> Participation in specific fundraising requests may require official documentation from the mobilized employee’s military unit.",
+          "Ivan Polishchuk (Coordinator)"
+        ]
+      }
+    ],
+    "regular_title": ["Permanent", " fundraising drive"],
+    "regular_texts": [
+      "<b1>“By Our Own for Our Own“ The Nova Post team</b1> has united to create the <b1>«By Our Own for Our Own»</b1>",
+      "<b1>By Our Own for Our Own</b1> project a large-scale volunteer movement dedicated to supporting colleagues on the front lines.",
+      "As part of this initiative, employees personally raise funds and purchase drones, gear, vehicles, and other essentials for our defenders.",
+      "It is a platform where every company employee can contribute to supporting mobilized colleagues and bring our shared victory closer. Donate now. The lives of our colleagues depend on you."
+    ],
+    "regular_btn": "Donate now",
+    "history_title": ["Stories", " of our union members"],
+    "currency": "UAH"
   }
 }

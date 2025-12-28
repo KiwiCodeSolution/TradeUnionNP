@@ -16,7 +16,7 @@ const NavBar = ({ locale, navItems, section }) => {
           <Link
             href={el.link}
             key={el.link}
-            className={`text-[15px] text-white text-center ${
+            className={`text-[15px] md:text-xs xl:text-[15px] text-white text-center ${
               isActive ? "text-opacity-100" : "text-opacity-60 hover:text-opacity-100"
             }`}
             locale={locale}

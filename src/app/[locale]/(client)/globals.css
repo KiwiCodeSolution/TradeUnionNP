@@ -126,13 +126,18 @@ a:hover .arrow-icon {
   fill: theme("colors.red");
 }
 
+.arrow-black {
+  fill: #fff;
+}
+
 .rounded-button:hover .arrow,
 .pagination-page:hover .arrow {
   fill: white;
 }
 
 .health-button-prev .arrow,
-.health-button-next .arrow {
+.health-button-next .arrow,
+.helps-section .arrow {
   fill: white;
 }
 
@@ -560,4 +565,49 @@ button:hover .archive {
 }
 .chatbot-anim:hover {
   animation: none;
+}
+
+.fundraisers-card {
+  box-shadow: 0px 10px 20px 0px rgba(175, 174, 174, 0.15);
+}
+
+.fundraisers-gallery .swiper {
+  overflow: visible !important;
+  @media screen and (min-width: 768px) {
+    overflow: hidden !important;
+  }
+}
+
+.fundraisers-gallery .swiper-pagination-bullet {
+  background-color: #d9d9d9 !important;
+  opacity: 1;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.fundraisers-gallery .swiper-pagination-bullet-active {
+  background-color: theme("colors.red") !important;
+}
+
+.values-item {
+  box-shadow: 0px 0px 50px 0px #afaeae26;
+}
+
+.projects-def {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(245, 245, 245, 0.6) 25%,
+    #f5f5f5 50%,
+    rgba(245, 245, 245, 0.6) 75%,
+    #ffffff 100%
+  );
+}
+
+.collapse-shadow {
+  box-shadow: 0px 4px 50px 0px #e3e3e340;
+}
+
+.reg-event-shadow {
+  box-shadow: 0px 10px 50px 0px #00000040;
 }

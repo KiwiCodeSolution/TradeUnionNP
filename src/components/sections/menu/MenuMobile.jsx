@@ -79,6 +79,11 @@ const MenuMobile = ({ locale }) => {
       link: "/ozdorovlennya",
       aria: "посилання на сторінку про варіанти для оздоровлення",
     },
+    {
+      name: t(`aboutPageLinks.9.title`),
+      link: "/zakhysnyky",
+      aria: "посилання на сторінку про допомогу мобілізованим профспілчанам",
+    },
   ];
 
   const navItems = navLinks.slice(1, navLinks.length);
