@@ -25,12 +25,15 @@ const ProjectForm = () => {
   const { token } = useAuth();
   const router = useRouter();
 
+  const [errors, setErrors] = useState({});
   const [initialData, setInitialData] = useState(null);
   const [formData, setFormData] = useState({
     titleUk: "",
     titleEn: "",
     descriptionUk: "",
     descriptionEn: "",
+    goalUk: "",
+    goalEn: "",
     image: null,
     _imageFile: null,
     link: "",
@@ -55,6 +58,8 @@ const ProjectForm = () => {
           titleEn: project.titleEn || "",
           descriptionUk: project.descriptionUk || "",
           descriptionEn: project.descriptionEn || "",
+          goalUk: project.goalUk || "",
+          goalEn: project.goalEn || "",
           image: project.image ? `${BaseURLImage}${project.image}` : null,
           _imageFile: null,
           link: project.link || "",
@@ -85,16 +90,51 @@ const ProjectForm = () => {
     );
   }
 
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.titleUk.trim()) newErrors.titleUk = "Заповни заголовок українською";
+    if (!formData.titleEn.trim()) newErrors.titleEn = "Заповни заголовок англійською";
+
+    if (!formData.descriptionUk.trim()) newErrors.descriptionUk = "Заповни опис українською";
+    if (!formData.descriptionEn.trim()) newErrors.descriptionEn = "Заповни опис англійською";
+
+    if (!formData.goalUk.trim()) newErrors.goalUk = "Вкажи мету українською";
+    if (!formData.goalEn.trim()) newErrors.goalEn = "Вкажи мету англійською";
+
+    if (!formData.link.trim()) newErrors.link = "Додай посилання";
+
+    // обовʼязкове зображення
+    if (!formData._imageFile && !initialData?.image) {
+      newErrors.image = "Зображення обовʼязкове";
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = e => {
     const { name, value, type } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: type === "radio" ? value === "true" : value,
     }));
+
+    setErrors(prev => {
+      const newErrors = { ...prev };
+      delete newErrors[name];
+      return newErrors;
+    });
   };
 
   const handleSubmit = async e => {
     e.preventDefault();
+
+    if (!validate()) {
+      toast.error("Заповни всі обов'язкові поля");
+      return;
+    }
 
     const fd = new FormData();
 
@@ -108,6 +148,8 @@ const ProjectForm = () => {
     fd.append("titleEn", formData.titleEn.trim());
     fd.append("descriptionUk", formData.descriptionUk.trim());
     fd.append("descriptionEn", formData.descriptionEn.trim());
+    fd.append("goalUk", formData.goalUk.trim());
+    fd.append("goalEn", formData.goalEn.trim());
     fd.append("link", formData.link.trim());
 
     // boolean → рядок
@@ -137,15 +179,24 @@ const ProjectForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full xl:w-9/12 py-5 flex flex-col gap-y-4 mx-auto">
+    <form onSubmit={handleSubmit} className="w-full xl:w-9/12 py-5 flex flex-col gap-y-6 mx-auto">
       {/* Аватар */}
       <FormImageUploader
         initialImage={formData.image}
-        onFileChange={file => setFormData(prev => ({ ...prev, image: file, _imageFile: file }))}
+        onFileChange={file => {
+          setFormData(prev => ({ ...prev, image: file, _imageFile: file }));
+
+          setErrors(prev => {
+            const newErrors = { ...prev };
+            delete newErrors.image;
+            return newErrors;
+          });
+        }}
+        error={errors.image}
       />
 
       {/* Заголовок українською */}
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col relative">
         <label htmlFor="titleUk" className="text-main block font-medium">
           Заголовок українською
         </label>
@@ -157,10 +208,15 @@ const ProjectForm = () => {
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none focus:outline-red focus:border-none focus:rounded-lg"
         />
+        {errors.titleUk && (
+          <span className="text-red text-sm italic absolute -bottom-5">
+            Потрібно заповнити це поле
+          </span>
+        )}
       </div>
 
       {/* Заголовок англійською */}
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col relative">
         <label htmlFor="titleEn" className="text-main block font-medium">
           Заголовок англійською
         </label>
@@ -172,10 +228,15 @@ const ProjectForm = () => {
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none focus:outline-red focus:border-none focus:rounded-lg"
         />
+        {errors.titleEn && (
+          <span className="text-red text-sm italic absolute -bottom-5">
+            Потрібно заповнити це поле
+          </span>
+        )}
       </div>
 
       {/* Опис українською */}
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col relative">
         <label htmlFor="descriptionUk" className="text-main block font-medium">
           Опис українською
         </label>
@@ -187,10 +248,15 @@ const ProjectForm = () => {
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none focus:outline-red focus:border-none focus:rounded-lg"
         />
+        {errors.descriptionUk && (
+          <span className="text-red text-sm italic absolute -bottom-5">
+            Потрібно заповнити це поле
+          </span>
+        )}
       </div>
 
       {/* Опис англійською */}
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col relative">
         <label htmlFor="descriptionEn" className="text-main block font-medium">
           Опис англійською
         </label>
@@ -202,10 +268,55 @@ const ProjectForm = () => {
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none focus:outline-red focus:border-none focus:rounded-lg"
         />
+        {errors.descriptionEn && (
+          <span className="text-red text-sm italic absolute -bottom-5">
+            Потрібно заповнити це поле
+          </span>
+        )}
+      </div>
+
+      {/* Мета українською */}
+      <div className="flex flex-col relative">
+        <label htmlFor="goalUk" className="text-main block font-medium">
+          Мета українською (наприклад, Ціль: 300 000 грн)
+        </label>
+        <input
+          id="goalUk"
+          name="goalUk"
+          type="text"
+          value={formData.goalUk}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border-b border-b-gray-300 outline-none focus:outline-red focus:border-none focus:rounded-lg"
+        />
+        {errors.goalUk && (
+          <span className="text-red text-sm italic absolute -bottom-5">
+            Потрібно заповнити це поле
+          </span>
+        )}
+      </div>
+
+      {/* Мета англійською */}
+      <div className="flex flex-col relative">
+        <label htmlFor="goalEn" className="text-main block font-medium">
+          Мета англійською (наприклад, Goal: 300,000 UAH)
+        </label>
+        <input
+          id="goalEn"
+          name="goalEn"
+          type="text"
+          value={formData.goalEn}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border-b border-b-gray-300 outline-none focus:outline-red focus:border-none focus:rounded-lg"
+        />
+        {errors.goalEn && (
+          <span className="text-red text-sm italic absolute -bottom-5">
+            Потрібно заповнити це поле
+          </span>
+        )}
       </div>
 
       {/* Посилання */}
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col relative">
         <label htmlFor="link" className="text-main block font-medium">
           Посилання на збір
         </label>
@@ -217,10 +328,15 @@ const ProjectForm = () => {
           onChange={handleChange}
           className="w-full px-4 py-2 border-b border-b-gray-300 outline-none focus:outline-red focus:border-none focus:rounded-lg"
         />
+        {errors.link && (
+          <span className="text-red text-sm italic absolute -bottom-5">
+            Потрібно заповнити це поле
+          </span>
+        )}
       </div>
 
       {/* Приховати запис */}
-      <div className="flex flex-col gap-y-1">
+      <div className="flex flex-col relative">
         <label className="text-main block font-medium">Приховати запис?</label>
         <div className="flex items-center gap-x-4">
           <label className="flex items-center gap-x-2">

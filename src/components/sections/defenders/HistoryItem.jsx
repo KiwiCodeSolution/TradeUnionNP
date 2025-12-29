@@ -22,7 +22,7 @@ const HistoryItem = ({ item }) => {
   if (!RandomIcon) return null;
 
   return (
-    <article className="flex flex-col items-center justify-between w-full md:max-w-[522px] h-[524px] md:min-h-[516px] rounded-[32px] px-4 py-16 md:py-14 relative bg-[rgba(255, 255, 255, 0.01)]">
+    <article className="flex flex-col items-center justify-between w-full md:max-w-[522px] min-h-[524px] md:min-h-[516px] rounded-[32px] px-4 py-16 md:py-14 relative bg-[rgba(255, 255, 255, 0.01)]">
       <Image
         src={Bookmark}
         width={23}
@@ -35,7 +35,7 @@ const HistoryItem = ({ item }) => {
         width={82}
         height={112}
         alt="логотип у сірих тонах"
-        className="absolute top-1/2 -translate-y-1/2 hidden md:block left-4"
+        className="absolute top-[200px] hidden md:block left-4"
       />
       <Image
         src="/images/defenders/hist_top_mob.png"
@@ -56,7 +56,7 @@ const HistoryItem = ({ item }) => {
       </div>
       <p className="text-center text-2xl md:text-[32px] font-bold">{item.name}</p>
       <p className="text-center md:text-xl my-[52px] text-bgBlack">{item.textUkr}</p>
-      <p className="text-center text-2xl text-red font-bold">{item.date}</p>
+      {/* <p className="text-center text-2xl text-red font-bold">{item.date}</p> */}
     </article>
   );
 };
