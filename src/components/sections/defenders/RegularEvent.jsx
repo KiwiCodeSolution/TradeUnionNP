@@ -72,12 +72,6 @@ const RegularEvent = () => {
                 </p>
                 <p className={`${inter.className} text-lg`}>{t("regular_texts.2")}</p>
                 <p className={`${inter.className} text-lg mb-5`}>{t("regular_texts.3")}</p>
-                <a
-                  href="https://novaposhta.ua/svoi/"
-                  className="text-[#1C7EED] hover:underline hover:underline-offset-1 text-lg font-bold"
-                >
-                  https://novaposhta.ua/svoi/
-                </a>
               </div>
               <LinkButton
                 goTo="https://novaposhta.ua/svoi/"

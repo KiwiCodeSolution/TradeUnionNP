@@ -2,6 +2,7 @@ import NewsPathHero from "@/components/sections/news/NewsPathHero";
 import NewsComponent from "@/components/sections/news/NewsComponent";
 import { getTranslations } from "next-intl/server";
 import { BaseURL } from "@/constants/BaseUrl";
+import { all } from "axios";
 
 export async function getAllNews() {
   const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
@@ -37,10 +38,18 @@ export async function generateMetadata({ params: { locale } }) {
 export default async function NewsPage({ params: { locale } }) {
   const allNews = await getAllNews();
 
+  const sorryText =
+    locale === "uk"
+      ? "Новини відсутні, або виникла помилка"
+      : "Sorry, there are no news, or an error has occurred";
   return (
     <main className="w-full bg-bgGrey">
       <NewsPathHero />
-      <NewsComponent locale={locale} items={allNews} />
+      {allNews.length > 0 ? (
+        <NewsComponent locale={locale} items={allNews} />
+      ) : (
+        <p className="text-center text-2xl">{sorryText}</p>
+      )}
     </main>
   );
 }

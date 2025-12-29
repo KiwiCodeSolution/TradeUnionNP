@@ -4,14 +4,15 @@ import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import FunctionalButtons from "./FunctionalButtons";
+import NoPhoto from "@/images/no-photo.png";
 
 const FundraisersItem = ({ item, locale, section = "client" }) => {
-  const imageUrl = BaseURLImage + item.image;
+  const imageUrl = item.image ? BaseURLImage + item.image : NoPhoto;
   const { token } = useAuth();
 
   return (
     <article
-      className={`w-full  flex flex-col justify-between bg-white md:pb-10 xl:pb-4 ${
+      className={`w-full flex flex-col justify-between bg-white md:pb-10 xl:pb-4 ${
         section !== "client"
           ? "shadow-standardShadow rounded-[32px] max-w-[204px] h-[436px] overflow-hidden border-[1px] border-black/10 relative z-10"
           : "h-full"
@@ -33,6 +34,8 @@ const FundraisersItem = ({ item, locale, section = "client" }) => {
           {locale === "uk" ? item.titleUk : item.titleEn}
         </p>
         <p className="text-lg">{locale === "uk" ? item.descriptionUk : item.descriptionEn}</p>
+        <p className="text-lg font-semibold">{locale === "uk" ? item.goalUk : item.goalEn}</p>
+
         <LinkButton
           view={"red"}
           goToPage

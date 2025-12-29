@@ -5,7 +5,7 @@ import NoPhoto from "@/images/no-photo.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function FormImageUploader({ initialImage, onFileChange }) {
+export default function FormImageUploader({ initialImage, onFileChange, error }) {
   const [preview, setPreview] = useState(typeof initialImage === "string" ? initialImage : null);
   const [selectedFile, setSelectedFile] = useState(null);
 
@@ -36,6 +36,7 @@ export default function FormImageUploader({ initialImage, onFileChange }) {
           <input type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
         </label>
       </div>
+      {error && <span className="text-red text-sm italic">{error}</span>}
     </div>
   );
 }
