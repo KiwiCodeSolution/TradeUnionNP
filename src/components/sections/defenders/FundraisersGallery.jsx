@@ -12,6 +12,12 @@ import { useEffect, useState } from "react";
 
 const FundraisersGallery = ({ fundraisers, locale }) => {
   const [isSwiper, setIsSwiper] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   if (!fundraisers || fundraisers.length === 0) return null;
   const checkNeedSwiper = () => {
     const width = window.innerWidth;
@@ -29,6 +35,8 @@ const FundraisersGallery = ({ fundraisers, locale }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [fundraisers.length]);
+
+  if (!mounted) return null;
 
   return (
     <div className="w-full relative flex flex-col pb-20 xl:pb-20 pl-4 md:px-16 fundraisers-gallery">
@@ -69,18 +77,18 @@ const FundraisersGallery = ({ fundraisers, locale }) => {
           }}
         >
           {fundraisers.map(el => (
-            <SwiperSlide key={el._id} className="xl:px-3 mx-auto">
-              <div className="fundraisers-card min-w-[204px] max-w-[204px] !h-[436px] rounded-[32px] overflow-hidden border-[1px] border-[#D8D8D8] mx-auto">
+            <SwiperSlide key={el._id} className="xl:px-3 mx-auto !h-auto">
+              <div className="fundraisers-card min-w-[204px] max-w-[204px] h-full rounded-[32px] overflow-hidden border-[1px] border-[#D8D8D8] mx-auto">
                 <FundraisersItem item={el} locale={locale} section="client" />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       ) : (
-        <div className="w-full flex items-center justify-center gap-x-4">
+        <div className="w-full flex justify-center gap-4 items-stretch">
           {fundraisers.map(el => (
             <div
-              className="fundraisers-card w-[204px] max-w-[204px] h-[436px] rounded-[32px] overflow-hidden border-[1px] border-[#D8D8D8]"
+              className="fundraisers-card w-[204px] max-w-[204px] rounded-[32px] overflow-hidden border border-[#D8D8D8] flex flex-col"
               key={el._id}
             >
               <FundraisersItem item={el} locale={locale} section="client" />
