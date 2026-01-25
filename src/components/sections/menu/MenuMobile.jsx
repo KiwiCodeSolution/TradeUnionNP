@@ -35,9 +35,9 @@ const MenuMobile = ({ locale }) => {
 
   const aboutLinks = [
     {
-      name: t(`aboutPageLinks.0.title`),
-      link: "/kolektyvnyy-dohovir",
-      aria: "посилання на сторінку про колективну угоду",
+      name: t(`aboutPageLinks.6.title`),
+      link: "/ya-profspilka",
+      aria: "посилання на сторінку",
     },
     {
       name: t(`aboutPageLinks.1.title`),
@@ -45,9 +45,9 @@ const MenuMobile = ({ locale }) => {
       aria: "посилання на сторінку про те, як вступити у Профспілку",
     },
     {
-      name: t(`aboutPageLinks.2.title`),
-      link: "/ppo",
-      aria: "посилання на сторінку регіональних підрозділів",
+      name: t(`aboutPageLinks.0.title`),
+      link: "/kolektyvnyy-dohovir",
+      aria: "посилання на сторінку про колективну угоду",
     },
     {
       name: t(`aboutPageLinks.3.title`),
@@ -55,24 +55,19 @@ const MenuMobile = ({ locale }) => {
       aria: "посилання на сторінку про захист трудових прав",
     },
     {
-      name: t(`aboutPageLinks.4.title`),
-      link: "/materialna-dopomoga",
-      aria: "посилання на сторінку про матеріальну допомогу",
-    },
-    {
-      name: t(`aboutPageLinks.5.title`),
-      link: "/dozvillya-ta-sport",
-      aria: "посилання на сторінку дозвілля та спорт",
-    },
-    {
-      name: t(`aboutPageLinks.6.title`),
-      link: "/ya-profspilka",
-      aria: "посилання на сторінку",
-    },
-    {
       name: t(`aboutPageLinks.7.title`),
       link: "/zvernennya",
       aria: "посилання на сторінку про звернення учасників",
+    },
+    {
+      name: t(`aboutPageLinks.9.title`),
+      link: "/zakhysnyky",
+      aria: "посилання на сторінку про допомогу мобілізованим профспілчанам",
+    },
+    {
+      name: t(`aboutPageLinks.4.title`),
+      link: "/materialna-dopomoga",
+      aria: "посилання на сторінку про матеріальну допомогу",
     },
     {
       name: t(`aboutPageLinks.8.title`),
@@ -80,9 +75,14 @@ const MenuMobile = ({ locale }) => {
       aria: "посилання на сторінку про варіанти для оздоровлення",
     },
     {
-      name: t(`aboutPageLinks.9.title`),
-      link: "/zakhysnyky",
-      aria: "посилання на сторінку про допомогу мобілізованим профспілчанам",
+      name: t(`aboutPageLinks.5.title`),
+      link: "/dozvillya-ta-sport",
+      aria: "посилання на сторінку дозвілля та спорт",
+    },
+    {
+      name: t(`aboutPageLinks.2.title`),
+      link: "/ppo",
+      aria: "посилання на сторінку регіональних підрозділів",
     },
   ];
 

@@ -22,9 +22,16 @@
   },
   {
     "id": "110173",
-    "name": "Заява на вступ 'Нова Пошта'/'НоваПей'",
+    "name": "Заява на вступ 'Нова Пошта'",
     "fileName": "zajava_na_vstup",
     "link": "files/zajava_na_vstup.pdf",
+    "sections": "application"
+  },
+  {
+    "id": "110173",
+    "name": "Заява на вступ 'НоваПей'",
+    "fileName": "zajava_na_vstup_nova_pay",
+    "link": "files/zajava_na_vstup_nova_pay.pdf",
     "sections": "application"
   },
   {

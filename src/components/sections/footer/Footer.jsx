@@ -13,16 +13,16 @@ const Footer = ({ locale }) => {
   const year = new Date().getFullYear();
 
   const aboutLinks = [
-    { title: t("Root.aboutPageLinks.0.title"), link: "/kolektyvnyy-dohovir" },
-    { title: t("Root.aboutPageLinks.1.title"), link: "/yak-vstupyty" },
-    { title: t("Root.aboutPageLinks.2.title"), link: "/ppo" },
-    { title: t("Root.aboutPageLinks.3.title"), link: "/zakhyst-trudovykh-prav" },
-    { title: t("Root.aboutPageLinks.4.title"), link: "/materialna-dopomoga" },
-    { title: t("Root.aboutPageLinks.5.title"), link: "/dozvillya-ta-sport" },
     { title: t("Root.aboutPageLinks.6.title"), link: "/ya-profspilka" },
+    { title: t("Root.aboutPageLinks.1.title"), link: "/yak-vstupyty" },
+    { title: t("Root.aboutPageLinks.0.title"), link: "/kolektyvnyy-dohovir" },
+    { title: t("Root.aboutPageLinks.3.title"), link: "/zakhyst-trudovykh-prav" },
     { title: t("Root.aboutPageLinks.7.title"), link: "/zvernennya" },
-    { title: t("Root.aboutPageLinks.8.title"), link: "/ozdorovlennya" },
     { title: t("Root.aboutPageLinks.9.title"), link: "/zakhysnyky" },
+    { title: t("Root.aboutPageLinks.4.title"), link: "/materialna-dopomoga" },
+    { title: t("Root.aboutPageLinks.8.title"), link: "/ozdorovlennya" },
+    { title: t("Root.aboutPageLinks.5.title"), link: "/dozvillya-ta-sport" },
+    { title: t("Root.aboutPageLinks.2.title"), link: "/ppo" },
   ];
 
   const navItems = [

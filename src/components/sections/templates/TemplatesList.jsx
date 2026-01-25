@@ -14,6 +14,11 @@ const TemplatesList = () => {
       link: "files/zajava_na_vstup.pdf",
     },
     {
+      title: t(`templates.5`),
+      fileName: "zajava_na_vstup",
+      link: "files/zajava_na_vstup_nova_pay.pdf",
+    },
+    {
       title: t(`templates.1`),
       fileName: "zajava_na_vstup_np_global",
       link: "files/zajava_na_vstup_np_global.pdf",
