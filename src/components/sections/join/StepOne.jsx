@@ -13,6 +13,11 @@ const StepOne = () => {
       link: "zajava_na_vstup.pdf",
     },
     {
+      title: t(`Forms.templates.5`),
+      fileName: "zajava_na_vstup",
+      link: "zajava_na_vstup_nova_pay.pdf",
+    },
+    {
       title: t(`Forms.templates.1`),
       fileName: "zajava_na_vstup_np_global",
       link: "zajava_na_vstup_np_global.pdf",
@@ -45,9 +50,7 @@ const StepOne = () => {
           {files.map((el, idx) => (
             <li
               key={el.link}
-              className={`w-full bg-white rounded-[20px] pt-[37px] px-[38px] pb-[31px] md:px-[77px] xl:px-[38px] shadow-standardShadow col-span-2 ${
-                idx === 0 ? "xl:col-start-2" : ""
-              }`}
+              className={`w-full bg-white rounded-[20px] pt-[37px] px-[38px] pb-[31px] md:px-[77px] xl:px-[38px] shadow-standardShadow col-span-2 `}
             >
               <p className="text-[32px] text-grey font-extrabold leading-[1.5] mb-3">{el.title}</p>
               <FileButton name={t(`Forms.button`)} link={el.link} styles={"ml-auto"} />

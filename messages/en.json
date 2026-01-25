@@ -459,11 +459,12 @@
     "path": "Forms",
     "title_templates": ["Forms", "for joining", "the Trade Union"],
     "templates": [
-      "Application for joining 'Nova Poshta'/'NovaPay'",
+      "Application for joining 'Nova Poshta'",
       "Application for joining 'NP Global'",
       "Application for admission to 'NOVOBOX'",
       "Application for admission to 'NP Center'",
-      "Application for admission to 'NP Digital'"
+      "Application for admission to 'NP Digital'",
+      "Application for joining 'NovaPay'"
     ],
     "text_templates": [
       "Download",
