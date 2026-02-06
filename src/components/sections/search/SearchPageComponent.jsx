@@ -59,10 +59,21 @@ export default function SearchPageComponent({ locale }) {
   // --- обчислення відображених елементів ---
   const pageCount = Math.max(1, Math.ceil(searchResult.length / itemsPerPage));
 
+  const sortedResults = useMemo(() => {
+    return [...searchResult].sort((a, b) => {
+      if (a.publishDate && b.publishDate) {
+        return new Date(b.publishDate) - new Date(a.publishDate);
+      }
+      if (a.publishDate) return -1;
+      if (b.publishDate) return 1;
+      return 0; // обидва без дати — порядок не міняємо
+    });
+  }, [searchResult]);
+
   const currentItems = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;
-    return searchResult.slice(start, start + itemsPerPage);
-  }, [searchResult, currentPage, itemsPerPage]);
+    return sortedResults.slice(start, start + itemsPerPage);
+  }, [sortedResults, currentPage, itemsPerPage]);
 
   // --- оновлення URL при зміні сторінки ---
   const handlePageClick = ({ selected }) => {
@@ -79,6 +90,10 @@ export default function SearchPageComponent({ locale }) {
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const sortedItems = currentItems.sort(
+    (a, b) => new Date(b.publishDate) - new Date(a.publishDate)
+  );
 
   const nextLabel = (
     <div className="pagination-page">
@@ -124,6 +139,7 @@ export default function SearchPageComponent({ locale }) {
             forcePage={currentPage - 1}
             containerClassName="pagination-container pagination-container_search"
             pageClassName="pagination-page"
+            pageLinkClassName="pagination-link"
             activeClassName="pagination-active"
             previousClassName="pagination-previous"
             nextClassName="pagination-next"

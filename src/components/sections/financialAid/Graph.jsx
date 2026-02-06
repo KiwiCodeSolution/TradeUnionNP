@@ -1,7 +1,7 @@
 import BaseSection from "@/components/BaseSection";
 import Image from "next/image";
 import GraphImage from "@/images/aid/material-aid.png";
-import GraphImageMob from "@/images/aid/material-aid_mob_2025.png";
+import GraphImageMob from "@/images/aid/material-aid_mob_2026.png";
 
 const Graph = () => {
   return (
@@ -11,14 +11,14 @@ const Graph = () => {
           src={GraphImage}
           width={1200}
           height={700}
-          alt="графік виплат за 2015-2024 роки"
+          alt="графік виплат за 2015-2025 роки"
           className="hidden md:block mx-auto"
         />
         <Image
           src={GraphImageMob}
           width={450}
           height={250}
-          alt="графік виплат за 2015-2024 роки"
+          alt="графік виплат за 2015-2025 роки"
           className="md:hidden mx-auto w-full h-auto"
         />
       </div>
