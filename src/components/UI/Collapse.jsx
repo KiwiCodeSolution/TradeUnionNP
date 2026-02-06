@@ -12,6 +12,7 @@ export default function Collapse({
   children,
   classNameWrapper,
   index,
+  titleClassName = "",
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [height, setHeight] = useState(defaultOpen ? "auto" : 0);
@@ -43,23 +44,27 @@ export default function Collapse({
   return (
     <div className="w-full border-[2px] border-[#EDEDED] bg-[#FAFAFA03]/[0.01] rounded-[32px] collapse-shadow overflow-hidden py-4 px-2 md:p-4 xl:p-8 transition-colors">
       <div className="flex items-center justify-between gap-x-4">
-        <div className="flex items-center gap-x-4">
-          <div className="w-8 h-8 md:w-14 md:h-14 flex items-center justify-center shrink-0">
-            <Image
-              src={image}
-              width={56}
-              height={56}
-              alt="Зображення"
-              className={`${
-                index === 0
-                  ? "w-[22x] h-[25px] md:w-[40px] md:h-[44px]"
-                  : index === 1
-                  ? "w-[31x] h-[22px] md:w-[54px] md:h-[40px]"
-                  : "w-[23px] h-[23px] md:w-[41px] md:h-[41px]"
-              } object-contain`}
-            />
-          </div>
-          <h3 className={`${inter.className} text-lg md:text-2xl xl:text-[32px] font-bold`}>
+        <div className="flex items-center gap-x-4 ">
+          {image && (
+            <div className="w-8 h-8 md:w-14 md:h-14 flex items-center justify-center shrink-0">
+              <Image
+                src={image}
+                width={56}
+                height={56}
+                alt="Зображення"
+                className={`${
+                  index === 0
+                    ? "w-[22x] h-[25px] md:w-[40px] md:h-[44px]"
+                    : index === 1
+                      ? "w-[31x] h-[22px] md:w-[54px] md:h-[40px]"
+                      : "w-[23px] h-[23px] md:w-[41px] md:h-[41px]"
+                } object-contain`}
+              />
+            </div>
+          )}
+          <h3
+            className={`${inter.className} text-lg md:text-2xl xl:text-[32px] font-bold ${titleClassName}`}
+          >
             {title}
           </h3>
         </div>

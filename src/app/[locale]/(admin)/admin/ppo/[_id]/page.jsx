@@ -31,6 +31,8 @@ export async function generateMetadata({ params: { _id } }) {
 export default async function AdminPpoPageWithId({ params: { _id } }) {
   const currentPpo = await fetchPpoById(_id);
 
+  console.log("currentPpo", currentPpo);
+
   return (
     <StoreProvider>
       <main className="w-full px-10 py-5 relative">

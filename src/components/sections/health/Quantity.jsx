@@ -3,7 +3,8 @@ import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
-import QuantityImg from "@/images/health/quantity.png";
+
+import QuantityImg from "@/images/health/quantity_2025.png";
 
 const Quantity = () => {
   const t = useTranslations("Health");

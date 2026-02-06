@@ -72,7 +72,7 @@ const NumberItem = ({ item, index, text }) => {
                 formattingFn={formatNumber}
                 className="hidden xl:block"
               />
-              <CountUp start={0} end={35} className="xl:hidden" suffix="млн" />
+              <CountUp start={0} end={38} className="xl:hidden" suffix="млн" />
             </>
           ) : (
             <CountUp start={item.start} end={item.end} formattingFn={formatNumberToString} />

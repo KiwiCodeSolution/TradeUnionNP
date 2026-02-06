@@ -46,7 +46,7 @@ const ProtectionHero = () => {
           <div className="flex flex-col justify-center w-full md:w-fit xl:w-1/4">
             <div className="flex items-center gap-x-6 mx-auto md:ml-0">
               <p className={`${inter.className} text-red text-2xl font-bold`}>{t(`hero_text.0`)}</p>
-              <p className={`${inter.className} text-red text-[50px] font-bold`}>5520</p>
+              <p className={`${inter.className} text-red text-[50px] font-bold`}>6805</p>
             </div>
 
             <p className="text-lg text-grey text-center md:text-left">{t(`hero_text.1`)}</p>
