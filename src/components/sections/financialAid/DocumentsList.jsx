@@ -57,6 +57,9 @@ const DocumentsList = ({ documents, button, link }) => {
             {currentDocument.points.map((el, index) => (
               <ListItem item={el} gap={5} key={el} />
             ))}
+            {currentDocument.additional_text && (
+              <p className="text-sm text-grey mt-5">{currentDocument.additional_text}</p>
+            )}
           </ul>
         </Modal>
       )}

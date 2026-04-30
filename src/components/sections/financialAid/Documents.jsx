@@ -66,18 +66,13 @@ const Documents = ({ locale }) => {
     {
       title: t(`docs.5.title`),
       text: t(`docs.5.text`),
-      points: [
-        t(`docs.5.points.0`),
-        t(`docs.5.points.1`),
-        t(`docs.5.points.2`),
-        t(`docs.5.points.3`),
-      ],
+      points: [t(`docs.5.points.0`), t(`docs.5.points.1`), t(`docs.5.points.2`)],
       file: "narodzhennya.pdf",
     },
     {
       title: t(`docs.6.title`),
       text: t(`docs.6.text`),
-      points: [t(`docs.6.points.0`), t(`docs.6.points.1`), t(`docs.6.points.2`)],
+      points: [t(`docs.6.points.0`), t(`docs.6.points.1`)],
       file: "yuviley.pdf",
     },
     {
@@ -90,19 +85,13 @@ const Documents = ({ locale }) => {
         t(`docs.7.points.3`),
         t(`docs.7.points.4`),
         t(`docs.7.points.5`),
-        t(`docs.7.points.6`),
       ],
       file: "ozdorovlenna-dytyny.pdf",
     },
     {
       title: t(`docs.8.title`),
       text: t(`docs.8.text`),
-      points: [
-        t(`docs.8.points.0`),
-        t(`docs.8.points.1`),
-        t(`docs.8.points.2`),
-        t(`docs.8.points.3`),
-      ],
+      points: [t(`docs.8.points.0`), t(`docs.8.points.1`), t(`docs.8.points.2`)],
       file: "ubd.pdf",
     },
     {
@@ -126,13 +115,14 @@ const Documents = ({ locale }) => {
     {
       title: t(`docs.12.title`),
       text: t(`docs.12.text`),
-      points: [t(`docs.12.points.0`), t(`docs.12.points.0`), t(`docs.12.points.0`)],
+      points: [t(`docs.12.points.0`), t(`docs.12.points.1`), t(`docs.12.points.2`)],
+      additional_text: t(`docs.12.additional_text`),
       file: "vpo.pdf",
     },
     {
       title: t(`docs.13.title`),
       text: t(`docs.13.text`),
-      points: [t(`docs.13.points.0`), t(`docs.13.points.1`), t(`docs.13.points.2`)],
+      points: [t(`docs.13.points.0`), t(`docs.13.points.1`)],
       file: "other.pdf",
     },
   ];

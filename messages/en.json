@@ -1258,7 +1258,7 @@
     "conditions_term_first_term": "6 months",
     "conditions_term_first_text": [
       "Financial aid is provided to employees who",
-      "are members of the Trade Union",
+      "are members of the Trade Union ",
       "(are registered) and pay monthly membership fees for more than 6 (six) calendar months."
     ],
     "conditions_term_second_term": "12 months",
@@ -1286,7 +1286,7 @@
     "docs_modal_link": "Download the application",
     "docs": [
       {
-        "title": "Treatment of illness of a Trade Union member",
+        "title": "Treatment of a Trade Union Member",
         "text": "50% of confirmed expenses, but not more than UAH 6,000",
         "points": [
           "Application from the trade union member;",
@@ -1341,9 +1341,8 @@
         "text": "from UAH 1750 to UAH 3500",
         "points": [
           "Application from the trade union member;",
-          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
-          "copy of the child's birth certificate",
-          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+          "A copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "Copy of the child's birth certificate"
         ]
       },
       {
@@ -1351,8 +1350,7 @@
         "text": "from 1250 to 2500 UAH",
         "points": [
           "Statement of the head of the primary trade union organization or jubilee;",
-          "a copy of the passport and identification code of a member of the Trade Union receiving material assistance;",
-          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+          "A copy of the passport and identification code of a member of the Trade Union receiving material assistance;"
         ]
       },
       {
@@ -1361,12 +1359,11 @@
         "health_text": "up to UAH 3000",
         "points": [
           "Application from the trade union member;",
-          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
-          "copy of the child's birth certificate;",
-          "a copy of the voucher form or a copy of the referral for rehabilitation;",
-          "copy of medical certificate form No. 079/o;",
-          "originals of fiscal checks for the payment of the trip, or bank payment orders;",
-          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+          "A copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "Copy of the child's birth certificate;",
+          "A copy of the voucher form or a copy of the referral for rehabilitation;",
+          "Copy of medical certificate form No. 079/o;",
+          "Originals of fiscal checks for the payment of the trip, or bank payment orders;"
         ]
       },
       {
@@ -1375,18 +1372,17 @@
         "health_text": "up to UAH 2500",
         "points": [
           "Application from the trade union member;",
-          "a copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
-          "copies of documents confirming the participation of a member of the Trade Union in ATO or OOS (certificate of a participant in hostilities of the established model);",
-          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+          "A copy of the applicant's passport and identification code/a copy of the passport in the form of an ID card;",
+          "Copies of documents confirming the participation of a member of the Trade Union in ATO or OOS (certificate of a participant in hostilities of the established model);"
         ]
       },
       {
         "title": "Trip",
         "text": "For health improvement",
         "points": [
-          "copy of passport and identification code/copy of passport in the form of an ID card;",
-          "excerpt from the leave order/copy of the application for leave with a manager's visa;",
-          "a copy of the receipt for the payment of part of the ticket price"
+          "Copy of passport and identification code/copy of passport in the form of an ID card;",
+          "Excerpt from the leave order/copy of the application for leave with a manager's visa;",
+          "A copy of the receipt for the payment of part of the ticket price"
         ]
       },
       {
@@ -1394,9 +1390,9 @@
         "text": "from UAH 1500 to UAH 3000",
         "health_text": "up to UAH 3000",
         "points": [
-          "a copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
-          "a copy of the certificate on the circumstances of the injury/injury;",
-          "a screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
+          "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
+          "A copy of the certificate on the circumstances of the injury/injury;",
+          "A screenshot of the bank details from the application (or a copy of the certificate from the bank) indicating the account IBAN"
         ]
       },
       {
@@ -1415,22 +1411,23 @@
           "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
           "A copy of the certificate on the temporary registration of the place of residence or stay of a member of the Trade Union;",
           "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
-        ]
+        ],
+        "additional_text": "* Assistance is not granted based on a screenshot from the 'Diia' mobile application, as such a format of document has no legal validity."
       },
       {
         "title": "Other",
         "text": "from UAH 1000 to UAH 5000",
         "points": [
           "A copy of the applicant's passport and identification code or a copy of the passport in the form of an ID card;",
-          "A copy of documents confirming difficult life circumstances that require compensation**;",
-          "A screen of bank details from the application (or a copy of a certificate from the bank) indicating the account IBAN"
+          "A copy of documents confirming difficult life circumstances that require compensation**;"
         ]
       }
     ],
     "template_title": ["Internal", "submission", "template"],
-    "template_text": "Send a package of documents for financial assistance using the template for internal shipments ‘Financial assistance from the Union’",
+    "template_text": "Send a package of documents for financial assistance using the template for internal shipments ‘Financial assistance from the Union’.",
+    "template_additional_text": "You can apply for financial assistance using our chatbot.",
     "points": [
-      "payment is made to the details specified by the recipient;",
+      "the payment is made to the trade union member’s salary card. You can apply for financial assistance using our chatbot;",
 
       "payment of aid is made every Friday (or the day before, if it is a public holiday);",
 
