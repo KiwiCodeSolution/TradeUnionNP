@@ -31,7 +31,7 @@ export default function FinancialAidPage({ params }) {
   return (
     <main className="w-full">
       <HeroFinancialAidPage />
-      <Graph />
+      <Graph locale={params.locale} />
       <Conditions />
       <Limitation />
       <Documents locale={params.locale} />
