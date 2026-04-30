@@ -27,6 +27,7 @@ const Template = () => {
             <span className="text-red"> {t(`template_title.1`)}</span> {t(`template_title.2`)}
           </Title>
           <p className="text-lg text-grey mb-4 md:mb-0">{t(`template_text`)}</p>
+          <p className="text-lg text-grey mb-4 md:mb-0">{t(`template_additional_text`)}</p>
         </div>
         <ul
           className="w-full md:w-1/2 flex flex-col gap-y-4 bg-white rounded-2xl px-9 py-6
