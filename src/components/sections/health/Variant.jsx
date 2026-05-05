@@ -6,7 +6,7 @@ import CardTablet from "@/images/health/card_tablet.png";
 const Variant = ({ variant }) => {
   return (
     <ul className="relative">
-      <li className="w-full h-fit xl:h-full rounded-[20px] flex flex-col overflow-hidden shadow-standardShadow relative md:hidden xl:flex">
+      <li className="w-full h-fit xl:h-full xl:max-w-[384px] rounded-[20px] flex flex-col overflow-hidden shadow-standardShadow relative md:hidden xl:flex">
         <div className="w-full h-[45px] bg-bgBlack bg-opacity-40 flex items-center justify-center">
           <h3 className="text-white font-medium">{variant.period}</h3>
         </div>

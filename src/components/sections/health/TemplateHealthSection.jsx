@@ -27,6 +27,7 @@ const TemplateHealthSection = () => {
             {t("template_subtitle.0")}
             <strong>{t("template_subtitle.1")}</strong>
           </p>
+          <p className="text-grey text-lg mb-8 xl:mb-0">{t("template_desc")}</p>
         </div>
         <ul className="w-full xl:w-1/2 bg-white rounded-[20px] py-[15px] px-[30px] flex flex-col gap-y-4">
           {points.map(el => (

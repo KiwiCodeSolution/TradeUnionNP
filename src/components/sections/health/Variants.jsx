@@ -35,6 +35,16 @@ const Variants = () => {
       title: t("childrenRehabilitation.title"),
       text: [t("childrenRehabilitation.text.0"), t("childrenRehabilitation.text.1")],
     },
+    {
+      period: t("periods.as_needed"),
+      title: t("treatment.title"),
+      text: [t("treatment.text.0")],
+    },
+    {
+      period: t("periods.as_needed"),
+      title: t("treatmentRelative.title"),
+      text: [t("treatmentRelative.text.0")],
+    },
   ];
   return (
     <BaseSection style={"bg-health-gradient pt-5 xl:pt-9 pb-4 xl:pb-[60px]"}>
@@ -44,7 +54,7 @@ const Variants = () => {
           {t("variant_title.0")}
           <span className="text-red">{t("variant_title.1")}</span>
         </Title>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-6 gap-y-6 mb-[74px] xl:mb-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-6 mb-[74px] xl:mb-0">
           {variants.map(el => (
             <Variant key={el.title} variant={el} />
           ))}
