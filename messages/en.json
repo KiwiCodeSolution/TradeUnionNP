@@ -1900,6 +1900,16 @@
         "aged 6 to 13 years inclusive."
       ]
     },
+    "treatment": {
+      "title": "Compensation of costs related to the treatment of a Trade Union member",
+      "text": ["Compensation of costs related to the treatment of a Trade Union member"]
+    },
+    "treatmentRelative": {
+      "title": "Compensation of costs related to the treatment of relatives",
+      "text": [
+        "Compensation of costs related to the treatment of a close relative (children, parents, spouse) of a Trade Union member;"
+      ]
+    },
     "periods": {
       "summer_winter": "annually, summer and winter",
       "october": "annually, October",
@@ -1913,12 +1923,13 @@
       "Material Assistance from the Trade Union"
     ],
     "template_points": [
-      "the payment is made to a card, the details of which are provided by a member of the Trade Union;",
+      "payment is made to the salary card of the Trade Union member.;",
       "the payment of benefits is made every Friday (or the day before, if it is a holiday);",
       "if we have any questions regarding the documents, we will definitely contact you;",
       "in the event of a refusal to pay the benefit, you will definitely receive feedback with the reason for the refusal;",
       "if you have additional questions, contact the Head of the Trade Union Branch."
     ],
+    "template_desc": "You can apply for financial assistance using our chatbot",
     "quantity_title": ["Number ", "of vouchers issued"],
     "places_title": ["Pensions ", "selected for vacation packages"],
     "places_subtitle": [
@@ -1937,7 +1948,7 @@
       "he union pays 80% of the cost of the trip, and the union member must pay 20% of the cost of the trip, round-trip travel, and personal expenses."
     ],
     "participation_rules": [
-      "joined the Trade Union at least a year before the start of the project;",
+      "joined the Trade Union at least one year before the date of submission of the application for participation in the draw;",
       "continuously pay dues to the Trade Union throughout the year;",
       "did not receive financial assistance during the last year prior to the draw (exceptions are UBD, anniversary benefits, burial benefits, and newly introduced financial assistance for wartime);",
       "have not received travel vouchers for the past four years."
