@@ -4,10 +4,6 @@ import RatingComponent from "./Rating";
 import { BaseURLImage } from "@/constants/BaseUrl";
 
 const ReviewCard = ({ review }) => {
-  console.log("review", review.image);
-
-  console.log("imageUrl", review.image);
-
   return (
     <article className="w-full md:w-[310px] xl:w-[560px] h-fit bg-white shadow-lg rounded-[32px] p-6 mx-auto flex flex-col gap-y-3 relative overflow-hidden">
       <div className="w-full h-[252px] xl:h-[471px] rounded-[20px] overflow-hidden">
