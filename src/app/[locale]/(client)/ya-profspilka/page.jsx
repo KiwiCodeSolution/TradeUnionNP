@@ -1,6 +1,10 @@
 import ContactSection from "@/components/sections/contactForm/ContactSection";
+import AboutITrade from "@/components/sections/iTradeUnion/AboutITrade";
 import Advantages from "@/components/sections/iTradeUnion/Advantages";
+import Channels from "@/components/sections/iTradeUnion/Channels";
+import ContactUs from "@/components/sections/iTradeUnion/ContactUs";
 import HeroITradeSection from "@/components/sections/iTradeUnion/HeroITradeSection";
+import HeroITradeSectionNew from "@/components/sections/iTradeUnion/HeroITradeSectionNew";
 import Invite from "@/components/sections/iTradeUnion/Invite";
 import ReviewsITrade from "@/components/sections/iTradeUnion/ReviewsITrade";
 import Subscription from "@/components/sections/iTradeUnion/Subscription";
@@ -38,18 +42,24 @@ async function fetchContacts() {
   return res.json();
 }
 
-export default async function TradeUnionistPage() {
+export default async function TradeUnionistPage({ params: { locale } }) {
   const contacts = await fetchContacts();
   const [{ _id, __v, ...initialContacts }] = contacts;
+
   return (
     <main className="w-full">
-      <HeroITradeSection />
-      <Advantages />
-      <ContactSection bgStyle={"bg-white"} />
-      <TellUs contacts={initialContacts} />
-      <ReviewsITrade />
-      <Invite />
-      <Subscription contacts={initialContacts} />
+      {/* <HeroITradeSection /> */}
+      <HeroITradeSectionNew />
+      <AboutITrade />
+      {initialContacts && <Channels contacts={initialContacts} />}
+      <ContactUs locale={locale} />
+
+      {/* <Advantages /> */}
+      {/* <ContactSection bgStyle={"bg-white"} /> */}
+      {/* <TellUs contacts={initialContacts} /> */}
+      {/* <ReviewsITrade /> */}
+      {/* <Invite /> */}
+      {/* <Subscription contacts={initialContacts} /> */}
     </main>
   );
 }
