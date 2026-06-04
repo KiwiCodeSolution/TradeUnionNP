@@ -1,0 +1,36 @@
+import { useTranslations } from "next-intl";
+import { VbIcon } from "./icons/IconsComponents";
+
+export default function TickerViber({ href = "https://chats.viber.com/profspilka_np" }) {
+  const t = useTranslations("BotsTexts");
+
+  const MESSAGES = [t("viber_header.0"), t("viber_header.1"), t("viber_header.2")];
+
+  const ITEMS = [...MESSAGES, ...MESSAGES];
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Перейти до Viber-бота Профспілки"
+      className="flex items-center w-full h-[38px] overflow-hidden bg-[#7360F2] no-underline cursor-pointer hover:brightness-90 group"
+    >
+      <div
+        aria-hidden="true"
+        className="flex whitespace-nowrap will-change-transform animate-ticker-right group-hover:[animation-play-state:paused]"
+        style={{ animationDuration: "58s" }}
+      >
+        {ITEMS.map((text, i) => (
+          <span
+            key={i}
+            className="inline-flex items-center gap-[10px] px-7 text-[13px] font-semibold text-white tracking-[0.01em]"
+          >
+            <VbIcon />
+            {text}
+            <span className="inline-block w-[5px] h-[5px] rounded-full bg-white/40 ml-[18px] shrink-0" />
+          </span>
+        ))}
+      </div>
+    </a>
+  );
+}

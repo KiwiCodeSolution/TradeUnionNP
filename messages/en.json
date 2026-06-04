@@ -2210,5 +2210,19 @@
     "regular_btn": "Donate now",
     "history_title": ["Stories", " of our union members"],
     "currency": "UAH"
+  },
+  "BotsTexts": {
+    "telegram_header": [
+      "Trade Union on Telegram — subscribe and stay informed!",
+      "Have a question? Write to our Telegram bot — we will answer quickly",
+      "News, rights, support — everything in our Telegram"
+    ],
+    "viber_header": [
+      "Trade Union on Viber — communicate conveniently and get support!",
+      "Write to our Viber bot — we will answer and help",
+      "Stay in touch with the Trade Union via Viber"
+    ],
+    "telegram-bot_text": "Telegram-bot",
+    "viber-bot_text": " Viber-bot"
   }
 }

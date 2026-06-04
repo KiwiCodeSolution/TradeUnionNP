@@ -47,11 +47,26 @@ module.exports = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        tickerLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        tickerRight: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        pulseRing: {
+          "0%": { boxShadow: "0 0 0 0 rgba(237,28,36,0.4)" },
+          "100%": { boxShadow: "0 0 0 14px rgba(204, 0, 0, 0)" },
+        },
       },
       animation: {
         "hero-slide-in": "hero-slide-in 10s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
         hand: "hand 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards",
         text: "text 3s cubic-bezier(0.25, 0.1, 0.25, 1)",
+        "ticker-left": "tickerLeft linear infinite",
+        "ticker-right": "tickerRight linear infinite",
+        "pulse-ring": "pulseRing 2.2s ease-out infinite",
       },
       boxShadow: {
         btnMain: "0px 0px 16px 0px rgba(39,76,91,1)",

@@ -10,6 +10,8 @@ import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
 import RunningLineChatBot from "@/components/UI/RunningLineChatBot";
 import MenuMobile from "./MenuMobile";
 import NavBar from "./NavBar";
+import TickerTelegram from "@/components/TickerTelegram";
+import TickerViber from "@/components/TickerViber";
 
 const Menu = ({ locale }) => {
   const t = useTranslations("Root");
@@ -43,7 +45,9 @@ const Menu = ({ locale }) => {
         </div>
         <SearchInput size={"mobile"} />
       </div>
-      <RunningLineChatBot locale={locale} />
+      {/* <RunningLineChatBot locale={locale} /> */}
+      <TickerTelegram href="https://t.me/PROFSPILKA_NP_BOT" />
+      <TickerViber href="https://chats.viber.com/profspilka_np" />
     </>
   );
 };

@@ -2,12 +2,14 @@ import Analytics from "@/components/Analytics";
 import Header from "@/components/Header.jsx";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/sections/footer/Footer";
-import UpButton from "@/components/UI/buttons/UpButton";
+
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { Toaster } from "react-hot-toast";
 import { roboto } from "./fonts";
 import "./globals.css";
+
+import ButtonsWrapper from "@/components/ButtonsWrapper";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -48,14 +50,14 @@ export default async function RootLayout({ children, params: { locale } }) {
 
               {/* Контейнер для основного контенту */}
               <div className="flex-grow">{children}</div>
-
+              <ButtonsWrapper locale={locale} />
               <Footer locale={locale} />
-              <UpButton />
             </div>
             <Toaster />
             <div id="modal-root"></div>
           </NextIntlClientProvider>
         </Providers>
+        s
       </body>
     </html>
   );
