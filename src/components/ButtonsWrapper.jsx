@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import FloatContact from "./FloatContact";
 import UpButton from "./UI/buttons/UpButton";
 
-const ButtonsWrapper = ({ locale }) => {
+const ButtonsWrapper = ({ locale, contacts }) => {
   const t = useTranslations("BotsTexts");
   const tgTitle = t("telegram-bot_text");
   const vbTitle = t("viber-bot_text");
@@ -12,7 +12,7 @@ const ButtonsWrapper = ({ locale }) => {
       role="region"
       aria-label="Зв'язок з ботами та кнопка для прокрутки вгору"
     >
-      <FloatContact tgTitle={tgTitle} vbTitle={vbTitle} />
+      <FloatContact tgTitle={tgTitle} vbTitle={vbTitle} contacts={contacts} />
       <UpButton />
     </div>
   );

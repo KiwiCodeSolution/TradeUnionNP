@@ -5,8 +5,7 @@ import { IconChat, IconClose, IconTelegram, VbIcon } from "./icons/IconsComponen
 import { StoreProvider } from "@/store/StoreProvider";
 import { useBotLinks } from "@/hooks/useBotLinks";
 
-const FloatContactComponent = ({ tgTitle, vbTitle }) => {
-  const { telegram, viber } = useBotLinks();
+const FloatContactComponent = ({ tgTitle, vbTitle, contacts }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -29,7 +28,7 @@ const FloatContactComponent = ({ tgTitle, vbTitle }) => {
         </span>
 
         <a
-          href={telegram}
+          href={contacts.telegrambot ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Telegram-бот Профспілки"
@@ -54,7 +53,7 @@ const FloatContactComponent = ({ tgTitle, vbTitle }) => {
         </span>
 
         <a
-          href={viber}
+          href={contacts.viberbot ?? "#"}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Viber-бот Профспілки"
@@ -90,10 +89,14 @@ const FloatContactComponent = ({ tgTitle, vbTitle }) => {
   );
 };
 
-export default function FloatContact({ tgTitle = "Telegram-бот", vbTitle = "Viber-бот" }) {
+export default function FloatContact({
+  tgTitle = "Telegram-бот",
+  vbTitle = "Viber-бот",
+  contacts,
+}) {
   return (
     <StoreProvider>
-      <FloatContactComponent tgTitle={tgTitle} vbTitle={vbTitle} />
+      <FloatContactComponent tgTitle={tgTitle} vbTitle={vbTitle} contacts={contacts} />
     </StoreProvider>
   );
 }
