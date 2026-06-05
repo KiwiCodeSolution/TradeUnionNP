@@ -4,7 +4,7 @@ import { VbIcon } from "./icons/IconsComponents";
 
 export default function TickerViber({ messages }) {
   const { viber } = useBotLinks();
-  const MESSAGES = [messages[0], messages[1], messages[2]];
+  const MESSAGES = [messages[0], messages[0], messages[0]];
 
   const ITEMS = [...MESSAGES, ...MESSAGES];
   return (
