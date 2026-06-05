@@ -12,12 +12,7 @@ const ButtonsWrapper = ({ locale }) => {
       role="region"
       aria-label="Зв'язок з ботами та кнопка для прокрутки вгору"
     >
-      <FloatContact
-        tgHref="https://t.me/PROFSPILKA_NP_BOT"
-        vbHref="https://chats.viber.com/profspilka_np"
-        tgTitle={tgTitle}
-        vbTitle={vbTitle}
-      />
+      <FloatContact tgTitle={tgTitle} vbTitle={vbTitle} />
       <UpButton />
     </div>
   );

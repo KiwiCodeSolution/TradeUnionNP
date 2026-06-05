@@ -7,21 +7,32 @@ import Image from "next/image";
 import LangButtons from "../../UI/buttons/LangButtons";
 import EmailAndSocLinks from "../contacts/EmailAndSocLinks";
 
-import RunningLineChatBot from "@/components/UI/RunningLineChatBot";
 import MenuMobile from "./MenuMobile";
 import NavBar from "./NavBar";
-import TickerTelegram from "@/components/TickerTelegram";
-import TickerViber from "@/components/TickerViber";
+
+import Ticker from "@/components/Ticker";
 
 const Menu = ({ locale }) => {
-  const t = useTranslations("Root");
+  const t = useTranslations();
 
   const navItems = [
-    { title: t("navBarLinks.0.title"), link: "/pro-nas" },
-    { title: t("navBarLinks.1.title"), link: "/blanky" },
-    { title: t("navBarLinks.2.title"), link: "/novyny" },
-    { title: t("navBarLinks.3.title"), link: "/foto" },
-    { title: t("navBarLinks.4.title"), link: "/kontakty" },
+    { title: t("Root.navBarLinks.0.title"), link: "/pro-nas" },
+    { title: t("Root.navBarLinks.1.title"), link: "/blanky" },
+    { title: t("Root.navBarLinks.2.title"), link: "/novyny" },
+    { title: t("Root.navBarLinks.3.title"), link: "/foto" },
+    { title: t("Root.navBarLinks.4.title"), link: "/kontakty" },
+  ];
+
+  const tgMessages = [
+    t("BotsTexts.telegram_header.0"),
+    t("BotsTexts.telegram_header.1"),
+    t("BotsTexts.telegram_header.2"),
+  ];
+
+  const vbMessages = [
+    t("BotsTexts.viber_header.0"),
+    t("BotsTexts.viber_header.1"),
+    t("BotsTexts.viber_header.2"),
   ];
 
   return (
@@ -46,8 +57,7 @@ const Menu = ({ locale }) => {
         <SearchInput size={"mobile"} />
       </div>
       {/* <RunningLineChatBot locale={locale} /> */}
-      <TickerTelegram href="https://t.me/PROFSPILKA_NP_BOT" />
-      <TickerViber href="https://chats.viber.com/profspilka_np" />
+      <Ticker tgMessages={tgMessages} vbMessages={vbMessages} />
     </>
   );
 };

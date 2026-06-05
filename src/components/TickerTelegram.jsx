@@ -1,16 +1,17 @@
-import { useTranslations } from "next-intl";
+"use client";
 import { TgIcon } from "./icons/IconsComponents";
+import { useBotLinks } from "@/hooks/useBotLinks";
 
-export default function TickerTelegram({ href = "https://t.me/PROFSPILKA_NP_BOT" }) {
-  const t = useTranslations("BotsTexts");
+export default function TickerTelegram({ messages }) {
+  const { telegram } = useBotLinks();
 
-  const MESSAGES = [t("telegram_header.0"), t("telegram_header.1"), t("telegram_header.2")];
+  const MESSAGES = [messages[0], messages[1], messages[2]];
 
   const ITEMS = [...MESSAGES, ...MESSAGES];
 
   return (
     <a
-      href={href}
+      href={telegram}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Перейти до Telegram-бота Профспілки"

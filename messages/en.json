@@ -1514,8 +1514,9 @@
         "text_accent": "sports, recreation, leisure"
       }
     ],
-    "link": "All communication channels",
-
+    "link": "Use the contact form",
+    "channels_bots_label": "Write to us - we will answer immediately",
+    "channels_socials_label": "Social networks and mail",
     "about_title": ["About the Trade Union of Employees ", "NOVA POHSTA”"],
     "about": [
       "The Trade Union of Employees of NOVA POHSTA is an association of people who ensure the daily work of one of the largest logistics companies in Ukraine and want to have a strong common voice on issues of labor, safety and fair conditions.",
@@ -1528,13 +1529,16 @@
     "channels_text": [
       "Follow news and promotions",
       "Beautiful photos and interesting stories",
-      "Delivery videos and tips",
+      "Video about the trade union and advice",
       "Quick answers and chatbot",
       "Communication and support",
       "Secure messages",
       "help@profspilka.org",
       "+38 (044) 591-11-11",
-      "Kyiv, Naberezhna st., 1"
+      "Kyiv, Naberezhna st., 1",
+      "Join our Viber community",
+      "Subscribe to our Telegram channel",
+      "More information on our website"
     ],
     "channels_subtitles": ["Social networks", "Messengers & e-mail", "Official contacts"],
     "channels": [
@@ -1546,7 +1550,10 @@
       "WhatsApp",
       "Email",
       "Phone",
-      "Head office"
+      "Head office",
+      "Viber community",
+      "Telegram channel",
+      "Our website"
     ],
     "channels_link_text": "Go",
     "advantages_title": ["Benefits", "of being a trade union member"],

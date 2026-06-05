@@ -84,7 +84,7 @@ const RegionalOffice = ({ item, locale, section, source }) => {
         <div className="w-full h-full absolute top-0 left-0 p-12 flex flex-col justify-end">
           <div className="flex flex-col gap-y-1">
             <h2 className="text-2xl font-bold leading-[1.3] text-white">{item.region}</h2>
-            <p className="flex gap-x-4 items-center text-[15px] text-white opacity-75">
+            {/* <p className="flex gap-x-4 items-center text-[15px] text-white opacity-75">
               <Image
                 src={Users}
                 width={21}
@@ -93,7 +93,7 @@ const RegionalOffice = ({ item, locale, section, source }) => {
                 className=""
               />
               Кількість членів: {item.quantity} чол.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
@@ -161,16 +161,12 @@ const RegionalOffice = ({ item, locale, section, source }) => {
               {item.application_address
                 ? item.application_address
                 : item.director
-                ? `Документи в ${pattern}у ППО`
-                : "За шаблоном внутрішніх відправлень “Матеріальна допомога від Профспілки”"}
+                  ? `Документи в ${pattern}у ППО`
+                  : "За шаблоном внутрішніх відправлень “Матеріальна допомога від Профспілки”"}
             </p>
           </div>
         </li>
-        <li
-          className={`flex flex-col pb-4 border-b-[2px] ${
-            source === "search" ? "border-white" : "border-bgGrey"
-          }`}
-        >
+        <li className={`flex flex-col pb-4 `}>
           <div className="flex items-center justify-between">
             <p className="w-4/5 text-[15px] font-bold">
               Адреса відправлення Заяв на Матеріальну допомогу:
@@ -192,7 +188,7 @@ const RegionalOffice = ({ item, locale, section, source }) => {
             </p>
           </div>
         </li>
-        <li className="flex flex-col">
+        {/* <li className="flex flex-col">
           <div className="flex items-center justify-between">
             <p className="w-4/5 text-[15px] font-bold">
               Склад Профкому {pattern + "ої"} первинної профспілкової організації:
@@ -226,7 +222,7 @@ const RegionalOffice = ({ item, locale, section, source }) => {
               )}
             </ul>
           </div>
-        </li>
+        </li> */}
       </ul>
       <div className="flex items-center bg-white">
         <a

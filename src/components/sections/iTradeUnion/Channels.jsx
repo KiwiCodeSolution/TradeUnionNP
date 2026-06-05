@@ -1,158 +1,192 @@
 import BaseSection from "@/components/BaseSection";
-
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import { Link } from "@/navigation";
-
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const LinkBlock = ({ linkText, title, channels, noLink }) => {
-  return (
-    <div className="w-full flex flex-col gap-y-4">
-      <h5 className="mb-4 text-xl font-semibold text-grey text-center xl:text-left">{title}</h5>
-      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
-        {channels.map(el => (
-          <Link
-            href={el.link}
-            key={el.id}
-            className="w-full flex flex-col items-center justify-between group hover:scale-[1.03] transform transition-all ease-linear gap-y-2 bg-white rounded-2xl px-6 py-4 border border-red/20 shadow-md"
-          >
-            <div className="w-16 h-16 rounded-full bg-red overflow-hidden flex items-center justify-center">
-              <Image src={el.icon} alt={`${el.name} icon`} width={24} height={24} />
-            </div>
-            <p className="text-xl font-semibold text-center">{el.name}</p>
-            <p className="text-grey text-center">{el.text}</p>
-            {!noLink && <p className="text-red font-semibold group-hover:scale-105">{linkText}</p>}
-          </Link>
-        ))}
-      </div>
+/* ─── Квадратна картка соцмережі з тематичним кольором ─── */
+const SocCard = ({ href, icon, name, hint, iconBg, iconColor }) => (
+  <Link
+    href={href}
+    className="flex flex-col items-center gap-2 bg-white rounded-2xl px-3 py-4
+               border border-red/10 shadow-itemShadow
+               hover:scale-[1.03] transition-all ease-linear"
+  >
+    <div
+      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+      style={{ background: iconBg }}
+    >
+      <Image src={icon} alt={name} width={20} height={20} style={{ filter: iconColor }} />
     </div>
-  );
-};
+    <p className="font-bold text-main text-center leading-tight">{name}</p>
+    <p className=" text-grey text-center">{hint}</p>
+  </Link>
+);
 
+/* ─── Широка картка (Сайт) ─── */
+const SocCardWide = ({ href, icon, name, hint, iconBg, iconColor }) => (
+  <Link
+    href={href}
+    className="flex flex-col md:flex-row items-center justify-center gap-3 bg-white rounded-2xl px-5 py-4
+               border border-red/10 shadow-itemShadow
+               hover:scale-[1.02] transition-all ease-linear"
+  >
+    <div
+      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+      style={{ background: iconBg }}
+    >
+      <Image src={icon} alt={name} width={20} height={20} style={{ filter: iconColor }} />
+    </div>
+    <div className="text-center md:text-left">
+      <p className="font-bold text-main leading-tight">{name}</p>
+      <p className=" text-grey">{hint}</p>
+    </div>
+  </Link>
+);
+
+/* ─── Великі картки ботів з тематичним кольором ─── */
+const BotCard = ({ href, icon, name, hint, bg, shadow }) => (
+  <Link
+    href={href}
+    className="flex flex-col items-center gap-2 rounded-2xl px-4 py-5
+               hover:scale-[1.03] transition-all ease-linear"
+    style={{ background: bg, boxShadow: shadow }}
+  >
+    <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+      <Image src={icon} alt={name} width={24} height={24} />
+    </div>
+    <p className="font-bold text-white text-center leading-tight">{name}</p>
+    <p className=" text-white/70 text-center">{hint}</p>
+  </Link>
+);
+
+/* ─── Label ─── */
+const SectionLabel = ({ text }) => (
+  <Title tag="h4" styles="font-bold mb-6">
+    {text}
+  </Title>
+);
+
+/* ════════════════════════════════
+   ГОЛОВНИЙ КОМПОНЕНТ
+════════════════════════════════ */
 const Channels = ({ contacts }) => {
   const t = useTranslations("I");
-  const firstChannels = [
-    {
-      id: "1111",
-      name: t(`channels.0`),
-      icon: "/images/soc-icons/facebook-white.svg",
-      link: contacts.facebook,
-      text: t(`channels_text.0`),
-    },
-    {
-      id: "1112",
-      name: t(`channels.1`),
-      icon: "/images/soc-icons/instagram-white.svg",
-      link: contacts.instagram,
-      text: t(`channels_text.1`),
-    },
-    {
-      id: "1113",
-      name: t(`channels.2`),
-      icon: "/images/soc-icons/youtube-white.svg",
-      link: contacts.youtube,
-      text: t(`channels_text.2`),
-    },
-  ];
 
-  const secondChannels = [
+  const bots = [
     {
-      id: "2111",
-      name: t(`channels.3`),
+      id: "bot-tg",
+      name: t("channels.3"),
       icon: "/images/soc-icons/telegram-white.svg",
-      link: contacts.telegram,
-      text: t(`channels_text.3`),
+      href: contacts.telegrambot ?? contacts.telegram,
+      hint: t("channels_text.3"),
+      bg: "#229ED9",
+      shadow: "0px 10px 30px 0px rgba(34,158,217,0.35)",
     },
     {
-      id: "2112",
-      name: t(`channels.4`),
+      id: "bot-vb",
+      name: t("channels.4"),
       icon: "/images/soc-icons/viber-white.svg",
-      link: contacts.viber,
-      text: t(`channels_text.4`),
+      href: contacts.viberbot ?? contacts.viber,
+      hint: t("channels_text.4"),
+      bg: "#7360F2",
+      shadow: "0px 10px 30px 0px rgba(115,96,242,0.35)",
+    },
+  ];
+
+  // FB, IG, Viber-спільнота, Telegram-канал, Email, YouTube
+  const socials = [
+    {
+      id: "soc-fb",
+      name: t("channels.0"),
+      icon: "/images/soc-icons/facebook-white.svg",
+      href: contacts.facebook,
+      hint: t("channels_text.0"),
+      iconBg: "#1877F2",
+      iconColor: "none", // білий svg
     },
     {
-      id: "3111",
-      name: t(`channels.6`),
+      id: "soc-ig",
+      name: t("channels.1"),
+      icon: "/images/soc-icons/instagram-white.svg",
+      href: contacts.instagram,
+      hint: t("channels_text.1"),
+      iconBg: "linear-gradient(135deg, #FFDC80 0%, #F77737 30%, #C13584 65%, #833AB4 100%)",
+      iconColor: "none",
+    },
+    {
+      id: "soc-vbc",
+      name: t("channels.9"),
+      icon: "/images/soc-icons/viber-white.svg",
+      href: contacts.viber_community ?? contacts.viber,
+      hint: t("channels_text.9"),
+      iconBg: "#7360F2",
+      iconColor: "none",
+    },
+    {
+      id: "soc-tg",
+      name: t("channels.10"),
+      icon: "/images/soc-icons/telegram-white.svg",
+      href: contacts.telegram,
+      hint: t("channels_text.10"),
+      iconBg: "#229ED9",
+      iconColor: "none",
+    },
+    {
+      id: "soc-em",
+      name: t("channels.6"),
       icon: "/images/mail-white.svg",
-      link: "mailto:" + contacts.mail,
-      text: contacts.mail,
+      href: "mailto:" + contacts.mail,
+      hint: contacts.mail,
+      iconBg: "#34A853",
+      iconColor: "none",
+    },
+    {
+      id: "soc-yt",
+      name: t("channels.2"),
+      icon: "/images/soc-icons/youtube-white.svg",
+      href: contacts.youtube,
+      hint: t("channels_text.2"),
+      iconBg: "#FF0000",
+      iconColor: "none",
     },
   ];
 
-  const thirdChannels = [
-    {
-      id: "2113",
-      name: t(`channels.5`),
-      icon: "/images/whatsapp-white.svg",
-      link: contacts.whatsapp ?? "#",
-      text: t(`channels_text.5`),
-    },
-    {
-      id: "3112",
-      name: t(`channels.7`),
-      icon: "/images/phone-white.svg",
-      link: contacts.phone ?? "+380445911111",
-      text: contacts.phone ?? "+38 (044) 591-11-11",
-    },
-    {
-      id: "3113",
-      name: t(`channels.8`),
-      icon: "/images/location-white.svg",
-      link: "#",
-      text: t(`channels_text.8`),
-    },
-  ];
-
-  const channelsTitles = [
-    t(`channels_subtitles.0`),
-    t(`channels_subtitles.1`),
-    t(`channels_subtitles.2`),
-  ];
-  const title = t(`channels_title`)
-    .split(" ")
-    .map((word, index) => {
-      if (index === 0) {
-        return (
-          <span key={index} className="text-red">
-            {word}{" "}
-          </span>
-        );
-      }
-      return word + " ";
-    });
   return (
-    <BaseSection style={"py-16 bg-bgGrey"} id={"channels"}>
-      <div className="absolute top-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-bgGrey to-white" />{" "}
+    <BaseSection style="py-16 bg-bgGrey" id="channels">
+      <div className="absolute top-0 h-64 left-0 right-0 z-[5] bg-gradient-to-t from-bgGrey to-white" />
       <div className="absolute bottom-0 h-64 left-0 right-0 z-[5] bg-gradient-to-b from-bgGrey to-white" />
-      <Wrapper styles={"relative mt-5 z-[10]"}>
-        <Title tag={"h2"} styles={"text-center"}>
-          {title}
-        </Title>
-        <Title tag={"h3"} styles={"text-center mt-4"}>
-          {t(`channels_subtitle`)}
-        </Title>
-        <div className="w-full flex flex-col gap-y-6 xl:gap-y-10 mt-9 xl:mt-12 pb-4">
-          <LinkBlock
-            linkText={t(`channels_link_text`)}
-            title={channelsTitles[0]}
-            channels={firstChannels}
-          />
-          <LinkBlock
-            linkText={t(`channels_link_text`)}
-            title={channelsTitles[1]}
-            channels={secondChannels}
-          />
-          {/* <LinkBlock
-            linkText={t(`channels_link_text`)}
-            title={channelsTitles[2]}
-            channels={thirdChannels}
-            noLink
-          /> */}
+
+      <Wrapper styles="relative mt-5 z-[10]">
+        {/* Боти */}
+        <SectionLabel text={t("channels_bots_label")} />
+        <div className="grid grid-cols-2 gap-3 md:gap-6 mb-10">
+          {bots.map(b => (
+            <BotCard key={b.id} {...b} />
+          ))}
         </div>
+
+        {/* Соцмережі 3×2 */}
+        <SectionLabel text={t("channels_socials_label")} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] mb-[10px] md:gap-4 md:mb-4">
+          {socials.map(s => (
+            <SocCard key={s.id} {...s} />
+          ))}
+        </div>
+
+        {/* Сайт — широка картка */}
+        <SocCardWide
+          href="https://profspilka.org/uk"
+          icon="/images/site-icon-white.svg"
+          name={t("channels.11")}
+          hint="profspilka.org"
+          iconBg="#1A5FCC"
+          iconColor="none"
+        />
       </Wrapper>
     </BaseSection>
   );
 };
+
 export default Channels;

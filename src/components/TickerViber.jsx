@@ -1,15 +1,15 @@
-import { useTranslations } from "next-intl";
+"use client";
+import { useBotLinks } from "@/hooks/useBotLinks";
 import { VbIcon } from "./icons/IconsComponents";
 
-export default function TickerViber({ href = "https://chats.viber.com/profspilka_np" }) {
-  const t = useTranslations("BotsTexts");
-
-  const MESSAGES = [t("viber_header.0"), t("viber_header.1"), t("viber_header.2")];
+export default function TickerViber({ messages }) {
+  const { viber } = useBotLinks();
+  const MESSAGES = [messages[0], messages[1], messages[2]];
 
   const ITEMS = [...MESSAGES, ...MESSAGES];
   return (
     <a
-      href={href}
+      href={viber}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Перейти до Viber-бота Профспілки"
