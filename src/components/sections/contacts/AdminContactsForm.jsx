@@ -20,7 +20,7 @@ const AdminContactsForm = ({ initialContacts }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-
+    console.log(contacts);
     try {
       const res = await updateContacts(contacts, token);
 
@@ -104,9 +104,18 @@ const AdminContactsForm = ({ initialContacts }) => {
           <p className="text-xl text-main font-semibold">Telegram</p>
           {renderField("Telegram", "telegram", contacts.telegram)}
         </div>
+
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">TelegramBot</p>
+          {renderField("TelegramBot", "telegrambot", contacts.telegrambot)}
+        </div>
         <div className="flex flex-col gap-y-2">
           <p className="text-xl text-main font-semibold">Facebook</p>
           {renderField("Facebook", "facebook", contacts.facebook)}
+        </div>
+        <div className="flex flex-col gap-y-2">
+          <p className="text-xl text-main font-semibold">ViberBot</p>
+          {renderField("ViberBot", "viberbot", contacts.viberbot)}
         </div>
         <div className="flex flex-col gap-y-2">
           <p className="text-xl text-main font-semibold">Viber</p>

@@ -8,7 +8,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 const ContactUs = ({ locale }) => {
-  console.log("ContactUs component rendered with locale:", locale);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -87,6 +86,7 @@ const ContactUs = ({ locale }) => {
       className={
         "bg-white w-full pt-2 md:pt-6 xl:pt-[100px] pb-[40px] md:pb-[100px] xl:pb-20 relative"
       }
+      id="contactform"
     >
       <Wrapper>
         <Title tag={"h2"} styles={"text-center mb-8"}>

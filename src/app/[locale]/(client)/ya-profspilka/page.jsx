@@ -50,7 +50,7 @@ export default async function TradeUnionistPage({ params: { locale } }) {
     <main className="w-full">
       {/* <HeroITradeSection /> */}
       <HeroITradeSectionNew />
-      <AboutITrade />
+      {/* <AboutITrade /> */}
       {initialContacts && <Channels contacts={initialContacts} />}
       <ContactUs locale={locale} />
 
