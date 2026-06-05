@@ -1,15 +1,14 @@
 "use client";
-import { useBotLinks } from "@/hooks/useBotLinks";
+
 import { VbIcon } from "./icons/IconsComponents";
 
-export default function TickerViber({ messages }) {
-  const { viber } = useBotLinks();
+export default function TickerViber({ messages, link }) {
   const MESSAGES = [messages[0], messages[0], messages[0]];
 
   const ITEMS = [...MESSAGES, ...MESSAGES];
   return (
     <a
-      href={viber}
+      href={link || "#"}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Перейти до Viber-бота Профспілки"

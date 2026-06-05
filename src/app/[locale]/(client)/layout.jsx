@@ -10,6 +10,7 @@ import { roboto } from "./fonts";
 import "./globals.css";
 
 import ButtonsWrapper from "@/components/ButtonsWrapper";
+import { BaseURL } from "@/constants/BaseUrl";
 
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({ locale });
@@ -36,8 +37,21 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
+async function fetchContacts() {
+  const res = await fetch(`${BaseURL}contacts`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch contacts");
+  }
+
+  return res.json();
+}
+
 export default async function RootLayout({ children, params: { locale } }) {
   const messages = await getMessages();
+
+  const contacts = await fetchContacts();
+  const [{ _id, __v, ...initialContacts }] = contacts;
 
   return (
     <html lang={locale} className="h-full">
@@ -46,11 +60,11 @@ export default async function RootLayout({ children, params: { locale } }) {
         <Providers>
           <NextIntlClientProvider messages={messages}>
             <div className="flex flex-col min-h-screen ">
-              <Header locale={locale} />
+              <Header locale={locale} contacts={initialContacts} />
 
               {/* Контейнер для основного контенту */}
               <div className="flex-grow">{children}</div>
-              <ButtonsWrapper locale={locale} />
+              <ButtonsWrapper locale={locale} contacts={initialContacts} />
               <Footer locale={locale} />
             </div>
             <Toaster />

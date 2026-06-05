@@ -1,17 +1,13 @@
-"use client";
 import { TgIcon } from "./icons/IconsComponents";
-import { useBotLinks } from "@/hooks/useBotLinks";
 
-export default function TickerTelegram({ messages }) {
-  const { telegram } = useBotLinks();
-
+export default function TickerTelegram({ messages, link }) {
   const MESSAGES = [messages[0], messages[0], messages[0]];
 
   const ITEMS = [...MESSAGES, ...MESSAGES];
 
   return (
     <a
-      href={telegram}
+      href={link || "#"}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Перейти до Telegram-бота Профспілки"

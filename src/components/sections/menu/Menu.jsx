@@ -12,7 +12,7 @@ import NavBar from "./NavBar";
 
 import Ticker from "@/components/Ticker";
 
-const Menu = ({ locale }) => {
+const Menu = ({ locale, contacts }) => {
   const t = useTranslations();
 
   const navItems = [
@@ -49,7 +49,7 @@ const Menu = ({ locale }) => {
         <SearchInput size={"mobile"} />
       </div>
       {/* <RunningLineChatBot locale={locale} /> */}
-      <Ticker tgMessages={tgMessages} vbMessages={vbMessages} />
+      <Ticker tgMessages={tgMessages} vbMessages={vbMessages} contacts={contacts} />
     </>
   );
 };

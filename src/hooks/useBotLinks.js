@@ -4,7 +4,7 @@ import { useStore } from "@/store/StoreProvider";
 
 const DEFAULT_BOT_LINKS = {
   telegram: "https://t.me/PROFSPILKA_NP_BOT",
-  viber: "https://chats.viber.com/profspilka_np",
+  viber: "https://viber.com/profspilka_np",
 };
 
 export function useBotLinks() {
