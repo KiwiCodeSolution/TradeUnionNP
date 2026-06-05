@@ -23,17 +23,9 @@ const Menu = ({ locale }) => {
     { title: t("Root.navBarLinks.4.title"), link: "/kontakty" },
   ];
 
-  const tgMessages = [
-    t("BotsTexts.telegram_header.0"),
-    t("BotsTexts.telegram_header.1"),
-    t("BotsTexts.telegram_header.2"),
-  ];
+  const tgMessages = [t("BotsTexts.telegram_header.0")];
 
-  const vbMessages = [
-    t("BotsTexts.viber_header.0"),
-    t("BotsTexts.viber_header.1"),
-    t("BotsTexts.viber_header.2"),
-  ];
+  const vbMessages = [t("BotsTexts.viber_header.0")];
 
   return (
     <>
