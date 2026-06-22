@@ -11,7 +11,7 @@ export default async function ClientHome({ params }) {
   return (
     <main className="flex flex-col relative min-h-[2000px]">
       <HeroHomePage />
-      <FinancialAid />
+      {/* <FinancialAid /> */}
       <Values />
       <CollectiveAgreement />
       <DirectionsWork locale={params.locale} />

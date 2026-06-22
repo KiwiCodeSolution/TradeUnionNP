@@ -11,7 +11,7 @@ import ListItem from "@/components/UI/items/ListItem";
 
 const HeroFinancialAidPage = () => {
   const t = useTranslations("Financial_Aid");
-  const ITEMS = Array.from({ length: 13 }, (_, index) => `list.${index}`);
+  const ITEMS = Array.from({ length: 12 }, (_, index) => `list.${index}`);
   return (
     <BaseSection style={"pb-20"}>
       <Wrapper>

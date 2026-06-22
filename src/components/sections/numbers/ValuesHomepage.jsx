@@ -7,7 +7,7 @@ import BaseSection from "@/components/BaseSection";
 
 const Values = () => {
   return (
-    <BaseSection style="min-h-[1023px]">
+    <BaseSection style="min-h-[1023px] mt-10 lg:mt-20">
       <Wrapper styles={"flex flex-col md:flex-row"}>
         <Image
           src={BgImages}
