@@ -6,7 +6,7 @@ import ListItem from "@/components/UI/items/ListItem";
 
 const DirectionsWorkItem = ({ item, index, locale }) => {
   const t = useTranslations("HomePage.directions");
-  const ITEMS = Array.from({ length: 13 }, (_, idx) => `items.${index}.list.${idx}`);
+  const ITEMS = Array.from({ length: 12 }, (_, idx) => `items.${index}.list.${idx}`);
 
   return (
     <article
