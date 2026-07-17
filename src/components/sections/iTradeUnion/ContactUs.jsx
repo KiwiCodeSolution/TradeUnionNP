@@ -12,6 +12,7 @@ const ContactUs = ({ locale }) => {
     name: "",
     email: "",
     message: "",
+    website: "", // honeypot - людина це поле не бачить і не заповнює
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,7 +50,7 @@ const ContactUs = ({ locale }) => {
   };
 
   const resetForm = () => {
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", email: "", message: "", website: "" });
     setErrors({});
   };
 
@@ -185,6 +186,18 @@ const ContactUs = ({ locale }) => {
               </span>
             )}
           </div>
+
+          {/* honeypot: приховане від людей поле-пастка для ботів */}
+          <input
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute -left-[9999px] opacity-0 pointer-events-none"
+          />
 
           <Button view="red" btnType="submit" style={"mx-auto mt-4"} icon disabled={isSubmitting}>
             {isSubmitting
