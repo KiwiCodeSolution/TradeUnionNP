@@ -1696,6 +1696,7 @@
     "cta_text_before": "Надішліть своє питання на ",
     "cta_text_middle": " або скористайтесь ",
     "cta_chatbot_label": "чат-ботом",
+    "cta_chatbot_button": "чат-бот",
     "faq": [
       {
         "title": ["Розшифрування", "заробітної плати"],

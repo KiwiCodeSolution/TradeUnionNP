@@ -45,7 +45,7 @@ const AppealTypes = () => {
             ))}
           </div>
 
-          <div className="w-full md:w-2/3 bg-white rounded-2xl md:rounded-tsl-none p-6 md:p-10 flex flex-col gap-y-5">
+          <div className="w-full md:w-2/3 bg-white rounded-2xl md:rounded-tl-none p-6 md:p-10 flex flex-col gap-y-5">
             <p className="text-lg text-grey">{active.text}</p>
             <p className="text-lg font-bold text-black-100">{active.term}</p>
             <div>

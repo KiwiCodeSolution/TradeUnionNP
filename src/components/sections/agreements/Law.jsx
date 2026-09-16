@@ -29,7 +29,7 @@ const Law = ({ page }) => {
             </>
           )}
         </Title>
-        <div className="grid rid-grid-cols-1 md:grid-cols-2 gap-4 z-[1]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 z-[1]">
           {data.map((el, index) => (
             <LawItem
               key={el + 25}

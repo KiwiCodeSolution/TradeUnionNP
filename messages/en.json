@@ -1732,6 +1732,7 @@
     "cta_text_before": "Send your question to ",
     "cta_text_middle": " or use our ",
     "cta_chatbot_label": "chatbot",
+    "cta_chatbot_button": "chatbot",
     "faq": [
       {
         "title": ["A detailed explanation", "of salary"],

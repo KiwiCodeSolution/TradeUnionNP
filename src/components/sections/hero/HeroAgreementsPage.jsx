@@ -30,8 +30,9 @@ const HeroAgreementsPage = () => {
         <div className="flex flex-col xl:flex-row mt-8 xl:mt-10 gap-6 xl:items-center justify-between">
           <a
             href={`${BaseURL}files/koldogovor.pdf`}
+            і
             target="_blank"
-            className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mx-auto xl:mb-5 mt_10 xl:mt-14"
+            className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mx-auto xl:mb-5 mt-10 xl:mt-14"
           >
             {t(`button`)}
             <Image src={Arrow} width={30} height={30} alt="іконка червоної стрілочки вправо" />

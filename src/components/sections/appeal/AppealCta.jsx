@@ -3,9 +3,8 @@ import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import Title from "@/components/Title";
 import { ChatBot } from "@/components/icons/IconsComponents";
-import SupportEmailLink from "@/components/UI/SupportEmailLink";
 
-const AppealCta = () => {
+const AppealCta = ({ email, chatBotLink }) => {
   const t = useTranslations("Appeal");
   return (
     <BaseSection style={"pb-16"}>
@@ -16,21 +15,27 @@ const AppealCta = () => {
           </Title>
           <p className="text-lg text-grey max-w-2xl">
             {t(`cta_text_before`)}
-            <SupportEmailLink className="text-red underline font-semibold" />
+            {email && (
+              <a className="text-red underline font-semibold" href={`mailto:${email}`}>
+                {email}
+              </a>
+            )}
             {t(`cta_text_middle`)}
             {t(`cta_chatbot_label`)}
           </p>
-          <a
-            href="https://t.me/PROFSPILKA_NP_BOT"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit h-[60px] rounded-[100px] border-2 border-red text-red font-bold uppercase py-[12px] px-[28px] flex items-center gap-x-2 hover:bg-red hover:text-white transition-colors"
-          >
-            <span className="w-10 h-10 [&_svg]:w-10 [&_svg]:h-10 flex items-center justify-center shrink-0">
-              <ChatBot />
-            </span>
-            {t(`cta_chatbot_label`)}
-          </a>
+          {chatBotLink && (
+            <a
+              href={chatBotLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit h-[60px] rounded-[100px] border-2 border-red text-red font-bold uppercase py-[12px] px-[28px] flex items-center gap-x-2 hover:bg-red hover:text-white transition-colors"
+            >
+              <span className="w-10 h-10 [&_svg]:w-10 [&_svg]:h-10 flex items-center justify-center shrink-0">
+                <ChatBot />
+              </span>
+              {t(`cta_chatbot_button`)}
+            </a>
+          )}
         </div>
       </Wrapper>
     </BaseSection>

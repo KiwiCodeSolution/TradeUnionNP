@@ -7,6 +7,7 @@ import Proposal from "@/components/sections/agreements/Proposal";
 import TitleAgreementsPage from "@/components/sections/agreements/TitleAgreementsPage";
 
 import HeroAgreementsPage from "@/components/sections/hero/HeroAgreementsPage";
+import { BaseURL } from "@/constants/BaseUrl";
 import law from "@/data/law.json";
 import { getTranslations } from "next-intl/server";
 
@@ -30,7 +31,19 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function CollectiveAgreementPage({ params }) {
+async function fetchContacts() {
+  const res = await fetch(`${BaseURL}contacts`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch contacts");
+  }
+
+  return res.json();
+}
+
+export default async function CollectiveAgreementPage({ params }) {
+  const [contacts] = await fetchContacts();
+
   return (
     <main className="w-full bg-bgGrey py-8 xl:py-10">
       <TitleAgreementsPage />
@@ -39,7 +52,7 @@ export default function CollectiveAgreementPage({ params }) {
       <Law data={law} page={"collective_agreement"} />
       <AboutAgreement />
       <OurAgreement />
-      <Proposal />
+      <Proposal email={contacts.mail} />
     </main>
   );
 }
