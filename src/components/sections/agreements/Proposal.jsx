@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
+import SupportEmailLink from "@/components/UI/SupportEmailLink";
 
 const Proposal = () => {
   const t = useTranslations("Collective_labour_agreement");
@@ -9,9 +10,7 @@ const Proposal = () => {
       <Wrapper>
         <p className="text-center text-lg text-black-100">
           {t(`proposal`)}
-          <a className="text-red underline font-semibold" href="mailto:help@profspilka.org">
-            help@profspilka.org
-          </a>
+          <SupportEmailLink className="text-red underline font-semibold" />
         </p>
       </Wrapper>
     </BaseSection>

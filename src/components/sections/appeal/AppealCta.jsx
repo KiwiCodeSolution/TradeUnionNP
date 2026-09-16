@@ -3,6 +3,7 @@ import BaseSection from "@/components/BaseSection";
 import Wrapper from "@/components/Wrapper";
 import Title from "@/components/Title";
 import { ChatBot } from "@/components/icons/IconsComponents";
+import SupportEmailLink from "@/components/UI/SupportEmailLink";
 
 const AppealCta = () => {
   const t = useTranslations("Appeal");
@@ -15,9 +16,7 @@ const AppealCta = () => {
           </Title>
           <p className="text-lg text-grey max-w-2xl">
             {t(`cta_text_before`)}
-            <a className="text-red underline font-semibold" href="mailto:help@profspilka.org">
-              help@profspilka.org
-            </a>
+            <SupportEmailLink className="text-red underline font-semibold" />
             {t(`cta_text_middle`)}
             {t(`cta_chatbot_label`)}
           </p>
