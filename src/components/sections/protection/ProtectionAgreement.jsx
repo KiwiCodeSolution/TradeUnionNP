@@ -10,9 +10,12 @@ import { BaseURL } from "@/constants/BaseUrl";
 const ProtectionAgreement = () => {
   const t = useTranslations("Protection");
   return (
-    <BaseSection style={"bg-white"}>
+    <BaseSection style={"bg-white pt-16 relative"}>
+      <div className="absolute h-52 left-0 right-0 bg-gradient-to-t from-white to-bgGrey z-0 top-0" />
       <Wrapper
-        styles={"flex flex-col md:flex-row items-center md:items-end xl:items-center gap-y-4"}
+        styles={
+          "flex flex-col md:flex-row items-center md:items-end xl:items-center gap-y-4 relative z-[1]"
+        }
       >
         <Image
           src={Agreement}

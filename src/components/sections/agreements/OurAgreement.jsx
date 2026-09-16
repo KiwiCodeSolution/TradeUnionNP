@@ -4,7 +4,6 @@ import Wrapper from "@/components/Wrapper";
 import agreement from "@/data/our_agreement.json";
 import Image from "next/image";
 import Bookmark from "@/images/agreement/bookmark-logo.svg";
-import Danger from "@/images/home/icon_danger.svg";
 import Title from "@/components/Title";
 
 const OurAgreement = () => {
@@ -39,20 +38,6 @@ const OurAgreement = () => {
               </p>
             </article>
           ))}
-        </div>
-
-        <div className="w-full rounded-2xl my-12 p-16 flex flex-col md:flex-row gap-8 bg-red">
-          <Image
-            src={Danger}
-            width={64}
-            height={63}
-            alt="малюнок знаку уваги: червоний знак оклику у білому трикутнику"
-          />
-          <p className="text-white text-lg">
-            <strong>{t(`warning.0`)}</strong>, <span className="opacity-75">{t(`warning.1`)},</span>{" "}
-            <strong>{t(`warning.2`)}</strong>
-            <span className="opacity-75">{t(`warning.3`)}</span>
-          </p>
         </div>
       </Wrapper>
     </BaseSection>

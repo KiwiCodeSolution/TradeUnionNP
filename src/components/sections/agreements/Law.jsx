@@ -38,7 +38,6 @@ const Law = ({ page }) => {
             />
           ))}
         </div>
-        <div className="absolute h-56 left-0 right-0 bg-gradient-to-b from-bgGrey to-white bottom-0 z-[0]" />
       </Wrapper>
     </BaseSection>
   );

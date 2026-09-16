@@ -71,7 +71,6 @@ export default async function RootLayout({ children, params: { locale } }) {
             <div id="modal-root"></div>
           </NextIntlClientProvider>
         </Providers>
-        s
       </body>
     </html>
   );

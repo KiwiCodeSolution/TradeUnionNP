@@ -1,7 +1,10 @@
+import AppealCta from "@/components/sections/appeal/AppealCta";
+import AppealTypes from "@/components/sections/appeal/AppealTypes";
 import FAQ from "@/components/sections/appeal/FAQ";
 import HeroAppealSections from "@/components/sections/appeal/HeroAppealSections";
 import Reviews from "@/components/sections/appeal/Reviews";
 import ContactSection from "@/components/sections/contactForm/ContactSection";
+import Cases from "@/components/sections/protection/Cases";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params: { locale } }) {
@@ -28,9 +31,11 @@ export default function AppealPage() {
   return (
     <main className="w-full bg-bgGrey">
       <HeroAppealSections />
+      <AppealTypes />
       <FAQ />
+      <Cases />
       <Reviews />
-      <ContactSection bgStyle={"bg-bgGrey"} />
+      <AppealCta />
     </main>
   );
 }

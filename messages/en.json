@@ -642,6 +642,15 @@
     ],
     "hero_button": "review",
     "title": ["Collective ", "labour agreement"],
+    "hero_text": [
+      "In fulfilling its representative function, the Union has enshrined a system of social protection for every employee in the Collective Agreement. It sets out all the benefits, allowances and compensations in place at the company beyond the requirements of the law, turns your labour rights into concrete social benefits, and protects you from unilateral decisions by the administration.",
+      "Know your rights — take advantage of the benefits we have secured for you!"
+    ],
+    "button": "View the Collective Agreement",
+    "points_title": [
+      "New horizons of protection: ",
+      "additional privileges and guarantees under the Collective Agreement"
+    ],
     "collective_agreement": [
       {
         "title": "Additional guarantees for mobilised trade unionists",
@@ -846,15 +855,16 @@
       }
     ],
     "warning": [
-      "No employment agreement (contract)",
-      "signed with the employees of Nova Poshta LLC",
-      " may contradict this Collective Agreement",
-      " in such a way that the employee's rights and interests in the employment agreement (contract) are in any way limited compared to the latter. Some provisions were suspended by the employer for the period of martial law. At the same time, the Trade Union helped to restore almost all provisions of the Collective Agreement, although the employer had the option not to renew them."
+      "In accordance with Article 11 of the Law of Ukraine",
+      "“On the Organisation of Labour Relations under Martial Law” No. 2136-IX",
+      "at the initiative of the employer",
+      " (or by mutual agreement of the parties), certain provisions of the collective agreement have been suspended"
     ],
     "honors": [
       "According to Labor Initiatives NGO, the Collective Labour Agreement of NOVA POSHTA LLC VPSP has been recognized as the",
       "“Best Collective Labour Agreement among the Trade Unions of the Country”."
-    ]
+    ],
+    "proposal": "Want to suggest an improvement to the Collective Agreement? Write to "
   },
   "Protection": {
     "path": "Protection of labor rights",
@@ -870,6 +880,7 @@
       "employees unite independently and on a voluntary basis in order to protect their rights, ",
       "freedoms, and interests. Human rights activism shall be carried out within the limits of the granted rights and obligations."
     ],
+    "appeals_chart_title": "Number of appeals by year",
     "law_subtitle": ["On Trade Unions,", "Their Rights ", "and Guarantees of Activity"],
     "law": [
       {
@@ -1113,14 +1124,15 @@
     },
     "appeals_title": ["Most ", "common appeals:"],
     "appeals": [
-      "Pecuniary liability",
-      "Reprimands",
-      "Bonus reduction",
-      "Violation of the employee's rights",
-      "Conflict situations with a manager or colleague",
-      "Information assistance/consultation",
-      "Accrual/payment of salary",
-      "Other types of appeals"
+      "Trade union activities",
+      "Financial assistance",
+      "Dismissal",
+      "Salary",
+      "Working conditions",
+      "Mobilisation",
+      "Other",
+      "Leave",
+      "Work schedule"
     ],
     "cases_title": "Cases",
     "first_slide_title": "Bonus reduction",
@@ -1611,69 +1623,39 @@
     "review_title": ["Feedback and thanks", " from our trade union members"],
     "reviews": [
       {
-        "text": "Good afternoon. The shift supervisor just called me and said that I can go to work tomorrow. I am very grateful for your help. ",
-        "name": "Ivan O.",
-        "address": "Kyiv dep."
+        "text": "Good afternoon, the issue has been resolved, the funds have been returned. Thank you for your help.",
+        "name": "Kseniia L.",
+        "address": "Dnipropetrovsk dep."
       },
       {
-        "text": "They called me with good news. Everything worked out. I am being transferred. I will finally write an application for a transfer. Thank you very much",
-        "name": "Tetyana Sh.",
-        "address": "Kirovohrad dep."
+        "text": "Your team and you did a good deed, I was reinstated at work. Thank you so much 🙏🏼",
+        "name": "Denys Kh.",
+        "address": "Zaporizhzhia dep."
       },
       {
-        "text": "I am very satisfied. Thank you for your advice and concern.",
-        "name": "Taras P.",
-        "address": "Kyiv dep."
-      },
-      {
-        "text": "Thank you to all the terminals. For always helping us. And always 100% performance. You inspire!",
-        "name": "Maxim L",
-        "address": "Chernihiv dep."
-      },
-      {
-        "text": "I am very grateful to you for the work you have done, which lasted almost 7 months, and your help! I believe that this is the right decision, once again I am very grateful to you. For my part, I am trying to attract as many staff as possible to the Trade Union, using a case from my own experience. Take care of yourself!",
-        "name": "Evgeny V.",
-        "address": "Kyiv dep."
-      },
-      {
-        "text": "Good evening, the funds have arrived, thank you for the work done",
-        "name": "Egor M.",
-        "address": "Vinnytsia dep."
-      },
-      {
-        "text": "Good afternoon, for me this is very good news. I did not even expect a quick return of the surcharge, and even more so the return of the discharge from March. Yes, my appeal is completely resolved thanks to you. Thank you for your help.",
-        "name": "Olga Z.",
-        "address": "Kyiv dep."
-      },
-      {
-        "text": "Thank you for your help. The situation has really changed.",
-        "name": "Nataliya S.",
-        "address": "Zhytomyr dep."
-      },
-      {
-        "text": "All good, the trade union helped me solve all of my appeals, no remarks",
-        "name": "Mykola K",
+        "text": "Thank you for the information. I was not aware of the bonus for “loading/unloading a vehicle outside working hours at the branch”. I am familiar with the methodology and have no complaints.",
+        "name": "Ivan H.",
         "address": "Lviv dep."
       },
       {
-        "text": "Returned my cash award, which I am so thankful for!",
-        "name": "Yurii S.",
-        "address": "Kyiv dep."
-      },
-      {
-        "text": "Thank you! Everything was great, replied fast for my request and solved it fast too, you’re doing a great job!",
-        "name": "Tatiana K.",
-        "address": "Zhytomyr dep"
-      },
-      {
-        "text": "So grateful for helping me with the correct composition of an explanation letter! Also later helped me out with some problems with the managers",
-        "name": "Anna T.",
+        "text": "Thank you for your help. The problem has been resolved. If it weren't for the Trade Union, I would have been charged for a large amount of clothing that I never used.",
+        "name": "Illia K.",
         "address": "Poltava dep."
       },
       {
-        "text": "Satisfied with the work of the trade union. I frequently address them and they reply every single time",
-        "name": "Serhii N.",
-        "address": "Kyiv dep"
+        "text": "Good afternoon! The reprimand has been withdrawn! I'm very grateful for your help, I wouldn't have managed this without you.",
+        "name": "Mariia S.",
+        "address": "Kharkiv dep."
+      },
+      {
+        "text": "Thank you so much! Thanks to the Trade Union's help, we managed to get a positive resolution. The funds have been returned.",
+        "name": "Viktor B.",
+        "address": "Kyiv dep."
+      },
+      {
+        "text": "I want to thank you for the help with the booking, it was booked yesterday evening. Thank you so much for the prompt help, the issue was resolved quickly and fairly. Thank you.",
+        "name": "Rostyslav K.",
+        "address": "Kyiv dep."
       }
     ],
     "invite_title": ["Invite friends", "and get incentives!"],
@@ -1695,22 +1677,77 @@
   "Appeal": {
     "path": "Appeal",
     "title": ["Appeal", "to the Trade Union"],
+    "hero_text": "An employee's appeal to the Trade Union is an official statement of a request, proposal, or complaint addressed to the elected body of the primary trade union organisation for the protection of labour and socio-economic rights and interests.",
+    "appeal_types_title": [
+      "There are ",
+      "three types of appeals",
+      ", which differ in the complexity of the request, the time needed to resolve it, and the ways it is resolved"
+    ],
+    "appeal_types": [
+      {
+        "name": "“Question and Answer”",
+        "text": "A type of appeal with simple questions that usually do not require additional resources to resolve.",
+        "term": "The processing time is 24 hours from the date of receipt.",
+        "examples_title": "Most often these are:",
+        "examples": [
+          "consultations on providing financial assistance",
+          "appeals regarding sick leave payments",
+          "consultations on leave",
+          "appeals regarding Trade Union competitions and projects",
+          "consultations on explanatory notes",
+          "and so on"
+        ]
+      },
+      {
+        "name": "“Consultation”",
+        "text": "A type of appeal where the actions listed under “Question and Answer” are not enough to provide an answer/consultation, and it is necessary to study the legal and regulatory framework, involve an external resource (including consultants) and/or send a request to the support office/management in order to provide an exhaustive answer to the trade union member's request.",
+        "term": "The processing time is up to 7 days from the date of receipt.",
+        "examples_title": "Most often these are:",
+        "examples": [
+          "appeals regarding salary",
+          "consultations on redundancy",
+          "requests for contact information from a specific department",
+          "consultation on reinstatement after maternity leave",
+          "consultation on length of service",
+          "and so on"
+        ]
+      },
+      {
+        "name": "“Request”",
+        "text": "A type of appeal where, in addition to the actions listed under “Consultation”, additional measures are required (a series of correspondence, presenting a legal position, defending the employee's interests, writing official requests or submissions, etc.) to restore the employee's lawful labour or socio-economic rights, their legal protection, representation of their interests, etc.",
+        "term": "The processing time is up to 27 days from the date of receipt (in some cases the period may be longer).",
+        "examples_title": "Most often these are:",
+        "examples": [
+          "appeals regarding a reprimand",
+          "unlawful dismissal of an employee",
+          "reduction of an employee's working hours",
+          "appeals regarding bonus reduction",
+          "appeals regarding the provision of PPE (personal protective equipment)",
+          "appeals regarding working conditions",
+          "and so on"
+        ]
+      }
+    ],
+    "cta_title": "Want to contact the Trade Union for help?",
+    "cta_text_before": "Send your question to ",
+    "cta_text_middle": " or use our ",
+    "cta_chatbot_label": "chatbot",
     "faq": [
       {
         "title": ["A detailed explanation", "of salary"],
         "points": [
           {
-            "name": "The payment letter is sent to everyone by corporate mail. If none is received please contact the Service Desk.",
+            "name": "Payslips are sent to everyone's corporate email. If you are not receiving them, please submit a request to the Service Desk.",
             "information": []
           },
 
           {
-            "name": "If you have no corporate mail, go to portal.np.ua, enter your login and password, and view all your Payment Letters.",
+            "name": "Nova Poshta employees have access to the Nova Workspace mobile app. To view your payslip, go to the 'Salary' > 'Payslip' section and select the relevant period.",
             "information": []
           },
 
           {
-            "name": "If you have no corporate login and password, make a request through the head of the branch (if you work in the branch) to the Salary Accrual Department, a Payment Letter will be printed or sent to you.",
+            "name": "If you do not have a corporate login and password, please contact your manager or submit a request to the employee support line.",
             "information": []
           }
         ]

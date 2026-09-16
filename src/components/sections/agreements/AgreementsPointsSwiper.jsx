@@ -47,7 +47,7 @@ const AgreementsPointsSwiper = () => {
                 />
                 <p className="text-base font-bold">{el.title}</p>
               </div>
-              <div className="w-full min-h-[2000px] bg-white rounded-2xl p-8 text-[15px] flex flex-col gap-y-4">
+              <div className="w-full h-fit bg-white rounded-2xl p-8 text-[15px] flex flex-col gap-y-4">
                 {index === 1 ? (
                   <SecondPont />
                 ) : (
