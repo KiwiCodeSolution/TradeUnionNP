@@ -351,7 +351,7 @@ export const ChatBot = () => (
     {/* СТИЛІ */}
     <defs>
       <style>{`
-        .bubble { fill: none; stroke: black; strokeWidth: 0.05; }
+        .bubble { fill: none; stroke: black; stroke-width: 0.05; }
         .headset { fill: red; }
         .dot { fill: red; }
         .misc { fill: black; }

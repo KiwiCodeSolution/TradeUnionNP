@@ -1,11 +1,13 @@
 import AboutAgreement from "@/components/sections/agreements/AboutAgreement";
 import AgreementsPoints from "@/components/sections/agreements/AgreementsPoints";
-import Honors from "@/components/sections/agreements/Honors";
+
 import Law from "@/components/sections/agreements/Law";
 import OurAgreement from "@/components/sections/agreements/OurAgreement";
+import Proposal from "@/components/sections/agreements/Proposal";
 import TitleAgreementsPage from "@/components/sections/agreements/TitleAgreementsPage";
-import AgreementsBlogSection from "@/components/sections/blog/AgreementsBlogSection";
+
 import HeroAgreementsPage from "@/components/sections/hero/HeroAgreementsPage";
+import { BaseURL } from "@/constants/BaseUrl";
 import law from "@/data/law.json";
 import { getTranslations } from "next-intl/server";
 
@@ -29,17 +31,28 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export default function CollectiveAgreementPage({ params }) {
+async function fetchContacts() {
+  const res = await fetch(`${BaseURL}contacts`, { method: "GET", cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch contacts");
+  }
+
+  return res.json();
+}
+
+export default async function CollectiveAgreementPage({ params }) {
+  const [contacts] = await fetchContacts();
+
   return (
-    <main className="w-full bg-bgGrey">
+    <main className="w-full bg-bgGrey py-8 xl:py-10">
       <TitleAgreementsPage />
       <HeroAgreementsPage />
       <AgreementsPoints />
       <Law data={law} page={"collective_agreement"} />
       <AboutAgreement />
       <OurAgreement />
-      <Honors />
-      {/* {params.locale === "uk" && <AgreementsBlogSection locale={params.locale}/>} */}
+      <Proposal email={contacts.mail} />
     </main>
   );
 }

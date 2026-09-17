@@ -12,63 +12,35 @@ import FileButton from "@/components/UI/buttons/FileButton";
 
 const HeroAgreementsPage = () => {
   const t = useTranslations("Collective_labour_agreement");
-  const agreements = Array.from({ length: 10 }, (v, i) => i);
-  return (
-    <BaseSection style={""}>
-      <Wrapper>
-        <div className="w-full flex flex-col gap-y-8 my-16 bg-white rounded-2xl px-4 md:px-14 py-10 relative">
-          <Image
-            src={BookMark}
-            width={140}
-            height={163}
-            alt="червона закладка із білим логотипом Профспілки Нової пошти"
-            className="w-20 md:w-[110px] xl:w-[140px] absolute top-0 right-8 -translate-y-8"
-          />
-          <Title tag="h2">
-            {t(`title.0`)}
-            <span className="text-red">{t(`title.1`)}</span>
-          </Title>
 
-          <ul className="w-full grid grid-cols-1 md:grid-cols-4 gap-8">
-            {agreements.slice(0, 7).map((el, index) => (
-              <li key={el} className="text-[15px] flex md:flex-col gap-4 md:pr-2">
-                <Image
-                  src={Done}
-                  width={32}
-                  height={32}
-                  alt="червоний прапорець у червоному колі"
-                />
-                {/* {el} */}
-                {t(`first_items.${index}`)}
-              </li>
-            ))}
-          </ul>
-          <ul className="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
-            {agreements.slice(7, 10).map((el, index) => (
-              <li key={el} className="text-[15px] flex md:flex-col gap-4 md:pr-2">
-                <Image
-                  src={Done}
-                  width={32}
-                  height={32}
-                  alt="червоний прапорець у червоному колі"
-                />
-                {/* {el} */}
-                {t(`second_items.${index}`)}
-              </li>
-            ))}
-          </ul>
-          <Image
-            src={HeroImage}
-            width={468}
-            height={395}
-            alt="зображення анкети чи бланку договору та руки із ручкою"
-            className="hidden md:block w-[320px] xl:w-[468px] right-9 absolute bottom-0 xl:right-16"
-          />
-          <FileButton
-            name={t(`hero_button`)}
-            link={`koldogovor.pdf`}
-            styles={"mx-auto mt-8 md:ml-0"}
-          />
+  return (
+    <BaseSection style={"pb-6"}>
+      <Wrapper styles={""}>
+        <div className="w-full flex flex-col md:flex-row items-center gap-x-10 gap-y-8 xl:gap-y-10">
+          <div className="flex flex-col gap-y-8 xl:gap-y-10">
+            <Title tag="h2">
+              {t(`title.0`)}
+              <span className="text-red">{t(`title.1`)}</span>
+            </Title>
+            <p className="text-lg">{t(`hero_text.0`)}</p>
+            <p className="text-lg">{t(`hero_text.1`)}</p>
+          </div>
+          <Image src={"/images/agreement/hero.png"} width={400} height={350} className="shrink-0" />
+        </div>
+        <div className="flex flex-col xl:flex-row mt-8 xl:mt-10 gap-6 xl:items-center justify-between">
+          <a
+            href={`${BaseURL}files/koldogovor.pdf`}
+            і
+            target="_blank"
+            className="w-fit h-[60px] rounded-[100px] bg-red text-white font-bold uppercase py-[15px] px-[33px] shadow-redButton hover:shadow-redButtonHover gap-x-3 flex items-center justify-between mx-auto xl:mb-5 mt-10 xl:mt-14"
+          >
+            {t(`button`)}
+            <Image src={Arrow} width={30} height={30} alt="іконка червоної стрілочки вправо" />
+          </a>{" "}
+          <div className="flex flex-col justify-center w-full xl:w-3/5 text-center shrink-0 honors">
+            <p className="text-[40px]">{t(`honors.0`)}</p>
+            <p className="text-[40px] font-bold">{t(`honors.1`)}</p>
+          </div>
         </div>
       </Wrapper>
     </BaseSection>

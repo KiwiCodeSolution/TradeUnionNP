@@ -86,7 +86,7 @@ const AgreementsPointsList = () => {
   ];
 
   return (
-    <div className="h-full hidden md:flex items-start mt-8">
+    <div className="h-full hidden md:flex items-stretch mt-8 ">
       <PrinciplesList principles={principles} />
     </div>
   );

@@ -29,7 +29,7 @@ const Law = ({ page }) => {
             </>
           )}
         </Title>
-        <div className="grid rid-grid-cols-1 md:grid-cols-2 gap-4 z-[1]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 z-[1]">
           {data.map((el, index) => (
             <LawItem
               key={el + 25}
@@ -38,7 +38,6 @@ const Law = ({ page }) => {
             />
           ))}
         </div>
-        <div className="absolute h-56 left-0 right-0 bg-gradient-to-b from-bgGrey to-white bottom-0 z-[0]" />
       </Wrapper>
     </BaseSection>
   );

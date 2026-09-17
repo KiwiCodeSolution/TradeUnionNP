@@ -7,12 +7,13 @@ import HeroImage from "@/images/protection/protection_hero.svg";
 import Hand from "@/images/hand.svg";
 import { inter } from "@/app/[locale]/(client)/fonts";
 import Title from "@/components/Title";
+import AppealsByYearChart from "./AppealsByYearChart";
 
 const ProtectionHero = () => {
   const t = useTranslations("Protection");
   return (
-    <BaseSection style={""}>
-      <Wrapper>
+    <BaseSection style={"mb-[60px] md:mb-[120px] relative"}>
+      <Wrapper styles={"relative z-[1]"}>
         <PathPage endPath={t(`path`)} />
         <div className="w-full flex flex-col md:flex-row gap-y-4 md:gap-y-0">
           <div className="w-full md:w-3/5 xl:w-2/5 flex flex-col gap-y-4 pt-6 md:pt-16 ">
@@ -56,6 +57,7 @@ const ProtectionHero = () => {
             <strong>{t(`hero_text.3`)}</strong> {t(`hero_text.4`)}
           </p>
         </div>
+        <AppealsByYearChart />
       </Wrapper>
     </BaseSection>
   );

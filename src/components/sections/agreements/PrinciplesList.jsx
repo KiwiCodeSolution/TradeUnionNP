@@ -19,7 +19,7 @@ const PrinciplesList = ({ principles }) => {
             }`}
             onClick={() => setCurrentPoint(index)}
           >
-            <Image src={el.image} width={32} height={32} alt={`зображення на тему ${el.title}`} />
+            <Image src={el.image} width={44} height={44} alt={`зображення на тему ${el.title}`} />
             <p className="text-left">{el.title}</p>
           </button>
         ))}
@@ -29,8 +29,8 @@ const PrinciplesList = ({ principles }) => {
           currentPoint === 0
             ? "rounded-b-2xl rounded-r-2xl"
             : currentPoint === principles.length - 1
-            ? "rounded-t-2xl rounded-r-2xl"
-            : "rounded-2xl"
+              ? "rounded-t-2xl rounded-r-2xl"
+              : "rounded-2xl"
         }  bg-white text-[15px] flex flex-col gap-y-4`}
       >
         {currentPoint === 1 ? (
