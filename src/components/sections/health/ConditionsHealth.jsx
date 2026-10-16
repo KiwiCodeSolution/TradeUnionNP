@@ -1,6 +1,9 @@
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Arrow from "@/images/arrow_red.svg";
+import { BaseURL } from "@/constants/BaseUrl";
 import BlanksHealth from "./BlanksHealth";
 
 const ConditionsHealth = () => {
@@ -73,6 +76,22 @@ const ConditionsHealth = () => {
           {t(`Financial_Aid.conditions_title_healthy.1`)}
         </Title>
         <BlanksHealth documents={documentsList} name={t(`Financial_Aid.link`)} />
+        <div className="mx-auto mt-12">
+          <a
+            href={`${BaseURL}files/pologennya-ozdorovlennya.pdf`}
+            target="_blank"
+            className="w-fit flex flex-row items-center gap-3 text-red text-sm uppercase font-bold mx-auto"
+          >
+            {t(`Financial_Aid.doc_button_healthy`)}
+            <Image
+              src={Arrow}
+              width={30}
+              height={30}
+              alt="біла стрілочка вправо на червоному фоні"
+              className="arrow-icon"
+            />
+          </a>
+        </div>
       </Wrapper>
     </section>
   );
