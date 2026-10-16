@@ -1458,7 +1458,8 @@
       "Heads of PTUO (primary trade union organization)."
     ],
     "link": "DOWNLOAD THE APPLICATION",
-    "conditions_title_healthy": ["Conditions ", "for providing financial assistance for recovery"]
+    "conditions_title_healthy": ["Conditions ", "for providing financial assistance for recovery"],
+    "doc_button_healthy": "Regulations on health recovery"
   },
   "Sport": {
     "path": "Sports and leisure",
