@@ -9,7 +9,7 @@ import { observer } from "mobx-react-lite";
 import Loader from "@/components/UI/loader/Loader";
 import { StoreProvider, useStore } from "@/store/StoreProvider";
 
-export const NewsContent = observer(() => {
+const NewsContent = observer(() => {
   const { newsStore } = useStore();
   const allNews = newsStore.news || [];
   const isLoading = newsStore.isLoading;

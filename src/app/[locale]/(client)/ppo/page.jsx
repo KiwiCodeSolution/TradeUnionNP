@@ -3,7 +3,7 @@ import TitleRegionOfficesPage from "@/components/sections/regional_offices/Title
 import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
 
-export async function getRegionalOfficesData() {
+async function getRegionalOfficesData() {
   try {
     const res = await fetch(`${BaseURL}ppo`, {
       method: "GET",

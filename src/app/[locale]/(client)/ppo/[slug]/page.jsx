@@ -4,7 +4,7 @@ import RegionalOffice from "@/components/sections/regional_offices/RegionalOffic
 import RegionalOfficePageItem from "@/components/sections/regional_offices/RegionalOfficePageItem";
 import { BaseURL } from "@/constants/BaseUrl";
 
-export async function fetchOfficeBySlug(slug) {
+async function fetchOfficeBySlug(slug) {
   const res = await fetch(`${BaseURL}ppo/link/${slug}`, { method: "GET", cache: "no-store" });
   if (!res.ok) {
     throw new Error(`Failed to fetch ppo by slug ${slug}`);

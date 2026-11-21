@@ -4,7 +4,7 @@ import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import RegionalOffice from "@/components/sections/regional_offices/RegionalOffice";
 import useAuth from "@/hooks/useAuth";
 
-export async function getRegionalOfficesData() {
+async function getRegionalOfficesData() {
   const res = await fetch(`${BaseURL}ppo`, {
     method: "GET",
     cache: "no-store",

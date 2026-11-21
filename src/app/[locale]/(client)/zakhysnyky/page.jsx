@@ -9,7 +9,7 @@ import RegularEvent from "@/components/sections/defenders/RegularEvent";
 import { BaseURL } from "@/constants/BaseUrl";
 import { getTranslations } from "next-intl/server";
 
-export async function getDefendersData() {
+async function getDefendersData() {
   try {
     const res = await fetch(`${BaseURL}defenders`, {
       method: "GET",

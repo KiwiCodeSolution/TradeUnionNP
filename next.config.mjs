@@ -4,6 +4,9 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Lint runs separately (`npm run lint`) until existing warnings are cleaned up;
+  // a lint error must not break the production build on the server.
+  eslint: { ignoreDuringBuilds: true },
   images: {
     remotePatterns: [
       {

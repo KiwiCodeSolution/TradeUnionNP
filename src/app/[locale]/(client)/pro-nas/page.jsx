@@ -4,7 +4,7 @@ import StatutoryDocuments from "@/components/sections/about/StatutoryDocuments";
 import VideoSection from "@/components/sections/about/VideoSection";
 import HeroAboutPage from "@/components/sections/hero/HeroAboutPage";
 import { getTranslations } from "next-intl/server";
-import { getAllNews } from "../novyny/page";
+import { fetchNews } from "@/services/newsService";
 import BlogSection from "@/components/sections/blog/BlogSection";
 
 export async function generateMetadata({ params: { locale } }) {
@@ -28,7 +28,7 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 export default async function AboutUsPage({ params }) {
-  const allNews = await getAllNews();
+  const allNews = await fetchNews();
   const blogItems = allNews
     .filter(n => n.sections.includes("Інтерв`ю"))
     .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
