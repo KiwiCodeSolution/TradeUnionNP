@@ -4,7 +4,7 @@ import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import ProjectForm from "@/components/sections/defenders/ProjectForm";
 import { StoreProvider } from "@/store/StoreProvider";
 
-export default async function CreateProjectPage({ username }) {
+export default async function CreateProjectPage() {
   return (
     <StoreProvider>
       <main className="px-10 py-5 relative w-full">

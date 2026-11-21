@@ -2,7 +2,7 @@ import DefendersSection from "@/components/sections/admin/DefendersSection";
 import TitleAdmin from "@/components/sections/admin/TitleAdmin";
 import { BaseURL } from "@/constants/BaseUrl";
 
-export async function getDefendersData() {
+async function getDefendersData() {
   const res = await fetch(`${BaseURL}defenders`, {
     method: "GET",
     cache: "no-store",

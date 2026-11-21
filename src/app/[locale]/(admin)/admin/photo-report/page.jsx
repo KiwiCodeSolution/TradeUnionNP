@@ -9,7 +9,7 @@ import { StoreProvider, useStore } from "@/store/StoreProvider";
 import { observer } from "mobx-react-lite";
 import Loader from "@/components/UI/loader/Loader";
 
-export const PhotoReportsComponenTPage = observer(() => {
+const PhotoReportsComponenTPage = observer(() => {
   const { photoReportsStore } = useStore();
   const allReports = photoReportsStore.photoReports || [];
   const isLoading = photoReportsStore.isLoading;

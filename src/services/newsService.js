@@ -3,7 +3,6 @@ import { BaseURL } from "@/constants/BaseUrl";
 
 export async function fetchNews() {
   const res = await fetch(`${BaseURL}news`, { method: "GET", cache: "no-store" });
-  console.log(res);
   if (!res.ok) {
     throw new Error("Failed to fetch news");
   }
