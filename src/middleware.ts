@@ -1,17 +1,17 @@
 import { withAuth } from "next-auth/middleware";
-import createIntlMiddleware from "next-intl/middleware";
 import { getToken } from "next-auth/jwt";
+import createIntlMiddleware from "next-intl/middleware";
+import type { NextRequest } from "next/server";
 
 const locales = ["uk", "en"];
 
 const intlMiddleware = createIntlMiddleware({
-  locales: ["uk", "en"],
+  locales,
   defaultLocale: "uk",
-  prefixDefault: true,
 });
 
-// шляхи, які потребують авторизації
-const protectedRoutes = ["/uk/admin", "/uk/admin/*", "/en/admin", "/en/admin/*"];
+// усі сторінки адмінки: /admin, /uk/admin, /en/admin/news/... (з локаллю або без)
+const protectedPathnameRegex = new RegExp(`^(/(${locales.join("|")}))?/admin(/|$)`, "i");
 
 const authMiddleware = withAuth(req => intlMiddleware(req), {
   callbacks: {
@@ -26,7 +26,7 @@ const authMiddleware = withAuth(req => intlMiddleware(req), {
 
       const currentTime = Math.floor(Date.now() / 1000);
 
-      if (token.exp && token.exp < currentTime) {
+      if (typeof token.exp === "number" && token.exp < currentTime) {
         return false;
       }
 
@@ -38,20 +38,12 @@ const authMiddleware = withAuth(req => intlMiddleware(req), {
   },
 });
 
-export default function middleware(req) {
-  const protectedPathnameRegex = RegExp(
-    `^(/(${locales.join("|")}))?(${protectedRoutes
-      .flatMap(p => (p === "/" ? ["", "/"] : p))
-      .join("|")})/?$`,
-    "i"
-  );
-  const isProtectedPage = protectedPathnameRegex.test(req.nextUrl.pathname);
-
-  if (isProtectedPage) {
-    return authMiddleware(req);
-  } else {
-    return intlMiddleware(req);
+export default function middleware(req: NextRequest) {
+  if (protectedPathnameRegex.test(req.nextUrl.pathname)) {
+    // withAuth очікує NextRequestWithAuth; сам додає токен під час виклику
+    return (authMiddleware as unknown as (req: NextRequest) => Response | Promise<Response>)(req);
   }
+  return intlMiddleware(req);
 }
 
 export const config = {
