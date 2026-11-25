@@ -4,7 +4,7 @@ import BaseSection from "@/components/BaseSection";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 import { BaseURLImage } from "@/constants/BaseUrl";
-import DOMPurify from "isomorphic-dompurify";
+import { sanitizeNewsHtml } from "@/utils/sanitizeNewsHtml";
 
 const fixLocalhostUrls = html => {
   // заміна http://localhost:3000 або https://localhost:3000 будь-де в контенті
@@ -18,14 +18,17 @@ const NewsPageComponent = ({ news }) => {
 
   const renderContent = dirty => {
     const fixed = fixLocalhostUrls(dirty);
-    const clean = DOMPurify.sanitize(fixed);
-    console.log("Sanitized content:", clean);
-    return <div dangerouslySetInnerHTML={{ __html: clean }} />;
+    const clean = sanitizeNewsHtml(fixed);
+    // відео з редактора та старого сайту мають у style фіксовані px і position:absolute — робимо адаптивними
+    return (
+      <div
+        className="[&_iframe]:!static [&_iframe]:!h-auto [&_iframe]:!w-full [&_iframe]:aspect-video [&_iframe]:max-w-full"
+        dangerouslySetInnerHTML={{ __html: clean }}
+      />
+    );
   };
 
   const date = new Date(publishDate).toISOString().split("T")[0];
-
-  console.log("NewsPageComponent render with news:", news);
 
   return (
     <BaseSection>
