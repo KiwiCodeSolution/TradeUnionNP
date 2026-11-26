@@ -26,6 +26,8 @@ const Skeleton = ({ isMobile, section }) => (
 const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
   const { contactsStore } = useStore();
   const allContacts = toJS(contactsStore.contacts);
+  // контакти можуть не завантажитись — тоді показуємо блок без пошти
+  const mail = allContacts?.[0]?.mail;
 
   const [socLinks, setSocLinks] = useState([
     {
@@ -90,9 +92,9 @@ const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
 
   return isMobile ? (
     <>
-      {allContacts && (
-        <a href={`mailto:${allContacts[0].mail}`} className="text-white text-base mt-10">
-          {allContacts[0].mail}
+      {mail && (
+        <a href={`mailto:${mail}`} className="text-white text-base mt-10">
+          {mail}
         </a>
       )}
 
@@ -128,12 +130,12 @@ const EmailAndSocLinksComponent = observer(({ section, title, isMobile }) => {
       {section === "footer" && (
         <h3 className="text-base text-liteGrey text-center md:text-left mb-1 uppercase">{title}</h3>
       )}
-      {allContacts && (
+      {mail && (
         <a
-          href={`mailto:${allContacts[0].mail}`}
+          href={`mailto:${mail}`}
           className="text-red text-base text-center md:text-left underline underline-offset-1 hover:underline-offset-4"
         >
-          {allContacts[0].mail}
+          {mail}
         </a>
       )}
 
