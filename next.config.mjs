@@ -7,6 +7,19 @@ const nextConfig = {
   // Lint runs separately (`npm run lint`) until existing warnings are cleaned up;
   // a lint error must not break the production build on the server.
   eslint: { ignoreDuringBuilds: true },
+  // API is called at profspilka.org, so pages opened on www are blocked by CORS.
+  // Temporary (not permanent) until nginx does this redirect itself.
+  async redirects() {
+    return [
+      { type: "host", value: "www.profspilka.org" },
+      { type: "header", key: "x-forwarded-host", value: "www.profspilka.org" },
+    ].map(condition => ({
+      source: "/:path*",
+      has: [condition],
+      destination: "https://profspilka.org/:path*",
+      permanent: false,
+    }));
+  },
   images: {
     remotePatterns: [
       {
